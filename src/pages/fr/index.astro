@@ -1,0 +1,612 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const meta = {
+  title: "Sara Lemaitre | Herboriste Clinique & Naturopathe | Santé Hormonale, Endométriose, SOPK",
+  description: "Herboriste clinique et naturopathe spécialisée en endométriose, SOPK et fatigue chronique. Ancienne athlète de haut niveau. Consultations en ligne en français et en anglais.",
+  ogImage: "https://www.saralemaitre.com/images/og-home.jpg",
+  canonical: "https://www.saralemaitre.com/fr",
+  navLight: false,
+  currentPage: 'index',
+  ogType: 'website',
+  lang: 'fr',
+};
+---
+
+<BaseLayout {...meta}>
+
+<style is:global>
+:root {
+    --cream: #F7F3EE;
+    --warm-white: #FDFAF7;
+    --sage: #7A8C6E;
+    --sage-text: #4E6245;
+    --sage-light: #C4D0BA;
+    --sage-pale: #EBF0E7;
+    --bark: #5C4A3A;
+    --bark-light: #8C7060;
+    --bark-pale: #EDE5DC;
+    --charcoal: #2A2420;
+    --muted: #6A5E58;
+    --gold: #C4A25A;
+    --gold-pale: #F5EDD6;
+    --plum-pale: #F0EAF0;
+    --amber-pale: #FBF0E3;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--warm-white);
+    color: var(--charcoal);
+    font-family: 'Jost', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 300;
+    line-height: 1.85;
+    overflow-x: hidden;
+  }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.5rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(92,74,58,0.15);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid transparent;
+    transition: background .4s, backdrop-filter .4s, border-color .4s;
+  }
+  nav.scrolled {
+    background: rgba(253,250,247,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom-color: rgba(122,108,100,0.1);
+  }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: var(--cream); text-decoration: none; transition: color .4s; }
+  nav.scrolled .nav-logo { color: var(--bark); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: .9375rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(247,243,238,.85); text-decoration: none; transition: color .2s; }
+  nav.scrolled .nav-links a { color: var(--muted); }
+  .nav-links a:hover, nav.scrolled .nav-links a:hover { color: var(--bark); }
+  .nav-book { font-size: .9375rem; letter-spacing: .16em; text-transform: uppercase; padding: .7rem 1.8rem; border: 1px solid rgba(247,243,238,.7); color: rgba(247,243,238,.9); text-decoration: none; transition: all .22s; }
+  nav.scrolled .nav-book { border-color: var(--bark); color: var(--bark); }
+  .nav-book:hover { background: var(--cream); color: var(--bark) !important; border-color: var(--cream) !important; }
+  .lang-toggle { font-size: .75rem; letter-spacing: .16em; text-transform: uppercase; padding: .45rem .9rem; border: 1px solid rgba(247,243,238,.4); background: none; color: rgba(247,243,238,.7); cursor: pointer; font-family: 'Jost', sans-serif; border-radius: 2px; transition: all .2s; margin-left: .5rem; }
+  nav.scrolled .lang-toggle { border-color: rgba(92,74,58,.35); color: var(--muted); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: .5rem; margin-left: .5rem; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--cream); border-radius: 2px; transition: all .25s; }
+  nav.scrolled .hamburger span { background: var(--bark); }
+
+  .hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; }
+  .hero-left { background: var(--bark); padding: 12rem 6rem 8rem; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
+  .hero-left::before { content: ''; position: absolute; inset: 0; background: linear-gradient(145deg, #3d2e22 0%, #5C4A3A 60%, #6e5a48 100%); }
+  .hero-eyebrow { position: relative; font-size: .75rem; letter-spacing: .26em; text-transform: uppercase; color: rgba(196,208,186,.7); margin-bottom: 2rem; }
+  .hero-name { position: relative; font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 5vw, 5rem); font-weight: 300; line-height: 1.05; color: var(--cream); margin-bottom: 1.5rem; }
+  .hero-name em { font-style: italic; color: var(--sage-light); display: block; }
+  .hero-credentials { position: relative; font-size: .9375rem; color: rgba(247,243,238,.45); letter-spacing: .08em; line-height: 2; margin-bottom: 2.5rem; }
+  .hero-desc { position: relative; font-size: 1.0625rem; color: rgba(247,243,238,.65); line-height: 1.9; max-width: 420px; margin-bottom: 3rem; }
+  .hero-actions { position: relative; display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { display: inline-block; padding: .95rem 2.5rem; background: var(--sage-light); color: var(--bark); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+  .btn-primary:hover { background: var(--cream); }
+  .btn-ghost { display: inline-block; padding: .95rem 2.5rem; border: 1px solid rgba(247,243,238,.25); color: rgba(247,243,238,.6); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+  .btn-ghost:hover { border-color: var(--sage-light); color: var(--sage-light); }
+  .hero-right { background: var(--sage-pale); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .hero-botanical { width: 420px; height: 420px; opacity: .6; }
+  .scroll-hint { position: absolute; bottom: 3rem; left: 50%; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: .6rem; }
+  .scroll-hint span { font-size: .6875rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); }
+  .scroll-line { width: 1px; height: 40px; background: linear-gradient(to bottom, var(--sage-light), transparent); animation: scrollPulse 2s ease-in-out infinite; }
+  .hero-bar { background: var(--charcoal); padding: 1.8rem 8rem; display: flex; gap: 0; align-items: center; }
+  .hero-bar-item { flex: 1; display: flex; flex-direction: column; gap: .3rem; }
+  .hero-bar-label { font-size: .6875rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(196,208,186,.5); }
+  .hero-bar-value { font-size: .9375rem; color: rgba(247,243,238,.7); }
+  .hero-bar-divider { width: 1px; height: 40px; background: rgba(247,243,238,.08); margin: 0 3rem; }
+
+  .intro-strip { padding: 7rem 8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .intro-strip-left .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
+  .intro-strip-left h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 400; color: var(--charcoal); line-height: 1.2; }
+  .intro-strip-left h2 em { font-style: italic; color: var(--sage-text); }
+  .intro-strip-right p { font-size: 1.0625rem; color: var(--muted); line-height: 1.95; margin-bottom: 1.3rem; }
+  .read-more { font-size: .8125rem; letter-spacing: .16em; text-transform: uppercase; color: var(--bark); text-decoration: none; border-bottom: 1px solid rgba(92,74,58,.3); padding-bottom: 2px; transition: border-color .2s; }
+  .read-more:hover { border-color: var(--bark); }
+
+  .who-section { padding: 7rem 8rem; background: var(--cream); }
+  .who-header { margin-bottom: 5rem; }
+  .who-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 400; color: var(--charcoal); line-height: 1.15; margin-bottom: 1.2rem; }
+  .who-header h2 em { font-style: italic; color: var(--sage-text); }
+  .who-header-desc { font-size: 1.0625rem; color: var(--muted); max-width: 600px; line-height: 1.85; }
+  .who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .who-card { background: var(--warm-white); padding: 3rem 2.5rem; border: 1px solid rgba(122,108,100,0.08); }
+  .who-card-number { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--sage-light); line-height: 1; margin-bottom: 1.5rem; }
+  .who-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--charcoal); margin-bottom: 1rem; line-height: 1.3; }
+  .who-card-desc { font-size: .9375rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
+  .who-card-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
+  .who-tag { font-size: .6875rem; letter-spacing: .12em; text-transform: uppercase; padding: .3rem .7rem; background: var(--sage-pale); color: var(--sage-text); }
+
+  .different-section { padding: 7rem 8rem; display: grid; grid-template-columns: 1fr 1.2fr; gap: 7rem; align-items: start; }
+  .different-left .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
+  .different-left h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 400; color: var(--charcoal); line-height: 1.2; margin-bottom: 2rem; }
+  .different-left h2 em { font-style: italic; color: var(--sage-text); }
+  .different-left p { font-size: 1.0625rem; color: var(--muted); line-height: 1.95; margin-bottom: 1.2rem; }
+  .diff-item { display: flex; gap: 1.5rem; padding: 1.8rem 0; border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .diff-item:first-child { border-top: 1px solid rgba(122,108,100,0.1); }
+  .diff-num { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--sage-light); min-width: 2rem; padding-top: .1rem; }
+  .diff-text-title { font-size: 1rem; font-weight: 400; color: var(--charcoal); margin-bottom: .5rem; }
+  .diff-text-body { font-size: .9375rem; color: var(--muted); line-height: 1.75; }
+
+  .therapies-section { padding: 7rem 8rem; background: var(--charcoal); }
+  .therapies-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 4rem; }
+  .therapies-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.5vw, 3rem); font-weight: 400; color: var(--cream); line-height: 1.15; }
+  .therapies-header h2 em { font-style: italic; color: var(--sage-light); }
+  .therapies-header a { font-size: .8125rem; letter-spacing: .16em; text-transform: uppercase; color: var(--sage-light); text-decoration: none; opacity: .7; transition: opacity .2s; }
+  .therapies-header a:hover { opacity: 1; }
+  .therapies-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: rgba(247,243,238,.05); }
+  .therapy-card { background: var(--charcoal); padding: 2.5rem 2rem; text-decoration: none; border: 1px solid rgba(247,243,238,.05); transition: background .2s; display: flex; flex-direction: column; gap: 1rem; }
+  .therapy-card:hover { background: rgba(122,140,110,0.08); }
+  .therapy-card-icon { width: 48px; height: 48px; margin-bottom: .5rem; }
+  .therapy-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--cream); }
+  .therapy-card-desc { font-size: .875rem; color: rgba(247,243,238,.45); line-height: 1.75; flex: 1; }
+  .therapy-card-link { font-size: .75rem; letter-spacing: .16em; text-transform: uppercase; color: var(--sage-light); opacity: .6; }
+
+  .story-pull { padding: 7rem 8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; background: var(--bark-pale); }
+  .story-pull-text .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
+  .story-pull-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.5vw, 3rem); font-weight: 400; color: var(--charcoal); line-height: 1.15; margin-bottom: 2rem; }
+  .story-pull-text h2 em { font-style: italic; color: var(--sage-text); }
+  .story-pull-text p { font-size: 1.0625rem; color: var(--muted); line-height: 1.9; margin-bottom: 2rem; }
+  .btn-bark { display: inline-block; padding: .9rem 2.4rem; border: 1px solid var(--bark); color: var(--bark); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+  .btn-bark:hover { background: var(--bark); color: var(--warm-white); }
+  .story-pull-visual { display: flex; align-items: center; justify-content: center; }
+  .story-quote { padding: 3rem; border: 1px solid rgba(92,74,58,.2); background: var(--warm-white); }
+  .story-quote p { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; font-style: italic; color: var(--charcoal); line-height: 1.6; margin-bottom: 1.5rem; }
+  .story-quote cite { font-size: .8125rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+
+  .process-section { padding: 7rem 8rem; border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .process-header { margin-bottom: 5rem; }
+  .process-header .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
+  .process-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.5vw, 3rem); font-weight: 400; color: var(--charcoal); line-height: 1.15; }
+  .process-header h2 em { font-style: italic; color: var(--sage-text); }
+  .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3rem; }
+  .process-step { display: flex; flex-direction: column; gap: 1rem; }
+  .process-dot { width: 2.5rem; height: 2.5rem; border-radius: 50%; border: 1px solid var(--sage-light); display: flex; align-items: center; justify-content: center; font-size: .6875rem; letter-spacing: .12em; color: var(--sage-text); }
+  .process-step-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--charcoal); }
+  .process-step-desc { font-size: .9375rem; color: var(--muted); line-height: 1.75; }
+
+  .testimonials-section { padding: 7rem 8rem; background: var(--cream); }
+  .testimonials-header { margin-bottom: 4rem; }
+  .testimonials-header .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
+  .testimonials-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.5vw, 3rem); font-weight: 400; color: var(--charcoal); line-height: 1.15; }
+  .testimonials-header h2 em { font-style: italic; color: var(--sage-text); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+  .testimonial-card { background: var(--warm-white); padding: 2.5rem; border: 1px solid rgba(122,108,100,0.08); }
+  .testimonial-card.placeholder { opacity: .5; }
+  .testimonial-text { font-family: 'Cormorant Garamond', serif; font-size: 1.125rem; font-style: italic; color: var(--charcoal); line-height: 1.7; margin-bottom: 1.5rem; }
+  .testimonial-author { font-size: .8125rem; font-weight: 500; color: var(--bark); }
+  .testimonial-condition { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-top: .3rem; }
+
+  .international-section { padding: 7rem 8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: start; }
+  .international-text .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
+  .international-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 400; color: var(--charcoal); line-height: 1.2; margin-bottom: 2rem; }
+  .international-text h2 em { font-style: italic; color: var(--sage-text); }
+  .international-text p { font-size: 1.0625rem; color: var(--muted); line-height: 1.95; margin-bottom: 1.3rem; }
+  .lang-flags { display: flex; gap: 1rem; margin-top: 1rem; }
+  .lang-pill { font-size: .8125rem; padding: .4rem 1rem; background: var(--sage-pale); color: var(--sage-text); border: 1px solid var(--sage-light); }
+  .regions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(122,108,100,0.1); }
+  .region-item { background: var(--warm-white); padding: 1.5rem; }
+  .region-name { font-size: .9375rem; font-weight: 400; color: var(--charcoal); margin-bottom: .4rem; }
+  .region-desc { font-size: .875rem; color: var(--muted); line-height: 1.6; }
+
+  .final-cta { padding: 9rem 8rem; background: var(--sage); text-align: center; position: relative; overflow: hidden; }
+  .final-cta::before { content: ''; position: absolute; inset: -50%; background: radial-gradient(ellipse at center, rgba(255,255,255,0.04) 0%, transparent 70%); }
+  .final-cta .eyebrow { position: relative; font-size: .75rem; letter-spacing: .26em; text-transform: uppercase; color: rgba(235,240,231,.6); margin-bottom: 2rem; }
+  .final-cta h2 { position: relative; font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; color: var(--cream); line-height: 1.15; margin-bottom: 1.5rem; }
+  .final-cta h2 em { font-style: italic; }
+  .final-cta p { position: relative; font-size: 1.0625rem; color: rgba(247,243,238,.65); max-width: 520px; margin: 0 auto 3rem; line-height: 1.85; }
+  .cta-buttons { position: relative; display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; }
+  .cta-btn-primary { display: inline-block; padding: 1.1rem 3rem; background: var(--bark); color: var(--cream); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+  .cta-btn-primary:hover { background: var(--charcoal); }
+  .cta-btn-secondary { display: inline-block; padding: 1.1rem 3rem; border: 1px solid rgba(247,243,238,.35); color: rgba(247,243,238,.75); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+  .cta-btn-secondary:hover { border-color: var(--cream); color: var(--cream); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes scrollPulse { 0%,100% { opacity: .3; transform: scaleY(1); } 50% { opacity: 1; transform: scaleY(1.2); } }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: .1s; }
+  .reveal-delay-2 { transition-delay: .2s; }
+  .reveal-delay-3 { transition-delay: .3s; }
+
+  @media (max-width: 1024px) {
+    nav { padding: 1.2rem 2rem; }
+    .hamburger { display: flex; }
+    .nav-links { display: none; position: fixed; top: 73px; left: 0; right: 0; background: rgba(253,250,247,0.98); backdrop-filter: blur(12px); flex-direction: column; gap: 0; padding: 1rem 0; border-bottom: 1px solid rgba(122,108,100,0.12); z-index: 99; }
+    .nav-links.open { display: flex; }
+    .nav-links li a { display: block; padding: .9rem 2rem; font-size: 1.0625rem; letter-spacing: .08em; color: var(--muted) !important; border-bottom: 1px solid rgba(122,108,100,0.06); }
+    .nav-book { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { display: none; }
+    .hero-left { padding: 9rem 2.5rem 5rem; }
+    .hero-bar { padding: 1.5rem 2.5rem; flex-wrap: wrap; gap: 1rem; }
+    .hero-bar-divider { display: none; }
+    .intro-strip, .different-section, .story-pull, .international-section { grid-template-columns: 1fr; gap: 3rem; }
+    .intro-strip, .who-section, .different-section, .therapies-section, .story-pull, .process-section, .testimonials-section, .international-section, .final-cta { padding-left: 2.5rem; padding-right: 2.5rem; }
+    .who-grid { grid-template-columns: 1fr; }
+    .therapies-grid { grid-template-columns: 1fr 1fr; }
+    .process-steps { grid-template-columns: 1fr 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .regions-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<nav id="main-nav">
+  <a href="/fr/" class="nav-logo" aria-label="Sara Lemaitre — Accueil">Sara Lemaitre</a>
+  <ul class="nav-links" id="nav-links-list">
+    <li><a href="/fr/therapies">Thérapies</a></li>
+    <li><a href="/fr/workshops">Ateliers</a></li>
+    <li><a href="/fr/walks">Balades</a></li>
+    <li><a href="/fr/consultancy">Consultance</a></li>
+    <li><a href="/fr/pricing">Tarifs</a></li>
+    <li><a href="/fr/story">Mon parcours</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:.5rem;">
+    <a href="/fr/book" class="nav-book">Prendre rendez-vous</a>
+    <a href="/" class="lang-toggle" aria-label="Switch to English">EN</a>
+    <button class="hamburger" id="hamburger-btn" aria-label="Menu" aria-expanded="false" aria-controls="nav-links-list">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Herboriste clinique · Naturopathe · Ancienne athlète de haut niveau</p>
+    <h1 class="hero-name">
+      Sara<br>
+      <em>Lemaitre</em>
+    </h1>
+    <div class="hero-credentials">
+      BSc Phytothérapie · Diplôme de Naturopathie<br>
+      Massage Crânien Indien · Formation en MTC<br>
+      Phytothérapie Occidentale · Études Ayurvédiques
+    </div>
+    <p class="hero-desc">J'accompagne les femmes qui ont été trop longtemps ignorées par la médecine conventionnelle. Et les sportifs dont le corps a cessé de coopérer. Je connais ces chemins — je les ai moi-même parcourus.</p>
+    <div class="hero-actions">
+      <a href="/fr/book" class="btn-primary">Consultation découverte gratuite</a>
+      <a href="/fr/story" class="btn-ghost">Mon parcours</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <svg class="hero-botanical" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="210" cy="210" r="180" stroke="#C4D0BA" stroke-width=".6" stroke-dasharray="4 8" fill="none" opacity=".4"/>
+      <circle cx="210" cy="210" r="130" stroke="#C4D0BA" stroke-width=".5" stroke-dasharray="2 6" fill="none" opacity=".3"/>
+      <path d="M210 110 Q240 160 210 210 Q180 160 210 110Z" stroke="#7A8C6E" stroke-width="1.2" fill="rgba(122,140,110,0.06)"/>
+      <path d="M210 310 Q240 260 210 210 Q180 260 210 310Z" stroke="#7A8C6E" stroke-width="1.2" fill="rgba(122,140,110,0.06)"/>
+      <path d="M110 210 Q160 240 210 210 Q160 180 110 210Z" stroke="#7A8C6E" stroke-width="1.2" fill="rgba(122,140,110,0.06)"/>
+      <path d="M310 210 Q260 240 210 210 Q260 180 310 210Z" stroke="#7A8C6E" stroke-width="1.2" fill="rgba(122,140,110,0.06)"/>
+      <circle cx="210" cy="210" r="18" stroke="#7A8C6E" stroke-width="1.2" fill="rgba(122,140,110,0.1)"/>
+      <circle cx="210" cy="210" r="6" fill="#7A8C6E" opacity=".4"/>
+      <line x1="210" y1="30" x2="210" y2="390" stroke="#7A8C6E" stroke-width=".4" opacity=".3"/>
+      <line x1="30" y1="210" x2="390" y2="210" stroke="#7A8C6E" stroke-width=".4" opacity=".3"/>
+    </svg>
+    <div class="scroll-hint">
+      <span>Défiler</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+
+  <div class="hero-bar">
+    <div class="hero-bar-item">
+      <span class="hero-bar-label">Spécialisations</span>
+      <span class="hero-bar-value">Santé hormonale · Sportifs · Burn-out</span>
+    </div>
+    <div class="hero-bar-divider"></div>
+    <div class="hero-bar-item">
+      <span class="hero-bar-label">Consultations</span>
+      <span class="hero-bar-value">En ligne & en présentiel</span>
+    </div>
+    <div class="hero-bar-divider"></div>
+    <div class="hero-bar-item">
+      <span class="hero-bar-label">Langues</span>
+      <span class="hero-bar-value">Français · English</span>
+    </div>
+    <div class="hero-bar-divider"></div>
+    <div class="hero-bar-item">
+      <span class="hero-bar-label">Clientèle</span>
+      <span class="hero-bar-value">Royaume-Uni & international</span>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro-strip reveal">
+  <div class="intro-strip-left">
+    <p class="eyebrow">La pratique</p>
+    <h2>Une médecine des plantes<br>ancrée dans le <em>vécu</em></h2>
+  </div>
+  <div class="intro-strip-right">
+    <p>Je ne suis pas arrivée à la phytothérapie par les livres. J'y suis arrivée après sept ans à être mise de côté par la médecine conventionnelle — un corps que je ne reconnaissais plus, une carrière sportive interrompue, et la conviction obstinée qu'une autre voie devait exister. Quand j'ai trouvé la médecine par les plantes, ça a fonctionné. Lentement, laborieusement, avec beaucoup d'essais. Mais ça a fonctionné.</p>
+    <p>Cette expérience — traverser l'<strong>endométriose, le SOPK et la fatigue chronique</strong> sans boussole — est le fondement de tout ce que je fais en consultation. Je sais ce que c'est de chercher des réponses quand le système ne vous en donne pas.</p>
+    <a href="/fr/story" class="read-more">Lire mon histoire complète</a>
+  </div>
+</section>
+
+<!-- QUI J'ACCOMPAGNE -->
+<section class="who-section">
+  <div class="who-header reveal">
+    <h2>Qui j'accompagne —<br>et <em>pourquoi</em></h2>
+    <p class="who-header-desc">Ma pratique n'est pas généraliste par hasard. Chaque spécialisation que je porte, je la porte parce que je l'ai traversée — en tant que patiente, athlète, ou praticienne ayant consacré deux ans à ces présentations cliniques en stage.</p>
+  </div>
+  <div class="who-grid">
+    <div class="who-card reveal">
+      <div class="who-card-number">01</div>
+      <div class="who-card-title">Femmes avec des troubles hormonaux</div>
+      <div class="who-card-desc">Endométriose, SOPK, fatigue chronique, périménopause, fertilité, irrégularités menstruelles. J'ai vécu ces conditions. Je les ai également traitées en clinique pendant deux ans. Cette combinaison est rare.</div>
+      <div class="who-card-tags">
+        <span class="who-tag">Endométriose</span>
+        <span class="who-tag">SOPK</span>
+        <span class="who-tag">Périménopause</span>
+        <span class="who-tag">Fatigue chronique</span>
+      </div>
+    </div>
+    <div class="who-card reveal reveal-delay-1">
+      <div class="who-card-number">02</div>
+      <div class="who-card-title">Sportifs & personnes actives</div>
+      <div class="who-card-desc">J'ai été athlète de haut niveau. Je comprends la performance, la récupération, le surentraînement, et le deuil particulier d'un corps qui ne coopère plus. Protocoles d'adaptogens, inflammation, dérèglement hormonal chez les sportifs.</div>
+      <div class="who-card-tags">
+        <span class="who-tag">Fatigue de performance</span>
+        <span class="who-tag">Récupération</span>
+        <span class="who-tag">Adaptogens</span>
+        <span class="who-tag">Soutien blessures</span>
+      </div>
+    </div>
+    <div class="who-card reveal reveal-delay-2">
+      <div class="who-card-number">03</div>
+      <div class="who-card-title">Personnes épuisées par le burn-out</div>
+      <div class="who-card-desc">Stress, dérégulation du système nerveux, fatigue surrénalienne, l'érosion silencieuse d'une vie menée à vide. La phytothérapie et la naturopathie disposent d'outils profonds pour cela.</div>
+      <div class="who-card-tags">
+        <span class="who-tag">Burn-out</span>
+        <span class="who-tag">Stress</span>
+        <span class="who-tag">Sommeil</span>
+        <span class="who-tag">Système nerveux</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CE QUI ME DISTINGUE -->
+<section class="different-section">
+  <div class="different-left reveal">
+    <p class="eyebrow">Ce qui fait la différence</p>
+    <h2>Une praticienne qui<br>a été là où<br><em>vous êtes</em></h2>
+    <p>Il existe beaucoup d'herboristes qualifiés. Peu ont traversé les conditions qu'ils traitent. Moins encore associent phytothérapie occidentale, naturopathie, formation en dispensaire MTC, études ayurvédiques, thérapie corporelle, et la compréhension d'une ancienne athlète de haut niveau — tout en consultant en anglais et en français.</p>
+    <p>Ce n'est pas une liste de diplômes. C'est une façon de voir la personne entière qui me fait face.</p>
+  </div>
+  <div class="different-right reveal reveal-delay-1">
+    <div class="diff-item">
+      <div class="diff-num">01</div>
+      <div>
+        <div class="diff-text-title">Une autorité vécue en santé hormonale</div>
+        <div class="diff-text-body">Rémission personnelle de l'endométriose, du SOPK et de la fatigue chronique. Deux ans de stage clinique spécialisé dans ces pathologies. Pas théorique — expérientiel.</div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">02</div>
+      <div>
+        <div class="diff-text-title">La tradition phytothérapeutique française</div>
+        <div class="diff-text-body">Enracinée dans une relation européenne à la médecine des plantes plus ancienne et plus intégrée cliniquement que la tradition britannique. Un prisme différent — et plus riche.</div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">03</div>
+      <div>
+        <div class="diff-text-title">Une profondeur multi-tradition</div>
+        <div class="diff-text-body">Phytothérapie occidentale, MTC (six mois en dispensaire), Ayurveda. Je mobilise les outils les plus adaptés à votre situation — pas un cadre unique appliqué à tous.</div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">04</div>
+      <div>
+        <div class="diff-text-title">La compréhension de l'athlète</div>
+        <div class="diff-text-body">Une carrière sportive au niveau national me donne une familiarité particulière avec les corps de performance — leur logique, leurs limites, et ce que ça coûte quand ils vous font défaut.</div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">05</div>
+      <div>
+        <div class="diff-text-title">Une pratique bilingue</div>
+        <div class="diff-text-body">Consultations en français et en anglais. Clients au Royaume-Uni, en France, en Belgique, au Québec et au-delà. Votre langue, votre confort, votre soin.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THÉRAPIES -->
+<section class="therapies-section">
+  <div class="therapies-header reveal">
+    <h2>Ce que je propose.<br><em>Ce que ça fait.</em></h2>
+    <a href="/fr/therapies">Voir toutes les thérapies →</a>
+  </div>
+  <div class="therapies-grid">
+    <a href="/fr/therapies#herbal" class="therapy-card reveal">
+      <svg class="therapy-card-icon" viewBox="0 0 48 48" fill="none">
+        <path d="M24 6 Q30 18 24 30 Q18 18 24 6Z" stroke="#C4D0BA" stroke-width="1.5" fill="none"/>
+        <path d="M24 30 Q30 42 24 48 Q18 42 24 30Z" stroke="#C4D0BA" stroke-width="1.2" fill="none"/>
+        <path d="M6 24 Q18 30 24 24 Q18 18 6 24Z" stroke="#C4D0BA" stroke-width="1.2" fill="none"/>
+        <path d="M42 24 Q30 30 24 24 Q30 18 42 24Z" stroke="#C4D0BA" stroke-width="1.2" fill="none"/>
+        <circle cx="24" cy="24" r="4" stroke="#C4D0BA" stroke-width="1.2" fill="none"/>
+      </svg>
+      <div class="therapy-card-title">Phytothérapie</div>
+      <div class="therapy-card-desc">Protocoles de plantes personnalisés, enracinés dans la phytothérapie occidentale et une formation multi-tradition. Le fondement de tout ce que je fais.</div>
+      <span class="therapy-card-link">Découvrir →</span>
+    </a>
+    <a href="/fr/therapies#naturopathy" class="therapy-card reveal reveal-delay-1">
+      <svg class="therapy-card-icon" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="18" stroke="#C4D0BA" stroke-width="1.5" fill="none"/>
+        <circle cx="24" cy="24" r="10" stroke="#C4D0BA" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
+        <circle cx="24" cy="24" r="4" stroke="#C4D0BA" stroke-width="1" fill="none"/>
+      </svg>
+      <div class="therapy-card-title">Naturopathie</div>
+      <div class="therapy-card-desc">Nutrition, hygiène de vie, soutien détox, approche des causes profondes des conditions chroniques. En complément de la phytothérapie ou en pratique autonome.</div>
+      <span class="therapy-card-link">Découvrir →</span>
+    </a>
+    <a href="/fr/therapies#ihm" class="therapy-card reveal reveal-delay-2">
+      <svg class="therapy-card-icon" viewBox="0 0 48 48" fill="none">
+        <ellipse cx="24" cy="18" rx="10" ry="12" stroke="#C4D0BA" stroke-width="1.5" fill="none"/>
+        <path d="M14 30 Q12 40 13 46" stroke="#C4D0BA" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M34 30 Q36 40 35 46" stroke="#C4D0BA" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M13 46 L35 46" stroke="#C4D0BA" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      <div class="therapy-card-title">Massage Crânien Indien</div>
+      <div class="therapy-card-desc">« Elles repartent comme si elles flottaient. » Réinitialisation immédiate du système nerveux. Dos, nuque, cuir chevelu, visage. En présentiel uniquement.</div>
+      <span class="therapy-card-link">Découvrir →</span>
+    </a>
+    <a href="/fr/therapies#athlete" class="therapy-card reveal reveal-delay-3">
+      <svg class="therapy-card-icon" viewBox="0 0 48 48" fill="none">
+        <ellipse cx="24" cy="24" rx="14" ry="18" stroke="#C4D0BA" stroke-width="1.5" fill="none"/>
+        <circle cx="24" cy="24" r="3" stroke="#C4D0BA" stroke-width="1.2" fill="none"/>
+      </svg>
+      <div class="therapy-card-title">Sportifs & Performance</div>
+      <div class="therapy-card-desc">Adaptogens, protocoles de récupération, inflammation, dérèglement hormonal à l'entraînement. Par une praticienne qui y a été elle aussi.</div>
+      <span class="therapy-card-link">Découvrir →</span>
+    </a>
+  </div>
+</section>
+
+<!-- MON HISTOIRE -->
+<section class="story-pull">
+  <div class="story-pull-text reveal">
+    <p class="eyebrow">L'histoire derrière la pratique</p>
+    <h2>Sept ans.<br>Une pandémie.<br>Un magnolia<br>qui <em>a refusé de mourir.</em></h2>
+    <p>Nageuse synchronisée de haut niveau. Équipe nationale. Puis — des règles invalidantes, six gynécologues, de la morphine en prévention quotidienne, une carrière arrachée. L'histoire de comment je suis passée de là à ici est la raison pour laquelle je suis devenue herboriste. Et c'est ce qui me permet de comprendre mes patients comme je le fais.</p>
+    <a href="/fr/story" class="btn-bark">Lire mon histoire complète</a>
+  </div>
+  <div class="story-pull-visual">
+    <div class="story-quote">
+      <p>« Je ne vivais pas. Je survivais. Jusqu'au jour où j'ai cessé d'attendre que quelqu'un d'autre me donne la permission de guérir. »</p>
+      <cite>— Sara Lemaitre</cite>
+    </div>
+  </div>
+</section>
+
+<!-- COMMENT ÇA FONCTIONNE -->
+<section class="process-section">
+  <div class="process-header reveal">
+    <p class="eyebrow">Comment ça fonctionne</p>
+    <h2>De la première conversation<br>à un <em>changement durable</em></h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="process-dot">01</div>
+      <div class="process-step-title">Consultation découverte</div>
+      <div class="process-step-desc">Gratuit · 15 minutes. On parle de là où vous en êtes et de ce dont vous avez besoin. Sans engagement. Juste de l'honnêteté.</div>
+    </div>
+    <div class="process-step reveal reveal-delay-1">
+      <div class="process-dot">02</div>
+      <div class="process-step-title">Consultation initiale</div>
+      <div class="process-step-desc">90 minutes. Anamnèse complète. Votre histoire, pas seulement vos symptômes. Un protocole écrit suit sous 48h.</div>
+    </div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="process-dot">03</div>
+      <div class="process-step-title">Votre protocole</div>
+      <div class="process-step-desc">Formulations herbales personnalisées, conseils naturopathiques, ajustements de mode de vie. Conçu pour votre corps.</div>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="process-dot">04</div>
+      <div class="process-step-title">Suivi continu</div>
+      <div class="process-step-desc">Consultations de suivi, ajustements, forfaits mensuels pour les patients réguliers. La guérison prend du temps. Je reste avec vous.</div>
+    </div>
+  </div>
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section class="testimonials-section">
+  <div class="testimonials-header reveal">
+    <p class="eyebrow">Ce que disent les patients</p>
+    <h2>En leurs <em>propres mots</em></h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <p class="testimonial-text">Je suis repartie du massage crânien comme si je flottais. J'ai sincèrement oublié où j'avais garé ma voiture. Une tension dans la nuque, présente depuis deux ans, avait tout simplement… disparu.</p>
+      <div class="testimonial-author">Patiente en stage clinique</div>
+      <div class="testimonial-condition">Massage crânien indien</div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-1 placeholder">
+      <p class="testimonial-text">Votre témoignage apparaîtra ici. Je prends contact avec les patients de mon stage clinique — si vous souhaitez partager votre expérience, n'hésitez pas à me contacter.</p>
+      <div class="testimonial-author">— À venir</div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-2 placeholder">
+      <p class="testimonial-text">D'autres témoignages à venir à l'ouverture officielle de la pratique. Chaque personne que j'ai accompagnée a une histoire qui mérite d'être partagée.</p>
+      <div class="testimonial-author">— À venir</div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERNATIONAL -->
+<section class="international-section reveal">
+  <div class="international-text">
+    <p class="eyebrow">Disponible partout</p>
+    <h2>Votre langue.<br>Votre fuseau horaire.<br><em>Votre soin.</em></h2>
+    <p>La plupart de mes consultations se déroulent en ligne. Cela signifie que les patients en France peuvent travailler avec une praticienne qui comprend la tradition phytothérapeutique française. Les patients en Australie, aux États-Unis ou dans le Golfe accèdent à une herboriste européenne qualifiée dans leur propre fuseau horaire.</p>
+    <p>Je pratique en français et en anglais. Je comprends le confort particulier de parler de sa santé dans sa langue maternelle.</p>
+    <div class="lang-flags">
+      <span class="lang-pill">🇫🇷 Français</span>
+      <span class="lang-pill">🇬🇧 English</span>
+    </div>
+  </div>
+  <div class="regions-grid">
+    <div class="region-item">
+      <div class="region-name">Royaume-Uni</div>
+      <div class="region-desc">En ligne & en présentiel. Marché principal. Enregistrée NIMH.</div>
+    </div>
+    <div class="region-item">
+      <div class="region-name">France & Europe francophone</div>
+      <div class="region-desc">Consultations en français. Tradition phytothérapeutique partagée.</div>
+    </div>
+    <div class="region-item">
+      <div class="region-name">Amérique du Nord</div>
+      <div class="region-desc">États-Unis & Canada. Fort besoin, peu de praticiens intégratifs qualifiés.</div>
+    </div>
+    <div class="region-item">
+      <div class="region-name">Australie & Nouvelle-Zélande</div>
+      <div class="region-desc">Forte culture des médecines complémentaires. En ligne.</div>
+    </div>
+    <div class="region-item">
+      <div class="region-name">Moyen-Orient</div>
+      <div class="region-desc">Émirats, Arabie Saoudite. Traditions herboristes valorisées. Communautés diaspora.</div>
+    </div>
+    <div class="region-item">
+      <div class="region-name">Afrique francophone</div>
+      <div class="region-desc">Afrique de l'Ouest & Centrale. Médecine par les plantes profondément ancrée.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final-cta reveal" id="book">
+  <p class="eyebrow">Commencer ici</p>
+  <h2>Si quelque chose dans tout cela<br>ressemble à votre histoire —<br><em>parlons-en.</em></h2>
+  <p>Une consultation découverte gratuite de 15 minutes. Sans pression, sans discours commercial. Une conversation honnête sur là où vous en êtes et si je suis la bonne personne pour vous accompagner.</p>
+  <div class="cta-buttons">
+    <a href="https://calendly.com/sara-lemaitre-herbalist" target="_blank" rel="noopener" class="cta-btn-primary">Réserver une consultation découverte</a>
+    <a href="/fr/pricing" class="cta-btn-secondary">Voir les tarifs & formules</a>
+  </div>
+</section>
+
+</BaseLayout>
+
+<script>
+  // Nav scroll effect
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => {
+    nav?.classList.toggle('scrolled', window.scrollY > 60);
+  });
+  // Hamburger
+  const btn = document.getElementById('hamburger-btn');
+  const links = document.getElementById('nav-links-list');
+  btn?.addEventListener('click', () => {
+    const open = links?.classList.toggle('open');
+    btn.setAttribute('aria-expanded', String(open));
+  });
+  // Reveal on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
+  }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+</script>
