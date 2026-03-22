@@ -1,0 +1,135 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const meta = {
+  title: "Ateliers de Phytothérapie | Sara Lemaitre — Londres & En ligne",
+  description: "Ateliers pratiques de phytothérapie : introduction aux plantes médicinales, santé hormonale, créez vos préparations, adaptogens & stress. Petits groupes. Français et anglais.",
+  ogImage: "https://www.saralemaitre.com/images/og-workshops.jpg",
+  canonical: "https://www.saralemaitre.com/fr/workshops",
+  navLight: false,
+  currentPage: 'workshops',
+  ogType: 'website',
+  lang: 'fr',
+};
+const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
+---
+<BaseLayout {...meta}>
+<style is:global>
+.ws-hero { padding: 10rem 8rem 7rem; background: var(--sage-pale); border-bottom: 1px solid rgba(92,74,58,0.08); }
+.ws-hero .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
+.ws-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.1; color: var(--charcoal); margin-bottom: 1.5rem; }
+.ws-hero h1 em { font-style: italic; color: var(--sage-text); }
+.ws-hero p { font-size: 1.125rem; color: var(--muted); max-width: 600px; line-height: 1.85; margin-bottom: 2.5rem; }
+.ws-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-bark { display: inline-block; padding: .9rem 2.4rem; border: 1px solid var(--bark); color: var(--bark); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+.btn-bark:hover { background: var(--bark); color: var(--warm-white); }
+.btn-ghost-bark { display: inline-block; padding: .9rem 2.4rem; border: 1px solid rgba(92,74,58,.3); color: var(--muted); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+.btn-ghost-bark:hover { border-color: var(--bark); color: var(--bark); }
+.ws-grid-section { padding: 6rem 8rem; background: var(--warm-white); }
+.ws-grid-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: var(--charcoal); margin-bottom: 3.5rem; }
+.ws-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.ws-card { background: var(--cream); border: 1px solid rgba(92,74,58,0.1); padding: 2.5rem; }
+.ws-card-tag { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1rem; display: block; }
+.ws-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--charcoal); margin-bottom: 1rem; }
+.ws-card p { font-size: .9375rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.25rem; }
+.ws-card-meta { display: flex; gap: 1.5rem; font-size: .8125rem; color: var(--muted); }
+.ws-card-meta span::before { content: '·'; margin-right: .5rem; color: var(--sage-light); }
+.ws-card-meta span:first-child::before { display: none; }
+.ws-info { padding: 6rem 8rem; background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; }
+.ws-info h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: var(--charcoal); margin-bottom: 2rem; }
+.ws-info p { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+.ws-info ul { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+.ws-info ul li { font-size: .9375rem; color: var(--muted); padding-left: 1.2rem; position: relative; }
+.ws-info ul li::before { content: '—'; position: absolute; left: 0; color: var(--sage-light); }
+.ws-cta { padding: 7rem 8rem; background: var(--charcoal); text-align: center; }
+.ws-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 400; color: var(--cream); margin-bottom: 1rem; }
+.ws-cta p { color: rgba(247,243,238,.5); margin-bottom: 2.5rem; }
+.ws-cta a { display: inline-block; padding: 1.1rem 3rem; background: var(--sage-light); color: var(--bark); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+.ws-cta a:hover { background: var(--cream); }
+@media (max-width: 1024px) {
+  .ws-hero, .ws-grid-section, .ws-info, .ws-cta { padding-left: 2.5rem; padding-right: 2.5rem; }
+  .ws-grid, .ws-info { grid-template-columns: 1fr; }
+}
+</style>
+
+<section class="ws-hero">
+  <p class="eyebrow">Ateliers de phytothérapie</p>
+  <h1>Apprenez à travailler<br>avec les <em>plantes médicinales</em></h1>
+  <p>Des ateliers pratiques en petits groupes — accessibles aux débutants comme aux curieux plus expérimentés. Découvrez comment identifier, préparer et utiliser les plantes pour votre santé, chez vous.</p>
+  <div class="ws-hero-actions">
+    <a href={CALENDLY} target="_blank" rel="noopener" class="btn-bark">Me contacter pour les prochaines dates</a>
+    <a href="/fr/book" class="btn-ghost-bark">Consulter individuellement</a>
+  </div>
+</section>
+
+<section class="ws-grid-section">
+  <h2>Les ateliers disponibles</h2>
+  <div class="ws-grid">
+    <div class="ws-card">
+      <span class="ws-card-tag">Débutants · Accessible à tous</span>
+      <h3>Introduction à la phytothérapie</h3>
+      <p>Qu'est-ce que la phytothérapie ? Comment les plantes agissent-elles sur le corps ? Quelles sont les formes galéniques — tisanes, teintures, baumes ? Un premier pas dans le monde des plantes médicinales.</p>
+      <div class="ws-card-meta">
+        <span>3 heures</span>
+        <span>Présentiel ou en ligne</span>
+        <span>Petit groupe</span>
+      </div>
+    </div>
+    <div class="ws-card">
+      <span class="ws-card-tag">Femmes · Santé hormonale</span>
+      <h3>Plantes & Hormones</h3>
+      <p>Les plantes alliées du cycle féminin, de la fertilité, du SOPK, de l'endométriose et de la périménopause. Comment les identifier, les utiliser en sécurité, et construire un protocole simple au quotidien.</p>
+      <div class="ws-card-meta">
+        <span>3 heures</span>
+        <span>Présentiel ou en ligne</span>
+        <span>Petit groupe</span>
+      </div>
+    </div>
+    <div class="ws-card">
+      <span class="ws-card-tag">Pratique · Création</span>
+      <h3>Composez vos propres préparations</h3>
+      <p>Apprenez à formuler vos propres mélanges — tisanes, huiles infusées, beurres corporels aux plantes. Vous repartez avec vos créations et les connaissances pour continuer chez vous.</p>
+      <div class="ws-card-meta">
+        <span>3–4 heures</span>
+        <span>Présentiel uniquement</span>
+        <span>Matériaux inclus</span>
+      </div>
+    </div>
+    <div class="ws-card">
+      <span class="ws-card-tag">Stress · Système nerveux</span>
+      <h3>Adaptogens & Réponse au stress</h3>
+      <p>Qu'est-ce qu'un adaptogen et pourquoi en a-t-on besoin aujourd'hui ? Ashwagandha, rhodiola, éleuthérocoque, tulsi — apprendre à les connaître, les choisir et les utiliser avec discernement.</p>
+      <div class="ws-card-meta">
+        <span>2–3 heures</span>
+        <span>Présentiel ou en ligne</span>
+        <span>Petit groupe</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ws-info">
+  <div>
+    <h2>Format & organisation</h2>
+    <p>Les ateliers se déroulent en petits groupes — généralement 6 à 12 personnes — pour permettre des échanges authentiques et des questions individuelles.</p>
+    <p>Certains ateliers sont proposés en présentiel à Londres, d'autres en ligne via Zoom. Les ateliers de création nécessitent la présence physique.</p>
+    <p>Tous les ateliers sont disponibles en français et en anglais. Les groupes peuvent être organisés dans l'une ou l'autre langue selon les participants.</p>
+  </div>
+  <div>
+    <h2>Pour qui ?</h2>
+    <ul>
+      <li>Débutants curieux sans aucune expérience préalable</li>
+      <li>Personnes souhaitant compléter leur consultation individuelle</li>
+      <li>Groupes d'amies, clubs bien-être, associations</li>
+      <li>Professionnels de santé souhaitant approfondir leurs connaissances en phytothérapie</li>
+      <li>Entreprises cherchant des formats bien-être originaux pour leurs équipes</li>
+    </ul>
+  </div>
+</section>
+
+<section class="ws-cta">
+  <h2>Prochaines dates & inscriptions</h2>
+  <p>Les ateliers sont organisés au fil des saisons. Contactez-moi pour connaître les prochaines dates ou organiser un atelier privé pour votre groupe.</p>
+  <a href={CALENDLY} target="_blank" rel="noopener">Me contacter</a>
+</section>
+
+</BaseLayout>
