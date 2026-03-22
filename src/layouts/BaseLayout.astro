@@ -165,12 +165,11 @@ const schemas = [sharedSchema, ...(schema ? (Array.isArray(schema) ? schema : [s
       rel={bookTarget ? 'noopener noreferrer' : undefined}
     >{bookLabel}</a>
 
-    <button
+    <a
+      href="/fr/"
       class="lang-toggle"
-      data-current-lang="en"
-      aria-label="Switch to French"
-      onclick="SL_toggleLang(this)"
-    >FR</button>
+      aria-label="Passer en français"
+    >FR</a>
 
     <button
       class="hamburger"
