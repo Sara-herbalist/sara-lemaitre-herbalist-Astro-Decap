@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const meta = {
+  title: "Thank you — Sara Lemaitre",
+  description: "Message received. Sara will be in touch within two working days.",
+  canonical: "https://www.saralemaitre.com/thank-you",
+  navLight: true,
+  currentPage: '',
+};
+---
+
+<BaseLayout {...meta}>
+
+<style is:global>
+  body { min-height: 100vh; display: flex; flex-direction: column; }
+  .thankyou-wrap {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 8rem 2rem;
+  }
+  .thankyou-inner { max-width: 520px; }
+  .thankyou-icon {
+    width: 60px; height: 60px; border-radius: 50%;
+    background: var(--sage-light);
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 2rem;
+  }
+  .thankyou-icon svg { width: 28px; height: 28px; stroke: var(--bark); stroke-width: 1.5; fill: none; }
+  .thankyou-inner h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem); font-weight: 300;
+    line-height: 1.15; margin-bottom: 1rem; color: var(--bark);
+  }
+  .thankyou-inner h1 em { font-style: italic; color: var(--sage-text); }
+  .thankyou-inner p { font-size: 1rem; color: var(--muted); line-height: 1.9; margin-bottom: 2rem; }
+  .thankyou-inner a {
+    display: inline-block; padding: .85rem 2.2rem;
+    border: 1px solid var(--bark); color: var(--bark);
+    text-decoration: none; font-size: .9375rem; letter-spacing: .16em;
+    text-transform: uppercase; transition: all .22s;
+  }
+  .thankyou-inner a:hover { background: var(--bark); color: var(--warm-white); }
+</style>
+
+<div id="main-content" class="thankyou-wrap">
+  <div class="thankyou-inner">
+    <div class="thankyou-icon">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <h1>Message <em>received</em></h1>
+    <p data-i18n="thankyou.body">Thank you for getting in touch. I will be back with you within two working days.</p>
+    <a href="/" data-i18n="thankyou.back">Back to home</a>
+  </div>
+</div>
+
+</BaseLayout>
