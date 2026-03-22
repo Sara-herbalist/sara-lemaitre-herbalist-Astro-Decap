@@ -1,0 +1,1219 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const meta = {
+  title: "Sara Lemaitre | Clinical Herbalist & Naturopath | Hormonal Health, Endometriosis, PCOS",
+  description: "Clinical herbalist and naturopath specialising in endometriosis, PCOS and chronic fatigue. Former elite athlete. Online consultations in English and French, UK and international.",
+  ogImage: "https://www.saralemaitre.com/images/og-home.jpg",
+  canonical: "https://www.saralemaitre.com",
+  navLight: false,
+  currentPage: 'index',
+  ogType: 'website',
+};
+---
+
+<BaseLayout {...meta}>
+
+<style is:global>
+:root {
+    --cream: #F7F3EE;
+    --warm-white: #FDFAF7;
+    --sage: #7A8C6E;
+    --sage-text: #4E6245;
+    --sage-light: #C4D0BA;
+    --sage-pale: #EBF0E7;
+    --bark: #5C4A3A;
+    --bark-light: #8C7060;
+    --bark-pale: #EDE5DC;
+    --charcoal: #2A2420;
+    --muted: #6A5E58;
+    --gold: #C4A25A;
+    --gold-pale: #F5EDD6;
+    --plum-pale: #F0EAF0;
+    --amber-pale: #FBF0E3;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--warm-white);
+    color: var(--charcoal);
+    font-family: 'Jost', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 300;
+    line-height: 1.85;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.5rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(92,74,58,0.15); /* subtle dark tint so text reads on both sides */
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid transparent;
+    transition: background .4s, backdrop-filter .4s, border-color .4s;
+  }
+  nav.scrolled {
+    background: rgba(253,250,247,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom-color: rgba(122,108,100,0.1);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 400;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: var(--cream); text-decoration: none;
+    transition: color .4s;
+  }
+  nav.scrolled .nav-logo { color: var(--bark); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: .9375rem; letter-spacing: .14em; text-transform: uppercase;
+    color: rgba(247,243,238,.85); text-decoration: none; transition: color .2s;
+  }
+  nav.scrolled .nav-links a { color: var(--muted); }
+  .nav-links a:hover, nav.scrolled .nav-links a:hover { color: var(--bark); }
+  .nav-book {
+    font-size: .9375rem; letter-spacing: .16em; text-transform: uppercase;
+    padding: .7rem 1.8rem;
+    border: 1px solid rgba(247,243,238,.7);
+    color: var(--cream); text-decoration: none;
+    transition: all .3s;
+  }
+  nav.scrolled .nav-book {
+    border-color: var(--bark);
+    color: var(--bark);
+  }
+  .nav-book:hover { background: var(--cream); color: var(--bark); border-color: var(--cream); }
+  nav.scrolled .nav-book:hover { background: var(--bark); color: var(--cream); border-color: var(--bark); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+  }
+  .hero-left {
+    background: var(--bark);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 10rem 5rem 6rem 8rem;
+    position: relative; overflow: hidden;
+  }
+  /* large decorative letter behind hero text */
+  .hero-left::before {
+    content: 'S';
+    position: absolute; bottom: -4rem; left: -1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28rem; font-weight: 300; line-height: 1;
+    color: rgba(247,243,238,0.04);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-size: .75rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--sage-light); margin-bottom: 2rem;
+    opacity: 0; animation: fadeUp .8s .1s forwards;
+    line-height: 1.6;
+  }
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3.2rem, 5.5vw, 5rem);
+    font-weight: 300; line-height: 1.0;
+    color: var(--cream); margin-bottom: .6rem;
+    opacity: 0; animation: fadeUp .8s .25s forwards;
+  }
+  .hero-name em { font-style: italic; color: var(--sage-light); }
+  .hero-credentials {
+    font-size: 1rem; letter-spacing: .06em;
+    color: rgba(247,243,238,.55); margin-bottom: 3.5rem;
+    opacity: 0; animation: fadeUp .8s .4s forwards;
+    line-height: 2;
+  }
+  .hero-desc {
+    font-size: 1.0625rem; color: rgba(247,243,238,.82);
+    line-height: 1.9; max-width: 440px; margin-bottom: 3rem;
+    opacity: 0; animation: fadeUp .8s .5s forwards;
+  }
+  .hero-desc strong { color: var(--cream); font-weight: 400; }
+  .hero-actions {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    opacity: 0; animation: fadeUp .8s .65s forwards;
+  }
+  .btn-primary {
+    display: inline-block; padding: .95rem 2.5rem;
+    background: var(--sage-light); color: var(--bark);
+    text-decoration: none; font-size: .9375rem;
+    letter-spacing: .18em; text-transform: uppercase;
+    transition: all .22s; font-weight: 400;
+  }
+  .btn-primary:hover { background: var(--cream); }
+  .btn-ghost {
+    display: inline-block; padding: .95rem 2.5rem;
+    border: 1px solid rgba(247,243,238,.25);
+    color: rgba(247,243,238,.6);
+    text-decoration: none; font-size: .9375rem;
+    letter-spacing: .18em; text-transform: uppercase;
+    transition: all .22s;
+  }
+  .btn-ghost:hover { border-color: var(--sage-light); color: var(--sage-light); }
+
+  .hero-right {
+    background: var(--sage-pale);
+    position: relative; overflow: hidden;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    opacity: 0; animation: fadeIn 1.4s .2s forwards;
+  }
+  /* botanical mandala */
+  .hero-botanical {
+    width: min(420px, 70%);
+    height: min(420px, 70%);
+    position: relative; z-index: 1;
+  }
+  /* scroll indicator */
+  .scroll-hint {
+    position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: .5rem;
+    opacity: 0; animation: fadeIn 1s 1.4s forwards;
+  }
+  .scroll-hint span {
+    font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--sage-text);
+  }
+  .scroll-line {
+    width: 1px; height: 40px; background: var(--sage-light);
+    animation: scrollPulse 2s 1.6s infinite;
+  }
+  @keyframes scrollPulse {
+    0%,100% { opacity: .3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.2); }
+  }
+
+  /* hero bottom bar */
+  .hero-bar {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: rgba(92,74,58,.85);
+    backdrop-filter: blur(6px);
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1.2rem 8rem;
+    border-top: 1px solid rgba(247,243,238,.08);
+    opacity: 0; animation: fadeIn .8s 1s forwards;
+    z-index: 10;
+  }
+  .hero-bar-item {
+    display: flex; flex-direction: column; gap: .2rem;
+    text-align: center;
+  }
+  .hero-bar-label {
+    font-size: .75rem; letter-spacing: .18em; text-transform: uppercase;
+    color: rgba(247,243,238,.4);
+  }
+  .hero-bar-value {
+    font-size: 1rem; color: var(--cream); font-weight: 400;
+  }
+  .hero-bar-divider {
+    width: 1px; height: 36px;
+    background: rgba(247,243,238,.12);
+  }
+
+  /* ── INTRO STRIP ── */
+  .intro-strip {
+    padding: 8rem 8rem;
+    display: grid; grid-template-columns: 1fr 1.6fr;
+    gap: 6rem; align-items: center;
+    border-bottom: 1px solid rgba(122,108,100,0.1);
+  }
+  .intro-strip-left {}
+  .intro-strip-left .eyebrow {
+    font-size: .75rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--sage-text); margin-bottom: 1.5rem;
+  }
+  .intro-strip-left h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+    font-weight: 300; color: var(--bark);
+    line-height: 1.15;
+  }
+  .intro-strip-left h2 em { font-style: italic; color: var(--sage-text); }
+  .intro-strip-right p {
+    font-size: 1.0625rem; color: #4A403C;
+    line-height: 2; margin-bottom: 1.4rem;
+  }
+  .intro-strip-right p:last-child { margin-bottom: 0; }
+  .intro-strip-right p strong { font-weight: 500; color: var(--bark); }
+  .read-more {
+    display: inline-flex; align-items: center; gap: .6rem;
+    margin-top: 1.8rem;
+    font-size: .9375rem; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--sage-text); text-decoration: none; transition: color .2s;
+  }
+  .read-more:hover { color: var(--bark); }
+  .read-more::after {
+    content: '→'; font-size: 1.0625rem; transition: transform .2s;
+  }
+  .read-more:hover::after { transform: translateX(4px); }
+
+  /* ── WHO I HELP ── */
+  .who-section {
+    background: var(--cream);
+    padding: 8rem;
+    border-bottom: 1px solid rgba(122,108,100,0.1);
+  }
+  .who-header {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; margin-bottom: 5rem; align-items: end;
+  }
+  .who-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    font-weight: 300; color: var(--bark); line-height: 1.15;
+  }
+  .who-header h2 em { font-style: italic; color: var(--sage-text); }
+  .who-header-desc {
+    font-size: 1.0625rem; color: var(--muted);
+    line-height: 1.95;
+    border-left: 2px solid var(--sage-light);
+    padding-left: 1.5rem;
+  }
+  .who-grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.5px;
+    background: rgba(122,108,100,0.12);
+  }
+  .who-card {
+    background: var(--warm-white);
+    padding: 3rem 2.5rem;
+    transition: background .22s;
+    cursor: default;
+  }
+  .who-card:hover { background: var(--sage-pale); }
+  .who-card-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem; font-weight: 300; color: var(--sage-light);
+    line-height: 1; margin-bottom: 1.2rem;
+  }
+  .who-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-weight: 400; color: var(--bark);
+    margin-bottom: .8rem; line-height: 1.2;
+  }
+  .who-card-desc {
+    font-size: 1rem; color: var(--muted);
+    line-height: 1.8;
+  }
+  .who-card-tags {
+    margin-top: 1.2rem; display: flex; flex-wrap: wrap; gap: .4rem;
+  }
+  .who-tag {
+    font-size: .9375rem; padding: .25rem .8rem;
+    background: var(--cream); color: var(--bark-light);
+    border: 1px solid rgba(122,108,100,0.2);
+    border-radius: 20px;
+  }
+
+  /* ── WHAT MAKES ME DIFFERENT ── */
+  .different-section {
+    padding: 8rem;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 8rem; align-items: center;
+    border-bottom: 1px solid rgba(122,108,100,0.1);
+  }
+  .different-left .eyebrow {
+    font-size: .75rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--sage-text); margin-bottom: 1.5rem;
+  }
+  .different-left h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.2vw, 3rem);
+    font-weight: 300; color: var(--bark); line-height: 1.15;
+    margin-bottom: 2.5rem;
+  }
+  .different-left h2 em { font-style: italic; color: var(--sage-text); }
+  .different-left p {
+    font-size: 1.0625rem; color: #4A403C;
+    line-height: 1.95; margin-bottom: 1.3rem;
+  }
+  .different-right {
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .diff-item {
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(122,108,100,0.12);
+    display: grid; grid-template-columns: 44px 1fr; gap: 1.2rem;
+    align-items: flex-start;
+  }
+  .diff-item:first-child { border-top: 1px solid rgba(122,108,100,0.12); }
+  .diff-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.6rem; font-weight: 300; color: var(--sage-light);
+    line-height: 1; padding-top: .2rem;
+  }
+  .diff-text-title {
+    font-size: 1.0625rem; font-weight: 500; color: var(--bark);
+    margin-bottom: .3rem;
+  }
+  .diff-text-body {
+    font-size: 1rem; color: var(--muted); line-height: 1.75;
+  }
+
+  /* ── FEATURED THERAPIES ── */
+  .therapies-section {
+    background: var(--bark);
+    padding: 8rem;
+    border-bottom: 1px solid rgba(122,108,100,0.1);
+  }
+  .therapies-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 4rem;
+  }
+  .therapies-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300; color: var(--cream); line-height: 1.15;
+  }
+  .therapies-header h2 em { font-style: italic; color: var(--sage-light); }
+  .therapies-header a {
+    font-size: .9375rem; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--sage-light); text-decoration: none; transition: color .2s;
+    white-space: nowrap;
+  }
+  .therapies-header a:hover { color: var(--cream); }
+  .therapies-grid {
+    display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px;
+    background: rgba(247,243,238,.06);
+  }
+  .therapy-card {
+    background: var(--bark);
+    padding: 2.5rem 2rem;
+    border: 1px solid rgba(247,243,238,.07);
+    text-decoration: none;
+    transition: background .22s;
+    display: flex; flex-direction: column;
+  }
+  .therapy-card:hover { background: rgba(247,243,238,.05); }
+  .therapy-card-icon {
+    width: 48px; height: 48px; margin-bottom: 1.8rem; opacity: .6;
+  }
+  .therapy-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem; font-weight: 400; color: var(--cream);
+    margin-bottom: .6rem; line-height: 1.2;
+  }
+  .therapy-card-desc {
+    font-size: 1rem; color: rgba(247,243,238,.5);
+    line-height: 1.75; flex: 1;
+  }
+  .therapy-card-link {
+    margin-top: 1.5rem; font-size: .75rem; letter-spacing: .14em;
+    text-transform: uppercase; color: var(--sage-light);
+    display: flex; align-items: center; gap: .4rem;
+    transition: gap .2s;
+  }
+  .therapy-card:hover .therapy-card-link { gap: .7rem; }
+
+  /* ── STORY PULL ── */
+  .story-pull {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid rgba(122,108,100,0.1);
+  }
+  .story-pull-text {
+    padding: 8rem;
+    background: var(--warm-white);
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .story-pull-text .eyebrow {
+    font-size: .75rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--sage-text); margin-bottom: 1.5rem;
+  }
+  .story-pull-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300; color: var(--bark); line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+  .story-pull-text h2 em { font-style: italic; color: var(--sage-text); }
+  .story-pull-text p {
+    font-size: 1.0625rem; color: #4A403C;
+    line-height: 1.95; margin-bottom: 1.3rem; max-width: 480px;
+  }
+  .story-pull-text .btn-bark {
+    display: inline-block; margin-top: .8rem;
+    padding: .9rem 2.4rem;
+    border: 1px solid var(--bark); color: var(--bark);
+    text-decoration: none; font-size: .9375rem;
+    letter-spacing: .18em; text-transform: uppercase;
+    transition: all .22s; align-self: flex-start;
+  }
+  .story-pull-text .btn-bark:hover { background: var(--bark); color: var(--warm-white); }
+  .story-pull-visual {
+    background: var(--bark-pale);
+    position: relative; overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    padding: 4rem;
+  }
+  .story-pull-visual::after {
+    content: '"';
+    position: absolute; top: 2rem; left: 3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12rem; line-height: 1; font-weight: 300;
+    color: var(--sage-light); opacity: .2;
+    pointer-events: none;
+  }
+  .story-quote {
+    position: relative; z-index: 1;
+    max-width: 400px; text-align: center;
+  }
+  .story-quote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-style: italic; font-weight: 300;
+    color: var(--bark); line-height: 1.6; margin-bottom: 1.5rem;
+  }
+  .story-quote cite {
+    font-size: .75rem; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── PROCESS ── */
+  .process-section {
+    background: var(--cream);
+    padding: 8rem;
+    border-bottom: 1px solid rgba(122,108,100,0.1);
+  }
+  .process-header {
+    text-align: center; margin-bottom: 5rem;
+  }
+  .process-header .eyebrow {
+    font-size: .75rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--sage-text); margin-bottom: 1.2rem;
+  }
+  .process-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300; color: var(--bark); line-height: 1.2;
+  }
+  .process-header h2 em { font-style: italic; color: var(--sage-text); }
+  .process-steps {
+    display: grid; grid-template-columns: repeat(4, minmax(0,1fr));
+    gap: 0; position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute; top: 28px; left: calc(12.5%); right: calc(12.5%);
+    height: 1px; background: var(--sage-light); opacity: .5;
+    z-index: 0;
+  }
+  .process-step {
+    padding: 0 2rem;
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; position: relative; z-index: 1;
+  }
+  .process-dot {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--warm-white);
+    border: 1px solid var(--sage-light);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 1.8rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; font-weight: 300; color: var(--sage-text);
+  }
+  .process-step-title {
+    font-size: 1rem; font-weight: 500; color: var(--bark);
+    margin-bottom: .6rem;
+  }
+  .process-step-desc {
+    font-size: 1rem; color: var(--muted); line-height: 1.75;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials-section {
+    padding: 8rem;
+    border-bottom: 1px solid rgba(122,108,100,0.1);
+  }
+  .testimonials-header { margin-bottom: 4rem; }
+  .testimonials-header .eyebrow {
+    font-size: .75rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--sage-text); margin-bottom: 1.2rem;
+  }
+  .testimonials-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.6rem);
+    font-weight: 300; color: var(--bark); line-height: 1.2;
+  }
+  .testimonials-header h2 em { font-style: italic; color: var(--sage-text); }
+  .testimonials-grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 2rem;
+  }
+  .testimonial-card {
+    padding: 2.5rem;
+    border: 1px solid rgba(122,108,100,0.12);
+    background: var(--warm-white);
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: '"';
+    position: absolute; top: 1.5rem; left: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem; line-height: 1; font-weight: 300;
+    color: var(--sage-light); opacity: .4; pointer-events: none;
+  }
+  .testimonial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.125rem; font-style: italic;
+    color: var(--bark); line-height: 1.7;
+    padding-top: 1.2rem; margin-bottom: 1.5rem;
+  }
+  .testimonial-author {
+    font-size: .9375rem; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .testimonial-condition {
+    font-size: .9375rem; color: var(--sage-text); margin-top: .2rem;
+  }
+  /* placeholder style */
+  .testimonial-card.placeholder { opacity: .5; border-style: dashed; }
+  .testimonial-card.placeholder .testimonial-text { font-style: normal; font-size: 1.0625rem; font-family: 'Jost', sans-serif; }
+
+  /* ── INTERNATIONAL ── */
+  .international-section {
+    background: var(--sage);
+    padding: 7rem 8rem;
+    display: grid; grid-template-columns: 1.2fr 1fr;
+    gap: 6rem; align-items: center;
+    border-bottom: 1px solid rgba(122,108,100,0.1);
+  }
+  .international-text .eyebrow {
+    font-size: .75rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--sage-pale); margin-bottom: 1.5rem;
+  }
+  .international-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300; color: var(--cream); line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+  .international-text h2 em { font-style: italic; color: var(--sage-pale); }
+  .international-text p {
+    font-size: 1.0625rem; color: rgba(247,243,238,.75);
+    line-height: 1.95; margin-bottom: 1.3rem; max-width: 500px;
+  }
+  .lang-flags {
+    display: flex; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;
+  }
+  .lang-pill {
+    display: flex; align-items: center; gap: .5rem;
+    padding: .5rem 1.2rem;
+    border: 1px solid rgba(247,243,238,.25);
+    color: rgba(247,243,238,.8); font-size: 1rem;
+  }
+  .regions-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  }
+  .region-item {
+    padding: 1.4rem 1.5rem;
+    border: 1px solid rgba(247,243,238,.12);
+    background: rgba(247,243,238,.04);
+    transition: background .2s;
+  }
+  .region-item:hover { background: rgba(247,243,238,.08); }
+  .region-name {
+    font-size: 1rem; font-weight: 400; color: var(--cream);
+    margin-bottom: .25rem;
+  }
+  .region-desc {
+    font-size: .9375rem; color: rgba(247,243,238,.5); line-height: 1.5;
+  }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    padding: 10rem 8rem;
+    text-align: center;
+    background: var(--warm-white);
+    position: relative; overflow: hidden;
+  }
+  .final-cta::before {
+    content: 'Magnolia';
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18rem; font-weight: 300;
+    color: var(--sage-light); opacity: .06;
+    pointer-events: none; white-space: nowrap;
+  }
+  .final-cta .eyebrow {
+    font-size: .75rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--sage-text); margin-bottom: 2rem;
+    position: relative;
+  }
+  .final-cta h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 300; color: var(--bark);
+    line-height: 1.15; margin-bottom: 1.5rem;
+    position: relative;
+  }
+  .final-cta h2 em { font-style: italic; color: var(--sage-text); }
+  .final-cta p {
+    font-size: 1.0625rem; color: var(--muted);
+    line-height: 1.9; max-width: 540px;
+    margin: 0 auto 3.5rem; position: relative;
+  }
+  .cta-buttons {
+    display: flex; gap: 1.2rem; justify-content: center;
+    flex-wrap: wrap; position: relative;
+  }
+  .cta-btn-primary {
+    display: inline-block; padding: 1.1rem 3rem;
+    background: var(--bark); color: var(--cream);
+    text-decoration: none; font-size: .9375rem;
+    letter-spacing: .18em; text-transform: uppercase;
+    transition: all .22s;
+  }
+  .cta-btn-primary:hover { background: var(--charcoal); }
+  .cta-btn-secondary {
+    display: inline-block; padding: 1.1rem 3rem;
+    border: 1px solid rgba(92,74,58,.3); color: var(--bark-light);
+    text-decoration: none; font-size: .9375rem;
+    letter-spacing: .18em; text-transform: uppercase;
+    transition: all .22s;
+  }
+  .cta-btn-secondary:hover { border-color: var(--bark); color: var(--bark); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    padding: 5rem 8rem 3rem;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 4rem; margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid rgba(247,243,238,.08);
+  }
+  .footer-brand .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 400; letter-spacing: .12em;
+    text-transform: uppercase; color: var(--cream);
+    display: block; margin-bottom: 1rem;
+  }
+  .footer-brand p {
+    font-size: 1rem; color: rgba(247,243,238,.4);
+    line-height: 1.8; max-width: 260px;
+  }
+  .footer-col-title {
+    font-size: .75rem; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--sage-light); margin-bottom: 1.2rem;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
+  .footer-links a {
+    font-size: 1rem; color: rgba(247,243,238,.4);
+    text-decoration: none; transition: color .2s;
+  }
+  .footer-links a:hover { color: var(--cream); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-bottom p {
+    font-size: .9375rem; letter-spacing: .08em;
+    color: rgba(247,243,238,.2);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(22px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+  }
+  .reveal {
+    opacity: 0; transform: translateY(24px);
+    transition: opacity .75s ease, transform .75s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: .1s; }
+  .reveal-delay-2 { transition-delay: .2s; }
+  .reveal-delay-3 { transition-delay: .3s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1024px) {
+    nav { padding: 1.2rem 2rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 8rem 2.5rem 10rem; min-height: 100vh; }
+    .hero-right { display: none; }
+    .hero-bar { padding: 1rem 2rem; }
+    .intro-strip { grid-template-columns: 1fr; padding: 5rem 2.5rem; gap: 3rem; }
+    .who-section { padding: 5rem 2.5rem; }
+    .who-header { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 3rem; }
+    .who-grid { grid-template-columns: 1fr; }
+    .different-section { grid-template-columns: 1fr; padding: 5rem 2.5rem; gap: 4rem; }
+    .therapies-section { padding: 5rem 2.5rem; }
+    .therapies-grid { grid-template-columns: 1fr 1fr; }
+    .story-pull { grid-template-columns: 1fr; }
+    .story-pull-text { padding: 5rem 2.5rem; }
+    .story-pull-visual { display: none; }
+    .process-section { padding: 5rem 2.5rem; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    .process-steps::before { display: none; }
+    .testimonials-section { padding: 5rem 2.5rem; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .international-section { grid-template-columns: 1fr; padding: 5rem 2.5rem; gap: 3rem; }
+    .final-cta { padding: 6rem 2.5rem; }
+    footer { padding: 4rem 2.5rem 2rem; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+
+  /* ── WCAG 2.2 AA: Visible focus indicators ── */
+  :focus-visible {
+    outline: 3px solid #5C4A3A;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  a:focus-visible, button:focus-visible, input:focus-visible,
+  select:focus-visible, textarea:focus-visible {
+    outline: 3px solid #5C4A3A;
+    outline-offset: 3px;
+  }
+
+  /* Screen-reader only utility */
+  .sr-only {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── Skip navigation link ── */
+  .skip-nav {
+    position: absolute; top: -100px; left: 1rem; z-index: 9999;
+    background: #5C4A3A; color: #F7F3EE;
+    padding: .75rem 1.5rem; font-size: 1.0625rem;
+    text-decoration: none; border-radius: 0 0 4px 4px;
+    transition: top .2s;
+  }
+  .skip-nav:focus { top: 0; }
+
+
+  /* ── Mobile hamburger menu ── */
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer;
+    padding: .5rem; margin-left: .5rem;
+  }
+  .hamburger span {
+    display: block; width: 22px; height: 2px;
+    background: var(--bark); border-radius: 2px;
+    transition: all .25s;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  
+  @media (max-width: 1024px) {
+    .hamburger { display: flex; }
+    .nav-links {
+      display: none; position: fixed; top: 73px; left: 0; right: 0;
+      background: rgba(253,250,247,0.98); backdrop-filter: blur(12px);
+      flex-direction: column; gap: 0; padding: 1rem 0;
+      border-bottom: 1px solid rgba(122,108,100,0.12);
+      z-index: 99;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links li a {
+      display: block; padding: .9rem 2rem;
+      font-size: 1.0625rem; letter-spacing: .08em;
+      border-bottom: 1px solid rgba(122,108,100,0.06);
+    }
+    .nav-book { display: none; }
+  }
+
+
+
+  .lang-toggle {
+    font-size: .75rem; letter-spacing: .16em; text-transform: uppercase;
+    padding: .45rem .9rem; border: 1px solid rgba(247,243,238,.5);
+    background: none; color: rgba(247,243,238,.85); cursor: pointer;
+    font-family: 'Jost', sans-serif; border-radius: 2px;
+    transition: all .3s; margin-left: .5rem;
+  }
+  nav.scrolled .lang-toggle { border-color: rgba(92,74,58,.35); color: var(--muted); }
+  .lang-toggle:hover, nav.scrolled .lang-toggle:hover { border-color: var(--bark); color: var(--bark); }
+
+
+  /* Pages with light-coloured heroes — nav starts dark */
+  body[data-nav="light"] nav {
+    background: rgba(253,250,247,0.85);
+    backdrop-filter: blur(8px);
+  }
+  body[data-nav="light"] .nav-logo { color: var(--bark); }
+  body[data-nav="light"] .nav-links a { color: var(--muted); }
+  body[data-nav="light"] .nav-links a:hover { color: var(--bark); }
+  body[data-nav="light"] .nav-book { border-color: var(--bark); color: var(--bark); }
+  body[data-nav="light"] .lang-toggle { border-color: rgba(92,74,58,.35); color: var(--muted); }
+</style>
+
+<!-- ══ HERO ══ -->
+<section id="main-content" role="main" class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow" data-i18n="index.hero.eyebrow">Clinical herbalist · Naturopath · Former elite athlete</p>
+    <h1 class="hero-name">Sara<br><em>Lemaitre</em></h1>
+    <p class="hero-credentials">
+      BSc Herbal Medicine · Naturopathy Diploma<br>
+      Indian Head Massage · TCM Dispensary Training<br>
+      Western Phytotherapy · Ayurvedic Studies
+    </p>
+    <p class="hero-desc">
+      I work with women who are <strong>tired of being dismissed</strong>. With athletes whose bodies have stopped cooperating. With anyone who suspects there is a different way — and needs someone who has walked that road themselves.
+    </p>
+    <div class="hero-actions">
+      <a href="https://calendly.com/sara-lemaitre-herbalist" target="_blank" rel="noopener" class="btn-primary" data-i18n="index.hero.cta1">Book a free discovery call</a>
+      <a href="/story" class="btn-ghost" data-i18n="index.hero.cta2">Read my story</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <!-- Botanical illustration -->
+    <svg class="hero-botanical" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- outer rings -->
+      <circle cx="210" cy="210" r="180" stroke="#7A8C6E" stroke-width=".6" stroke-dasharray="2 8" opacity=".4"/>
+      <circle cx="210" cy="210" r="140" stroke="#7A8C6E" stroke-width=".8" stroke-dasharray="3 6" opacity=".5"/>
+      <circle cx="210" cy="210" r="100" stroke="#7A8C6E" stroke-width="1" opacity=".4"/>
+      <!-- petals — 8 directions -->
+      <path d="M210 110 Q240 160 210 210 Q180 160 210 110Z" stroke="#7A8C6E" stroke-width="1.2" fill="rgba(122,140,110,0.06)"/>
+      <path d="M210 310 Q240 260 210 210 Q180 260 210 310Z" stroke="#7A8C6E" stroke-width="1.2" fill="rgba(122,140,110,0.06)"/>
+      <path d="M110 210 Q160 240 210 210 Q160 180 110 210Z" stroke="#7A8C6E" stroke-width="1.2" fill="rgba(122,140,110,0.06)"/>
+      <path d="M310 210 Q260 240 210 210 Q260 180 310 210Z" stroke="#7A8C6E" stroke-width="1.2" fill="rgba(122,140,110,0.06)"/>
+      <!-- diagonal petals -->
+      <path d="M139 139 Q184 174 210 210 Q174 184 139 139Z" stroke="#7A8C6E" stroke-width=".9" fill="rgba(122,140,110,0.04)"/>
+      <path d="M281 139 Q246 174 210 210 Q236 174 281 139Z" stroke="#7A8C6E" stroke-width=".9" fill="rgba(122,140,110,0.04)"/>
+      <path d="M139 281 Q174 246 210 210 Q184 236 139 281Z" stroke="#7A8C6E" stroke-width=".9" fill="rgba(122,140,110,0.04)"/>
+      <path d="M281 281 Q246 246 210 210 Q256 236 281 281Z" stroke="#7A8C6E" stroke-width=".9" fill="rgba(122,140,110,0.04)"/>
+      <!-- centre -->
+      <circle cx="210" cy="210" r="18" stroke="#7A8C6E" stroke-width="1.2" fill="rgba(122,140,110,0.1)"/>
+      <circle cx="210" cy="210" r="6" fill="#7A8C6E" opacity=".4"/>
+      <!-- axes -->
+      <line x1="210" y1="30" x2="210" y2="390" stroke="#7A8C6E" stroke-width=".4" opacity=".3"/>
+      <line x1="30" y1="210" x2="390" y2="210" stroke="#7A8C6E" stroke-width=".4" opacity=".3"/>
+      <!-- leaf sprig bottom right -->
+      <path d="M270 310 Q300 280 310 250" stroke="#7A8C6E" stroke-width="1" stroke-linecap="round" fill="none" opacity=".5"/>
+      <path d="M285 295 Q310 285 320 265 Q295 270 285 295Z" stroke="#7A8C6E" stroke-width=".9" fill="rgba(122,140,110,0.08)" opacity=".7"/>
+      <path d="M295 275 Q316 258 325 240 Q300 250 295 275Z" stroke="#7A8C6E" stroke-width=".9" fill="rgba(122,140,110,0.08)" opacity=".6"/>
+    </svg>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
+
+  <!-- hero bar -->
+  <div class="hero-bar">
+    <div class="hero-bar-item">
+      <span class="hero-bar-label" data-i18n="index.bar.spec">Specialisms</span>
+      <span class="hero-bar-value" data-i18n="index.bar.spec.val">Hormonal health · Athletes · Burnout</span>
+    </div>
+    <div class="hero-bar-divider"></div>
+    <div class="hero-bar-item">
+      <span class="hero-bar-label" data-i18n="index.bar.consult">Consultations</span>
+      <span class="hero-bar-value">Online & in person</span>
+    </div>
+    <div class="hero-bar-divider"></div>
+    <div class="hero-bar-item">
+      <span class="hero-bar-label">Languages</span>
+      <span class="hero-bar-value" data-i18n="index.bar.lang.val">English · Français</span>
+    </div>
+    <div class="hero-bar-divider"></div>
+    <div class="hero-bar-item">
+      <span class="hero-bar-label">Available to</span>
+      <span class="hero-bar-value">UK & international clients</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INTRO STRIP ══ -->
+<section class="intro-strip reveal">
+  <div class="intro-strip-left">
+    <p class="eyebrow" data-i18n="index.intro.title">The practice</p>
+    <h2>Plant medicine rooted in<br><em>lived</em> understanding</h2>
+  </div>
+  <div class="intro-strip-right">
+    <p>I did not come to herbal medicine through a textbook. I came through seven years of being failed by conventional medicine — through a body I barely recognised, a career cut short, and a determination that an alternative had to exist. When I found plant medicine, it worked. Slowly, painstakingly, with a great deal of trial and error. But it worked.</p>
+    <p>That experience — of navigating <strong>endometriosis, PCOS, and chronic fatigue</strong> without a roadmap — is the foundation of everything I do in clinic. I know what it means to search for answers when the system isn't giving you any. I know what it feels like when something finally does.</p>
+    <a href="/story" class="read-more" data-i18n="index.intro.link">Read the full story</a>
+  </div>
+</section>
+
+<!-- ══ WHO I HELP ══ -->
+<section class="who-section">
+  <div class="who-header reveal">
+    <h2>Who I work<br>with — and <em>why</em></h2>
+    <p class="who-header-desc">My practice is not generalist by accident. Every specialism I hold, I hold because I have direct experience of it — as a patient, as an athlete, or as a practitioner who spent two years in student clinic working with exactly these presentations.</p>
+  </div>
+  <div class="who-grid">
+    <div class="who-card reveal">
+      <div class="who-card-number">01</div>
+      <div class="who-card-title" data-i18n="index.who.hormonal.title">Women with hormonal conditions</div>
+      <div class="who-card-desc">Endometriosis, PCOS, chronic fatigue, perimenopause, fertility, menstrual irregularity. I have lived these conditions. I have also spent two years treating them in clinic. The combination is rare.</div>
+      <div class="who-card-tags">
+        <span class="who-tag">Endometriosis</span>
+        <span class="who-tag">PCOS</span>
+        <span class="who-tag">Perimenopause</span>
+        <span class="who-tag">Chronic fatigue</span>
+      </div>
+    </div>
+    <div class="who-card reveal reveal-delay-1">
+      <div class="who-card-number">02</div>
+      <div class="who-card-title">Athletes & active people</div>
+      <div class="who-card-desc">I trained at national level. I understand performance, recovery, overtraining, and the very specific grief of a body that won't cooperate. Adaptogen protocols, inflammation, hormonal disruption in athletes.</div>
+      <div class="who-card-tags">
+        <span class="who-tag">Performance fatigue</span>
+        <span class="who-tag">Recovery</span>
+        <span class="who-tag">Adaptogens</span>
+        <span class="who-tag">Injury support</span>
+      </div>
+    </div>
+    <div class="who-card reveal reveal-delay-2">
+      <div class="who-card-number">03</div>
+      <div class="who-card-title" data-i18n="index.who.burnout.title">People exhausted by burnout</div>
+      <div class="who-card-desc">Stress, nervous system dysregulation, adrenal fatigue, the quiet erosion of a life run on empty. Herbal medicine and naturopathy have deep tools for this. Indian head massage offers something immediate.</div>
+      <div class="who-card-tags">
+        <span class="who-tag">Burnout</span>
+        <span class="who-tag">Stress</span>
+        <span class="who-tag">Sleep</span>
+        <span class="who-tag">Nervous system</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ WHAT MAKES ME DIFFERENT ══ -->
+<section class="different-section">
+  <div class="different-left reveal">
+    <p class="eyebrow">Why it matters</p>
+    <h2>A practitioner who<br>has been where<br><em>you are</em></h2>
+    <p>There are many qualified herbalists. Fewer have navigated the exact conditions they treat. Fewer still bring together Western herbalism, naturopathy, TCM-informed dispensary training, Ayurvedic study, bodywork, and the understanding of a former high-performance athlete — and conduct consultations in both English and French.</p>
+    <p>This is not a list of certificates. It is a way of seeing the whole person in front of me.</p>
+  </div>
+  <div class="different-right reveal reveal-delay-1">
+    <div class="diff-item">
+      <div class="diff-num">01</div>
+      <div>
+        <div class="diff-text-title">Lived authority in hormonal health</div>
+        <div class="diff-text-body">Personal recovery from endometriosis, PCOS and chronic fatigue. Two years of student clinic specialising in these conditions. Not theoretical — experiential.</div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">02</div>
+      <div>
+        <div class="diff-text-title">French phytotherapy tradition</div>
+        <div class="diff-text-body">Rooted in a European relationship with plant medicine that is older and more clinically integrated than the UK tradition. A different lens — and a richer one.</div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">03</div>
+      <div>
+        <div class="diff-text-title">Cross-tradition depth</div>
+        <div class="diff-text-body">Western herbalism, TCM (six months in a dispensary), Ayurveda. I draw on the most appropriate tools for your specific case — not one framework applied to everyone.</div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">04</div>
+      <div>
+        <div class="diff-text-title">The athlete's understanding</div>
+        <div class="diff-text-body">A national-level sporting career gives me a particular fluency with performance bodies — their logic, their limits, and what it costs when they fail you.</div>
+      </div>
+    </div>
+    <div class="diff-item">
+      <div class="diff-num">05</div>
+      <div>
+        <div class="diff-text-title">Bilingual practice</div>
+        <div class="diff-text-body">Consultations in English and French. Clients in the UK, France, Belgium, Québec, and beyond. Your language, your comfort, your care.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ THERAPIES ══ -->
+<section class="therapies-section">
+  <div class="therapies-header reveal">
+    <h2>What I offer.<br><em>What it does.</em></h2>
+    <a href="/therapies">View all therapies →</a>
+  </div>
+  <div class="therapies-grid">
+    <a href="/therapies#herbal" class="therapy-card reveal">
+      <svg class="therapy-card-icon" viewBox="0 0 48 48" fill="none">
+        <path d="M24 6 Q30 18 24 30 Q18 18 24 6Z" stroke="#C4D0BA" stroke-width="1.5" fill="none"/>
+        <path d="M24 30 Q30 42 24 48 Q18 42 24 30Z" stroke="#C4D0BA" stroke-width="1.2" fill="none"/>
+        <path d="M6 24 Q18 30 24 24 Q18 18 6 24Z" stroke="#C4D0BA" stroke-width="1.2" fill="none"/>
+        <path d="M42 24 Q30 30 24 24 Q30 18 42 24Z" stroke="#C4D0BA" stroke-width="1.2" fill="none"/>
+        <circle cx="24" cy="24" r="4" stroke="#C4D0BA" stroke-width="1.2" fill="none"/>
+      </svg>
+      <div class="therapy-card-title">Herbal Medicine</div>
+      <div class="therapy-card-desc">Personalised plant protocols rooted in Western phytotherapy and cross-traditional training. The foundation of everything I do.</div>
+      <span class="therapy-card-link">Explore →</span>
+    </a>
+    <a href="/therapies#naturopathy" class="therapy-card reveal reveal-delay-1">
+      <svg class="therapy-card-icon" viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="18" stroke="#C4D0BA" stroke-width="1.5" fill="none"/>
+        <circle cx="24" cy="24" r="10" stroke="#C4D0BA" stroke-width="1" stroke-dasharray="3 3" fill="none"/>
+        <circle cx="24" cy="24" r="4" stroke="#C4D0BA" stroke-width="1" fill="none"/>
+        <line x1="24" y1="6" x2="24" y2="12" stroke="#C4D0BA" stroke-width="1"/>
+        <line x1="24" y1="36" x2="24" y2="42" stroke="#C4D0BA" stroke-width="1"/>
+        <line x1="6" y1="24" x2="12" y2="24" stroke="#C4D0BA" stroke-width="1"/>
+        <line x1="36" y1="24" x2="42" y2="24" stroke="#C4D0BA" stroke-width="1"/>
+      </svg>
+      <div class="therapy-card-title">Naturopathy</div>
+      <div class="therapy-card-desc">Nutrition, lifestyle, detox support, and the root-cause approach to chronic conditions. Works alongside herbal medicine or as a standalone.</div>
+      <span class="therapy-card-link">Explore →</span>
+    </a>
+    <a href="/therapies#ihm" class="therapy-card reveal reveal-delay-2">
+      <svg class="therapy-card-icon" viewBox="0 0 48 48" fill="none">
+        <ellipse cx="24" cy="18" rx="10" ry="12" stroke="#C4D0BA" stroke-width="1.5" fill="none"/>
+        <path d="M14 30 Q12 40 13 46" stroke="#C4D0BA" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M34 30 Q36 40 35 46" stroke="#C4D0BA" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+        <path d="M13 46 L35 46" stroke="#C4D0BA" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M19 10 Q24 6 29 10" stroke="#C4D0BA" stroke-width="1" stroke-linecap="round" fill="none"/>
+        <path d="M11 18 Q8 20 9 26" stroke="#C4D0BA" stroke-width="1" stroke-dasharray="2 3" stroke-linecap="round" fill="none"/>
+        <path d="M37 18 Q40 20 39 26" stroke="#C4D0BA" stroke-width="1" stroke-dasharray="2 3" stroke-linecap="round" fill="none"/>
+      </svg>
+      <div class="therapy-card-title">Indian Head Massage</div>
+      <div class="therapy-card-desc">"They leave feeling like they are floating." Instant nervous system reset. Upper back, neck, scalp, face. In person only.</div>
+      <span class="therapy-card-link">Explore →</span>
+    </a>
+    <a href="/therapies#athlete" class="therapy-card reveal reveal-delay-3">
+      <svg class="therapy-card-icon" viewBox="0 0 48 48" fill="none">
+        <ellipse cx="24" cy="24" rx="14" ry="18" stroke="#C4D0BA" stroke-width="1.5" fill="none"/>
+        <line x1="24" y1="6" x2="24" y2="42" stroke="#C4D0BA" stroke-width=".8"/>
+        <line x1="10" y1="24" x2="38" y2="24" stroke="#C4D0BA" stroke-width=".8"/>
+        <path d="M17 13 Q24 10 31 13" stroke="#C4D0BA" stroke-width="1" stroke-linecap="round" fill="none"/>
+        <path d="M15 18 Q24 14 33 18" stroke="#C4D0BA" stroke-width=".7" stroke-dasharray="2 3" fill="none"/>
+        <path d="M15 30 Q24 34 33 30" stroke="#C4D0BA" stroke-width=".7" stroke-dasharray="2 3" fill="none"/>
+        <circle cx="24" cy="24" r="3" stroke="#C4D0BA" stroke-width="1.2" fill="none"/>
+      </svg>
+      <div class="therapy-card-title">Athlete & Performance</div>
+      <div class="therapy-card-desc">Adaptogens, recovery protocols, inflammation, hormonal disruption in training. From a practitioner who was there too.</div>
+      <span class="therapy-card-link">Explore →</span>
+    </a>
+  </div>
+</section>
+
+<!-- ══ STORY PULL ══ -->
+<section class="story-pull">
+  <div class="story-pull-text reveal">
+    <p class="eyebrow">The story behind the practice</p>
+    <h2>Seven years.<br>A pandemic.<br>A magnolia tree<br>that <em>refused to die.</em></h2>
+    <p>Elite swimmer. National team roster. Then — debilitating periods, six gynaecologists, morphine as a daily preventative, a career taken away. The story of how I got from there to here is the story of why I became a herbalist. And it is the reason I understand my clients the way I do.</p>
+    <a href="/story" class="btn-bark">Read my full story</a>
+  </div>
+  <div class="story-pull-visual">
+    <div class="story-quote">
+      <p>"I was not living. I was surviving. Until I stopped waiting for someone else to give me permission to heal."</p>
+      <cite>— Sara Lemaitre</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ══ HOW IT WORKS ══ -->
+<section class="process-section">
+  <div class="process-header reveal">
+    <p class="eyebrow">How it works</p>
+    <h2>From first conversation<br>to <em>lasting change</em></h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="process-dot">01</div>
+      <div class="process-step-title" data-i18n="index.process.1.title">Discovery call</div>
+      <div class="process-step-desc">Free · 15 minutes. We talk about where you are and what you need. No commitment. Just honesty.</div>
+    </div>
+    <div class="process-step reveal reveal-delay-1">
+      <div class="process-dot">02</div>
+      <div class="process-step-title" data-i18n="index.process.2.title">Initial consultation</div>
+      <div class="process-step-desc">75–80 minutes. Full case history. Your story, not just your symptoms. A written protocol follows.</div>
+    </div>
+    <div class="process-step reveal reveal-delay-2">
+      <div class="process-dot">03</div>
+      <div class="process-step-title">Your protocol</div>
+      <div class="process-step-desc">Personalised herbal formulations, naturopathic guidance, lifestyle adjustments. Made for your body.</div>
+    </div>
+    <div class="process-step reveal reveal-delay-3">
+      <div class="process-dot">04</div>
+      <div class="process-step-title">Ongoing support</div>
+      <div class="process-step-desc">Follow-ups, adjustments, monthly retainers for ongoing clients. Healing takes time. I stay with you.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TESTIMONIALS ══ -->
+<section class="testimonials-section">
+  <div class="testimonials-header reveal">
+    <p class="eyebrow">What clients say</p>
+    <h2>In their <em>own words</em></h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <p class="testimonial-text">I left the Indian head massage feeling like I was floating. I genuinely forgot where I had parked my car. Something in my neck that has been tight for two years just... wasn't anymore.</p>
+      <div class="testimonial-author">Student clinic client</div>
+      <div class="testimonial-condition">Indian head massage</div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-1 placeholder">
+      <p class="testimonial-text">Your testimonial will appear here. I am reaching out to past clients from my student clinic — if you would like to share your experience, please get in touch.</p>
+      <div class="testimonial-author">— Coming soon</div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-2 placeholder">
+      <p class="testimonial-text">More client stories coming as I open my practice. Every person I have worked with has a story worth telling.</p>
+      <div class="testimonial-author">— Coming soon</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ INTERNATIONAL ══ -->
+<section class="international-section reveal">
+  <div class="international-text">
+    <p class="eyebrow">Available worldwide</p>
+    <h2>Your language.<br>Your timezone.<br><em>Your care.</em></h2>
+    <p>Most of my consultations happen online. That means clients in France can work with a practitioner who understands the French phytotherapy tradition. Clients in Australia, the US, or the Gulf can access a qualified European herbalist in their own time zone. No geography, no compromise.</p>
+    <p>I practise in English and French, and I understand the particular comfort of discussing your health in your mother tongue.</p>
+    <div class="lang-flags">
+      <span class="lang-pill">🇬🇧 English</span>
+      <span class="lang-pill">🇫🇷 Français</span>
+    </div>
+  </div>
+  <div class="regions-grid">
+    <div class="region-item">
+      <div class="region-name">United Kingdom</div>
+      <div class="region-desc">Online & in person. Base market. NIMH registered.</div>
+    </div>
+    <div class="region-item">
+      <div class="region-name">France & Francophone Europe</div>
+      <div class="region-desc">French-language consultations. Phytotherapy tradition shared.</div>
+    </div>
+    <div class="region-item">
+      <div class="region-name">North America</div>
+      <div class="region-desc">US & Canada. High demand, underserved integrative practitioners.</div>
+    </div>
+    <div class="region-item">
+      <div class="region-name">Australia & New Zealand</div>
+      <div class="region-desc">Strong CAM culture. Premium market. Online.</div>
+    </div>
+    <div class="region-item">
+      <div class="region-name">Middle East</div>
+      <div class="region-desc">UAE, KSA. Herbal traditions valued. Diaspora communities.</div>
+    </div>
+    <div class="region-item">
+      <div class="region-name">Francophone Africa</div>
+      <div class="region-desc">West & Central Africa. Plant medicine deeply rooted culturally.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FINAL CTA ══ -->
+<section class="final-cta reveal" id="book">
+  <p class="eyebrow">Begin here</p>
+  <h2>If any part of this<br>sounds like your story —<br><em>let's talk.</em></h2>
+  <p>A free 15-minute discovery call. No pressure, no sales pitch. Just an honest conversation about where you are and whether I am the right person to support you.</p>
+  <div class="cta-buttons">
+    <a href="https://calendly.com/sara-lemaitre-herbalist" target="_blank" rel="noopener" class="cta-btn-primary" data-i18n="index.cta.btn">Book a free discovery call</a>
+    <a href="/pricing" class="cta-btn-secondary">View pricing & packages</a>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+
+</BaseLayout>
