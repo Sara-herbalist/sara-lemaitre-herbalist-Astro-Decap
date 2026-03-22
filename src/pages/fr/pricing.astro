@@ -1,0 +1,248 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const meta = {
+  title: "Tarifs & Formules | Consultations en Phytothérapie à partir de 60 £ | Sara Lemaitre",
+  description: "Tarifs transparents pour les consultations en phytothérapie, les programmes santé hormonale, stress & burn-out, massage crânien indien et forfaits mensuels. Tarif modulable disponible.",
+  ogImage: "https://www.saralemaitre.com/images/og-pricing.jpg",
+  canonical: "https://www.saralemaitre.com/fr/pricing",
+  navLight: false,
+  currentPage: 'pricing',
+  ogType: 'website',
+  lang: 'fr',
+};
+const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
+---
+<BaseLayout {...meta}>
+<style is:global>
+.pricing-hero { padding: 10rem 8rem 6rem; background: var(--charcoal); }
+.pricing-hero .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(196,208,186,.6); margin-bottom: 1.5rem; }
+.pricing-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.1; color: var(--cream); margin-bottom: 1.5rem; }
+.pricing-hero h1 em { font-style: italic; color: var(--sage-light); }
+.pricing-hero p { font-size: 1.125rem; color: rgba(247,243,238,.5); max-width: 560px; line-height: 1.8; }
+.consults-section { padding: 6rem 8rem; background: var(--warm-white); }
+.consults-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: var(--charcoal); margin-bottom: 3.5rem; }
+.consult-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 2rem; }
+.consult-card { background: var(--cream); border: 1px solid rgba(92,74,58,0.1); padding: 2.5rem; display: flex; flex-direction: column; gap: .75rem; position: relative; }
+.consult-card.featured { border-color: var(--sage); background: var(--sage-pale); }
+.featured-badge { position: absolute; top: -1px; right: 2rem; font-size: .65rem; letter-spacing: .16em; text-transform: uppercase; background: var(--sage); color: var(--cream); padding: .3rem .8rem; }
+.consult-title { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--charcoal); }
+.consult-subtitle { font-size: .8rem; color: var(--muted); letter-spacing: .08em; }
+.consult-price { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: var(--bark); line-height: 1; }
+.consult-price-note { font-size: .875rem; color: var(--muted); }
+.sliding-note { font-size: .8rem; color: var(--sage-text); background: var(--sage-pale); border-left: 2px solid var(--sage-light); padding: .4rem .7rem; font-style: italic; line-height: 1.5; }
+.consult-card.featured .sliding-note { background: rgba(255,255,255,0.5); }
+.consult-includes { list-style: none; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
+.consult-includes li { font-size: .9rem; color: var(--muted); padding-left: 1.2rem; position: relative; line-height: 1.5; }
+.consult-includes li::before { content: '—'; position: absolute; left: 0; color: var(--sage-light); }
+.consult-book { display: inline-block; padding: .8rem 1.5rem; background: var(--bark); color: var(--cream); text-decoration: none; font-size: .8125rem; letter-spacing: .14em; text-transform: uppercase; transition: all .22s; text-align: center; margin-top: .5rem; }
+.consult-book:hover { background: var(--charcoal); }
+.free-row { margin-top: 2rem; padding: 2rem 2.5rem; background: var(--sage-pale); border: 1px solid var(--sage-light); display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.free-row-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--charcoal); margin-bottom: .3rem; }
+.free-row-text p { font-size: .9rem; color: var(--muted); }
+.free-row a { display: inline-block; padding: .8rem 2rem; border: 1px solid var(--bark); color: var(--bark); text-decoration: none; font-size: .8125rem; letter-spacing: .14em; text-transform: uppercase; transition: all .22s; white-space: nowrap; }
+.free-row a:hover { background: var(--bark); color: var(--warm-white); }
+.packages-section { padding: 6rem 8rem; background: var(--cream); }
+.packages-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: var(--charcoal); margin-bottom: .75rem; }
+.packages-section > p { color: var(--muted); margin-bottom: 3.5rem; max-width: 600px; }
+.package-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.package-card { background: var(--warm-white); border: 1px solid rgba(92,74,58,0.1); padding: 2.5rem; }
+.package-tag { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1rem; display: block; }
+.package-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--charcoal); margin-bottom: 1rem; }
+.package-price-row { display: flex; align-items: baseline; gap: 1rem; margin-bottom: .5rem; }
+.package-price { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: var(--bark); }
+.package-saving { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; background: var(--sage-pale); color: var(--sage-text); padding: .25rem .6rem; }
+.package-vs { font-size: .875rem; color: var(--muted); margin-bottom: 1.5rem; }
+.package-includes { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1.5rem; }
+.package-includes li { font-size: .9rem; color: var(--muted); padding-left: 1.2rem; position: relative; line-height: 1.5; }
+.package-includes li::before { content: '—'; position: absolute; left: 0; color: var(--sage-light); }
+.package-book { display: inline-block; padding: .8rem 2rem; border: 1px solid var(--bark); color: var(--bark); text-decoration: none; font-size: .8125rem; letter-spacing: .14em; text-transform: uppercase; transition: all .22s; }
+.package-book:hover { background: var(--bark); color: var(--warm-white); }
+.ihm-section { padding: 6rem 8rem; background: var(--warm-white); }
+.ihm-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: var(--charcoal); margin-bottom: 3rem; }
+.ihm-card { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; background: var(--cream); border: 1px solid rgba(92,74,58,0.1); padding: 3rem; }
+.inperson-price { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--bark); }
+.inperson-price-note { font-size: .9375rem; color: var(--muted); margin-bottom: 1.8rem; }
+.inperson-includes { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-bottom: 2rem; }
+.inperson-includes li { font-size: .9rem; color: var(--muted); padding-left: 1.2rem; position: relative; }
+.inperson-includes li::before { content: '—'; position: absolute; left: 0; color: var(--sage-light); }
+.inperson-book { display: inline-block; padding: .8rem 2rem; border: 1px solid var(--bark); color: var(--bark); text-decoration: none; font-size: .8125rem; letter-spacing: .14em; text-transform: uppercase; transition: all .22s; }
+.inperson-book:hover { background: var(--bark); color: var(--warm-white); }
+.pricing-cta { padding: 7rem 8rem; background: var(--sage); text-align: center; }
+.pricing-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 400; color: var(--cream); margin-bottom: 1rem; }
+.pricing-cta p { color: rgba(247,243,238,.6); margin-bottom: 2.5rem; }
+.pricing-cta a { display: inline-block; padding: 1.1rem 3rem; background: var(--bark); color: var(--cream); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+.pricing-cta a:hover { background: var(--charcoal); }
+@media (max-width: 1024px) {
+  .pricing-hero, .consults-section, .packages-section, .ihm-section, .pricing-cta { padding-left: 2.5rem; padding-right: 2.5rem; }
+  .consult-grid, .package-grid { grid-template-columns: 1fr; }
+  .ihm-card { grid-template-columns: 1fr; gap: 2rem; }
+  .free-row { flex-direction: column; align-items: flex-start; }
+}
+</style>
+
+<section class="pricing-hero">
+  <p class="eyebrow">Tarifs & formules</p>
+  <h1>Transparent.<br>Équitable.<br><em>Sans surprise.</em></h1>
+  <p>Un tarif modulable est disponible pour les étudiants et les personnes à revenus modestes. Mentionnez-le simplement lors de la réservation.</p>
+</section>
+
+<section class="consults-section">
+  <h2>Consultations individuelles</h2>
+  <div class="consult-grid">
+    <div class="consult-card featured">
+      <div class="featured-badge">Par ici pour commencer</div>
+      <div class="consult-title">Consultation initiale</div>
+      <div class="consult-subtitle">En ligne ou en présentiel · Français ou anglais</div>
+      <div class="consult-price">110 £</div>
+      <div class="consult-price-note">90 minutes · ~2h30–3h de travail au total</div>
+      <ul class="consult-includes">
+        <li>Anamnèse complète — votre être entier, pas juste le symptôme</li>
+        <li>Protocole herbal personnalisé rédigé & envoyé sous 48h</li>
+        <li>Conseils naturopathiques en mode de vie & nutrition</li>
+        <li>Conception de la formule & contact fournisseur</li>
+        <li>Évaluation multi-tradition (Western, MTC, Ayurveda)</li>
+        <li>Support e-mail pendant une semaine après la séance</li>
+      </ul>
+      <div class="sliding-note">Tarif modulable : 85 £ pour étudiants & revenus modestes — mentionnez-le lors de la réservation</div>
+      <a href={CALENDLY} target="_blank" rel="noopener" class="consult-book">Réserver une consultation initiale</a>
+    </div>
+    <div class="consult-card">
+      <div class="consult-title">Consultation de suivi</div>
+      <div class="consult-subtitle">En ligne ou en présentiel · Français ou anglais</div>
+      <div class="consult-price">75 £</div>
+      <div class="consult-price-note">30–40 minutes · ~1h de travail au total</div>
+      <ul class="consult-includes">
+        <li>Évaluation des progrès depuis la dernière séance</li>
+        <li>Ajustement & reformulation du protocole</li>
+        <li>Questions & résolution de problèmes</li>
+        <li>Notes actualisées envoyées après la séance</li>
+        <li>Contact fournisseur si la formule change</li>
+      </ul>
+      <div class="sliding-note">Tarif modulable : 65 £ pour étudiants & revenus modestes</div>
+      <a href={CALENDLY} target="_blank" rel="noopener" class="consult-book">Réserver un suivi</a>
+    </div>
+    <div class="consult-card">
+      <div class="featured-badge" style="background:var(--bark);color:var(--cream);">Meilleure valeur</div>
+      <div class="consult-title">Initiale + 2 suivis</div>
+      <div class="consult-subtitle">Forfait · 3 séances · En ligne ou en présentiel</div>
+      <div class="consult-price">220 £</div>
+      <div class="consult-price-note">Économisez 40 £ par rapport aux réservations séparées</div>
+      <ul class="consult-includes">
+        <li>Tout ce qui est inclus dans la consultation initiale</li>
+        <li>Deux séances de suivi pour évaluer & affiner votre protocole</li>
+        <li>Idéal pour les conditions hormonales, la fatigue chronique & le burn-out</li>
+        <li>La façon la plus efficace de commencer un parcours en phytothérapie</li>
+      </ul>
+      <div class="sliding-note">Forfait modulable : 195 £</div>
+      <a href={CALENDLY} target="_blank" rel="noopener" class="consult-book">Réserver le forfait</a>
+    </div>
+  </div>
+  <div class="free-row">
+    <div class="free-row-text">
+      <h3>Consultation découverte — Gratuit</h3>
+      <p>15 minutes · Sans engagement · Juste une conversation honnête sur là où vous en êtes.</p>
+    </div>
+    <a href={CALENDLY} target="_blank" rel="noopener">Réserver gratuitement</a>
+  </div>
+</section>
+
+<section class="packages-section">
+  <h2>Programmes thématiques</h2>
+  <p>Des parcours en profondeur pour les conditions qui nécessitent du temps et de la continuité. Chaque programme inclut une consultation initiale et deux suivis, avec un protocole évolutif.</p>
+  <div class="package-grid">
+    <div class="package-card">
+      <span class="package-tag">3 séances · Santé hormonale</span>
+      <h3>Programme Équilibre Hormonal</h3>
+      <div class="package-price-row">
+        <div class="package-price">360 £</div>
+        <span class="package-saving">Économisez 60 £</span>
+      </div>
+      <div class="package-vs">420 £ si réservées individuellement</div>
+      <ul class="package-includes">
+        <li>Consultation initiale de 90 minutes</li>
+        <li>Deux consultations de suivi de 30–40 minutes</li>
+        <li>Protocole centré sur l'endométriose, le SOPK, la périménopause</li>
+        <li>Formulations herbales évolutives</li>
+      </ul>
+      <a href={CALENDLY} target="_blank" rel="noopener" class="package-book">En savoir plus</a>
+    </div>
+    <div class="package-card">
+      <span class="package-tag">3 séances · Stress & Burn-out</span>
+      <h3>Programme Récupération Burn-out</h3>
+      <div class="package-price-row">
+        <div class="package-price">340 £</div>
+        <span class="package-saving">Économisez 50 £</span>
+      </div>
+      <div class="package-vs">390 £ si réservées individuellement</div>
+      <ul class="package-includes">
+        <li>Consultation initiale de 90 minutes</li>
+        <li>Deux consultations de suivi de 30–40 minutes</li>
+        <li>Protocole adaptogens, soutien nerveux, sommeil</li>
+        <li>Guidance naturopathique lifestyle intégrée</li>
+      </ul>
+      <a href={CALENDLY} target="_blank" rel="noopener" class="package-book">En savoir plus</a>
+    </div>
+    <div class="package-card">
+      <span class="package-tag">3 séances · Périménopause</span>
+      <h3>Programme Soutien Périménopause</h3>
+      <div class="package-price-row">
+        <div class="package-price">380 £</div>
+        <span class="package-saving">Économisez 55 £</span>
+      </div>
+      <div class="package-vs">435 £ si réservées individuellement</div>
+      <ul class="package-includes">
+        <li>Consultation initiale de 90 minutes</li>
+        <li>Deux consultations de suivi de 30–40 minutes</li>
+        <li>Bouffées de chaleur, sommeil, humeur, libido, os</li>
+        <li>Approche intégrative phytothérapie & naturopathie</li>
+      </ul>
+      <a href={CALENDLY} target="_blank" rel="noopener" class="package-book">En savoir plus</a>
+    </div>
+    <div class="package-card">
+      <span class="package-tag">3 séances · Sportifs</span>
+      <h3>Programme Performance & Récupération</h3>
+      <div class="package-price-row">
+        <div class="package-price">370 £</div>
+        <span class="package-saving">Économisez 55 £</span>
+      </div>
+      <div class="package-vs">425 £ si réservées individuellement</div>
+      <ul class="package-includes">
+        <li>Consultation initiale de 90 minutes</li>
+        <li>Deux consultations de suivi de 30–40 minutes</li>
+        <li>Adaptogens, récupération, inflammation, hormones</li>
+        <li>Par une praticienne ancienne athlète de haut niveau</li>
+      </ul>
+      <a href={CALENDLY} target="_blank" rel="noopener" class="package-book">En savoir plus</a>
+    </div>
+  </div>
+</section>
+
+<section class="ihm-section">
+  <h2>En présentiel</h2>
+  <div class="ihm-card">
+    <div>
+      <div class="inperson-price">60 £</div>
+      <div class="inperson-price-note">45 minutes · En présentiel uniquement · Peut être ajouté à une consultation ou réservé seul</div>
+      <ul class="inperson-includes">
+        <li>10 minutes d'anamnèse initiale</li>
+        <li>35 minutes de massage sur le dos, la nuque, le cuir chevelu et le visage</li>
+        <li>Réinitialisation immédiate du système nerveux</li>
+        <li>Idéal en cas de tensions, insomnies ou surcharge mentale</li>
+      </ul>
+      <a href={CALENDLY} target="_blank" rel="noopener" class="inperson-book">Réserver un massage crânien</a>
+    </div>
+    <div>
+      <p class="eyebrow" style="font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sage-text);margin-bottom:1rem;">Massage Crânien Indien</p>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300;color:var(--charcoal);line-height:1.4;font-style:italic;">« Elles repartent comme si elles flottaient. »</p>
+      <p style="margin-top:1.5rem;font-size:.9375rem;color:var(--muted);line-height:1.8;">Un soin profondément relaxant issu de la tradition ayurvédique. Travaille sur les tensions physiques tout en réinitialisant le système nerveux. Certaines personnes décrivent un effet qui dure plusieurs jours.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-cta">
+  <h2>Une question sur les tarifs ?</h2>
+  <p>Réservez une consultation découverte gratuite — c'est la façon la plus simple de savoir si nous sommes compatibles.</p>
+  <a href={CALENDLY} target="_blank" rel="noopener">Consultation découverte gratuite</a>
+</section>
+
+</BaseLayout>
