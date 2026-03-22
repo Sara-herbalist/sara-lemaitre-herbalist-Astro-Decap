@@ -10,14 +10,16 @@ interface Props {
   description: string;
   ogImage?: string;
   canonical?: string;
-  navLight?: boolean;       // true = page has light-coloured hero
-  currentPage?: string;     // e.g. 'therapies' — highlights active nav link
+  navLight?: boolean;
+  currentPage?: string;
   ogType?: string;
-  schema?: object | object[]; // page-specific JSON-LD
+  schema?: object | object[];
+  lang?: string; // 'fr' for French pages
 }
 
 const {
   title,
+  lang = 'en',
   description,
   ogImage = `${SITE}/images/og-default.jpg`,
   canonical = SITE,
@@ -27,7 +29,15 @@ const {
   schema,
 } = Astro.props;
 
-const navPages = [
+const prefix = lang === 'fr' ? '/fr' : '';
+const navPages = lang === 'fr' ? [
+  { id: 'therapies',   label: 'Thérapies',    href: '/fr/therapies'   },
+  { id: 'workshops',   label: 'Ateliers',     href: '/fr/workshops'   },
+  { id: 'walks',       label: 'Balades',      href: '/fr/walks'       },
+  { id: 'consultancy', label: 'Conseil',      href: '/fr/consultancy' },
+  { id: 'pricing',     label: 'Tarifs',       href: '/fr/pricing'     },
+  { id: 'story',       label: 'Mon parcours', href: '/fr/story'       },
+] : [
   { id: 'therapies',   label: 'Therapies',    href: '/therapies',    i18n: 'nav.therapies' },
   { id: 'workshops',   label: 'Workshops',    href: '/workshops',    i18n: 'nav.workshops' },
   { id: 'walks',       label: 'Walks',        href: '/walks',        i18n: 'nav.walks'     },
@@ -37,14 +47,24 @@ const navPages = [
 ];
 
 // Book button: context-aware per page
-const bookHref = currentPage === 'consultancy' ? '#contact'
-               : currentPage === 'walks'       ? '#mailing'
-               : currentPage === 'book'        ? CALENDLY
-               : '/book';
-const bookLabel = currentPage === 'consultancy' ? 'Get in touch'
-                : currentPage === 'walks'       ? 'Get walk dates'
-                : currentPage === 'book'        ? 'Book free call'
-                : 'Book a consultation';
+const bookHref = lang === 'fr'
+  ? (currentPage === 'consultancy' ? '#contact'
+     : currentPage === 'walks'     ? '#mailing'
+     : currentPage === 'book'      ? CALENDLY
+     : '/fr/book')
+  : (currentPage === 'consultancy' ? '#contact'
+     : currentPage === 'walks'     ? '#mailing'
+     : currentPage === 'book'      ? CALENDLY
+     : '/book');
+const bookLabel = lang === 'fr'
+  ? (currentPage === 'consultancy' ? 'Me contacter'
+     : currentPage === 'walks'     ? 'Dates des balades'
+     : currentPage === 'book'      ? 'Appel gratuit'
+     : 'Prendre rendez-vous')
+  : (currentPage === 'consultancy' ? 'Get in touch'
+     : currentPage === 'walks'     ? 'Get walk dates'
+     : currentPage === 'book'      ? 'Book free call'
+     : 'Book a consultation');
 const bookI18n  = currentPage === 'consultancy' ? 'nav.consultancy.cta'
                 : currentPage === 'walks'       ? 'nav.walks.cta'
                 : 'nav.book';
@@ -140,7 +160,7 @@ const schemas = [sharedSchema, ...(schema ? (Array.isArray(schema) ? schema : [s
 
   <!-- NAV -->
   <nav id="nav" role="navigation" aria-label="Main navigation">
-    <a href="/" class="nav-logo"
+    <a href={lang === "fr" ? "/fr/" : "/"} class="nav-logo"
        aria-current={currentPage === 'index' ? 'page' : undefined}>
       Sara Lemaitre
     </a>
@@ -165,11 +185,11 @@ const schemas = [sharedSchema, ...(schema ? (Array.isArray(schema) ? schema : [s
       rel={bookTarget ? 'noopener noreferrer' : undefined}
     >{bookLabel}</a>
 
-    <a
-      href="/fr/"
-      class="lang-toggle"
-      aria-label="Passer en français"
-    >FR</a>
+    {lang === 'fr' ? (
+      <a href={currentPage === 'index' ? '/' : `/${currentPage}`} class="lang-toggle" aria-label="Switch to English">EN</a>
+    ) : (
+      <a href={currentPage === 'index' ? '/fr/' : `/fr/${currentPage}`} class="lang-toggle" aria-label="Passer en français">FR</a>
+    )}
 
     <button
       class="hamburger"
