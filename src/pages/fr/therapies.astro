@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const meta = {
+  title: "Thérapies | Phytothérapie, Naturopathie & Massage Crânien Indien | Sara Lemaitre",
+  description: "Consultations en phytothérapie et naturopathie, massage crânien indien, protocoles sport et performance, formation MTC. En ligne et en présentiel, en français et en anglais.",
+  ogImage: "https://www.saralemaitre.com/images/og-therapies.jpg",
+  canonical: "https://www.saralemaitre.com/fr/therapies",
+  navLight: false,
+  currentPage: 'therapies',
+  ogType: 'website',
+  lang: 'fr',
+};
+const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
+---
+<BaseLayout {...meta}>
+<style is:global>
+.th-hero { padding: 10rem 8rem 7rem; background: var(--cream); border-bottom: 1px solid rgba(92,74,58,0.08); }
+.th-hero .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
+.th-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.1; color: var(--charcoal); margin-bottom: 1.5rem; }
+.th-hero h1 em { font-style: italic; color: var(--sage-text); }
+.th-hero p { font-size: 1.125rem; color: var(--muted); max-width: 600px; line-height: 1.85; }
+.therapy-block { padding: 7rem 8rem; border-bottom: 1px solid rgba(122,108,100,0.1); display: grid; grid-template-columns: 1fr 1.5fr; gap: 6rem; align-items: start; }
+.therapy-block:nth-child(even) { background: var(--cream); }
+.therapy-label { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1rem; }
+.therapy-block h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 400; color: var(--charcoal); line-height: 1.2; margin-bottom: 2rem; }
+.therapy-block h2 em { font-style: italic; color: var(--sage-text); }
+.therapy-block p { font-size: 1.0625rem; color: var(--muted); line-height: 1.95; margin-bottom: 1.2rem; }
+.therapy-details { display: flex; flex-direction: column; gap: 1rem; }
+.detail-row { display: flex; gap: 1rem; align-items: baseline; }
+.detail-label { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--sage-text); min-width: 100px; }
+.detail-value { font-size: .9375rem; color: var(--muted); }
+.therapy-book { display: inline-block; padding: .85rem 2rem; border: 1px solid var(--bark); color: var(--bark); text-decoration: none; font-size: .875rem; letter-spacing: .14em; text-transform: uppercase; transition: all .22s; margin-top: 1rem; }
+.therapy-book:hover { background: var(--bark); color: var(--warm-white); }
+.th-cta { padding: 7rem 8rem; background: var(--sage); text-align: center; }
+.th-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 400; color: var(--cream); margin-bottom: 1rem; }
+.th-cta p { color: rgba(247,243,238,.6); margin-bottom: 2.5rem; }
+.th-cta a { display: inline-block; padding: 1.1rem 3rem; background: var(--bark); color: var(--cream); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+.th-cta a:hover { background: var(--charcoal); }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+@media (max-width: 1024px) {
+  .th-hero, .therapy-block, .th-cta { padding-left: 2.5rem; padding-right: 2.5rem; }
+  .therapy-block { grid-template-columns: 1fr; gap: 3rem; }
+}
+</style>
+
+<section class="th-hero">
+  <p class="eyebrow">Les thérapies</p>
+  <h1>Des plantes. Une approche.<br><em>Votre corps.</em></h1>
+  <p>Chaque thérapie que je propose s'appuie sur des traditions cliniques distinctes mais complémentaires. Je les combine selon ce que votre situation exige — pas selon un cadre unique appliqué à tous.</p>
+</section>
+
+<section class="therapy-block reveal" id="herbal">
+  <div>
+    <p class="therapy-label">Thérapie principale</p>
+    <h2>Phytothérapie<br><em>occidentale</em></h2>
+    <div class="therapy-details">
+      <div class="detail-row"><span class="detail-label">Durée</span><span class="detail-value">90 min (initiale) · 30–40 min (suivi)</span></div>
+      <div class="detail-row"><span class="detail-label">Format</span><span class="detail-value">En ligne ou en présentiel</span></div>
+      <div class="detail-row"><span class="detail-label">Tarif</span><span class="detail-value">110 £ (initiale) · 75 £ (suivi)</span></div>
+    </div>
+    <a href={CALENDLY} target="_blank" rel="noopener" class="therapy-book">Réserver</a>
+  </div>
+  <div>
+    <p>La phytothérapie occidentale est le fondement de ma pratique. Elle utilise les plantes médicinales — racines, feuilles, fleurs, écorces — pour soutenir et restaurer la santé du corps et de l'esprit.</p>
+    <p>Mon approche est enracinée dans la tradition phytothérapeutique européenne, avec une formation complémentaire en médecine traditionnelle chinoise et en Ayurveda. Je mobilise les outils les plus adaptés à chaque situation plutôt que d'appliquer un seul cadre à tous.</p>
+    <p>Chaque consultation initiale débouche sur un <strong>protocole écrit personnalisé</strong> — une formulation herbale conçue pour vous, des recommandations naturopathiques, et si nécessaire, le contact avec un fournisseur de qualité pour votre préparation.</p>
+  </div>
+</section>
+
+<section class="therapy-block reveal" id="naturopathy">
+  <div>
+    <p class="therapy-label">Complémentaire</p>
+    <h2>Naturopathie</h2>
+    <div class="therapy-details">
+      <div class="detail-row"><span class="detail-label">Format</span><span class="detail-value">Intégrée aux consultations</span></div>
+      <div class="detail-row"><span class="detail-label">Approche</span><span class="detail-value">Causes profondes · Mode de vie</span></div>
+    </div>
+  </div>
+  <div>
+    <p>La naturopathie cherche à identifier et traiter les causes profondes des problèmes de santé — et non uniquement les symptômes. Elle s'appuie sur la nutrition, l'hygiène de vie, le soutien du système détox, la gestion du stress et des ajustements environnementaux.</p>
+    <p>Dans ma pratique, la naturopathie est toujours intégrée à la phytothérapie. Les plantes et le mode de vie forment un ensemble — l'un soutient l'autre pour des résultats plus durables.</p>
+  </div>
+</section>
+
+<section class="therapy-block reveal" id="ihm">
+  <div>
+    <p class="therapy-label">En présentiel uniquement</p>
+    <h2>Massage<br><em>Crânien Indien</em></h2>
+    <div class="therapy-details">
+      <div class="detail-row"><span class="detail-label">Durée</span><span class="detail-value">45 minutes</span></div>
+      <div class="detail-row"><span class="detail-label">Format</span><span class="detail-value">En présentiel uniquement</span></div>
+      <div class="detail-row"><span class="detail-label">Tarif</span><span class="detail-value">60 £</span></div>
+    </div>
+    <a href={CALENDLY} target="_blank" rel="noopener" class="therapy-book">Réserver</a>
+  </div>
+  <div>
+    <p>Le massage crânien indien — issu de la tradition ayurvédique — travaille sur le dos, la nuque, les épaules, le cuir chevelu et le visage. Il libère les tensions musculaires accumulées, calme le système nerveux et procure un état de profond bien-être.</p>
+    <p>« Elles repartent comme si elles flottaient. » C'est la description la plus fréquente. Une tension dans la nuque présente depuis des années peut se dissoudre en une séance. Ce n'est pas de la magie — c'est la libération du fascia et la stimulation du système parasympathique.</p>
+    <p>Idéal en cas de maux de tête chroniques, tensions cervicales, insomnies, surcharge mentale, ou simplement comme pause de récupération profonde.</p>
+  </div>
+</section>
+
+<section class="therapy-block reveal" id="athlete">
+  <div>
+    <p class="therapy-label">Sportifs & actifs</p>
+    <h2>Performance<br><em>& Récupération</em></h2>
+    <div class="therapy-details">
+      <div class="detail-row"><span class="detail-label">Format</span><span class="detail-value">En ligne ou en présentiel</span></div>
+      <div class="detail-row"><span class="detail-label">Tarif</span><span class="detail-value">110 £ (initiale) · 75 £ (suivi)</span></div>
+    </div>
+    <a href={CALENDLY} target="_blank" rel="noopener" class="therapy-book">Réserver</a>
+  </div>
+  <div>
+    <p>J'ai pratiqué la nage artistique à un niveau d'élite. Je sais ce que signifie vivre dans un corps de performance — ses exigences, sa logique, et ce que l'on ressent quand il cesse de fonctionner comme il le devrait.</p>
+    <p>Mon approche pour les sportifs couvre les adaptogens et la gestion du stress physiologique, le soutien à la récupération et la réduction de l'inflammation, le dérèglement hormonal lié à l'entraînement intensif (particulièrement chez les femmes), et le soutien en cas de blessure ou de phase de réhabilitation.</p>
+    <p>Je travaille avec des athlètes amateurs et de haut niveau, des personnes actives en recherche d'optimisation, et des sportifs en récupération après une blessure ou un surentraînement.</p>
+  </div>
+</section>
+
+<section class="th-cta">
+  <h2>Pas sûr·e par où commencer ?</h2>
+  <p>La consultation découverte gratuite de 15 minutes est faite pour ça. Aucun engagement — juste une conversation honnête.</p>
+  <a href={CALENDLY} target="_blank" rel="noopener">Consultation découverte gratuite</a>
+</section>
+
+</BaseLayout>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((e) => e.forEach(r => { if (r.isIntersecting) { r.target.classList.add('visible'); observer.unobserve(r.target); }}), { threshold: 0.08 });
+  reveals.forEach(r => observer.observe(r));
+</script>
