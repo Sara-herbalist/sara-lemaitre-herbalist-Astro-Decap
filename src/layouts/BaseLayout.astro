@@ -210,47 +210,78 @@ const schemas = [sharedSchema, ...(schema ? (Array.isArray(schema) ? schema : [s
     <div class="footer-grid">
       <div class="footer-brand">
         <span class="logo">Sara Lemaitre</span>
-        <p>Clinical herbalist, naturopath and former elite athlete. Specialising in hormonal health, endometriosis, PCOS, chronic fatigue, and performance recovery. Online and in person. English &amp; French.</p>
+        {lang === 'fr' ? (
+          <p>Herboriste clinique, naturopathe et ancienne athlète de haut niveau. Spécialisée en santé hormonale, endométriose, SOPK, fatigue chronique et récupération sportive. En ligne et en présentiel. Français &amp; anglais.</p>
+        ) : (
+          <p>Clinical herbalist, naturopath and former elite athlete. Specialising in hormonal health, endometriosis, PCOS, chronic fatigue, and performance recovery. Online and in person. English &amp; French.</p>
+        )}
       </div>
       <div>
-        <p class="footer-col-title">Practice</p>
+        <p class="footer-col-title">{lang === 'fr' ? 'La pratique' : 'Practice'}</p>
         <ul class="footer-links">
-          <li><a href="/therapies">Therapies</a></li>
-          <li><a href="/pricing">Pricing &amp; packages</a></li>
-          <li><a href="/story">My story</a></li>
-          <li><a href="/workshops">Workshops</a></li>
-          <li><a href="/walks">Holistic walks</a></li>
+          {lang === 'fr' ? (
+            <>
+              <li><a href="/fr/therapies">Thérapies</a></li>
+              <li><a href="/fr/pricing">Tarifs &amp; formules</a></li>
+              <li><a href="/fr/story">Mon parcours</a></li>
+              <li><a href="/fr/workshops">Ateliers</a></li>
+              <li><a href="/fr/walks">Balades botaniques</a></li>
+            </>
+          ) : (
+            <>
+              <li><a href="/therapies">Therapies</a></li>
+              <li><a href="/pricing">Pricing &amp; packages</a></li>
+              <li><a href="/story">My story</a></li>
+              <li><a href="/workshops">Workshops</a></li>
+              <li><a href="/walks">Holistic walks</a></li>
+            </>
+          )}
         </ul>
       </div>
       <div>
-        <p class="footer-col-title">Specialisms</p>
+        <p class="footer-col-title">{lang === 'fr' ? 'Spécialisations' : 'Specialisms'}</p>
         <ul class="footer-links">
-          <li><a href="/therapies#herbal">Hormonal health</a></li>
-          <li><a href="/therapies#athlete">Athletes &amp; performance</a></li>
-          <li><a href="/therapies#ihm">Indian head massage</a></li>
-          <li><a href="/therapies#naturopathy">Naturopathy</a></li>
-          <li><a href="/therapies#tcm">TCM &amp; integrative</a></li>
+          {lang === 'fr' ? (
+            <>
+              <li><a href="/fr/therapies#herbal">Santé hormonale</a></li>
+              <li><a href="/fr/therapies#athlete">Sportifs &amp; performance</a></li>
+              <li><a href="/fr/therapies#ihm">Massage crânien indien</a></li>
+              <li><a href="/fr/therapies#naturopathy">Naturopathie</a></li>
+              <li><a href="/fr/therapies#tcm">MTC &amp; intégratif</a></li>
+            </>
+          ) : (
+            <>
+              <li><a href="/therapies#herbal">Hormonal health</a></li>
+              <li><a href="/therapies#athlete">Athletes &amp; performance</a></li>
+              <li><a href="/therapies#ihm">Indian head massage</a></li>
+              <li><a href="/therapies#naturopathy">Naturopathy</a></li>
+              <li><a href="/therapies#tcm">TCM &amp; integrative</a></li>
+            </>
+          )}
         </ul>
       </div>
       <div>
-        <p class="footer-col-title">Connect</p>
+        <p class="footer-col-title">{lang === 'fr' ? 'Nous rejoindre' : 'Connect'}</p>
         <ul class="footer-links">
           <li><a href="#" aria-label="Instagram">Instagram</a></li>
           <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
-          <li><a href="/consultancy">Consultancy</a></li>
-          <li><a href={CALENDLY} target="_blank" rel="noopener">Book a call</a></li>
+          {lang === 'fr' ? (
+            <li><a href="/fr/consultancy">Consultance</a></li>
+          ) : (
+            <li><a href="/consultancy">Consultancy</a></li>
+          )}
+          <li><a href={CALENDLY} target="_blank" rel="noopener">{lang === 'fr' ? 'Prendre rendez-vous' : 'Book a call'}</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Sara Lemaitre · Herbal Medicine &amp; Naturopathy · <a href="/legal" style="color:rgba(247,243,238,.4);text-decoration:none;">Legal &amp; privacy</a></p>
-      <p>Consultations in English &amp; French · UK registered practitioner · Online &amp; in person</p>
+      <p>© 2025 Sara Lemaitre · Herbal Medicine &amp; Naturopathy · <a href={lang === 'fr' ? '/fr/legal' : '/legal'} style="color:rgba(247,243,238,.4);text-decoration:none;">{lang === 'fr' ? 'Mentions légales' : 'Legal & privacy'}</a></p>
+      <p>{lang === 'fr' ? 'Consultations en français & anglais · Praticienne enregistrée au Royaume-Uni · En ligne & en présentiel' : 'Consultations in English & French · UK registered practitioner · Online & in person'}</p>
     </div>
   </footer>
 
   <!-- Scripts -->
-  <script src="/translations.js" is:inline></script>
-  <script src="/i18n.js" is:inline></script>
+  <!-- Language handled by /fr/ route system - no JS translation needed -->
 
   <script>
     // Nav scroll effect
