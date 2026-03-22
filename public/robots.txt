@@ -1,0 +1,52 @@
+# robots.txt — Sara Lemaitre Herbal Medicine & Naturopathy
+# https://www.saralemaitre.com
+
+# Standard search engine crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# AI training crawlers — allowed
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic / Claude
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+# Google AI (Gemini / AI Overviews)
+User-agent: Google-Extended
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Common AI and research crawlers
+User-agent: Applebot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# All other crawlers
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.saralemaitre.com/sitemap.xml
