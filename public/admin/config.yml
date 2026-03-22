@@ -10,37 +10,48 @@ public_folder: /images
 
 collections:
 
-  # ── PAGES ────────────────────────────────────────────────────
-  - name: pages
-    label: Pages
-    files:
+  # ── ENGLISH ─────────────────────────────────────────────────
 
-      - name: homepage
-        label: Homepage
+  - name: homepage_en
+    label: "Homepage (EN)"
+    files:
+      - name: homepage_en
+        label: "Homepage — English text"
         file: src/data/homepage.json
         fields:
           - { label: "Hero eyebrow", name: heroEyebrow, widget: string }
           - { label: "Hero description", name: heroDesc, widget: text }
-          - { label: "Practice section title", name: introTitle, widget: string }
-          - { label: "Practice section text", name: introBody, widget: text }
+          - { label: "Intro section title", name: introTitle, widget: string }
+          - { label: "Intro subtitle", name: introSubtitle, widget: string }
+          - { label: "Intro body 1", name: introBody1, widget: text }
+          - { label: "Intro body 2", name: introBody2, widget: text }
 
-      - name: pricing
-        label: Pricing
+  - name: pricing_en
+    label: "Pricing (shared EN + FR)"
+    files:
+      - name: pricing_en
+        label: "Prices — edit here for both languages"
         file: src/data/pricing.json
         fields:
           - { label: "Initial consultation (£)", name: initialConsultation, widget: number }
-          - { label: "Follow-up consultation (£)", name: followUp, widget: number }
-          - { label: "Athlete consultation (£)", name: athleteConsultation, widget: number }
-          - { label: "Hormonal Reset Programme (£)", name: hormonalReset, widget: number }
-          - { label: "Stress & Burnout Recovery (£)", name: stressBurnout, widget: number }
-          - { label: "Perimenopause Support (£)", name: perimenopause, widget: number }
-          - { label: "Athlete Performance & Recovery (£)", name: athletePerformance, widget: number }
+          - { label: "Initial sliding scale (£)", name: initialConsultationSlidingScale, widget: number }
+          - { label: "Follow-up (£)", name: followUp, widget: number }
+          - { label: "Follow-up sliding scale (£)", name: followUpSlidingScale, widget: number }
+          - { label: "Bundle 3 sessions (£)", name: bundle3Sessions, widget: number }
+          - { label: "Bundle sliding scale (£)", name: bundle3SessionsSlidingScale, widget: number }
           - { label: "Indian Head Massage (£)", name: ihm, widget: number }
-          - { label: "Monthly retainer Standard (£)", name: retainerStandard, widget: number }
-          - { label: "Monthly retainer Intensive (£)", name: retainerIntensive, widget: number }
+          - { label: "Hormonal Reset programme (£)", name: hormonalReset, widget: number }
+          - { label: "Stress & Burnout programme (£)", name: stressBurnout, widget: number }
+          - { label: "Perimenopause programme (£)", name: perimenopause, widget: number }
+          - { label: "Athlete Performance programme (£)", name: athletePerformance, widget: number }
+          - { label: "Retainer Standard /mo (£)", name: retainerStandard, widget: number }
+          - { label: "Retainer Intensive /mo (£)", name: retainerIntensive, widget: number }
 
-      - name: settings
-        label: Settings
+  - name: settings_en
+    label: "Settings (EN)"
+    files:
+      - name: settings_en
+        label: "Settings — English site"
         file: src/data/settings.json
         fields:
           - { label: "Calendly URL", name: calendlyUrl, widget: string }
@@ -48,26 +59,152 @@ collections:
           - { label: "LinkedIn URL", name: linkedinUrl, widget: string }
           - { label: "Contact email", name: email, widget: string }
 
-  # ── WORKSHOPS ────────────────────────────────────────────────
-  - name: workshops
-    label: Workshops
-    folder: src/data/workshops
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Title", name: title, widget: string }
-      - { label: "Description", name: description, widget: text }
-      - { label: "Duration", name: duration, widget: string, hint: "e.g. 3 hours" }
-      - { label: "Format", name: format, widget: string, hint: "e.g. In person · Online" }
-      - { label: "Price", name: price, widget: string, hint: "e.g. £45 per person" }
+  # ── FRENCH ──────────────────────────────────────────────────
 
-  # ── TESTIMONIALS ─────────────────────────────────────────────
-  - name: testimonials
-    label: Testimonials
-    folder: src/data/testimonials
-    create: true
-    slug: "{{slug}}"
-    fields:
-      - { label: "Quote", name: quote, widget: text }
-      - { label: "Author (first name or initials)", name: author, widget: string }
-      - { label: "Condition or context", name: condition, widget: string, hint: "e.g. Endometriosis" }
+  - name: homepage_fr
+    label: "Page d'accueil (FR)"
+    files:
+      - name: homepage_fr
+        label: "Accueil — textes français"
+        file: src/data/fr/homepage.json
+        fields:
+          - { label: "Accroche hero", name: heroEyebrow, widget: string }
+          - { label: "Description hero", name: heroDesc, widget: text }
+          - { label: "Titre section pratique", name: introTitle, widget: string }
+          - { label: "Sous-titre section pratique", name: introSubtitle, widget: string }
+          - { label: "Corps texte 1", name: introBody1, widget: text }
+          - { label: "Corps texte 2", name: introBody2, widget: text }
+
+  - name: story_fr
+    label: "Mon parcours (FR)"
+    files:
+      - name: story_fr
+        label: "Mon parcours — textes français"
+        file: src/data/fr/story.json
+        fields:
+          - { label: "Titre hero ligne 1", name: heroTitle1, widget: string }
+          - { label: "Titre hero ligne 2", name: heroTitle2, widget: string }
+          - { label: "Titre hero ligne 3 (italique)", name: heroTitle3, widget: string }
+          - { label: "Description hero", name: heroDesc, widget: text }
+          - { label: "Citation principale", name: pullQuote, widget: text }
+          - { label: "Section 1 — titre", name: s1h2, widget: string }
+          - { label: "Section 1 — paragraphe 1", name: s1p1, widget: text }
+          - { label: "Section 1 — paragraphe 2", name: s1p2, widget: text }
+          - { label: "Section 1 — encart citation", name: s1inset, widget: text }
+          - { label: "Section 2 — titre", name: s2h2, widget: string }
+          - { label: "Section 2 — encart citation", name: s2inset, widget: text }
+          - { label: "Section 3 — titre", name: s3h2, widget: string }
+          - { label: "Section 3 — encart citation", name: s3inset, widget: text }
+          - { label: "Section magnolia — titre", name: magnoliaTitle, widget: string }
+          - { label: "Section actuelle — titre", name: nowTitle, widget: string }
+          - { label: "Section actuelle — paragraphe 1", name: nowP1, widget: text }
+          - { label: "Section actuelle — paragraphe 2", name: nowP2, widget: text }
+          - { label: "Section actuelle — paragraphe 3", name: nowP3, widget: text }
+
+  - name: therapies_fr
+    label: "Thérapies (FR)"
+    files:
+      - name: therapies_fr
+        label: "Thérapies — textes français"
+        file: src/data/fr/therapies.json
+        fields:
+          - { label: "Titre hero", name: heroTitle, widget: string }
+          - { label: "Description hero", name: heroDesc, widget: text }
+          - { label: "Phytothérapie — titre", name: herbalTitle, widget: string }
+          - { label: "Phytothérapie — paragraphe 1", name: herbalP1, widget: text }
+          - { label: "Phytothérapie — paragraphe 2", name: herbalP2, widget: text }
+          - { label: "Phytothérapie — paragraphe 3", name: herbalP3, widget: text }
+          - { label: "Naturopathie — titre", name: naturoTitle, widget: string }
+          - { label: "Naturopathie — paragraphe 1", name: naturoP1, widget: text }
+          - { label: "Naturopathie — paragraphe 2", name: naturoP2, widget: text }
+          - { label: "Massage crânien — titre", name: ihmTitle, widget: string }
+          - { label: "Massage crânien — citation", name: ihmQuote, widget: string }
+          - { label: "Massage crânien — paragraphe 1", name: ihmP1, widget: text }
+          - { label: "Massage crânien — paragraphe 2", name: ihmP2, widget: text }
+          - { label: "Sportifs — titre", name: athleteTitle, widget: string }
+          - { label: "Sportifs — paragraphe 1", name: athleteP1, widget: text }
+          - { label: "Sportifs — paragraphe 2", name: athleteP2, widget: text }
+
+  - name: workshops_fr
+    label: "Ateliers (FR)"
+    files:
+      - name: workshops_fr
+        label: "Ateliers — textes français"
+        file: src/data/fr/workshops.json
+        fields:
+          - { label: "Titre hero", name: heroTitle, widget: string }
+          - { label: "Description hero", name: heroDesc, widget: text }
+          - { label: "Atelier 1 — titre", name: w1Title, widget: string }
+          - { label: "Atelier 1 — description", name: w1Desc, widget: text }
+          - { label: "Atelier 2 — titre", name: w2Title, widget: string }
+          - { label: "Atelier 2 — description", name: w2Desc, widget: text }
+          - { label: "Atelier 3 — titre", name: w3Title, widget: string }
+          - { label: "Atelier 3 — description", name: w3Desc, widget: text }
+          - { label: "Atelier 4 — titre", name: w4Title, widget: string }
+          - { label: "Atelier 4 — description", name: w4Desc, widget: text }
+
+  - name: walks_fr
+    label: "Balades (FR)"
+    files:
+      - name: walks_fr
+        label: "Balades — textes français"
+        file: src/data/fr/walks.json
+        fields:
+          - { label: "Titre hero", name: heroTitle, widget: string }
+          - { label: "Description hero", name: heroDesc, widget: text }
+          - { label: "Section ouverture — titre", name: openingTitle, widget: string }
+          - { label: "Section ouverture — paragraphe 1", name: openingP1, widget: text }
+          - { label: "Section ouverture — paragraphe 2", name: openingP2, widget: text }
+
+  - name: consultancy_fr
+    label: "Consultance (FR)"
+    files:
+      - name: consultancy_fr
+        label: "Consultance — textes français"
+        file: src/data/fr/consultancy.json
+        fields:
+          - { label: "Titre hero", name: heroTitle, widget: string }
+          - { label: "Description hero", name: heroDesc, widget: text }
+          - { label: "Service 1 — titre", name: s1Title, widget: string }
+          - { label: "Service 1 — description", name: s1Desc, widget: text }
+          - { label: "Service 2 — titre", name: s2Title, widget: string }
+          - { label: "Service 2 — description", name: s2Desc, widget: text }
+          - { label: "Service 3 — titre", name: s3Title, widget: string }
+          - { label: "Service 3 — description", name: s3Desc, widget: text }
+          - { label: "Service 4 — titre", name: s4Title, widget: string }
+          - { label: "Service 4 — description", name: s4Desc, widget: text }
+
+  - name: book_fr
+    label: "Réservation (FR)"
+    files:
+      - name: book_fr
+        label: "Page réservation — textes français"
+        file: src/data/fr/book.json
+        fields:
+          - { label: "Titre hero", name: heroTitle, widget: string }
+          - { label: "Description hero", name: heroDesc, widget: text }
+          - { label: "Découverte — titre", name: discoveryTitle, widget: string }
+          - { label: "Découverte — description", name: discoveryDesc, widget: text }
+          - { label: "Initiale — titre", name: initialTitle, widget: string }
+          - { label: "Initiale — description", name: initialDesc, widget: text }
+          - { label: "Suivi — titre", name: followupTitle, widget: string }
+          - { label: "Suivi — description", name: followupDesc, widget: text }
+          - { label: "Forfait — titre", name: bundleTitle, widget: string }
+          - { label: "Forfait — description", name: bundleDesc, widget: text }
+          - { label: "Massage crânien — titre", name: ihmTitle, widget: string }
+          - { label: "Massage crânien — description", name: ihmDesc, widget: text }
+          - { label: "Virement — nom du compte", name: bankName, widget: string }
+          - { label: "Virement — code de tri", name: bankSort, widget: string }
+          - { label: "Virement — numéro de compte", name: bankAccount, widget: string }
+
+  - name: settings_fr
+    label: "Réglages (FR)"
+    files:
+      - name: settings_fr
+        label: "Réglages — version française"
+        file: src/data/fr/settings.json
+        fields:
+          - { label: "URL Calendly", name: calendlyUrl, widget: string }
+          - { label: "URL Instagram", name: instagramUrl, widget: string }
+          - { label: "URL LinkedIn", name: linkedinUrl, widget: string }
+          - { label: "E-mail de contact", name: email, widget: string }
