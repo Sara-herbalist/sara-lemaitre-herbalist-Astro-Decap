@@ -1,0 +1,15 @@
+{
+  "initialConsultation": 110,
+  "initialConsultationSlidingScale": 85,
+  "followUp": 75,
+  "followUpSlidingScale": 65,
+  "bundle3Sessions": 220,
+  "bundle3SessionsSlidingScale": 195,
+  "ihm": 60,
+  "hormonalReset": 360,
+  "stressBurnout": 340,
+  "perimenopause": 380,
+  "athletePerformance": 370,
+  "retainerStandard": 240,
+  "retainerIntensive": 320
+}
