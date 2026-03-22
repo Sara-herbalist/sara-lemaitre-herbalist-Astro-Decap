@@ -1,0 +1,501 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const meta = {
+  title: "Legal, Privacy Policy & Health Disclaimer | Sara Lemaitre",
+  description: "Health disclaimer, scope of practice, cancellation policy, GDPR privacy policy and terms of service for Sara Lemaitre's herbal medicine and naturopathy practice.",
+  ogImage: "https://www.saralemaitre.com/images/og-default.jpg",
+  canonical: "https://www.saralemaitre.com/legal",
+  navLight: true,
+  currentPage: 'legal',
+  ogType: 'website',
+};
+---
+
+<BaseLayout {...meta}>
+
+<style is:global>
+:root {
+    --cream: #F7F3EE; --warm-white: #FDFAF7;
+    --sage: #7A8C6E;
+    --sage-text: #4E6245; --sage-light: #C4D0BA; --sage-pale: #EBF0E7;
+    --bark: #5C4A3A; --bark-light: #8C7060; --bark-pale: #EDE5DC;
+    --charcoal: #2A2420; --muted: #6A5E58;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--warm-white); color: var(--charcoal); font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.8; overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; background: rgba(253,250,247,0.93); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: var(--bark); text-decoration: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: .9375rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover { color: var(--bark); }
+
+  /* PAGE HEADER */
+  .page-header { padding: 12rem 8rem 5rem; background: var(--cream); border-bottom: 1px solid rgba(122,108,100,0.12); }
+  .header-eyebrow { font-size: .75rem; letter-spacing: .24em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
+  .header-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 3.8rem); font-weight: 300; color: var(--bark); line-height: 1.1; margin-bottom: 1.5rem; }
+  .header-title em { font-style: italic; color: var(--sage-text); }
+  .header-desc { font-size: 1.0625rem; color: var(--muted); line-height: 1.9; max-width: 680px; }
+
+  /* NAV TABS */
+  .section-tabs { position: sticky; top: 73px; z-index: 50; background: rgba(253,250,247,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(122,108,100,0.1); padding: 0 8rem; display: flex; gap: 0; overflow-x: auto; scrollbar-width: none; }
+  .section-tabs::-webkit-scrollbar { display: none; }
+  .tab-link { padding: 1.1rem 1.6rem; font-size: .9375rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-decoration: none; border-bottom: 2px solid transparent; white-space: nowrap; transition: all .2s; }
+  .tab-link:hover { color: var(--bark); }
+  .tab-link.active { color: var(--bark); border-bottom-color: var(--sage-text); }
+
+  /* CONTENT LAYOUT */
+  .content-wrap { max-width: 780px; margin: 0 auto; padding: 5rem 8rem; }
+  @media (max-width: 900px) { .content-wrap { padding: 4rem 2.5rem; } }
+
+  /* SECTION */
+  .policy-section { padding: 5rem 0; border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .policy-section:last-child { border-bottom: none; }
+  .section-eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1rem; }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 300; color: var(--bark); line-height: 1.2; margin-bottom: 2rem; }
+  .section-title em { font-style: italic; color: var(--sage-text); }
+  .policy-p { font-size: 1.0625rem; color: #4A403C; line-height: 1.95; margin-bottom: 1.3rem; }
+  .policy-p strong { font-weight: 500; color: var(--bark); }
+  .policy-p em { font-style: italic; color: var(--sage-text); }
+
+  /* IMPORTANT BOX */
+  .important-box { margin: 2rem 0; padding: 1.8rem 2rem; background: var(--bark); border-radius: 2px; }
+  .important-box p { font-size: 1rem; color: rgba(247,243,238,.82); line-height: 1.85; }
+  .important-box strong { color: var(--cream); font-weight: 500; }
+  .important-box .box-title { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--sage-light); margin-bottom: .8rem; }
+
+  /* WARNING BOX */
+  .warning-box { margin: 2rem 0; padding: 1.6rem 2rem; background: var(--sage-pale); border-left: 3px solid var(--sage); }
+  .warning-box p { font-size: 1rem; color: var(--bark); line-height: 1.85; }
+  .warning-box strong { font-weight: 500; }
+
+  /* POLICY LIST */
+  .policy-list { list-style: none; display: flex; flex-direction: column; gap: .6rem; margin: 1.2rem 0; }
+  .policy-list li { font-size: 1rem; color: #4A403C; display: flex; align-items: flex-start; gap: .8rem; line-height: 1.6; }
+  .policy-list li::before { content: '·'; color: var(--sage-text); flex-shrink: 0; font-size: 1.1rem; line-height: 1.4; }
+
+  /* TABLE */
+  .policy-table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 1rem; }
+  .policy-table th { text-align: left; padding: .8rem 1rem; background: var(--cream); border-bottom: 1px solid rgba(122,108,100,0.15); font-weight: 500; color: var(--bark); font-size: .9375rem; letter-spacing: .06em; }
+  .policy-table td { padding: .9rem 1rem; border-bottom: 1px solid rgba(122,108,100,0.08); color: #4A403C; vertical-align: top; line-height: 1.6; }
+  .policy-table tr:last-child td { border-bottom: none; }
+  .policy-table tr:hover td { background: var(--cream); }
+
+  /* UPDATED DATE */
+  .last-updated { font-size: .9375rem; color: var(--muted); margin-top: 1rem; font-style: italic; }
+
+  footer { background: var(--charcoal); padding: 3rem 8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  footer p { font-size: .9375rem; letter-spacing: .08em; color: rgba(247,243,238,.25); }
+
+  @media (max-width: 900px) {
+    nav { padding: 1.2rem 2rem; }
+    .page-header { padding: 9rem 2.5rem 4rem; }
+    .section-tabs { padding: 0 2rem; }
+    footer { padding: 2rem 2.5rem; flex-direction: column; text-align: center; }
+  }
+
+  /* ── WCAG 2.2 AA: Visible focus indicators ── */
+  :focus-visible {
+    outline: 3px solid #5C4A3A;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  a:focus-visible, button:focus-visible, input:focus-visible,
+  select:focus-visible, textarea:focus-visible {
+    outline: 3px solid #5C4A3A;
+    outline-offset: 3px;
+  }
+
+  /* Screen-reader only utility */
+  .sr-only {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── Skip navigation link ── */
+  .skip-nav {
+    position: absolute; top: -100px; left: 1rem; z-index: 9999;
+    background: #5C4A3A; color: #F7F3EE;
+    padding: .75rem 1.5rem; font-size: 1.0625rem;
+    text-decoration: none; border-radius: 0 0 4px 4px;
+    transition: top .2s;
+  }
+  .skip-nav:focus { top: 0; }
+
+
+  /* ── Mobile hamburger menu ── */
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer;
+    padding: .5rem; margin-left: .5rem;
+  }
+  .hamburger span {
+    display: block; width: 22px; height: 2px;
+    background: var(--bark); border-radius: 2px;
+    transition: all .25s;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  
+  @media (max-width: 1024px) {
+    .hamburger { display: flex; }
+    .nav-links {
+      display: none; position: fixed; top: 73px; left: 0; right: 0;
+      background: rgba(253,250,247,0.98); backdrop-filter: blur(12px);
+      flex-direction: column; gap: 0; padding: 1rem 0;
+      border-bottom: 1px solid rgba(122,108,100,0.12);
+      z-index: 99;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links li a {
+      display: block; padding: .9rem 2rem;
+      font-size: 1.0625rem; letter-spacing: .08em;
+      border-bottom: 1px solid rgba(122,108,100,0.06);
+    }
+    .nav-book { display: none; }
+  }
+
+
+
+  .lang-toggle {
+    font-size: .75rem; letter-spacing: .16em; text-transform: uppercase;
+    padding: .45rem .9rem; border: 1px solid rgba(247,243,238,.5);
+    background: none; color: rgba(247,243,238,.85); cursor: pointer;
+    font-family: 'Jost', sans-serif; border-radius: 2px;
+    transition: all .3s; margin-left: .5rem;
+  }
+  nav.scrolled .lang-toggle { border-color: rgba(92,74,58,.35); color: var(--muted); }
+  .lang-toggle:hover, nav.scrolled .lang-toggle:hover { border-color: var(--bark); color: var(--bark); }
+
+
+  /* Pages with light-coloured heroes — nav starts dark */
+  body[data-nav="light"] nav {
+    background: rgba(253,250,247,0.85);
+    backdrop-filter: blur(8px);
+  }
+  body[data-nav="light"] .nav-logo { color: var(--bark); }
+  body[data-nav="light"] .nav-links a { color: var(--muted); }
+  body[data-nav="light"] .nav-links a:hover { color: var(--bark); }
+  body[data-nav="light"] .nav-book { border-color: var(--bark); color: var(--bark); }
+  body[data-nav="light"] .lang-toggle { border-color: rgba(92,74,58,.35); color: var(--muted); }
+</style>
+
+<header id="main-content" role="main" class="page-header">
+  <p class="header-eyebrow">Transparency & protection</p>
+  <h1 class="header-title">Legal information,<br>policies & <em>disclaimer</em></h1>
+  <p class="header-desc">This page sets out everything you need to know about how I practise, what herbal medicine and naturopathy are and are not, how I handle your personal information, and the terms under which we work together. Please read the disclaimer section carefully before booking.</p>
+  <p class="last-updated">Last reviewed and updated: March 2026</p>
+</header>
+
+<div class="section-tabs">
+  <a href="#disclaimer" class="tab-link active">Disclaimer</a>
+  <a href="#scope" class="tab-link" data-i18n="legal.scope.title">Scope of practice</a>
+  <a href="#cancellation" class="tab-link" data-i18n="legal.cancel.title">Cancellation policy</a>
+  <a href="#privacy" class="tab-link">Privacy & GDPR</a>
+  <a href="#data" class="tab-link">Health data</a>
+  <a href="#terms" class="tab-link">Terms & conditions</a>
+  <a href="#advertising" class="tab-link">Advertising & claims</a>
+  <a href="#contact" class="tab-link">Contact</a>
+</div>
+
+<div class="content-wrap">
+
+  <!-- DISCLAIMER -->
+  <section class="policy-section" id="disclaimer">
+    <p class="section-eyebrow">Important — please read before booking</p>
+    <h2 class="section-title">Health <em>disclaimer</em></h2>
+
+    <div class="important-box">
+      <p class="box-title">Essential notice</p>
+      <p><strong>Herbal medicine and naturopathy are complementary disciplines. They are not a substitute for medical diagnosis, treatment, or advice from a qualified medical doctor.</strong> Nothing on this website, in any consultation, or in any written protocol I provide constitutes a medical diagnosis, a prescription, or a recommendation to stop, reduce, or replace any medication or treatment prescribed by a medical professional.</p>
+    </div>
+
+    <p class="policy-p">I am a qualified clinical herbalist and naturopath. I am <strong>not a medical doctor, physician, or any other type of statutorily regulated healthcare practitioner</strong>. I am not qualified to diagnose medical conditions, and I do not do so. My role is to support your wellbeing using plant medicine, naturopathic principles, and lifestyle guidance — within a clearly defined scope of practice.</p>
+
+    <p class="policy-p">Herbal medicine has a long tradition of use and a growing body of scientific research supporting its applications. However, <strong>herbal medicine is not the same as medicine</strong>, and it does not replace it. The two can work together effectively — and often do — but the decision about how to integrate herbal support alongside any medical treatment you are receiving belongs to you and your prescribing doctor.</p>
+
+    <p class="policy-p">If you are experiencing symptoms that concern you, please consult your GP or a qualified medical professional. If you are experiencing a medical emergency, please call 999 or go to your nearest A&E.</p>
+
+    <div class="warning-box">
+      <p><strong>Please always tell your doctor that you are using herbal medicine.</strong> Some herbs interact with prescribed medications. I will always conduct a herb-drug interaction check as part of your initial consultation, but your prescribing doctor needs to know about any supplements or herbal medicines you are taking. This is not a barrier to working with me — it is a safety step that protects you.</p>
+    </div>
+
+    <p class="policy-p">The information on this website is provided for educational and general informational purposes only. It does not constitute medical advice. Individual results vary and are not guaranteed. What works for one person may not work for another, and the timescale of improvement through herbal medicine and naturopathy varies significantly depending on the individual, the condition, and the consistency of the protocol.</p>
+
+    <p class="policy-p"><strong>Specific circumstances where you must consult your GP before beginning herbal medicine:</strong></p>
+    <ul class="policy-list">
+      <li>You are pregnant or trying to conceive</li>
+      <li>You are breastfeeding</li>
+      <li>You are taking prescribed medication of any kind</li>
+      <li>You have a diagnosed serious or chronic illness</li>
+      <li>You have been advised by a doctor to avoid certain supplements or foods</li>
+      <li>You are under 18 years of age</li>
+      <li>You are currently undergoing cancer treatment or have done so in the last two years</li>
+      <li>You have a known allergy to any plant family</li>
+    </ul>
+
+    <p class="policy-p">I will always ask about all of the above during your initial consultation. If I believe that a medical referral or GP consultation is needed before or alongside working with me, I will tell you — directly and honestly.</p>
+  </section>
+
+  <!-- SCOPE OF PRACTICE -->
+  <section class="policy-section" id="scope">
+    <p class="section-eyebrow">What I do and do not do</p>
+    <h2 class="section-title">Scope of <em>practice</em></h2>
+
+    <p class="policy-p">Herbal medicine practitioners in the UK are <em>voluntarily regulated</em>, not statutorily regulated. This means there is no legal requirement to hold a qualification to call yourself a herbalist — but professional membership of a recognised body such as the <strong>National Institute of Medical Herbalists (NIMH)</strong> or the College of Practitioners of Phytotherapy (CPP), both of which are governed by the European Herbal and Traditional Medicine Practitioners Association (EHTPA), denotes degree-level training and adherence to a professional code of ethics.</p>
+
+    <p class="policy-p">Under <strong>The Human Medicines Regulations 2012 (Regulation 241)</strong>, I am permitted to supply unlicensed herbal remedies exempt from licensing, provided they are manufactured or assembled on the practitioner's premises and supplied on the basis of a one-to-one consultation. This is commonly known as the <em>herbalist's exemption</em>. I operate within this framework.</p>
+
+    <div class="policy-table-wrap" style="overflow-x:auto">
+    <table class="policy-table">
+      <thead>
+        <tr>
+          <th>What I do</th>
+          <th>What I do not do</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Take a full health history and assess your overall wellbeing</td>
+          <td>Diagnose medical conditions</td>
+        </tr>
+        <tr>
+          <td>Provide personalised herbal and naturopathic protocols</td>
+          <td>Prescribe pharmaceutical drugs or controlled substances</td>
+        </tr>
+        <tr>
+          <td>Formulate and supply unlicensed herbal remedies following a one-to-one consultation</td>
+          <td>Advise you to stop prescribed medication without GP consultation</td>
+        </tr>
+        <tr>
+          <td>Conduct herb-drug interaction checks</td>
+          <td>Provide medical diagnoses or second opinions on medical diagnoses</td>
+        </tr>
+        <tr>
+          <td>Refer you to your GP or a specialist when appropriate</td>
+          <td>Treat medical emergencies</td>
+        </tr>
+        <tr>
+          <td>Support your wellbeing as a complement to medical care</td>
+          <td>Guarantee treatment outcomes</td>
+        </tr>
+        <tr>
+          <td>Provide Indian head massage (in person only)</td>
+          <td>Claim that herbal medicine can cure diagnosed diseases</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <p class="policy-p">I hold professional indemnity and public liability insurance appropriate to my scope of practice. Proof of insurance is available on request by professional bodies, insurers, or venue operators.</p>
+  </section>
+
+  <!-- CANCELLATION -->
+  <section class="policy-section" id="cancellation">
+    <p class="section-eyebrow">Bookings & changes</p>
+    <h2 class="section-title">Cancellation &<br><em>rescheduling policy</em></h2>
+
+    <p class="policy-p">I ask for reasonable notice when plans change — both out of respect for the time set aside for your consultation and to allow other clients who may be waiting for an appointment to take that slot.</p>
+
+    <table class="policy-table">
+      <thead>
+        <tr>
+          <th>Notice given</th>
+          <th>Charge</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>More than 48 hours</strong></td>
+          <td>No charge. Full refund or free reschedule.</td>
+          <td>Preferred option — allows the slot to be offered to another client.</td>
+        </tr>
+        <tr>
+          <td><strong>24–48 hours</strong></td>
+          <td>50% of session fee</td>
+          <td>Reschedule offered at no additional charge.</td>
+        </tr>
+        <tr>
+          <td><strong>Less than 24 hours</strong></td>
+          <td>Full session fee</td>
+          <td>Exceptions made for genuine emergencies at my discretion.</td>
+        </tr>
+        <tr>
+          <td><strong>No-show</strong></td>
+          <td>Full session fee</td>
+          <td>If you are unable to attend, please notify me as early as possible.</td>
+        </tr>
+        <tr>
+          <td><strong>My cancellation</strong></td>
+          <td>Full refund or free reschedule</td>
+          <td>I will always give as much notice as possible. This is rare.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="policy-p"><strong>Packages and programmes:</strong> Sessions within a package are non-refundable once the package has commenced but may be rescheduled with 48 hours' notice. If you need to pause a programme for health or personal reasons, please speak to me — I will always try to accommodate genuine circumstances with compassion and flexibility.</p>
+
+    <p class="policy-p"><strong>Workshops and walks:</strong> Cancellations with more than 7 days' notice receive a full refund. Cancellations within 7 days of the event are non-refundable but your place may be transferred to another person. If an event is cancelled by me due to insufficient numbers or unforeseen circumstances, a full refund will be issued.</p>
+
+    <p class="policy-p"><strong>How to cancel or reschedule:</strong> Please email me directly at [your email] or use the booking system cancellation link. Cancellations by message on social media platforms are not accepted as official notice.</p>
+
+    <div class="warning-box">
+      <p><strong>A note on compassion:</strong> I know that many of my clients are managing health conditions that make their days unpredictable. If you are unwell and need to cancel at short notice because of a health flare, please tell me. I apply this policy with common sense, not rigidity. If something genuine has happened, we will find a way to work it out.</p>
+    </div>
+  </section>
+
+  <!-- PRIVACY -->
+  <section class="policy-section" id="privacy">
+    <p class="section-eyebrow">UK GDPR & Data Protection Act 2018</p>
+    <h2 class="section-title">Privacy policy &<br><em>your data rights</em></h2>
+
+    <p class="policy-p">This privacy policy explains how I, Sara Lemaitre, trading as Sara Lemaitre Herbal Medicine & Naturopathy, collect, use, store, and protect your personal data. I take data protection seriously and comply with the <strong>UK General Data Protection Regulation (UK GDPR)</strong> and the <strong>Data Protection Act 2018</strong>.</p>
+
+    <p class="policy-p"><strong>Data controller:</strong> Sara Lemaitre, Sara Lemaitre Herbal Medicine & Naturopathy. Contact: [your email address].</p>
+
+    <p class="policy-p"><strong>ICO registration:</strong> As a sole practitioner processing personal health data, I am registered with the Information Commissioner's Office (ICO). Registration number: [insert your ICO number once registered].</p>
+
+    <p class="policy-p"><strong>What personal data I collect:</strong></p>
+    <ul class="policy-list">
+      <li>Contact details: name, email address, phone number, location</li>
+      <li>Health information provided during consultations (see Health Data section below)</li>
+      <li>Booking and payment information (processed through third-party booking and payment systems)</li>
+      <li>Communications you send me by email, contact form, or message</li>
+      <li>Mailing list sign-ups and workshop registrations</li>
+      <li>Website usage data via cookies (see Cookie section below)</li>
+    </ul>
+
+    <p class="policy-p"><strong>Why I collect it and the legal basis:</strong></p>
+    <table class="policy-table">
+      <thead><tr><th>Purpose</th><th>Legal basis</th></tr></thead>
+      <tbody>
+        <tr><td>Delivering consultations and writing protocols</td><td>Contract performance + explicit consent for health data</td></tr>
+        <tr><td>Sending appointment reminders and follow-ups</td><td>Contract performance</td></tr>
+        <tr><td>Workshop and walk registrations</td><td>Contract performance</td></tr>
+        <tr><td>Sending the mailing list newsletter</td><td>Consent (opt-in only, unsubscribe any time)</td></tr>
+        <tr><td>Invoicing and financial records</td><td>Legal obligation (tax and accounting, 6 years)</td></tr>
+        <tr><td>Improving the website</td><td>Legitimate interests</td></tr>
+      </tbody>
+    </table>
+
+    <p class="policy-p"><strong>How long I keep your data:</strong> Client consultation records are retained for <strong>7 years</strong> from the date of last consultation, in line with professional practice guidelines for complementary health records. Financial records are retained for <strong>6 years</strong> in line with HMRC requirements. Mailing list data is kept until you unsubscribe. You may request deletion of any data I hold that is not subject to a legal retention obligation.</p>
+
+    <p class="policy-p"><strong>Who I share data with:</strong> I do not sell your data to anyone. I may share data with third-party services I use to operate my practice, including:</p>
+    <ul class="policy-list">
+      <li>Booking system provider (e.g. Calendly, Acuity, or similar) — for appointment scheduling</li>
+      <li>Payment processor (e.g. Stripe) — for payment processing</li>
+      <li>Email platform (e.g. Mailchimp or similar) — for the mailing list only</li>
+      <li>Cloud storage provider — for secure document storage</li>
+    </ul>
+    <p class="policy-p">All third-party providers are subject to data processing agreements. I do not transfer your data outside the UK or EEA without appropriate safeguards in place.</p>
+
+    <p class="policy-p"><strong>Your rights under UK GDPR:</strong></p>
+    <ul class="policy-list">
+      <li><strong>Right of access:</strong> You can request a copy of the personal data I hold about you</li>
+      <li><strong>Right to rectification:</strong> You can ask me to correct inaccurate data</li>
+      <li><strong>Right to erasure:</strong> You can ask me to delete your data, subject to legal retention obligations</li>
+      <li><strong>Right to restrict processing:</strong> You can ask me to limit how I use your data</li>
+      <li><strong>Right to data portability:</strong> You can request your data in a portable format</li>
+      <li><strong>Right to object:</strong> You can object to processing based on legitimate interests</li>
+      <li><strong>Right to withdraw consent:</strong> Where processing is based on consent, you may withdraw it at any time</li>
+    </ul>
+    <p class="policy-p">To exercise any of these rights, contact me at [your email]. I will respond within one calendar month. You also have the right to <strong>lodge a complaint with the ICO</strong> at ico.org.uk or by calling 0303 123 1113 if you believe I have not handled your data correctly.</p>
+
+    <p class="policy-p"><strong>Cookies:</strong> This website uses only essential cookies necessary for its operation. If I add analytics or any non-essential cookies in future, I will update this policy and display a cookie consent banner. You can control cookies through your browser settings.</p>
+  </section>
+
+  <!-- HEALTH DATA -->
+  <section class="policy-section" id="data">
+    <p class="section-eyebrow">Special category data — UK GDPR Article 9</p>
+    <h2 class="section-title">How I handle your<br><em>health information</em></h2>
+
+    <p class="policy-p">Health data is classified as <strong>special category data</strong> under UK GDPR, which means it receives additional protection and requires a specific legal condition for processing beyond the standard legal bases.</p>
+
+    <p class="policy-p">I process your health information on the basis of <strong>explicit consent</strong> — which you provide when you book a consultation and complete the intake form — and on the basis of <strong>the provision of healthcare or treatment</strong> (Article 9(2)(h)). You may withdraw consent at any time, though this may mean I am unable to continue providing services to you safely.</p>
+
+    <p class="policy-p"><strong>How health data is stored:</strong></p>
+    <ul class="policy-list">
+      <li>All consultation notes and health records are stored in encrypted, password-protected systems</li>
+      <li>Paper notes (if any are made during in-person sessions) are stored in a locked, secure location</li>
+      <li>Health information is never shared with third parties except where required by law (e.g. a safeguarding situation) or with your explicit consent (e.g. a referral letter to your GP at your request)</li>
+      <li>Records are retained for 7 years from the date of last consultation, in line with professional practice standards</li>
+    </ul>
+
+    <p class="policy-p"><strong>Your right to access your records:</strong> You may request a copy of your consultation notes and health records at any time. I will provide these within one calendar month at no charge.</p>
+
+    <div class="warning-box">
+      <p><strong>Confidentiality:</strong> Everything you tell me in a consultation is treated as strictly confidential. I will not share your health information with anyone — including family members — without your explicit consent, except in the very rare circumstance where I have a legal obligation to do so (for example, a safeguarding concern). I will always discuss this with you unless doing so would create a risk.</p>
+    </div>
+  </section>
+
+  <!-- TERMS & CONDITIONS -->
+  <section class="policy-section" id="terms">
+    <p class="section-eyebrow">Terms of service</p>
+    <h2 class="section-title">Terms &<br><em>conditions</em></h2>
+
+    <p class="policy-p">These terms apply to all consultations, packages, workshops, walks, and other services provided by Sara Lemaitre, trading as Sara Lemaitre Herbal Medicine & Naturopathy. By booking a service, you agree to these terms.</p>
+
+    <p class="policy-p"><strong>1. Eligibility.</strong> Services are available to adults aged 18 and over. Consultations for individuals under 18 require the written consent of a parent or legal guardian and the parent or guardian must be present (online or in person) for the consultation.</p>
+
+    <p class="policy-p"><strong>2. Accuracy of information.</strong> You agree to provide accurate and complete health information during consultations. Omitting or misrepresenting your health history, medications, or other relevant information may affect the safety and suitability of any herbal protocol. I cannot be held responsible for outcomes resulting from information that was withheld or inaccurately provided.</p>
+
+    <p class="policy-p"><strong>3. Informed consent.</strong> By booking a consultation, you confirm that you understand the nature and scope of herbal medicine and naturopathy as described in this document, that you are not seeking a medical diagnosis, and that you will continue to seek medical care from a qualified doctor as appropriate.</p>
+
+    <p class="policy-p"><strong>4. Herbal remedy supply.</strong> Where I supply herbal remedies following a consultation, these are unlicensed herbal medicines supplied under the herbalist's exemption (Human Medicines Regulations 2012, Regulation 241). They are prepared for you specifically, following our consultation. You agree not to share herbal remedies prepared for you with other people.</p>
+
+    <p class="policy-p"><strong>5. Payment.</strong> Payment is due at the time of booking or, for packages, at the start of the programme. I accept bank transfer, card payment (via Stripe or equivalent), and — for international clients — Revolut. Prices displayed on the website are in GBP and are inclusive of any applicable VAT (VAT is not currently applicable as I am below the VAT threshold).</p>
+
+    <p class="policy-p"><strong>6. Limitation of liability.</strong> While I take every care to provide safe and appropriate advice, I cannot guarantee specific outcomes. My liability to you in connection with any service is limited to the amount you have paid for that service. I am not liable for any indirect, consequential, or special damages. This does not affect your statutory rights as a consumer.</p>
+
+    <p class="policy-p"><strong>7. Professional membership and insurance.</strong> I maintain voluntary professional membership appropriate to my qualifications and hold professional indemnity and public liability insurance. Herbal medicine practitioners are not statutorily regulated in the UK as of the date of this document.</p>
+
+    <p class="policy-p"><strong>8. Changes to terms.</strong> I may update these terms from time to time. The current version is always published on this page with the date of last review. Continued use of my services after any changes constitutes acceptance of the updated terms.</p>
+
+    <p class="policy-p"><strong>9. Governing law.</strong> These terms are governed by the law of England and Wales. Any disputes will be subject to the exclusive jurisdiction of the courts of England and Wales.</p>
+
+    <p class="policy-p"><strong>10. Consumer rights.</strong> Nothing in these terms affects your rights under the Consumer Rights Act 2015 or any other applicable consumer protection legislation.</p>
+  </section>
+
+  <!-- ADVERTISING & CLAIMS -->
+  <section class="policy-section" id="advertising">
+    <p class="section-eyebrow">ASA · CAP Code · MHRA compliance</p>
+    <h2 class="section-title">Advertising standards<br>& <em>health claims</em></h2>
+
+    <p class="policy-p">All advertising and website content produced by Sara Lemaitre Herbal Medicine & Naturopathy complies with the <strong>UK Code of Non-broadcast Advertising (CAP Code)</strong> administered by the Advertising Standards Authority (ASA), and with the advertising rules established by the <strong>Medicines and Healthcare products Regulatory Agency (MHRA)</strong>.</p>
+
+    <p class="policy-p"><strong>Health claims:</strong> This website and all associated marketing materials do not claim that herbal medicine or naturopathy can diagnose, treat, prevent, or cure any disease or medical condition. References to conditions (such as endometriosis, PCOS, or chronic fatigue) are made in the context of <em>supporting</em> or <em>complementing</em> care — not treating or curing those conditions. Where benefits are described, these reflect traditional use and available research rather than guaranteed outcomes for any individual.</p>
+
+    <p class="policy-p"><strong>Testimonials:</strong> Any client testimonials published on this website reflect the individual experience of that client. They are not presented as typical or guaranteed results. Testimonials are used with the explicit written consent of the individual.</p>
+
+    <p class="policy-p"><strong>Herbal products:</strong> Herbal remedies supplied following a one-to-one consultation are supplied under the herbalist's exemption (Regulation 241, Human Medicines Regulations 2012) and are not licensed medicines. Any pre-made products sold through this practice will be clearly described in accordance with MHRA requirements. No medicinal claims are made for any unlicensed product.</p>
+
+    <p class="policy-p"><strong>Social media:</strong> Content published on Instagram, TikTok, LinkedIn, and any other social media platform associated with this practice follows the same standards. Any paid or gifted content will be clearly disclosed in accordance with ASA influencer guidance.</p>
+
+    <p class="policy-p">If you believe any content on this website or associated platforms makes claims that are misleading or non-compliant, please contact me directly at [your email] so I can review it promptly.</p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="policy-section" id="contact">
+    <p class="section-eyebrow">Get in touch</p>
+    <h2 class="section-title">Contact &<br><em>complaints</em></h2>
+
+    <p class="policy-p">If you have questions about any of the policies on this page, wish to exercise your data rights, or have a complaint about my services, please contact me directly:</p>
+
+    <p class="policy-p"><strong>Email:</strong> [your professional email address]<br>
+    <strong>Response time:</strong> I aim to respond to all enquiries within 2 working days.</p>
+
+    <p class="policy-p"><strong>Complaints procedure:</strong> If you have a concern about any aspect of my service, please contact me in the first instance. I will acknowledge your complaint within 5 working days and provide a full response within 28 days. If you are not satisfied with my response, you may escalate the matter to my professional membership body. As a member of [NIMH/CPP — insert your body], complaints can be directed to them via their website.</p>
+
+    <p class="policy-p"><strong>Data protection complaints:</strong> If you have a complaint about how I have handled your personal data and are not satisfied with my response, you have the right to complain to the <strong>Information Commissioner's Office (ICO)</strong> at ico.org.uk or 0303 123 1113.</p>
+
+    <p class="policy-p"><strong>ASA complaints:</strong> If you believe any of my advertising makes misleading health claims, you may also contact the <strong>Advertising Standards Authority</strong> at asa.org.uk.</p>
+  </section>
+
+</div>
+
+</BaseLayout>
