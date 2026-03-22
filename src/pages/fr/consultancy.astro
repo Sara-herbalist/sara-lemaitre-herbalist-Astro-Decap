@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const meta = {
+  title: "Consultance Bien-être | B2B & Entreprises | Sara Lemaitre",
+  description: "Consultance en bien-être pour organisations, marques, clubs sportifs et spas. Interventions en entreprise, conseil de marque, programmes de performance athlétique. Français et anglais.",
+  ogImage: "https://www.saralemaitre.com/images/og-consultancy.jpg",
+  canonical: "https://www.saralemaitre.com/fr/consultancy",
+  navLight: false,
+  currentPage: 'consultancy',
+  ogType: 'website',
+  lang: 'fr',
+};
+---
+<BaseLayout {...meta}>
+<style is:global>
+.consult-hero { padding: 10rem 8rem 7rem; background: var(--charcoal); }
+.consult-hero .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(196,208,186,.6); margin-bottom: 1.5rem; }
+.consult-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.1; color: var(--cream); margin-bottom: 1.5rem; }
+.consult-hero h1 em { font-style: italic; color: var(--sage-light); }
+.consult-hero p { font-size: 1.125rem; color: rgba(247,243,238,.5); max-width: 600px; line-height: 1.85; }
+.services-section { padding: 6rem 8rem; background: var(--warm-white); }
+.services-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: var(--charcoal); margin-bottom: 3.5rem; }
+.services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.service-card { background: var(--cream); border: 1px solid rgba(92,74,58,0.1); padding: 2.5rem; }
+.service-tag { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1rem; display: block; }
+.service-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--charcoal); margin-bottom: 1rem; }
+.service-card p { font-size: .9375rem; color: var(--muted); line-height: 1.75; }
+.why-section { padding: 6rem 8rem; background: var(--cream); display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; }
+.why-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: var(--charcoal); margin-bottom: 2rem; }
+.why-section p { font-size: 1rem; color: var(--muted); line-height: 1.85; margin-bottom: 1.2rem; }
+.contact-section { padding: 6rem 8rem; background: var(--warm-white); }
+.contact-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: var(--charcoal); margin-bottom: .75rem; }
+.contact-section > p { color: var(--muted); margin-bottom: 3rem; max-width: 560px; }
+.contact-form { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; max-width: 720px; }
+.form-group { display: flex; flex-direction: column; gap: .5rem; }
+.form-group.full { grid-column: 1 / -1; }
+.form-group label { font-size: .75rem; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+.form-group input, .form-group textarea, .form-group select { padding: .9rem 1.2rem; border: 1px solid rgba(92,74,58,0.2); background: var(--cream); color: var(--charcoal); font-family: 'Jost', sans-serif; font-size: .9375rem; font-weight: 300; outline: none; transition: border-color .2s; }
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--bark); }
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-submit { grid-column: 1 / -1; display: flex; justify-content: flex-start; margin-top: .5rem; }
+.btn-submit { padding: 1rem 2.5rem; background: var(--bark); color: var(--cream); border: none; font-family: 'Jost', sans-serif; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; cursor: pointer; transition: background .22s; }
+.btn-submit:hover { background: var(--charcoal); }
+@media (max-width: 1024px) {
+  .consult-hero, .services-section, .why-section, .contact-section { padding-left: 2.5rem; padding-right: 2.5rem; }
+  .services-grid, .why-section, .contact-form { grid-template-columns: 1fr; }
+}
+</style>
+
+<section class="consult-hero">
+  <p class="eyebrow">Consultance bien-être B2B</p>
+  <h1>Des plantes médicinales<br>au service de<br><em>votre organisation</em></h1>
+  <p>Interventions en entreprise, conseil de marque pour acteurs du bien-être, programmes pour clubs sportifs et équipes — une expertise clinique en phytothérapie et naturopathie au service de vos équipes et de vos clients.</p>
+</section>
+
+<section class="services-section">
+  <h2>Ce que je propose</h2>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-tag">Entreprises · RH · Bien-être au travail</span>
+      <h3>Interventions en entreprise</h3>
+      <p>Ateliers de sensibilisation au bien-être par les plantes, conférences sur le stress et la récupération, programmes de gestion de l'énergie pour équipes. Format adaptable selon vos besoins et votre secteur.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-tag">Marques · Produits · Conseil</span>
+      <h3>Conseil de marque</h3>
+      <p>Expertise en formulation herbale, validation des allégations produits, développement de gammes bien-être, formation des équipes commerciales et conseil en communication autour des ingrédients botaniques.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-tag">Clubs sportifs · Athlètes · Performance</span>
+      <h3>Performance & Récupération sportive</h3>
+      <p>Programmes de soutien phytothérapeutique pour clubs et athlètes de haut niveau. Adaptogens, gestion de l'inflammation, soutien hormonal, récupération entre les compétitions — par une ancienne athlète de haut niveau.</p>
+    </div>
+    <div class="service-card">
+      <span class="service-tag">Spas · Centres bien-être · Hôtels</span>
+      <h3>Intégration dans les offres bien-être</h3>
+      <p>Développement de protocoles de soins à base de plantes, formation des thérapeutes, création de rituels saisonniers et conseil sur la communication autour des ingrédients botaniques pour des établissements premium.</p>
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div>
+    <h2>Pourquoi choisir une expertise clinique ?</h2>
+    <p>Il existe une différence importante entre une approche wellness généraliste et une expertise clinique en phytothérapie. Je suis formée au niveau de la santé — je comprends les contre-indications, les interactions, les limites et la réglementation.</p>
+    <p>Cela signifie que les programmes que je conçois sont non seulement inspirants et efficaces, mais aussi sûrs, conformes aux guidelines ASA et MHRA, et respectueux des réalités de santé de vos employés ou clients.</p>
+    <p>Je travaille en français et en anglais, ce qui me permet d'accompagner des organisations opérant dans les deux marchés.</p>
+  </div>
+  <div>
+    <h2>Clients types</h2>
+    <p>Je travaille avec des organisations qui comprennent que le bien-être de leurs équipes ou de leurs clients est un investissement stratégique, et non une dépense.</p>
+    <p>Cela inclut les entreprises tech et de services professionnels, les clubs sportifs professionnels et semi-professionnels, les marques de beauté et bien-être cherchant une expertise botanique crédible, et les établissements hôteliers haut de gamme souhaitant différencier leur offre spa.</p>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <h2>Discutons de votre projet</h2>
+  <p>Chaque demande est unique. Envoyez-moi un message et nous trouverons le format qui correspond à vos besoins.</p>
+  <form class="contact-form" netlify name="consultancy-fr" method="POST" action="/fr/thank-you">
+    <div class="form-group">
+      <label for="name-fr">Nom</label>
+      <input type="text" id="name-fr" name="name" required>
+    </div>
+    <div class="form-group">
+      <label for="org-fr">Organisation</label>
+      <input type="text" id="org-fr" name="organisation">
+    </div>
+    <div class="form-group">
+      <label for="email-fr">E-mail</label>
+      <input type="email" id="email-fr" name="email" required>
+    </div>
+    <div class="form-group">
+      <label for="service-fr">Service qui vous intéresse</label>
+      <select id="service-fr" name="service">
+        <option value="">Sélectionner...</option>
+        <option>Intervention en entreprise</option>
+        <option>Conseil de marque</option>
+        <option>Performance sportive</option>
+        <option>Intégration bien-être spa/hôtel</option>
+        <option>Autre</option>
+      </select>
+    </div>
+    <div class="form-group full">
+      <label for="message-fr">Votre message</label>
+      <textarea id="message-fr" name="message" placeholder="Décrivez brièvement votre projet ou votre question..."></textarea>
+    </div>
+    <div class="form-submit">
+      <button type="submit" class="btn-submit">Envoyer</button>
+    </div>
+  </form>
+</section>
+
+</BaseLayout>
