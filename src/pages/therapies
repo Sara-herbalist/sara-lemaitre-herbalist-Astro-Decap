@@ -1,0 +1,1010 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const meta = {
+  title: "Therapies | Herbal Medicine, Naturopathy & Indian Head Massage | Sara Lemaitre",
+  description: "Herbal medicine consultations, naturopathy, Indian head massage, TCM-informed plant protocols and athlete performance support. Online and in person, English and French.",
+  ogImage: "https://www.saralemaitre.com/images/og-therapies.jpg",
+  canonical: "https://www.saralemaitre.com/therapies",
+  navLight: false,
+  currentPage: 'therapies',
+  ogType: 'website',
+};
+---
+
+<BaseLayout {...meta}>
+
+<style is:global>
+:root {
+    --cream: #F7F3EE;
+    --warm-white: #FDFAF7;
+    --sage: #7A8C6E;
+    --sage-text: #4E6245;
+    --sage-light: #C4D0BA;
+    --sage-pale: #EBF0E7;
+    --bark: #5C4A3A;
+    --bark-light: #8C7060;
+    --bark-pale: #EDE5DC;
+    --charcoal: #2A2420;
+    --muted: #6A5E58;
+    --gold: #C4A25A;
+    --gold-pale: #F5EDD6;
+    --plum: #6B4E6B;
+    --plum-pale: #F0EAF0;
+    --amber: #B8763A;
+    --amber-pale: #FBF0E3;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--warm-white);
+    color: var(--charcoal);
+    font-family: 'Jost', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 300;
+    line-height: 1.85;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    padding: 1.5rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+    background: rgba(253,250,247,0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(122,108,100,0.1);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-weight: 400;
+    letter-spacing: .12em; text-transform: uppercase;
+    color: var(--bark); text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a {
+    font-size: .9375rem; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none; transition: color .2s;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--bark); }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    padding: 14rem 8rem 6rem;
+    background: var(--cream);
+    border-bottom: 1px solid rgba(122,108,100,0.12);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+  }
+  .page-header-left {}
+  .header-eyebrow {
+    font-size: .875rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--sage-text); margin-bottom: 1.5rem;
+    opacity: 0; animation: fadeUp .7s .2s forwards;
+  }
+  .header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5vw, 4.2rem);
+    font-weight: 300; line-height: 1.1; color: var(--bark);
+    opacity: 0; animation: fadeUp .7s .4s forwards;
+  }
+  .header-title em { font-style: italic; color: var(--sage-text); }
+  .page-header-right {
+    opacity: 0; animation: fadeUp .7s .5s forwards;
+  }
+  .header-intro {
+    font-size: 1.0625rem; color: var(--muted);
+    line-height: 1.95; max-width: 480px;
+    border-left: 2px solid var(--sage-light);
+    padding-left: 1.5rem;
+  }
+
+  /* ── THERAPY NAVIGATION ── */
+  .therapy-nav {
+    position: sticky; top: 73px; z-index: 50;
+    background: rgba(253,250,247,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(122,108,100,0.1);
+    padding: 0 4rem;
+    display: flex; gap: 0; overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .therapy-nav::-webkit-scrollbar { display: none; }
+  .therapy-nav-item {
+    padding: 1.2rem 1.8rem;
+    font-size: .9375rem; letter-spacing: .14em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap; transition: all .2s; cursor: pointer;
+    background: none; border-top: none; border-left: none; border-right: none;
+    font-family: 'Jost', sans-serif;
+  }
+  .therapy-nav-item:hover { color: var(--bark); }
+  .therapy-nav-item.active { color: var(--bark); border-bottom-color: var(--sage-text); }
+
+  /* ── THERAPY SECTIONS ── */
+  .therapy-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 85vh;
+    border-bottom: 1px solid rgba(122,108,100,0.1);
+  }
+  .therapy-section.reverse { direction: rtl; }
+  .therapy-section.reverse > * { direction: ltr; }
+
+  .therapy-visual {
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .therapy-section:nth-child(odd) .therapy-visual { background: var(--sage-pale); }
+  .therapy-section:nth-child(even) .therapy-visual { background: var(--bark-pale); }
+  .therapy-section.plum-bg .therapy-visual { background: var(--plum-pale); }
+  .therapy-section.amber-bg .therapy-visual { background: var(--amber-pale); }
+  .therapy-section.gold-bg .therapy-visual { background: var(--gold-pale); }
+
+  .therapy-icon-large {
+    width: 260px; height: 260px;
+    opacity: .15;
+  }
+  .therapy-number-bg {
+    position: absolute; bottom: -1rem; right: -1rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16rem; font-weight: 300; line-height: 1;
+    color: var(--bark); opacity: .07;
+    pointer-events: none;
+  }
+  .therapy-visual-label {
+    position: absolute; bottom: 2.5rem; left: 2.5rem; right: 2.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-style: italic; color: var(--bark);
+    border-left: 2px solid var(--sage); padding-left: 1rem;
+    line-height: 1.5;
+  }
+
+  .therapy-content {
+    padding: 6rem 6rem 6rem 7rem;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .therapy-section.reverse .therapy-content {
+    padding: 6rem 7rem 6rem 6rem;
+  }
+  .therapy-tag {
+    font-size: .75rem; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--sage-text); margin-bottom: 1.2rem;
+  }
+  .therapy-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300; color: var(--bark);
+    line-height: 1.15; margin-bottom: .8rem;
+  }
+  .therapy-title em { font-style: italic; color: var(--sage-text); }
+  .therapy-subtitle {
+    font-size: 1rem; color: var(--muted);
+    letter-spacing: .06em; margin-bottom: 2.5rem;
+    font-weight: 400;
+  }
+  .therapy-story {
+    font-size: 1.0625rem; color: #4A403C;
+    line-height: 1.95; margin-bottom: 1.3rem; max-width: 540px;
+  }
+  .therapy-story em { font-style: italic; color: var(--sage-text); }
+  .therapy-story strong { font-weight: 500; color: var(--bark); }
+
+  /* conditions list */
+  .conditions-block {
+    margin: 2rem 0;
+    padding: 1.5rem 2rem;
+    background: var(--cream);
+    border-radius: 2px;
+    border-left: 3px solid var(--sage);
+  }
+  .conditions-label {
+    font-size: .75rem; letter-spacing: .18em; text-transform: uppercase;
+    color: var(--sage-text); margin-bottom: .8rem;
+  }
+  .conditions-grid {
+    display: flex; flex-wrap: wrap; gap: .5rem;
+  }
+  .condition-tag {
+    font-size: .9375rem; padding: .3rem .9rem;
+    background: var(--warm-white);
+    border: 1px solid rgba(122,140,110,0.3);
+    color: var(--bark-light);
+    border-radius: 20px;
+  }
+
+  /* testimonial */
+  .testimonial-block {
+    margin: 2rem 0;
+    padding: 1.5rem 2rem;
+    background: var(--bark);
+    border-radius: 2px;
+    position: relative;
+  }
+  .testimonial-block::before {
+    content: '"';
+    position: absolute; top: .5rem; left: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem; color: var(--sage-light); opacity: .4;
+    line-height: 1; pointer-events: none;
+  }
+  .testimonial-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.125rem; font-style: italic;
+    color: var(--cream); line-height: 1.65;
+    padding-top: .5rem;
+  }
+  .testimonial-attribution {
+    font-size: .9375rem; letter-spacing: .12em; text-transform: uppercase;
+    color: var(--sage-light); margin-top: .8rem; opacity: .7;
+  }
+  .testimonial-placeholder {
+    font-size: .9375rem; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--sage-light); opacity: .5; font-style: italic;
+  }
+
+  /* session info */
+  .session-info {
+    display: flex; gap: 2rem; margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(122,108,100,0.15);
+    flex-wrap: wrap;
+  }
+  .session-detail { display: flex; flex-direction: column; gap: .2rem; }
+  .session-detail-label {
+    font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--sage-text);
+  }
+  .session-detail-value { font-size: 1.0625rem; font-weight: 400; color: var(--bark); }
+
+  .book-link {
+    display: inline-block; margin-top: 1.5rem;
+    padding: .85rem 2.2rem;
+    border: 1px solid var(--bark);
+    color: var(--bark); text-decoration: none;
+    font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase;
+    transition: all .25s; align-self: flex-start;
+  }
+  .book-link:hover { background: var(--bark); color: var(--warm-white); }
+
+  /* ── HOLISTIC WALKS SECTION ── */
+  .walks-section {
+    background: var(--sage);
+    padding: 8rem;
+    color: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+    border-bottom: 1px solid rgba(122,108,100,0.1);
+  }
+  .walks-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300; line-height: 1.2;
+    color: var(--cream); margin-bottom: 2rem;
+  }
+  .walks-text h2 em { font-style: italic; color: var(--sage-pale); }
+  .walks-text p {
+    font-size: 1.0625rem; color: rgba(247,243,238,.8);
+    line-height: 1.95; margin-bottom: 1.3rem; max-width: 520px;
+  }
+  .walks-tag {
+    font-size: .75rem; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--sage-pale); margin-bottom: 1.2rem;
+  }
+  .walks-seasons {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+  }
+  .season-card {
+    padding: 1.5rem;
+    border: 1px solid rgba(247,243,238,.2);
+    border-radius: 2px;
+  }
+  .season-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: var(--cream); margin-bottom: .4rem;
+  }
+  .season-desc {
+    font-size: 1rem; color: rgba(247,243,238,.6); line-height: 1.6;
+  }
+
+  /* ── WORKSHOPS SECTION ── */
+  .workshops-section {
+    padding: 8rem;
+    background: var(--cream);
+    border-bottom: 1px solid rgba(122,108,100,0.12);
+  }
+  .workshops-inner { max-width: 1000px; margin: 0 auto; }
+  .workshops-header { margin-bottom: 4rem; }
+  .workshops-header .eyebrow {
+    font-size: .875rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--sage-text); margin-bottom: 1.2rem;
+  }
+  .workshops-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300; color: var(--bark); line-height: 1.2;
+    max-width: 600px;
+  }
+  .workshops-header h2 em { font-style: italic; color: var(--sage-text); }
+  .workshops-grid {
+    display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.5rem;
+  }
+  .workshop-card {
+    padding: 2rem;
+    background: var(--warm-white);
+    border: 1px solid rgba(122,108,100,0.12);
+    transition: border-color .2s;
+  }
+  .workshop-card:hover { border-color: var(--sage-text); }
+  .workshop-icon {
+    font-size: 1.4rem; margin-bottom: 1rem;
+  }
+  .workshop-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem; font-weight: 400; color: var(--bark);
+    margin-bottom: .6rem; line-height: 1.2;
+  }
+  .workshop-desc {
+    font-size: 1rem; color: var(--muted); line-height: 1.75;
+  }
+
+  /* ── PRODUCTS SECTION ── */
+  .products-section {
+    display: grid; grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid rgba(122,108,100,0.12);
+  }
+  .products-text {
+    padding: 8rem;
+    background: var(--warm-white);
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .products-text .eyebrow {
+    font-size: .875rem; letter-spacing: .22em; text-transform: uppercase;
+    color: var(--sage-text); margin-bottom: 1.5rem;
+  }
+  .products-text h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    font-weight: 300; color: var(--bark);
+    line-height: 1.2; margin-bottom: 2rem;
+  }
+  .products-text h2 em { font-style: italic; color: var(--sage-text); }
+  .products-text p {
+    font-size: 1.0625rem; color: #4A403C;
+    line-height: 1.95; margin-bottom: 1.3rem; max-width: 480px;
+  }
+  .product-types {
+    margin-top: 1rem; display: flex; flex-direction: column; gap: .8rem;
+  }
+  .product-type-item {
+    display: flex; gap: 1rem; align-items: flex-start;
+    padding: 1rem 1.2rem;
+    border: 1px solid rgba(122,108,100,0.12);
+    background: var(--cream);
+  }
+  .product-type-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--sage); flex-shrink: 0; margin-top: .55rem;
+  }
+  .product-type-name { font-size: 1.0625rem; font-weight: 400; color: var(--bark); }
+  .product-type-desc { font-size: 1rem; color: var(--muted); line-height: 1.5; margin-top: .2rem; }
+  .products-visual {
+    background: var(--bark-pale);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    padding: 4rem;
+  }
+  .products-visual-text {
+    position: absolute; bottom: 3rem; left: 3rem; right: 3rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem; font-style: italic; color: var(--bark);
+    border-left: 2px solid var(--sage); padding-left: 1rem; line-height: 1.5;
+  }
+
+  /* ── CTA SECTION ── */
+  .cta-section {
+    background: var(--bark);
+    padding: 8rem;
+    text-align: center;
+  }
+  .cta-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 300; color: var(--cream);
+    line-height: 1.3; margin-bottom: 1.5rem; max-width: 640px; margin-left: auto; margin-right: auto;
+  }
+  .cta-section h2 em { font-style: italic; color: var(--sage-light); }
+  .cta-section p {
+    font-size: 1.0625rem; color: rgba(247,243,238,.7);
+    line-height: 1.9; max-width: 540px;
+    margin: 0 auto 3rem;
+  }
+  .cta-buttons { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; }
+  .cta-primary {
+    display: inline-block; padding: 1rem 3rem;
+    background: var(--sage-light); color: var(--bark);
+    text-decoration: none; font-size: .9375rem;
+    letter-spacing: .18em; text-transform: uppercase;
+    transition: all .25s;
+  }
+  .cta-primary:hover { background: var(--cream); }
+  .cta-secondary {
+    display: inline-block; padding: 1rem 3rem;
+    border: 1px solid rgba(247,243,238,.3); color: rgba(247,243,238,.7);
+    text-decoration: none; font-size: .9375rem;
+    letter-spacing: .18em; text-transform: uppercase;
+    transition: all .25s;
+  }
+  .cta-secondary:hover { border-color: var(--sage-light); color: var(--sage-light); }
+
+  /* ── FOOTER ── */
+  .footer-strip {
+    background: var(--charcoal);
+    padding: 2.5rem 8rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-strip p {
+    font-size: .9375rem; letter-spacing: .1em;
+    color: rgba(247,243,238,0.3);
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 1000px) {
+    nav { padding: 1.2rem 2rem; }
+    .page-header { grid-template-columns: 1fr; padding: 10rem 2.5rem 4rem; gap: 2rem; }
+    .therapy-nav { padding: 0 2rem; }
+    .therapy-section, .therapy-section.reverse { grid-template-columns: 1fr; direction: ltr; }
+    .therapy-visual { min-height: 260px; }
+    .therapy-content { padding: 4rem 2.5rem; }
+    .therapy-section.reverse .therapy-content { padding: 4rem 2.5rem; }
+    .walks-section { grid-template-columns: 1fr; padding: 5rem 2.5rem; gap: 3rem; }
+    .workshops-section { padding: 5rem 2.5rem; }
+    .workshops-grid { grid-template-columns: 1fr; }
+    .products-section { grid-template-columns: 1fr; }
+    .products-text { padding: 5rem 2.5rem; }
+    .products-visual { min-height: 300px; }
+    .cta-section { padding: 5rem 2.5rem; }
+    .footer-strip { padding: 2rem 2.5rem; flex-direction: column; gap: 1rem; text-align: center; }
+  }
+
+  /* ── WCAG 2.2 AA: Visible focus indicators ── */
+  :focus-visible {
+    outline: 3px solid #5C4A3A;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  a:focus-visible, button:focus-visible, input:focus-visible,
+  select:focus-visible, textarea:focus-visible {
+    outline: 3px solid #5C4A3A;
+    outline-offset: 3px;
+  }
+
+  /* Screen-reader only utility */
+  .sr-only {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── Skip navigation link ── */
+  .skip-nav {
+    position: absolute; top: -100px; left: 1rem; z-index: 9999;
+    background: #5C4A3A; color: #F7F3EE;
+    padding: .75rem 1.5rem; font-size: 1.0625rem;
+    text-decoration: none; border-radius: 0 0 4px 4px;
+    transition: top .2s;
+  }
+  .skip-nav:focus { top: 0; }
+
+
+  /* ── Mobile hamburger menu ── */
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer;
+    padding: .5rem; margin-left: .5rem;
+  }
+  .hamburger span {
+    display: block; width: 22px; height: 2px;
+    background: var(--bark); border-radius: 2px;
+    transition: all .25s;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  
+  @media (max-width: 1024px) {
+    .hamburger { display: flex; }
+    .nav-links {
+      display: none; position: fixed; top: 73px; left: 0; right: 0;
+      background: rgba(253,250,247,0.98); backdrop-filter: blur(12px);
+      flex-direction: column; gap: 0; padding: 1rem 0;
+      border-bottom: 1px solid rgba(122,108,100,0.12);
+      z-index: 99;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links li a {
+      display: block; padding: .9rem 2rem;
+      font-size: 1.0625rem; letter-spacing: .08em;
+      border-bottom: 1px solid rgba(122,108,100,0.06);
+    }
+    .nav-book { display: none; }
+  }
+
+
+
+  .lang-toggle {
+    font-size: .75rem; letter-spacing: .16em; text-transform: uppercase;
+    padding: .45rem .9rem; border: 1px solid rgba(247,243,238,.5);
+    background: none; color: rgba(247,243,238,.85); cursor: pointer;
+    font-family: 'Jost', sans-serif; border-radius: 2px;
+    transition: all .3s; margin-left: .5rem;
+  }
+  nav.scrolled .lang-toggle { border-color: rgba(92,74,58,.35); color: var(--muted); }
+  .lang-toggle:hover, nav.scrolled .lang-toggle:hover { border-color: var(--bark); color: var(--bark); }
+
+
+  /* Pages with light-coloured heroes — nav starts dark */
+  body[data-nav="light"] nav {
+    background: rgba(253,250,247,0.85);
+    backdrop-filter: blur(8px);
+  }
+  body[data-nav="light"] .nav-logo { color: var(--bark); }
+  body[data-nav="light"] .nav-links a { color: var(--muted); }
+  body[data-nav="light"] .nav-links a:hover { color: var(--bark); }
+  body[data-nav="light"] .nav-book { border-color: var(--bark); color: var(--bark); }
+  body[data-nav="light"] .lang-toggle { border-color: rgba(92,74,58,.35); color: var(--muted); }
+</style>
+
+<!-- PAGE HEADER -->
+<header id="main-content" role="main" class="page-header">
+  <div class="page-header-left">
+    <p class="header-eyebrow">What I offer</p>
+    <h1 class="header-title">Therapies that<br>work <em>with</em> you,<br>not on you</h1>
+  </div>
+  <div class="page-header-right">
+    <p class="header-intro">Every modality I practise, I practise because I have witnessed what it does — in my own body, in my family, and in two years of clinical work. Nothing here is offered at a distance. These are tools I have lived inside, and they are offered with that depth of understanding.</p>
+  </div>
+</header>
+
+<!-- THERAPY NAV -->
+<div class="therapy-nav">
+  <button class="therapy-nav-item active" onclick="scrollTo('herbal')" data-i18n="therapies.herbal.title">Herbal Medicine</button>
+  <button class="therapy-nav-item" onclick="scrollTo('naturopathy')" data-i18n="therapies.naturo.title">Naturopathy</button>
+  <button class="therapy-nav-item" onclick="scrollTo('ihm')" data-i18n="therapies.ihm.title">Indian Head Massage</button>
+  <button class="therapy-nav-item" onclick="scrollTo('tcm')">TCM & Plant Medicine</button>
+  <button class="therapy-nav-item" onclick="scrollTo('athlete')">Athlete & Performance</button>
+  <button class="therapy-nav-item" onclick="scrollTo('walks')">Holistic Walks</button>
+  <button class="therapy-nav-item" onclick="scrollTo('workshops')">Workshops</button>
+  <button class="therapy-nav-item" onclick="scrollTo('products')">Herbal Products</button>
+</div>
+
+<!-- ══ 1. HERBAL MEDICINE ══ -->
+<section class="therapy-section" id="herbal">
+  <div class="therapy-visual">
+    <svg class="therapy-icon-large" viewBox="0 0 260 260" fill="none">
+      <path d="M130 30 Q160 80 130 130 Q100 80 130 30Z" stroke="#7A8C6E" stroke-width="1.5" fill="none"/>
+      <path d="M130 130 Q160 180 130 230 Q100 180 130 130Z" stroke="#7A8C6E" stroke-width="1.5" fill="none"/>
+      <path d="M30 130 Q80 100 130 130 Q80 160 30 130Z" stroke="#7A8C6E" stroke-width="1.5" fill="none"/>
+      <path d="M130 130 Q180 100 230 130 Q180 160 130 130Z" stroke="#7A8C6E" stroke-width="1.5" fill="none"/>
+      <circle cx="130" cy="130" r="8" stroke="#7A8C6E" stroke-width="1.5" fill="none"/>
+      <circle cx="130" cy="130" r="30" stroke="#7A8C6E" stroke-width=".8" stroke-dasharray="3 5" fill="none"/>
+      <line x1="130" y1="30" x2="130" y2="230" stroke="#7A8C6E" stroke-width=".5"/>
+      <line x1="30" y1="130" x2="230" y2="130" stroke="#7A8C6E" stroke-width=".5"/>
+    </svg>
+    <div class="therapy-number-bg">01</div>
+    <div class="therapy-visual-label">"Plants have been tending to human suffering for longer than medicine has had a name for it."</div>
+  </div>
+  <div class="therapy-content reveal">
+    <p class="therapy-tag">Clinical Western herbalism · French phytotherapy tradition</p>
+    <h2 class="therapy-title">Herbal<br><em>Medicine</em></h2>
+    <p class="therapy-subtitle">Initial consultation · Follow-up · Personalised formulations</p>
+    <p class="therapy-story">There is a moment in every initial consultation when I ask someone to describe their health — not just their diagnosis, but their whole health. Their energy in the morning, their relationship with sleep, the way their body responds to stress, what their skin does in winter. And in that conversation, something shifts. They are not being reduced to a test result. They are being seen.</p>
+    <p class="therapy-story">Clinical Western herbalism is rooted in exactly that: the whole person, not the symptom. Drawing on the French phytotherapy tradition in which I was trained — a system that has been embedded in European medicine for centuries — I create personalised herbal protocols that address not just what hurts, but why it hurts, and what the body needs to find its own equilibrium again.</p>
+    <p class="therapy-story">My particular experience is with <strong>hormonal health</strong>. Endometriosis, PCOS, chronic fatigue, perimenopausal transition, menstrual irregularity, fertility support. I know these conditions not just from clinic, but from my own body's long struggle with them. That shapes everything about how I listen, and how I prescribe.</p>
+    <div class="conditions-block">
+      <p class="conditions-label">Conditions I commonly support</p>
+      <div class="conditions-grid">
+        <span class="condition-tag">Endometriosis</span>
+        <span class="condition-tag">PCOS</span>
+        <span class="condition-tag">Chronic fatigue</span>
+        <span class="condition-tag">Perimenopause</span>
+        <span class="condition-tag">Menstrual irregularity</span>
+        <span class="condition-tag">Hormonal disruption</span>
+        <span class="condition-tag">Fertility support</span>
+        <span class="condition-tag">Digestive health</span>
+        <span class="condition-tag">Immunity</span>
+        <span class="condition-tag">Inflammation</span>
+        <span class="condition-tag">Sleep & stress</span>
+        <span class="condition-tag">Skin conditions</span>
+      </div>
+    </div>
+    <div class="session-info">
+      <div class="session-detail">
+        <span class="session-detail-label">Initial consultation</span>
+        <span class="session-detail-value">£130–150 · 75–80 min</span>
+      </div>
+      <div class="session-detail">
+        <span class="session-detail-label">Follow-up</span>
+        <span class="session-detail-value">£70–85 · 40 min</span>
+      </div>
+      <div class="session-detail">
+        <span class="session-detail-label">Format</span>
+        <span class="session-detail-value">Online & in person · English & French</span>
+      </div>
+    </div>
+    <a href="https://calendly.com/sara-lemaitre-herbalist" target="_blank" rel="noopener" class="book-link">Book a discovery call</a>
+  </div>
+</section>
+
+<!-- ══ 2. NATUROPATHY ══ -->
+<section class="therapy-section reverse" id="naturopathy">
+  <div class="therapy-visual">
+    <svg class="therapy-icon-large" viewBox="0 0 260 260" fill="none">
+      <circle cx="130" cy="130" r="90" stroke="#7A8C6E" stroke-width="1.5" fill="none"/>
+      <circle cx="130" cy="130" r="60" stroke="#7A8C6E" stroke-width="1" stroke-dasharray="4 4" fill="none"/>
+      <circle cx="130" cy="130" r="30" stroke="#7A8C6E" stroke-width=".8" fill="none"/>
+      <line x1="130" y1="40" x2="130" y2="60" stroke="#7A8C6E" stroke-width="1"/>
+      <line x1="130" y1="200" x2="130" y2="220" stroke="#7A8C6E" stroke-width="1"/>
+      <line x1="40" y1="130" x2="60" y2="130" stroke="#7A8C6E" stroke-width="1"/>
+      <line x1="200" y1="130" x2="220" y2="130" stroke="#7A8C6E" stroke-width="1"/>
+      <line x1="67" y1="67" x2="81" y2="81" stroke="#7A8C6E" stroke-width="1"/>
+      <line x1="179" y1="179" x2="193" y2="193" stroke="#7A8C6E" stroke-width="1"/>
+      <line x1="193" y1="67" x2="179" y2="81" stroke="#7A8C6E" stroke-width="1"/>
+      <line x1="67" y1="193" x2="81" y2="179" stroke="#7A8C6E" stroke-width="1"/>
+    </svg>
+    <div class="therapy-number-bg">02</div>
+    <div class="therapy-visual-label">"The body already knows how to heal. Naturopathy gives it the conditions to remember."</div>
+  </div>
+  <div class="therapy-content reveal">
+    <p class="therapy-tag">Naturopathy diploma · Lifestyle & integrative protocols</p>
+    <h2 class="therapy-title">Naturo<em>pathy</em></h2>
+    <p class="therapy-subtitle">Lifestyle medicine · Nutrition · Detox support · Root cause approach</p>
+    <p class="therapy-story">Naturopathy begins with a simple premise that mainstream medicine rarely has time for: <em>why is this happening?</em> Not just what is the diagnosis, but what conditions in this person's life, diet, stress patterns, sleep, and environment have created the ground in which this illness is growing?</p>
+    <p class="therapy-story">As a trained naturopath, I work alongside herbal medicine to address the foundations of health. That means looking at nutrition — not as a prescription but as a conversation about what your body is actually asking for. It means examining sleep, stress, movement, and the rhythms your body runs on. It means understanding that many chronic conditions, especially those involving hormones, are downstream effects of how we are living — and that changing those foundations can change everything.</p>
+    <p class="therapy-story">For many of my clients, naturopathic guidance runs alongside their herbal protocol. For others, it is where we start. Every person's path is different. The consultation is long enough to find out which one you need.</p>
+    <div class="conditions-block">
+      <p class="conditions-label">Areas of focus</p>
+      <div class="conditions-grid">
+        <span class="condition-tag">Nutritional therapy</span>
+        <span class="condition-tag">Detox & elimination</span>
+        <span class="condition-tag">Gut health</span>
+        <span class="condition-tag">Adrenal support</span>
+        <span class="condition-tag">Sleep protocols</span>
+        <span class="condition-tag">Anti-inflammatory lifestyle</span>
+        <span class="condition-tag">Stress resilience</span>
+        <span class="condition-tag">Hormone balancing diet</span>
+      </div>
+    </div>
+    <div class="session-info">
+      <div class="session-detail">
+        <span class="session-detail-label">Included within</span>
+        <span class="session-detail-value">Herbal consultations</span>
+      </div>
+      <div class="session-detail">
+        <span class="session-detail-label">Also available as</span>
+        <span class="session-detail-value">Standalone programme</span>
+      </div>
+    </div>
+    <a href="https://calendly.com/sara-lemaitre-herbalist" target="_blank" rel="noopener" class="book-link">Enquire about a programme</a>
+  </div>
+</section>
+
+<!-- ══ 3. INDIAN HEAD MASSAGE ══ -->
+<section class="therapy-section plum-bg" id="ihm">
+  <div class="therapy-visual">
+    <svg class="therapy-icon-large" viewBox="0 0 260 260" fill="none">
+      <ellipse cx="130" cy="100" rx="55" ry="65" stroke="#7A8C6E" stroke-width="1.5" fill="none"/>
+      <path d="M85 145 Q75 180 80 210" stroke="#7A8C6E" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      <path d="M175 145 Q185 180 180 210" stroke="#7A8C6E" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+      <path d="M80 210 L180 210" stroke="#7A8C6E" stroke-width="1.5" stroke-linecap="round"/>
+      <path d="M110 60 Q130 40 150 60" stroke="#7A8C6E" stroke-width="1" stroke-linecap="round" fill="none"/>
+      <path d="M100 75 Q130 55 160 75" stroke="#7A8C6E" stroke-width=".8" stroke-dasharray="3 4" stroke-linecap="round" fill="none"/>
+      <circle cx="115" cy="95" r="4" stroke="#7A8C6E" stroke-width="1" fill="none"/>
+      <circle cx="145" cy="95" r="4" stroke="#7A8C6E" stroke-width="1" fill="none"/>
+      <path d="M120 115 Q130 122 140 115" stroke="#7A8C6E" stroke-width="1" stroke-linecap="round" fill="none"/>
+      <path d="M60 90 Q45 95 50 115 Q55 130 70 125" stroke="#7A8C6E" stroke-width="1" stroke-linecap="round" fill="none" stroke-dasharray="2 4"/>
+      <path d="M200 90 Q215 95 210 115 Q205 130 190 125" stroke="#7A8C6E" stroke-width="1" stroke-linecap="round" fill="none" stroke-dasharray="2 4"/>
+    </svg>
+    <div class="therapy-number-bg">03</div>
+    <div class="therapy-visual-label">"People leave feeling like they are floating — lighter, quieter, as though something has been set down."</div>
+  </div>
+  <div class="therapy-content reveal">
+    <p class="therapy-tag">Indian head massage diploma · Stress & nervous system · In person</p>
+    <h2 class="therapy-title">Indian Head<br><em>Massage</em></h2>
+    <p class="therapy-subtitle">60-minute session · In person · Tension, stress & deep relaxation</p>
+    <p class="therapy-story">I have never had someone leave an Indian head massage session and not look different. There is a particular quality of stillness that settles over people in the last few minutes of the treatment — something behind the eyes softens, the shoulders drop in a way they haven't all day, the jaw unclenches. And when they stand up, they often pause, as though they need a moment to remember where they are.</p>
+    <p class="therapy-story"><em>"Like floating"</em> is how my clients most often describe it. That is not an accident. Indian head massage works on the upper back, shoulders, neck, scalp and face — precisely the places where the body stores its tension, its held breath, its unfinished stress responses. In releasing those places, something much larger lets go.</p>
+    <p class="therapy-story">Rooted in the Ayurvedic tradition and practised in India for over a thousand years, champi — as it is called in its original form — has always understood that the head is not separate from the body. The scalp alone contains dozens of marma points, energetic centres whose stimulation affects the whole system. I work with both the traditional Ayurvedic framework and the Western anatomical understanding of the nervous system — because knowing <em>why</em> something works deepens how you deliver it.</p>
+    <p class="therapy-story">This therapy is particularly beautiful when combined with a herbal consultation. Many of my hormonal health clients carry enormous tension — years of pain, of being dismissed, of fighting their own bodies. The massage creates a space where the body can receive, rather than brace. That is where healing begins.</p>
+
+    <!-- TESTIMONIAL PLACEHOLDER — ready for real testimonials -->
+    <div class="testimonial-block">
+      <p class="testimonial-text">I left feeling like I was floating — I genuinely forgot where I had parked my car. I have had massages before but nothing like this. Something in my neck that has been tight for two years just... wasn't.</p>
+      <p class="testimonial-attribution">— Client testimonial · Student clinic</p>
+    </div>
+
+    <div class="testimonial-block" style="margin-top: 1rem;">
+      <p class="testimonial-text" style="opacity: .5; font-style: italic;">Your testimonial here — I'll be reaching out to past clients shortly.</p>
+      <p class="testimonial-attribution testimonial-placeholder">— Testimonial coming soon</p>
+    </div>
+
+    <div class="conditions-block">
+      <p class="conditions-label">What it supports</p>
+      <div class="conditions-grid">
+        <span class="condition-tag">Stress & anxiety</span>
+        <span class="condition-tag">Tension headaches</span>
+        <span class="condition-tag">Neck & shoulder pain</span>
+        <span class="condition-tag">Hormonal headaches</span>
+        <span class="condition-tag">Sleep difficulty</span>
+        <span class="condition-tag">Burnout recovery</span>
+        <span class="condition-tag">Sinus congestion</span>
+        <span class="condition-tag">Scalp & hair health</span>
+        <span class="condition-tag">Eye strain</span>
+        <span class="condition-tag">Mental fatigue</span>
+      </div>
+    </div>
+    <div class="session-info">
+      <div class="session-detail">
+        <span class="session-detail-label">Session</span>
+        <span class="session-detail-value">£90–110 · 60 min</span>
+      </div>
+      <div class="session-detail">
+        <span class="session-detail-label">Combined with herbal consult</span>
+        <span class="session-detail-value">Ask about package pricing</span>
+      </div>
+      <div class="session-detail">
+        <span class="session-detail-label">Format</span>
+        <span class="session-detail-value">In person only</span>
+      </div>
+    </div>
+    <a href="https://calendly.com/sara-lemaitre-herbalist" target="_blank" rel="noopener" class="book-link">Book a session</a>
+  </div>
+</section>
+
+<!-- ══ 4. TCM & PLANT MEDICINE ══ -->
+<section class="therapy-section reverse amber-bg" id="tcm">
+  <div class="therapy-visual">
+    <svg class="therapy-icon-large" viewBox="0 0 260 260" fill="none">
+      <rect x="60" y="40" width="140" height="180" rx="4" stroke="#7A8C6E" stroke-width="1.5" fill="none"/>
+      <line x1="60" y1="75" x2="200" y2="75" stroke="#7A8C6E" stroke-width=".8"/>
+      <line x1="60" y1="110" x2="200" y2="110" stroke="#7A8C6E" stroke-width=".8"/>
+      <line x1="60" y1="145" x2="200" y2="145" stroke="#7A8C6E" stroke-width=".8"/>
+      <line x1="60" y1="180" x2="200" y2="180" stroke="#7A8C6E" stroke-width=".8"/>
+      <path d="M80 57 Q100 48 120 57 Q130 62 130 70" stroke="#7A8C6E" stroke-width="1" stroke-linecap="round" fill="none"/>
+      <path d="M130 90 Q150 80 170 90" stroke="#7A8C6E" stroke-width="1" stroke-linecap="round" fill="none"/>
+      <path d="M80 125 Q95 115 110 125 Q120 132 115 140" stroke="#7A8C6E" stroke-width="1" stroke-linecap="round" fill="none"/>
+      <circle cx="155" cy="160" r="12" stroke="#7A8C6E" stroke-width="1" fill="none"/>
+      <path d="M149 160 Q155 154 161 160 Q155 166 149 160" stroke="#7A8C6E" stroke-width=".8" fill="none"/>
+    </svg>
+    <div class="therapy-number-bg">04</div>
+    <div class="therapy-visual-label">"Six months in a dispensary taught me that Chinese medicine does not describe different plants — it describes a different way of listening to the body."</div>
+  </div>
+  <div class="therapy-content reveal">
+    <p class="therapy-tag">TCM training · 6-month dispensary externship · Integrative approach</p>
+    <h2 class="therapy-title">TCM &<br><em>Integrative</em><br>Plant Medicine</h2>
+    <p class="therapy-subtitle">Cross-tradition herbal medicine · Woven into all consultations</p>
+    <p class="therapy-story">Most Western herbalists know about Chinese medicine in the way you know about a country you have read about but never visited. I spent six months working alongside a TCM and acupuncture practitioner in their dispensary — on my own initiative, outside of my formal training hours — because I wanted more than a theoretical understanding.</p>
+    <p class="therapy-story">What I found there changed my practice. The diagnostic lens of Traditional Chinese Medicine — the way it reads the body through tongue and pulse, through patterns of deficiency and excess, through the relationship between organs as energetic systems rather than purely anatomical ones — adds a depth of assessment that I now bring into every consultation, regardless of which tradition I am prescribing from.</p>
+    <p class="therapy-story">For hormonal conditions in particular, this matters enormously. Chinese medicine has one of the oldest and most sophisticated traditions of <strong>gynaecological herbal medicine</strong> in the world. Herbs like dong quai, peony root, and rehmannia have been used for menstrual irregularity, endometriosis-like conditions, and hormonal cycles for thousands of years. To work with them well, you need to understand the system they come from. I do.</p>
+    <p class="therapy-story">My training also spans Ayurveda, giving me fluency across three distinct systems of plant medicine. In practice, that means I can draw on the most appropriate tools for your specific body and condition — rather than fitting every person into one framework.</p>
+    <div class="session-info">
+      <div class="session-detail">
+        <span class="session-detail-label">How it works</span>
+        <span class="session-detail-value">Integrated into all consultations</span>
+      </div>
+      <div class="session-detail">
+        <span class="session-detail-label">Particularly relevant for</span>
+        <span class="session-detail-value">Complex & hormonal cases</span>
+      </div>
+    </div>
+    <a href="https://calendly.com/sara-lemaitre-herbalist" target="_blank" rel="noopener" class="book-link">Book a consultation</a>
+  </div>
+</section>
+
+<!-- ══ 5. ATHLETE & PERFORMANCE ══ -->
+<section class="therapy-section gold-bg" id="athlete">
+  <div class="therapy-visual">
+    <svg class="therapy-icon-large" viewBox="0 0 260 260" fill="none">
+      <ellipse cx="130" cy="130" rx="70" ry="90" stroke="#7A8C6E" stroke-width="1.5" fill="none"/>
+      <line x1="130" y1="40" x2="130" y2="220" stroke="#7A8C6E" stroke-width=".8"/>
+      <line x1="60" y1="130" x2="200" y2="130" stroke="#7A8C6E" stroke-width=".8"/>
+      <path d="M100 70 Q130 55 160 70" stroke="#7A8C6E" stroke-width="1" stroke-linecap="round" fill="none"/>
+      <path d="M80 100 Q130 80 180 100" stroke="#7A8C6E" stroke-width=".8" stroke-dasharray="3 4" fill="none"/>
+      <path d="M80 160 Q130 180 180 160" stroke="#7A8C6E" stroke-width=".8" stroke-dasharray="3 4" fill="none"/>
+      <path d="M100 190 Q130 205 160 190" stroke="#7A8C6E" stroke-width="1" stroke-linecap="round" fill="none"/>
+      <circle cx="130" cy="130" r="12" stroke="#7A8C6E" stroke-width="1.5" fill="none"/>
+    </svg>
+    <div class="therapy-number-bg">05</div>
+    <div class="therapy-visual-label">"I was a national-level athlete. I know what it means to push a body to its edge — and what it costs when it can no longer go there."</div>
+  </div>
+  <div class="therapy-content reveal">
+    <p class="therapy-tag">Former elite athlete · Adaptogen protocols · Performance & recovery</p>
+    <h2 class="therapy-title">Athlete &<br><em>Performance</em><br>Support</h2>
+    <p class="therapy-subtitle">Herbal protocols for active people · Recovery · Resilience · Injury support</p>
+    <p class="therapy-story">I trained as a synchronised swimmer at national level. I know what it means to live inside a high-performance body — the discipline, the pain tolerance, the intimate knowledge of your own limits and how to push past them. I also know what it means when that body starts to fail you, when the gap between effort and recovery widens and doesn't close, when the injuries multiply and the fatigue becomes a kind of fog you can't train through.</p>
+    <p class="therapy-story">Plant medicine has an extraordinary relationship with performance. <strong>Adaptogens</strong> — herbs like ashwagandha, rhodiola, eleuthero, and schisandra — work with the body's stress response systems to build resilience over time. Not a stimulant hit, not a temporary suppression of fatigue signals, but a genuine improvement in how the body manages stress loads: physical, hormonal, and psychological.</p>
+    <p class="therapy-story">Anti-inflammatory protocols using turmeric, boswellia, devil's claw, and specific nervines can support injury recovery and reduce the chronic low-grade inflammation that accumulates in highly trained bodies. Sleep herbs support the recovery window that performance genuinely depends on. Hormonal support — particularly for female athletes, whose cycles are often disrupted by high training loads — is an area where my personal and clinical experience runs especially deep.</p>
+    <div class="conditions-block">
+      <p class="conditions-label">What I work with in active people</p>
+      <div class="conditions-grid">
+        <span class="condition-tag">Performance fatigue</span>
+        <span class="condition-tag">Overtraining recovery</span>
+        <span class="condition-tag">Inflammation & injury</span>
+        <span class="condition-tag">Adaptogen protocols</span>
+        <span class="condition-tag">Sleep & recovery</span>
+        <span class="condition-tag">Hormonal disruption in athletes</span>
+        <span class="condition-tag">Stress resilience</span>
+        <span class="condition-tag">Immune support</span>
+        <span class="condition-tag">Digestive performance</span>
+      </div>
+    </div>
+    <div class="session-info">
+      <div class="session-detail">
+        <span class="session-detail-label">Athlete consultation</span>
+        <span class="session-detail-value">£140–160 · 75 min</span>
+      </div>
+      <div class="session-detail">
+        <span class="session-detail-label">Format</span>
+        <span class="session-detail-value">Online & in person</span>
+      </div>
+      <div class="session-detail">
+        <span class="session-detail-label">International</span>
+        <span class="session-detail-value">Available globally</span>
+      </div>
+    </div>
+    <a href="https://calendly.com/sara-lemaitre-herbalist" target="_blank" rel="noopener" class="book-link">Book a performance consultation</a>
+  </div>
+</section>
+
+<!-- ══ 6. HOLISTIC WALKS ══ -->
+<section class="walks-section reveal" id="walks">
+  <div class="walks-text">
+    <p class="walks-tag">Seasonal experiential wellness · Four Seasons Holistic Walks</p>
+    <h2>Nature as medicine.<br><em>The walk as the therapy.</em></h2>
+    <p>There is a form of healing that cannot happen indoors. It requires ground underfoot, changing light, the smell of plants in their season. The Japanese call it shinrin-yoku — forest bathing. The French have always called it une promenade. I call it the oldest form of botanical medicine there is.</p>
+    <p>My Four Seasons Holistic Walks are guided outdoor experiences that combine botanical education, sensory awareness, gentle movement, and the therapeutic effects of immersion in nature. Each season tells a different story about the plant world — and about the body's own seasonal rhythms.</p>
+    <p>These walks are for small groups. They are not exercise classes. They are slow, attentive, and designed to leave you feeling reconnected — to plants, to your own senses, and to a pace of living that most of us have forgotten.</p>
+  </div>
+  <div>
+    <div class="walks-seasons">
+      <div class="season-card">
+        <div class="season-name">Spring</div>
+        <div class="season-desc">Wild plants emerging. Cleansing, renewal, the liver herbs. Dandelion, nettle, cleavers.</div>
+      </div>
+      <div class="season-card">
+        <div class="season-name">Summer</div>
+        <div class="season-desc">Full bloom. Nervines and heart herbs. St John's Wort, elderflower, meadowsweet.</div>
+      </div>
+      <div class="season-card">
+        <div class="season-name">Autumn</div>
+        <div class="season-desc">The harvest. Immune builders, adaptogens, seeds and berries. Echinacea, rosehip, hawthorn.</div>
+      </div>
+      <div class="season-card">
+        <div class="season-name">Winter</div>
+        <div class="season-desc">Root medicine. Deep nourishment, warming herbs, the inner season. Valerian, ginger, ashwagandha.</div>
+      </div>
+    </div>
+    <div style="margin-top: 1.5rem; padding: 1.5rem; border: 1px solid rgba(247,243,238,.2);">
+      <p style="font-size: 1rem; color: rgba(247,243,238,.7); line-height: 1.7; margin-bottom: 1rem;">Small groups · Seasonal dates · Collaboration with trusted practitioners · Occasional retreat formats</p>
+      <a href="#book" style="display:inline-block;padding:.8rem 2rem;border:1px solid var(--sage-pale);color:var(--sage-pale);text-decoration:none;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;transition:all .25s;" onmouseover="this.style.background='var(--sage-pale)';this.style.color='var(--bark)'" onmouseout="this.style.background='transparent';this.style.color='var(--sage-pale)'">Join the mailing list for dates</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 7. WORKSHOPS ══ -->
+<section class="workshops-section reveal" id="workshops">
+  <div class="workshops-inner">
+    <div class="workshops-header">
+      <p class="eyebrow">Education & community</p>
+      <h2>Workshops that give you<br>something to <em>take home</em></h2>
+    </div>
+    <div class="workshops-grid">
+      <div class="workshop-card">
+        <div class="workshop-icon">🌿</div>
+        <div class="workshop-title">Introduction to Herbal Medicine</div>
+        <div class="workshop-desc">A practical and grounding introduction to plant medicine for everyday life. How to make teas, tinctures, and simple home remedies. Which herbs to keep in your kitchen and why.</div>
+      </div>
+      <div class="workshop-card">
+        <div class="workshop-icon">⚖️</div>
+        <div class="workshop-title">Herbs for Hormonal Health</div>
+        <div class="workshop-desc">A workshop specifically for women navigating endometriosis, PCOS, PMS, or perimenopause. Understanding your cycle through a botanical lens. Practical protocols, not platitudes.</div>
+      </div>
+      <div class="workshop-card">
+        <div class="workshop-icon">🧠</div>
+        <div class="workshop-title">Adaptogens & the Stress Response</div>
+        <div class="workshop-desc">What adaptogens actually are, how they work in the body, and how to use them intelligently. Designed for busy, high-performing people who are running on empty.</div>
+      </div>
+      <div class="workshop-card">
+        <div class="workshop-icon">🍵</div>
+        <div class="workshop-title">Make Your Own Herbal Blends</div>
+        <div class="workshop-desc">A hands-on blending session. You leave with formulations you made yourself, tailored to your own constitution and the season. Small groups of 6–8.</div>
+      </div>
+      <div class="workshop-card">
+        <div class="workshop-icon">🌱</div>
+        <div class="workshop-title">The Naturopathic Kitchen</div>
+        <div class="workshop-desc">Food as medicine, practically applied. Anti-inflammatory cooking, blood sugar balance, the gut-hormone connection. How to eat for your body's specific needs.</div>
+      </div>
+      <div class="workshop-card">
+        <div class="workshop-icon">🤝</div>
+        <div class="workshop-title">Corporate Wellness Sessions</div>
+        <div class="workshop-desc">Bespoke wellness education for teams. Stress resilience, sleep, energy and focus. Available in English and French. Delivered online or in person.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 8. HERBAL PRODUCTS ══ -->
+<section class="products-section" id="products">
+  <div class="products-text reveal">
+    <p class="eyebrow">Custom formulations & remedies</p>
+    <h2>Herbal products<br>made <em>for you</em></h2>
+    <p>The formulation is where the herbalist's knowledge becomes something you can hold in your hands. Every blend I create begins with a consultation — because a tincture made for your specific constitution, your specific symptoms, and your specific season of life is not the same thing as a supplement you take from a shelf.</p>
+    <p>I also develop a small range of pre-made remedies for common presentations — seasonal immunity, sleep support, hormonal ease — which are available to existing clients and through selected stockists.</p>
+    <div class="product-types">
+      <div class="product-type-item">
+        <div class="product-type-dot"></div>
+        <div>
+          <div class="product-type-name">Personalised tincture blends</div>
+          <div class="product-type-desc">Made to your consultation protocol. Liquid herbal extracts, precisely formulated.</div>
+        </div>
+      </div>
+      <div class="product-type-item">
+        <div class="product-type-dot"></div>
+        <div>
+          <div class="product-type-name">Herbal teas & infusions</div>
+          <div class="product-type-desc">Custom blends for daily use. Loose leaf, seasonal, and beautifully sourced.</div>
+        </div>
+      </div>
+      <div class="product-type-item">
+        <div class="product-type-dot"></div>
+        <div>
+          <div class="product-type-name">Balms, salves & topical preparations</div>
+          <div class="product-type-desc">For skin conditions, muscle recovery, localised inflammation, and first aid.</div>
+        </div>
+      </div>
+      <div class="product-type-item">
+        <div class="product-type-dot"></div>
+        <div>
+          <div class="product-type-name">Pre-made remedy range</div>
+          <div class="product-type-desc">A curated selection of seasonal and hormonal support remedies. Available to clients and stockists.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="products-visual">
+    <svg width="200" height="200" viewBox="0 0 200 200" fill="none" style="opacity:.15">
+      <rect x="60" y="30" width="40" height="100" rx="6" stroke="#5C4A3A" stroke-width="1.5"/>
+      <rect x="55" y="25" width="50" height="14" rx="3" stroke="#5C4A3A" stroke-width="1"/>
+      <path d="M75 30 Q80 50 78 80 Q76 100 80 130" stroke="#5C4A3A" stroke-width=".8" fill="none"/>
+      <rect x="110" y="50" width="35" height="80" rx="4" stroke="#5C4A3A" stroke-width="1.5"/>
+      <rect x="106" y="44" width="43" height="12" rx="3" stroke="#5C4A3A" stroke-width="1"/>
+      <path d="M125 55 Q128 80 126 110" stroke="#5C4A3A" stroke-width=".8" fill="none"/>
+      <path d="M40 140 Q60 130 100 135 Q140 140 165 130" stroke="#5C4A3A" stroke-width=".8" stroke-dasharray="3 4" fill="none"/>
+    </svg>
+    <div class="products-visual-text">"The formulation is only as good as the conversation that preceded it."</div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section reveal" id="book">
+  <h2>Not sure which therapy<br>is right for you?<br><em>Start with a conversation.</em></h2>
+  <p>Every path through my practice begins with a free 15-minute discovery call. No commitment, no pressure — just an honest conversation about where you are and what might help. I offer consultations in English and French, online and in person, to clients in the UK and internationally.</p>
+  <div class="cta-buttons">
+    <a href="https://calendly.com/sara-lemaitre-herbalist" target="_blank" rel="noopener" class="cta-primary">Book a free discovery call</a>
+    <a href="/story" class="cta-secondary">Read my story first</a>
+  </div>
+</section>
+
+</BaseLayout>
