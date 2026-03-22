@@ -1,8 +1,8 @@
 backend:
   name: github
-  repo: Sara-herbalist/sara-lemaitre-herbalist-decap
+  repo: Sara-herbalist/sara-lemaitre-herbalist-Astro-Decap
   branch: main
-  base_url: https://sara-lemaitre-herbalist-astro.pages.dev
+  base_url: https://sara-lemaitre-herbalist-astro-decap.pages.dev
   auth_endpoint: /api/auth
 
 media_folder: public/images
