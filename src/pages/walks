@@ -1,0 +1,638 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const meta = {
+  title: "Four Seasons Holistic Walks | Botanical Guided Walks UK | Sara Lemaitre",
+  description: "Guided seasonal botanical walks with a clinical herbalist. Plant identification, foraging, seasonal herbal medicine and shinrin-yoku. Spring through winter. Small groups. UK.",
+  ogImage: "https://www.saralemaitre.com/images/og-walks.jpg",
+  canonical: "https://www.saralemaitre.com/walks",
+  navLight: false,
+  currentPage: 'walks',
+  ogType: 'website',
+};
+---
+
+<BaseLayout {...meta}>
+
+<style is:global>
+:root {
+    --cream: #F7F3EE; --warm-white: #FDFAF7;
+    --sage: #7A8C6E;
+    --sage-text: #4E6245; --sage-light: #C4D0BA; --sage-pale: #EBF0E7;
+    --bark: #5C4A3A; --bark-light: #8C7060; --bark-pale: #EDE5DC;
+    --charcoal: #2A2420; --muted: #6A5E58;
+    --spring: #8BA888; --spring-pale: #E8F0E6;
+    --summer: #C4A25A; --summer-pale: #F7EFD8;
+    --autumn: #A0634A; --autumn-pale: #F5E4D8;
+    --winter: #5A6E82; --winter-pale: #E2E8EF;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--warm-white); color: var(--charcoal); font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.8; overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; background: rgba(253,250,247,0); backdrop-filter: blur(0px); border-bottom: 1px solid transparent; transition: all .4s; }
+  nav.scrolled { background: rgba(253,250,247,0.93); backdrop-filter: blur(10px); border-bottom-color: rgba(122,108,100,0.1); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: var(--cream); text-decoration: none; transition: color .4s; }
+  nav.scrolled .nav-logo { color: var(--bark); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: .9375rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(247,243,238,.7); text-decoration: none; transition: color .2s; }
+  nav.scrolled .nav-links a { color: var(--muted); }
+  .nav-links a:hover, .nav-links a.active { color: var(--cream) !important; }
+  nav.scrolled .nav-links a:hover, nav.scrolled .nav-links a.active { color: var(--bark) !important; }
+  .nav-book { font-size: .9375rem; letter-spacing: .16em; text-transform: uppercase; padding: .7rem 1.8rem; border: 1px solid rgba(247,243,238,.4); color: rgba(247,243,238,.8); text-decoration: none; transition: all .22s; }
+  nav.scrolled .nav-book { border-color: var(--bark); color: var(--bark); }
+  .nav-book:hover { background: rgba(247,243,238,.15); }
+  nav.scrolled .nav-book:hover { background: var(--bark); color: var(--warm-white); }
+
+  /* HERO — full screen, nature feel */
+  .hero { min-height: 100vh; background: var(--sage); position: relative; display: flex; align-items: flex-end; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background: linear-gradient(160deg, #4a6b3e 0%, #7A8C6E 40%, #5C4A3A 100%); }
+  /* layered tree silhouettes */
+  .hero-trees { position: absolute; bottom: 0; left: 0; right: 0; }
+  .hero-content { position: relative; z-index: 2; padding: 0 8rem 8rem; max-width: 800px; }
+  .hero-eyebrow { font-size: .75rem; letter-spacing: .26em; text-transform: uppercase; color: var(--sage-pale); margin-bottom: 2rem; opacity: 0; animation: fadeUp .8s .2s forwards; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 7vw, 6rem); font-weight: 300; line-height: 1.0; color: var(--cream); margin-bottom: 2rem; opacity: 0; animation: fadeUp .8s .35s forwards; }
+  .hero-title em { font-style: italic; color: var(--sage-light); display: block; }
+  .hero-desc { font-size: 1.125rem; color: rgba(247,243,238,.72); line-height: 1.95; max-width: 540px; margin-bottom: 3rem; opacity: 0; animation: fadeUp .8s .5s forwards; }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp .8s .65s forwards; }
+  .btn-cream { display: inline-block; padding: .95rem 2.5rem; background: var(--cream); color: var(--bark); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+  .btn-cream:hover { background: var(--sage-pale); }
+  .btn-outline-cream { display: inline-block; padding: .95rem 2.5rem; border: 1px solid rgba(247,243,238,.35); color: rgba(247,243,238,.75); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+  .btn-outline-cream:hover { border-color: rgba(247,243,238,.6); color: var(--cream); }
+  /* scroll hint */
+  .scroll-hint { position: absolute; bottom: 3rem; right: 8rem; display: flex; align-items: center; gap: .8rem; opacity: 0; animation: fadeIn 1s 1.2s forwards; z-index: 2; }
+  .scroll-hint span { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(247,243,238,.4); }
+  .scroll-line { width: 40px; height: 1px; background: rgba(247,243,238,.25); }
+
+  /* OPENING */
+  .opening { padding: 8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .opening h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 300; color: var(--bark); line-height: 1.15; }
+  .opening h2 em { font-style: italic; color: var(--sage-text); }
+  .opening-eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
+  .opening p { font-size: 1.0625rem; color: #4A403C; line-height: 1.95; margin-bottom: 1.3rem; }
+  .opening p:last-child { margin-bottom: 0; }
+  .opening p em { font-style: italic; color: var(--sage-text); }
+
+  /* WHAT TO EXPECT */
+  .expect { background: var(--cream); padding: 6rem 8rem; border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .expect-header { margin-bottom: 4rem; }
+  .expect-header .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.2rem; }
+  .expect-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 300; color: var(--bark); line-height: 1.2; }
+  .expect-header h2 em { font-style: italic; color: var(--sage-text); }
+  .expect-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 2rem; }
+  .expect-card { padding: 2rem; background: var(--warm-white); border: 1px solid rgba(122,108,100,0.1); }
+  .expect-card-icon { font-size: 1.6rem; margin-bottom: 1rem; }
+  .expect-card-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--bark); margin-bottom: .6rem; }
+  .expect-card-desc { font-size: 1rem; color: var(--muted); line-height: 1.8; }
+
+  /* FOUR SEASONS — one full section per season */
+  .season-section { display: grid; grid-template-columns: 1fr 1fr; min-height: 75vh; border-bottom: 1px solid rgba(122,108,100,0.08); }
+  .season-section.reverse { direction: rtl; }
+  .season-section.reverse > * { direction: ltr; }
+
+  .season-visual { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: flex-end; padding: 4rem; }
+  .season-visual::before { content: ''; position: absolute; inset: 0; }
+  .season-section:nth-child(1) .season-visual { background: var(--spring-pale); }
+  .season-section:nth-child(1) .season-visual::before { background: linear-gradient(160deg, rgba(139,168,136,.25) 0%, rgba(235,240,231,.8) 100%); }
+  .season-section:nth-child(2) .season-visual { background: var(--summer-pale); }
+  .season-section:nth-child(2) .season-visual::before { background: linear-gradient(160deg, rgba(196,162,90,.2) 0%, rgba(247,239,216,.85) 100%); }
+  .season-section:nth-child(3) .season-visual { background: var(--autumn-pale); }
+  .season-section:nth-child(3) .season-visual::before { background: linear-gradient(160deg, rgba(160,99,74,.2) 0%, rgba(245,228,216,.85) 100%); }
+  .season-section:nth-child(4) .season-visual { background: var(--winter-pale); }
+  .season-section:nth-child(4) .season-visual::before { background: linear-gradient(160deg, rgba(90,110,130,.2) 0%, rgba(226,232,239,.85) 100%); }
+
+  .season-large-text { position: absolute; top: 2rem; left: 3rem; font-family: 'Cormorant Garamond', serif; font-size: 8rem; font-weight: 300; line-height: 1; opacity: .12; pointer-events: none; }
+  .season-section:nth-child(1) .season-large-text { color: var(--spring); }
+  .season-section:nth-child(2) .season-large-text { color: var(--summer); }
+  .season-section:nth-child(3) .season-large-text { color: var(--autumn); }
+  .season-section:nth-child(4) .season-large-text { color: var(--winter); }
+
+  .season-visual-svg { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); opacity: .18; }
+  .season-quote { position: relative; z-index: 1; font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-style: italic; color: var(--bark); line-height: 1.6; border-left: 2px solid var(--sage-light); padding-left: 1.2rem; max-width: 340px; }
+
+  .season-content { padding: 6rem; display: flex; flex-direction: column; justify-content: center; }
+  .season-indicator { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+  .season-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .spring-dot { background: var(--spring); }
+  .summer-dot { background: var(--summer); }
+  .autumn-dot { background: var(--autumn); }
+  .winter-dot { background: var(--winter); }
+  .season-name-label { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); }
+
+  .season-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 300; color: var(--bark); line-height: 1.15; margin-bottom: .5rem; }
+  .season-title em { font-style: italic; }
+  .season-section:nth-child(1) .season-title em { color: var(--spring); }
+  .season-section:nth-child(2) .season-title em { color: var(--summer); }
+  .season-section:nth-child(3) .season-title em { color: var(--autumn); }
+  .season-section:nth-child(4) .season-title em { color: var(--winter); }
+
+  .season-subtitle { font-size: 1rem; color: var(--muted); margin-bottom: 2rem; }
+  .season-body { font-size: 1.0625rem; color: #4A403C; line-height: 1.95; margin-bottom: 1.2rem; max-width: 540px; }
+  .season-body em { font-style: italic; color: var(--sage-text); }
+  .season-body strong { font-weight: 500; color: var(--bark); }
+
+  .herbs-block { margin: 1.8rem 0; padding: 1.4rem 1.8rem; background: var(--cream); border-left: 3px solid var(--sage-light); }
+  .herbs-label { font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--sage-text); margin-bottom: .8rem; }
+  .herbs-list { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .herb-chip { font-size: .9375rem; padding: .25rem .9rem; background: var(--warm-white); border: 1px solid rgba(122,140,110,0.25); color: var(--bark-light); border-radius: 20px; font-style: italic; }
+
+  .season-meta { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(122,108,100,0.1); }
+  .season-meta-item { display: flex; flex-direction: column; gap: .15rem; }
+  .season-meta-label { font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--sage-text); }
+  .season-meta-value { font-size: 1rem; color: var(--bark); font-weight: 400; }
+  .season-book { display: inline-block; margin-top: 1.5rem; padding: .85rem 2.2rem; border: 1px solid var(--bark); color: var(--bark); text-decoration: none; font-size: .9375rem; letter-spacing: .16em; text-transform: uppercase; transition: all .22s; }
+  .season-book:hover { background: var(--bark); color: var(--warm-white); }
+
+  /* RETREAT SECTION */
+  .retreat-section { background: var(--bark); padding: 8rem; display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: center; border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .retreat-text .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-light); margin-bottom: 1.5rem; }
+  .retreat-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 300; color: var(--cream); line-height: 1.2; margin-bottom: 2rem; }
+  .retreat-text h2 em { font-style: italic; color: var(--sage-light); }
+  .retreat-text p { font-size: 1.0625rem; color: rgba(247,243,238,.7); line-height: 1.95; margin-bottom: 1.3rem; max-width: 500px; }
+  .retreat-features { display: flex; flex-direction: column; gap: 0; }
+  .retreat-feature { padding: 1.4rem 0; border-bottom: 1px solid rgba(247,243,238,.08); display: flex; gap: 1.2rem; align-items: flex-start; }
+  .retreat-feature:first-child { border-top: 1px solid rgba(247,243,238,.08); }
+  .retreat-feature-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage-light); flex-shrink: 0; margin-top: .55rem; }
+  .retreat-feature-title { font-size: 1rem; font-weight: 400; color: var(--cream); margin-bottom: .2rem; }
+  .retreat-feature-desc { font-size: .9375rem; color: rgba(247,243,238,.45); line-height: 1.5; }
+  .retreat-cta { display: inline-block; margin-top: 2rem; padding: .9rem 2.4rem; background: var(--sage-light); color: var(--bark); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+  .retreat-cta:hover { background: var(--cream); }
+
+  /* PRACTICAL INFO */
+  .practical { padding: 6rem 8rem; background: var(--cream); border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .practical .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
+  .practical h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 300; color: var(--bark); line-height: 1.2; margin-bottom: 3rem; }
+  .practical h2 em { font-style: italic; color: var(--sage-text); }
+  .practical-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 2rem; }
+  .practical-item { padding: 2rem; background: var(--warm-white); border: 1px solid rgba(122,108,100,0.1); }
+  .practical-item-title { font-size: 1rem; font-weight: 500; color: var(--bark); margin-bottom: .6rem; }
+  .practical-item-body { font-size: 1rem; color: var(--muted); line-height: 1.75; }
+
+  /* MAILING */
+  .mailing { padding: 7rem 8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .mailing-text .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
+  .mailing-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 300; color: var(--bark); line-height: 1.2; margin-bottom: 1.5rem; }
+  .mailing-text h2 em { font-style: italic; color: var(--sage-text); }
+  .mailing-text p { font-size: 1rem; color: var(--muted); line-height: 1.9; }
+  .mailing-form { display: flex; flex-direction: column; gap: 1rem; }
+  .mailing-form input { padding: .9rem 1.2rem; border: 1px solid rgba(122,108,100,0.2); background: var(--warm-white); font-family: 'Jost', sans-serif; font-size: 1.0625rem; color: var(--charcoal); outline: none; transition: border-color .2s; }
+  .mailing-form input:focus { border-color: var(--sage-text); }
+  .mailing-form input::placeholder { color: var(--muted); }
+  .mailing-form button { padding: .9rem 2rem; background: var(--sage); color: var(--cream); border: none; font-family: 'Jost', sans-serif; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; cursor: pointer; transition: background .22s; }
+  .mailing-form button:hover { background: var(--bark); }
+  .mailing-note { font-size: .9375rem; color: var(--muted); }
+
+  footer { background: var(--charcoal); padding: 3rem 8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  footer p { font-size: .9375rem; letter-spacing: .08em; color: rgba(247,243,238,.25); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .75s ease, transform .75s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-d1 { transition-delay: .12s; } .reveal-d2 { transition-delay: .22s; }
+
+  @media (max-width: 1000px) {
+    nav { padding: 1.2rem 2rem; }
+    .hero-content { padding: 0 2.5rem 5rem; }
+    .scroll-hint { display: none; }
+    .opening { grid-template-columns: 1fr; padding: 5rem 2.5rem; gap: 3rem; }
+    .expect { padding: 5rem 2.5rem; }
+    .expect-grid { grid-template-columns: 1fr; }
+    .season-section, .season-section.reverse { grid-template-columns: 1fr; direction: ltr; }
+    .season-visual { min-height: 300px; }
+    .season-content { padding: 4rem 2.5rem; }
+    .retreat-section { grid-template-columns: 1fr; padding: 5rem 2.5rem; gap: 3rem; }
+    .practical { padding: 5rem 2.5rem; }
+    .practical-grid { grid-template-columns: 1fr; }
+    .mailing { grid-template-columns: 1fr; padding: 5rem 2.5rem; gap: 3rem; }
+    footer { padding: 2rem 2.5rem; flex-direction: column; text-align: center; }
+  }
+
+  /* ── WCAG 2.2 AA: Visible focus indicators ── */
+  :focus-visible {
+    outline: 3px solid #5C4A3A;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  a:focus-visible, button:focus-visible, input:focus-visible,
+  select:focus-visible, textarea:focus-visible {
+    outline: 3px solid #5C4A3A;
+    outline-offset: 3px;
+  }
+
+  /* Screen-reader only utility */
+  .sr-only {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── Skip navigation link ── */
+  .skip-nav {
+    position: absolute; top: -100px; left: 1rem; z-index: 9999;
+    background: #5C4A3A; color: #F7F3EE;
+    padding: .75rem 1.5rem; font-size: 1.0625rem;
+    text-decoration: none; border-radius: 0 0 4px 4px;
+    transition: top .2s;
+  }
+  .skip-nav:focus { top: 0; }
+
+
+  /* ── Mobile hamburger menu ── */
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer;
+    padding: .5rem; margin-left: .5rem;
+  }
+  .hamburger span {
+    display: block; width: 22px; height: 2px;
+    background: var(--bark); border-radius: 2px;
+    transition: all .25s;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  
+  @media (max-width: 1024px) {
+    .hamburger { display: flex; }
+    .nav-links {
+      display: none; position: fixed; top: 73px; left: 0; right: 0;
+      background: rgba(253,250,247,0.98); backdrop-filter: blur(12px);
+      flex-direction: column; gap: 0; padding: 1rem 0;
+      border-bottom: 1px solid rgba(122,108,100,0.12);
+      z-index: 99;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links li a {
+      display: block; padding: .9rem 2rem;
+      font-size: 1.0625rem; letter-spacing: .08em;
+      border-bottom: 1px solid rgba(122,108,100,0.06);
+    }
+    .nav-book { display: none; }
+  }
+
+
+
+  .lang-toggle {
+    font-size: .75rem; letter-spacing: .16em; text-transform: uppercase;
+    padding: .45rem .9rem; border: 1px solid rgba(247,243,238,.5);
+    background: none; color: rgba(247,243,238,.85); cursor: pointer;
+    font-family: 'Jost', sans-serif; border-radius: 2px;
+    transition: all .3s; margin-left: .5rem;
+  }
+  nav.scrolled .lang-toggle { border-color: rgba(92,74,58,.35); color: var(--muted); }
+  .lang-toggle:hover, nav.scrolled .lang-toggle:hover { border-color: var(--bark); color: var(--bark); }
+
+
+  /* Pages with light-coloured heroes — nav starts dark */
+  body[data-nav="light"] nav {
+    background: rgba(253,250,247,0.85);
+    backdrop-filter: blur(8px);
+  }
+  body[data-nav="light"] .nav-logo { color: var(--bark); }
+  body[data-nav="light"] .nav-links a { color: var(--muted); }
+  body[data-nav="light"] .nav-links a:hover { color: var(--bark); }
+  body[data-nav="light"] .nav-book { border-color: var(--bark); color: var(--bark); }
+  body[data-nav="light"] .lang-toggle { border-color: rgba(92,74,58,.35); color: var(--muted); }
+</style>
+
+<!-- HERO -->
+<section id="main-content" role="main" class="hero">
+  <div class="hero-bg"></div>
+  <!-- Tree silhouettes -->
+  <svg class="hero-trees" viewBox="0 0 1440 300" fill="none" preserveAspectRatio="xMidYMax meet" style="position:absolute;bottom:0;left:0;right:0;width:100%;opacity:.18;">
+    <path d="M0 300 L0 180 Q60 120 80 80 Q100 120 120 180 L120 300Z" fill="#2A2420"/>
+    <path d="M100 300 L100 200 Q150 150 165 110 Q180 150 195 200 L195 300Z" fill="#2A2420"/>
+    <path d="M300 300 L300 160 Q370 90 390 50 Q410 90 430 160 L430 300Z" fill="#2A2420"/>
+    <path d="M500 300 L500 200 Q540 160 555 130 Q570 160 585 200 L585 300Z" fill="#2A2420"/>
+    <path d="M700 300 L700 140 Q780 60 800 20 Q820 60 840 140 L840 300Z" fill="#2A2420"/>
+    <path d="M900 300 L900 190 Q945 140 960 110 Q975 140 990 190 L990 300Z" fill="#2A2420"/>
+    <path d="M1100 300 L1100 150 Q1160 80 1175 40 Q1190 80 1205 150 L1205 300Z" fill="#2A2420"/>
+    <path d="M1280 300 L1280 180 Q1330 120 1345 85 Q1360 120 1375 180 L1375 300Z" fill="#2A2420"/>
+    <path d="M1400 300 L1400 210 Q1425 170 1435 150 Q1445 170 1455 210 L1455 300Z" fill="#2A2420"/>
+  </svg>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Four Seasons Holistic Walks</p>
+    <h1 class="hero-title">The oldest<br>form of<br><em>botanical medicine</em><br>there is</h1>
+    <p class="hero-desc">Guided walks through the British landscape with a clinical herbalist. Plant identification, seasonal medicine, sensory immersion, and the quiet, profound effect of being genuinely present in nature. Every season tells a different story.</p>
+    <div class="hero-actions">
+      <a href="#seasons" class="btn-cream">Explore the seasons</a>
+      <a href="#mailing" class="btn-outline-cream" data-i18n="walks.mailing.cta">Join the mailing list</a>
+    </div>
+  </div>
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- OPENING -->
+<section class="opening reveal">
+  <div>
+    <p class="opening-eyebrow">Why we walk</p>
+    <h2>Nature doesn't need<br>to be explained<br>to be <em>medicine</em></h2>
+  </div>
+  <div>
+    <p>The Japanese call it shinrin-yoku. Forest bathing. The measurable, documented physiological effect of spending time surrounded by trees — cortisol drops, blood pressure lowers, immune markers improve, mood lifts. The science is real. The experience is older than the science by several thousand years.</p>
+    <p>These walks are not nature appreciation classes. They are a guided experience of the plant world in its season, led by someone whose whole practice is rooted in botanical medicine — who can show you why the plants that grow in damp ground in February are precisely the plants the body needs after winter, or why the nervines that flower in midsummer are nature's answer to the pace that summer demands of us.</p>
+    <p><em>Slow, attentive, deliberately paced.</em> We stop often. We smell things, touch things, taste things (safely). We talk. We are quiet. We leave different from how we arrived — and that is not an accident.</p>
+  </div>
+</section>
+
+<!-- WHAT TO EXPECT -->
+<section class="expect reveal">
+  <div class="expect-header">
+    <p class="eyebrow">What a walk looks like</p>
+    <h2>Not a hike. Not a lecture.<br><em>Something different.</em></h2>
+  </div>
+  <div class="expect-grid">
+    <div class="expect-card">
+      <div class="expect-card-icon">🌿</div>
+      <div class="expect-card-title">Plant identification & medicine</div>
+      <div class="expect-card-desc">You learn to see what is growing around you — not as scenery but as a dispensary. Every plant has a story, a use, a season, and a reason it grows where it does.</div>
+    </div>
+    <div class="expect-card">
+      <div class="expect-card-icon">🧘</div>
+      <div class="expect-card-title">Sensory immersion</div>
+      <div class="expect-card-desc">Deliberate slow movement, conscious attention to what is around you. The nervous system responds to this in ways that walking while thinking about your phone does not produce.</div>
+    </div>
+    <div class="expect-card">
+      <div class="expect-card-icon">📖</div>
+      <div class="expect-card-title">Seasonal body wisdom</div>
+      <div class="expect-card-desc">Each season asks different things of the body. We talk about what those are — and which plants are available right now to support exactly those needs.</div>
+    </div>
+    <div class="expect-card">
+      <div class="expect-card-icon">🫖</div>
+      <div class="expect-card-title">Herbal tea & gathering</div>
+      <div class="expect-card-desc">We gather where it is appropriate and legal to do so. You leave with something foraged, something brewed, something you made from what the season offers.</div>
+    </div>
+    <div class="expect-card">
+      <div class="expect-card-icon">👥</div>
+      <div class="expect-card-title">Small, unhurried groups</div>
+      <div class="expect-card-desc">Maximum 12 people. Small enough that there is always time for a question, a closer look, a longer conversation with a plant you want to understand better.</div>
+    </div>
+    <div class="expect-card">
+      <div class="expect-card-icon">📋</div>
+      <div class="expect-card-title">A take-home reference guide</div>
+      <div class="expect-card-desc">Every walk participant receives a seasonal plant guide — identification sketches, medicinal properties, preparation methods, and foraging guidance for the season.</div>
+    </div>
+  </div>
+</section>
+
+<!-- THE FOUR SEASONS -->
+<div id="seasons">
+
+  <!-- SPRING -->
+  <section class="season-section reveal">
+    <div class="season-visual">
+      <div class="season-large-text" data-i18n="walks.spring.title">Spring</div>
+      <svg class="season-visual-svg" width="260" height="260" viewBox="0 0 260 260" fill="none">
+        <path d="M130 220 L130 80" stroke="#8BA888" stroke-width="2" stroke-linecap="round"/>
+        <path d="M130 120 Q100 90 80 95 Q100 120 130 120Z" fill="rgba(139,168,136,.25)" stroke="#8BA888" stroke-width="1.2"/>
+        <path d="M130 140 Q160 110 180 115 Q158 140 130 140Z" fill="rgba(139,168,136,.2)" stroke="#8BA888" stroke-width="1.2"/>
+        <path d="M130 160 Q95 135 78 142 Q98 162 130 160Z" fill="rgba(139,168,136,.18)" stroke="#8BA888" stroke-width="1"/>
+        <path d="M125 80 Q110 60 118 40 Q130 55 125 80Z" fill="rgba(139,168,136,.3)" stroke="#8BA888" stroke-width="1.2"/>
+        <circle cx="125" cy="40" r="4" fill="#8BA888" opacity=".5"/>
+      </svg>
+      <div class="season-quote">"The spring herbs are the liver herbs — and the liver is where everything begins. The body has been holding things all winter."</div>
+    </div>
+    <div class="season-content">
+      <div class="season-indicator"><div class="season-dot spring-dot"></div><span class="season-name-label">Spring · March–May</span></div>
+      <h2 class="season-title">Cleansing,<br>renewal — <em>rising</em></h2>
+      <p class="season-subtitle">Wild garlic season · The cleansing herbs · Bitter roots and fresh greens</p>
+      <p class="season-body">Spring is the season the body has been waiting for. After months of contraction and conservation, something in the system wants to move — and the plants that emerge in March and April are precisely the ones to help it do so.</p>
+      <p class="season-body">The wild garlic that carpets British woodland floors in April. The nettles pushing up through disturbed ground. The dandelion — derided as a weed, revered in herbal medicine for its relationship with the liver and the lymphatic system. The cleavers that stick to your jacket and, according to the Western herbal tradition, to the lymph as well.</p>
+      <p class="season-body"><strong>Spring is traditionally the season of cleansing and renewal.</strong> We look at what that actually means anatomically and herbally — what the liver herbs do, why bitter tastes matter, how the body's own detoxification systems work and what supports them. And we walk slowly through a landscape that is offering us exactly these plants, right now, in exactly this moment.</p>
+      <div class="herbs-block">
+        <div class="herbs-label">Plants we encounter in spring</div>
+        <div class="herbs-list">
+          <span class="herb-chip">Wild garlic</span>
+          <span class="herb-chip">Nettle</span>
+          <span class="herb-chip">Dandelion</span>
+          <span class="herb-chip">Cleavers</span>
+          <span class="herb-chip">Ground elder</span>
+          <span class="herb-chip">Hawthorn blossom</span>
+          <span class="herb-chip">Elder leaf bud</span>
+          <span class="herb-chip">Wood sorrel</span>
+          <span class="herb-chip">Chickweed</span>
+        </div>
+      </div>
+      <div class="season-meta">
+        <div class="season-meta-item"><span class="season-meta-label">Duration</span><span class="season-meta-value">3 hours</span></div>
+        <div class="season-meta-item"><span class="season-meta-label">Group</span><span class="season-meta-value">Maximum 12</span></div>
+        <div class="season-meta-item"><span class="season-meta-label">Price</span><span class="season-meta-value">£55 per person</span></div>
+        <div class="season-meta-item"><span class="season-meta-label">Includes</span><span class="season-meta-value">Seasonal plant guide + foraged tea</span></div>
+      </div>
+      <a href="#mailing" class="season-book">Get notified of spring dates</a>
+    </div>
+  </section>
+
+  <!-- SUMMER -->
+  <section class="season-section reverse reveal">
+    <div class="season-visual">
+      <div class="season-large-text" data-i18n="walks.summer.title">Summer</div>
+      <svg class="season-visual-svg" width="260" height="260" viewBox="0 0 260 260" fill="none">
+        <circle cx="130" cy="110" r="32" stroke="#C4A25A" stroke-width="1.5" fill="rgba(196,162,90,.12)"/>
+        <circle cx="130" cy="110" r="18" stroke="#C4A25A" stroke-width="1" fill="rgba(196,162,90,.08)"/>
+        <path d="M130 110 L130 220" stroke="#C4A25A" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M130 150 Q108 135 102 140 Q112 155 130 150Z" fill="rgba(196,162,90,.2)" stroke="#C4A25A" stroke-width="1"/>
+        <path d="M130 170 Q152 155 158 160 Q148 175 130 170Z" fill="rgba(196,162,90,.18)" stroke="#C4A25A" stroke-width="1"/>
+        <line x1="130" y1="78" x2="130" y2="60" stroke="#C4A25A" stroke-width="1" stroke-linecap="round"/>
+        <line x1="155" y1="88" x2="168" y2="75" stroke="#C4A25A" stroke-width="1" stroke-linecap="round"/>
+        <line x1="160" y1="115" x2="178" y2="115" stroke="#C4A25A" stroke-width="1" stroke-linecap="round"/>
+        <line x1="105" y1="88" x2="92" y2="75" stroke="#C4A25A" stroke-width="1" stroke-linecap="round"/>
+        <line x1="100" y1="115" x2="82" y2="115" stroke="#C4A25A" stroke-width="1" stroke-linecap="round"/>
+      </svg>
+      <div class="season-quote">"Midsummer is when the nervines flower — meadowsweet, St John's Wort, lemon balm. The season that runs fastest is where the nervous system herbs bloom."</div>
+    </div>
+    <div class="season-content">
+      <div class="season-indicator"><div class="season-dot summer-dot"></div><span class="season-name-label">Summer · June–August</span></div>
+      <h2 class="season-title">Flowering, heat —<br><em>the nervines</em></h2>
+      <p class="season-subtitle">St John's Wort · Elderflower · Meadowsweet · Lemon balm</p>
+      <p class="season-body">Summer in the British hedgerow is extraordinary abundance. The same meadows that looked bare in February are now chest-deep in flowering plants, each one at its annual peak of medicinal potency — because that is precisely what flowering is, in biochemical terms: the plant's entire effort concentrated into one moment.</p>
+      <p class="season-body">The nervines — the herbs that work on the nervous system — have a particular affinity for summer. St John's Wort flowers at the summer solstice; meadowsweet perfumes riverbanks; lemon balm is ready to harvest. There is something fitting about the fact that the herbs most associated with stress, anxiety, and nervous system support bloom in the season that most demands them of us.</p>
+      <p class="season-body">We walk through meadows and hedgerow, identify the flowering nervines and heart herbs in their peak, and sit with them long enough to understand why they work — and how to use them through the rest of the year.</p>
+      <div class="herbs-block">
+        <div class="herbs-label">Plants we encounter in summer</div>
+        <div class="herbs-list">
+          <span class="herb-chip">St John's Wort</span>
+          <span class="herb-chip">Elderflower</span>
+          <span class="herb-chip">Meadowsweet</span>
+          <span class="herb-chip">Lemon balm</span>
+          <span class="herb-chip">Lavender</span>
+          <span class="herb-chip">Vervain</span>
+          <span class="herb-chip">Yarrow</span>
+          <span class="herb-chip">Chamomile</span>
+          <span class="herb-chip">Red clover</span>
+        </div>
+      </div>
+      <div class="season-meta">
+        <div class="season-meta-item"><span class="season-meta-label">Duration</span><span class="season-meta-value">3 hours</span></div>
+        <div class="season-meta-item"><span class="season-meta-label">Group</span><span class="season-meta-value">Maximum 12</span></div>
+        <div class="season-meta-item"><span class="season-meta-label">Price</span><span class="season-meta-value">£55 per person</span></div>
+        <div class="season-meta-item"><span class="season-meta-label">Includes</span><span class="season-meta-value">Plant guide + elderflower cordial making</span></div>
+      </div>
+      <a href="#mailing" class="season-book">Get notified of summer dates</a>
+    </div>
+  </section>
+
+  <!-- AUTUMN -->
+  <section class="season-section reveal">
+    <div class="season-visual">
+      <div class="season-large-text" data-i18n="walks.autumn.title">Autumn</div>
+      <svg class="season-visual-svg" width="260" height="260" viewBox="0 0 260 260" fill="none">
+        <path d="M130 220 L130 100" stroke="#A0634A" stroke-width="1.5" stroke-linecap="round"/>
+        <ellipse cx="98" cy="90" rx="28" ry="18" transform="rotate(-30 98 90)" fill="rgba(160,99,74,.2)" stroke="#A0634A" stroke-width="1.2"/>
+        <ellipse cx="162" cy="95" rx="24" ry="16" transform="rotate(25 162 95)" fill="rgba(160,99,74,.18)" stroke="#A0634A" stroke-width="1.2"/>
+        <ellipse cx="130" cy="75" rx="20" ry="14" fill="rgba(160,99,74,.22)" stroke="#A0634A" stroke-width="1.2"/>
+        <circle cx="85" cy="188" r="8" fill="rgba(160,99,74,.3)" stroke="#A0634A" stroke-width="1"/>
+        <circle cx="175" cy="195" r="10" fill="rgba(160,99,74,.25)" stroke="#A0634A" stroke-width="1"/>
+        <circle cx="125" cy="200" r="7" fill="rgba(160,99,74,.28)" stroke="#A0634A" stroke-width="1"/>
+        <circle cx="155" cy="182" r="6" fill="rgba(160,99,74,.2)" stroke="#A0634A" stroke-width="1"/>
+      </svg>
+      <div class="season-quote">"Autumn is the season of the immune system — and the plants know it. The berries ripen, the roots concentrate, the fungi emerge."</div>
+    </div>
+    <div class="season-content">
+      <div class="season-indicator"><div class="season-dot autumn-dot"></div><span class="season-name-label">Autumn · September–November</span></div>
+      <h2 class="season-title">Harvest,<br>immunity — <em>rooting down</em></h2>
+      <p class="season-subtitle">Elder berries · Rosehip · Hawthorn · Echinacea · The immune builders</p>
+      <p class="season-body">Autumn is one of the most abundant seasons for the herbalist. The plants that have been building their stores all summer are ready — berries ripening, roots concentrating their medicine, bark developing its tannins. And the body, sensing the change in light, is beginning its own preparation for winter: immunity, warmth, depth.</p>
+      <p class="season-body">We walk through late-season hedgerow and woodland, harvesting elderberries, rosehips, hawthorn berries, and sloe. We look at the immune-modulating herbs — echinacea, astragalus, elderberry — and understand the difference between stimulating and modulating immunity (a difference that matters enormously for people with autoimmune or inflammatory conditions).</p>
+      <p class="season-body"><strong>Autumn walks always include a making element:</strong> elderberry syrup or rosehip preparation, depending on what the season offers. You leave with something for winter that you made yourself, in the landscape where the ingredients grew.</p>
+      <div class="herbs-block">
+        <div class="herbs-label">Plants we encounter in autumn</div>
+        <div class="herbs-list">
+          <span class="herb-chip">Elderberry</span>
+          <span class="herb-chip">Rosehip</span>
+          <span class="herb-chip">Hawthorn berry</span>
+          <span class="herb-chip">Sloe</span>
+          <span class="herb-chip">Blackberry leaf</span>
+          <span class="herb-chip">Echinacea</span>
+          <span class="herb-chip">Ashwagandha</span>
+          <span class="herb-chip">Valerian root</span>
+          <span class="herb-chip">Wild mushrooms</span>
+        </div>
+      </div>
+      <div class="season-meta">
+        <div class="season-meta-item"><span class="season-meta-label">Duration</span><span class="season-meta-value">3.5 hours (longer — more to gather)</span></div>
+        <div class="season-meta-item"><span class="season-meta-label">Group</span><span class="season-meta-value">Maximum 10</span></div>
+        <div class="season-meta-item"><span class="season-meta-label">Price</span><span class="season-meta-value">£65 per person</span></div>
+        <div class="season-meta-item"><span class="season-meta-label">Includes</span><span class="season-meta-value">Plant guide + elderberry syrup making</span></div>
+      </div>
+      <a href="#mailing" class="season-book">Get notified of autumn dates</a>
+    </div>
+  </section>
+
+  <!-- WINTER -->
+  <section class="season-section reverse reveal">
+    <div class="season-visual">
+      <div class="season-large-text" data-i18n="walks.winter.title">Winter</div>
+      <svg class="season-visual-svg" width="260" height="260" viewBox="0 0 260 260" fill="none">
+        <path d="M130 40 L130 220" stroke="#5A6E82" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M50 130 L210 130" stroke="#5A6E82" stroke-width="1.5" stroke-linecap="round"/>
+        <path d="M72 72 L188 188" stroke="#5A6E82" stroke-width="1" stroke-linecap="round" opacity=".5"/>
+        <path d="M188 72 L72 188" stroke="#5A6E82" stroke-width="1" stroke-linecap="round" opacity=".5"/>
+        <circle cx="130" cy="130" r="20" stroke="#5A6E82" stroke-width="1.5" fill="rgba(90,110,130,.08)"/>
+        <circle cx="130" cy="130" r="6" fill="#5A6E82" opacity=".4"/>
+        <circle cx="130" cy="50" r="5" stroke="#5A6E82" stroke-width="1" fill="rgba(90,110,130,.15)"/>
+        <circle cx="130" cy="210" r="5" stroke="#5A6E82" stroke-width="1" fill="rgba(90,110,130,.15)"/>
+        <circle cx="50" cy="130" r="5" stroke="#5A6E82" stroke-width="1" fill="rgba(90,110,130,.15)"/>
+        <circle cx="210" cy="130" r="5" stroke="#5A6E82" stroke-width="1" fill="rgba(90,110,130,.15)"/>
+      </svg>
+      <div class="season-quote">"Winter teaches us that dormancy is not the absence of life. The deepest root medicine is ready now. The body knows to go inward."</div>
+    </div>
+    <div class="season-content">
+      <div class="season-indicator"><div class="season-dot winter-dot"></div><span class="season-name-label">Winter · December–February</span></div>
+      <h2 class="season-title">Rest, depth —<br><em>root medicine</em></h2>
+      <p class="season-subtitle">Ginger · Valerian · Ashwagandha · The deep nourishing herbs</p>
+      <p class="season-body">Winter is the most underappreciated season for the herbalist. Most people think there is nothing to see — and that is precisely the lesson. What appears bare is not empty. The roots are down there, concentrating everything the plant has into dense, warming, deeply nourishing medicine.</p>
+      <p class="season-body">A winter walk is slower, more internal, more contemplative. We look at bark, lichen, evergreens — the plants that refuse dormancy and offer their medicine year-round. We talk about root medicine: valerian for sleep, ashwagandha for deep restoration, ginger and rosemary for warmth and circulation. We look at the body's own wisdom in winter — its instinct to rest, to go inward, to conserve.</p>
+      <p class="season-body"><em>This is my favourite walk to lead.</em> There is a particular quality of attention that winter demands — you have to look harder, move more slowly, be more patient. And the plants that reward that patience are extraordinary.</p>
+      <div class="herbs-block">
+        <div class="herbs-label">Plants and medicines of winter</div>
+        <div class="herbs-list">
+          <span class="herb-chip">Rosemary</span>
+          <span class="herb-chip">Thyme</span>
+          <span class="herb-chip">Pine & spruce</span>
+          <span class="herb-chip">Ginger root</span>
+          <span class="herb-chip">Valerian</span>
+          <span class="herb-chip">Ivy (medicinal use)</span>
+          <span class="herb-chip">Birch bark</span>
+          <span class="herb-chip">Hawthorn bark</span>
+          <span class="herb-chip">Reishi (where found)</span>
+        </div>
+      </div>
+      <div class="season-meta">
+        <div class="season-meta-item"><span class="season-meta-label">Duration</span><span class="season-meta-value">2.5 hours</span></div>
+        <div class="season-meta-item"><span class="season-meta-label">Group</span><span class="season-meta-value">Maximum 12</span></div>
+        <div class="season-meta-item"><span class="season-meta-label">Price</span><span class="season-meta-value">£55 per person</span></div>
+        <div class="season-meta-item"><span class="season-meta-label">Includes</span><span class="season-meta-value">Plant guide + warming root tea blend</span></div>
+      </div>
+      <a href="#mailing" class="season-book">Get notified of winter dates</a>
+    </div>
+  </section>
+</div>
+
+<!-- RETREAT -->
+<section class="retreat-section reveal">
+  <div class="retreat-text">
+    <p class="eyebrow">Extended & immersive</p>
+    <h2>Day retreats &<br><em>collaborative experiences</em></h2>
+    <p>Some of the most powerful experiences I offer happen when a walk becomes a full day — when there is time to gather, make, eat, sit, and talk without rushing back to anything. Day retreats combine a morning walk with a workshop element (blending, cooking, or making), a shared meal with seasonal food, and an afternoon of deeper learning.</p>
+    <p>I collaborate with two trusted practitioners — in massage therapy and yoga — to offer integrated retreat experiences that bring together movement, bodywork, plant medicine, and food. These run seasonally and are announced to the mailing list first.</p>
+    <a href="#mailing" class="retreat-cta">Join the list for retreat dates</a>
+  </div>
+  <div class="retreat-features">
+    <div class="retreat-feature"><div class="retreat-feature-dot"></div><div><div class="retreat-feature-title">Morning botanical walk</div><div class="retreat-feature-desc">Seasonal plant identification, foraging, and botanical medicine in the landscape.</div></div></div>
+    <div class="retreat-feature"><div class="retreat-feature-dot"></div><div><div class="retreat-feature-title">Workshop element</div><div class="retreat-feature-desc">Herbal blending, seasonal cooking, or remedy-making depending on the season.</div></div></div>
+    <div class="retreat-feature"><div class="retreat-feature-dot"></div><div><div class="retreat-feature-title">Shared seasonal meal</div><div class="retreat-feature-desc">A naturopathic, anti-inflammatory meal prepared from what the season offers.</div></div></div>
+    <div class="retreat-feature"><div class="retreat-feature-dot"></div><div><div class="retreat-feature-title">Collaborative practitioners</div><div class="retreat-feature-desc">Yoga, massage, or movement elements with trusted collaborators.</div></div></div>
+    <div class="retreat-feature"><div class="retreat-feature-dot"></div><div><div class="retreat-feature-title">Private retreat bookings</div><div class="retreat-feature-desc">Available for groups of 8–20. Hen parties, corporate away days, women's circles.</div></div></div>
+  </div>
+</section>
+
+<!-- PRACTICAL -->
+<section class="practical reveal">
+  <p class="eyebrow">Practical information</p>
+  <h2>Before you <em>book</em></h2>
+  <div class="practical-grid">
+    <div class="practical-item"><div class="practical-item-title">What to wear and bring</div><div class="practical-item-body">Comfortable walking shoes suitable for uneven ground. Layers appropriate to the season. A small bag or basket for gathering. Everything else — including foraging containers, a reference guide, and seasonal tea — is provided.</div></div>
+    <div class="practical-item"><div class="practical-item-title">Locations</div><div class="practical-item-body">Walks take place in and around London, the South East of England, and — for selected seasonal dates — in France. Location details are confirmed with booking. Public transport accessible routes wherever possible.</div></div>
+    <div class="practical-item"><div class="practical-item-title">Foraging and safety</div><div class="practical-item-body">We only forage in locations where it is legal and sustainable to do so. Everything we gather, you will be able to identify with certainty before it goes anywhere near your mouth. Safety is the foundation of all foraging practice.</div></div>
+    <div class="practical-item"><div class="practical-item-title">Accessibility</div><div class="practical-item-body">Walks are designed to be gentle and accessible — not athletic. All participants should be comfortable walking on uneven ground for 2–3 hours. Please contact me before booking if you have mobility concerns — I will always try to accommodate you.</div></div>
+    <div class="practical-item"><div class="practical-item-title">Weather and cancellations</div><div class="practical-item-body">Walks go ahead in light rain — appropriate weather is part of the experience. In the event of unsafe weather conditions, I will offer a reschedule or full refund. Participant cancellations with more than 48 hours' notice receive a full refund or credit.</div></div>
+    <div class="practical-item"><div class="practical-item-title">Private group bookings</div><div class="practical-item-body">All seasonal walks available for private groups of 6–15. Contact me directly to discuss dates, locations, and any bespoke elements you would like to include. Pricing by arrangement.</div></div>
+  </div>
+</section>
+
+<!-- MAILING -->
+<section class="mailing reveal" id="mailing">
+  <div class="mailing-text">
+    <p class="eyebrow">Never miss a season</p>
+    <h2>Join the walks<br>mailing <em>list</em></h2>
+    <p>Walk dates are released to the mailing list before anywhere else. Given the small group sizes, places go quickly — particularly for autumn and the day retreats. Leave your details below and I will let you know what is coming up before it is publicly announced.</p>
+    <p>I also send occasional botanical field notes — seasonal plant observations, foraging finds, things I notice on my own walks that feel worth sharing. Nothing frequent, nothing noisy.</p>
+  </div>
+  <div>
+    <form class="mailing-form" name="walks-mailing" netlify netlify-honeypot="bot-field" action="/thank-you">
+      <input type="hidden" name="form-name" value="walks-mailing">
+      <p hidden><input name="bot-field"></p>
+      <label for="wk-name" class="sr-only">Your name</label><input id="wk-name" type="text" name="name" placeholder="Your name" data-i18n="walks.mailing.name" data-i18n-attr="placeholder" aria-required="true">
+      <label for="wk-email" class="sr-only">Email address</label><input id="wk-email" type="email" name="email" placeholder="Your email address" data-i18n="walks.mailing.email" data-i18n-attr="placeholder" aria-required="true">
+      <label for="wk-loc" class="sr-only">Nearest city</label><input id="wk-loc" type="text" name="location" placeholder="Nearest city (helps with location planning)" data-i18n="walks.mailing.loc" data-i18n-attr="placeholder">
+      <select style="padding:.9rem 1.2rem;border:1px solid rgba(122,108,100,0.2);background:var(--warm-white);font-family:'Jost',sans-serif;font-size:.9rem;color:var(--muted);outline:none;appearance:none;cursor:pointer;">
+        <option value="" disabled selected>Which season interests you most?</option>
+        <option>Spring</option>
+        <option>Summer</option>
+        <option>Autumn (most popular)</option>
+        <option>Winter</option>
+        <option>Day retreat</option>
+        <option>All seasons</option>
+      </select>
+      <button type="submit">Join the mailing list</button>
+      <p class="mailing-note">No spam. No sharing. Unsubscribe any time. GDPR compliant.</p>
+    </form>
+  </div>
+</section>
+
+</BaseLayout>
