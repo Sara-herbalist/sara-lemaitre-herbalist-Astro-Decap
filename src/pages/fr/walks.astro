@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const meta = {
+  title: "Balades Botaniques des Quatre Saisons | Sara Lemaitre",
+  description: "Balades botaniques guidées avec une herboriste clinique. Identification des plantes, cueillette, médecine saisonnière et nature comme thérapie. Printemps, été, automne et hiver. Royaume-Uni.",
+  ogImage: "https://www.saralemaitre.com/images/og-walks.jpg",
+  canonical: "https://www.saralemaitre.com/fr/walks",
+  navLight: true,
+  currentPage: 'walks',
+  ogType: 'website',
+  lang: 'fr',
+};
+---
+<BaseLayout {...meta}>
+<style is:global>
+.walks-hero { min-height: 100vh; background: var(--sage); position: relative; display: flex; align-items: flex-end; overflow: hidden; padding-top: 90px; }
+.walks-hero-bg { position: absolute; inset: 0; background: linear-gradient(160deg, #4a6b3e 0%, #7A8C6E 40%, #5C4A3A 100%); }
+.walks-hero-content { position: relative; z-index: 2; padding: 0 8rem 8rem; max-width: 800px; }
+.walks-hero-eyebrow { font-size: .75rem; letter-spacing: .26em; text-transform: uppercase; color: var(--sage-pale); margin-bottom: 2rem; opacity: 0; animation: fadeUp .8s .2s forwards; }
+.walks-hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 7vw, 6rem); font-weight: 300; line-height: 1.0; color: var(--cream); margin-bottom: 2rem; opacity: 0; animation: fadeUp .8s .35s forwards; }
+.walks-hero-title em { font-style: italic; color: var(--sage-light); display: block; }
+.walks-hero-desc { font-size: 1.125rem; color: rgba(247,243,238,.72); line-height: 1.95; max-width: 540px; margin-bottom: 3rem; opacity: 0; animation: fadeUp .8s .5s forwards; }
+.walks-hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp .8s .65s forwards; }
+.btn-cream { display: inline-block; padding: .95rem 2.5rem; background: var(--cream); color: var(--bark); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+.btn-cream:hover { background: var(--sage-light); }
+.btn-outline-cream { display: inline-block; padding: .95rem 2.5rem; border: 1px solid rgba(247,243,238,.35); color: rgba(247,243,238,.75); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+.btn-outline-cream:hover { border-color: var(--sage-light); color: var(--sage-light); }
+.opening { padding: 8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; border-bottom: 1px solid rgba(122,108,100,0.1); }
+.opening-eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
+.opening h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 400; color: var(--charcoal); line-height: 1.2; }
+.opening h2 em { font-style: italic; color: var(--sage-text); }
+.opening p { font-size: 1.0625rem; color: var(--muted); line-height: 1.9; margin-bottom: 1.2rem; }
+.seasons-section { padding: 6rem 8rem; background: var(--cream); }
+.seasons-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: var(--charcoal); margin-bottom: 3.5rem; }
+.seasons-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.season-card { background: var(--warm-white); padding: 2.5rem 2rem; border: 1px solid rgba(92,74,58,0.06); }
+.season-name { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--charcoal); margin-bottom: 1rem; }
+.season-desc { font-size: .9375rem; color: var(--muted); line-height: 1.75; margin-bottom: 1.25rem; }
+.season-plants { font-size: .8125rem; color: var(--sage-text); font-style: italic; }
+.expect-section { padding: 6rem 8rem; background: var(--warm-white); border-bottom: 1px solid rgba(122,108,100,0.1); }
+.expect-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: var(--charcoal); margin-bottom: 3rem; }
+.expect-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.expect-item h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--bark); margin-bottom: .75rem; }
+.expect-item p { font-size: .9375rem; color: var(--muted); line-height: 1.75; }
+.mailing-cta { padding: 7rem 8rem; background: var(--charcoal); text-align: center; }
+.mailing-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 400; color: var(--cream); margin-bottom: 1rem; }
+.mailing-cta p { color: rgba(247,243,238,.5); margin-bottom: 2.5rem; }
+.mailing-form { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; max-width: 500px; margin: 0 auto; }
+.mailing-form input { flex: 1; padding: 1rem 1.5rem; background: rgba(247,243,238,.08); border: 1px solid rgba(247,243,238,.15); color: var(--cream); font-family: 'Jost', sans-serif; font-size: .9375rem; outline: none; }
+.mailing-form input::placeholder { color: rgba(247,243,238,.3); }
+.mailing-form button { padding: 1rem 2rem; background: var(--sage-light); color: var(--bark); border: none; font-family: 'Jost', sans-serif; font-size: .9375rem; letter-spacing: .14em; text-transform: uppercase; cursor: pointer; transition: background .22s; white-space: nowrap; }
+.mailing-form button:hover { background: var(--cream); }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+@media (max-width: 1024px) {
+  .walks-hero-content { padding: 0 2.5rem 5rem; }
+  .opening, .seasons-section, .expect-section, .mailing-cta { padding-left: 2.5rem; padding-right: 2.5rem; }
+  .opening { grid-template-columns: 1fr; }
+  .seasons-grid { grid-template-columns: 1fr 1fr; }
+  .expect-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<section class="walks-hero">
+  <div class="walks-hero-bg"></div>
+  <div class="walks-hero-content">
+    <p class="walks-hero-eyebrow">Balades botaniques des quatre saisons</p>
+    <h1 class="walks-hero-title">La plus ancienne<br>forme de médecine<br><em>botanique</em><br>qui soit</h1>
+    <p class="walks-hero-desc">Des balades guidées en pleine nature avec une herboriste clinique. Identifiez les plantes, découvrez leurs usages médicinaux, et retrouvez le lien à la saisonnalité que nos ancêtres connaissaient par cœur.</p>
+    <div class="walks-hero-actions">
+      <a href="#mailing" class="btn-cream">Recevoir les prochaines dates</a>
+      <a href="/fr/therapies" class="btn-outline-cream">Voir toutes les thérapies</a>
+    </div>
+  </div>
+</section>
+
+<section class="opening reveal">
+  <div>
+    <p class="opening-eyebrow">Pourquoi une balade botanique ?</p>
+    <h2>La nature n'est pas<br>un décor — c'est une<br><em>pharmacie</em></h2>
+  </div>
+  <div>
+    <p>Pendant des millénaires, les êtres humains ont appris à connaître les plantes qui les entouraient. Ils savaient ce qui soulageait la fièvre, ce qui calmait l'anxiété, ce qui accélérait la guérison d'une plaie. Cette connaissance a été transmise de génération en génération.</p>
+    <p>Nous l'avons perdue en quelques décennies. Ces balades sont une façon de la retrouver — une plante à la fois, une saison à la fois, dans les espaces verts que nous traversons sans les voir.</p>
+    <p>Ce n'est pas de la botanique académique. C'est une reconnexion.</p>
+  </div>
+</section>
+
+<section class="seasons-section">
+  <h2>Une balade par saison</h2>
+  <div class="seasons-grid">
+    <div class="season-card reveal">
+      <div class="season-name">🌱 Printemps</div>
+      <div class="season-desc">Le renouveau des plantes dépuratives et tonifiantes. Ortie, pissenlit, sureau en fleurs, lierre terrestre. Le moment du soutien du foie et du système lymphatique après l'hiver.</div>
+      <div class="season-plants">Ortie · Pissenlit · Sureau · Lierre terrestre</div>
+    </div>
+    <div class="season-card reveal">
+      <div class="season-name">☀️ Été</div>
+      <div class="season-desc">La plénitude médicinale. Millepertuis en pleine floraison, achillée millefeuille, mélisse, lavande. Plantes de la joie, de la digestion et de la chaleur.</div>
+      <div class="season-plants">Millepertuis · Achillée · Mélisse · Lavande</div>
+    </div>
+    <div class="season-card reveal">
+      <div class="season-name">🍂 Automne</div>
+      <div class="season-desc">La récolte et la préparation pour l'hiver. Baies d'aubépine, églantier, ginkgo, champignons adaptogènes. Renforcement immunitaire et soutien du système nerveux.</div>
+      <div class="season-plants">Aubépine · Églantier · Ginkgo · Champignons</div>
+    </div>
+    <div class="season-card reveal">
+      <div class="season-name">❄️ Hiver</div>
+      <div class="season-desc">La sagesse des plantes hivernales. Thym, sureau en baies, romarin, pin. Soutien respiratoire, chaleur et vitalité dans le calme de la dormance.</div>
+      <div class="season-plants">Thym · Sureau · Romarin · Pin sylvestre</div>
+    </div>
+  </div>
+</section>
+
+<section class="expect-section">
+  <h2>Ce que vous vivrez</h2>
+  <div class="expect-grid">
+    <div class="expect-item reveal">
+      <h3>Identification des plantes</h3>
+      <p>Apprenez à reconnaître les plantes médicinales dans leur habitat naturel — leurs formes, leurs textures, leurs odeurs, les caractéristiques qui permettent de les identifier en toute sécurité.</p>
+    </div>
+    <div class="expect-item reveal">
+      <h3>Usages médicinaux</h3>
+      <p>Pour chaque plante rencontrée, nous explorons son histoire d'utilisation, ses propriétés médicinales reconnues, et la façon dont elle peut s'intégrer simplement dans la vie quotidienne.</p>
+    </div>
+    <div class="expect-item reveal">
+      <h3>Cueillette éthique</h3>
+      <p>Comment cueillir de façon respectueuse — règles légales, éthique environnementale, méthodes de séchage et de conservation. La cueillette comme pratique consciente.</p>
+    </div>
+    <div class="expect-item reveal">
+      <h3>Shinrin-yoku</h3>
+      <p>La « forêt-bain » japonaise — les bienfaits documentés de l'immersion en nature sur le cortisol, l'immunité et le bien-être mental. Marcher lentement, respirer profondément, observer.</p>
+    </div>
+    <div class="expect-item reveal">
+      <h3>Petit groupe, vrai échange</h3>
+      <p>Maximum 12 participants pour permettre des questions individuelles, une vraie transmission et une atmosphère de curiosité partagée plutôt que de cours magistral.</p>
+    </div>
+    <div class="expect-item reveal">
+      <h3>En français ou en anglais</h3>
+      <p>Les balades peuvent être organisées entièrement en français, en anglais, ou de façon bilingue selon les participants. Mentionnez votre préférence lors de l'inscription.</p>
+    </div>
+  </div>
+</section>
+
+<section class="mailing-cta" id="mailing">
+  <h2>Recevoir les prochaines dates</h2>
+  <p>Les balades sont organisées au fil des saisons. Inscrivez-vous pour être informé·e en priorité des prochaines dates et lieux.</p>
+  <form class="mailing-form" netlify name="walks-mailing-fr" method="POST">
+    <input type="email" name="email" placeholder="Votre adresse e-mail" required aria-label="E-mail">
+    <button type="submit">S'inscrire</button>
+  </form>
+</section>
+
+</BaseLayout>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((e) => e.forEach(r => { if (r.isIntersecting) { r.target.classList.add('visible'); observer.unobserve(r.target); }}), { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+</script>
