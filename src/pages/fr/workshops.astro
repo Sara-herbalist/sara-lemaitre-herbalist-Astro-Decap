@@ -11,6 +11,7 @@ const meta = {
   lang: 'fr',
 };
 const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
+const d = (await import('../../data/fr/workshops.json')).default;
 ---
 <BaseLayout {...meta}>
 <style is:global>
@@ -53,8 +54,8 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
 
 <section class="ws-hero">
   <p class="eyebrow">Ateliers de phytothérapie</p>
-  <h1>Apprenez à travailler<br>avec les <em>plantes médicinales</em></h1>
-  <p>Des ateliers pratiques en petits groupes — accessibles aux débutants comme aux curieux plus expérimentés. Découvrez comment identifier, préparer et utiliser les plantes pour votre santé, chez vous.</p>
+  <h1>{d.heroTitle}</h1>
+  <p>{d.heroDesc}</p>
   <div class="ws-hero-actions">
     <a href={CALENDLY} target="_blank" rel="noopener" class="btn-bark">Me contacter pour les prochaines dates</a>
     <a href="/fr/book" class="btn-ghost-bark">Consulter individuellement</a>
@@ -66,8 +67,8 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
   <div class="ws-grid">
     <div class="ws-card">
       <span class="ws-card-tag">Débutants · Accessible à tous</span>
-      <h3>Introduction à la phytothérapie</h3>
-      <p>Qu'est-ce que la phytothérapie ? Comment les plantes agissent-elles sur le corps ? Quelles sont les formes galéniques — tisanes, teintures, baumes ? Un premier pas dans le monde des plantes médicinales.</p>
+      <h3>{d.w1Title}</h3>
+      <p>{d.w1Desc}</p>
       <div class="ws-card-meta">
         <span>3 heures</span>
         <span>Présentiel ou en ligne</span>
@@ -76,8 +77,8 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
     </div>
     <div class="ws-card">
       <span class="ws-card-tag">Femmes · Santé hormonale</span>
-      <h3>Plantes & Hormones</h3>
-      <p>Les plantes alliées du cycle féminin, de la fertilité, du SOPK, de l'endométriose et de la périménopause. Comment les identifier, les utiliser en sécurité, et construire un protocole simple au quotidien.</p>
+      <h3>{d.w2Title}</h3>
+      <p>{d.w2Desc}</p>
       <div class="ws-card-meta">
         <span>3 heures</span>
         <span>Présentiel ou en ligne</span>
@@ -86,8 +87,8 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
     </div>
     <div class="ws-card">
       <span class="ws-card-tag">Pratique · Création</span>
-      <h3>Composez vos propres préparations</h3>
-      <p>Apprenez à formuler vos propres mélanges — tisanes, huiles infusées, beurres corporels aux plantes. Vous repartez avec vos créations et les connaissances pour continuer chez vous.</p>
+      <h3>{d.w3Title}</h3>
+      <p>{d.w3Desc}</p>
       <div class="ws-card-meta">
         <span>3–4 heures</span>
         <span>Présentiel uniquement</span>
@@ -96,8 +97,8 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
     </div>
     <div class="ws-card">
       <span class="ws-card-tag">Stress · Système nerveux</span>
-      <h3>Adaptogens & Réponse au stress</h3>
-      <p>Qu'est-ce qu'un adaptogen et pourquoi en a-t-on besoin aujourd'hui ? Ashwagandha, rhodiola, éleuthérocoque, tulsi — apprendre à les connaître, les choisir et les utiliser avec discernement.</p>
+      <h3>{d.w4Title}</h3>
+      <p>{d.w4Desc}</p>
       <div class="ws-card-meta">
         <span>2–3 heures</span>
         <span>Présentiel ou en ligne</span>

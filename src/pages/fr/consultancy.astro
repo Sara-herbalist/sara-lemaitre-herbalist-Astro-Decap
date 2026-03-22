@@ -10,6 +10,7 @@ const meta = {
   ogType: 'website',
   lang: 'fr',
 };
+const d = (await import('../../data/fr/consultancy.json')).default;
 ---
 <BaseLayout {...meta}>
 <style is:global>
@@ -49,8 +50,8 @@ const meta = {
 
 <section class="consult-hero">
   <p class="eyebrow">Consultance bien-être B2B</p>
-  <h1>Des plantes médicinales<br>au service de<br><em>votre organisation</em></h1>
-  <p>Interventions en entreprise, conseil de marque pour acteurs du bien-être, programmes pour clubs sportifs et équipes — une expertise clinique en phytothérapie et naturopathie au service de vos équipes et de vos clients.</p>
+  <h1>{d.heroTitle}</h1>
+  <p>{d.heroDesc}</p>
 </section>
 
 <section class="services-section">
@@ -58,23 +59,23 @@ const meta = {
   <div class="services-grid">
     <div class="service-card">
       <span class="service-tag">Entreprises · RH · Bien-être au travail</span>
-      <h3>Interventions en entreprise</h3>
-      <p>Ateliers de sensibilisation au bien-être par les plantes, conférences sur le stress et la récupération, programmes de gestion de l'énergie pour équipes. Format adaptable selon vos besoins et votre secteur.</p>
+      <h3>{d.s1Title}</h3>
+      <p>{d.s1Desc}</p>
     </div>
     <div class="service-card">
       <span class="service-tag">Marques · Produits · Conseil</span>
-      <h3>Conseil de marque</h3>
-      <p>Expertise en formulation herbale, validation des allégations produits, développement de gammes bien-être, formation des équipes commerciales et conseil en communication autour des ingrédients botaniques.</p>
+      <h3>{d.s2Title}</h3>
+      <p>{d.s2Desc}</p>
     </div>
     <div class="service-card">
       <span class="service-tag">Clubs sportifs · Athlètes · Performance</span>
-      <h3>Performance & Récupération sportive</h3>
-      <p>Programmes de soutien phytothérapeutique pour clubs et athlètes de haut niveau. Adaptogens, gestion de l'inflammation, soutien hormonal, récupération entre les compétitions — par une ancienne athlète de haut niveau.</p>
+      <h3>{d.s3Title}</h3>
+      <p>{d.s3Desc}</p>
     </div>
     <div class="service-card">
       <span class="service-tag">Spas · Centres bien-être · Hôtels</span>
-      <h3>Intégration dans les offres bien-être</h3>
-      <p>Développement de protocoles de soins à base de plantes, formation des thérapeutes, création de rituels saisonniers et conseil sur la communication autour des ingrédients botaniques pour des établissements premium.</p>
+      <h3>{d.s4Title}</h3>
+      <p>{d.s4Desc}</p>
     </div>
   </div>
 </section>

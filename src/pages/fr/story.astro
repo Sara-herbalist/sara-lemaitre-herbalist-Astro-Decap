@@ -2,104 +2,91 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const meta = {
   title: "Mon parcours | Sara Lemaitre — D'athlète de haut niveau à herboriste clinique",
-  description: "Comment sept ans d'endométriose, six spécialistes et une pandémie m'ont conduite à la phytothérapie — et pourquoi je suis devenue herboriste pour accompagner d'autres dans ce même chemin.",
-  ogImage: "https://www.saralemaitre.com/images/og-story.jpg",
+  description: "Comment sept ans d'endométriose, six spécialistes et une pandémie m'ont conduite à la phytothérapie.",
   canonical: "https://www.saralemaitre.com/fr/story",
-  navLight: true,
-  currentPage: 'story',
-  ogType: 'article',
-  lang: 'fr',
+  navLight: true, currentPage: 'story', ogType: 'article', lang: 'fr',
 };
+const d = (await import('../../data/fr/story.json')).default;
+const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
 ---
 <BaseLayout {...meta}>
 <style is:global>
-.story-hero { min-height: 80vh; background: var(--charcoal); display: flex; flex-direction: column; justify-content: flex-end; padding: 0 8rem 7rem; position: relative; overflow: hidden; }
-.story-hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(160deg, #1a1410 0%, #2A2420 50%, #3d2e22 100%); }
-.hero-eyebrow { position: relative; font-size: .75rem; letter-spacing: .26em; text-transform: uppercase; color: rgba(196,208,186,.6); margin-bottom: 2rem; }
-.story-hero h1 { position: relative; font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.05; color: var(--cream); margin-bottom: 2rem; }
-.story-hero h1 em { font-style: italic; color: var(--sage-light); }
-.story-hero p { position: relative; font-size: 1.125rem; color: rgba(247,243,238,.5); max-width: 560px; line-height: 1.85; margin-bottom: 2.5rem; }
-.hero-cta { position: relative; display: flex; gap: 1rem; flex-wrap: wrap; }
-.btn-sage { display: inline-block; padding: .9rem 2.4rem; background: var(--sage-light); color: var(--bark); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
-.btn-sage:hover { background: var(--cream); }
-.btn-ghost-sm { display: inline-block; padding: .9rem 2.4rem; border: 1px solid rgba(247,243,238,.25); color: rgba(247,243,238,.6); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
-.btn-ghost-sm:hover { border-color: var(--sage-light); color: var(--sage-light); }
-.pull-quote-section { background: var(--sage); padding: 6rem 8rem; text-align: center; }
-.pull-quote { max-width: 760px; margin: 0 auto; }
-.pull-quote p { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 3vw, 2.4rem); font-weight: 300; font-style: italic; color: var(--cream); line-height: 1.5; margin-bottom: 2rem; }
-.pull-quote cite { font-size: .8125rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(247,243,238,.5); }
-.story-section { padding: 7rem 8rem; display: grid; grid-template-columns: 1fr 2fr; gap: 6rem; align-items: start; border-bottom: 1px solid rgba(122,108,100,0.1); }
-.story-section.reverse { grid-template-columns: 2fr 1fr; }
-.story-label { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 2rem; line-height: 1; }
-.story-label span { display: block; font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--sage-light); letter-spacing: 0; text-transform: none; line-height: 1; margin-bottom: .5rem; }
-.story-content h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; color: var(--charcoal); line-height: 1.2; margin-bottom: 2rem; }
-.story-content h2 em { font-style: italic; color: var(--sage-text); }
-.story-content p { font-size: 1.0625rem; color: var(--muted); line-height: 1.95; margin-bottom: 1.3rem; }
-.story-content p:last-child { margin-bottom: 0; }
-.story-content strong { color: var(--charcoal); font-weight: 400; }
-.story-content em { color: var(--sage-text); }
-.story-inset { background: var(--sage-pale); border-left: 3px solid var(--sage-light); padding: 1.5rem 2rem; margin: 2rem 0; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-style: italic; color: var(--charcoal); line-height: 1.6; }
-.magnolia-section { background: var(--bark-pale); padding: 7rem 8rem; position: relative; overflow: hidden; border-bottom: 1px solid rgba(122,108,100,0.1); }
-.magnolia-section::before { content: 'Magnolia'; position: absolute; right: -2rem; top: 50%; transform: translateY(-50%) rotate(90deg); font-family: 'Cormorant Garamond', serif; font-size: 14rem; font-weight: 300; color: rgba(92,74,58,0.04); white-space: nowrap; pointer-events: none; letter-spacing: .1em; }
-.magnolia-inner { max-width: 720px; position: relative; }
-.magnolia-inner h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; color: var(--charcoal); line-height: 1.2; margin-bottom: 2.5rem; }
-.magnolia-inner p { font-size: 1.0625rem; color: var(--muted); line-height: 1.95; margin-bottom: 1.3rem; }
-.magnolia-inner em { color: var(--sage-text); font-style: italic; }
-.graduation-section { background: var(--charcoal); padding: 7rem 8rem; }
-.graduation-inner { max-width: 720px; }
-.graduation-inner h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 400; color: var(--cream); line-height: 1.2; margin-bottom: 2.5rem; }
-.graduation-inner p { font-size: 1.0625rem; color: rgba(247,243,238,.55); line-height: 1.95; margin-bottom: 1.3rem; }
-.graduation-inner strong { color: rgba(247,243,238,.8); font-weight: 400; }
-.graduation-inner em { color: var(--sage-light); font-style: italic; }
-.now-section { padding: 7rem 8rem; display: grid; grid-template-columns: 1.2fr 1fr; gap: 6rem; align-items: start; background: var(--cream); }
-.now-text .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
-.now-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 400; color: var(--charcoal); line-height: 1.2; margin-bottom: 2rem; }
-.now-text h2 em { font-style: italic; color: var(--sage-text); }
-.now-text p { font-size: 1.0625rem; color: var(--muted); line-height: 1.95; margin-bottom: 1.3rem; }
-.now-cta { display: inline-block; padding: 1rem 2.5rem; background: var(--bark); color: var(--cream); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; margin-top: 1rem; }
-.now-cta:hover { background: var(--charcoal); }
-.credentials-panel { display: flex; flex-direction: column; gap: 1.5rem; padding: 2.5rem; background: var(--warm-white); border: 1px solid rgba(122,108,100,0.1); }
-.credential-item { display: flex; gap: 1rem; align-items: flex-start; }
-.cred-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage-light); margin-top: .55rem; flex-shrink: 0; }
-.cred-name { font-size: .9375rem; font-weight: 400; color: var(--charcoal); margin-bottom: .2rem; }
-.cred-detail { font-size: .8125rem; color: var(--muted); }
-.reveal { opacity: 0; transform: translateY(24px); transition: opacity .75s ease, transform .75s ease; }
-.reveal.visible { opacity: 1; transform: translateY(0); }
-@media (max-width: 1024px) {
-  .story-hero { padding: 0 2.5rem 5rem; }
-  .pull-quote-section, .magnolia-section, .graduation-section { padding-left: 2.5rem; padding-right: 2.5rem; }
-  .story-section, .story-section.reverse, .now-section { grid-template-columns: 1fr; gap: 3rem; padding-left: 2.5rem; padding-right: 2.5rem; }
-}
+.story-hero{min-height:80vh;background:var(--charcoal);display:flex;flex-direction:column;justify-content:flex-end;padding:0 8rem 7rem;position:relative;overflow:hidden}
+.story-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(160deg,#1a1410 0%,#2A2420 50%,#3d2e22 100%)}
+.hero-eyebrow{position:relative;font-size:.75rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(196,208,186,.6);margin-bottom:2rem}
+.story-hero h1{position:relative;font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:1.05;color:var(--cream);margin-bottom:2rem}
+.story-hero h1 em{font-style:italic;color:var(--sage-light)}
+.story-hero p{position:relative;font-size:1.125rem;color:rgba(247,243,238,.5);max-width:560px;line-height:1.85;margin-bottom:2.5rem}
+.hero-cta{position:relative;display:flex;gap:1rem;flex-wrap:wrap}
+.btn-sage{display:inline-block;padding:.9rem 2.4rem;background:var(--sage-light);color:var(--bark);text-decoration:none;font-size:.9375rem;letter-spacing:.18em;text-transform:uppercase;transition:all .22s}
+.btn-sage:hover{background:var(--cream)}
+.btn-ghost-sm{display:inline-block;padding:.9rem 2.4rem;border:1px solid rgba(247,243,238,.25);color:rgba(247,243,238,.6);text-decoration:none;font-size:.9375rem;letter-spacing:.18em;text-transform:uppercase;transition:all .22s}
+.btn-ghost-sm:hover{border-color:var(--sage-light);color:var(--sage-light)}
+.pull-quote-section{background:var(--sage);padding:6rem 8rem;text-align:center}
+.pull-quote{max-width:760px;margin:0 auto}
+.pull-quote p{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;font-style:italic;color:var(--cream);line-height:1.5;margin-bottom:2rem}
+.pull-quote cite{font-size:.8125rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,243,238,.5)}
+.story-section{padding:7rem 8rem;display:grid;grid-template-columns:1fr 2fr;gap:6rem;align-items:start;border-bottom:1px solid rgba(122,108,100,0.1)}
+.story-section.reverse{grid-template-columns:2fr 1fr}
+.story-label{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sage-text);margin-bottom:2rem;line-height:1}
+.story-label span{display:block;font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--sage-light);letter-spacing:0;text-transform:none;line-height:1;margin-bottom:.5rem}
+.story-content h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;color:var(--charcoal);line-height:1.2;margin-bottom:2rem}
+.story-content h2 em{font-style:italic;color:var(--sage-text)}
+.story-content p{font-size:1.0625rem;color:var(--muted);line-height:1.95;margin-bottom:1.3rem}
+.story-content strong{color:var(--charcoal);font-weight:400}
+.story-content em{color:var(--sage-text)}
+.story-inset{background:var(--sage-pale);border-left:3px solid var(--sage-light);padding:1.5rem 2rem;margin:2rem 0;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--charcoal);line-height:1.6}
+.magnolia-section{background:var(--bark-pale);padding:7rem 8rem;border-bottom:1px solid rgba(122,108,100,0.1)}
+.magnolia-inner{max-width:720px}
+.magnolia-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;color:var(--charcoal);line-height:1.2;margin-bottom:2.5rem}
+.magnolia-inner p{font-size:1.0625rem;color:var(--muted);line-height:1.95;margin-bottom:1.3rem}
+.graduation-section{background:var(--charcoal);padding:7rem 8rem}
+.graduation-inner{max-width:720px}
+.graduation-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;color:var(--cream);line-height:1.2;margin-bottom:2.5rem}
+.graduation-inner p{font-size:1.0625rem;color:rgba(247,243,238,.55);line-height:1.95;margin-bottom:1.3rem}
+.graduation-inner strong{color:rgba(247,243,238,.8);font-weight:400}
+.graduation-inner em{color:var(--sage-light);font-style:italic}
+.now-section{padding:7rem 8rem;display:grid;grid-template-columns:1.2fr 1fr;gap:6rem;align-items:start;background:var(--cream)}
+.now-text .eyebrow{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sage-text);margin-bottom:1.5rem}
+.now-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;color:var(--charcoal);line-height:1.2;margin-bottom:2rem}
+.now-text h2 em{font-style:italic;color:var(--sage-text)}
+.now-text p{font-size:1.0625rem;color:var(--muted);line-height:1.95;margin-bottom:1.3rem}
+.now-cta{display:inline-block;padding:1rem 2.5rem;background:var(--bark);color:var(--cream);text-decoration:none;font-size:.9375rem;letter-spacing:.18em;text-transform:uppercase;transition:all .22s;margin-top:1rem}
+.now-cta:hover{background:var(--charcoal)}
+.credentials-panel{display:flex;flex-direction:column;gap:1.5rem;padding:2.5rem;background:var(--warm-white);border:1px solid rgba(122,108,100,0.1)}
+.credential-item{display:flex;gap:1rem;align-items:flex-start}
+.cred-dot{width:6px;height:6px;border-radius:50%;background:var(--sage-light);margin-top:.55rem;flex-shrink:0}
+.cred-name{font-size:.9375rem;font-weight:400;color:var(--charcoal);margin-bottom:.2rem}
+.cred-detail{font-size:.8125rem;color:var(--muted)}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:1024px){.story-hero{padding:0 2.5rem 5rem}.pull-quote-section,.magnolia-section,.graduation-section{padding-left:2.5rem;padding-right:2.5rem}.story-section,.story-section.reverse,.now-section{grid-template-columns:1fr;gap:3rem;padding-left:2.5rem;padding-right:2.5rem}}
 </style>
 
 <section class="story-hero">
   <p class="hero-eyebrow">Mon parcours</p>
-  <h1>L'athlète.<br>La patiente.<br><em>L'herboriste.</em></h1>
-  <p>Ce qui m'a conduite à la phytothérapie n'est pas une vocation née sur les bancs de l'université. C'est une traversée — personnelle, laborieuse, et finalement transformatrice.</p>
+  <h1>{d.heroTitle1}<br>{d.heroTitle2}<br><em>{d.heroTitle3}</em></h1>
+  <p>{d.heroDesc}</p>
   <div class="hero-cta">
-    <a href="https://calendly.com/sara-lemaitre-herbalist" target="_blank" rel="noopener" class="btn-sage">Consultation découverte gratuite</a>
+    <a href={CALENDLY} target="_blank" rel="noopener" class="btn-sage">Consultation découverte gratuite</a>
     <a href="/fr/therapies" class="btn-ghost-sm">Ce que je propose</a>
   </div>
 </section>
 
 <section class="pull-quote-section">
   <div class="pull-quote">
-    <p>« Je ne vivais pas. Je survivais. Jusqu'au jour où j'ai cessé d'attendre que quelqu'un d'autre me donne la permission de guérir. »</p>
+    <p>{d.pullQuote}</p>
     <cite>— Le moment où tout a basculé</cite>
   </div>
 </section>
 
 <section class="story-section reveal">
-  <div class="story-label">
-    <span>01</span>
-    L'athlète
-  </div>
+  <div class="story-label"><span>01</span>L'athlète</div>
   <div class="story-content">
-    <h2>J'étais au sommet de mon sport<br>quand mon corps s'est<br><em>retourné contre moi</em></h2>
-    <p>Je pratiquais la natation synchronisée — aujourd'hui appelée nage artistique — à un niveau d'élite, avec une place en équipe nationale dans le viseur. J'étais forte, disciplinée, et je connaissais mon corps comme seuls les sportifs le connaissent : ses limites, son endurance, ses signaux.</p>
-    <p>Puis mes règles ont commencé. Et dès le premier cycle, la douleur était invalidante. Intense, incessante, impossible à supporter à l'entraînement. En quelques mois, j'étais sous suppresseurs hormonaux. Puis des doses plus fortes. Puis des cocktails de médicaments. Des injections. Des antidouleurs de plus en plus puissants — jusqu'à ce qu'une dose préventive quotidienne de morphine devienne ma normalité, juste pour fonctionner.</p>
-    <p>À l'entraînement, je m'évanouissais. Mon nez saignait sans prévenir. Mes blessures se multipliaient. Ma performance — et mon rêve — s'effondrait sous mes yeux pendant que je me battais encore de toutes mes forces pour tenir.</p>
-    <div class="story-inset">« En tant qu'athlète, je connaissais mes limites et ma force — physique et mentale. Mais tout s'effondrait, et je ne me reconnaissais plus. »</div>
+    <h2>{d.s1h2}</h2>
+    <p>{d.s1p1}</p>
+    <p>{d.s1p2}</p>
+    <div class="story-inset">{d.s1inset}</div>
     <p>J'ai commencé à me dissocier de mon corps. Pas par choix, mais pour survivre. Je me suis coupée de ce qui me trahissait juste pour traverser chaque journée. Je ne vivais pas. Je survivais.</p>
     <p>Jusqu'à ce que les médecins m'interdisent de m'entraîner. C'était trop dangereux pour ma santé. Ma carrière était terminée.</p>
   </div>
@@ -107,105 +94,69 @@ const meta = {
 
 <section class="story-section reverse reveal">
   <div class="story-content">
-    <h2>Sept ans.<br>Six spécialistes.<br><em>Zéro réponse.</em></h2>
-    <p>J'avais épuisé tous les examens disponibles. J'avais vu six gynécologues différents, dont aucun ne parvenait à diagnostiquer ce qui n'allait pas. Ce qu'ils pouvaient faire — et faisaient, inlassablement — c'était suggérer que le problème venait de moi.</p>
-    <div class="story-inset">« Vous n'êtes pas aussi forte que vous aimeriez le croire. Vous devriez cesser de vous mettre sous pression pour être l'athlète parfaite. Vous n'en avez manifestement pas la capacité mentale ni physique. »</div>
-    <p>Voilà à quoi ressemble le gaslighting médical quand il vient de six spécialistes portant une blouse blanche. Vous avez beau être entourée et soutenue. Vous avez beau être certaine de votre propre force. Mais quand le même message est répété par des personnes ayant les diplômes pour comprendre le corps humain — <strong>on finit par les croire.</strong></p>
-    <p>J'ai commencé à croire que j'étais faible. Que j'imaginais. Que j'avais d'une certaine façon provoqué tout cela.</p>
-    <p>Au bout de sept ans, j'ai enfin eu un mot pour ma souffrance : <strong>endométriose</strong>, accompagnée d'un SOPK, d'une fatigue chronique et d'un épuisement total. Le soulagement d'un diagnostic était réel — je n'inventais pas ma douleur. Mais la réponse qui suivit était dévastatrice : <em>il n'y a pas de remède.</em></p>
-    <p>D'autres traitements hormonaux expérimentaux ont suivi. Une chirurgie pour retirer des adhérences et des tissus malades. Une nouvelle série d'hormonothérapie. Des antidouleurs de plus en plus puissants. Et toujours — une douleur constante, sans résolution, sans chemin vers l'avant que quiconque pouvait m'offrir.</p>
+    <h2>{d.s2h2}</h2>
+    <p>J'avais épuisé tous les examens disponibles. J'avais vu six gynécologues différents, dont aucun ne parvenait à diagnostiquer ce qui n'allait pas.</p>
+    <div class="story-inset">{d.s2inset}</div>
+    <p>Voilà à quoi ressemble le gaslighting médical quand il vient de six spécialistes portant une blouse blanche. Quand le même message est répété par des personnes ayant les diplômes pour comprendre le corps humain — <strong>on finit par les croire.</strong></p>
+    <p>Au bout de sept ans, j'ai enfin eu un mot pour ma souffrance : <strong>endométriose</strong>, accompagnée d'un SOPK, d'une fatigue chronique et d'un épuisement total. La réponse qui suivit était dévastatrice : <em>il n'y a pas de remède.</em></p>
     <p>J'en avais assez.</p>
   </div>
-  <div class="story-label">
-    <span>02</span>
-    La patiente
-  </div>
+  <div class="story-label"><span>02</span>La patiente</div>
 </section>
 
 <section class="story-section reveal">
-  <div class="story-label">
-    <span>03</span>
-    La découverte
-  </div>
+  <div class="story-label"><span>03</span>La découverte</div>
   <div class="story-content">
-    <h2>Une pandémie.<br>Une décision.<br><em>Une expérience qui a fonctionné.</em></h2>
-    <p>J'étais certaine qu'une alternative existait. J'étais tout aussi certaine que personne d'autre ne la trouverait à ma place. J'ai donc pris la décision qui a tout changé : <strong>j'ai repris ma santé en main.</strong></p>
-    <p>La pandémie m'a donné la seule ressource qui m'avait toujours manqué : le temps. J'ai commencé à me documenter. J'ai trouvé un court cours en ligne de découverte de la phytothérapie. Prudemment, presque à reculons, j'ai commencé à expérimenter sur moi-même après avoir décidé d'en finir avec la médecine conventionnelle.</p>
-    <p>C'était lent. C'était épuisant. Il y a eu d'innombrables essais et erreurs. Mais je voyais des résultats. Pour la première fois depuis des années, quelque chose fonctionnait.</p>
-    <div class="story-inset">« Pour la première fois depuis des années, je me sentais en contrôle de ma santé — mon corps, mon esprit. C'est ce que la découverte de la médecine par les plantes m'a rendu. »</div>
-    <p>Et puis ma famille est devenue ma première clientèle.</p>
-    <p>Les poussées d'arthrite de ma mère. L'anxiété et le sommeil de ma sœur. La faiblesse récurrente de la gorge de mon père — maux de gorge et rhumes dus à ses voyages constants et à ses prises de parole. J'ai composé des formulations pour chacun d'eux. Je l'avoue : certaines de ces premières préparations étaient assez redoutables. Mais ils vont tous bien et sont bien vivants — je considère ça comme un succès.</p>
-    <p>Ces mois — tranquilles, expérimentaux, ancrés dans l'amour et la nécessité — ont été le début de tout ce qui a suivi.</p>
-  </div>
-</section>
-
-<section class="story-section reverse reveal">
-  <div class="story-content">
-    <h2>De l'autodidacte<br>à la <em>praticienne clinique</em></h2>
-    <p>Ce qui avait commencé comme une nécessité personnelle est devenu une vocation. Je me suis inscrite à une formation clinique complète en naturopathie et phytothérapie — un programme de niveau licence couvrant la phytothérapie occidentale, la Médecine Traditionnelle Chinoise et l'Ayurveda.</p>
-    <p>Je ne me suis pas arrêtée au programme. Pendant ma formation, j'ai passé six mois aux côtés d'un praticien externe en MTC et acupuncture dans leur dispensaire — en dehors de mes heures de cours, de ma propre initiative — pour approfondir ma compréhension de la phytothérapie chinoise et son application aux pathologies hormonales et gynécologiques que j'avais moi-même traversées.</p>
-    <p>Je suis également titulaire d'un diplôme en massage crânien indien, formée en naturopathie, et j'intègre la tradition phytothérapeutique française dans tout ce que je fais — une relation à la médecine des plantes profondément tissée dans la culture européenne, qui ressemble à un retour aux sources.</p>
-    <p>Et j'étais athlète de haut niveau. Je sais ce que signifie pousser un corps à ses limites — et ce que l'on ressent quand ce corps ne peut plus performer. Cela façonne chaque consultation que j'ai avec des personnes actives en difficulté.</p>
-  </div>
-  <div class="story-label">
-    <span>04</span>
-    La formation
+    <h2>{d.s3h2}</h2>
+    <p>J'étais certaine qu'une alternative existait. J'ai donc pris la décision qui a tout changé : <strong>j'ai repris ma santé en main.</strong></p>
+    <p>La pandémie m'a donné la seule ressource qui m'avait toujours manqué : le temps. J'ai commencé à me documenter, trouvé un cours en ligne de découverte, et commencé à expérimenter sur moi-même.</p>
+    <div class="story-inset">{d.s3inset}</div>
+    <p>Et puis ma famille est devenue ma première clientèle — ma mère, ma sœur, mon père. Ces mois expérimentaux, ancrés dans l'amour et la nécessité, ont été le début de tout.</p>
   </div>
 </section>
 
 <section class="magnolia-section reveal">
   <div class="magnolia-inner">
-    <h2>Le magnolia qui a refusé de mourir — et ce qu'il m'a appris sur la guérison</h2>
-    <p>J'ai grandi sous les branches d'un magnolia dans le jardin de ma famille. Il était mon refuge, mon abri. Ce gardien grand et stable me semblait éternel.</p>
-    <p>Un jour, une tempête l'a renversé.</p>
-    <p>J'étais dévastée. Mais chaque jour après cela, j'ai arrosé la terre où il se tenait autrefois. Les adultes me disaient qu'il ne reviendrait pas. Mais j'ai continué d'arroser. L'obstination — et peut-être la foi en le renouveau — a toujours fait partie de moi.</p>
-    <p>Un jour, une minuscule pousse a émergé.</p>
-    <p>Aujourd'hui, il m'accueille chaque fois que je rentre chez moi. Des années plus tard, <em>Magnolia</em> est devenu le sujet de ma dissertation clinique. Il m'a rappelé que la résilience est silencieuse. Elle pousse en profondeur bien avant que quiconque puisse la voir. Elle demande de la patience, de la constance, et la foi en ce qui ne se voit pas encore.</p>
-    <p><em>C'est à cela que ressemble la guérison par les plantes.</em> Ce n'est pas spectaculaire. Ce n'est pas immédiat. Mais c'est réel, et c'est le vôtre — ancré dans l'intelligence propre du corps, soutenu par des siècles de tradition botanique, et cultivé avec soin.</p>
-    <p>C'est la pratique que je construis. C'est le type de praticienne que je suis.</p>
+    <h2>{d.magnoliaTitle}</h2>
+    <p>J'ai grandi sous les branches d'un magnolia dans le jardin de ma famille. Il était mon refuge, mon abri. Un jour, une tempête l'a renversé. Mais j'ai continué d'arroser la terre où il se tenait. Un jour, une minuscule pousse a émergé.</p>
+    <p>Des années plus tard, <em>Magnolia</em> est devenu le sujet de ma dissertation clinique. Il m'a rappelé que la résilience est silencieuse — elle pousse en profondeur bien avant que quiconque puisse la voir.</p>
+    <p><em>C'est à cela que ressemble la guérison par les plantes.</em> Pas spectaculaire. Pas immédiate. Mais réelle, et la vôtre.</p>
   </div>
 </section>
 
 <section class="graduation-section reveal">
   <div class="graduation-inner">
     <h2>Le jour où je suis devenue praticienne qualifiée</h2>
-    <p>Debout dans cette salle le jour de la remise des diplômes, j'ai regardé les personnes à mes côtés — des praticiens de disciplines différentes, d'horizons différents, d'histoires différentes sur ce qui les avait amenés sur ce chemin. Chacun d'entre nous avait surmonté quelque chose pour être assis dans cette salle.</p>
-    <p>J'ai pensé à ce que ce voyage m'avait donné au-delà des connaissances. La découverte de soi. Ces moments en séance clinique, dans une étude de cas, ou dans une conversation avec un camarade, où l'on réalise qu'on est capable de plus qu'on ne l'imaginait. Une communauté de personnes qui comprennent que la santé est un écosystème — qu'aucun d'entre nous ne travaille dans l'isolement.</p>
-    <p>J'ai pensé à l'intégrité que nous avions cultivée en nous-mêmes — parce que c'est ce que nous offrons à nos patients. Pas seulement des protocoles et des prescriptions. <strong>La présence. L'écoute. Le courage de s'asseoir avec la complexité.</strong></p>
-    <p>Il faut du courage pour suivre un chemin qui n'est pas toujours compris. Pour choisir une forme de médecine qui pose plus de questions qu'elle n'en répond, qui traite la personne plutôt que le symptôme, qui travaille avec le temps plutôt que contre lui.</p>
-    <p>Je l'ai choisi quand même. Je le choisirais à nouveau, à chaque fois.</p>
-    <p><em>Votre parcours est une source d'inspiration. Le mien l'a certainement été.</em></p>
+    <p>Debout dans cette salle le jour de la remise des diplômes, j'ai regardé les personnes à mes côtés — des praticiens d'horizons différents, d'histoires différentes. Chacun d'entre nous avait surmonté quelque chose pour être là.</p>
+    <p>J'ai pensé à ce que ce voyage m'avait donné au-delà des connaissances. <strong>La présence. L'écoute. Le courage de s'asseoir avec la complexité.</strong></p>
+    <p><em>Je l'ai choisi quand même. Je le choisirais à nouveau, à chaque fois.</em></p>
   </div>
 </section>
 
 <section class="now-section">
   <div class="now-text reveal">
     <p class="eyebrow">Où j'en suis aujourd'hui</p>
-    <h2>J'accompagne les femmes qui en<br>ont assez d'être <em>ignorées</em></h2>
-    <p>Ma pratique est construite autour des personnes que je comprends le mieux : les femmes qui naviguent l'endométriose, le SOPK, la fatigue chronique, la périménopause, et le dérèglement hormonal que la médecine conventionnelle minimise ou gère si souvent mal.</p>
-    <p>Et les personnes actives — athlètes, hauts performeurs, chroniquement débordés — qui sentent leur vitalité leur échapper et cherchent un autre type de soutien.</p>
-    <p>Je propose des consultations en ligne et en présentiel, en français et en anglais, pour des patients au Royaume-Uni et à l'international. Chaque consultation s'appuie sur la phytothérapie occidentale, la naturopathie et la médecine des plantes multi-tradition — personnalisée, jamais standardisée.</p>
-    <p>Si une partie de cette histoire ressemble à la vôtre, je serais ravie de vous entendre.</p>
-    <a href="https://calendly.com/sara-lemaitre-herbalist" target="_blank" rel="noopener" class="now-cta">Réserver une consultation découverte gratuite</a>
+    <h2>{d.nowTitle}</h2>
+    <p>{d.nowP1}</p>
+    <p>{d.nowP2}</p>
+    <p>{d.nowP3}</p>
+    <a href={CALENDLY} target="_blank" rel="noopener" class="now-cta">Réserver une consultation découverte gratuite</a>
   </div>
   <div class="credentials-panel">
-    <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Phytothérapie clinique</div><div class="cred-detail">Qualification de niveau licence · accrédité EHTPA</div></div></div>
+    <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Phytothérapie clinique</div><div class="cred-detail">Niveau licence · accrédité EHTPA</div></div></div>
     <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Diplôme de Naturopathie</div><div class="cred-detail">Mode de vie, nutrition & protocoles intégratifs</div></div></div>
     <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Stage MTC & Acupuncture</div><div class="cred-detail">6 mois · Pratique en dispensaire MTC</div></div></div>
     <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Études Ayurvédiques</div><div class="cred-detail">Formation multi-tradition · Approche intégrée</div></div></div>
     <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Diplôme de Massage Crânien Indien</div><div class="cred-detail">Stress, tensions & récupération du système nerveux</div></div></div>
     <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Rémission personnelle</div><div class="cred-detail">Endométriose · SOPK · Fatigue chronique</div></div></div>
     <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Ancienne athlète de haut niveau</div><div class="cred-detail">Nage artistique · Niveau équipe nationale</div></div></div>
-    <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Pratique bilingue</div><div class="cred-detail">Français & anglais · Royaume-Uni, Europe & international</div></div></div>
+    <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Pratique bilingue</div><div class="cred-detail">Français & anglais · UK, Europe & international</div></div></div>
   </div>
 </section>
 
 </BaseLayout>
-
 <script>
   const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }});
-  }, { threshold: 0.08 });
-  reveals.forEach(r => observer.observe(r));
+  const obs = new IntersectionObserver(e=>e.forEach(r=>{if(r.isIntersecting){r.target.classList.add('visible');obs.unobserve(r.target)}}),{threshold:0.08});
+  reveals.forEach(r=>obs.observe(r));
 </script>

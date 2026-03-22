@@ -11,6 +11,11 @@ const meta = {
   ogType: 'website',
   lang: 'fr',
 };
+
+// Load French content from data files
+const homepage = await import('../../data/fr/homepage.json');
+const settings = await import('../../data/fr/settings.json');
+const CALENDLY_FR = settings.default.calendlyUrl || 'https://calendly.com/sara-lemaitre-herbalist';
 ---
 
 <BaseLayout {...meta}>
@@ -255,7 +260,7 @@ const meta = {
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <p class="hero-eyebrow">Herboriste clinique · Naturopathe · Ancienne athlète de haut niveau</p>
+    <p class="hero-eyebrow">{homepage.default.heroEyebrow}</p>
     <h1 class="hero-name">
       Sara<br>
       <em>Lemaitre</em>
@@ -265,7 +270,7 @@ const meta = {
       Massage Crânien Indien · Formation en MTC<br>
       Phytothérapie Occidentale · Études Ayurvédiques
     </div>
-    <p class="hero-desc">J'accompagne les femmes qui ont été trop longtemps ignorées par la médecine conventionnelle. Et les sportifs dont le corps a cessé de coopérer. Je connais ces chemins — je les ai moi-même parcourus.</p>
+    <p class="hero-desc">{homepage.default.heroDesc}</p>
     <div class="hero-actions">
       <a href="/fr/book" class="btn-primary">Consultation découverte gratuite</a>
       <a href="/fr/story" class="btn-ghost">Mon parcours</a>
@@ -316,12 +321,12 @@ const meta = {
 <!-- INTRO -->
 <section class="intro-strip reveal">
   <div class="intro-strip-left">
-    <p class="eyebrow">La pratique</p>
-    <h2>Une médecine des plantes<br>ancrée dans le <em>vécu</em></h2>
+    <p class="eyebrow">{homepage.default.introTitle}</p>
+    <h2 set:html={homepage.default.introSubtitle}></h2>
   </div>
   <div class="intro-strip-right">
-    <p>Je ne suis pas arrivée à la phytothérapie par les livres. J'y suis arrivée après sept ans à être mise de côté par la médecine conventionnelle — un corps que je ne reconnaissais plus, une carrière sportive interrompue, et la conviction obstinée qu'une autre voie devait exister. Quand j'ai trouvé la médecine par les plantes, ça a fonctionné. Lentement, laborieusement, avec beaucoup d'essais. Mais ça a fonctionné.</p>
-    <p>Cette expérience — traverser l'<strong>endométriose, le SOPK et la fatigue chronique</strong> sans boussole — est le fondement de tout ce que je fais en consultation. Je sais ce que c'est de chercher des réponses quand le système ne vous en donne pas.</p>
+    <p>{homepage.default.introBody1}</p>
+    <p>{homepage.default.introBody2}</p>
     <a href="/fr/story" class="read-more">Lire mon histoire complète</a>
   </div>
 </section>

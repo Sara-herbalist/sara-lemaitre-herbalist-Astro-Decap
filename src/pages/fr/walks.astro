@@ -10,6 +10,7 @@ const meta = {
   ogType: 'website',
   lang: 'fr',
 };
+const d = (await import('../../data/fr/walks.json')).default;
 ---
 <BaseLayout {...meta}>
 <style is:global>
@@ -66,8 +67,8 @@ const meta = {
   <div class="walks-hero-bg"></div>
   <div class="walks-hero-content">
     <p class="walks-hero-eyebrow">Balades botaniques des quatre saisons</p>
-    <h1 class="walks-hero-title">La plus ancienne<br>forme de médecine<br><em>botanique</em><br>qui soit</h1>
-    <p class="walks-hero-desc">Des balades guidées en pleine nature avec une herboriste clinique. Identifiez les plantes, découvrez leurs usages médicinaux, et retrouvez le lien à la saisonnalité que nos ancêtres connaissaient par cœur.</p>
+    <h1 class="walks-hero-title">{d.heroTitle}</h1>
+    <p class="walks-hero-desc">{d.heroDesc}</p>
     <div class="walks-hero-actions">
       <a href="#mailing" class="btn-cream">Recevoir les prochaines dates</a>
       <a href="/fr/therapies" class="btn-outline-cream">Voir toutes les thérapies</a>
@@ -78,12 +79,11 @@ const meta = {
 <section class="opening reveal">
   <div>
     <p class="opening-eyebrow">Pourquoi une balade botanique ?</p>
-    <h2>La nature n'est pas<br>un décor — c'est une<br><em>pharmacie</em></h2>
+    <h2>{d.openingTitle}</h2>
   </div>
   <div>
-    <p>Pendant des millénaires, les êtres humains ont appris à connaître les plantes qui les entouraient. Ils savaient ce qui soulageait la fièvre, ce qui calmait l'anxiété, ce qui accélérait la guérison d'une plaie. Cette connaissance a été transmise de génération en génération.</p>
-    <p>Nous l'avons perdue en quelques décennies. Ces balades sont une façon de la retrouver — une plante à la fois, une saison à la fois, dans les espaces verts que nous traversons sans les voir.</p>
-    <p>Ce n'est pas de la botanique académique. C'est une reconnexion.</p>
+    <p>{d.openingP1}</p>
+    <p>{d.openingP2}</p>
   </div>
 </section>
 

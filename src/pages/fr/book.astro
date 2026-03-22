@@ -11,6 +11,7 @@ const meta = {
   lang: 'fr',
 };
 const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
+const d = (await import('../../data/fr/book.json')).default;
 ---
 <BaseLayout {...meta}>
 <style is:global>
@@ -81,8 +82,8 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
 
 <section class="book-hero">
   <p class="eyebrow">Prendre rendez-vous</p>
-  <h1>Commencez votre<br/><em>chemin vers la guérison</em></h1>
-  <p>Chaque consultation commence par une écoute. Pas de rendez-vous précipités, pas de symptômes balayés — une approche approfondie et personnalisée de votre santé.</p>
+  <h1>{d.heroTitle}</h1>
+  <p>{d.heroDesc}</p>
 </section>
 
 <section class="how-section">
@@ -112,14 +113,14 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
   <div class="options-grid">
     <div class="option-card">
       <span class="option-tag">Gratuit · 15 minutes</span>
-      <h3>Consultation découverte</h3>
+      <h3>{d.discoveryTitle}</h3>
       <div class="option-price">Gratuit</div>
-      <p>Une conversation détendue pour comprendre vos problèmes de santé et vos objectifs, expliquer comment je travaille et répondre à vos questions. Sans engagement.</p>
+      <p>{d.discoveryDesc}</p>
       <a href={CALENDLY} target="_blank" rel="noopener">Réserver un appel gratuit</a>
     </div>
     <div class="option-card featured">
       <span class="option-tag">Initiale · 90 minutes · En ligne ou en présentiel</span>
-      <h3>Consultation initiale</h3>
+      <h3>{d.initialTitle}</h3>
       <div class="option-price">110 £ <span>/ séance</span></div>
       <p>Une exploration approfondie de votre histoire de santé, vos symptômes actuels, votre mode de vie et vos objectifs. Inclut un protocole herbal personnalisé écrit, des recommandations naturopathiques, et la conception de votre formule. Environ 2h30–3h de travail au total.</p>
       <div class="sliding-scale-note">Tarif modulable à 85 £ pour les étudiants et personnes à revenus modestes — mentionnez-le lors de la réservation.</div>
@@ -127,7 +128,7 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
     </div>
     <div class="option-card">
       <span class="option-tag">Suivi · 30–40 minutes · En ligne ou en présentiel</span>
-      <h3>Consultation de suivi</h3>
+      <h3>{d.followupTitle}</h3>
       <div class="option-price">75 £ <span>/ séance</span></div>
       <p>Évaluation de vos progrès, ajustement de votre protocole herbal et prise en charge de nouvelles préoccupations. Inclut la reformulation et le contact avec les fournisseurs si nécessaire. Recommandé toutes les 4 à 6 semaines.</p>
       <div class="sliding-scale-note">Tarif modulable à 65 £ pour les étudiants et personnes à revenus modestes.</div>
@@ -135,7 +136,7 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
     </div>
     <div class="option-card">
       <span class="option-tag">Forfait · Meilleure valeur · 3 séances</span>
-      <h3>Initiale + 2 suivis</h3>
+      <h3>{d.bundleTitle}</h3>
       <div class="option-price">220 £ <span>/ 3 séances</span></div>
       <p>La façon la plus complète de commencer. Une consultation initiale approfondie suivie de deux suivis pour évaluer les progrès et affiner votre protocole. Économisez 40 £ par rapport aux réservations séparées.</p>
       <div class="sliding-scale-note">Forfait modulable à 195 £.</div>
@@ -143,9 +144,9 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
     </div>
     <div class="option-card">
       <span class="option-tag">En présentiel uniquement · 45 minutes</span>
-      <h3>Massage Crânien Indien</h3>
+      <h3>{d.ihmTitle}</h3>
       <div class="option-price">60 £ <span>/ séance</span></div>
-      <p>Un soin ayurvédique profondément relaxant — 10 minutes d'anamnèse et 35 minutes de massage sur la tête, la nuque et les épaules. Peut être réservé seul ou ajouté à une consultation en présentiel.</p>
+      <p>{d.ihmDesc}</p>
       <a href={CALENDLY} target="_blank" rel="noopener">Réserver un massage crânien</a>
     </div>
   </div>
@@ -174,9 +175,9 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
       </ol>
       <div class="bank-details">
         <strong>Coordonnées bancaires</strong><br/>
-        Nom du compte : <strong>[Votre nom]</strong><br/>
-        Code de tri : <strong>[XX–XX–XX]</strong><br/>
-        Numéro de compte : <strong>[XXXXXXXX]</strong><br/>
+        Nom du compte : <strong>{d.bankName}</strong><br/>
+        Code de tri : <strong>{d.bankSort}</strong><br/>
+        Numéro de compte : <strong>{d.bankAccount}</strong><br/>
         Référence : <strong>Votre nom + date du rendez-vous</strong>
       </div>
     </div>

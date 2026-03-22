@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 const meta = {
-  title: "Tarifs & Formules | Consultations en Phytothérapie à partir de 60 £ | Sara Lemaitre",
+  title: "Tarifs & Formules | Consultations en Phytothérapie à partir de {p.ihm} £ | Sara Lemaitre",
   description: "Tarifs transparents pour les consultations en phytothérapie, les programmes santé hormonale, stress & burn-out, massage crânien indien et forfaits mensuels. Tarif modulable disponible.",
   ogImage: "https://www.saralemaitre.com/images/og-pricing.jpg",
   canonical: "https://www.saralemaitre.com/fr/pricing",
@@ -11,6 +11,10 @@ const meta = {
   lang: 'fr',
 };
 const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
+
+// Prices shared between EN and FR
+const pricing = await import('../../data/pricing.json');
+const p = pricing.default;
 ---
 <BaseLayout {...meta}>
 <style is:global>
@@ -93,7 +97,7 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
       <div class="featured-badge">Par ici pour commencer</div>
       <div class="consult-title">Consultation initiale</div>
       <div class="consult-subtitle">En ligne ou en présentiel · Français ou anglais</div>
-      <div class="consult-price">110 £</div>
+      <div class="consult-price">{p.initialConsultation} £</div>
       <div class="consult-price-note">90 minutes · ~2h30–3h de travail au total</div>
       <ul class="consult-includes">
         <li>Anamnèse complète — votre être entier, pas juste le symptôme</li>
@@ -103,13 +107,13 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
         <li>Évaluation multi-tradition (Western, MTC, Ayurveda)</li>
         <li>Support e-mail pendant une semaine après la séance</li>
       </ul>
-      <div class="sliding-note">Tarif modulable : 85 £ pour étudiants & revenus modestes — mentionnez-le lors de la réservation</div>
+      <div class="sliding-note">Tarif modulable : {p.initialConsultationSlidingScale} £ pour étudiants & revenus modestes — mentionnez-le lors de la réservation</div>
       <a href={CALENDLY} target="_blank" rel="noopener" class="consult-book">Réserver une consultation initiale</a>
     </div>
     <div class="consult-card">
       <div class="consult-title">Consultation de suivi</div>
       <div class="consult-subtitle">En ligne ou en présentiel · Français ou anglais</div>
-      <div class="consult-price">75 £</div>
+      <div class="consult-price">{p.followUp} £</div>
       <div class="consult-price-note">30–40 minutes · ~1h de travail au total</div>
       <ul class="consult-includes">
         <li>Évaluation des progrès depuis la dernière séance</li>
@@ -118,22 +122,22 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
         <li>Notes actualisées envoyées après la séance</li>
         <li>Contact fournisseur si la formule change</li>
       </ul>
-      <div class="sliding-note">Tarif modulable : 65 £ pour étudiants & revenus modestes</div>
+      <div class="sliding-note">Tarif modulable : {p.followUpSlidingScale} £ pour étudiants & revenus modestes</div>
       <a href={CALENDLY} target="_blank" rel="noopener" class="consult-book">Réserver un suivi</a>
     </div>
     <div class="consult-card">
       <div class="featured-badge" style="background:var(--bark);color:var(--cream);">Meilleure valeur</div>
       <div class="consult-title">Initiale + 2 suivis</div>
       <div class="consult-subtitle">Forfait · 3 séances · En ligne ou en présentiel</div>
-      <div class="consult-price">220 £</div>
-      <div class="consult-price-note">Économisez 40 £ par rapport aux réservations séparées</div>
+      <div class="consult-price">{p.bundle3Sessions} £</div>
+      <div class="consult-price-note">Économisez {p.initialConsultation + p.followUp * 2 - p.bundle3Sessions} £ par rapport aux réservations séparées</div>
       <ul class="consult-includes">
         <li>Tout ce qui est inclus dans la consultation initiale</li>
         <li>Deux séances de suivi pour évaluer & affiner votre protocole</li>
         <li>Idéal pour les conditions hormonales, la fatigue chronique & le burn-out</li>
         <li>La façon la plus efficace de commencer un parcours en phytothérapie</li>
       </ul>
-      <div class="sliding-note">Forfait modulable : 195 £</div>
+      <div class="sliding-note">Forfait modulable : {p.bundle3SessionsSlidingScale} £</div>
       <a href={CALENDLY} target="_blank" rel="noopener" class="consult-book">Réserver le forfait</a>
     </div>
   </div>
@@ -154,8 +158,8 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
       <span class="package-tag">3 séances · Santé hormonale</span>
       <h3>Programme Équilibre Hormonal</h3>
       <div class="package-price-row">
-        <div class="package-price">360 £</div>
-        <span class="package-saving">Économisez 60 £</span>
+        <div class="package-price">3{p.ihm} £</div>
+        <span class="package-saving">Économisez {p.ihm} £</span>
       </div>
       <div class="package-vs">420 £ si réservées individuellement</div>
       <ul class="package-includes">
@@ -170,7 +174,7 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
       <span class="package-tag">3 séances · Stress & Burn-out</span>
       <h3>Programme Récupération Burn-out</h3>
       <div class="package-price-row">
-        <div class="package-price">340 £</div>
+        <div class="package-price">{p.stressBurnout} £</div>
         <span class="package-saving">Économisez 50 £</span>
       </div>
       <div class="package-vs">390 £ si réservées individuellement</div>
@@ -186,7 +190,7 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
       <span class="package-tag">3 séances · Périménopause</span>
       <h3>Programme Soutien Périménopause</h3>
       <div class="package-price-row">
-        <div class="package-price">380 £</div>
+        <div class="package-price">{p.perimenopause} £</div>
         <span class="package-saving">Économisez 55 £</span>
       </div>
       <div class="package-vs">435 £ si réservées individuellement</div>
@@ -202,7 +206,7 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
       <span class="package-tag">3 séances · Sportifs</span>
       <h3>Programme Performance & Récupération</h3>
       <div class="package-price-row">
-        <div class="package-price">370 £</div>
+        <div class="package-price">{p.athletePerformance} £</div>
         <span class="package-saving">Économisez 55 £</span>
       </div>
       <div class="package-vs">425 £ si réservées individuellement</div>
@@ -221,7 +225,7 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
   <h2>En présentiel</h2>
   <div class="ihm-card">
     <div>
-      <div class="inperson-price">60 £</div>
+      <div class="inperson-price">{p.ihm} £</div>
       <div class="inperson-price-note">45 minutes · En présentiel uniquement · Peut être ajouté à une consultation ou réservé seul</div>
       <ul class="inperson-includes">
         <li>10 minutes d'anamnèse initiale</li>
