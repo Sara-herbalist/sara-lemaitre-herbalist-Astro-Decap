@@ -1,0 +1,571 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const meta = {
+  title: "Herbal Medicine Workshops | London & Online | Sara Lemaitre",
+  description: "Hands-on herbal medicine workshops: intro to herbalism, herbs for hormonal health, make your own blends, adaptogens and stress response. Small groups. English and French.",
+  ogImage: "https://www.saralemaitre.com/images/og-workshops.jpg",
+  canonical: "https://www.saralemaitre.com/workshops",
+  navLight: false,
+  currentPage: 'workshops',
+  ogType: 'website',
+};
+---
+
+<BaseLayout {...meta}>
+
+<style is:global>
+:root {
+    --cream: #F7F3EE; --warm-white: #FDFAF7;
+    --sage: #7A8C6E;
+    --sage-text: #4E6245; --sage-light: #C4D0BA; --sage-pale: #EBF0E7;
+    --bark: #5C4A3A; --bark-light: #8C7060; --bark-pale: #EDE5DC;
+    --charcoal: #2A2420; --muted: #6A5E58;
+    --gold: #C4A25A; --gold-pale: #F5EDD6;
+    --plum-pale: #F0EAF0; --amber-pale: #FBF0E3;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--warm-white); color: var(--charcoal); font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.8; overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; background: rgba(253,250,247,0.93); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: var(--bark); text-decoration: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: .9375rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--bark); }
+  .nav-book { font-size: .9375rem; letter-spacing: .16em; text-transform: uppercase; padding: .7rem 1.8rem; border: 1px solid var(--bark); color: var(--bark); text-decoration: none; transition: all .22s; }
+  .nav-book:hover { background: var(--bark); color: var(--warm-white); }
+
+  /* HEADER */
+  .page-header { min-height: 80vh; display: grid; grid-template-columns: 1fr 1fr; padding-top: 73px; }
+  .header-left { background: var(--sage); padding: 8rem 5rem 8rem 8rem; display: flex; flex-direction: column; justify-content: center; position: relative; overflow: hidden; }
+  .header-left::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, rgba(247,243,238,.02) 0px, rgba(247,243,238,.02) 1px, transparent 1px, transparent 60px); }
+  .header-eyebrow { font-size: .75rem; letter-spacing: .24em; text-transform: uppercase; color: var(--sage-pale); margin-bottom: 2rem; opacity: 0; animation: fadeUp .7s .2s forwards; }
+  .header-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 5vw, 4.5rem); font-weight: 300; line-height: 1.05; color: var(--cream); margin-bottom: 2rem; opacity: 0; animation: fadeUp .7s .35s forwards; }
+  .header-title em { font-style: italic; color: var(--sage-pale); }
+  .header-desc { font-size: 1.0625rem; color: rgba(247,243,238,.7); line-height: 1.95; max-width: 440px; margin-bottom: 3rem; opacity: 0; animation: fadeUp .7s .5s forwards; }
+  .header-actions { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp .7s .65s forwards; }
+  .btn-pale { display: inline-block; padding: .9rem 2.4rem; background: rgba(247,243,238,.15); border: 1px solid rgba(247,243,238,.3); color: var(--cream); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+  .btn-pale:hover { background: rgba(247,243,238,.25); }
+  .btn-solid { display: inline-block; padding: .9rem 2.4rem; background: var(--cream); color: var(--sage-text); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+  .btn-solid:hover { background: var(--sage-pale); }
+
+  .header-right { background: var(--sage-pale); display: flex; align-items: center; justify-content: center; padding: 4rem; position: relative; overflow: hidden; opacity: 0; animation: fadeIn 1.2s .3s forwards; }
+  .header-right::before { content: 'Learn'; position: absolute; bottom: -2rem; right: -1rem; font-family: 'Cormorant Garamond', serif; font-size: 14rem; font-weight: 300; color: var(--sage-light); opacity: .2; line-height: 1; pointer-events: none; }
+
+  /* PHILOSOPHY */
+  .philosophy { padding: 6rem 8rem; display: grid; grid-template-columns: 1fr 1.4fr; gap: 6rem; align-items: center; border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .philosophy h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 300; color: var(--bark); line-height: 1.15; }
+  .philosophy h2 em { font-style: italic; color: var(--sage-text); }
+  .philosophy p { font-size: 1.0625rem; color: #4A403C; line-height: 1.95; margin-bottom: 1.3rem; }
+  .philosophy p:last-child { margin-bottom: 0; }
+  .philosophy-eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
+
+  /* WHAT TO EXPECT STRIP */
+  .expect-strip { background: var(--cream); padding: 4rem 8rem; display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 0; border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .expect-item { padding: 2rem; border-right: 1px solid rgba(122,108,100,0.12); }
+  .expect-item:last-child { border-right: none; }
+  .expect-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; font-weight: 300; color: var(--sage-light); line-height: 1; margin-bottom: .8rem; }
+  .expect-title { font-size: 1rem; font-weight: 500; color: var(--bark); margin-bottom: .4rem; }
+  .expect-desc { font-size: 1rem; color: var(--muted); line-height: 1.7; }
+
+  /* WORKSHOP CARDS — full detail */
+  .workshops-section { padding: 5rem 8rem; border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .workshops-label { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 3.5rem; display: flex; align-items: center; gap: 1.5rem; }
+  .workshops-label::after { content: ''; flex: 1; height: 1px; background: rgba(122,108,100,0.15); }
+
+  .workshop-full { display: grid; grid-template-columns: 1fr 2fr; border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .workshop-full:last-child { border-bottom: none; }
+  .workshop-full.reverse { direction: rtl; }
+  .workshop-full.reverse > * { direction: ltr; }
+
+  .workshop-visual { padding: 5rem 4rem; display: flex; flex-direction: column; justify-content: center; align-items: flex-start; }
+  .workshop-full:nth-child(1) .workshop-visual { background: var(--sage-pale); }
+  .workshop-full:nth-child(2) .workshop-visual { background: var(--bark-pale); }
+  .workshop-full:nth-child(3) .workshop-visual { background: var(--gold-pale); }
+  .workshop-full:nth-child(4) .workshop-visual { background: var(--plum-pale); }
+  .workshop-full:nth-child(5) .workshop-visual { background: var(--amber-pale); }
+  .workshop-full:nth-child(6) .workshop-visual { background: var(--sage-pale); }
+
+  .workshop-num { font-family: 'Cormorant Garamond', serif; font-size: 5rem; font-weight: 300; color: var(--sage-light); line-height: 1; margin-bottom: 1rem; opacity: .5; }
+  .workshop-format-pill { display: inline-block; padding: .3rem .9rem; border: 1px solid rgba(122,108,100,0.3); font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--bark-light); margin-bottom: 1rem; }
+  .workshop-duration { font-size: 1rem; color: var(--muted); }
+  .workshop-price-vis { font-family: 'Cormorant Garamond', serif; font-size: 2.4rem; font-weight: 300; color: var(--bark); margin-top: 1.5rem; }
+  .workshop-price-note-vis { font-size: .9375rem; color: var(--muted); }
+
+  .workshop-content { padding: 5rem 6rem; display: flex; flex-direction: column; justify-content: center; }
+  .workshop-tag { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1rem; }
+  .workshop-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.8vw, 2.4rem); font-weight: 300; color: var(--bark); line-height: 1.15; margin-bottom: .6rem; }
+  .workshop-title em { font-style: italic; color: var(--sage-text); }
+  .workshop-subtitle { font-size: 1rem; color: var(--muted); margin-bottom: 2rem; }
+  .workshop-body { font-size: 1.0625rem; color: #4A403C; line-height: 1.95; margin-bottom: 1.2rem; max-width: 560px; }
+  .workshop-body em { font-style: italic; color: var(--sage-text); }
+  .workshop-body strong { font-weight: 500; color: var(--bark); }
+
+  .workshop-learn { margin: 1.8rem 0; padding: 1.4rem 1.8rem; background: var(--cream); border-left: 3px solid var(--sage); }
+  .workshop-learn-label { font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--sage-text); margin-bottom: .8rem; }
+  .workshop-learn-list { display: flex; flex-direction: column; gap: .4rem; }
+  .workshop-learn-list span { font-size: 1rem; color: var(--bark-light); display: flex; align-items: flex-start; gap: .6rem; line-height: 1.5; }
+  .workshop-learn-list span::before { content: '→'; color: var(--sage-text); flex-shrink: 0; }
+
+  .workshop-meta { display: flex; gap: 2rem; flex-wrap: wrap; padding-top: 1.8rem; border-top: 1px solid rgba(122,108,100,0.1); margin-top: 1.8rem; }
+  .workshop-meta-item { display: flex; flex-direction: column; gap: .15rem; }
+  .workshop-meta-label { font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--sage-text); }
+  .workshop-meta-value { font-size: 1rem; color: var(--bark); font-weight: 400; }
+
+  .workshop-book { display: inline-block; margin-top: 1.8rem; padding: .85rem 2.2rem; border: 1px solid var(--bark); color: var(--bark); text-decoration: none; font-size: .9375rem; letter-spacing: .16em; text-transform: uppercase; transition: all .22s; }
+  .workshop-book:hover { background: var(--bark); color: var(--warm-white); }
+
+  /* CORPORATE */
+  .corporate-section { background: var(--bark); padding: 8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .corp-text .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-light); margin-bottom: 1.5rem; }
+  .corp-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 300; color: var(--cream); line-height: 1.2; margin-bottom: 2rem; }
+  .corp-text h2 em { font-style: italic; color: var(--sage-light); }
+  .corp-text p { font-size: 1.0625rem; color: rgba(247,243,238,.7); line-height: 1.95; margin-bottom: 1.2rem; max-width: 480px; }
+  .corp-topics { display: flex; flex-direction: column; gap: 0; }
+  .corp-topic { padding: 1.4rem 0; border-bottom: 1px solid rgba(247,243,238,.08); display: flex; gap: 1.2rem; align-items: flex-start; }
+  .corp-topic:first-child { border-top: 1px solid rgba(247,243,238,.08); }
+  .corp-topic-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--sage-light); flex-shrink: 0; margin-top: .55rem; }
+  .corp-topic-name { font-size: 1rem; font-weight: 400; color: var(--cream); margin-bottom: .2rem; }
+  .corp-topic-desc { font-size: .9375rem; color: rgba(247,243,238,.45); line-height: 1.5; }
+  .corp-cta { display: inline-block; margin-top: 2rem; padding: .9rem 2.4rem; border: 1px solid var(--sage-light); color: var(--sage-light); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+  .corp-cta:hover { background: var(--sage-light); color: var(--bark); }
+
+  /* MAILING LIST */
+  .mailing-section { padding: 7rem 8rem; background: var(--cream); border-bottom: 1px solid rgba(122,108,100,0.1); display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .mailing-text .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
+  .mailing-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 300; color: var(--bark); line-height: 1.2; margin-bottom: 1.5rem; }
+  .mailing-text h2 em { font-style: italic; color: var(--sage-text); }
+  .mailing-text p { font-size: 1rem; color: var(--muted); line-height: 1.9; }
+  .mailing-form { display: flex; flex-direction: column; gap: 1rem; }
+  .mailing-form input { padding: .9rem 1.2rem; border: 1px solid rgba(122,108,100,0.2); background: var(--warm-white); font-family: 'Jost', sans-serif; font-size: 1.0625rem; color: var(--charcoal); outline: none; transition: border-color .2s; width: 100%; }
+  .mailing-form input:focus { border-color: var(--sage-text); }
+  .mailing-form input::placeholder { color: var(--muted); }
+  .mailing-form button { padding: .9rem 2rem; background: var(--bark); color: var(--cream); border: none; font-family: 'Jost', sans-serif; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; cursor: pointer; transition: background .22s; }
+  .mailing-form button:hover { background: var(--charcoal); }
+  .mailing-note { font-size: .9375rem; color: var(--muted); margin-top: .5rem; }
+
+  /* FINAL CTA */
+  .final-cta { padding: 8rem; text-align: center; background: var(--warm-white); position: relative; overflow: hidden; }
+  .final-cta::before { content: 'Workshop'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: 'Cormorant Garamond', serif; font-size: 16rem; font-weight: 300; color: var(--sage-light); opacity: .05; pointer-events: none; white-space: nowrap; }
+  .final-cta .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; position: relative; }
+  .final-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; color: var(--bark); line-height: 1.2; margin-bottom: 1.5rem; position: relative; }
+  .final-cta h2 em { font-style: italic; color: var(--sage-text); }
+  .final-cta p { font-size: 1.0625rem; color: var(--muted); line-height: 1.9; max-width: 500px; margin: 0 auto 3rem; position: relative; }
+  .cta-buttons { display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap; position: relative; }
+  .cta-primary { display: inline-block; padding: 1rem 2.8rem; background: var(--bark); color: var(--cream); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+  .cta-primary:hover { background: var(--charcoal); }
+  .cta-secondary { display: inline-block; padding: 1rem 2.8rem; border: 1px solid rgba(92,74,58,.3); color: var(--bark-light); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+  .cta-secondary:hover { border-color: var(--bark); color: var(--bark); }
+
+  footer { background: var(--charcoal); padding: 3rem 8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  footer p { font-size: .9375rem; letter-spacing: .08em; color: rgba(247,243,238,.25); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .75s ease, transform .75s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-d1 { transition-delay: .12s; } .reveal-d2 { transition-delay: .22s; } .reveal-d3 { transition-delay: .32s; }
+
+  @media (max-width: 1000px) {
+    nav { padding: 1.2rem 2rem; }
+    .page-header { grid-template-columns: 1fr; }
+    .header-left { padding: 8rem 2.5rem 5rem; }
+    .header-right { display: none; }
+    .philosophy { grid-template-columns: 1fr; padding: 5rem 2.5rem; gap: 3rem; }
+    .expect-strip { grid-template-columns: 1fr 1fr; padding: 3rem 2.5rem; }
+    .workshops-section { padding: 4rem 2.5rem; }
+    .workshop-full, .workshop-full.reverse { grid-template-columns: 1fr; direction: ltr; }
+    .workshop-visual { padding: 3rem 2.5rem; min-height: 200px; }
+    .workshop-content { padding: 3rem 2.5rem; }
+    .corporate-section { grid-template-columns: 1fr; padding: 5rem 2.5rem; gap: 3rem; }
+    .mailing-section { grid-template-columns: 1fr; padding: 5rem 2.5rem; gap: 3rem; }
+    .final-cta { padding: 5rem 2.5rem; }
+    footer { padding: 2rem 2.5rem; flex-direction: column; text-align: center; }
+  }
+
+  /* ── WCAG 2.2 AA: Visible focus indicators ── */
+  :focus-visible {
+    outline: 3px solid #5C4A3A;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  a:focus-visible, button:focus-visible, input:focus-visible,
+  select:focus-visible, textarea:focus-visible {
+    outline: 3px solid #5C4A3A;
+    outline-offset: 3px;
+  }
+
+  /* Screen-reader only utility */
+  .sr-only {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── Skip navigation link ── */
+  .skip-nav {
+    position: absolute; top: -100px; left: 1rem; z-index: 9999;
+    background: #5C4A3A; color: #F7F3EE;
+    padding: .75rem 1.5rem; font-size: 1.0625rem;
+    text-decoration: none; border-radius: 0 0 4px 4px;
+    transition: top .2s;
+  }
+  .skip-nav:focus { top: 0; }
+
+
+  /* ── Mobile hamburger menu ── */
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer;
+    padding: .5rem; margin-left: .5rem;
+  }
+  .hamburger span {
+    display: block; width: 22px; height: 2px;
+    background: var(--bark); border-radius: 2px;
+    transition: all .25s;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  
+  @media (max-width: 1024px) {
+    .hamburger { display: flex; }
+    .nav-links {
+      display: none; position: fixed; top: 73px; left: 0; right: 0;
+      background: rgba(253,250,247,0.98); backdrop-filter: blur(12px);
+      flex-direction: column; gap: 0; padding: 1rem 0;
+      border-bottom: 1px solid rgba(122,108,100,0.12);
+      z-index: 99;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links li a {
+      display: block; padding: .9rem 2rem;
+      font-size: 1.0625rem; letter-spacing: .08em;
+      border-bottom: 1px solid rgba(122,108,100,0.06);
+    }
+    .nav-book { display: none; }
+  }
+
+
+
+  .lang-toggle {
+    font-size: .75rem; letter-spacing: .16em; text-transform: uppercase;
+    padding: .45rem .9rem; border: 1px solid rgba(247,243,238,.5);
+    background: none; color: rgba(247,243,238,.85); cursor: pointer;
+    font-family: 'Jost', sans-serif; border-radius: 2px;
+    transition: all .3s; margin-left: .5rem;
+  }
+  nav.scrolled .lang-toggle { border-color: rgba(92,74,58,.35); color: var(--muted); }
+  .lang-toggle:hover, nav.scrolled .lang-toggle:hover { border-color: var(--bark); color: var(--bark); }
+
+
+  /* Pages with light-coloured heroes — nav starts dark */
+  body[data-nav="light"] nav {
+    background: rgba(253,250,247,0.85);
+    backdrop-filter: blur(8px);
+  }
+  body[data-nav="light"] .nav-logo { color: var(--bark); }
+  body[data-nav="light"] .nav-links a { color: var(--muted); }
+  body[data-nav="light"] .nav-links a:hover { color: var(--bark); }
+  body[data-nav="light"] .nav-book { border-color: var(--bark); color: var(--bark); }
+  body[data-nav="light"] .lang-toggle { border-color: rgba(92,74,58,.35); color: var(--muted); }
+</style>
+
+<!-- HEADER -->
+<header id="main-content" role="main" class="page-header">
+  <div class="header-left">
+    <p class="header-eyebrow">Education · Community · Practice</p>
+    <h1 class="header-title">Workshops<br>that give you<br>something to<br><em>take home</em></h1>
+    <p class="header-desc">Not lectures. Not passive learning. Every workshop I run ends with you holding something real — a blend you made, a protocol you understand, a practice you can begin tomorrow. That is the point.</p>
+    <div class="header-actions">
+      <a href="#workshops" class="btn-solid">See all workshops</a>
+      <a href="#mailing" class="btn-pale">Join the mailing list for dates</a>
+    </div>
+  </div>
+  <div class="header-right">
+    <svg width="320" height="320" viewBox="0 0 320 320" fill="none" style="opacity:.3">
+      <rect x="60" y="40" width="200" height="240" rx="8" stroke="#7A8C6E" stroke-width="1.2" fill="none"/>
+      <line x1="60" y1="90" x2="260" y2="90" stroke="#7A8C6E" stroke-width=".6"/>
+      <line x1="60" y1="140" x2="260" y2="140" stroke="#7A8C6E" stroke-width=".6"/>
+      <line x1="60" y1="190" x2="260" y2="190" stroke="#7A8C6E" stroke-width=".6"/>
+      <line x1="60" y1="240" x2="260" y2="240" stroke="#7A8C6E" stroke-width=".6"/>
+      <path d="M90 65 Q110 55 130 65 Q120 72 90 65Z" stroke="#7A8C6E" stroke-width="1" fill="rgba(122,140,110,.15)"/>
+      <path d="M140 65 Q155 55 170 65 Q155 72 140 65Z" stroke="#7A8C6E" stroke-width="1" fill="rgba(122,140,110,.15)"/>
+      <path d="M80 115 Q110 105 130 115 Q110 122 80 115Z" stroke="#7A8C6E" stroke-width="1" fill="rgba(122,140,110,.1)"/>
+      <circle cx="100" cy="165" r="14" stroke="#7A8C6E" stroke-width="1" fill="rgba(122,140,110,.1)"/>
+      <circle cx="160" cy="165" r="10" stroke="#7A8C6E" stroke-width="1" fill="rgba(122,140,110,.08)"/>
+      <circle cx="210" cy="165" r="16" stroke="#7A8C6E" stroke-width="1" fill="rgba(122,140,110,.12)"/>
+    </svg>
+  </div>
+</header>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy reveal">
+  <div>
+    <p class="philosophy-eyebrow">Why workshops</p>
+    <h2>Knowledge that lives<br>in your <em>hands</em>, not<br>just your head</h2>
+  </div>
+  <div>
+    <p>There is a version of wellness education that fills you with information and sends you home with a notepad and a vague feeling that you should do something differently. I am not interested in that version.</p>
+    <p>Every workshop I design starts from a single question: <em>what will this person actually do differently on Monday morning?</em> That question shapes the format, the content, the materials, and the pace. Some workshops you leave with a tin of something you blended yourself. Some you leave with a protocol you have tested on your own pulse. All of them, you leave with something you can use.</p>
+    <p>Groups are small — never more than twelve — because learning about your own health is personal, and it deserves to happen in a space where questions are welcome and there is enough time to actually think.</p>
+  </div>
+</section>
+
+<!-- EXPECT STRIP -->
+<div class="expect-strip reveal">
+  <div class="expect-item">
+    <div class="expect-num">≤12</div>
+    <div class="expect-title">Small groups</div>
+    <div class="expect-desc">Intimate enough for real questions and personal attention throughout.</div>
+  </div>
+  <div class="expect-item">
+    <div class="expect-num">2–3h</div>
+    <div class="expect-title">Practical duration</div>
+    <div class="expect-desc">Long enough to go deep. Short enough to hold focus and retain what matters.</div>
+  </div>
+  <div class="expect-item">
+    <div class="expect-num">EN/FR</div>
+    <div class="expect-title">Bilingual available</div>
+    <div class="expect-desc">All workshops available in English. Selected ones in French or bilingual format.</div>
+  </div>
+  <div class="expect-item">
+    <div class="expect-num">↗</div>
+    <div class="expect-title">Online & in person</div>
+    <div class="expect-desc">Hands-on workshops in person. Educational and discussion-based online. Same depth either way.</div>
+  </div>
+</div>
+
+<!-- WORKSHOPS -->
+<section class="workshops-section" id="workshops">
+  <div class="workshops-label">All workshops</div>
+
+  <!-- 1 -->
+  <div class="workshop-full reveal">
+    <div class="workshop-visual">
+      <div class="workshop-num">01</div>
+      <span class="workshop-format-pill">In person · Hands-on</span>
+      <div class="workshop-duration">2.5 hours · Groups of 6–10</div>
+      <div class="workshop-price-vis">£65</div>
+      <div class="workshop-price-note-vis">per person · materials included</div>
+    </div>
+    <div class="workshop-content">
+      <p class="workshop-tag">Foundation workshop · All levels welcome</p>
+      <h2 class="workshop-title">Introduction to<br><em>Herbal Medicine</em></h2>
+      <p class="workshop-subtitle">Your kitchen, your apothecary, your practice</p>
+      <p class="workshop-body">Most people's relationship with herbal medicine begins with a teabag. This workshop is about taking the next ten steps — understanding what is actually in the plants you are drinking, why they work, and how to begin using them with intention rather than habit.</p>
+      <p class="workshop-body">We work with a selection of approachable, effective herbs — the ones that deserve a permanent place in your kitchen. You will learn how to make a proper infusion, a decoction, a simple tincture, and an infused oil. You will leave with a small kit of your own preparations and a reference card you will actually reach for.</p>
+      <p class="workshop-body">This is the workshop I wish someone had given me when I first discovered plant medicine during lockdown — <em>practical, unfrightening, and genuinely useful from day one.</em></p>
+      <div class="workshop-learn">
+        <div class="workshop-learn-label">You will leave knowing how to</div>
+        <div class="workshop-learn-list">
+          <span>Make an effective herbal infusion and decoction</span>
+          <span>Prepare a simple tincture and infused oil at home</span>
+          <span>Choose the right preparation method for each herb</span>
+          <span>Build a small home herbal kit for seasonal and everyday use</span>
+          <span>Know which herbs are safe and what to be careful with</span>
+        </div>
+      </div>
+      <div class="workshop-meta">
+        <div class="workshop-meta-item"><span class="workshop-meta-label">Format</span><span class="workshop-meta-value">In person · hands-on</span></div>
+        <div class="workshop-meta-item"><span class="workshop-meta-label">Group size</span><span class="workshop-meta-value">6–10 people</span></div>
+        <div class="workshop-meta-item"><span class="workshop-meta-label">Materials</span><span class="workshop-meta-value">Included in price</span></div>
+        <div class="workshop-meta-item"><span class="workshop-meta-label">Languages</span><span class="workshop-meta-value">English · French available</span></div>
+      </div>
+      <a href="#mailing" class="workshop-book">Get notified of dates</a>
+    </div>
+  </div>
+
+  <!-- 2 -->
+  <div class="workshop-full reverse reveal">
+    <div class="workshop-visual">
+      <div class="workshop-num">02</div>
+      <span class="workshop-format-pill">In person or online</span>
+      <div class="workshop-duration">3 hours · Groups of 6–12</div>
+      <div class="workshop-price-vis">£75</div>
+      <div class="workshop-price-note-vis">per person</div>
+    </div>
+    <div class="workshop-content">
+      <p class="workshop-tag">Women's health · Personal experience informs this one deeply</p>
+      <h2 class="workshop-title">Herbs for<br><em>Hormonal Health</em></h2>
+      <p class="workshop-subtitle">For endometriosis, PCOS, PMS, perimenopause, and the in-between</p>
+      <p class="workshop-body">I designed this workshop because it did not exist when I needed it. When I was at the worst of my endometriosis — cycling through specialists, on daily preventative morphine, watching my athletic career disappear — nobody gave me a room full of women and a conversation about what plants can actually do for hormonal conditions.</p>
+      <p class="workshop-body">This workshop is that room. We talk honestly about the conditions that affect so many women and are so persistently underserved. We look at what herbal medicine genuinely offers — not miracle cures, but real, evidence-informed support for real, complex bodies. We discuss specific herbs for specific presentations: for pain, for cycle regulation, for the adrenal-hormonal axis, for the exhaustion that comes from years of fighting your own body.</p>
+      <p class="workshop-body"><strong>This is not a lecture.</strong> It is a conversation, with space for questions, for stories, and for the kind of practical knowledge that helps you leave with something you can actually use.</p>
+      <div class="workshop-learn">
+        <div class="workshop-learn-label">Topics covered</div>
+        <div class="workshop-learn-list">
+          <span>How the hormonal system works and where herbs interact with it</span>
+          <span>Key herbs for endometriosis, PCOS, PMS and perimenopause</span>
+          <span>The adrenal-hormonal connection and how to support it</span>
+          <span>Naturopathic foundations — diet, lifestyle, what actually matters</span>
+          <span>When to work with a practitioner and what to expect</span>
+        </div>
+      </div>
+      <div class="workshop-meta">
+        <div class="workshop-meta-item"><span class="workshop-meta-label">Format</span><span class="workshop-meta-value">In person or online</span></div>
+        <div class="workshop-meta-item"><span class="workshop-meta-label">Group size</span><span class="workshop-meta-value">Up to 12</span></div>
+        <div class="workshop-meta-item"><span class="workshop-meta-label">Languages</span><span class="workshop-meta-value">English · French available</span></div>
+        <div class="workshop-meta-item"><span class="workshop-meta-label">Also available</span><span class="workshop-meta-value">Private groups on request</span></div>
+      </div>
+      <a href="#mailing" class="workshop-book">Get notified of dates</a>
+    </div>
+  </div>
+
+  <!-- 3 -->
+  <div class="workshop-full reveal">
+    <div class="workshop-visual">
+      <div class="workshop-num">03</div>
+      <span class="workshop-format-pill">In person · Blending session</span>
+      <div class="workshop-duration">2 hours · Groups of 6–8</div>
+      <div class="workshop-price-vis">£80</div>
+      <div class="workshop-price-note-vis">per person · your blends included</div>
+    </div>
+    <div class="workshop-content">
+      <p class="workshop-tag">Hands-on · You leave with formulations you made yourself</p>
+      <h2 class="workshop-title">Make Your Own<br><em>Herbal Blends</em></h2>
+      <p class="workshop-subtitle">Teas, tinctures and simple remedies — personalised to you</p>
+      <p class="workshop-body">There is something irreplaceable about making your own medicine. Not because homemade is always better — sometimes it is not — but because the act of choosing, weighing, blending, and smelling what you are putting into your body changes your relationship with it. You stop being a passive recipient of health information and start being someone who participates in their own care.</p>
+      <p class="workshop-body">In this session, I guide each person through a short constitutional assessment — a simplified version of what happens in a full consultation — and then we blend. You choose your herbs from a curated selection I provide. You make a tea blend and a simple tincture formulation. You leave with both, plus the knowledge of why you chose what you chose.</p>
+      <p class="workshop-body"><em>Groups of 6–8 only</em> — small enough that every blend is genuinely personal, not just a class recipe with your name on it.</p>
+      <div class="workshop-learn">
+        <div class="workshop-learn-label">What you make and take home</div>
+        <div class="workshop-learn-list">
+          <span>A personalised loose-leaf tea blend (50g)</span>
+          <span>A tincture formula written to your constitution</span>
+          <span>A reference card explaining each herb you chose and why</span>
+          <span>The knowledge to adjust and remake your blends at home</span>
+        </div>
+      </div>
+      <div class="workshop-meta">
+        <div class="workshop-meta-item"><span class="workshop-meta-label">Format</span><span class="workshop-meta-value">In person only</span></div>
+        <div class="workshop-meta-item"><span class="workshop-meta-label">Group size</span><span class="workshop-meta-value">6–8 people maximum</span></div>
+        <div class="workshop-meta-item"><span class="workshop-meta-label">Everything included</span><span class="workshop-meta-value">All herbs, containers, labels</span></div>
+      </div>
+      <a href="#mailing" class="workshop-book">Get notified of dates</a>
+    </div>
+  </div>
+
+  <!-- 4 -->
+  <div class="workshop-full reverse reveal">
+    <div class="workshop-visual">
+      <div class="workshop-num">04</div>
+      <span class="workshop-format-pill">Online or in person</span>
+      <div class="workshop-duration">2.5 hours · Up to 15</div>
+      <div class="workshop-price-vis">£55</div>
+      <div class="workshop-price-note-vis">per person</div>
+    </div>
+    <div class="workshop-content">
+      <p class="workshop-tag">High performance · Burnout prevention · Stress resilience</p>
+      <h2 class="workshop-title">Adaptogens &<br><em>the Stress Response</em></h2>
+      <p class="workshop-subtitle">What they are, how they work, and how to use them without wasting your money</p>
+      <p class="workshop-body">Adaptogens are everywhere right now — in every health food shop, every supplement brand, every wellness Instagram account. Most of the information about them is either oversimplified to the point of uselessness or buried in academic papers that require a biochemistry degree to parse. This workshop is neither.</p>
+      <p class="workshop-body">As a former national-level athlete and clinical herbalist who has used adaptogens for my own recovery from chronic fatigue, I can tell you what they actually do, which ones are worth using, which are overhyped, how to combine them intelligently, and what the evidence actually says versus what brands would like you to believe.</p>
+      <p class="workshop-body">This is designed for people who are running on empty and want to do something genuinely useful about it — <strong>not another supplement that does nothing, but a real understanding of how your stress response works and what plant medicine can do to support it.</strong></p>
+      <div class="workshop-learn">
+        <div class="workshop-learn-label">You will leave understanding</div>
+        <div class="workshop-learn-list">
+          <span>What adaptogens actually are and how the HPA axis works</span>
+          <span>The five adaptogens most supported by evidence (and how to use them)</span>
+          <span>How to distinguish quality from marketing noise</span>
+          <span>Combining adaptogens with nervines and other supportive herbs</span>
+          <span>A personal protocol framework you can build from</span>
+        </div>
+      </div>
+      <div class="workshop-meta">
+        <div class="workshop-meta-item"><span class="workshop-meta-label">Format</span><span class="workshop-meta-value">Online or in person</span></div>
+        <div class="workshop-meta-item"><span class="workshop-meta-label">Group size</span><span class="workshop-meta-value">Up to 15</span></div>
+        <div class="workshop-meta-item"><span class="workshop-meta-label">Languages</span><span class="workshop-meta-value">English · French available</span></div>
+      </div>
+      <a href="#mailing" class="workshop-book">Get notified of dates</a>
+    </div>
+  </div>
+
+  <!-- 5 -->
+  <div class="workshop-full reveal">
+    <div class="workshop-visual">
+      <div class="workshop-num">05</div>
+      <span class="workshop-format-pill">In person · Kitchen session</span>
+      <div class="workshop-duration">3 hours · Groups of 8–12</div>
+      <div class="workshop-price-vis">£70</div>
+      <div class="workshop-price-note-vis">per person · recipe pack included</div>
+    </div>
+    <div class="workshop-content">
+      <p class="workshop-tag">Naturopathic nutrition · Gut health · Hormone-supportive eating</p>
+      <h2 class="workshop-title">The Naturopathic<br><em>Kitchen</em></h2>
+      <p class="workshop-subtitle">Food as medicine — practical, delicious, and built around your actual life</p>
+      <p class="workshop-body">The gap between knowing that diet matters and actually changing what you eat every day is enormous. Most nutritional advice widens that gap rather than closing it — it tells you what to do without telling you why, or gives you a meal plan that bears no resemblance to how real people shop, cook, and live.</p>
+      <p class="workshop-body">This workshop is different because it starts with principles rather than prescriptions. When you understand <em>why</em> certain foods support the hormonal system, reduce inflammation, stabilise blood sugar, or feed the gut microbiome — you can apply that understanding to the food you already cook, the shops you already use, the kitchen you already have.</p>
+      <p class="workshop-body">We cook together. We eat together. You leave with a recipe pack, a shopping guide, and a way of thinking about food that lasts longer than any meal plan.</p>
+      <div class="workshop-learn">
+        <div class="workshop-learn-label">Topics and practical elements</div>
+        <div class="workshop-learn-list">
+          <span>Anti-inflammatory eating — the principles, not the prescription</span>
+          <span>Blood sugar balance and why it matters for hormones and energy</span>
+          <span>The gut-hormone connection and how to feed it</span>
+          <span>Cooking two hormone-supportive recipes together</span>
+          <span>A practical shopping guide and seasonal ingredient list</span>
+        </div>
+      </div>
+      <div class="workshop-meta">
+        <div class="workshop-meta-item"><span class="workshop-meta-label">Format</span><span class="workshop-meta-value">In person · kitchen setting</span></div>
+        <div class="workshop-meta-item"><span class="workshop-meta-label">Group size</span><span class="workshop-meta-value">8–12 people</span></div>
+        <div class="workshop-meta-item"><span class="workshop-meta-label">Includes</span><span class="workshop-meta-value">All ingredients, recipe pack, shopping guide</span></div>
+      </div>
+      <a href="#mailing" class="workshop-book">Get notified of dates</a>
+    </div>
+  </div>
+</section>
+
+<!-- CORPORATE -->
+<section class="corporate-section reveal" id="corporate">
+  <div class="corp-text">
+    <p class="eyebrow">For organisations</p>
+    <h2>Wellness education<br>for <em>teams</em></h2>
+    <p>Workplace wellness sessions that go beyond the motivational poster. Whether delivered online or in person, in English or French, these are substantive, practical sessions that give your team tools they will actually use.</p>
+    <p>I have designed these for organisations that want to invest in genuine wellbeing — not tick a box, but actually reduce the burnout, absenteeism, and quiet exhaustion that costs organisations more than they realise.</p>
+    <a href="/consultancy" class="corp-cta">See full consultancy offer →</a>
+  </div>
+  <div class="corp-topics">
+    <div class="corp-topic"><div class="corp-topic-dot"></div><div><div class="corp-topic-name">Stress resilience & the nervous system</div><div class="corp-topic-desc">Understanding what burnout actually is — and evidence-based tools to address it before it arrives.</div></div></div>
+    <div class="corp-topic"><div class="corp-topic-dot"></div><div><div class="corp-topic-name">Sleep & recovery</div><div class="corp-topic-desc">Why most sleep advice does not work, and what the research actually says about optimising recovery.</div></div></div>
+    <div class="corp-topic"><div class="corp-topic-dot"></div><div><div class="corp-topic-name">Energy & focus — the naturopathic approach</div><div class="corp-topic-desc">Blood sugar, adrenal health, adaptogens, and the practical daily habits that make a measurable difference.</div></div></div>
+    <div class="corp-topic"><div class="corp-topic-dot"></div><div><div class="corp-topic-name">Women's health in the workplace</div><div class="corp-topic-desc">Menstrual health, perimenopause, and hormonal wellbeing — for the employees experiencing it and the managers supporting them.</div></div></div>
+    <div class="corp-topic"><div class="corp-topic-dot"></div><div><div class="corp-topic-name">Introduction to herbal medicine</div><div class="corp-topic-desc">A gentle, practical introduction to plant medicine for everyday health. The most popular corporate session.</div></div></div>
+  </div>
+</section>
+
+<!-- MAILING LIST -->
+<section class="mailing-section reveal" id="mailing">
+  <div class="mailing-text">
+    <p class="eyebrow">Stay informed</p>
+    <h2>Join the workshop<br>mailing <em>list</em></h2>
+    <p>Workshop dates are released to the mailing list first — often before they are publicly announced. Leave your email below and I will let you know when the next session is scheduled, which city or online platform it will be on, and how to secure your place.</p>
+    <p>I do not send noise. You will hear from me when there is something worth hearing about.</p>
+  </div>
+  <div>
+    <form class="mailing-form" name="workshop-mailing" netlify netlify-honeypot="bot-field" action="/thank-you">
+      <input type="hidden" name="form-name" value="workshop-mailing">
+      <p hidden><input name="bot-field"></p>
+      <label for="ws-name" class="sr-only">Your name</label><input id="ws-name" type="text" name="name" placeholder="Your name" data-i18n="workshops.mailing.name" data-i18n-attr="placeholder" aria-required="true">
+      <label for="ws-email" class="sr-only">Email address</label><input id="ws-email" type="email" name="email" placeholder="Your email address" data-i18n="workshops.mailing.email" data-i18n-attr="placeholder" aria-required="true">
+      <label for="ws-loc" class="sr-only">Your city or country</label><input id="ws-loc" type="text" name="location" placeholder="City / country (helps me plan locations)" data-i18n="workshops.mailing.loc" data-i18n-attr="placeholder">
+      <button type="submit" data-i18n="workshops.mailing.cta">Join the mailing list</button>
+      <p class="mailing-note" data-i18n="workshops.mailing.note">No spam. No sharing. Unsubscribe any time. GDPR compliant.</p>
+    </form>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="final-cta reveal" id="book">
+  <p class="eyebrow">Private & bespoke</p>
+  <h2>Want a workshop<br>for your <em>group or event?</em></h2>
+  <p>All workshops are available for private booking — for a group of friends, a yoga studio, a workplace, a retreat, or an event. Minimum group sizes apply. Get in touch to discuss what would work for your context.</p>
+  <div class="cta-buttons">
+    <a href="/consultancy#contact" class="cta-primary">Enquire about private workshops</a>
+    <a href="https://calendly.com/sara-lemaitre-herbalist" target="_blank" rel="noopener" class="cta-secondary">Book a discovery call instead</a>
+  </div>
+</section>
+
+</BaseLayout>
