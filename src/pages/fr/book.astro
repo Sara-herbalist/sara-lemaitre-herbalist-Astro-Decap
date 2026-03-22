@@ -1,0 +1,220 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const meta = {
+  title: "Prendre rendez-vous | Sara Lemaitre — Herboriste Clinique & Naturopathe",
+  description: "Réservez votre consultation en phytothérapie ou naturopathie avec Sara Lemaitre. Consultation découverte gratuite disponible. Paiement par virement bancaire.",
+  ogImage: "https://www.saralemaitre.com/images/og-book.jpg",
+  canonical: "https://www.saralemaitre.com/fr/book",
+  navLight: false,
+  currentPage: 'book',
+  ogType: 'website',
+  lang: 'fr',
+};
+const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
+---
+<BaseLayout {...meta}>
+<style is:global>
+.book-hero { padding: 10rem 8rem 6rem; background: var(--cream); border-bottom: 1px solid rgba(92,74,58,0.08); }
+.book-hero .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
+.book-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.1; color: var(--charcoal); margin-bottom: 1.5rem; }
+.book-hero p { font-size: 1.125rem; color: var(--muted); max-width: 560px; line-height: 1.8; }
+.how-section { padding: 6rem 8rem; background: var(--warm-white); }
+.how-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: var(--charcoal); margin-bottom: 3.5rem; }
+.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
+.step { display: flex; flex-direction: column; gap: 1rem; }
+.step-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--sage-light); line-height: 1; }
+.step h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--bark); }
+.step p { font-size: 1rem; color: var(--muted); line-height: 1.75; }
+.options-section { padding: 6rem 8rem; background: var(--cream); }
+.options-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: var(--charcoal); margin-bottom: .75rem; }
+.options-section > p { color: var(--muted); margin-bottom: 3.5rem; max-width: 560px; }
+.options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-bottom: 2.5rem; }
+.option-card { background: var(--warm-white); border: 1px solid rgba(92,74,58,0.1); padding: 2.5rem; display: flex; flex-direction: column; gap: 1rem; transition: border-color .2s; }
+.option-card:hover { border-color: var(--sage-light); }
+.option-card.featured { border-color: var(--sage); background: var(--sage-pale); }
+.option-tag { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--sage-text); }
+.option-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--charcoal); }
+.option-price { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: var(--bark); }
+.option-price span { font-family: 'Jost', sans-serif; font-size: .9rem; font-weight: 300; color: var(--muted); }
+.option-card p { font-size: .9375rem; color: var(--muted); line-height: 1.75; flex: 1; }
+.option-card a { display: inline-block; padding: .85rem 2rem; border: 1px solid var(--bark); color: var(--bark); text-decoration: none; font-size: .875rem; letter-spacing: .14em; text-transform: uppercase; transition: all .22s; text-align: center; margin-top: .5rem; }
+.option-card a:hover { background: var(--bark); color: var(--warm-white); }
+.option-card.featured a { background: var(--bark); color: var(--warm-white); }
+.option-card.featured a:hover { background: var(--charcoal); }
+.sliding-scale-note { font-size: .8125rem; color: var(--sage-text); background: var(--sage-pale); border-left: 2px solid var(--sage-light); padding: .5rem .75rem; line-height: 1.6; font-style: italic; }
+.get-in-touch-box { margin-top: 3rem; padding: 2.5rem 3rem; background: var(--warm-white); border: 1px solid rgba(92,74,58,0.1); display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.git-text .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: .5rem; }
+.git-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--charcoal); margin-bottom: .5rem; }
+.git-text p { font-size: .9375rem; color: var(--muted); max-width: 500px; line-height: 1.7; }
+.btn-bark { display: inline-block; padding: .9rem 2.4rem; border: 1px solid var(--bark); color: var(--bark); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+.btn-bark:hover { background: var(--bark); color: var(--warm-white); }
+.payment-section { padding: 6rem 8rem; background: var(--warm-white); }
+.payment-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: var(--charcoal); margin-bottom: .75rem; }
+.payment-section > p { color: var(--muted); margin-bottom: 3.5rem; max-width: 600px; }
+.payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+.payment-box { background: var(--cream); border: 1px solid rgba(92,74,58,0.08); padding: 2.5rem; }
+.payment-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--bark); margin-bottom: 1.25rem; }
+.payment-steps { list-style: none; display: flex; flex-direction: column; gap: .85rem; counter-reset: step; }
+.payment-steps li { display: flex; gap: 1rem; font-size: .9375rem; color: var(--muted); line-height: 1.6; }
+.payment-steps li::before { content: counter(step); counter-increment: step; min-width: 1.5rem; height: 1.5rem; background: var(--sage-light); color: var(--bark); font-size: .75rem; font-weight: 500; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-top: .15rem; flex-shrink: 0; }
+.bank-details { margin-top: 1.5rem; padding: 1.25rem 1.5rem; background: var(--warm-white); border-left: 2px solid var(--sage-light); font-size: .9375rem; line-height: 1.8; color: var(--muted); }
+.bank-details strong { color: var(--charcoal); }
+.cancel-section { padding: 5rem 8rem; background: var(--bark-pale); }
+.cancel-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: var(--charcoal); margin-bottom: 2.5rem; }
+.cancel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.cancel-card { padding: 2rem; background: var(--warm-white); border: 1px solid rgba(92,74,58,0.08); }
+.cancel-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--bark); margin-bottom: .75rem; }
+.cancel-card p { font-size: .9375rem; color: var(--muted); line-height: 1.7; }
+.cancel-note { margin-top: 2rem; font-size: .9rem; color: var(--muted); font-style: italic; }
+.book-cta { padding: 7rem 8rem; background: var(--charcoal); text-align: center; }
+.book-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 400; color: var(--cream); margin-bottom: 1rem; }
+.book-cta p { color: rgba(247,243,238,.5); margin-bottom: 2.5rem; font-size: 1.0625rem; }
+.book-cta a { display: inline-block; padding: 1.1rem 3rem; background: var(--sage-light); color: var(--bark); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+.book-cta a:hover { background: var(--cream); }
+@media (max-width: 1024px) {
+  .book-hero, .how-section, .options-section, .payment-section, .cancel-section, .book-cta { padding-left: 2.5rem; padding-right: 2.5rem; }
+  .steps-grid, .cancel-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .options-grid, .payment-grid { grid-template-columns: 1fr; }
+  .get-in-touch-box { flex-direction: column; align-items: flex-start; }
+}
+</style>
+
+<section class="book-hero">
+  <p class="eyebrow">Prendre rendez-vous</p>
+  <h1>Commencez votre<br/><em>chemin vers la guérison</em></h1>
+  <p>Chaque consultation commence par une écoute. Pas de rendez-vous précipités, pas de symptômes balayés — une approche approfondie et personnalisée de votre santé.</p>
+</section>
+
+<section class="how-section">
+  <h2>Comment ça fonctionne</h2>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Réservez votre rendez-vous</h3>
+      <p>Choisissez votre type de consultation et sélectionnez un créneau via le calendrier en ligne. Vous recevez une confirmation immédiate par e-mail.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Confirmez par paiement</h3>
+      <p>Effectuez un virement bancaire avec les coordonnées indiquées dans votre e-mail de confirmation. Votre rendez-vous est sécurisé dès réception du paiement.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Préparez-vous & connectez-vous</h3>
+      <p>Vous recevrez un formulaire d'anamnèse et des notes de préparation avant votre rendez-vous. Nous nous retrouvons en visioconférence — il vous faut juste un endroit calme.</p>
+    </div>
+  </div>
+</section>
+
+<section class="options-section">
+  <h2>Choisissez votre consultation</h2>
+  <p>Vous ne savez pas par où commencer ? La consultation découverte gratuite est le premier pas idéal — sans engagement, sans pression.</p>
+  <div class="options-grid">
+    <div class="option-card">
+      <span class="option-tag">Gratuit · 15 minutes</span>
+      <h3>Consultation découverte</h3>
+      <div class="option-price">Gratuit</div>
+      <p>Une conversation détendue pour comprendre vos problèmes de santé et vos objectifs, expliquer comment je travaille et répondre à vos questions. Sans engagement.</p>
+      <a href={CALENDLY} target="_blank" rel="noopener">Réserver un appel gratuit</a>
+    </div>
+    <div class="option-card featured">
+      <span class="option-tag">Initiale · 90 minutes · En ligne ou en présentiel</span>
+      <h3>Consultation initiale</h3>
+      <div class="option-price">110 £ <span>/ séance</span></div>
+      <p>Une exploration approfondie de votre histoire de santé, vos symptômes actuels, votre mode de vie et vos objectifs. Inclut un protocole herbal personnalisé écrit, des recommandations naturopathiques, et la conception de votre formule. Environ 2h30–3h de travail au total.</p>
+      <div class="sliding-scale-note">Tarif modulable à 85 £ pour les étudiants et personnes à revenus modestes — mentionnez-le lors de la réservation.</div>
+      <a href={CALENDLY} target="_blank" rel="noopener">Réserver une consultation initiale</a>
+    </div>
+    <div class="option-card">
+      <span class="option-tag">Suivi · 30–40 minutes · En ligne ou en présentiel</span>
+      <h3>Consultation de suivi</h3>
+      <div class="option-price">75 £ <span>/ séance</span></div>
+      <p>Évaluation de vos progrès, ajustement de votre protocole herbal et prise en charge de nouvelles préoccupations. Inclut la reformulation et le contact avec les fournisseurs si nécessaire. Recommandé toutes les 4 à 6 semaines.</p>
+      <div class="sliding-scale-note">Tarif modulable à 65 £ pour les étudiants et personnes à revenus modestes.</div>
+      <a href={CALENDLY} target="_blank" rel="noopener">Réserver un suivi</a>
+    </div>
+    <div class="option-card">
+      <span class="option-tag">Forfait · Meilleure valeur · 3 séances</span>
+      <h3>Initiale + 2 suivis</h3>
+      <div class="option-price">220 £ <span>/ 3 séances</span></div>
+      <p>La façon la plus complète de commencer. Une consultation initiale approfondie suivie de deux suivis pour évaluer les progrès et affiner votre protocole. Économisez 40 £ par rapport aux réservations séparées.</p>
+      <div class="sliding-scale-note">Forfait modulable à 195 £.</div>
+      <a href={CALENDLY} target="_blank" rel="noopener">Réserver le forfait</a>
+    </div>
+    <div class="option-card">
+      <span class="option-tag">En présentiel uniquement · 45 minutes</span>
+      <h3>Massage Crânien Indien</h3>
+      <div class="option-price">60 £ <span>/ séance</span></div>
+      <p>Un soin ayurvédique profondément relaxant — 10 minutes d'anamnèse et 35 minutes de massage sur la tête, la nuque et les épaules. Peut être réservé seul ou ajouté à une consultation en présentiel.</p>
+      <a href={CALENDLY} target="_blank" rel="noopener">Réserver un massage crânien</a>
+    </div>
+  </div>
+
+  <div class="get-in-touch-box">
+    <div class="git-text">
+      <p class="eyebrow">Autres services</p>
+      <h3>Consultance, ateliers & balades</h3>
+      <p>Pour la consultance en bien-être d'entreprise, les ateliers de phytothérapie et les balades botaniques des quatre saisons — chaque expérience est personnalisée et tarifée individuellement. Contactez-moi pour en discuter.</p>
+    </div>
+    <a href="/fr/consultancy#contact" class="btn-bark">Me contacter</a>
+  </div>
+</section>
+
+<section class="payment-section">
+  <h2>Paiement par virement bancaire</h2>
+  <p>J'accepte le paiement par virement bancaire — simple, sécurisé, et sans frais pour vous comme pour moi.</p>
+  <div class="payment-grid">
+    <div class="payment-box">
+      <h3>Comment payer</h3>
+      <ol class="payment-steps">
+        <li>Réservez votre rendez-vous via le calendrier de réservation ci-dessus.</li>
+        <li>Vous recevrez un e-mail de confirmation avec les coordonnées bancaires.</li>
+        <li>Effectuez le virement dans les 24 heures suivant la réservation.</li>
+        <li>Votre rendez-vous est confirmé dès réception du paiement — vous recevrez un e-mail de confirmation final.</li>
+      </ol>
+      <div class="bank-details">
+        <strong>Coordonnées bancaires</strong><br/>
+        Nom du compte : <strong>[Votre nom]</strong><br/>
+        Code de tri : <strong>[XX–XX–XX]</strong><br/>
+        Numéro de compte : <strong>[XXXXXXXX]</strong><br/>
+        Référence : <strong>Votre nom + date du rendez-vous</strong>
+      </div>
+    </div>
+    <div class="payment-box">
+      <h3>Bon à savoir</h3>
+      <ol class="payment-steps">
+        <li>Le virement bancaire est entièrement gratuit — aucun frais de traitement pour vous ni pour moi.</li>
+        <li>Les virements sont généralement traités en quelques heures pour la même banque, ou le jour ouvré suivant.</li>
+        <li>Veuillez indiquer votre nom et la date du rendez-vous en référence afin que je puisse facilement l'associer.</li>
+        <li>Si vous rencontrez des difficultés avec le virement bancaire, contactez-moi et nous trouverons une solution.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section class="cancel-section">
+  <h2>Politique d'annulation</h2>
+  <div class="cancel-grid">
+    <div class="cancel-card">
+      <h3>Plus de 48 heures à l'avance</h3>
+      <p>Remboursement intégral par virement bancaire, ou report du rendez-vous sans frais supplémentaires. Veuillez me prévenir dès que possible.</p>
+    </div>
+    <div class="cancel-card">
+      <h3>Entre 24 et 48 heures</h3>
+      <p>50 % des honoraires sont retenus. Les 50 % restants vous seront remboursés sur votre compte bancaire dans un délai de 3 à 5 jours ouvrés.</p>
+    </div>
+    <div class="cancel-card">
+      <h3>Moins de 24 heures</h3>
+      <p>La totalité des honoraires est retenue. Ce créneau vous a été réservé et ne peut être proposé à quelqu'un d'autre à si court préavis.</p>
+    </div>
+  </div>
+  <p class="cancel-note">Des exceptions sont faites en cas de véritable urgence — n'hésitez pas à me contacter. Je comprends que la vie réserve des imprévus.</p>
+</section>
+
+<section class="book-cta">
+  <h2>Prêt·e à commencer ?</h2>
+  <p>Commencez par une consultation découverte gratuite de 15 minutes — sans engagement, juste une conversation.</p>
+  <a href={CALENDLY} target="_blank" rel="noopener">Réserver votre consultation découverte gratuite</a>
+</section>
+
+</BaseLayout>
