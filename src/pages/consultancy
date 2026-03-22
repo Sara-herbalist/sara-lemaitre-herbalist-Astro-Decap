@@ -1,0 +1,572 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const meta = {
+  title: "Wellness Consultancy | Corporate & B2B | Sara Lemaitre",
+  description: "Wellness consultancy for organisations, wellness brands, sports clubs and spas. Corporate sessions, brand advisory, athlete performance programmes. English and French.",
+  ogImage: "https://www.saralemaitre.com/images/og-consultancy.jpg",
+  canonical: "https://www.saralemaitre.com/consultancy",
+  navLight: false,
+  currentPage: 'consultancy',
+  ogType: 'website',
+};
+---
+
+<BaseLayout {...meta}>
+
+<style is:global>
+:root {
+    --cream: #F7F3EE; --warm-white: #FDFAF7;
+    --sage: #7A8C6E;
+    --sage-text: #4E6245; --sage-light: #C4D0BA; --sage-pale: #EBF0E7;
+    --bark: #5C4A3A; --bark-light: #8C7060; --bark-pale: #EDE5DC;
+    --charcoal: #2A2420; --muted: #6A5E58;
+    --gold: #C4A25A; --gold-pale: #F5EDD6;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--warm-white); color: var(--charcoal); font-family: 'Jost', sans-serif; font-weight: 300; line-height: 1.8; overflow-x: hidden; }
+
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.5rem 4rem; display: flex; justify-content: space-between; align-items: center; background: rgba(253,250,247,0.93); backdrop-filter: blur(10px); border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; letter-spacing: .12em; text-transform: uppercase; color: var(--bark); text-decoration: none; }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { font-size: .9375rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--bark); }
+  .nav-book { font-size: .9375rem; letter-spacing: .16em; text-transform: uppercase; padding: .7rem 1.8rem; border: 1px solid var(--bark); color: var(--bark); text-decoration: none; transition: all .22s; }
+  .nav-book:hover { background: var(--bark); color: var(--warm-white); }
+
+  /* HEADER — dark, editorial, professional */
+  .page-header { background: var(--charcoal); min-height: 75vh; display: grid; grid-template-columns: 1.2fr 1fr; align-items: end; padding-top: 73px; position: relative; overflow: hidden; }
+  .page-header::before { content: 'B2B'; position: absolute; right: -1rem; top: -2rem; font-family: 'Cormorant Garamond', serif; font-size: 20rem; font-weight: 300; line-height: 1; color: rgba(247,243,238,.03); pointer-events: none; }
+  .header-left { padding: 8rem 5rem 7rem 8rem; }
+  .header-eyebrow { font-size: .75rem; letter-spacing: .24em; text-transform: uppercase; color: var(--sage-light); margin-bottom: 2rem; opacity: 0; animation: fadeUp .7s .2s forwards; }
+  .header-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(3rem, 5vw, 4.8rem); font-weight: 300; line-height: 1.05; color: var(--cream); margin-bottom: 2rem; opacity: 0; animation: fadeUp .7s .35s forwards; }
+  .header-title em { font-style: italic; color: var(--sage-light); }
+  .header-desc { font-size: 1.0625rem; color: rgba(247,243,238,.62); line-height: 1.95; max-width: 480px; margin-bottom: 3rem; opacity: 0; animation: fadeUp .7s .5s forwards; }
+  .header-desc strong { color: var(--cream); font-weight: 400; }
+  .header-actions { display: flex; gap: 1rem; flex-wrap: wrap; opacity: 0; animation: fadeUp .7s .65s forwards; }
+  .btn-sage { display: inline-block; padding: .9rem 2.4rem; background: var(--sage-light); color: var(--bark); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+  .btn-sage:hover { background: var(--cream); }
+  .btn-ghost-light { display: inline-block; padding: .9rem 2.4rem; border: 1px solid rgba(247,243,238,.2); color: rgba(247,243,238,.6); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
+  .btn-ghost-light:hover { border-color: rgba(247,243,238,.4); color: var(--cream); }
+  .header-right { padding: 8rem 8rem 7rem 4rem; display: flex; flex-direction: column; justify-content: flex-end; gap: 0; opacity: 0; animation: fadeIn 1s .4s forwards; }
+  .header-stat { padding: 2rem 0; border-bottom: 1px solid rgba(247,243,238,.07); }
+  .header-stat:first-child { border-top: 1px solid rgba(247,243,238,.07); }
+  .header-stat-value { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 300; color: var(--sage-light); line-height: 1; margin-bottom: .3rem; }
+  .header-stat-label { font-size: 1rem; color: rgba(247,243,238,.4); line-height: 1.5; }
+
+  /* WHO IS THIS FOR */
+  .for-section { padding: 7rem 8rem; background: var(--cream); border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .for-header { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-bottom: 4rem; align-items: end; }
+  .for-header .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.2rem; }
+  .for-header h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 300; color: var(--bark); line-height: 1.15; }
+  .for-header h2 em { font-style: italic; color: var(--sage-text); }
+  .for-header p { font-size: 1.0625rem; color: #4A403C; line-height: 1.95; }
+  .for-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 1.5px; background: rgba(122,108,100,0.12); }
+  .for-card { background: var(--warm-white); padding: 2.5rem; transition: background .2s; }
+  .for-card:hover { background: var(--sage-pale); }
+  .for-icon { font-size: 1.6rem; margin-bottom: 1.2rem; }
+  .for-title { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-weight: 400; color: var(--bark); margin-bottom: .6rem; line-height: 1.2; }
+  .for-desc { font-size: 1rem; color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+  .for-examples { font-size: .9375rem; color: var(--sage-text); font-style: italic; }
+
+  /* SERVICES */
+  .services-section { padding: 7rem 8rem; border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .services-label { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 3.5rem; display: flex; align-items: center; gap: 1.5rem; }
+  .services-label::after { content: ''; flex: 1; height: 1px; background: rgba(122,108,100,0.15); }
+
+  .service-row { display: grid; grid-template-columns: 1fr 2fr; border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .service-row:last-child { border-bottom: none; }
+  .service-aside { padding: 4rem; background: var(--cream); display: flex; flex-direction: column; justify-content: center; border-right: 1px solid rgba(122,108,100,0.1); }
+  .service-aside-num { font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; color: var(--sage-light); line-height: 1; margin-bottom: 1rem; }
+  .service-aside-tag { font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--sage-text); line-height: 1.8; }
+  .service-body { padding: 4rem 5rem; display: flex; flex-direction: column; justify-content: center; }
+  .service-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 300; color: var(--bark); line-height: 1.15; margin-bottom: .6rem; }
+  .service-title em { font-style: italic; color: var(--sage-text); }
+  .service-subtitle { font-size: 1rem; color: var(--muted); margin-bottom: 2rem; }
+  .service-desc { font-size: 1.0625rem; color: #4A403C; line-height: 1.95; margin-bottom: 1.2rem; max-width: 580px; }
+  .service-desc em { font-style: italic; color: var(--sage-text); }
+  .service-desc strong { font-weight: 500; color: var(--bark); }
+  .service-deliverables { margin: 1.5rem 0; padding: 1.2rem 1.6rem; background: var(--cream); border-left: 3px solid var(--sage); }
+  .service-deliverables-label { font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--sage-text); margin-bottom: .7rem; }
+  .service-deliverables-list { display: flex; flex-direction: column; gap: .4rem; }
+  .service-deliverables-list span { font-size: 1rem; color: var(--bark-light); display: flex; gap: .6rem; align-items: flex-start; line-height: 1.5; }
+  .service-deliverables-list span::before { content: '·'; color: var(--sage-text); flex-shrink: 0; font-size: 1.1rem; line-height: 1.3; }
+  .service-pricing { margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(122,108,100,0.1); display: flex; align-items: center; gap: 2rem; flex-wrap: wrap; }
+  .service-price { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; color: var(--bark); }
+  .service-price-note { font-size: .9375rem; color: var(--muted); }
+  .service-enquire { display: inline-block; padding: .8rem 2rem; border: 1px solid var(--bark); color: var(--bark); text-decoration: none; font-size: .875rem; letter-spacing: .16em; text-transform: uppercase; transition: all .22s; }
+  .service-enquire:hover { background: var(--bark); color: var(--warm-white); }
+
+  /* WHY ME */
+  .why-section { background: var(--bark); padding: 8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .why-text .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-light); margin-bottom: 1.5rem; }
+  .why-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.8rem); font-weight: 300; color: var(--cream); line-height: 1.2; margin-bottom: 2rem; }
+  .why-text h2 em { font-style: italic; color: var(--sage-light); }
+  .why-text p { font-size: 1.0625rem; color: rgba(247,243,238,.68); line-height: 1.95; margin-bottom: 1.2rem; max-width: 480px; }
+  .why-points { display: flex; flex-direction: column; gap: 0; }
+  .why-point { padding: 1.5rem 0; border-bottom: 1px solid rgba(247,243,238,.07); display: grid; grid-template-columns: 44px 1fr; gap: 1rem; align-items: flex-start; }
+  .why-point:first-child { border-top: 1px solid rgba(247,243,238,.07); }
+  .why-point-num { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 300; color: var(--sage-light); line-height: 1; padding-top: .2rem; }
+  .why-point-title { font-size: 1rem; font-weight: 400; color: var(--cream); margin-bottom: .25rem; }
+  .why-point-desc { font-size: 1rem; color: rgba(247,243,238,.4); line-height: 1.6; }
+
+  /* PROCESS */
+  .process-section { padding: 7rem 8rem; background: var(--cream); border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .process-section .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.2rem; }
+  .process-section h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 2.5vw, 2.4rem); font-weight: 300; color: var(--bark); line-height: 1.2; margin-bottom: 4rem; }
+  .process-section h2 em { font-style: italic; color: var(--sage-text); }
+  .process-steps { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 0; position: relative; }
+  .process-steps::before { content: ''; position: absolute; top: 22px; left: 10%; right: 10%; height: 1px; background: var(--sage-light); opacity: .4; }
+  .process-step { padding: 0 1.5rem; display: flex; flex-direction: column; align-items: center; text-align: center; position: relative; z-index: 1; }
+  .process-dot { width: 44px; height: 44px; border-radius: 50%; background: var(--warm-white); border: 1px solid var(--sage-light); display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 300; color: var(--sage-text); }
+  .process-step-title { font-size: 1rem; font-weight: 500; color: var(--bark); margin-bottom: .4rem; }
+  .process-step-desc { font-size: .9375rem; color: var(--muted); line-height: 1.7; }
+
+  /* CONTACT FORM */
+  .contact-section { padding: 7rem 8rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; border-bottom: 1px solid rgba(122,108,100,0.1); }
+  .contact-text .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
+  .contact-text h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3vw, 2.6rem); font-weight: 300; color: var(--bark); line-height: 1.2; margin-bottom: 2rem; }
+  .contact-text h2 em { font-style: italic; color: var(--sage-text); }
+  .contact-text p { font-size: 1rem; color: #4A403C; line-height: 1.9; margin-bottom: 1.2rem; }
+  .contact-details { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; }
+  .contact-detail { display: flex; gap: 1rem; align-items: flex-start; }
+  .contact-detail-label { font-size: .75rem; letter-spacing: .18em; text-transform: uppercase; color: var(--sage-text); min-width: 80px; padding-top: .1rem; }
+  .contact-detail-value { font-size: 1rem; color: var(--bark); }
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .contact-form input, .contact-form select, .contact-form textarea { padding: .9rem 1.2rem; border: 1px solid rgba(122,108,100,0.2); background: var(--cream); font-family: 'Jost', sans-serif; font-size: 1.0625rem; color: var(--charcoal); outline: none; transition: border-color .2s; width: 100%; }
+  .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: var(--sage-text); background: var(--warm-white); }
+  .contact-form input::placeholder, .contact-form textarea::placeholder { color: var(--muted); }
+  .contact-form select { color: var(--muted); cursor: pointer; appearance: none; }
+  .contact-form textarea { resize: vertical; min-height: 140px; }
+  .contact-form button { padding: 1rem 2.2rem; background: var(--bark); color: var(--cream); border: none; font-family: 'Jost', sans-serif; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; cursor: pointer; transition: background .22s; align-self: flex-start; }
+  .contact-form button:hover { background: var(--charcoal); }
+  .form-note { font-size: .9375rem; color: var(--muted); }
+
+  footer { background: var(--charcoal); padding: 3rem 8rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  footer p { font-size: .9375rem; letter-spacing: .08em; color: rgba(247,243,238,.25); }
+
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .75s ease, transform .75s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-d1 { transition-delay: .1s; } .reveal-d2 { transition-delay: .2s; } .reveal-d3 { transition-delay: .3s; }
+
+  @media (max-width: 1000px) {
+    nav { padding: 1.2rem 2rem; }
+    .page-header { grid-template-columns: 1fr; }
+    .header-left { padding: 8rem 2.5rem 4rem; }
+    .header-right { padding: 2rem 2.5rem 5rem; border-top: 1px solid rgba(247,243,238,.07); }
+    .for-section { padding: 5rem 2.5rem; }
+    .for-header { grid-template-columns: 1fr; gap: 2rem; }
+    .for-grid { grid-template-columns: 1fr; }
+    .services-section { padding: 5rem 2.5rem; }
+    .service-row { grid-template-columns: 1fr; }
+    .service-aside { padding: 2.5rem; border-right: none; border-bottom: 1px solid rgba(122,108,100,0.1); }
+    .service-body { padding: 2.5rem; }
+    .why-section { grid-template-columns: 1fr; padding: 5rem 2.5rem; gap: 3rem; }
+    .process-section { padding: 5rem 2.5rem; }
+    .process-steps { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    .process-steps::before { display: none; }
+    .contact-section { grid-template-columns: 1fr; padding: 5rem 2.5rem; gap: 3rem; }
+    .form-row { grid-template-columns: 1fr; }
+    footer { padding: 2rem 2.5rem; flex-direction: column; text-align: center; }
+  }
+
+  /* ── WCAG 2.2 AA: Visible focus indicators ── */
+  :focus-visible {
+    outline: 3px solid #5C4A3A;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  a:focus-visible, button:focus-visible, input:focus-visible,
+  select:focus-visible, textarea:focus-visible {
+    outline: 3px solid #5C4A3A;
+    outline-offset: 3px;
+  }
+
+  /* Screen-reader only utility */
+  .sr-only {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ── Skip navigation link ── */
+  .skip-nav {
+    position: absolute; top: -100px; left: 1rem; z-index: 9999;
+    background: #5C4A3A; color: #F7F3EE;
+    padding: .75rem 1.5rem; font-size: 1.0625rem;
+    text-decoration: none; border-radius: 0 0 4px 4px;
+    transition: top .2s;
+  }
+  .skip-nav:focus { top: 0; }
+
+
+  /* ── Mobile hamburger menu ── */
+  .hamburger {
+    display: none; flex-direction: column; gap: 5px;
+    background: none; border: none; cursor: pointer;
+    padding: .5rem; margin-left: .5rem;
+  }
+  .hamburger span {
+    display: block; width: 22px; height: 2px;
+    background: var(--bark); border-radius: 2px;
+    transition: all .25s;
+  }
+  .hamburger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .hamburger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+  .hamburger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  
+  @media (max-width: 1024px) {
+    .hamburger { display: flex; }
+    .nav-links {
+      display: none; position: fixed; top: 73px; left: 0; right: 0;
+      background: rgba(253,250,247,0.98); backdrop-filter: blur(12px);
+      flex-direction: column; gap: 0; padding: 1rem 0;
+      border-bottom: 1px solid rgba(122,108,100,0.12);
+      z-index: 99;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links li a {
+      display: block; padding: .9rem 2rem;
+      font-size: 1.0625rem; letter-spacing: .08em;
+      border-bottom: 1px solid rgba(122,108,100,0.06);
+    }
+    .nav-book { display: none; }
+  }
+
+
+
+  .lang-toggle {
+    font-size: .75rem; letter-spacing: .16em; text-transform: uppercase;
+    padding: .45rem .9rem; border: 1px solid rgba(247,243,238,.5);
+    background: none; color: rgba(247,243,238,.85); cursor: pointer;
+    font-family: 'Jost', sans-serif; border-radius: 2px;
+    transition: all .3s; margin-left: .5rem;
+  }
+  nav.scrolled .lang-toggle { border-color: rgba(92,74,58,.35); color: var(--muted); }
+  .lang-toggle:hover, nav.scrolled .lang-toggle:hover { border-color: var(--bark); color: var(--bark); }
+
+
+  /* Pages with light-coloured heroes — nav starts dark */
+  body[data-nav="light"] nav {
+    background: rgba(253,250,247,0.85);
+    backdrop-filter: blur(8px);
+  }
+  body[data-nav="light"] .nav-logo { color: var(--bark); }
+  body[data-nav="light"] .nav-links a { color: var(--muted); }
+  body[data-nav="light"] .nav-links a:hover { color: var(--bark); }
+  body[data-nav="light"] .nav-book { border-color: var(--bark); color: var(--bark); }
+  body[data-nav="light"] .lang-toggle { border-color: rgba(92,74,58,.35); color: var(--muted); }
+</style>
+
+<!-- HEADER -->
+<header id="main-content" role="main" class="page-header">
+  <div class="header-left">
+    <p class="header-eyebrow">B2B · Organisations · Wellness brands</p>
+    <h1 class="header-title">Wellness<br>consultancy<br>with <em>clinical</em><br>depth</h1>
+    <p class="header-desc">For organisations that want more than a motivational poster. For wellness brands that want <strong>real botanical credibility</strong>. For sports clubs, spas, and health spaces that want to offer their clients something that actually works.</p>
+    <div class="header-actions">
+      <a href="#services" class="btn-sage">See what I offer</a>
+      <a href="#contact" class="btn-ghost-light">Get in touch directly</a>
+    </div>
+  </div>
+  <div class="header-right">
+    <div class="header-stat">
+      <div class="header-stat-value">3</div>
+      <div class="header-stat-label">Herbal traditions trained across — Western, TCM, Ayurveda</div>
+    </div>
+    <div class="header-stat">
+      <div class="header-stat-value">EN/FR</div>
+      <div class="header-stat-label">Bilingual consultancy — English and French, UK and international</div>
+    </div>
+    <div class="header-stat">
+      <div class="header-stat-value">B2B</div>
+      <div class="header-stat-label">Corporate wellness, brand advisory, product development, training</div>
+    </div>
+    <div class="header-stat">
+      <div class="header-stat-value">Elite</div>
+      <div class="header-stat-label">National-level athlete background — sports & performance clients welcome</div>
+    </div>
+  </div>
+</header>
+
+<!-- WHO IS THIS FOR -->
+<section class="for-section">
+  <div class="for-header reveal">
+    <div>
+      <p class="eyebrow">Who this is for</p>
+      <h2>Organisations that want<br><em>substance</em>, not wellness theatre</h2>
+    </div>
+    <p>Wellness consultancy in the corporate and brand space is full of vague offerings and generic content. I am not interested in that. What I offer is specific, clinical, and grounded in the same rigour I apply to individual client work. If you want someone who can speak with genuine authority about herbal medicine and naturopathy — to your team, your clients, or your product — that is what I offer.</p>
+  </div>
+  <div class="for-grid">
+    <div class="for-card reveal">
+      <div class="for-icon">🏢</div>
+      <div class="for-title">Corporate & workplace</div>
+      <div class="for-desc">Organisations that want to invest genuinely in employee wellbeing. Wellness sessions, burnout prevention programmes, women's health education for the workplace.</div>
+      <div class="for-examples">HR teams, employee wellbeing leads, L&D departments</div>
+    </div>
+    <div class="for-card reveal reveal-d1">
+      <div class="for-icon">🌿</div>
+      <div class="for-title">Wellness brands</div>
+      <div class="for-desc">Herbal supplement companies, natural beauty brands, functional food businesses that want clinical expertise in their content, formulations, or communications.</div>
+      <div class="for-examples">Supplement brands, botanical skincare, functional nutrition</div>
+    </div>
+    <div class="for-card reveal reveal-d2">
+      <div class="for-icon">🏊</div>
+      <div class="for-title">Sports clubs & federations</div>
+      <div class="for-desc">Teams and organisations that want to integrate plant-based recovery, adaptogen protocols, and naturopathic nutrition into their athlete support. Particular depth in women's sport and hormonal health for athletes.</div>
+      <div class="for-examples">Swimming, athletics, gymnastics, martial arts, football</div>
+    </div>
+    <div class="for-card reveal">
+      <div class="for-icon">💆</div>
+      <div class="for-title">Spas & wellness spaces</div>
+      <div class="for-desc">Hotels, retreat centres, and day spas wanting to add a genuine herbal medicine or naturopathic dimension to their offering — beyond what a beauty brand can provide.</div>
+      <div class="for-examples">Destination spas, retreat venues, integrative health clinics</div>
+    </div>
+    <div class="for-card reveal reveal-d1">
+      <div class="for-icon">🎓</div>
+      <div class="for-title">Education & media</div>
+      <div class="for-desc">Podcasts, publications, e-learning platforms, and health media wanting expert commentary, content creation, or course development in herbal medicine and naturopathy.</div>
+      <div class="for-examples">Health podcasts, wellness media, online course platforms</div>
+    </div>
+    <div class="for-card reveal reveal-d2">
+      <div class="for-icon">🌍</div>
+      <div class="for-title">Francophone organisations</div>
+      <div class="for-desc">All services available in French. Particular relevance for French, Belgian, Swiss, and Francophone African organisations wanting a practitioner who understands the European phytotherapy tradition.</div>
+      <div class="for-examples">France, Belgium, Québec, West Africa — all sectors</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="services-label reveal">Consultancy services</div>
+
+  <div class="service-row reveal">
+    <div class="service-aside">
+      <div class="service-aside-num">01</div>
+      <div class="service-aside-tag">Corporate wellness · Teams · Organisations</div>
+    </div>
+    <div class="service-body">
+      <h2 class="service-title">Corporate Wellness<br><em>Sessions & Programmes</em></h2>
+      <p class="service-subtitle">In person or online · English and French · Half-day to full programmes</p>
+      <p class="service-desc">Workplace wellness sessions that give employees practical, evidence-informed tools — not generic self-care advice. I design sessions around your team's actual needs: the burnout that is quietly depleting performance, the women navigating hormonal conditions at work, the high-performers who are running on cortisol and caffeine.</p>
+      <p class="service-desc"><strong>Single sessions</strong> work as standalone lunch-and-learns or afternoon workshops. <strong>Programmes</strong> run across weeks or months, tracking measurable outcomes and adapting to what the team needs. All content is original, clinically grounded, and delivered in your organisation's context — not off-the-shelf slides.</p>
+      <div class="service-deliverables">
+        <div class="service-deliverables-label">Session formats available</div>
+        <div class="service-deliverables-list">
+          <span>Lunch & learn (60–90 min) — accessible entry point for any team</span>
+          <span>Half-day workshop (3–4 hrs) — deeper engagement, practical elements</span>
+          <span>Wellbeing programme (4–8 weeks) — sustained change with tracking</span>
+          <span>Women's health in the workplace — specialist series for HR and managers</span>
+          <span>Bilingual delivery — English and French, online or in person</span>
+        </div>
+      </div>
+      <div class="service-pricing">
+        <div><div class="service-price">From £400</div><div class="service-price-note">per session · programme pricing on enquiry</div></div>
+        <a href="#contact" class="service-enquire">Enquire</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-row reveal">
+    <div class="service-aside">
+      <div class="service-aside-num">02</div>
+      <div class="service-aside-tag">Brands · Formulation · Content · Advisory</div>
+    </div>
+    <div class="service-body">
+      <h2 class="service-title">Wellness Brand<br><em>Advisory</em></h2>
+      <p class="service-subtitle">Herbal credibility · Formulation guidance · Content review · Expert voice</p>
+      <p class="service-desc">Wellness brands making claims about herbal medicine need clinical credibility behind them. Marketing teams writing about adaptogens, hormonal health, or botanical ingredients need someone who can tell them what the science actually says — and what it does not.</p>
+      <p class="service-desc">I work with brands as an advisory consultant — reviewing product claims for accuracy, guiding formulation decisions for new product lines, creating educational content that holds up to scrutiny, and acting as an expert voice for media, launch events, and brand communications. <em>Available in English and French, which is rare in this space.</em></p>
+      <div class="service-deliverables">
+        <div class="service-deliverables-label">Services within brand advisory</div>
+        <div class="service-deliverables-list">
+          <span>Formulation review and guidance for herbal product development</span>
+          <span>Claims review — what you can and cannot say, and why</span>
+          <span>Educational content creation (articles, social, email, packaging copy)</span>
+          <span>Expert spokesperson for press, podcast, and events</span>
+          <span>Staff training on the herbal ingredients you use</span>
+          <span>French-language brand adaptation and localisation</span>
+        </div>
+      </div>
+      <div class="service-pricing">
+        <div><div class="service-price">Day rate: £600</div><div class="service-price-note">Retainer & project rates on enquiry</div></div>
+        <a href="#contact" class="service-enquire">Enquire</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-row reveal">
+    <div class="service-aside">
+      <div class="service-aside-num">03</div>
+      <div class="service-aside-tag">Sports clubs · Federations · Athletes · Coaches</div>
+    </div>
+    <div class="service-body">
+      <h2 class="service-title">Sports & Performance<br><em>Wellness Consultancy</em></h2>
+      <p class="service-subtitle">Adaptogen protocols · Hormonal health for athletes · Naturopathic nutrition</p>
+      <p class="service-desc">I was a national-level synchronised swimmer. I know what performance environments look like from the inside — the culture, the pressures, the gap between what sports medicine provides and what athletes actually need. When my own health was destroyed by that environment, I found the answers in plant medicine. That gives me a specific credibility in this space that is genuinely difficult to find elsewhere.</p>
+      <p class="service-desc"><strong>For clubs and federations:</strong> I develop and deliver wellness education programmes for athletes, coaches, and performance staff — covering adaptogen protocols, anti-inflammatory nutrition, recovery, sleep, and the particular challenges of female athlete health (hormonal disruption, RED-S, cycle optimisation). All delivered without conflicting with existing medical or sports science staff.</p>
+      <p class="service-desc">This is one of the areas I care about most. Young athletes — particularly young female athletes — deserve better support than the system currently gives them. I know this because I was one of them.</p>
+      <div class="service-deliverables">
+        <div class="service-deliverables-label">What this can include</div>
+        <div class="service-deliverables-list">
+          <span>Athlete wellness education workshops (performance, recovery, hormonal health)</span>
+          <span>Adaptogen protocol guidance for coaching staff</span>
+          <span>Female athlete health programme — hormones, cycle, RED-S</span>
+          <span>Individual consultations for club members (referral basis)</span>
+          <span>Naturopathic nutrition guidance alongside existing sports dietitian</span>
+          <span>Retreat and camp wellness programming</span>
+        </div>
+      </div>
+      <div class="service-pricing">
+        <div><div class="service-price">From £350</div><div class="service-price-note">per session · full programme pricing on enquiry</div></div>
+        <a href="#contact" class="service-enquire">Enquire</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="service-row reveal">
+    <div class="service-aside">
+      <div class="service-aside-num">04</div>
+      <div class="service-aside-tag">Spas · Retreats · Clinics · Hotels</div>
+    </div>
+    <div class="service-body">
+      <h2 class="service-title">Spa & Retreat<br><em>Herbal Medicine Integration</em></h2>
+      <p class="service-subtitle">Consultations, workshops, and herbal experiences within your space</p>
+      <p class="service-desc">Destination spas and retreat venues are increasingly aware that their clients want depth, not just relaxation — that a genuinely transformative experience involves education, personalisation, and clinical knowledge alongside the treatment. I work with wellness venues to design and deliver that dimension.</p>
+      <p class="service-desc">This can mean running herbal medicine consultations as part of a retreat programme. It can mean designing a seasonal botanical workshop experience that guests take home something from. It can mean training your in-house team to speak about herbal ingredients with genuine knowledge. Or it can mean an ongoing advisory relationship as you develop a herbal medicine offering within your space.</p>
+      <div class="service-deliverables">
+        <div class="service-deliverables-label">Integration formats</div>
+        <div class="service-deliverables-list">
+          <span>Resident herbalist days — consultations and workshops at your venue</span>
+          <span>Retreat programme design — botanical and naturopathic elements</span>
+          <span>Staff botanical training — your team, upskilled</span>
+          <span>Seasonal herbal experiences for guests</span>
+          <span>Bespoke herbal product range for your spa brand</span>
+        </div>
+      </div>
+      <div class="service-pricing">
+        <div><div class="service-price">By arrangement</div><div class="service-price-note">Day rate, programme, or retainer — depends on scope</div></div>
+        <a href="#contact" class="service-enquire">Enquire</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ME -->
+<section class="why-section reveal">
+  <div class="why-text">
+    <p class="eyebrow">Why me specifically</p>
+    <h2>Credentials that are<br>relevant to <em>your context</em></h2>
+    <p>There are qualified herbalists. There are corporate wellness trainers. There are brand advisors. Very few of them are all three — and fewer still bring a national-level sports background, personal recovery from chronic illness, French phytotherapy training, and bilingual delivery capability to the same engagement.</p>
+    <p>That specificity matters because your organisation or brand is specific. Generic wellness content produces generic results. What I offer is always designed for the actual context — your people, your clients, your product, your culture.</p>
+  </div>
+  <div class="why-points">
+    <div class="why-point">
+      <div class="why-point-num">01</div>
+      <div><div class="why-point-title">Clinical credibility — not lifestyle influencing</div><div class="why-point-desc">Degree-level herbal medicine training, naturopathy diploma, TCM dispensary externship. Everything I say is clinically grounded.</div></div>
+    </div>
+    <div class="why-point">
+      <div class="why-point-num">02</div>
+      <div><div class="why-point-title">Lived experience — endometriosis, PCOS, chronic fatigue, elite sport</div><div class="why-point-desc">I understand what it is like to be let down by conventional medicine, to rebuild from breakdown, and to perform at a high level. That changes how I speak about these things.</div></div>
+    </div>
+    <div class="why-point">
+      <div class="why-point-num">03</div>
+      <div><div class="why-point-title">Bilingual — English and French, UK and Europe</div><div class="why-point-desc">Genuinely rare in this space. Suitable for international brands and organisations with operations in both languages.</div></div>
+    </div>
+    <div class="why-point">
+      <div class="why-point-num">04</div>
+      <div><div class="why-point-title">Cross-cultural botanical knowledge</div><div class="why-point-desc">Western herbalism, TCM, Ayurveda. I can contextualise ingredients within any of the three traditions — useful for brands working across multiple markets.</div></div>
+    </div>
+    <div class="why-point">
+      <div class="why-point-num">05</div>
+      <div><div class="why-point-title">Regulated and insured</div><div class="why-point-desc">MHRA compliant, professionally insured, and operating within UK regulatory frameworks. Organisations can engage confidently.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process-section reveal">
+  <p class="eyebrow">How we work together</p>
+  <h2>From first conversation<br>to <em>delivered work</em></h2>
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="process-dot">01</div>
+      <div class="process-step-title">Discovery call</div>
+      <div class="process-step-desc">30 minutes. Free. I understand your context, you understand what I can offer.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-dot">02</div>
+      <div class="process-step-title">Proposal</div>
+      <div class="process-step-desc">A tailored scope of work with clear deliverables, timeline, and pricing. No vague retainers.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-dot">03</div>
+      <div class="process-step-title">Design</div>
+      <div class="process-step-desc">Content, sessions, or materials built specifically for your context. Reviewed together before delivery.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-dot">04</div>
+      <div class="process-step-title">Delivery</div>
+      <div class="process-step-desc">Sessions, content, or advisory delivered as agreed. In person, online, or both.</div>
+    </div>
+    <div class="process-step">
+      <div class="process-dot">05</div>
+      <div class="process-step-title">Follow-up</div>
+      <div class="process-step-desc">Review, feedback, and next steps. Ongoing relationship if it makes sense for you.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section reveal" id="contact">
+  <div class="contact-text">
+    <p class="eyebrow">Start the conversation</p>
+    <h2>Tell me what<br>you are building.<br><em>Let's see if I can help.</em></h2>
+    <p>Consultancy starts with an honest conversation about what you actually need — not a pitch, not a brochure. Fill in the form and I will be in touch within two working days to arrange a call.</p>
+    <p>If you are not sure whether what you need fits into any of the categories above, tell me that too. Some of the most interesting work I have done started with "I'm not quite sure what I need."</p>
+    <div class="contact-details">
+      <div class="contact-detail"><span class="contact-detail-label">Languages</span><span class="contact-detail-value">English & French</span></div>
+      <div class="contact-detail"><span class="contact-detail-label">Response</span><span class="contact-detail-value">Within 2 working days</span></div>
+      <div class="contact-detail"><span class="contact-detail-label">Discovery call</span><span class="contact-detail-value">Free · 30 minutes</span></div>
+    </div>
+  </div>
+  <div>
+    <form class="contact-form" name="consultancy-contact" netlify netlify-honeypot="bot-field" action="/thank-you">
+      <input type="hidden" name="form-name" value="consultancy-contact">
+      <p hidden><input name="bot-field"></p>
+      <div class="form-row">
+        <label for="c-name" class="sr-only">Your name</label><input id="c-name" type="text" name="name" placeholder="Your name" data-i18n="consult.form.name" data-i18n-attr="placeholder" aria-required="true">
+        <label for="c-org" class="sr-only">Organisation name</label><input id="c-org" type="text" name="organisation" placeholder="Organisation name" data-i18n="consult.form.org" data-i18n-attr="placeholder">
+      </div>
+      <label for="c-email" class="sr-only">Email address</label><input id="c-email" type="email" name="email" placeholder="Email address" data-i18n="consult.form.email" data-i18n-attr="placeholder" aria-required="true">
+      <label for="c-role" class="sr-only">Your role or title</label><input id="c-role" type="text" name="role" placeholder="Your role / title" data-i18n="consult.form.role" data-i18n-attr="placeholder">
+      <select>
+        <option value="" disabled selected>Which service interests you?</option>
+        <option>Corporate wellness sessions or programme</option>
+        <option>Wellness brand advisory</option>
+        <option>Sports & performance consultancy</option>
+        <option>Spa & retreat integration</option>
+        <option>Private workshop booking</option>
+        <option>Content creation or expert commentary</option>
+        <option>Something else — I'll explain below</option>
+      </select>
+      <select>
+        <option value="" disabled selected>Preferred language</option>
+        <option>English</option>
+        <option>French / Français</option>
+        <option>No preference</option>
+      </select>
+      <label for="c-msg" class="sr-only">Your message</label><textarea id="c-msg" name="message" placeholder="Tell me about your organisation and what you are looking for. The more context you give me, the more useful my response will be."></textarea>
+      <button type="submit" data-i18n="consult.form.submit">Send enquiry</button>
+      <p class="form-note">Your details will be used only to respond to your enquiry. GDPR compliant.</p>
+    </form>
+  </div>
+</section>
+
+</BaseLayout>
