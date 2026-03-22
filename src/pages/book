@@ -1,0 +1,523 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const meta = {
+  title: "Book a Consultation | Sara Lemaitre — Clinical Herbalist & Naturopath",
+  description: "Book your herbal medicine or naturopathy consultation with Sara Lemaitre. Free 15-minute discovery call available. Simple online booking and bank transfer payment.",
+  ogImage: "https://www.saralemaitre.com/images/og-book.jpg",
+  canonical: "https://www.saralemaitre.com/book",
+  navLight: false,
+  currentPage: 'book',
+  ogType: 'website',
+};
+
+const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
+---
+
+<BaseLayout {...meta}>
+
+<style is:global>
+
+/* ── HERO ── */
+.book-hero {
+  padding: 10rem 8rem 6rem;
+  background: var(--cream);
+  border-bottom: 1px solid rgba(92,74,58,0.08);
+}
+.book-hero .eyebrow {
+  font-size: .75rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--sage-text);
+  margin-bottom: 1.5rem;
+}
+.book-hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.8rem, 5vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--charcoal);
+  margin-bottom: 1.5rem;
+}
+.book-hero p {
+  font-size: 1.125rem;
+  color: var(--muted);
+  max-width: 560px;
+  line-height: 1.8;
+}
+
+/* ── HOW IT WORKS ── */
+.how-section {
+  padding: 6rem 8rem;
+  background: var(--warm-white);
+}
+.how-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 3.5rem;
+}
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.step-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--sage-light);
+  line-height: 1;
+}
+.step h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--bark);
+}
+.step p {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+/* ── BOOKING OPTIONS ── */
+.options-section {
+  padding: 6rem 8rem;
+  background: var(--cream);
+}
+.options-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: .75rem;
+}
+.options-section > p {
+  color: var(--muted);
+  margin-bottom: 3.5rem;
+  max-width: 560px;
+}
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+.option-card {
+  background: var(--warm-white);
+  border: 1px solid rgba(92,74,58,0.1);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  transition: border-color .2s;
+}
+.option-card:hover { border-color: var(--sage-light); }
+.option-card.featured {
+  border-color: var(--sage);
+  background: var(--sage-pale);
+}
+.option-tag {
+  font-size: .7rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--sage-text);
+}
+.option-tag.free-tag { color: var(--sage-text); }
+.option-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--charcoal);
+}
+.option-price {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--bark);
+}
+.option-price span {
+  font-family: 'Jost', sans-serif;
+  font-size: .9rem;
+  font-weight: 300;
+  color: var(--muted);
+}
+.option-card p {
+  font-size: .9375rem;
+  color: var(--muted);
+  line-height: 1.75;
+  flex: 1;
+}
+.option-card a {
+  display: inline-block;
+  padding: .85rem 2rem;
+  border: 1px solid var(--bark);
+  color: var(--bark);
+  text-decoration: none;
+  font-size: .875rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  transition: all .22s;
+  text-align: center;
+  margin-top: .5rem;
+}
+.option-card a:hover { background: var(--bark); color: var(--warm-white); }
+.option-card.featured a {
+  background: var(--bark);
+  color: var(--warm-white);
+}
+.option-card.featured a:hover { background: var(--charcoal); }
+
+/* ── PAYMENT SECTION ── */
+.payment-section {
+  padding: 6rem 8rem;
+  background: var(--warm-white);
+}
+.payment-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: .75rem;
+}
+.payment-section > p {
+  color: var(--muted);
+  margin-bottom: 3.5rem;
+  max-width: 600px;
+}
+.payment-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+.payment-box {
+  background: var(--cream);
+  border: 1px solid rgba(92,74,58,0.08);
+  padding: 2.5rem;
+}
+.payment-box h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--bark);
+  margin-bottom: 1.25rem;
+}
+.payment-steps {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+}
+.payment-steps li {
+  display: flex;
+  gap: 1rem;
+  font-size: .9375rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.payment-steps li::before {
+  content: counter(step);
+  counter-increment: step;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  background: var(--sage-light);
+  color: var(--bark);
+  font-size: .75rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-top: .15rem;
+  flex-shrink: 0;
+}
+.payment-steps { counter-reset: step; }
+.bank-details {
+  margin-top: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--warm-white);
+  border-left: 2px solid var(--sage-light);
+  font-size: .9375rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.bank-details strong { color: var(--charcoal); }
+
+/* ── CANCELLATION ── */
+.cancel-section {
+  padding: 5rem 8rem;
+  background: var(--bark-pale);
+}
+.cancel-section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: 2.5rem;
+}
+.cancel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.cancel-card {
+  padding: 2rem;
+  background: var(--warm-white);
+  border: 1px solid rgba(92,74,58,0.08);
+}
+.cancel-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--bark);
+  margin-bottom: .75rem;
+}
+.cancel-card p {
+  font-size: .9375rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.cancel-note {
+  margin-top: 2rem;
+  font-size: .9rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ── CTA ── */
+.book-cta {
+  padding: 7rem 8rem;
+  background: var(--charcoal);
+  text-align: center;
+}
+.book-cta h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 1rem;
+}
+.book-cta p {
+  color: rgba(247,243,238,.5);
+  margin-bottom: 2.5rem;
+  font-size: 1.0625rem;
+}
+.book-cta a {
+  display: inline-block;
+  padding: 1.1rem 3rem;
+  background: var(--sage-light);
+  color: var(--bark);
+  text-decoration: none;
+  font-size: .9375rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  transition: all .22s;
+}
+.book-cta a:hover { background: var(--cream); }
+
+
+
+/* ── SLIDING SCALE NOTE ── */
+.sliding-scale-note {
+  font-size: .8125rem;
+  color: var(--sage-text);
+  background: var(--sage-pale);
+  border-left: 2px solid var(--sage-light);
+  padding: .5rem .75rem;
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ── GET IN TOUCH BOX ── */
+.get-in-touch-box {
+  margin-top: 3rem;
+  padding: 2.5rem 3rem;
+  background: var(--warm-white);
+  border: 1px solid rgba(92,74,58,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.git-text .eyebrow { margin-bottom: .5rem; }
+.git-text h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--charcoal);
+  margin-bottom: .5rem;
+}
+.git-text p {
+  font-size: .9375rem;
+  color: var(--muted);
+  max-width: 500px;
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  .get-in-touch-box { flex-direction: column; align-items: flex-start; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .book-hero, .how-section, .options-section,
+  .payment-section, .cancel-section, .book-cta {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+  .steps-grid, .cancel-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .options-grid, .payment-grid { grid-template-columns: 1fr; }
+}
+</style>
+
+<!-- HERO -->
+<section class="book-hero">
+  <p class="eyebrow">Book a consultation</p>
+  <h1>Start your<br/><em>healing journey</em></h1>
+  <p>Every consultation begins with listening. No rushed appointments, no dismissed symptoms — just a thorough, personalised approach to your health.</p>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <h2>How it works</h2>
+  <div class="steps-grid">
+    <div class="step">
+      <div class="step-num">01</div>
+      <h3>Book your appointment</h3>
+      <p>Choose your consultation type below and select a time that suits you using the online booking calendar. You'll receive an immediate confirmation email.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <h3>Confirm with payment</h3>
+      <p>Transfer your consultation fee by bank transfer using the details in your confirmation email. Your appointment is secured once payment is received.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <h3>Prepare & connect</h3>
+      <p>You'll receive a short intake form and preparation notes before your appointment. We meet online via video call — you just need a quiet space and 10 minutes beforehand.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING OPTIONS -->
+<section class="options-section">
+  <h2>Choose your consultation</h2>
+  <p>Not sure where to start? The free discovery call is the perfect first step — no commitment, no pressure.</p>
+  <div class="options-grid">
+    <div class="option-card">
+      <span class="option-tag free-tag">Free · 15 minutes</span>
+      <h3>Discovery Call</h3>
+      <div class="option-price">Free</div>
+      <p>A relaxed conversation to understand your health concerns and goals, explain how I work, and answer any questions. No commitment required.</p>
+      <a href={CALENDLY} target="_blank" rel="noopener">Book free call</a>
+    </div>
+    <div class="option-card featured">
+      <span class="option-tag">Initial · 90 minutes · Online or in person</span>
+      <h3>Initial Consultation</h3>
+      <div class="option-price">£110 <span>/ session</span></div>
+      <p>A thorough deep-dive into your health history, current symptoms, lifestyle, and goals. Includes a personalised written herbal protocol, naturopathic recommendations, and supplier-sourced formula design. Around 2.5–3 hours of total work.</p>
+      <div class="sliding-scale-note">Sliding scale available at £85 for students and low-income clients — just mention it when you book.</div>
+      <a href={CALENDLY} target="_blank" rel="noopener">Book initial consultation</a>
+    </div>
+    <div class="option-card">
+      <span class="option-tag">Follow-up · 30–40 minutes · Online or in person</span>
+      <h3>Follow-up Consultation</h3>
+      <div class="option-price">£75 <span>/ session</span></div>
+      <p>Review your progress, adjust your herbal protocol, and address any new concerns. Includes protocol refinement and supplier contact. Recommended every 4–6 weeks during active treatment.</p>
+      <div class="sliding-scale-note">Sliding scale available at £65 for students and low-income clients.</div>
+      <a href={CALENDLY} target="_blank" rel="noopener">Book follow-up</a>
+    </div>
+    <div class="option-card">
+      <span class="option-tag">Bundle · Best value · 3 sessions</span>
+      <h3>Initial + 2 Follow-ups</h3>
+      <div class="option-price">£220 <span>/ 3 sessions</span></div>
+      <p>The most complete way to begin. One full initial consultation followed by two follow-ups to track progress and refine your protocol. Saves £40 versus booking separately.</p>
+      <div class="sliding-scale-note">Sliding scale bundle available at £195.</div>
+      <a href={CALENDLY} target="_blank" rel="noopener">Book bundle</a>
+    </div>
+    <div class="option-card">
+      <span class="option-tag">In person only · 45 minutes</span>
+      <h3>Indian Head Massage</h3>
+      <div class="option-price">£60 <span>/ session</span></div>
+      <p>A deeply relaxing Ayurvedic treatment — 10 minutes intake and 35 minutes massage on the head, neck, and shoulders. Can be booked as a standalone or added to an in-person consultation.</p>
+      <a href={CALENDLY} target="_blank" rel="noopener">Book Indian head massage</a>
+    </div>
+  </div>
+
+  <div class="get-in-touch-box">
+    <div class="git-text">
+      <p class="eyebrow">Other services</p>
+      <h3>Consultancy, workshops &amp; walks</h3>
+      <p>For corporate wellness consultancy, herbal medicine workshops and Four Seasons holistic walks — each experience is tailored and priced individually. Get in touch to discuss what is right for you.</p>
+    </div>
+    <a href="/consultancy#contact" class="btn-bark">Get in touch</a>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<section class="payment-section">
+  <h2>Payment by bank transfer</h2>
+  <p>I accept payment by UK bank transfer — straightforward, secure, and fee-free for both of us.</p>
+  <div class="payment-grid">
+    <div class="payment-box">
+      <h3>How to pay</h3>
+      <ol class="payment-steps">
+        <li>Book your appointment using the booking calendar above.</li>
+        <li>You will receive a confirmation email with bank transfer details.</li>
+        <li>Transfer the consultation fee within 24 hours of booking.</li>
+        <li>Your appointment is confirmed once payment is received — you will get a final confirmation email.</li>
+      </ol>
+      <div class="bank-details">
+        <strong>Bank transfer details</strong><br/>
+        Account name: <strong>[Your name]</strong><br/>
+        Sort code: <strong>[XX–XX–XX]</strong><br/>
+        Account number: <strong>[XXXXXXXX]</strong><br/>
+        Reference: <strong>Your name + appointment date</strong>
+      </div>
+    </div>
+    <div class="payment-box">
+      <h3>Good to know</h3>
+      <ol class="payment-steps">
+        <li>Bank transfer is completely free — no processing fees for you or for me.</li>
+        <li>Transfers typically clear within a few hours for the same bank, or by the next working day.</li>
+        <li>Please use your name and appointment date as the payment reference so I can match it easily.</li>
+        <li>If you have any difficulty with bank transfer, get in touch and we can find an alternative arrangement.</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- CANCELLATION -->
+<section class="cancel-section">
+  <h2>Cancellation policy</h2>
+  <div class="cancel-grid">
+    <div class="cancel-card">
+      <h3>More than 48 hours notice</h3>
+      <p>Full refund by bank transfer, or your appointment will be rescheduled at no extra charge. Please contact me as soon as possible.</p>
+    </div>
+    <div class="cancel-card">
+      <h3>24–48 hours notice</h3>
+      <p>50% of the consultation fee is retained. The remaining 50% will be refunded to your bank account within 3–5 working days.</p>
+    </div>
+    <div class="cancel-card">
+      <h3>Less than 24 hours notice</h3>
+      <p>The full consultation fee is retained. This time has been reserved for you and cannot be filled at short notice.</p>
+    </div>
+  </div>
+  <p class="cancel-note">Exceptions are made in genuine emergencies — please don't hesitate to reach out. I understand that life happens.</p>
+</section>
+
+<!-- CTA -->
+<section class="book-cta">
+  <h2>Ready to begin?</h2>
+  <p>Start with a free 15-minute discovery call — no commitment, just a conversation.</p>
+  <a href={CALENDLY} target="_blank" rel="noopener">Book your free discovery call</a>
+</section>
+
+</BaseLayout>
