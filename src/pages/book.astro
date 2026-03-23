@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const d = (await import('../data/book.json')).default;
 const meta = {
   title: "Book a Consultation | Sara Lemaitre — Clinical Herbalist & Naturopath",
   description: "Book your herbal medicine or naturopathy consultation with Sara Lemaitre. Free 15-minute discovery call available. Simple online booking and bank transfer payment.",
@@ -412,14 +413,14 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
   <div class="options-grid">
     <div class="option-card">
       <span class="option-tag free-tag">Free · 15 minutes</span>
-      <h3>Discovery Call</h3>
+      <h3>{d.discoveryTitle}</h3>
       <div class="option-price">Free</div>
       <p>A relaxed conversation to understand your health concerns and goals, explain how I work, and answer any questions. No commitment required.</p>
       <a href={CALENDLY} target="_blank" rel="noopener">Book free call</a>
     </div>
     <div class="option-card featured">
       <span class="option-tag">Initial · 90 minutes · Online or in person</span>
-      <h3>Initial Consultation</h3>
+      <h3>{d.initialTitle}</h3>
       <div class="option-price">£110 <span>/ session</span></div>
       <p>A thorough deep-dive into your health history, current symptoms, lifestyle, and goals. Includes a personalised written herbal protocol, naturopathic recommendations, and supplier-sourced formula design. Around 2.5–3 hours of total work.</p>
       <div class="sliding-scale-note">Sliding scale available at £85 for students and low-income clients — just mention it when you book.</div>
@@ -427,7 +428,7 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
     </div>
     <div class="option-card">
       <span class="option-tag">Follow-up · 30–40 minutes · Online or in person</span>
-      <h3>Follow-up Consultation</h3>
+      <h3>{d.followupTitle}</h3>
       <div class="option-price">£75 <span>/ session</span></div>
       <p>Review your progress, adjust your herbal protocol, and address any new concerns. Includes protocol refinement and supplier contact. Recommended every 4–6 weeks during active treatment.</p>
       <div class="sliding-scale-note">Sliding scale available at £65 for students and low-income clients.</div>
@@ -435,7 +436,7 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
     </div>
     <div class="option-card">
       <span class="option-tag">Bundle · Best value · 3 sessions</span>
-      <h3>Initial + 2 Follow-ups</h3>
+      <h3>{d.bundleTitle}</h3>
       <div class="option-price">£220 <span>/ 3 sessions</span></div>
       <p>The most complete way to begin. One full initial consultation followed by two follow-ups to track progress and refine your protocol. Saves £40 versus booking separately.</p>
       <div class="sliding-scale-note">Sliding scale bundle available at £195.</div>
@@ -443,7 +444,7 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
     </div>
     <div class="option-card">
       <span class="option-tag">In person only · 45 minutes</span>
-      <h3>Indian Head Massage</h3>
+      <h3>{d.ihmTitle}</h3>
       <div class="option-price">£60 <span>/ session</span></div>
       <p>A deeply relaxing Ayurvedic treatment — 10 minutes intake and 35 minutes massage on the head, neck, and shoulders. Can be booked as a standalone or added to an in-person consultation.</p>
       <a href={CALENDLY} target="_blank" rel="noopener">Book Indian head massage</a>
@@ -475,9 +476,9 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
       </ol>
       <div class="bank-details">
         <strong>Bank transfer details</strong><br/>
-        Account name: <strong>[Your name]</strong><br/>
-        Sort code: <strong>[XX–XX–XX]</strong><br/>
-        Account number: <strong>[XXXXXXXX]</strong><br/>
+        Account name: <strong>{d.bankName}</strong><br/>
+        Sort code: <strong>{d.bankSort}</strong><br/>
+        Account number: <strong>{d.bankAccount}</strong><br/>
         Reference: <strong>Your name + appointment date</strong>
       </div>
     </div>

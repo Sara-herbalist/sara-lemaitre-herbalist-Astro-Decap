@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const d = (await import('../data/story.json')).default;
 const meta = {
   title: "My Story | Sara Lemaitre — From Elite Athlete to Clinical Herbalist",
   description: "How seven years of endometriosis, six specialists and a pandemic led me to herbal medicine — and why I became a herbalist to help others navigate the same journey.",
@@ -552,7 +553,7 @@ const meta = {
 <section id="main-content" role="main" class="hero">
   <div class="hero-text">
     <p class="hero-eyebrow">My story</p>
-    <h1 class="hero-title">From surviving<br>to <em>tending</em><br>the roots</h1>
+    <h1 class="hero-title">{d.heroTitle1}<br>to <em>{d.heroTitle2}</em><br>{d.heroTitle3}</h1>
     <p class="hero-subtitle">A former elite swimmer. Seven years of being dismissed. A pandemic, a discovery, and a magnolia tree that refused to die. This is why I became a herbalist — and why I understand what it means to rebuild your health from the ground up.</p>
     <a href="#story" class="hero-cta">Read my story</a>
   </div>
@@ -574,7 +575,7 @@ const meta = {
 
 <!-- PULL QUOTE -->
 <div class="pull-quote">
-  <p>"I was not living. I was surviving. Until I stopped waiting for someone else to give me permission to heal."</p>
+  <p>{d.pullQuote}</p>
   <cite>— The moment everything changed</cite>
 </div>
 
@@ -588,12 +589,12 @@ const meta = {
       <div class="story-tag">The athlete · The beginning of pain</div>
     </div>
     <div class="story-body">
-      <h2>I was at the top of my sport<br>when my body <em>turned against me</em></h2>
-      <p>I was a synchronised swimmer — now called artistic swimming — training at an elite level with a place on the national team roster in my sights. I was strong, disciplined, and I knew my body the way only athletes do: its limits, its stamina, its signals.</p>
-      <p>Then my periods started. And from the very first cycle, the pain was debilitating. Heavy, relentless, impossible to train through. Within months I was on hormonal suppressants. Then stronger doses. Then cocktails of medication. Then injections. Then pain medication that grew progressively more powerful until, years later, a daily preventative dose of morphine had become my normal — just to function.</p>
+      <h2>{d.s1h2}</h2>
+      <p>{d.s1p1}</p>
+      <p>{d.s1p2}</p>
       <p>In training, I was fainting. My nose bled without warning. My injuries multiplied. My performance — and my dream — fell apart in front of me while I was still fighting with everything I had to hold it together.</p>
       <div class="inset-quote">
-        <p>"As an athlete, I used to know my limits and my strength — physical and mental. But everything was falling apart, and I couldn't recognise who I was anymore."</p>
+        <p>{d.s1inset}</p>
       </div>
       <p>I began to dissociate from my body entirely. Not as a choice, but as survival. I separated myself from the thing that was failing me just to get through each day. I was not living. I was surviving.</p>
       <p>Until the doctors revoked my right to train. It was too dangerous for my health. My career was over.</p>
@@ -603,10 +604,10 @@ const meta = {
   <!-- 02 — The gaslighting -->
   <div class="story-section reverse reveal">
     <div class="story-body" style="padding-left: 8rem;">
-      <h2>Seven years.<br>Six specialists.<br><em>Zero answers.</em></h2>
+      <h2>{d.s2h2}</h2>
       <p>I had exhausted every test available. I had seen six different gynaecologists, none of whom could diagnose what was wrong. What they could do — and did, repeatedly — was suggest that the problem was me.</p>
       <div class="inset-quote">
-        <p>"You are not as strong as you would like to think. You should stop putting pressure on yourself to be the perfect athlete. You clearly don't have the mental or physical capacity for it."</p>
+        <p>{d.s2inset}</p>
       </div>
       <p>This is what medical gaslighting looks like when it comes from six separate specialists wearing white coats. You can be as well supported by the people who love you as anyone could be. You can be as certain of your own strength as you have ever been. But when the same message is delivered again and again by people with the credentials to know how the human body works — <strong>you start to believe them.</strong></p>
       <p>I started to believe I was weak. That I was imagining it. That I had somehow brought this on myself.</p>
@@ -627,12 +628,12 @@ const meta = {
       <div class="story-tag">The pandemic · The discovery · The family experiments</div>
     </div>
     <div class="story-body">
-      <h2>A pandemic.<br>A decision.<br><em>An experiment that worked.</em></h2>
+      <h2>{d.s3h2}</h2>
       <p>I was certain an alternative existed. I was equally certain that no one else was going to find it for me. So I made the decision that changed everything: <strong>I took my health into my own hands.</strong></p>
       <p>The pandemic gave me the one resource I had never had enough of — time. I began researching. I found a short online herbal medicine discovery course. Cautiously, reluctantly almost, I began to experiment on myself after deciding I was done with conventional medication.</p>
       <p>It was slow. It was exhausting. There were countless trials and errors. But I could see results. For the first time in years, something was working.</p>
       <div class="inset-quote">
-        <p>"For the first time in years, I felt in control of my health — my body, my mind. That is what discovering plant medicine gave me back."</p>
+        <p>{d.s3inset}</p>
       </div>
       <p>And then my family became my first clients.</p>
       <p>My mother's arthritis flare-ups. My sister's anxiety and sleep. My father's recurring throat weakness — sore throats and colds from constant travel and speaking. I made formulations for each of them. I will be honest: some of those early blends were rather dreadful. But they are all well and very much alive, so I consider that a success.</p>
@@ -661,7 +662,7 @@ const meta = {
 <!-- MAGNOLIA -->
 <section class="magnolia-section reveal">
   <div class="magnolia-inner">
-    <h2>The magnolia that refused to die — and what it taught me about healing</h2>
+    <h2>{d.magnoliaTitle}</h2>
     <p>I was raised beneath the branches of a magnolia tree in my family garden. It was my shelter, my refuge. That tall, steady guardian felt eternal.</p>
     <p>Until one day a storm brought it down.</p>
     <p>I was devastated. But every day afterwards, I watered the soil where it once stood. Adults told me it would not return. But I kept watering. Stubbornness — and perhaps faith in renewal — has always been part of me.</p>
@@ -689,10 +690,10 @@ const meta = {
 <section class="now-section">
   <div class="now-text reveal">
     <p class="eyebrow">Where I am now</p>
-    <h2>I work with women who are<br>tired of being <em>dismissed</em></h2>
-    <p>My practice is built around the people I understand most deeply: women navigating endometriosis, PCOS, chronic fatigue, perimenopause, and the hormonal disruption that conventional medicine so often minimises or mismanages.</p>
-    <p>And active people — athletes, high-performers, the chronically busy — who feel their vitality slipping and are looking for a different kind of support.</p>
-    <p>I offer consultations online and in person, in English and in French, to clients in the UK and internationally. Every consultation draws on Western herbalism, naturopathy, and cross-traditional plant medicine — personalised, not prescriptive.</p>
+    <h2>{d.nowTitle}</h2>
+    <p>{d.nowP1}</p>
+    <p>{d.nowP2}</p>
+    <p>{d.nowP3}</p>
     <p>If any part of this story sounds like yours, I would love to hear from you.</p>
     <a href="https://calendly.com/sara-lemaitre-herbalist" target="_blank" rel="noopener" class="now-cta">Book a free discovery call</a>
   </div>

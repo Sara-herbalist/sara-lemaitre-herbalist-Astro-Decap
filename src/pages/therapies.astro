@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const d = (await import('../data/therapies.json')).default;
 const meta = {
   title: "Therapies | Herbal Medicine, Naturopathy & Indian Head Massage | Sara Lemaitre",
   description: "Herbal medicine consultations, naturopathy, Indian head massage, TCM-informed plant protocols and athlete performance support. Online and in person, English and French.",

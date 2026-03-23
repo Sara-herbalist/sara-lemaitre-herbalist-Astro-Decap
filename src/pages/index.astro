@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const homepage = await import('../data/homepage.json');
+const h = homepage.default;
 const meta = {
   title: "Sara Lemaitre | Clinical Herbalist & Naturopath | Hormonal Health, Endometriosis, PCOS",
   description: "Clinical herbalist and naturopath specialising in endometriosis, PCOS and chronic fatigue. Former elite athlete. Online consultations in English and French, UK and international.",
@@ -854,7 +856,7 @@ const meta = {
 <!-- ══ HERO ══ -->
 <section id="main-content" role="main" class="hero">
   <div class="hero-left">
-    <p class="hero-eyebrow" data-i18n="index.hero.eyebrow">Clinical herbalist · Naturopath · Former elite athlete</p>
+    <p class="hero-eyebrow">{h.heroEyebrow}</p>
     <h1 class="hero-name">Sara<br><em>Lemaitre</em></h1>
     <p class="hero-credentials">
       BSc Herbal Medicine · Naturopathy Diploma<br>
@@ -862,7 +864,7 @@ const meta = {
       Western Phytotherapy · Ayurvedic Studies
     </p>
     <p class="hero-desc">
-      I work with women who are <strong>tired of being dismissed</strong>. With athletes whose bodies have stopped cooperating. With anyone who suspects there is a different way — and needs someone who has walked that road themselves.
+      {h.heroDesc}
     </p>
     <div class="hero-actions">
       <a href="https://calendly.com/sara-lemaitre-herbalist" target="_blank" rel="noopener" class="btn-primary" data-i18n="index.hero.cta1">Book a free discovery call</a>
@@ -930,12 +932,12 @@ const meta = {
 <!-- ══ INTRO STRIP ══ -->
 <section class="intro-strip reveal">
   <div class="intro-strip-left">
-    <p class="eyebrow" data-i18n="index.intro.title">The practice</p>
-    <h2>Plant medicine rooted in<br><em>lived</em> understanding</h2>
+    <p class="eyebrow">{h.introTitle}</p>
+    <h2 set:html={h.introSubtitle}></h2>
   </div>
   <div class="intro-strip-right">
-    <p>I did not come to herbal medicine through a textbook. I came through seven years of being failed by conventional medicine — through a body I barely recognised, a career cut short, and a determination that an alternative had to exist. When I found plant medicine, it worked. Slowly, painstakingly, with a great deal of trial and error. But it worked.</p>
-    <p>That experience — of navigating <strong>endometriosis, PCOS, and chronic fatigue</strong> without a roadmap — is the foundation of everything I do in clinic. I know what it means to search for answers when the system isn't giving you any. I know what it feels like when something finally does.</p>
+    <p>{h.introBody1}</p>
+    <p>{h.introBody2}</p>
     <a href="/story" class="read-more" data-i18n="index.intro.link">Read the full story</a>
   </div>
 </section>
