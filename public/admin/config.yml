@@ -10,27 +10,151 @@ public_folder: /images
 
 collections:
 
-  # ── ENGLISH ─────────────────────────────────────────────────
+  # ═══════════════════════════════════════
+  #  ENGLISH
+  # ═══════════════════════════════════════
 
   - name: homepage_en
-    label: "Homepage (EN)"
+    label: "🇬🇧 Homepage"
     files:
       - name: homepage_en
-        label: "Homepage — English text"
+        label: "Homepage — English"
         file: src/data/homepage.json
         fields:
           - { label: "Hero eyebrow", name: heroEyebrow, widget: string }
           - { label: "Hero description", name: heroDesc, widget: text }
-          - { label: "Intro section title", name: introTitle, widget: string }
+          - { label: "Intro title", name: introTitle, widget: string }
           - { label: "Intro subtitle", name: introSubtitle, widget: string }
-          - { label: "Intro body 1", name: introBody1, widget: text }
-          - { label: "Intro body 2", name: introBody2, widget: text }
+          - { label: "Intro body paragraph 1", name: introBody1, widget: text }
+          - { label: "Intro body paragraph 2", name: introBody2, widget: text }
 
-  - name: pricing_en
-    label: "Pricing (shared EN + FR)"
+  - name: story_en
+    label: "🇬🇧 My Story"
     files:
-      - name: pricing_en
-        label: "Prices — edit here for both languages"
+      - name: story_en
+        label: "My Story — English"
+        file: src/data/story.json
+        fields:
+          - { label: "Hero title line 1", name: heroTitle1, widget: string }
+          - { label: "Hero title line 2 (italic)", name: heroTitle2, widget: string }
+          - { label: "Hero title line 3", name: heroTitle3, widget: string }
+          - { label: "Hero description", name: heroDesc, widget: text }
+          - { label: "Pull quote", name: pullQuote, widget: text }
+          - { label: "Section 1 — heading", name: s1h2, widget: string }
+          - { label: "Section 1 — paragraph 1", name: s1p1, widget: text }
+          - { label: "Section 1 — paragraph 2", name: s1p2, widget: text }
+          - { label: "Section 1 — inset quote", name: s1inset, widget: text }
+          - { label: "Section 2 — heading", name: s2h2, widget: string }
+          - { label: "Section 2 — inset quote", name: s2inset, widget: text }
+          - { label: "Section 3 — heading", name: s3h2, widget: string }
+          - { label: "Section 3 — inset quote", name: s3inset, widget: text }
+          - { label: "Magnolia section — heading", name: magnoliaTitle, widget: string }
+          - { label: "Now section — heading", name: nowTitle, widget: string }
+          - { label: "Now section — paragraph 1", name: nowP1, widget: text }
+          - { label: "Now section — paragraph 2", name: nowP2, widget: text }
+          - { label: "Now section — paragraph 3", name: nowP3, widget: text }
+
+  - name: therapies_en
+    label: "🇬🇧 Therapies"
+    files:
+      - name: therapies_en
+        label: "Therapies — English"
+        file: src/data/therapies.json
+        fields:
+          - { label: "Hero title", name: heroTitle, widget: string }
+          - { label: "Hero description", name: heroDesc, widget: text }
+          - { label: "Herbal Medicine — title", name: herbalTitle, widget: string }
+          - { label: "Herbal Medicine — paragraph 1", name: herbalP1, widget: text }
+          - { label: "Herbal Medicine — paragraph 2", name: herbalP2, widget: text }
+          - { label: "Herbal Medicine — paragraph 3", name: herbalP3, widget: text }
+          - { label: "Naturopathy — title", name: naturoTitle, widget: string }
+          - { label: "Naturopathy — paragraph 1", name: naturoP1, widget: text }
+          - { label: "Naturopathy — paragraph 2", name: naturoP2, widget: text }
+          - { label: "Indian Head Massage — title", name: ihmTitle, widget: string }
+          - { label: "Indian Head Massage — quote", name: ihmQuote, widget: string }
+          - { label: "Indian Head Massage — paragraph 1", name: ihmP1, widget: text }
+          - { label: "Indian Head Massage — paragraph 2", name: ihmP2, widget: text }
+          - { label: "Athlete — title", name: athleteTitle, widget: string }
+          - { label: "Athlete — paragraph 1", name: athleteP1, widget: text }
+          - { label: "Athlete — paragraph 2", name: athleteP2, widget: text }
+
+  - name: workshops_en
+    label: "🇬🇧 Workshops"
+    files:
+      - name: workshops_en
+        label: "Workshops — English"
+        file: src/data/workshops.json
+        fields:
+          - { label: "Hero title", name: heroTitle, widget: string }
+          - { label: "Hero description", name: heroDesc, widget: text }
+          - { label: "Workshop 1 — title", name: w1Title, widget: string }
+          - { label: "Workshop 1 — description", name: w1Desc, widget: text }
+          - { label: "Workshop 2 — title", name: w2Title, widget: string }
+          - { label: "Workshop 2 — description", name: w2Desc, widget: text }
+          - { label: "Workshop 3 — title", name: w3Title, widget: string }
+          - { label: "Workshop 3 — description", name: w3Desc, widget: text }
+          - { label: "Workshop 4 — title", name: w4Title, widget: string }
+          - { label: "Workshop 4 — description", name: w4Desc, widget: text }
+
+  - name: walks_en
+    label: "🇬🇧 Walks"
+    files:
+      - name: walks_en
+        label: "Walks — English"
+        file: src/data/walks.json
+        fields:
+          - { label: "Hero title", name: heroTitle, widget: string }
+          - { label: "Hero description", name: heroDesc, widget: text }
+          - { label: "Opening section — title", name: openingTitle, widget: string }
+          - { label: "Opening section — paragraph 1", name: openingP1, widget: text }
+          - { label: "Opening section — paragraph 2", name: openingP2, widget: text }
+
+  - name: consultancy_en
+    label: "🇬🇧 Consultancy"
+    files:
+      - name: consultancy_en
+        label: "Consultancy — English"
+        file: src/data/consultancy.json
+        fields:
+          - { label: "Hero title", name: heroTitle, widget: string }
+          - { label: "Hero description", name: heroDesc, widget: text }
+          - { label: "Service 1 — title", name: s1Title, widget: string }
+          - { label: "Service 1 — description", name: s1Desc, widget: text }
+          - { label: "Service 2 — title", name: s2Title, widget: string }
+          - { label: "Service 2 — description", name: s2Desc, widget: text }
+          - { label: "Service 3 — title", name: s3Title, widget: string }
+          - { label: "Service 3 — description", name: s3Desc, widget: text }
+          - { label: "Service 4 — title", name: s4Title, widget: string }
+          - { label: "Service 4 — description", name: s4Desc, widget: text }
+
+  - name: book_en
+    label: "🇬🇧 Book"
+    files:
+      - name: book_en
+        label: "Booking page — English"
+        file: src/data/book.json
+        fields:
+          - { label: "Hero title", name: heroTitle, widget: string }
+          - { label: "Hero description", name: heroDesc, widget: text }
+          - { label: "Discovery call — title", name: discoveryTitle, widget: string }
+          - { label: "Discovery call — description", name: discoveryDesc, widget: text }
+          - { label: "Initial consultation — title", name: initialTitle, widget: string }
+          - { label: "Initial consultation — description", name: initialDesc, widget: text }
+          - { label: "Follow-up — title", name: followupTitle, widget: string }
+          - { label: "Follow-up — description", name: followupDesc, widget: text }
+          - { label: "Bundle — title", name: bundleTitle, widget: string }
+          - { label: "Bundle — description", name: bundleDesc, widget: text }
+          - { label: "Indian Head Massage — title", name: ihmTitle, widget: string }
+          - { label: "Indian Head Massage — description", name: ihmDesc, widget: text }
+          - { label: "Bank — account name", name: bankName, widget: string }
+          - { label: "Bank — sort code", name: bankSort, widget: string }
+          - { label: "Bank — account number", name: bankAccount, widget: string }
+
+  - name: pricing_shared
+    label: "💷 Pricing (EN + FR)"
+    files:
+      - name: pricing_shared
+        label: "Prices — updates both languages"
         file: src/data/pricing.json
         fields:
           - { label: "Initial consultation (£)", name: initialConsultation, widget: number }
@@ -48,7 +172,7 @@ collections:
           - { label: "Retainer Intensive /mo (£)", name: retainerIntensive, widget: number }
 
   - name: settings_en
-    label: "Settings (EN)"
+    label: "🇬🇧 Settings"
     files:
       - name: settings_en
         label: "Settings — English site"
@@ -59,13 +183,15 @@ collections:
           - { label: "LinkedIn URL", name: linkedinUrl, widget: string }
           - { label: "Contact email", name: email, widget: string }
 
-  # ── FRENCH ──────────────────────────────────────────────────
+  # ═══════════════════════════════════════
+  #  FRENCH
+  # ═══════════════════════════════════════
 
   - name: homepage_fr
-    label: "Page d'accueil (FR)"
+    label: "🇫🇷 Page d'accueil"
     files:
       - name: homepage_fr
-        label: "Accueil — textes français"
+        label: "Page d'accueil — Français"
         file: src/data/fr/homepage.json
         fields:
           - { label: "Accroche hero", name: heroEyebrow, widget: string }
@@ -76,10 +202,10 @@ collections:
           - { label: "Corps texte 2", name: introBody2, widget: text }
 
   - name: story_fr
-    label: "Mon parcours (FR)"
+    label: "🇫🇷 Mon parcours"
     files:
       - name: story_fr
-        label: "Mon parcours — textes français"
+        label: "Mon parcours — Français"
         file: src/data/fr/story.json
         fields:
           - { label: "Titre hero ligne 1", name: heroTitle1, widget: string }
@@ -102,10 +228,10 @@ collections:
           - { label: "Section actuelle — paragraphe 3", name: nowP3, widget: text }
 
   - name: therapies_fr
-    label: "Thérapies (FR)"
+    label: "🇫🇷 Thérapies"
     files:
       - name: therapies_fr
-        label: "Thérapies — textes français"
+        label: "Thérapies — Français"
         file: src/data/fr/therapies.json
         fields:
           - { label: "Titre hero", name: heroTitle, widget: string }
@@ -126,10 +252,10 @@ collections:
           - { label: "Sportifs — paragraphe 2", name: athleteP2, widget: text }
 
   - name: workshops_fr
-    label: "Ateliers (FR)"
+    label: "🇫🇷 Ateliers"
     files:
       - name: workshops_fr
-        label: "Ateliers — textes français"
+        label: "Ateliers — Français"
         file: src/data/fr/workshops.json
         fields:
           - { label: "Titre hero", name: heroTitle, widget: string }
@@ -144,10 +270,10 @@ collections:
           - { label: "Atelier 4 — description", name: w4Desc, widget: text }
 
   - name: walks_fr
-    label: "Balades (FR)"
+    label: "🇫🇷 Balades"
     files:
       - name: walks_fr
-        label: "Balades — textes français"
+        label: "Balades — Français"
         file: src/data/fr/walks.json
         fields:
           - { label: "Titre hero", name: heroTitle, widget: string }
@@ -157,10 +283,10 @@ collections:
           - { label: "Section ouverture — paragraphe 2", name: openingP2, widget: text }
 
   - name: consultancy_fr
-    label: "Consultance (FR)"
+    label: "🇫🇷 Consultance"
     files:
       - name: consultancy_fr
-        label: "Consultance — textes français"
+        label: "Consultance — Français"
         file: src/data/fr/consultancy.json
         fields:
           - { label: "Titre hero", name: heroTitle, widget: string }
@@ -175,10 +301,10 @@ collections:
           - { label: "Service 4 — description", name: s4Desc, widget: text }
 
   - name: book_fr
-    label: "Réservation (FR)"
+    label: "🇫🇷 Réservation"
     files:
       - name: book_fr
-        label: "Page réservation — textes français"
+        label: "Page réservation — Français"
         file: src/data/fr/book.json
         fields:
           - { label: "Titre hero", name: heroTitle, widget: string }
@@ -198,10 +324,10 @@ collections:
           - { label: "Virement — numéro de compte", name: bankAccount, widget: string }
 
   - name: settings_fr
-    label: "Réglages (FR)"
+    label: "🇫🇷 Réglages"
     files:
       - name: settings_fr
-        label: "Réglages — version française"
+        label: "Réglages — Français"
         file: src/data/fr/settings.json
         fields:
           - { label: "URL Calendly", name: calendlyUrl, widget: string }
