@@ -299,7 +299,7 @@ const meta = {
   <div class="for-header reveal">
     <div>
       <p class="eyebrow">Who this is for</p>
-      <h2>Organisations that want<br><em>substance</em>, not wellness theatre</h2>
+      <h2>{d.whyTitle}</h2>
     </div>
     <p>Wellness consultancy in the corporate and brand space is full of vague offerings and generic content. I am not interested in that. What I offer is specific, clinical, and grounded in the same rigour I apply to individual client work. If you want someone who can speak with genuine authority about herbal medicine and naturopathy — to your team, your clients, or your product — that is what I offer.</p>
   </div>
@@ -347,227 +347,25 @@ const meta = {
 <section class="services-section" id="services">
   <div class="services-label reveal">Consultancy services</div>
 
+  {d.services && d.services.map((service, i) => (
   <div class="service-row reveal">
     <div class="service-aside">
-      <div class="service-aside-num">01</div>
-      <div class="service-aside-tag">Corporate wellness · Teams · Organisations</div>
+      <div class="service-aside-num">{service.number}</div>
+      <div class="service-aside-tag">{service.tag}</div>
     </div>
     <div class="service-body">
-      <h2 class="service-title">Corporate Wellness<br><em>Sessions & Programmes</em></h2>
-      <p class="service-subtitle">In person or online · English and French · Half-day to full programmes</p>
-      <p class="service-desc">Workplace wellness sessions that give employees practical, evidence-informed tools — not generic self-care advice. I design sessions around your team's actual needs: the burnout that is quietly depleting performance, the women navigating hormonal conditions at work, the high-performers who are running on cortisol and caffeine.</p>
-      <p class="service-desc"><strong>Single sessions</strong> work as standalone lunch-and-learns or afternoon workshops. <strong>Programmes</strong> run across weeks or months, tracking measurable outcomes and adapting to what the team needs. All content is original, clinically grounded, and delivered in your organisation's context — not off-the-shelf slides.</p>
+      <h2 class="service-title">{service.title}</h2>
+      <p class="service-desc">{service.desc}</p>
       <div class="service-deliverables">
-        <div class="service-deliverables-label">Session formats available</div>
+        <div class="service-deliverables-label">What's included</div>
         <div class="service-deliverables-list">
-          <span>Lunch & learn (60–90 min) — accessible entry point for any team</span>
-          <span>Half-day workshop (3–4 hrs) — deeper engagement, practical elements</span>
-          <span>Wellbeing programme (4–8 weeks) — sustained change with tracking</span>
-          <span>Women's health in the workplace — specialist series for HR and managers</span>
-          <span>Bilingual delivery — English and French, online or in person</span>
+          {service.bullets && service.bullets.map(item => <span>{item}</span>)}
         </div>
       </div>
       <div class="service-pricing">
-        <div><div class="service-price">From £400</div><div class="service-price-note">per session · programme pricing on enquiry</div></div>
         <a href="#contact" class="service-enquire">Enquire</a>
       </div>
     </div>
   </div>
+))}
 
-  <div class="service-row reveal">
-    <div class="service-aside">
-      <div class="service-aside-num">02</div>
-      <div class="service-aside-tag">Brands · Formulation · Content · Advisory</div>
-    </div>
-    <div class="service-body">
-      <h2 class="service-title">Wellness Brand<br><em>Advisory</em></h2>
-      <p class="service-subtitle">Herbal credibility · Formulation guidance · Content review · Expert voice</p>
-      <p class="service-desc">Wellness brands making claims about herbal medicine need clinical credibility behind them. Marketing teams writing about adaptogens, hormonal health, or botanical ingredients need someone who can tell them what the science actually says — and what it does not.</p>
-      <p class="service-desc">I work with brands as an advisory consultant — reviewing product claims for accuracy, guiding formulation decisions for new product lines, creating educational content that holds up to scrutiny, and acting as an expert voice for media, launch events, and brand communications. <em>Available in English and French, which is rare in this space.</em></p>
-      <div class="service-deliverables">
-        <div class="service-deliverables-label">Services within brand advisory</div>
-        <div class="service-deliverables-list">
-          <span>Formulation review and guidance for herbal product development</span>
-          <span>Claims review — what you can and cannot say, and why</span>
-          <span>Educational content creation (articles, social, email, packaging copy)</span>
-          <span>Expert spokesperson for press, podcast, and events</span>
-          <span>Staff training on the herbal ingredients you use</span>
-          <span>French-language brand adaptation and localisation</span>
-        </div>
-      </div>
-      <div class="service-pricing">
-        <div><div class="service-price">Day rate: £600</div><div class="service-price-note">Retainer & project rates on enquiry</div></div>
-        <a href="#contact" class="service-enquire">Enquire</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="service-row reveal">
-    <div class="service-aside">
-      <div class="service-aside-num">03</div>
-      <div class="service-aside-tag">Sports clubs · Federations · Athletes · Coaches</div>
-    </div>
-    <div class="service-body">
-      <h2 class="service-title">Sports & Performance<br><em>Wellness Consultancy</em></h2>
-      <p class="service-subtitle">Adaptogen protocols · Hormonal health for athletes · Naturopathic nutrition</p>
-      <p class="service-desc">I was a national-level synchronised swimmer. I know what performance environments look like from the inside — the culture, the pressures, the gap between what sports medicine provides and what athletes actually need. When my own health was destroyed by that environment, I found the answers in plant medicine. That gives me a specific credibility in this space that is genuinely difficult to find elsewhere.</p>
-      <p class="service-desc"><strong>For clubs and federations:</strong> I develop and deliver wellness education programmes for athletes, coaches, and performance staff — covering adaptogen protocols, anti-inflammatory nutrition, recovery, sleep, and the particular challenges of female athlete health (hormonal disruption, RED-S, cycle optimisation). All delivered without conflicting with existing medical or sports science staff.</p>
-      <p class="service-desc">This is one of the areas I care about most. Young athletes — particularly young female athletes — deserve better support than the system currently gives them. I know this because I was one of them.</p>
-      <div class="service-deliverables">
-        <div class="service-deliverables-label">What this can include</div>
-        <div class="service-deliverables-list">
-          <span>Athlete wellness education workshops (performance, recovery, hormonal health)</span>
-          <span>Adaptogen protocol guidance for coaching staff</span>
-          <span>Female athlete health programme — hormones, cycle, RED-S</span>
-          <span>Individual consultations for club members (referral basis)</span>
-          <span>Naturopathic nutrition guidance alongside existing sports dietitian</span>
-          <span>Retreat and camp wellness programming</span>
-        </div>
-      </div>
-      <div class="service-pricing">
-        <div><div class="service-price">From £350</div><div class="service-price-note">per session · full programme pricing on enquiry</div></div>
-        <a href="#contact" class="service-enquire">Enquire</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="service-row reveal">
-    <div class="service-aside">
-      <div class="service-aside-num">04</div>
-      <div class="service-aside-tag">Spas · Retreats · Clinics · Hotels</div>
-    </div>
-    <div class="service-body">
-      <h2 class="service-title">Spa & Retreat<br><em>Herbal Medicine Integration</em></h2>
-      <p class="service-subtitle">Consultations, workshops, and herbal experiences within your space</p>
-      <p class="service-desc">Destination spas and retreat venues are increasingly aware that their clients want depth, not just relaxation — that a genuinely transformative experience involves education, personalisation, and clinical knowledge alongside the treatment. I work with wellness venues to design and deliver that dimension.</p>
-      <p class="service-desc">This can mean running herbal medicine consultations as part of a retreat programme. It can mean designing a seasonal botanical workshop experience that guests take home something from. It can mean training your in-house team to speak about herbal ingredients with genuine knowledge. Or it can mean an ongoing advisory relationship as you develop a herbal medicine offering within your space.</p>
-      <div class="service-deliverables">
-        <div class="service-deliverables-label">Integration formats</div>
-        <div class="service-deliverables-list">
-          <span>Resident herbalist days — consultations and workshops at your venue</span>
-          <span>Retreat programme design — botanical and naturopathic elements</span>
-          <span>Staff botanical training — your team, upskilled</span>
-          <span>Seasonal herbal experiences for guests</span>
-          <span>Bespoke herbal product range for your spa brand</span>
-        </div>
-      </div>
-      <div class="service-pricing">
-        <div><div class="service-price">By arrangement</div><div class="service-price-note">Day rate, programme, or retainer — depends on scope</div></div>
-        <a href="#contact" class="service-enquire">Enquire</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY ME -->
-<section class="why-section reveal">
-  <div class="why-text">
-    <p class="eyebrow">Why me specifically</p>
-    <h2>Credentials that are<br>relevant to <em>your context</em></h2>
-    <p>There are qualified herbalists. There are corporate wellness trainers. There are brand advisors. Very few of them are all three — and fewer still bring a national-level sports background, personal recovery from chronic illness, French phytotherapy training, and bilingual delivery capability to the same engagement.</p>
-    <p>That specificity matters because your organisation or brand is specific. Generic wellness content produces generic results. What I offer is always designed for the actual context — your people, your clients, your product, your culture.</p>
-  </div>
-  <div class="why-points">
-    <div class="why-point">
-      <div class="why-point-num">01</div>
-      <div><div class="why-point-title">Clinical credibility — not lifestyle influencing</div><div class="why-point-desc">Degree-level herbal medicine training, naturopathy diploma, TCM dispensary externship. Everything I say is clinically grounded.</div></div>
-    </div>
-    <div class="why-point">
-      <div class="why-point-num">02</div>
-      <div><div class="why-point-title">Lived experience — endometriosis, PCOS, chronic fatigue, elite sport</div><div class="why-point-desc">I understand what it is like to be let down by conventional medicine, to rebuild from breakdown, and to perform at a high level. That changes how I speak about these things.</div></div>
-    </div>
-    <div class="why-point">
-      <div class="why-point-num">03</div>
-      <div><div class="why-point-title">Bilingual — English and French, UK and Europe</div><div class="why-point-desc">Genuinely rare in this space. Suitable for international brands and organisations with operations in both languages.</div></div>
-    </div>
-    <div class="why-point">
-      <div class="why-point-num">04</div>
-      <div><div class="why-point-title">Cross-cultural botanical knowledge</div><div class="why-point-desc">Western herbalism, TCM, Ayurveda. I can contextualise ingredients within any of the three traditions — useful for brands working across multiple markets.</div></div>
-    </div>
-    <div class="why-point">
-      <div class="why-point-num">05</div>
-      <div><div class="why-point-title">Regulated and insured</div><div class="why-point-desc">MHRA compliant, professionally insured, and operating within UK regulatory frameworks. Organisations can engage confidently.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section class="process-section reveal">
-  <p class="eyebrow">How we work together</p>
-  <h2>From first conversation<br>to <em>delivered work</em></h2>
-  <div class="process-steps">
-    <div class="process-step">
-      <div class="process-dot">01</div>
-      <div class="process-step-title">Discovery call</div>
-      <div class="process-step-desc">30 minutes. Free. I understand your context, you understand what I can offer.</div>
-    </div>
-    <div class="process-step">
-      <div class="process-dot">02</div>
-      <div class="process-step-title">Proposal</div>
-      <div class="process-step-desc">A tailored scope of work with clear deliverables, timeline, and pricing. No vague retainers.</div>
-    </div>
-    <div class="process-step">
-      <div class="process-dot">03</div>
-      <div class="process-step-title">Design</div>
-      <div class="process-step-desc">Content, sessions, or materials built specifically for your context. Reviewed together before delivery.</div>
-    </div>
-    <div class="process-step">
-      <div class="process-dot">04</div>
-      <div class="process-step-title">Delivery</div>
-      <div class="process-step-desc">Sessions, content, or advisory delivered as agreed. In person, online, or both.</div>
-    </div>
-    <div class="process-step">
-      <div class="process-dot">05</div>
-      <div class="process-step-title">Follow-up</div>
-      <div class="process-step-desc">Review, feedback, and next steps. Ongoing relationship if it makes sense for you.</div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section class="contact-section reveal" id="contact">
-  <div class="contact-text">
-    <p class="eyebrow">Start the conversation</p>
-    <h2>Tell me what<br>you are building.<br><em>Let's see if I can help.</em></h2>
-    <p>Consultancy starts with an honest conversation about what you actually need — not a pitch, not a brochure. Fill in the form and I will be in touch within two working days to arrange a call.</p>
-    <p>If you are not sure whether what you need fits into any of the categories above, tell me that too. Some of the most interesting work I have done started with "I'm not quite sure what I need."</p>
-    <div class="contact-details">
-      <div class="contact-detail"><span class="contact-detail-label">Languages</span><span class="contact-detail-value">English & French</span></div>
-      <div class="contact-detail"><span class="contact-detail-label">Response</span><span class="contact-detail-value">Within 2 working days</span></div>
-      <div class="contact-detail"><span class="contact-detail-label">Discovery call</span><span class="contact-detail-value">Free · 30 minutes</span></div>
-    </div>
-  </div>
-  <div>
-    <form class="contact-form" name="consultancy-contact" netlify netlify-honeypot="bot-field" action="/thank-you">
-      <input type="hidden" name="form-name" value="consultancy-contact">
-      <p hidden><input name="bot-field"></p>
-      <div class="form-row">
-        <label for="c-name" class="sr-only">Your name</label><input id="c-name" type="text" name="name" placeholder="Your name" data-i18n="consult.form.name" data-i18n-attr="placeholder" aria-required="true">
-        <label for="c-org" class="sr-only">Organisation name</label><input id="c-org" type="text" name="organisation" placeholder="Organisation name" data-i18n="consult.form.org" data-i18n-attr="placeholder">
-      </div>
-      <label for="c-email" class="sr-only">Email address</label><input id="c-email" type="email" name="email" placeholder="Email address" data-i18n="consult.form.email" data-i18n-attr="placeholder" aria-required="true">
-      <label for="c-role" class="sr-only">Your role or title</label><input id="c-role" type="text" name="role" placeholder="Your role / title" data-i18n="consult.form.role" data-i18n-attr="placeholder">
-      <select>
-        <option value="" disabled selected>Which service interests you?</option>
-        <option>Corporate wellness sessions or programme</option>
-        <option>Wellness brand advisory</option>
-        <option>Sports & performance consultancy</option>
-        <option>Spa & retreat integration</option>
-        <option>Private workshop booking</option>
-        <option>Content creation or expert commentary</option>
-        <option>Something else — I'll explain below</option>
-      </select>
-      <select>
-        <option value="" disabled selected>Preferred language</option>
-        <option>English</option>
-        <option>French / Français</option>
-        <option>No preference</option>
-      </select>
-      <label for="c-msg" class="sr-only">Your message</label><textarea id="c-msg" name="message" placeholder="Tell me about your organisation and what you are looking for. The more context you give me, the more useful my response will be."></textarea>
-      <button type="submit" data-i18n="consult.form.submit">Send enquiry</button>
-      <p class="form-note">Your details will be used only to respond to your enquiry. GDPR compliant.</p>
-    </form>
-  </div>
-</section>
-
-</BaseLayout>

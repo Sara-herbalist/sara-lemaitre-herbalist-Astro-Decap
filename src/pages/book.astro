@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const s = (await import('../data/settings.json')).default;
 const d = (await import('../data/book.json')).default;
 const meta = {
   title: "Book a Consultation | Sara Lemaitre — Clinical Herbalist & Naturopath",
@@ -366,6 +367,12 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
 }
 
 /* ── RESPONSIVE ── */
+
+  .book-hero-inner { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: center; }
+  .book-hero-photo img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; filter: brightness(0.88); }
+  .book-accent-photo { height: 200px; overflow: hidden; }
+  .book-accent-photo img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8) saturate(0.8); }
+  @media (max-width: 1024px) { .book-hero-inner { grid-template-columns: 1fr; } }
 @media (max-width: 1024px) {
   .book-hero, .how-section, .options-section,
   .payment-section, .cancel-section, .book-cta {
@@ -386,23 +393,15 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
 
 <!-- HOW IT WORKS -->
 <section class="how-section">
-  <h2>How it works</h2>
+  <h2>{d.howItWorksTitle}</h2>
   <div class="steps-grid">
-    <div class="step">
-      <div class="step-num">01</div>
-      <h3>Book your appointment</h3>
-      <p>Choose your consultation type below and select a time that suits you using the online booking calendar. You'll receive an immediate confirmation email.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <h3>Confirm with payment</h3>
-      <p>Transfer your consultation fee by bank transfer using the details in your confirmation email. Your appointment is secured once payment is received.</p>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <h3>Prepare & connect</h3>
-      <p>You'll receive a short intake form and preparation notes before your appointment. We meet online via video call — you just need a quiet space and 10 minutes beforehand.</p>
-    </div>
+    {d.steps && d.steps.map((step, i) => (
+      <div class="step">
+        <div class="step-num">{String(i+1).padStart(2,'0')}</div>
+        <h3>{step.title}</h3>
+        <p>{step.desc}</p>
+      </div>
+    ))}
   </div>
 </section>
 
@@ -411,57 +410,39 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
   <h2>Choose your consultation</h2>
   <p>Not sure where to start? The free discovery call is the perfect first step — no commitment, no pressure.</p>
   <div class="options-grid">
-    <div class="option-card">
-      <span class="option-tag free-tag">Free · 15 minutes</span>
-      <h3>{d.discoveryTitle}</h3>
-      <div class="option-price">Free</div>
-      <p>A relaxed conversation to understand your health concerns and goals, explain how I work, and answer any questions. No commitment required.</p>
-      <a href={CALENDLY} target="_blank" rel="noopener">Book free call</a>
-    </div>
-    <div class="option-card featured">
-      <span class="option-tag">Initial · 90 minutes · Online or in person</span>
-      <h3>{d.initialTitle}</h3>
-      <div class="option-price">£110 <span>/ session</span></div>
-      <p>A thorough deep-dive into your health history, current symptoms, lifestyle, and goals. Includes a personalised written herbal protocol, naturopathic recommendations, and supplier-sourced formula design. Around 2.5–3 hours of total work.</p>
-      <div class="sliding-scale-note">Sliding scale available at £85 for students and low-income clients — just mention it when you book.</div>
-      <a href={CALENDLY} target="_blank" rel="noopener">Book initial consultation</a>
-    </div>
-    <div class="option-card">
-      <span class="option-tag">Follow-up · 30–40 minutes · Online or in person</span>
-      <h3>{d.followupTitle}</h3>
-      <div class="option-price">£75 <span>/ session</span></div>
-      <p>Review your progress, adjust your herbal protocol, and address any new concerns. Includes protocol refinement and supplier contact. Recommended every 4–6 weeks during active treatment.</p>
-      <div class="sliding-scale-note">Sliding scale available at £65 for students and low-income clients.</div>
-      <a href={CALENDLY} target="_blank" rel="noopener">Book follow-up</a>
-    </div>
-    <div class="option-card">
-      <span class="option-tag">Bundle · Best value · 3 sessions</span>
-      <h3>{d.bundleTitle}</h3>
-      <div class="option-price">£220 <span>/ 3 sessions</span></div>
-      <p>The most complete way to begin. One full initial consultation followed by two follow-ups to track progress and refine your protocol. Saves £40 versus booking separately.</p>
-      <div class="sliding-scale-note">Sliding scale bundle available at £195.</div>
-      <a href={CALENDLY} target="_blank" rel="noopener">Book bundle</a>
-    </div>
-    <div class="option-card">
-      <span class="option-tag">In person only · 45 minutes</span>
-      <h3>{d.ihmTitle}</h3>
-      <div class="option-price">£60 <span>/ session</span></div>
-      <p>A deeply relaxing Ayurvedic treatment — 10 minutes intake and 35 minutes massage on the head, neck, and shoulders. Can be booked as a standalone or added to an in-person consultation.</p>
-      <a href={CALENDLY} target="_blank" rel="noopener">Book Indian head massage</a>
-    </div>
-  </div>
+    {d.consultationCards && d.consultationCards.map((card) => (
+      <div class={`option-card${card.featured ? ' featured' : ''}`}>
+        <span class="option-tag">{card.tag}</span>
+        <h3>{card.title}</h3>
+        <div class="option-price">
+          {card.price === 0 ? 'Free' : `£${card.price}`}
+          {card.price > 0 && <span>/ session</span>}
+        </div>
+        <p>{card.desc}</p>
+        {card.showSlidingScale && card.slidingScale > 0 && (
+          <div class="sliding-scale-note">Sliding scale: £{card.slidingScale} for students & lower incomes — mention when booking</div>
+        )}
+        <a href={card.calendlyUrl || (card.price === 0 ? s.calendlyDiscovery : card.title.includes('Follow') ? s.calendlyFollowup : card.title.includes('Bundle') ? s.calendlyBundle : card.title.includes('Massage') ? s.calendlyIhm : s.calendlyInitial) || 'https://calendly.com/sara-lemaitre-herbalist'} target="_blank" rel="noopener">{card.bookLabel || 'Book now'}</a>
+      </div>
+    ))}
+  </div></div>
 
   <div class="get-in-touch-box">
     <div class="git-text">
       <p class="eyebrow">Other services</p>
-      <h3>Consultancy, workshops &amp; walks</h3>
-      <p>For corporate wellness consultancy, herbal medicine workshops and Four Seasons holistic walks — each experience is tailored and priced individually. Get in touch to discuss what is right for you.</p>
+      <h3>{d.getInTouchTitle}</h3>
+      <p>{d.getInTouchDesc}</p>
     </div>
     <a href="/consultancy#contact" class="btn-bark">Get in touch</a>
   </div>
 </section>
 
 <!-- PAYMENT -->
+{d.accentPhoto && d.accentPhoto !== '/images/herbs-accent.jpg' && (
+  <div class="book-accent-photo">
+    <img src={d.accentPhoto} alt="Herbal preparations" />
+  </div>
+)}
 <section class="payment-section">
   <h2>Payment by bank transfer</h2>
   <p>I accept payment by UK bank transfer — straightforward, secure, and fee-free for both of us.</p>
@@ -498,26 +479,20 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
 <section class="cancel-section">
   <h2>Cancellation policy</h2>
   <div class="cancel-grid">
-    <div class="cancel-card">
-      <h3>More than 48 hours notice</h3>
-      <p>Full refund by bank transfer, or your appointment will be rescheduled at no extra charge. Please contact me as soon as possible.</p>
-    </div>
-    <div class="cancel-card">
-      <h3>24–48 hours notice</h3>
-      <p>50% of the consultation fee is retained. The remaining 50% will be refunded to your bank account within 3–5 working days.</p>
-    </div>
-    <div class="cancel-card">
-      <h3>Less than 24 hours notice</h3>
-      <p>The full consultation fee is retained. This time has been reserved for you and cannot be filled at short notice.</p>
-    </div>
+    {d.cancellationTiers && d.cancellationTiers.map(tier => (
+      <div class="cancel-card">
+        <h3>{tier.title}</h3>
+        <p>{tier.policy}</p>
+      </div>
+    ))}
   </div>
-  <p class="cancel-note">Exceptions are made in genuine emergencies — please don't hesitate to reach out. I understand that life happens.</p>
+  <p class="cancel-note">{d.cancellationNote}</p>
 </section>
 
 <!-- CTA -->
 <section class="book-cta">
-  <h2>Ready to begin?</h2>
-  <p>Start with a free 15-minute discovery call — no commitment, just a conversation.</p>
+  <h2>{d.finalCtaTitle}</h2>
+  <p>{d.finalCtaDesc}</p>
   <a href={CALENDLY} target="_blank" rel="noopener">Book your free discovery call</a>
 </section>
 

@@ -305,11 +305,11 @@ const meta = {
 <section class="philosophy reveal">
   <div>
     <p class="philosophy-eyebrow">Why workshops</p>
-    <h2>Knowledge that lives<br>in your <em>hands</em>, not<br>just your head</h2>
+    <h2>{d.philosophyTitle}</h2>
   </div>
   <div>
-    <p>There is a version of wellness education that fills you with information and sends you home with a notepad and a vague feeling that you should do something differently. I am not interested in that version.</p>
-    <p>Every workshop I design starts from a single question: <em>what will this person actually do differently on Monday morning?</em> That question shapes the format, the content, the materials, and the pace. Some workshops you leave with a tin of something you blended yourself. Some you leave with a protocol you have tested on your own pulse. All of them, you leave with something you can use.</p>
+    <p>{d.philosophyDesc1}</p>
+    <p>{d.philosophyDesc2}</p>
     <p>Groups are small — never more than twelve — because learning about your own health is personal, and it deserves to happen in a space where questions are welcome and there is enough time to actually think.</p>
   </div>
 </section>
@@ -361,11 +361,7 @@ const meta = {
       <div class="workshop-learn">
         <div class="workshop-learn-label">You will leave knowing how to</div>
         <div class="workshop-learn-list">
-          <span>Make an effective herbal infusion and decoction</span>
-          <span>Prepare a simple tincture and infused oil at home</span>
-          <span>Choose the right preparation method for each herb</span>
-          <span>Build a small home herbal kit for seasonal and everyday use</span>
-          <span>Know which herbs are safe and what to be careful with</span>
+          {d.w1Learns && d.w1Learns.map(item => <span>{item}</span>)}
         </div>
       </div>
       <div class="workshop-meta">
@@ -397,11 +393,7 @@ const meta = {
       <div class="workshop-learn">
         <div class="workshop-learn-label">Topics covered</div>
         <div class="workshop-learn-list">
-          <span>How the hormonal system works and where herbs interact with it</span>
-          <span>Key herbs for endometriosis, PCOS, PMS and perimenopause</span>
-          <span>The adrenal-hormonal connection and how to support it</span>
-          <span>Naturopathic foundations — diet, lifestyle, what actually matters</span>
-          <span>When to work with a practitioner and what to expect</span>
+          {d.w2Learns && d.w2Learns.map(item => <span>{item}</span>)}
         </div>
       </div>
       <div class="workshop-meta">
@@ -436,7 +428,7 @@ const meta = {
           <span>A personalised loose-leaf tea blend (50g)</span>
           <span>A tincture formula written to your constitution</span>
           <span>A reference card explaining each herb you chose and why</span>
-          <span>The knowledge to adjust and remake your blends at home</span>
+          {d.w3Learns && d.w3Learns.map(item => <span>{item}</span>)}
         </div>
       </div>
       <div class="workshop-meta">

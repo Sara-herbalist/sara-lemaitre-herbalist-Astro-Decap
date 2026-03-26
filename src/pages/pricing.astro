@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
+const p = (await import('../data/pricing.json')).default;
+const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
 const meta = {
   title: "Pricing & Packages | Herbal Medicine Consultations from £60 | Sara Lemaitre",
   description: "Transparent pricing for herbal medicine consultations from £60. Initial consultation £110, follow-up £75, bundle of 3 sessions £220. Sliding scale available. Indian head massage £60.",
@@ -765,6 +767,8 @@ const meta = {
   </div>
 </div>
 
+{p.showPackages && (
+<>
 <!-- ══ PACKAGES ══ -->
 <div class="section-label reveal">
   <span class="section-label-text">Programmes & packages</span>
@@ -856,6 +860,8 @@ const meta = {
     </div>
   </div>
 </div>
+</>
+)}
 
 <!-- ══ RETAINER ══ -->
 <div class="section-label reveal">

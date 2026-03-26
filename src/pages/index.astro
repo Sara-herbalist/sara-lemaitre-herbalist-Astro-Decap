@@ -736,6 +736,29 @@ const meta = {
   .reveal-delay-3 { transition-delay: .3s; }
 
   /* ── RESPONSIVE ── */
+
+  /* ── HERO PORTRAIT ROTATION ── */
+  .hero-media-wrap { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+  .hero-portrait-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.2s ease; z-index: 2; }
+  .hero-portrait-img.visible { opacity: 1; }
+  .hero-botanical { transition: opacity 1.2s ease; position: relative; z-index: 1; }
+  .hero-botanical.fade { opacity: 0; }
+
+  /* ── PRACTICE PHOTO STRIP ── */
+  .practice-strip { padding: 0; background: var(--charcoal); }
+  .practice-strip-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .practice-photo { aspect-ratio: 4/3; overflow: hidden; }
+  .practice-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; filter: brightness(0.85) saturate(0.9); }
+  .practice-photo:hover img { transform: scale(1.04); filter: brightness(0.95) saturate(1); }
+
+  /* ── STORY PULL PORTRAIT ── */
+  .story-pull-portrait { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 3px solid var(--warm-white); box-shadow: 0 4px 20px rgba(92,74,58,0.15); }
+  .story-pull-visual { gap: 2rem; }
+
+  @media (max-width: 1024px) {
+    .practice-strip-inner { grid-template-columns: 1fr; }
+    .story-pull-portrait { width: 80px; height: 80px; }
+  }
   @media (max-width: 1024px) {
     nav { padding: 1.2rem 2rem; }
     .nav-links { display: none; }
@@ -871,9 +894,12 @@ const meta = {
       <a href="/story" class="btn-ghost" data-i18n="index.hero.cta2">Read my story</a>
     </div>
   </div>
-  <div class="hero-right">
-    <!-- Botanical illustration -->
-    <svg class="hero-botanical" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <div class="hero-right" id="hero-right-panel">
+    <div class="hero-media-wrap">
+      {h.heroPortrait && h.heroPortrait !== '/images/sara-portrait.jpg' && (
+        <img src={h.heroPortrait} alt="Sara Lemaitre — herbalist" class="hero-portrait-img" id="hero-portrait-img" />
+      )}
+      <svg class="hero-botanical" id="hero-botanical-svg" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg">
       <!-- outer rings -->
       <circle cx="210" cy="210" r="180" stroke="#7A8C6E" stroke-width=".6" stroke-dasharray="2 8" opacity=".4"/>
       <circle cx="210" cy="210" r="140" stroke="#7A8C6E" stroke-width=".8" stroke-dasharray="3 6" opacity=".5"/>
@@ -899,6 +925,7 @@ const meta = {
       <path d="M285 295 Q310 285 320 265 Q295 270 285 295Z" stroke="#7A8C6E" stroke-width=".9" fill="rgba(122,140,110,0.08)" opacity=".7"/>
       <path d="M295 275 Q316 258 325 240 Q300 250 295 275Z" stroke="#7A8C6E" stroke-width=".9" fill="rgba(122,140,110,0.08)" opacity=".6"/>
     </svg>
+    </div>
     <div class="scroll-hint">
       <span>Scroll</span>
       <div class="scroll-line"></div>
@@ -945,43 +972,20 @@ const meta = {
 <!-- ══ WHO I HELP ══ -->
 <section class="who-section">
   <div class="who-header reveal">
-    <h2>Who I work<br>with — and <em>why</em></h2>
-    <p class="who-header-desc">My practice is not generalist by accident. Every specialism I hold, I hold because I have direct experience of it — as a patient, as an athlete, or as a practitioner who spent two years in student clinic working with exactly these presentations.</p>
+    <h2>{h.whoTitle}</h2>
+    <p class="who-header-desc">{h.whoDesc}</p>
   </div>
   <div class="who-grid">
-    <div class="who-card reveal">
-      <div class="who-card-number">01</div>
-      <div class="who-card-title" data-i18n="index.who.hormonal.title">Women with hormonal conditions</div>
-      <div class="who-card-desc">Endometriosis, PCOS, chronic fatigue, perimenopause, fertility, menstrual irregularity. I have lived these conditions. I have also spent two years treating them in clinic. The combination is rare.</div>
-      <div class="who-card-tags">
-        <span class="who-tag">Endometriosis</span>
-        <span class="who-tag">PCOS</span>
-        <span class="who-tag">Perimenopause</span>
-        <span class="who-tag">Chronic fatigue</span>
+    {h.whoCards && h.whoCards.map((card, i) => (
+      <div class={`who-card reveal${i > 0 ? ` reveal-delay-${i}` : ''}`}>
+        <div class="who-card-number">{card.number}</div>
+        <div class="who-card-title">{card.title}</div>
+        <div class="who-card-desc">{card.desc}</div>
+        <div class="who-card-tags">
+          {card.tags && card.tags.map(tag => <span class="who-tag">{tag}</span>)}
+        </div>
       </div>
-    </div>
-    <div class="who-card reveal reveal-delay-1">
-      <div class="who-card-number">02</div>
-      <div class="who-card-title">Athletes & active people</div>
-      <div class="who-card-desc">I trained at national level. I understand performance, recovery, overtraining, and the very specific grief of a body that won't cooperate. Adaptogen protocols, inflammation, hormonal disruption in athletes.</div>
-      <div class="who-card-tags">
-        <span class="who-tag">Performance fatigue</span>
-        <span class="who-tag">Recovery</span>
-        <span class="who-tag">Adaptogens</span>
-        <span class="who-tag">Injury support</span>
-      </div>
-    </div>
-    <div class="who-card reveal reveal-delay-2">
-      <div class="who-card-number">03</div>
-      <div class="who-card-title" data-i18n="index.who.burnout.title">People exhausted by burnout</div>
-      <div class="who-card-desc">Stress, nervous system dysregulation, adrenal fatigue, the quiet erosion of a life run on empty. Herbal medicine and naturopathy have deep tools for this. Indian head massage offers something immediate.</div>
-      <div class="who-card-tags">
-        <span class="who-tag">Burnout</span>
-        <span class="who-tag">Stress</span>
-        <span class="who-tag">Sleep</span>
-        <span class="who-tag">Nervous system</span>
-      </div>
-    </div>
+    ))}
   </div>
 </section>
 
@@ -989,46 +993,20 @@ const meta = {
 <section class="different-section">
   <div class="different-left reveal">
     <p class="eyebrow">Why it matters</p>
-    <h2>A practitioner who<br>has been where<br><em>you are</em></h2>
-    <p>There are many qualified herbalists. Fewer have navigated the exact conditions they treat. Fewer still bring together Western herbalism, naturopathy, TCM-informed dispensary training, Ayurvedic study, bodywork, and the understanding of a former high-performance athlete — and conduct consultations in both English and French.</p>
-    <p>This is not a list of certificates. It is a way of seeing the whole person in front of me.</p>
+    <h2>{h.differentTitle}</h2>
+    <p>{h.differentDesc1}</p>
+    <p>{h.differentDesc2}</p>
   </div>
   <div class="different-right reveal reveal-delay-1">
-    <div class="diff-item">
-      <div class="diff-num">01</div>
-      <div>
-        <div class="diff-text-title">Lived authority in hormonal health</div>
-        <div class="diff-text-body">Personal recovery from endometriosis, PCOS and chronic fatigue. Two years of student clinic specialising in these conditions. Not theoretical — experiential.</div>
+    {h.differentItems && h.differentItems.map((item, i) => (
+      <div class="diff-item">
+        <div class="diff-num">{String(i+1).padStart(2,'0')}</div>
+        <div>
+          <div class="diff-text-title">{item.title}</div>
+          <div class="diff-text-body">{item.desc}</div>
+        </div>
       </div>
-    </div>
-    <div class="diff-item">
-      <div class="diff-num">02</div>
-      <div>
-        <div class="diff-text-title">French phytotherapy tradition</div>
-        <div class="diff-text-body">Rooted in a European relationship with plant medicine that is older and more clinically integrated than the UK tradition. A different lens — and a richer one.</div>
-      </div>
-    </div>
-    <div class="diff-item">
-      <div class="diff-num">03</div>
-      <div>
-        <div class="diff-text-title">Cross-tradition depth</div>
-        <div class="diff-text-body">Western herbalism, TCM (six months in a dispensary), Ayurveda. I draw on the most appropriate tools for your specific case — not one framework applied to everyone.</div>
-      </div>
-    </div>
-    <div class="diff-item">
-      <div class="diff-num">04</div>
-      <div>
-        <div class="diff-text-title">The athlete's understanding</div>
-        <div class="diff-text-body">A national-level sporting career gives me a particular fluency with performance bodies — their logic, their limits, and what it costs when they fail you.</div>
-      </div>
-    </div>
-    <div class="diff-item">
-      <div class="diff-num">05</div>
-      <div>
-        <div class="diff-text-title">Bilingual practice</div>
-        <div class="diff-text-body">Consultations in English and French. Clients in the UK, France, Belgium, Québec, and beyond. Your language, your comfort, your care.</div>
-      </div>
-    </div>
+    ))}
   </div>
 </section>
 
@@ -1096,6 +1074,17 @@ const meta = {
   </div>
 </section>
 
+<!-- ══ PRACTICE PHOTOS ══ -->
+{(h.practicePhoto1 && h.practicePhoto1 !== '/images/herbs-drying.jpg') || (h.practicePhoto2 && h.practicePhoto2 !== '/images/tincture-bottles.jpg') || (h.practicePhoto3 && h.practicePhoto3 !== '/images/workspace.jpg') ? (
+<section class="practice-strip">
+  <div class="practice-strip-inner">
+    {h.practicePhoto1 && h.practicePhoto1 !== '/images/herbs-drying.jpg' && <div class="practice-photo"><img src={h.practicePhoto1} alt="Herbal practice" /></div>}
+    {h.practicePhoto2 && h.practicePhoto2 !== '/images/tincture-bottles.jpg' && <div class="practice-photo"><img src={h.practicePhoto2} alt="Tinctures and preparations" /></div>}
+    {h.practicePhoto3 && h.practicePhoto3 !== '/images/workspace.jpg' && <div class="practice-photo"><img src={h.practicePhoto3} alt="Workspace" /></div>}
+  </div>
+</section>
+) : null}
+
 <!-- ══ STORY PULL ══ -->
 <section class="story-pull">
   <div class="story-pull-text reveal">
@@ -1105,6 +1094,9 @@ const meta = {
     <a href="/story" class="btn-bark">Read my full story</a>
   </div>
   <div class="story-pull-visual">
+    {h.storyPullPortrait && h.storyPullPortrait !== '/images/sara-portrait-warm.jpg' && (
+      <img src={h.storyPullPortrait} alt="Sara Lemaitre" class="story-pull-portrait" />
+    )}
     <div class="story-quote">
       <p>"I was not living. I was surviving. Until I stopped waiting for someone else to give me permission to heal."</p>
       <cite>— Sara Lemaitre</cite>
@@ -1119,26 +1111,13 @@ const meta = {
     <h2>From first conversation<br>to <em>lasting change</em></h2>
   </div>
   <div class="process-steps">
-    <div class="process-step reveal">
-      <div class="process-dot">01</div>
-      <div class="process-step-title" data-i18n="index.process.1.title">Discovery call</div>
-      <div class="process-step-desc">Free · 15 minutes. We talk about where you are and what you need. No commitment. Just honesty.</div>
-    </div>
-    <div class="process-step reveal reveal-delay-1">
-      <div class="process-dot">02</div>
-      <div class="process-step-title" data-i18n="index.process.2.title">Initial consultation</div>
-      <div class="process-step-desc">75–80 minutes. Full case history. Your story, not just your symptoms. A written protocol follows.</div>
-    </div>
-    <div class="process-step reveal reveal-delay-2">
-      <div class="process-dot">03</div>
-      <div class="process-step-title">Your protocol</div>
-      <div class="process-step-desc">Personalised herbal formulations, naturopathic guidance, lifestyle adjustments. Made for your body.</div>
-    </div>
-    <div class="process-step reveal reveal-delay-3">
-      <div class="process-dot">04</div>
-      <div class="process-step-title">Ongoing support</div>
-      <div class="process-step-desc">Follow-ups, adjustments, monthly retainers for ongoing clients. Healing takes time. I stay with you.</div>
-    </div>
+    {h.processSteps && h.processSteps.map((step, i) => (
+      <div class={`process-step reveal${i > 0 ? ` reveal-delay-${i}` : ''}`}>
+        <div class="process-dot">{String(i+1).padStart(2,'0')}</div>
+        <div class="process-step-title">{step.title}</div>
+        <div class="process-step-desc">{step.desc}</div>
+      </div>
+    ))}
   </div>
 </section>
 
@@ -1149,19 +1128,13 @@ const meta = {
     <h2>In their <em>own words</em></h2>
   </div>
   <div class="testimonials-grid">
-    <div class="testimonial-card reveal">
-      <p class="testimonial-text">I left the Indian head massage feeling like I was floating. I genuinely forgot where I had parked my car. Something in my neck that has been tight for two years just... wasn't anymore.</p>
-      <div class="testimonial-author">Student clinic client</div>
-      <div class="testimonial-condition">Indian head massage</div>
-    </div>
-    <div class="testimonial-card reveal reveal-delay-1 placeholder">
-      <p class="testimonial-text">Your testimonial will appear here. I am reaching out to past clients from my student clinic — if you would like to share your experience, please get in touch.</p>
-      <div class="testimonial-author">— Coming soon</div>
-    </div>
-    <div class="testimonial-card reveal reveal-delay-2 placeholder">
-      <p class="testimonial-text">More client stories coming as I open my practice. Every person I have worked with has a story worth telling.</p>
-      <div class="testimonial-author">— Coming soon</div>
-    </div>
+    {h.testimonials && h.testimonials.map((t, i) => (
+      <div class={`testimonial-card reveal${i > 0 ? ` reveal-delay-${i}` : ''}${!t.text ? ' placeholder' : ''}`}>
+        <p class="testimonial-text">{t.text || 'Your testimonial will appear here.'}</p>
+        <div class="testimonial-author">{t.author}</div>
+        {t.condition && <div class="testimonial-condition">{t.condition}</div>}
+      </div>
+    ))}
   </div>
 </section>
 
@@ -1169,47 +1142,29 @@ const meta = {
 <section class="international-section reveal">
   <div class="international-text">
     <p class="eyebrow">Available worldwide</p>
-    <h2>Your language.<br>Your timezone.<br><em>Your care.</em></h2>
-    <p>Most of my consultations happen online. That means clients in France can work with a practitioner who understands the French phytotherapy tradition. Clients in Australia, the US, or the Gulf can access a qualified European herbalist in their own time zone. No geography, no compromise.</p>
-    <p>I practise in English and French, and I understand the particular comfort of discussing your health in your mother tongue.</p>
+    <h2>{h.internationalTitle}</h2>
+    <p>{h.internationalDesc1}</p>
+    <p>{h.internationalDesc2}</p>
     <div class="lang-flags">
       <span class="lang-pill">🇬🇧 English</span>
       <span class="lang-pill">🇫🇷 Français</span>
     </div>
   </div>
   <div class="regions-grid">
-    <div class="region-item">
-      <div class="region-name">United Kingdom</div>
-      <div class="region-desc">Online & in person. Base market. NIMH registered.</div>
-    </div>
-    <div class="region-item">
-      <div class="region-name">France & Francophone Europe</div>
-      <div class="region-desc">French-language consultations. Phytotherapy tradition shared.</div>
-    </div>
-    <div class="region-item">
-      <div class="region-name">North America</div>
-      <div class="region-desc">US & Canada. High demand, underserved integrative practitioners.</div>
-    </div>
-    <div class="region-item">
-      <div class="region-name">Australia & New Zealand</div>
-      <div class="region-desc">Strong CAM culture. Premium market. Online.</div>
-    </div>
-    <div class="region-item">
-      <div class="region-name">Middle East</div>
-      <div class="region-desc">UAE, KSA. Herbal traditions valued. Diaspora communities.</div>
-    </div>
-    <div class="region-item">
-      <div class="region-name">Francophone Africa</div>
-      <div class="region-desc">West & Central Africa. Plant medicine deeply rooted culturally.</div>
-    </div>
+    {h.regions && h.regions.map(r => (
+      <div class="region-item">
+        <div class="region-name">{r.name}</div>
+        <div class="region-desc">{r.desc}</div>
+      </div>
+    ))}
   </div>
 </section>
 
 <!-- ══ FINAL CTA ══ -->
 <section class="final-cta reveal" id="book">
   <p class="eyebrow">Begin here</p>
-  <h2>If any part of this<br>sounds like your story —<br><em>let's talk.</em></h2>
-  <p>A free 15-minute discovery call. No pressure, no sales pitch. Just an honest conversation about where you are and whether I am the right person to support you.</p>
+  <h2>{h.ctaTitle}</h2>
+  <p>{h.ctaDesc}</p>
   <div class="cta-buttons">
     <a href="https://calendly.com/sara-lemaitre-herbalist" target="_blank" rel="noopener" class="cta-btn-primary" data-i18n="index.cta.btn">Book a free discovery call</a>
     <a href="/pricing" class="cta-btn-secondary">View pricing & packages</a>

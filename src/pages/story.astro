@@ -592,12 +592,12 @@ const meta = {
       <h2>{d.s1h2}</h2>
       <p>{d.s1p1}</p>
       <p>{d.s1p2}</p>
-      <p>In training, I was fainting. My nose bled without warning. My injuries multiplied. My performance — and my dream — fell apart in front of me while I was still fighting with everything I had to hold it together.</p>
+      <p>{d.s1p3}</p>
       <div class="inset-quote">
         <p>{d.s1inset}</p>
       </div>
-      <p>I began to dissociate from my body entirely. Not as a choice, but as survival. I separated myself from the thing that was failing me just to get through each day. I was not living. I was surviving.</p>
-      <p>Until the doctors revoked my right to train. It was too dangerous for my health. My career was over.</p>
+      <p>{d.s1p4}</p>
+      <p>{d.s1p5}</p>
     </div>
   </div>
 
@@ -609,11 +609,10 @@ const meta = {
       <div class="inset-quote">
         <p>{d.s2inset}</p>
       </div>
-      <p>This is what medical gaslighting looks like when it comes from six separate specialists wearing white coats. You can be as well supported by the people who love you as anyone could be. You can be as certain of your own strength as you have ever been. But when the same message is delivered again and again by people with the credentials to know how the human body works — <strong>you start to believe them.</strong></p>
-      <p>I started to believe I was weak. That I was imagining it. That I had somehow brought this on myself.</p>
-      <p>After seven years, I finally had a word for my suffering: <strong>endometriosis</strong>, alongside PCOS, chronic fatigue, and total exhaustion. The relief of a diagnosis was real — I was not inventing my pain. But the answer that followed was devastating: <em>there is no cure.</em></p>
-      <p>More experimental hormonal treatments followed. Surgery to remove adhesions and unhealthy tissue. Another round of hormonal therapy. Increasingly potent pain medication. And still — constant pain, no resolution, no path forward that anyone could offer me.</p>
-      <p>I had enough.</p>
+      <p>{d.s2p2}</p>
+      <p>{d.s2p3}</p>
+      <p>{d.s2p4}</p>
+      <p>{d.s2p5}</p>
     </div>
     <div class="story-aside" style="border-left: 1px solid rgba(122,108,100,0.12);">
       <div class="story-number">02</div>
@@ -629,27 +628,25 @@ const meta = {
     </div>
     <div class="story-body">
       <h2>{d.s3h2}</h2>
-      <p>I was certain an alternative existed. I was equally certain that no one else was going to find it for me. So I made the decision that changed everything: <strong>I took my health into my own hands.</strong></p>
-      <p>The pandemic gave me the one resource I had never had enough of — time. I began researching. I found a short online herbal medicine discovery course. Cautiously, reluctantly almost, I began to experiment on myself after deciding I was done with conventional medication.</p>
-      <p>It was slow. It was exhausting. There were countless trials and errors. But I could see results. For the first time in years, something was working.</p>
+      <p>{d.s3p1}</p>
+      <p>{d.s3p2}</p>
+      <p>{d.s3p3}</p>
       <div class="inset-quote">
         <p>{d.s3inset}</p>
       </div>
-      <p>And then my family became my first clients.</p>
-      <p>My mother's arthritis flare-ups. My sister's anxiety and sleep. My father's recurring throat weakness — sore throats and colds from constant travel and speaking. I made formulations for each of them. I will be honest: some of those early blends were rather dreadful. But they are all well and very much alive, so I consider that a success.</p>
-      <p>Those months — quiet, experimental, rooted in love and necessity — were the beginning of everything that followed.</p>
+      <p>{d.s3p4}</p>
+      <p>{d.s3p5}</p>
     </div>
   </div>
 
   <!-- 04 — The training -->
   <div class="story-section reverse reveal">
     <div class="story-body" style="padding-left: 8rem;">
-      <h2>From self-taught<br>to <em>clinically trained</em></h2>
-      <p>What had started as personal necessity became a calling. I enrolled in a full clinical training in naturopathy and herbal medicine — a degree-level programme spanning Western herbalism, Traditional Chinese Medicine, and Ayurveda.</p>
-      <p>I did not stop at the curriculum. During my training I spent six months working alongside an external TCM and acupuncture practitioner in their dispensary — outside of my school hours, on my own initiative — deepening my understanding of Chinese herbal medicine and its application to the hormonal and gynaecological conditions I had lived through myself.</p>
+      <h2>{d.s4h2}</h2>
+      <p>{d.s4p1}</p>
+      <p>{d.s4p2}</p>
       <p>Over two years in student clinic, I worked with clients navigating endometriosis, PCOS, chronic fatigue, perimenopause, hormonal disruption, and stress-driven illness. I recognised their stories immediately. Not because I had read about them — because I had lived them.</p>
-      <p>I also hold a diploma in Indian Head Massage, trained as a naturopath, and bring the French phytotherapy tradition into everything I do — a relationship with plant medicine that is woven into European culture in a way that feels like coming home.</p>
-      <p>And I was a high-performance athlete. I understand what it means to push a body to its limits — and what it feels like when that body can no longer perform. That shapes every consultation I have with active people who are struggling.</p>
+      <p>{d.s4p3}</p>
     </div>
     <div class="story-aside" style="border-left: 1px solid rgba(122,108,100,0.12);">
       <div class="story-number">04</div>
@@ -661,28 +658,32 @@ const meta = {
 
 <!-- MAGNOLIA -->
 <section class="magnolia-section reveal">
-  <div class="magnolia-inner">
+  <div class="magnolia-layout">
+    {d.magnoliaPhoto && d.magnoliaPhoto !== '/images/magnolia.jpg' && (
+      <div class="magnolia-photo">
+        <img src={d.magnoliaPhoto} alt="Magnolia tree" />
+      </div>
+    )}
+    <div class="magnolia-inner">
     <h2>{d.magnoliaTitle}</h2>
-    <p>I was raised beneath the branches of a magnolia tree in my family garden. It was my shelter, my refuge. That tall, steady guardian felt eternal.</p>
-    <p>Until one day a storm brought it down.</p>
-    <p>I was devastated. But every day afterwards, I watered the soil where it once stood. Adults told me it would not return. But I kept watering. Stubbornness — and perhaps faith in renewal — has always been part of me.</p>
-    <p>One day, a tiny shoot emerged.</p>
-    <p>Today, it greets me whenever I return home. Years later, <em>Magnolia</em> became the subject of my clinical dissertation. It reminded me that resilience is quiet. It grows beneath the surface long before anyone can see it. It asks for patience, consistency, and belief in what cannot yet be observed.</p>
-    <p><em>That is what healing through plant medicine looks like.</em> It is not dramatic. It is not instant. But it is real, and it is yours — rooted in the body's own intelligence, supported by centuries of botanical tradition, and tended with care.</p>
-    <p>That is the practice I am building. That is the kind of practitioner I am.</p>
+    <p>{d.magnoliaP1}</p>
+    <p>{d.magnoliaP2}</p>
+    <p>{d.magnoliaP3}</p>
+    <p>{d.magnoliaP4}</p>
+    <p>{d.magnoliaP5}</p>
+    <p>{d.magnoliaP6}</p>
   </div>
 </section>
 
 <!-- GRADUATION -->
 <section class="graduation-section reveal">
   <div class="graduation-inner">
-    <h2>On the day I became a qualified practitioner</h2>
-    <p>Standing in that room on graduation day, I looked around at the people beside me — practitioners from different disciplines, different backgrounds, different stories of what had brought them to this path. Every single one of us had overcome something to sit in that room.</p>
-    <p>I thought about what this journey had given me beyond knowledge. Self-discovery. The moments in a clinic session, or a case study, or a conversation with a classmate, when you realise you are capable of more than you had imagined. A community of people who understand that health is an ecosystem — that none of us works in isolation, and that we will need one another.</p>
-    <p>I thought about the wholeness we had been cultivating in ourselves — because that is what we offer our clients. Not just protocols and prescriptions. <strong>Presence. Listening. The courage to sit with complexity.</strong></p>
-    <p>It takes courage to follow a path that is not always understood. To choose a form of medicine that asks more questions than it answers, that treats the person rather than the symptom, that works with time rather than against it.</p>
-    <p>I chose it anyway. I would choose it again, every time.</p>
-    <p><em>Your journey is inspirational. This one certainly was.</em></p>
+    <h2>{d.graduationTitle}</h2>
+    <p>{d.graduationP1}</p>
+    <p>{d.graduationP2}</p>
+    <p>{d.graduationP3}</p>
+    <p>{d.graduationP4}</p>
+    <p>{d.graduationP5}</p>
   </div>
 </section>
 
@@ -698,62 +699,20 @@ const meta = {
     <a href="https://calendly.com/sara-lemaitre-herbalist" target="_blank" rel="noopener" class="now-cta">Book a free discovery call</a>
   </div>
   <div class="credentials-panel">
-    <div class="credential-item">
-      <div class="cred-dot"></div>
-      <div>
-        <div class="cred-name">Clinical Herbal Medicine</div>
-        <div class="cred-detail">Degree-level qualification · EHTPA accredited</div>
+    {d.portraitPhoto && d.portraitPhoto !== '/images/sara-portrait-professional.jpg' && (
+      <div class="cred-portrait">
+        <img src={d.portraitPhoto} alt="Sara Lemaitre" />
       </div>
-    </div>
-    <div class="credential-item">
-      <div class="cred-dot"></div>
-      <div>
-        <div class="cred-name">Naturopathy Diploma</div>
-        <div class="cred-detail">Lifestyle, nutrition & integrative protocols</div>
+    )}
+    {d.credentials && d.credentials.map(cred => (
+      <div class="credential-item">
+        <div class="cred-dot"></div>
+        <div>
+          <div class="cred-name">{cred.name}</div>
+          <div class="cred-detail">{cred.detail}</div>
+        </div>
       </div>
-    </div>
-    <div class="credential-item">
-      <div class="cred-dot"></div>
-      <div>
-        <div class="cred-name">TCM & Acupuncture Externship</div>
-        <div class="cred-detail">6 months · TCM dispensary practice</div>
-      </div>
-    </div>
-    <div class="credential-item">
-      <div class="cred-dot"></div>
-      <div>
-        <div class="cred-name">Ayurvedic Studies</div>
-        <div class="cred-detail">Cross-traditional training · Integrated approach</div>
-      </div>
-    </div>
-    <div class="credential-item">
-      <div class="cred-dot"></div>
-      <div>
-        <div class="cred-name">Indian Head Massage Diploma</div>
-        <div class="cred-detail">Stress, tension & nervous system recovery</div>
-      </div>
-    </div>
-    <div class="credential-item">
-      <div class="cred-dot"></div>
-      <div>
-        <div class="cred-name">Personal recovery</div>
-        <div class="cred-detail">Endometriosis · PCOS · Chronic fatigue</div>
-      </div>
-    </div>
-    <div class="credential-item">
-      <div class="cred-dot"></div>
-      <div>
-        <div class="cred-name">Former elite athlete</div>
-        <div class="cred-detail">Artistic swimming · National team level</div>
-      </div>
-    </div>
-    <div class="credential-item">
-      <div class="cred-dot"></div>
-      <div>
-        <div class="cred-name">Bilingual practice</div>
-        <div class="cred-detail">English & French · UK, Europe & international</div>
-      </div>
-    </div>
+    ))}
   </div>
 </section>
 
