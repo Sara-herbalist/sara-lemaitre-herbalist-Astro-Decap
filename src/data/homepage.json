@@ -1,8 +1,142 @@
 {
-  "heroEyebrow": "Clinical herbalist · Naturopath · Former elite athlete",
-  "heroDesc": "I work with women who are tired of being dismissed. With athletes whose bodies have stopped cooperating. With anyone who suspects there is a different way — and needs someone who has walked that road themselves.",
+  "heroEyebrow": "Clinical herbalist \u00b7 Naturopath \u00b7 Former elite athlete",
+  "heroDesc": "I work with women who are tired of being dismissed. With athletes whose bodies have stopped cooperating. With anyone who suspects there is a different way \u2014 and needs someone who has walked that road themselves.",
   "introTitle": "The practice",
   "introSubtitle": "Plant medicine rooted in <em>lived</em> understanding",
-  "introBody1": "I did not come to herbal medicine through a textbook. I came through seven years of being failed by conventional medicine — through a body I barely recognised, a career cut short, and a determination that an alternative had to exist. When I found plant medicine, it worked. Slowly, painstakingly, with a great deal of trial and error. But it worked.",
-  "introBody2": "That experience — of navigating endometriosis, PCOS, and chronic fatigue without a roadmap — is the foundation of everything I do in clinic. I know what it means to search for answers when the system isn't giving you any. I know what it feels like when something finally does."
+  "introBody1": "I did not come to herbal medicine through a textbook. I came through seven years of being failed by conventional medicine \u2014 through a body I barely recognised, a career cut short, and a determination that an alternative had to exist. When I found plant medicine, it worked. Slowly, painstakingly, with a great deal of trial and error. But it worked.",
+  "introBody2": "That experience \u2014 of navigating endometriosis, PCOS, and chronic fatigue without a roadmap \u2014 is the foundation of everything I do in clinic. I know what it means to search for answers when the system isn't giving you any. I know what it feels like when something finally does.",
+  "heroPortrait": "/images/sara-portrait.jpg",
+  "practicePhoto1": "/images/herbs-drying.jpg",
+  "practicePhoto2": "/images/tincture-bottles.jpg",
+  "practicePhoto3": "/images/workspace.jpg",
+  "storyPullPortrait": "/images/sara-portrait-warm.jpg",
+  "whoTitle": "Who I work with \u2014 and why",
+  "whoDesc": "My practice is not generalist by accident. Every specialism I hold, I hold because I have direct experience of it \u2014 as a patient, as an athlete, or as a practitioner who spent two years in student clinic working with exactly these presentations.",
+  "whoCards": [
+    {
+      "number": "01",
+      "title": "Women with hormonal conditions",
+      "desc": "Endometriosis, PCOS, chronic fatigue, perimenopause, fertility, menstrual irregularity. I have lived these conditions. I have also spent two years treating them in clinic. The combination is rare.",
+      "tags": [
+        "Endometriosis",
+        "PCOS",
+        "Perimenopause",
+        "Chronic fatigue"
+      ]
+    },
+    {
+      "number": "02",
+      "title": "Athletes & active people",
+      "desc": "I trained at national level. I understand performance, recovery, overtraining, and the very specific grief of a body that won't cooperate. Adaptogen protocols, inflammation, hormonal disruption in athletes.",
+      "tags": [
+        "Performance fatigue",
+        "Recovery",
+        "Adaptogens",
+        "Injury support"
+      ]
+    },
+    {
+      "number": "03",
+      "title": "People exhausted by burnout",
+      "desc": "Stress, nervous system dysregulation, adrenal fatigue, the quiet erosion of a life run on empty. Herbal medicine and naturopathy have deep tools for this. Indian head massage offers something immediate.",
+      "tags": [
+        "Burnout",
+        "Stress",
+        "Sleep",
+        "Nervous system"
+      ]
+    }
+  ],
+  "differentTitle": "A practitioner who has been where you are",
+  "differentDesc1": "There are many qualified herbalists. Fewer have navigated the exact conditions they treat. Fewer still bring together Western herbalism, naturopathy, TCM-informed dispensary training, Ayurvedic study, bodywork, and the understanding of a former high-performance athlete \u2014 and conduct consultations in both English and French.",
+  "differentDesc2": "This is not a list of certificates. It is a way of seeing the whole person in front of me.",
+  "differentItems": [
+    {
+      "title": "Lived authority in hormonal health",
+      "desc": "Personal recovery from endometriosis, PCOS and chronic fatigue. Two years of student clinic specialising in these conditions. Not theoretical \u2014 experiential."
+    },
+    {
+      "title": "French phytotherapy tradition",
+      "desc": "Rooted in a European relationship with plant medicine that is older and more clinically integrated than the UK tradition. A different lens \u2014 and a richer one."
+    },
+    {
+      "title": "Cross-tradition depth",
+      "desc": "Western herbalism, TCM (six months in a dispensary), Ayurveda. I draw on the most appropriate tools for your specific case \u2014 not one framework applied to everyone."
+    },
+    {
+      "title": "The athlete's understanding",
+      "desc": "A national-level sporting career gives me a particular fluency with performance bodies \u2014 their logic, their limits, and what it costs when they fail you."
+    },
+    {
+      "title": "Bilingual practice",
+      "desc": "Consultations in English and French. Clients in the UK, France, Belgium, Qu\u00e9bec, and beyond. Your language, your comfort, your care."
+    }
+  ],
+  "processTitle": "From first conversation to lasting change",
+  "processSteps": [
+    {
+      "title": "Discovery call",
+      "desc": "Free \u00b7 15 minutes. We talk about where you are and what you need. No commitment. Just honesty."
+    },
+    {
+      "title": "Initial consultation",
+      "desc": "90 minutes. Full case history. Your story, not just your symptoms. A written protocol follows within 48 hours."
+    },
+    {
+      "title": "Your protocol",
+      "desc": "Personalised herbal formulations, naturopathic guidance, lifestyle adjustments. Made for your body."
+    },
+    {
+      "title": "Ongoing support",
+      "desc": "Follow-ups, adjustments, monthly retainers for ongoing clients. Healing takes time. I stay with you."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "I left the Indian head massage feeling like I was floating. I genuinely forgot where I had parked my car. Something in my neck that has been tight for two years just... wasn't anymore.",
+      "author": "Student clinic client",
+      "condition": "Indian head massage"
+    },
+    {
+      "text": "",
+      "author": "\u2014 Coming soon",
+      "condition": ""
+    },
+    {
+      "text": "",
+      "author": "\u2014 Coming soon",
+      "condition": ""
+    }
+  ],
+  "internationalTitle": "Your language. Your timezone. Your care.",
+  "internationalDesc1": "Most of my consultations happen online. That means clients in France can work with a practitioner who understands the French phytotherapy tradition. Clients in Australia, the US, or the Gulf can access a qualified European herbalist in their own time zone. No geography, no compromise.",
+  "internationalDesc2": "I practise in English and French, and I understand the particular comfort of discussing your health in your mother tongue.",
+  "regions": [
+    {
+      "name": "United Kingdom",
+      "desc": "Online & in person. Base market. NIMH registered."
+    },
+    {
+      "name": "France & Francophone Europe",
+      "desc": "French-language consultations. Phytotherapy tradition shared."
+    },
+    {
+      "name": "North America",
+      "desc": "US & Canada. High demand, underserved integrative practitioners."
+    },
+    {
+      "name": "Australia & New Zealand",
+      "desc": "Strong CAM culture. Premium market. Online."
+    },
+    {
+      "name": "Middle East",
+      "desc": "UAE, KSA. Herbal traditions valued. Diaspora communities."
+    },
+    {
+      "name": "Francophone Africa",
+      "desc": "West & Central Africa. Plant medicine deeply rooted culturally."
+    }
+  ],
+  "ctaTitle": "If any part of this sounds like your story \u2014 let's talk.",
+  "ctaDesc": "A free 15-minute discovery call. No pressure, no sales pitch. Just an honest conversation about where you are and whether I am the right person to support you."
 }

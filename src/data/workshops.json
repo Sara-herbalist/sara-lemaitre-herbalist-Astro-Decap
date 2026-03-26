@@ -1,12 +1,56 @@
 {
   "heroTitle": "Learn to work with medicinal plants",
-  "heroDesc": "Practical workshops in small groups — accessible to beginners and the more experienced curious alike. Discover how to identify, prepare and use plants for your health, at home.",
+  "heroDesc": "Practical workshops in small groups \u2014 accessible to beginners and the more experienced curious alike. Discover how to identify, prepare and use plants for your health, at home.",
   "w1Title": "Introduction to Herbal Medicine",
-  "w1Desc": "What is herbal medicine? How do plants act on the body? What are the different preparations — teas, tinctures, balms? A first step into the world of medicinal plants.",
+  "w1Desc": "What is herbal medicine? How do plants act on the body? What are the different preparations \u2014 teas, tinctures, balms? A first step into the world of medicinal plants.",
   "w2Title": "Plants & Hormones",
   "w2Desc": "The plant allies of the female cycle, fertility, PCOS, endometriosis and perimenopause. How to identify them, use them safely, and build a simple daily protocol.",
   "w3Title": "Make Your Own Preparations",
-  "w3Desc": "Learn to formulate your own blends — herbal teas, infused oils, plant body butters. You leave with your creations and the knowledge to continue at home.",
+  "w3Desc": "Learn to formulate your own blends \u2014 herbal teas, infused oils, plant body butters. You leave with your creations and the knowledge to continue at home.",
   "w4Title": "Adaptogens & Stress Response",
-  "w4Desc": "What is an adaptogen and why do we need them today? Ashwagandha, rhodiola, eleuthero, tulsi — learn to know them, choose them and use them with discernment."
+  "w4Desc": "What is an adaptogen and why do we need them today? Ashwagandha, rhodiola, eleuthero, tulsi \u2014 learn to know them, choose them and use them with discernment.",
+  "photo1": "/images/workshop-hands.jpg",
+  "photo2": "/images/workshop-group.jpg",
+  "photo3": "/images/workshop-jars.jpg",
+  "philosophyTitle": "Knowledge that lives in your hands, not just your head",
+  "philosophyDesc1": "There is a version of wellness education that fills you with information and sends you away with a handout. That is not what I am trying to do.",
+  "philosophyDesc2": "Every workshop I design starts from a single question: what will this person be able to do differently when they leave? Groups are small \u2014 never more than twelve \u2014 because learning about your own health deserves attention.",
+  "w1Learns": [
+    "Make an effective herbal infusion and decoction",
+    "Prepare a simple tincture and infused oil at home",
+    "Choose the right preparation method for each herb",
+    "Build a small home herbal kit for seasonal and everyday use",
+    "Know which herbs are safe and what to be careful with"
+  ],
+  "w2Learns": [
+    "How the hormonal system works and where herbs interact with it",
+    "Key herbs for endometriosis, PCOS, PMS and perimenopause",
+    "The adrenal-hormonal connection and how to support it",
+    "Naturopathic foundations \u2014 diet, lifestyle, what actually matters",
+    "When to work with a practitioner and what to expect"
+  ],
+  "w3Learns": [
+    "The knowledge to adjust and remake your blends at home",
+    "Safe extraction ratios for tinctures and infused oils",
+    "How to store, label and use what you make",
+    "A personalised blend designed for your specific needs"
+  ],
+  "w4Learns": [
+    "The difference between adaptogens, nervines and tonics",
+    "How to choose the right adaptogen for your stress pattern",
+    "Contraindications and what to watch for",
+    "Simple daily protocols you can actually maintain"
+  ],
+  "formatTitle": "Format & logistics",
+  "formatDesc1": "Workshops run in small groups \u2014 typically 6 to 12 people \u2014 to allow genuine exchange and individual questions.",
+  "formatDesc2": "Some workshops are offered in person in London, others online via Zoom. Make Your Own Preparations requires physical attendance.",
+  "formatDesc3": "All workshops are available in English and French. Groups can be organised in either language depending on attendees.",
+  "forWhoTitle": "Who is it for?",
+  "forWhoItems": [
+    "Complete beginners with no prior experience",
+    "People who want to complement their individual consultation",
+    "Groups of friends, wellness clubs, associations",
+    "Health professionals wanting to deepen their knowledge of herbal medicine",
+    "Companies looking for original wellness formats for their teams"
+  ]
 }

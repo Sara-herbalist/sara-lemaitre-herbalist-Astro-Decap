@@ -2,19 +2,85 @@
   "heroTitle1": "The athlete.",
   "heroTitle2": "The patient.",
   "heroTitle3": "The herbalist.",
-  "heroDesc": "What brought me to herbal medicine was not a calling born in a lecture hall. It was a journey — personal, painful, and ultimately transformative.",
+  "heroDesc": "What brought me to herbal medicine was not a calling born in a lecture hall. It was a journey \u2014 personal, painful, and ultimately transformative.",
   "pullQuote": "\"I was not living. I was surviving. Until I stopped waiting for someone else to give me permission to heal.\"",
   "s1h2": "I was at the top of my sport when my body turned against me",
-  "s1p1": "I was a synchronised swimmer — now called artistic swimming — training at an elite level with a place on the national team roster in my sights. I was strong, disciplined, and I knew my body the way only athletes do: its limits, its stamina, its signals.",
-  "s1p2": "Then my periods started. And from the very first cycle, the pain was debilitating. Heavy, relentless, impossible to train through. Within months I was on hormonal suppressants. Then stronger doses. Then cocktails of medication. Then injections. Then pain medication that grew progressively more powerful until, years later, a daily preventative dose of morphine had become my normal — just to function.",
-  "s1inset": "\"As an athlete, I used to know my limits and my strength — physical and mental. But everything was falling apart, and I couldn't recognise who I was anymore.\"",
+  "s1p1": "I was a synchronised swimmer \u2014 now called artistic swimming \u2014 training at an elite level with a place on the national team roster in my sights. I was strong, disciplined, and I knew my body the way only athletes do: its limits, its stamina, its signals.",
+  "s1p2": "Then my periods started. And from the very first cycle, the pain was debilitating. Heavy, relentless, impossible to train through. Within months I was on hormonal suppressants. Then stronger doses. Then cocktails of medication. Then injections. Then pain medication that grew progressively more powerful until, years later, a daily preventative dose of morphine had become my normal \u2014 just to function.",
+  "s1inset": "\"As an athlete, I used to know my limits and my strength \u2014 physical and mental. But everything was falling apart, and I couldn't recognise who I was anymore.\"",
   "s2h2": "Seven years. Six specialists. Zero answers.",
   "s2inset": "\"You are not as strong as you would like to think. You should stop putting pressure on yourself to be the perfect athlete. You clearly don't have the mental or physical capacity for it.\"",
   "s3h2": "A pandemic. A decision. An experiment that worked.",
-  "s3inset": "\"For the first time in years, I felt in control of my health — my body, my mind. That is what discovering plant medicine gave me back.\"",
-  "magnoliaTitle": "The magnolia that refused to die — and what it taught me about healing",
+  "s3inset": "\"For the first time in years, I felt in control of my health \u2014 my body, my mind. That is what discovering plant medicine gave me back.\"",
+  "magnoliaTitle": "The magnolia that refused to die \u2014 and what it taught me about healing",
   "nowTitle": "I work with women who are tired of being dismissed",
   "nowP1": "My practice is built around the people I understand most deeply: women navigating endometriosis, PCOS, chronic fatigue, perimenopause, and the hormonal disruption that conventional medicine so often minimises or mismanages.",
-  "nowP2": "And active people — athletes, high-performers, the chronically busy — who feel their vitality slipping and are looking for a different kind of support.",
-  "nowP3": "I offer consultations online and in person, in English and in French, to clients in the UK and internationally. Every consultation draws on Western herbalism, naturopathy, and cross-traditional plant medicine — personalised, not prescriptive."
+  "nowP2": "And active people \u2014 athletes, high-performers, the chronically busy \u2014 who feel their vitality slipping and are looking for a different kind of support.",
+  "nowP3": "I offer consultations online and in person, in English and in French, to clients in the UK and internationally. Every consultation draws on Western herbalism, naturopathy, and cross-traditional plant medicine \u2014 personalised, not prescriptive.",
+  "heroPhoto": "/images/sara-athlete.jpg",
+  "magnoliaPhoto": "/images/magnolia.jpg",
+  "portraitPhoto": "/images/sara-portrait-professional.jpg",
+  "s1p3": "In training, I was fainting. My nose bled without warning. My injuries multiplied. My performance \u2014 and my dream \u2014 fell apart in front of me while I was still fighting with everything I had to hold it together.",
+  "s1p4": "I began to dissociate from my body entirely. Not as a choice, but as survival. I separated myself from the thing that was failing me just to get through each day. I was not living. I was surviving.",
+  "s1p5": "Until the doctors revoked my right to train. It was too dangerous for my health. My career was over.",
+  "s2p1": "I had exhausted every test available. I had seen six different gynaecologists, none of whom could diagnose what was wrong. What they could do \u2014 and did, repeatedly \u2014 was suggest that the problem was me.",
+  "s2p2": "This is what medical gaslighting looks like when it comes from six separate specialists wearing white coats. You can be as well supported by the people who love you as anyone could be. But when the same message is delivered again and again by people with the credentials to know how the human body works \u2014 you start to believe them.",
+  "s2p3": "I started to believe I was weak. That I was imagining it. That I had somehow brought this on myself.",
+  "s2p4": "After seven years, I finally had a word for my suffering: endometriosis, alongside PCOS, chronic fatigue, and total exhaustion. The relief of a diagnosis was real \u2014 I was not inventing my pain. But the answer that followed was devastating: there is no cure.",
+  "s2p5": "More experimental hormonal treatments followed. Surgery to remove adhesions and unhealthy tissue. Another round of hormonal therapy. Increasingly potent pain medication. And still \u2014 constant pain, no resolution, no path forward. I had enough.",
+  "s3p1": "I was certain an alternative existed. I was equally certain that no one else was going to find it for me. So I made the decision that changed everything: I took my health into my own hands.",
+  "s3p2": "The pandemic gave me the one resource I had never had enough of \u2014 time. I began researching. I found a short online herbal medicine discovery course. Cautiously, reluctantly almost, I began to experiment on myself after deciding I was done with conventional medication.",
+  "s3p3": "It was slow. It was exhausting. There were countless trials and errors. But I could see results. For the first time in years, something was working.",
+  "s3p4": "And then my family became my first clients. My mother's arthritis flare-ups. My sister's anxiety and sleep. My father's recurring throat weakness. I made formulations for each of them. I will be honest: some of those early blends were rather dreadful. But they are all well and very much alive, so I consider that a success.",
+  "s3p5": "Those months \u2014 quiet, experimental, rooted in love and necessity \u2014 were the beginning of everything that followed.",
+  "s4h2": "From self-taught to clinically trained",
+  "s4p1": "What had started as personal necessity became a calling. I enrolled in a full clinical training in naturopathy and herbal medicine \u2014 a degree-level programme spanning Western herbalism, Traditional Chinese Medicine, and Ayurveda.",
+  "s4p2": "During my training I spent six months working alongside an external TCM and acupuncture practitioner in their dispensary \u2014 outside of my school hours, on my own initiative \u2014 deepening my understanding of Chinese herbal medicine and its application to the hormonal and gynaecological conditions I had lived through myself.",
+  "s4p3": "I also hold a diploma in Indian Head Massage, trained as a naturopath, and bring the French phytotherapy tradition into everything I do \u2014 a relationship with plant medicine that is woven into European culture in a way that feels like coming home.",
+  "magnoliaP1": "I was raised beneath the branches of a magnolia tree in my family garden. It was my shelter, my refuge. That tall, steady guardian felt eternal.",
+  "magnoliaP2": "Until one day a storm brought it down.",
+  "magnoliaP3": "I was devastated. But every day afterwards, I watered the soil where it once stood. Adults told me it would not return. But I kept watering. Stubbornness \u2014 and perhaps faith in renewal \u2014 has always been part of me.",
+  "magnoliaP4": "One day, a tiny shoot emerged.",
+  "magnoliaP5": "Today, it greets me whenever I return home. Years later, Magnolia became the subject of my clinical dissertation. It reminded me that resilience is quiet. It grows beneath the surface long before anyone can see it. It asks for patience, consistency, and belief in what cannot yet be observed.",
+  "magnoliaP6": "That is what healing through plant medicine looks like. It is not dramatic. It is not instant. But it is real, and it is yours \u2014 rooted in the body's own intelligence, supported by centuries of botanical tradition, and tended with care.",
+  "graduationTitle": "On the day I became a qualified practitioner",
+  "graduationP1": "Standing in that room on graduation day, I looked around at the people beside me \u2014 practitioners from different disciplines, different backgrounds, different stories of what had brought them to this path. Every single one of us had overcome something to sit in that room.",
+  "graduationP2": "I thought about what this journey had given me beyond knowledge. Self-discovery. The moments in a clinic session, or a case study, or a conversation with a classmate, when you realise you are capable of more than you had imagined.",
+  "graduationP3": "I thought about the wholeness we had been cultivating in ourselves \u2014 because that is what we offer our clients. Not just protocols and prescriptions. Presence. Listening. The courage to sit with complexity.",
+  "graduationP4": "It takes courage to follow a path that is not always understood. To choose a form of medicine that asks more questions than it answers, that treats the person rather than the symptom, that works with time rather than against it.",
+  "graduationP5": "I chose it anyway. I would choose it again, every time.",
+  "credentials": [
+    {
+      "name": "Clinical Herbal Medicine",
+      "detail": "Degree-level qualification \u00b7 EHTPA accredited"
+    },
+    {
+      "name": "Naturopathy Diploma",
+      "detail": "Lifestyle, nutrition & integrative protocols"
+    },
+    {
+      "name": "TCM & Acupuncture Externship",
+      "detail": "6 months \u00b7 TCM dispensary practice"
+    },
+    {
+      "name": "Ayurvedic Studies",
+      "detail": "Cross-traditional training \u00b7 Integrated approach"
+    },
+    {
+      "name": "Indian Head Massage Diploma",
+      "detail": "Stress, tension & nervous system recovery"
+    },
+    {
+      "name": "Personal recovery",
+      "detail": "Endometriosis \u00b7 PCOS \u00b7 Chronic fatigue"
+    },
+    {
+      "name": "Former elite athlete",
+      "detail": "Artistic swimming \u00b7 National team level"
+    },
+    {
+      "name": "Bilingual practice",
+      "detail": "English & French \u00b7 UK, Europe & international"
+    }
+  ]
 }

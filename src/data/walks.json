@@ -1,7 +1,61 @@
 {
   "heroTitle": "The oldest form of botanical medicine there is",
   "heroDesc": "Guided walks in nature with a clinical herbalist. Identify plants, discover their medicinal uses, and reconnect with the seasonality that our ancestors knew by heart.",
-  "openingTitle": "Nature is not a backdrop — it is a pharmacy",
+  "openingTitle": "Nature is not a backdrop \u2014 it is a pharmacy",
   "openingP1": "For millennia, human beings learned to know the plants around them. They knew what relieved fever, what calmed anxiety, what accelerated the healing of a wound. This knowledge was passed from generation to generation.",
-  "openingP2": "We lost it in a few decades. These walks are a way to find it again — one plant at a time, one season at a time, in the green spaces we pass through without seeing them."
+  "openingP2": "We lost it in a few decades. These walks are a way to find it again \u2014 one plant at a time, one season at a time, in the green spaces we pass through without seeing them.",
+  "forestBathingTitle": "Not a hike. Not a lecture. Something different.",
+  "forestBathingDesc1": "The Japanese call it shinrin-yoku. Forest bathing. The measurable, documented reduction in cortisol that happens when you spend time moving slowly through green space, paying attention.",
+  "forestBathingDesc2": "These walks are not nature appreciation classes. They are a guided experience of the landscape as a living pharmacy \u2014 combined with the well-evidenced benefits of slow, attentive movement outdoors.",
+  "seasons": [
+    {
+      "name": "\ud83c\udf31 Spring",
+      "desc": "The renewal of cleansing and toning plants. Nettle, dandelion, elderflower, ground ivy. The moment for liver and lymphatic support after winter.",
+      "plants": "Nettle \u00b7 Dandelion \u00b7 Elder \u00b7 Ground ivy"
+    },
+    {
+      "name": "\u2600\ufe0f Summer",
+      "desc": "The peak of medicinal abundance. St John's wort in full flower, yarrow, lemon balm, lavender. Plants of joy, digestion and warmth.",
+      "plants": "St John's Wort \u00b7 Yarrow \u00b7 Lemon balm \u00b7 Lavender"
+    },
+    {
+      "name": "\ud83c\udf42 Autumn",
+      "desc": "The harvest and preparation for winter. Hawthorn berries, rosehip, ginkgo, adaptogenic mushrooms. Immune strengthening and nervous system support.",
+      "plants": "Hawthorn \u00b7 Rosehip \u00b7 Ginkgo \u00b7 Medicinal mushrooms"
+    },
+    {
+      "name": "\u2744\ufe0f Winter",
+      "desc": "The wisdom of winter plants. Thyme, elderberry, rosemary, pine. Respiratory support, warmth and vitality in the calm of dormancy.",
+      "plants": "Thyme \u00b7 Elderberry \u00b7 Rosemary \u00b7 Scots pine"
+    }
+  ],
+  "expectTitle": "What you will experience",
+  "expectItems": [
+    {
+      "title": "Plant identification",
+      "desc": "Learn to recognise medicinal plants in their natural habitat \u2014 their forms, textures, smells, the characteristics that allow safe identification."
+    },
+    {
+      "title": "Medicinal uses",
+      "desc": "For each plant encountered, we explore its history of use, recognised medicinal properties, and how it can be simply integrated into daily life."
+    },
+    {
+      "title": "Ethical foraging",
+      "desc": "How to forage respectfully \u2014 legal rules, environmental ethics, drying and preservation methods. Foraging as conscious practice."
+    },
+    {
+      "title": "Shinrin-yoku",
+      "desc": "The Japanese forest bath \u2014 documented benefits of nature immersion on cortisol, immunity and mental wellbeing. Walk slowly, breathe deeply, observe."
+    },
+    {
+      "title": "Small group, real exchange",
+      "desc": "Maximum 12 participants to allow individual questions, genuine transmission and an atmosphere of shared curiosity rather than lecture."
+    },
+    {
+      "title": "In English or French",
+      "desc": "Walks can be organised entirely in English, French, or bilingually depending on participants. Mention your preference when booking."
+    }
+  ],
+  "mailingTitle": "Get walk dates first",
+  "mailingDesc": "Walk dates are released to the mailing list before anywhere else. Given the small group size, they fill quickly."
 }

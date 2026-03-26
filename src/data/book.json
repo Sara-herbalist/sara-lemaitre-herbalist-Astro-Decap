@@ -1,6 +1,6 @@
 {
   "heroTitle": "Begin your journey to better health",
-  "heroDesc": "Every consultation begins with listening. No rushed appointments, no dismissed symptoms — a thorough, personalised approach to your health.",
+  "heroDesc": "Every consultation begins with listening. No rushed appointments, no dismissed symptoms \u2014 a thorough, personalised approach to your health.",
   "discoveryTitle": "Discovery Call",
   "discoveryDesc": "A relaxed conversation to understand your health concerns and goals, explain how I work and answer your questions. No commitment.",
   "initialTitle": "Initial Consultation",
@@ -10,8 +10,123 @@
   "bundleTitle": "Initial + 2 Follow-ups",
   "bundleDesc": "The most thorough way to begin. A deep initial consultation followed by two follow-ups to assess progress and refine your protocol.",
   "ihmTitle": "Indian Head Massage",
-  "ihmDesc": "A deeply relaxing Ayurvedic treatment — 10 minutes of initial consultation and 35 minutes of massage on the head, neck and shoulders. Can be booked alone or added to an in-person consultation.",
+  "ihmDesc": "A deeply relaxing Ayurvedic treatment \u2014 10 minutes of initial consultation and 35 minutes of massage on the head, neck and shoulders. Can be booked alone or added to an in-person consultation.",
   "bankName": "[Your name]",
   "bankSort": "[XX-XX-XX]",
-  "bankAccount": "[XXXXXXXX]"
+  "bankAccount": "[XXXXXXXX]",
+  "heroPhoto": "/images/sara-desk.jpg",
+  "accentPhoto": "/images/herbs-accent.jpg",
+  "howItWorksTitle": "How it works",
+  "steps": [
+    {
+      "title": "Book your appointment",
+      "desc": "Choose your consultation type below and select a time that suits you using the online calendar. You'll receive an immediate confirmation by email."
+    },
+    {
+      "title": "Confirm with payment",
+      "desc": "Transfer your consultation fee by bank transfer using the details in your confirmation email. Your appointment is secured on receipt of payment."
+    },
+    {
+      "title": "Prepare & connect",
+      "desc": "You'll receive a short intake form and preparation notes before your appointment. We meet on video call \u2014 you just need a quiet space."
+    }
+  ],
+  "chooseTitle": "Choose your consultation",
+  "chooseDesc": "Not sure where to start? The free discovery call is the perfect first step \u2014 no commitment, no pressure.",
+  "getInTouchTitle": "Consultancy, workshops & walks",
+  "getInTouchDesc": "For corporate wellness consultancy, herbal medicine workshops and Four Seasons Holistic Walks \u2014 each experience is individually tailored and priced. Get in touch to discuss.",
+  "paymentTitle": "Payment by bank transfer",
+  "paymentDesc": "I accept payment by bank transfer \u2014 straightforward, secure, and with no processing fees for either of us.",
+  "paymentSteps": [
+    "Book your appointment using the booking calendar above.",
+    "You'll receive a confirmation email with bank transfer details.",
+    "Transfer the fee within 24 hours of booking.",
+    "Your appointment is confirmed on receipt \u2014 you'll receive a final confirmation email."
+  ],
+  "paymentNotes": [
+    "Bank transfer is completely free \u2014 no processing fees for you or me.",
+    "Transfers are usually processed within a few hours for same-bank transfers, or the next working day.",
+    "Please use your name and appointment date as the reference so I can match it easily.",
+    "If you have difficulty with bank transfer, please get in touch and we'll find a solution."
+  ],
+  "cancellationTitle": "Cancellation policy",
+  "cancellationTiers": [
+    {
+      "title": "More than 48 hours",
+      "policy": "Full refund by bank transfer, or rescheduling at no additional cost. Please notify me as soon as possible."
+    },
+    {
+      "title": "24\u201348 hours",
+      "policy": "50% of the fee is retained. The remaining 50% will be returned to your bank account within 3\u20135 working days."
+    },
+    {
+      "title": "Less than 24 hours",
+      "policy": "The full fee is retained. This slot was held for you and cannot be offered to someone else at short notice."
+    }
+  ],
+  "cancellationNote": "Exceptions are made for genuine emergencies \u2014 please do get in touch. I understand that life happens.",
+  "finalCtaTitle": "Ready to begin?",
+  "finalCtaDesc": "Start with a free 15-minute discovery call \u2014 no commitment, just a conversation.",
+  "consultationCards": [
+    {
+      "tag": "Free \u00b7 15 minutes",
+      "title": "Discovery Call",
+      "price": 0,
+      "slidingScale": 0,
+      "duration": "15 minutes",
+      "desc": "A relaxed conversation to understand your health concerns and goals, explain how I work, and answer any questions. No commitment required.",
+      "calendlyUrl": "",
+      "featured": false,
+      "showSlidingScale": false,
+      "bookLabel": "Book free call"
+    },
+    {
+      "tag": "Initial \u00b7 90 minutes \u00b7 Online or in person",
+      "title": "Initial Consultation",
+      "price": 110,
+      "slidingScale": 85,
+      "duration": "90 minutes",
+      "desc": "A deep exploration of your health history, current symptoms, lifestyle and goals. Includes a personalised written herbal protocol, naturopathic recommendations, and formula design.",
+      "calendlyUrl": "",
+      "featured": true,
+      "showSlidingScale": true,
+      "bookLabel": "Book initial consultation"
+    },
+    {
+      "tag": "Follow-up \u00b7 30\u201340 minutes \u00b7 Online or in person",
+      "title": "Follow-up Consultation",
+      "price": 75,
+      "slidingScale": 65,
+      "duration": "30\u201340 minutes",
+      "desc": "Assessment of your progress, adjustment of your herbal protocol and addressing new concerns. Recommended every 4 to 6 weeks.",
+      "calendlyUrl": "",
+      "featured": false,
+      "showSlidingScale": true,
+      "bookLabel": "Book a follow-up"
+    },
+    {
+      "tag": "Bundle \u00b7 Best value \u00b7 3 sessions",
+      "title": "Initial + 2 Follow-ups",
+      "price": 220,
+      "slidingScale": 195,
+      "duration": "3 sessions",
+      "desc": "The most thorough way to begin. One full initial consultation followed by two follow-ups to assess progress and refine your protocol. Saves \u00a340 versus booking separately.",
+      "calendlyUrl": "",
+      "featured": false,
+      "showSlidingScale": true,
+      "bookLabel": "Book the bundle"
+    },
+    {
+      "tag": "In person only \u00b7 45 minutes",
+      "title": "Indian Head Massage",
+      "price": 60,
+      "slidingScale": 0,
+      "duration": "45 minutes",
+      "desc": "A deeply relaxing Ayurvedic treatment \u2014 10-minute consultation followed by 35 minutes working on head, neck and shoulders. Can be booked standalone or added to an in-person consultation.",
+      "calendlyUrl": "",
+      "featured": false,
+      "showSlidingScale": false,
+      "bookLabel": "Book a massage"
+    }
+  ]
 }

@@ -11,5 +11,93 @@
   "perimenopause": 380,
   "athletePerformance": 370,
   "retainerStandard": 240,
-  "retainerIntensive": 320
+  "retainerIntensive": 320,
+  "showPackages": true,
+  "pricingNote": "As a new practice, my prices reflect the current stage of my journey — an introductory rate that allows me to build my client base while offering genuine clinical value.",
+  "initialIncludes": [
+    "Full case history — the whole you, not just the symptom",
+    "Personalised herbal protocol written & sent within 48hrs",
+    "Naturopathic lifestyle & nutritional guidance",
+    "Herbal formula design & supplier sourcing",
+    "Cross-tradition assessment (Western, TCM-informed, Ayurvedic)",
+    "Follow-up email support for one week"
+  ],
+  "followupIncludes": [
+    "Review of progress since last session",
+    "Protocol adjustment & reformulation",
+    "Questions & troubleshooting",
+    "Updated written notes sent after",
+    "Supplier contact if formula changes"
+  ],
+  "bundleIncludes": [
+    "Everything in the initial consultation",
+    "Two follow-up sessions to track & refine your protocol",
+    "Ideal for hormonal conditions, chronic fatigue & burnout",
+    "The most effective way to begin a course of herbal medicine"
+  ],
+  "packages": [
+    {
+      "tag": "3 sessions · Hormonal health",
+      "title": "Hormonal Reset Programme",
+      "price": 360,
+      "saving": 60,
+      "includes": [
+        "90-minute initial consultation",
+        "Two 30–40 minute follow-ups",
+        "Endometriosis, PCOS, perimenopause focus",
+        "Evolving herbal formulations"
+      ]
+    },
+    {
+      "tag": "3 sessions · Stress & Burnout",
+      "title": "Stress & Burnout Recovery",
+      "price": 340,
+      "saving": 50,
+      "includes": [
+        "90-minute initial consultation",
+        "Two 30–40 minute follow-ups",
+        "Adaptogen, nervous system & sleep focus",
+        "Integrated naturopathic lifestyle guidance"
+      ]
+    },
+    {
+      "tag": "3 sessions · Perimenopause",
+      "title": "Perimenopause Support Programme",
+      "price": 380,
+      "saving": 55,
+      "includes": [
+        "90-minute initial consultation",
+        "Two 30–40 minute follow-ups",
+        "Hot flushes, sleep, mood, libido, bones",
+        "Integrative herbal & naturopathic approach"
+      ]
+    },
+    {
+      "tag": "3 sessions · Athletes",
+      "title": "Athlete Performance & Recovery",
+      "price": 370,
+      "saving": 55,
+      "includes": [
+        "90-minute initial consultation",
+        "Two 30–40 minute follow-ups",
+        "Adaptogens, recovery, inflammation, hormones",
+        "From a practitioner who was there too"
+      ]
+    }
+  ],
+  "cancellationTiers": [
+    {
+      "title": "More than 48 hours",
+      "policy": "Full refund by bank transfer, or rescheduling at no additional cost. Please notify me as soon as possible."
+    },
+    {
+      "title": "24–48 hours",
+      "policy": "50% of the fee is retained. The remaining 50% will be returned to your bank account within 3–5 working days."
+    },
+    {
+      "title": "Less than 24 hours",
+      "policy": "The full fee is retained. This slot was held for you and cannot be offered to someone else at short notice."
+    }
+  ],
+  "cancellationNote": "Exceptions are made for genuine emergencies — please do get in touch. I understand that life happens."
 }

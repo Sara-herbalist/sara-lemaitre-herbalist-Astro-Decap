@@ -1,12 +1,101 @@
 {
   "heroTitle": "Medicinal plants in service of your organisation",
-  "heroDesc": "Corporate wellness interventions, brand consultancy for wellness businesses, programmes for sports clubs and teams — clinical expertise in herbal medicine and naturopathy at the service of your teams and clients.",
+  "heroDesc": "Corporate wellness interventions, brand consultancy for wellness businesses, programmes for sports clubs and teams \u2014 clinical expertise in herbal medicine and naturopathy at the service of your teams and clients.",
   "s1Title": "Corporate Wellness Interventions",
   "s1Desc": "Plant medicine wellness workshops, talks on stress and recovery, energy management programmes for teams. Adaptable format according to your needs and sector.",
   "s2Title": "Brand Consultancy",
   "s2Desc": "Herbal formulation expertise, product claims validation, wellness range development, sales team training and communication consultancy around botanical ingredients.",
   "s3Title": "Sports Performance & Recovery",
-  "s3Desc": "Phytotherapy support programmes for clubs and high-level athletes. Adaptogens, inflammation management, hormonal support, recovery between competitions — by a former elite athlete.",
+  "s3Desc": "Phytotherapy support programmes for clubs and high-level athletes. Adaptogens, inflammation management, hormonal support, recovery between competitions \u2014 by a former elite athlete.",
   "s4Title": "Wellness Offering Integration",
-  "s4Desc": "Development of plant-based treatment protocols, therapist training, creation of seasonal rituals and communication consultancy around botanical ingredients for premium establishments."
+  "s4Desc": "Development of plant-based treatment protocols, therapist training, creation of seasonal rituals and communication consultancy around botanical ingredients for premium establishments.",
+  "heroPhoto": "/images/sara-professional.jpg",
+  "atmosphericPhoto": "/images/herbs-atmospheric.jpg",
+  "whyTitle": "Organisations that want substance, not wellness theatre",
+  "whyDesc1": "Wellness consultancy in the corporate and brand space is full of vague offerings and generic content. What I offer is different: clinical expertise, a practitioner's knowledge of what actually works, and the credibility that comes from having both lived and studied the conditions I address.",
+  "whyDesc2": "I work with organisations that understand that the wellbeing of their teams or clients is a strategic investment, not a line item to tick off. That includes tech and professional services companies, professional and semi-professional sports clubs, beauty and wellness brands seeking credible botanical expertise, and high-end hotel establishments wanting to differentiate their spa offering.",
+  "s1Bullets": [
+    "Lunch & learn (60\u201390 min) \u2014 accessible entry point for any team",
+    "Half-day workshop (3\u20134 hrs) \u2014 deeper engagement, practical elements",
+    "Wellbeing programme (4\u20138 weeks) \u2014 sustained change with tracking",
+    "Women's health in the workplace \u2014 specialist series for HR and managers",
+    "Bilingual delivery \u2014 English and French, online or in person"
+  ],
+  "s2Bullets": [
+    "Formulation review and guidance for herbal product development",
+    "Claims review \u2014 what you can and cannot say, and why",
+    "Educational content creation (articles, social, email, packaging copy)",
+    "Expert spokesperson for press, podcast, and events",
+    "Staff training on the herbal ingredients you use",
+    "French-language brand adaptation and localisation"
+  ],
+  "s3Bullets": [
+    "Athlete wellness education workshops (performance, recovery, hormonal health)",
+    "Adaptogen protocol guidance for coaching staff",
+    "Individual practitioner support for athletes alongside team medicine",
+    "Bilingual \u2014 English and French for international clubs and federations"
+  ],
+  "s4Bullets": [
+    "Plant-based treatment protocol development",
+    "Seasonal ritual design and implementation",
+    "Staff training and botanical ingredient education",
+    "Menu and offering language \u2014 what to say and how to say it",
+    "French-language adaptation for Francophone markets"
+  ],
+  "contactTitle": "Tell me about your project",
+  "contactDesc": "Every enquiry is different. Send me a message and we will find the format that fits your needs.",
+  "services": [
+    {
+      "number": "01",
+      "tag": "Corporate \u00b7 HR \u00b7 Workplace wellness",
+      "title": "Corporate Wellness Interventions",
+      "desc": "Plant medicine wellness workshops, talks on stress and recovery, energy management programmes for teams. Adaptable format according to your needs and sector.",
+      "bullets": [
+        "Lunch & learn (60\u201390 min) \u2014 accessible entry point for any team",
+        "Half-day workshop (3\u20134 hrs) \u2014 deeper engagement, practical elements",
+        "Wellbeing programme (4\u20138 weeks) \u2014 sustained change with tracking",
+        "Women's health in the workplace \u2014 specialist series for HR and managers",
+        "Bilingual delivery \u2014 English and French, online or in person"
+      ]
+    },
+    {
+      "number": "02",
+      "tag": "Brands \u00b7 Formulation \u00b7 Content \u00b7 Advisory",
+      "title": "Brand Consultancy",
+      "desc": "Herbal formulation expertise, product claims validation, wellness range development, sales team training and communication consultancy around botanical ingredients.",
+      "bullets": [
+        "Formulation review and guidance for herbal product development",
+        "Claims review \u2014 what you can and cannot say, and why",
+        "Educational content creation (articles, social, email, packaging copy)",
+        "Expert spokesperson for press, podcast, and events",
+        "Staff training on the herbal ingredients you use",
+        "French-language brand adaptation and localisation"
+      ]
+    },
+    {
+      "number": "03",
+      "tag": "Sports clubs \u00b7 Athletes \u00b7 Performance",
+      "title": "Sports Performance & Recovery",
+      "desc": "Phytotherapy support programmes for clubs and high-level athletes. Adaptogens, inflammation management, hormonal support, recovery between competitions \u2014 by a former elite athlete.",
+      "bullets": [
+        "Athlete wellness education workshops (performance, recovery, hormonal health)",
+        "Adaptogen protocol guidance for coaching staff",
+        "Individual practitioner support for athletes alongside team medicine",
+        "Bilingual \u2014 English and French for international clubs and federations"
+      ]
+    },
+    {
+      "number": "04",
+      "tag": "Spas \u00b7 Wellness centres \u00b7 Hotels",
+      "title": "Wellness Offering Integration",
+      "desc": "Development of plant-based treatment protocols, therapist training, creation of seasonal rituals and communication consultancy around botanical ingredients for premium establishments.",
+      "bullets": [
+        "Plant-based treatment protocol development",
+        "Seasonal ritual design and implementation",
+        "Staff training and botanical ingredient education",
+        "Menu and offering language \u2014 what to say and how to say it",
+        "French-language adaptation for Francophone markets"
+      ]
+    }
+  ]
 }
