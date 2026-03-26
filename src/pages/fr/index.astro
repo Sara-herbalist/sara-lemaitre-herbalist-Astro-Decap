@@ -216,6 +216,18 @@ const CALENDLY_FR = settings.default.calendlyUrl || 'https://calendly.com/sara-l
   .reveal-delay-2 { transition-delay: .2s; }
   .reveal-delay-3 { transition-delay: .3s; }
 
+
+  .hero-media-wrap { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+  .hero-portrait-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.2s ease; z-index: 2; }
+  .hero-portrait-img.visible { opacity: 1; }
+  .hero-botanical { transition: opacity 1.2s ease; position: relative; z-index: 1; }
+  .hero-botanical.fade { opacity: 0; }
+  .practice-strip { padding: 0; background: var(--charcoal); }
+  .practice-strip-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .practice-photo { aspect-ratio: 4/3; overflow: hidden; }
+  .practice-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s ease; filter: brightness(0.85) saturate(0.9); }
+  .practice-photo:hover img { transform: scale(1.04); filter: brightness(0.95) saturate(1); }
+  .story-pull-portrait { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 3px solid var(--warm-white); }
   @media (max-width: 1024px) {
     nav { padding: 1.2rem 2rem; }
     .hamburger { display: flex; }
@@ -276,8 +288,12 @@ const CALENDLY_FR = settings.default.calendlyUrl || 'https://calendly.com/sara-l
       <a href="/fr/story" class="btn-ghost">Mon parcours</a>
     </div>
   </div>
-  <div class="hero-right">
-    <svg class="hero-botanical" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <div class="hero-right" id="hero-right-panel">
+    <div class="hero-media-wrap">
+      {homepage.default.heroPortrait && homepage.default.heroPortrait !== '/images/sara-portrait.jpg' && (
+        <img src={homepage.default.heroPortrait} alt="Sara Lemaitre — herboriste" class="hero-portrait-img" id="hero-portrait-img" />
+      )}
+      <svg class="hero-botanical" id="hero-botanical-svg" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <circle cx="210" cy="210" r="180" stroke="#C4D0BA" stroke-width=".6" stroke-dasharray="4 8" fill="none" opacity=".4"/>
       <circle cx="210" cy="210" r="130" stroke="#C4D0BA" stroke-width=".5" stroke-dasharray="2 6" fill="none" opacity=".3"/>
       <path d="M210 110 Q240 160 210 210 Q180 160 210 110Z" stroke="#7A8C6E" stroke-width="1.2" fill="rgba(122,140,110,0.06)"/>
@@ -289,6 +305,7 @@ const CALENDLY_FR = settings.default.calendlyUrl || 'https://calendly.com/sara-l
       <line x1="210" y1="30" x2="210" y2="390" stroke="#7A8C6E" stroke-width=".4" opacity=".3"/>
       <line x1="30" y1="210" x2="390" y2="210" stroke="#7A8C6E" stroke-width=".4" opacity=".3"/>
     </svg>
+    </div>
     <div class="scroll-hint">
       <span>Défiler</span>
       <div class="scroll-line"></div>
@@ -317,6 +334,17 @@ const CALENDLY_FR = settings.default.calendlyUrl || 'https://calendly.com/sara-l
     </div>
   </div>
 </section>
+
+<!-- PRACTICE PHOTOS -->
+{(homepage.default.practicePhoto1 && homepage.default.practicePhoto1 !== '/images/herbs-drying.jpg') ? (
+<section class="practice-strip">
+  <div class="practice-strip-inner">
+    {homepage.default.practicePhoto1 && homepage.default.practicePhoto1 !== '/images/herbs-drying.jpg' && <div class="practice-photo"><img src={homepage.default.practicePhoto1} alt="Pratique herboriste" /></div>}
+    {homepage.default.practicePhoto2 && homepage.default.practicePhoto2 !== '/images/tincture-bottles.jpg' && <div class="practice-photo"><img src={homepage.default.practicePhoto2} alt="Teintures et préparations" /></div>}
+    {homepage.default.practicePhoto3 && homepage.default.practicePhoto3 !== '/images/workspace.jpg' && <div class="practice-photo"><img src={homepage.default.practicePhoto3} alt="Espace de travail" /></div>}
+  </div>
+</section>
+) : null}
 
 <!-- INTRO -->
 <section class="intro-strip reveal">
@@ -482,6 +510,9 @@ const CALENDLY_FR = settings.default.calendlyUrl || 'https://calendly.com/sara-l
     <a href="/fr/story" class="btn-bark">Lire mon histoire complète</a>
   </div>
   <div class="story-pull-visual">
+    {homepage.default.storyPullPortrait && homepage.default.storyPullPortrait !== '/images/sara-portrait-warm.jpg' && (
+      <img src={homepage.default.storyPullPortrait} alt="Sara Lemaitre" class="story-pull-portrait" />
+    )}
     <div class="story-quote">
       <p>« Je ne vivais pas. Je survivais. Jusqu'au jour où j'ai cessé d'attendre que quelqu'un d'autre me donne la permission de guérir. »</p>
       <cite>— Sara Lemaitre</cite>
@@ -593,6 +624,26 @@ const CALENDLY_FR = settings.default.calendlyUrl || 'https://calendly.com/sara-l
   </div>
 </section>
 
+<script>
+  const nav = document.getElementById('main-nav');
+  window.addEventListener('scroll', () => { nav?.classList.toggle('scrolled', window.scrollY > 60); });
+  const btn = document.getElementById('hamburger-btn');
+  const links = document.getElementById('nav-links-list');
+  btn?.addEventListener('click', () => { const open = links?.classList.toggle('open'); btn.setAttribute('aria-expanded', String(open)); });
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }}); }, { threshold: 0.1 });
+  reveals.forEach(r => observer.observe(r));
+  const portrait = document.getElementById('hero-portrait-img');
+  const botanical = document.getElementById('hero-botanical-svg');
+  if (portrait && botanical) {
+    let showingPortrait = false;
+    setInterval(() => {
+      showingPortrait = !showingPortrait;
+      if (showingPortrait) { portrait.classList.add('visible'); botanical.classList.add('fade'); }
+      else { portrait.classList.remove('visible'); botanical.classList.remove('fade'); }
+    }, 6000);
+  }
+</script>
 </BaseLayout>
 
 <script>

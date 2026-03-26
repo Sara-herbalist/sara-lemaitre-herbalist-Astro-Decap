@@ -46,6 +46,11 @@ const d = (await import('../../data/fr/workshops.json')).default;
 .ws-cta p { color: rgba(247,243,238,.5); margin-bottom: 2.5rem; }
 .ws-cta a { display: inline-block; padding: 1.1rem 3rem; background: var(--sage-light); color: var(--bark); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
 .ws-cta a:hover { background: var(--cream); }
+
+  .ws-photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; background: var(--charcoal); }
+  .ws-photo { aspect-ratio: 4/3; overflow: hidden; }
+  .ws-photo img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85) saturate(0.85); transition: all .5s; }
+  .ws-photo:hover img { filter: brightness(1) saturate(1); transform: scale(1.04); }
 @media (max-width: 1024px) {
   .ws-hero, .ws-grid-section, .ws-info, .ws-cta { padding-left: 2.5rem; padding-right: 2.5rem; }
   .ws-grid, .ws-info { grid-template-columns: 1fr; }
@@ -61,6 +66,14 @@ const d = (await import('../../data/fr/workshops.json')).default;
     <a href="/fr/book" class="btn-ghost-bark">Consulter individuellement</a>
   </div>
 </section>
+
+{(d.photo1 && d.photo1 !== '/images/workshop-hands.jpg') ? (
+<section class="ws-photo-grid">
+  {d.photo1 && d.photo1 !== '/images/workshop-hands.jpg' && <div class="ws-photo"><img src={d.photo1} alt="Atelier — mains avec les plantes" /></div>}
+  {d.photo2 && d.photo2 !== '/images/workshop-group.jpg' && <div class="ws-photo"><img src={d.photo2} alt="Groupe en atelier" /></div>}
+  {d.photo3 && d.photo3 !== '/images/workshop-jars.jpg' && <div class="ws-photo"><img src={d.photo3} alt="Préparations herboristes" /></div>}
+</section>
+) : null}
 
 <section class="ws-grid-section">
   <h2>Les ateliers disponibles</h2>

@@ -10,7 +10,8 @@ const meta = {
   ogType: 'website',
   lang: 'fr',
 };
-const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
+const s = (await import('../../data/fr/settings.json')).default;
+const CALENDLY = s.calendlyDiscovery || 'https://calendly.com/sara-lemaitre-herbalist';
 const d = (await import('../../data/fr/book.json')).default;
 ---
 <BaseLayout {...meta}>
@@ -72,6 +73,11 @@ const d = (await import('../../data/fr/book.json')).default;
 .book-cta p { color: rgba(247,243,238,.5); margin-bottom: 2.5rem; font-size: 1.0625rem; }
 .book-cta a { display: inline-block; padding: 1.1rem 3rem; background: var(--sage-light); color: var(--bark); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
 .book-cta a:hover { background: var(--cream); }
+
+  .book-hero-inner { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: center; }
+  .book-hero-photo img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; filter: brightness(0.88); }
+  .book-accent-photo { height: 200px; overflow: hidden; }
+  .book-accent-photo img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8) saturate(0.8); }
 @media (max-width: 1024px) {
   .book-hero, .how-section, .options-section, .payment-section, .cancel-section, .book-cta { padding-left: 2.5rem; padding-right: 2.5rem; }
   .steps-grid, .cancel-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -81,9 +87,18 @@ const d = (await import('../../data/fr/book.json')).default;
 </style>
 
 <section class="book-hero">
-  <p class="eyebrow">Prendre rendez-vous</p>
-  <h1>{d.heroTitle}</h1>
-  <p>{d.heroDesc}</p>
+  <div class="book-hero-inner">
+    <div class="book-hero-text">
+      <p class="eyebrow">Prendre rendez-vous</p>
+      <h1>{d.heroTitle}</h1>
+      <p>{d.heroDesc}</p>
+    </div>
+    {d.heroPhoto && d.heroPhoto !== '/images/sara-desk.jpg' && (
+      <div class="book-hero-photo">
+        <img src={d.heroPhoto} alt="Sara Lemaitre" />
+      </div>
+    )}
+  </div>
 </section>
 
 <section class="how-section">
@@ -111,44 +126,21 @@ const d = (await import('../../data/fr/book.json')).default;
   <h2>Choisissez votre consultation</h2>
   <p>Vous ne savez pas par où commencer ? La consultation découverte gratuite est le premier pas idéal — sans engagement, sans pression.</p>
   <div class="options-grid">
-    <div class="option-card">
-      <span class="option-tag">Gratuit · 15 minutes</span>
-      <h3>{d.discoveryTitle}</h3>
-      <div class="option-price">Gratuit</div>
-      <p>{d.discoveryDesc}</p>
-      <a href={CALENDLY} target="_blank" rel="noopener">Réserver un appel gratuit</a>
-    </div>
-    <div class="option-card featured">
-      <span class="option-tag">Initiale · 90 minutes · En ligne ou en présentiel</span>
-      <h3>{d.initialTitle}</h3>
-      <div class="option-price">110 £ <span>/ séance</span></div>
-      <p>Une exploration approfondie de votre histoire de santé, vos symptômes actuels, votre mode de vie et vos objectifs. Inclut un protocole herbal personnalisé écrit, des recommandations naturopathiques, et la conception de votre formule. Environ 2h30–3h de travail au total.</p>
-      <div class="sliding-scale-note">Tarif modulable à 85 £ pour les étudiants et personnes à revenus modestes — mentionnez-le lors de la réservation.</div>
-      <a href={CALENDLY} target="_blank" rel="noopener">Réserver une consultation initiale</a>
-    </div>
-    <div class="option-card">
-      <span class="option-tag">Suivi · 30–40 minutes · En ligne ou en présentiel</span>
-      <h3>{d.followupTitle}</h3>
-      <div class="option-price">75 £ <span>/ séance</span></div>
-      <p>Évaluation de vos progrès, ajustement de votre protocole herbal et prise en charge de nouvelles préoccupations. Inclut la reformulation et le contact avec les fournisseurs si nécessaire. Recommandé toutes les 4 à 6 semaines.</p>
-      <div class="sliding-scale-note">Tarif modulable à 65 £ pour les étudiants et personnes à revenus modestes.</div>
-      <a href={CALENDLY} target="_blank" rel="noopener">Réserver un suivi</a>
-    </div>
-    <div class="option-card">
-      <span class="option-tag">Forfait · Meilleure valeur · 3 séances</span>
-      <h3>{d.bundleTitle}</h3>
-      <div class="option-price">220 £ <span>/ 3 séances</span></div>
-      <p>La façon la plus complète de commencer. Une consultation initiale approfondie suivie de deux suivis pour évaluer les progrès et affiner votre protocole. Économisez 40 £ par rapport aux réservations séparées.</p>
-      <div class="sliding-scale-note">Forfait modulable à 195 £.</div>
-      <a href={CALENDLY} target="_blank" rel="noopener">Réserver le forfait</a>
-    </div>
-    <div class="option-card">
-      <span class="option-tag">En présentiel uniquement · 45 minutes</span>
-      <h3>{d.ihmTitle}</h3>
-      <div class="option-price">60 £ <span>/ séance</span></div>
-      <p>{d.ihmDesc}</p>
-      <a href={CALENDLY} target="_blank" rel="noopener">Réserver un massage crânien</a>
-    </div>
+    {d.consultationCards && d.consultationCards.map((card) => (
+      <div class={`option-card${card.featured ? ' featured' : ''}`}>
+        <span class="option-tag">{card.tag}</span>
+        <h3>{card.title}</h3>
+        <div class="option-price">
+          {card.price === 0 ? 'Gratuit' : `${card.price} £`}
+          {card.price > 0 && <span>/ séance</span>}
+        </div>
+        <p>{card.desc}</p>
+        {card.showSlidingScale && card.slidingScale > 0 && (
+          <div class="sliding-scale-note">Tarif modulable : {card.slidingScale} £ pour étudiants & revenus modestes</div>
+        )}
+        <a href={card.calendlyUrl || (card.price === 0 ? s.calendlyDiscovery : card.title.includes('suivi') ? s.calendlyFollowup : card.title.includes('Forfait') || card.title.includes('+') ? s.calendlyBundle : card.title.includes('Massage') ? s.calendlyIhm : s.calendlyInitial) || 'https://calendly.com/sara-lemaitre-herbalist'} target="_blank" rel="noopener">{card.bookLabel || 'Réserver'}</a>
+      </div>
+    ))}
   </div>
 
   <div class="get-in-touch-box">
@@ -161,6 +153,11 @@ const d = (await import('../../data/fr/book.json')).default;
   </div>
 </section>
 
+{d.accentPhoto && d.accentPhoto !== '/images/herbs-accent.jpg' && (
+  <div class="book-accent-photo">
+    <img src={d.accentPhoto} alt="Préparations herboristes" />
+  </div>
+)}
 <section class="payment-section">
   <h2>Paiement par virement bancaire</h2>
   <p>J'accepte le paiement par virement bancaire — simple, sécurisé, et sans frais pour vous comme pour moi.</p>

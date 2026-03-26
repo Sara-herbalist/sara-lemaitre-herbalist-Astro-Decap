@@ -64,12 +64,21 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
 </style>
 
 <section class="story-hero">
-  <p class="hero-eyebrow">Mon parcours</p>
+  <div class="story-hero-inner">
+    <div class="story-hero-text">
+      <p class="hero-eyebrow">Mon parcours</p>
   <h1>{d.heroTitle1}<br>{d.heroTitle2}<br><em>{d.heroTitle3}</em></h1>
   <p>{d.heroDesc}</p>
-  <div class="hero-cta">
-    <a href={CALENDLY} target="_blank" rel="noopener" class="btn-sage">Consultation découverte gratuite</a>
-    <a href="/fr/therapies" class="btn-ghost-sm">Ce que je propose</a>
+      <div class="hero-cta">
+        <a href={CALENDLY} target="_blank" rel="noopener" class="btn-sage">Consultation découverte gratuite</a>
+        <a href="/fr/therapies" class="btn-ghost-sm">Ce que je propose</a>
+      </div>
+    </div>
+    {d.heroPhoto && d.heroPhoto !== '/images/sara-athlete.jpg' && (
+      <div class="story-hero-photo">
+        <img src={d.heroPhoto} alt="Sara Lemaitre — athlète et herboriste" />
+      </div>
+    )}
   </div>
 </section>
 
@@ -116,11 +125,16 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
 </section>
 
 <section class="magnolia-section reveal">
-  <div class="magnolia-inner">
+  <div class="magnolia-layout">
+    {d.magnoliaPhoto && d.magnoliaPhoto !== '/images/magnolia.jpg' && (
+      <div class="magnolia-photo"><img src={d.magnoliaPhoto} alt="Magnolia" /></div>
+    )}
+    <div class="magnolia-inner">
     <h2>{d.magnoliaTitle}</h2>
     <p>J'ai grandi sous les branches d'un magnolia dans le jardin de ma famille. Il était mon refuge, mon abri. Un jour, une tempête l'a renversé. Mais j'ai continué d'arroser la terre où il se tenait. Un jour, une minuscule pousse a émergé.</p>
     <p>Des années plus tard, <em>Magnolia</em> est devenu le sujet de ma dissertation clinique. Il m'a rappelé que la résilience est silencieuse — elle pousse en profondeur bien avant que quiconque puisse la voir.</p>
     <p><em>C'est à cela que ressemble la guérison par les plantes.</em> Pas spectaculaire. Pas immédiate. Mais réelle, et la vôtre.</p>
+    </div>
   </div>
 </section>
 
@@ -143,6 +157,9 @@ const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
     <a href={CALENDLY} target="_blank" rel="noopener" class="now-cta">Réserver une consultation découverte gratuite</a>
   </div>
   <div class="credentials-panel">
+    {d.portraitPhoto && d.portraitPhoto !== '/images/sara-portrait-professional.jpg' && (
+      <div class="cred-portrait"><img src={d.portraitPhoto} alt="Sara Lemaitre" /></div>
+    )}
     <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Phytothérapie clinique</div><div class="cred-detail">Niveau licence · accrédité EHTPA</div></div></div>
     <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Diplôme de Naturopathie</div><div class="cred-detail">Mode de vie, nutrition & protocoles intégratifs</div></div></div>
     <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Stage MTC & Acupuncture</div><div class="cred-detail">6 mois · Pratique en dispensaire MTC</div></div></div>
