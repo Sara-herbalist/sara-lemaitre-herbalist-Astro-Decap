@@ -1,12 +1,15 @@
 {
-  "heroTitle": "Apprenez à travailler avec les plantes médicinales",
-  "heroDesc": "Des ateliers pratiques en petits groupes — accessibles aux débutants comme aux curieux plus expérimentés. Découvrez comment identifier, préparer et utiliser les plantes pour votre santé, chez vous.",
-  "w1Title": "Introduction à la phytothérapie",
-  "w1Desc": "Qu'est-ce que la phytothérapie ? Comment les plantes agissent-elles sur le corps ? Quelles sont les formes galéniques — tisanes, teintures, baumes ? Un premier pas dans le monde des plantes médicinales.",
+  "heroTitle": "Apprenez \u00e0 travailler avec les plantes m\u00e9dicinales",
+  "heroDesc": "Des ateliers pratiques en petits groupes \u2014 accessibles aux d\u00e9butants comme aux curieux plus exp\u00e9riment\u00e9s. D\u00e9couvrez comment identifier, pr\u00e9parer et utiliser les plantes pour votre sant\u00e9, chez vous.",
+  "w1Title": "Introduction \u00e0 la phytoth\u00e9rapie",
+  "w1Desc": "Qu'est-ce que la phytoth\u00e9rapie ? Comment les plantes agissent-elles sur le corps ? Quelles sont les formes gal\u00e9niques \u2014 tisanes, teintures, baumes ? Un premier pas dans le monde des plantes m\u00e9dicinales.",
   "w2Title": "Plantes & Hormones",
-  "w2Desc": "Les plantes alliées du cycle féminin, de la fertilité, du SOPK, de l'endométriose et de la périménopause. Comment les identifier, les utiliser en sécurité, et construire un protocole simple au quotidien.",
-  "w3Title": "Composez vos propres préparations",
-  "w3Desc": "Apprenez à formuler vos propres mélanges — tisanes, huiles infusées, beurres corporels aux plantes. Vous repartez avec vos créations et les connaissances pour continuer chez vous.",
-  "w4Title": "Adaptogens & Réponse au stress",
-  "w4Desc": "Qu'est-ce qu'un adaptogen et pourquoi en a-t-on besoin aujourd'hui ? Ashwagandha, rhodiola, éleuthérocoque, tulsi — apprendre à les connaître, les choisir et les utiliser avec discernement."
+  "w2Desc": "Les plantes alli\u00e9es du cycle f\u00e9minin, de la fertilit\u00e9, du SOPK, de l'endom\u00e9triose et de la p\u00e9rim\u00e9nopause. Comment les identifier, les utiliser en s\u00e9curit\u00e9, et construire un protocole simple au quotidien.",
+  "w3Title": "Composez vos propres pr\u00e9parations",
+  "w3Desc": "Apprenez \u00e0 formuler vos propres m\u00e9langes \u2014 tisanes, huiles infus\u00e9es, beurres corporels aux plantes. Vous repartez avec vos cr\u00e9ations et les connaissances pour continuer chez vous.",
+  "w4Title": "Adaptogens & R\u00e9ponse au stress",
+  "w4Desc": "Qu'est-ce qu'un adaptogen et pourquoi en a-t-on besoin aujourd'hui ? Ashwagandha, rhodiola, \u00e9leuth\u00e9rocoque, tulsi \u2014 apprendre \u00e0 les conna\u00eetre, les choisir et les utiliser avec discernement.",
+  "photo1": "/images/workshop-hands.jpg",
+  "photo2": "/images/workshop-group.jpg",
+  "photo3": "/images/workshop-jars.jpg"
 }

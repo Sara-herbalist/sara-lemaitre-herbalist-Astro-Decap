@@ -1,12 +1,68 @@
 {
-  "heroTitle": "Des plantes médicinales au service de votre organisation",
-  "heroDesc": "Interventions en entreprise, conseil de marque pour acteurs du bien-être, programmes pour clubs sportifs et équipes — une expertise clinique en phytothérapie et naturopathie au service de vos équipes et de vos clients.",
+  "heroTitle": "Des plantes m\u00e9dicinales au service de votre organisation",
+  "heroDesc": "Interventions en entreprise, conseil de marque pour acteurs du bien-\u00eatre, programmes pour clubs sportifs et \u00e9quipes \u2014 une expertise clinique en phytoth\u00e9rapie et naturopathie au service de vos \u00e9quipes et de vos clients.",
   "s1Title": "Interventions en entreprise",
-  "s1Desc": "Ateliers de sensibilisation au bien-être par les plantes, conférences sur le stress et la récupération, programmes de gestion de l'énergie pour équipes. Format adaptable selon vos besoins et votre secteur.",
+  "s1Desc": "Ateliers de sensibilisation au bien-\u00eatre par les plantes, conf\u00e9rences sur le stress et la r\u00e9cup\u00e9ration, programmes de gestion de l'\u00e9nergie pour \u00e9quipes. Format adaptable selon vos besoins et votre secteur.",
   "s2Title": "Conseil de marque",
-  "s2Desc": "Expertise en formulation herbale, validation des allégations produits, développement de gammes bien-être, formation des équipes commerciales et conseil en communication autour des ingrédients botaniques.",
-  "s3Title": "Performance & Récupération sportive",
-  "s3Desc": "Programmes de soutien phytothérapeutique pour clubs et athlètes de haut niveau. Adaptogens, gestion de l'inflammation, soutien hormonal, récupération entre les compétitions — par une ancienne athlète de haut niveau.",
-  "s4Title": "Intégration dans les offres bien-être",
-  "s4Desc": "Développement de protocoles de soins à base de plantes, formation des thérapeutes, création de rituels saisonniers et conseil sur la communication autour des ingrédients botaniques pour des établissements premium."
+  "s2Desc": "Expertise en formulation herbale, validation des all\u00e9gations produits, d\u00e9veloppement de gammes bien-\u00eatre, formation des \u00e9quipes commerciales et conseil en communication autour des ingr\u00e9dients botaniques.",
+  "s3Title": "Performance & R\u00e9cup\u00e9ration sportive",
+  "s3Desc": "Programmes de soutien phytoth\u00e9rapeutique pour clubs et athl\u00e8tes de haut niveau. Adaptogens, gestion de l'inflammation, soutien hormonal, r\u00e9cup\u00e9ration entre les comp\u00e9titions \u2014 par une ancienne athl\u00e8te de haut niveau.",
+  "s4Title": "Int\u00e9gration dans les offres bien-\u00eatre",
+  "s4Desc": "D\u00e9veloppement de protocoles de soins \u00e0 base de plantes, formation des th\u00e9rapeutes, cr\u00e9ation de rituels saisonniers et conseil sur la communication autour des ingr\u00e9dients botaniques pour des \u00e9tablissements premium.",
+  "heroPhoto": "/images/sara-professional.jpg",
+  "atmosphericPhoto": "/images/herbs-atmospheric.jpg",
+  "services": [
+    {
+      "number": "01",
+      "tag": "Entreprises \u00b7 RH \u00b7 Bien-\u00eatre au travail",
+      "title": "Interventions en entreprise",
+      "desc": "Ateliers de sensibilisation au bien-\u00eatre par les plantes, conf\u00e9rences sur le stress et la r\u00e9cup\u00e9ration, programmes de gestion de l'\u00e9nergie pour \u00e9quipes.",
+      "bullets": [
+        "Lunch & learn (60\u201390 min) \u2014 point d'entr\u00e9e accessible pour toute \u00e9quipe",
+        "Atelier demi-journ\u00e9e (3\u20134 h) \u2014 engagement plus profond, \u00e9l\u00e9ments pratiques",
+        "Programme bien-\u00eatre (4\u20138 semaines) \u2014 changement durable avec suivi",
+        "Sant\u00e9 des femmes au travail \u2014 s\u00e9rie sp\u00e9cialis\u00e9e pour RH et managers",
+        "Animation bilingue \u2014 fran\u00e7ais et anglais, en ligne ou en pr\u00e9sentiel"
+      ]
+    },
+    {
+      "number": "02",
+      "tag": "Marques \u00b7 Formulation \u00b7 Contenu \u00b7 Conseil",
+      "title": "Conseil de marque",
+      "desc": "Expertise en formulation herbale, validation des all\u00e9gations produits, d\u00e9veloppement de gammes bien-\u00eatre, formation des \u00e9quipes commerciales.",
+      "bullets": [
+        "Audit et conseils de formulation pour le d\u00e9veloppement de produits herboristes",
+        "Revue des all\u00e9gations \u2014 ce que vous pouvez dire ou non, et pourquoi",
+        "Cr\u00e9ation de contenus \u00e9ducatifs (articles, r\u00e9seaux sociaux, emballages)",
+        "Porte-parole expert pour presse, podcasts et \u00e9v\u00e9nements",
+        "Formation du personnel sur les ingr\u00e9dients botaniques utilis\u00e9s",
+        "Adaptation et localisation de marque en fran\u00e7ais"
+      ]
+    },
+    {
+      "number": "03",
+      "tag": "Clubs sportifs \u00b7 Athl\u00e8tes \u00b7 Performance",
+      "title": "Performance & R\u00e9cup\u00e9ration sportive",
+      "desc": "Programmes de soutien phytoth\u00e9rapeutique pour clubs et athl\u00e8tes de haut niveau. Adaptogens, gestion de l'inflammation, soutien hormonal, r\u00e9cup\u00e9ration.",
+      "bullets": [
+        "Ateliers bien-\u00eatre athl\u00e8te (performance, r\u00e9cup\u00e9ration, sant\u00e9 hormonale)",
+        "Conseils en protocoles adaptogens pour le staff d'entra\u00eenement",
+        "Soutien individuel aux athl\u00e8tes en compl\u00e9ment de la m\u00e9decine d'\u00e9quipe",
+        "Bilingue \u2014 fran\u00e7ais et anglais pour clubs et f\u00e9d\u00e9rations internationaux"
+      ]
+    },
+    {
+      "number": "04",
+      "tag": "Spas \u00b7 Centres bien-\u00eatre \u00b7 H\u00f4tels",
+      "title": "Int\u00e9gration dans les offres bien-\u00eatre",
+      "desc": "D\u00e9veloppement de protocoles de soins \u00e0 base de plantes, formation des th\u00e9rapeutes, cr\u00e9ation de rituels saisonniers pour des \u00e9tablissements premium.",
+      "bullets": [
+        "D\u00e9veloppement de protocoles de soins \u00e0 base de plantes",
+        "Conception et mise en place de rituels saisonniers",
+        "Formation du personnel et \u00e9ducation aux ingr\u00e9dients botaniques",
+        "Langage des menus et des offres \u2014 quoi dire et comment le dire",
+        "Adaptation en fran\u00e7ais pour les march\u00e9s francophones"
+      ]
+    }
+  ]
 }

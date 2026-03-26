@@ -1,18 +1,67 @@
 {
-  "heroTitle": "Des plantes. Une approche. Votre corps.",
-  "heroDesc": "Chaque thérapie que je propose s'appuie sur des traditions cliniques distinctes mais complémentaires. Je les combine selon ce que votre situation exige — pas selon un cadre unique appliqué à tous.",
-  "herbalTitle": "Phytothérapie occidentale",
-  "herbalP1": "La phytothérapie occidentale est le fondement de ma pratique. Elle utilise les plantes médicinales — racines, feuilles, fleurs, écorces — pour soutenir et restaurer la santé du corps et de l'esprit.",
-  "herbalP2": "Mon approche est enracinée dans la tradition phytothérapeutique européenne, avec une formation complémentaire en médecine traditionnelle chinoise et en Ayurveda. Je mobilise les outils les plus adaptés à chaque situation plutôt que d'appliquer un seul cadre à tous.",
-  "herbalP3": "Chaque consultation initiale débouche sur un protocole écrit personnalisé — une formulation herbale conçue pour vous, des recommandations naturopathiques, et si nécessaire, le contact avec un fournisseur de qualité pour votre préparation.",
-  "naturoTitle": "Naturopathie",
-  "naturoP1": "La naturopathie cherche à identifier et traiter les causes profondes des problèmes de santé — et non uniquement les symptômes. Elle s'appuie sur la nutrition, l'hygiène de vie, le soutien du système détox, la gestion du stress et des ajustements environnementaux.",
-  "naturoP2": "Dans ma pratique, la naturopathie est toujours intégrée à la phytothérapie. Les plantes et le mode de vie forment un ensemble — l'un soutient l'autre pour des résultats plus durables.",
-  "ihmTitle": "Massage Crânien Indien",
-  "ihmQuote": "« Elles repartent comme si elles flottaient. »",
-  "ihmP1": "Le massage crânien indien — issu de la tradition ayurvédique — travaille sur le dos, la nuque, les épaules, le cuir chevelu et le visage. Il libère les tensions musculaires accumulées, calme le système nerveux et procure un état de profond bien-être.",
-  "ihmP2": "Idéal en cas de maux de tête chroniques, tensions cervicales, insomnies, surcharge mentale, ou simplement comme pause de récupération profonde.",
-  "athleteTitle": "Performance & Récupération",
-  "athleteP1": "J'ai pratiqué la nage artistique à un niveau d'élite. Je sais ce que signifie vivre dans un corps de performance — ses exigences, sa logique, et ce que l'on ressent quand il cesse de fonctionner comme il le devrait.",
-  "athleteP2": "Mon approche pour les sportifs couvre les adaptogens et la gestion du stress physiologique, le soutien à la récupération et la réduction de l'inflammation, le dérèglement hormonal lié à l'entraînement intensif, et le soutien en cas de blessure ou de phase de réhabilitation."
+  "pageTitle": "Des plantes. Une approche. Votre corps.",
+  "pageDesc": "Chaque th\u00e9rapie que je propose s'appuie sur des traditions cliniques distinctes mais compl\u00e9mentaires. Je les combine selon ce que votre situation exige \u2014 pas selon un cadre unique appliqu\u00e9 \u00e0 tous.",
+  "therapyBlocks": [
+    {
+      "id": "herbal",
+      "label": "Th\u00e9rapie principale",
+      "title": "Phytoth\u00e9rapie occidentale",
+      "duration": "90 min (initiale) \u00b7 30\u201340 min (suivi)",
+      "format": "En ligne ou en pr\u00e9sentiel",
+      "price": "",
+      "calendlyUrl": "",
+      "bookLabel": "Prendre rendez-vous",
+      "paragraphs": [
+        "La phytoth\u00e9rapie occidentale est le fondement de ma pratique. Elle utilise les plantes m\u00e9dicinales \u2014 racines, feuilles, fleurs, \u00e9corces \u2014 pour soutenir et restaurer la sant\u00e9 du corps et de l'esprit.",
+        "Mon approche est enracin\u00e9e dans la tradition phytoth\u00e9rapeutique europ\u00e9enne, avec une formation compl\u00e9mentaire en m\u00e9decine traditionnelle chinoise et en Ayurveda.",
+        "Chaque consultation initiale d\u00e9bouche sur un protocole \u00e9crit personnalis\u00e9 \u2014 une formulation herbale con\u00e7ue pour vous, des recommandations naturopathiques, et si n\u00e9cessaire, le contact avec un fournisseur de qualit\u00e9."
+      ],
+      "photo": "/images/herbal-medicine.jpg"
+    },
+    {
+      "id": "naturopathy",
+      "label": "Compl\u00e9mentaire",
+      "title": "Naturopathie",
+      "duration": "Int\u00e9gr\u00e9e aux consultations",
+      "format": "En ligne ou en pr\u00e9sentiel",
+      "price": "",
+      "calendlyUrl": "",
+      "bookLabel": "",
+      "paragraphs": [
+        "La naturopathie cherche \u00e0 identifier et traiter les causes profondes des probl\u00e8mes de sant\u00e9 \u2014 et non uniquement les sympt\u00f4mes. Elle s'appuie sur la nutrition, l'hygi\u00e8ne de vie, le soutien du syst\u00e8me d\u00e9tox et la gestion du stress.",
+        "Dans ma pratique, la naturopathie est toujours int\u00e9gr\u00e9e \u00e0 la phytoth\u00e9rapie. Les plantes et le mode de vie forment un ensemble \u2014 l'un soutient l'autre pour des r\u00e9sultats plus durables."
+      ],
+      "photo": "/images/naturopathy.jpg"
+    },
+    {
+      "id": "ihm",
+      "label": "En pr\u00e9sentiel uniquement",
+      "title": "Massage Cr\u00e2nien Indien",
+      "duration": "45 minutes",
+      "format": "En pr\u00e9sentiel uniquement",
+      "price": "60 \u00a3",
+      "calendlyUrl": "",
+      "bookLabel": "R\u00e9server un massage",
+      "paragraphs": [
+        "Le massage cr\u00e2nien indien \u2014 issu de la tradition ayurv\u00e9dique \u2014 travaille sur le dos, la nuque, les \u00e9paules, le cuir chevelu et le visage. Il lib\u00e8re les tensions musculaires accumul\u00e9es et calme le syst\u00e8me nerveux.",
+        "Id\u00e9al en cas de maux de t\u00eate chroniques, tensions cervicales, insomnies ou surcharge mentale."
+      ],
+      "photo": "/images/head-massage.jpg"
+    },
+    {
+      "id": "athlete",
+      "label": "Sportifs & actifs",
+      "title": "Performance & R\u00e9cup\u00e9ration",
+      "duration": "90 min (initiale) \u00b7 30\u201340 min (suivi)",
+      "format": "En ligne ou en pr\u00e9sentiel",
+      "price": "",
+      "calendlyUrl": "",
+      "bookLabel": "Prendre rendez-vous",
+      "paragraphs": [
+        "J'ai pratiqu\u00e9 la nage artistique \u00e0 un niveau d'\u00e9lite. Je sais ce que signifie vivre dans un corps de performance \u2014 ses exigences, sa logique, et ce que l'on ressent quand il cesse de fonctionner comme il le devrait.",
+        "Mon approche pour les sportifs couvre les adaptogens, le soutien \u00e0 la r\u00e9cup\u00e9ration, le d\u00e9r\u00e8glement hormonal li\u00e9 \u00e0 l'entra\u00eenement intensif, et le soutien en cas de blessure."
+      ],
+      "photo": "/images/athlete-performance.jpg"
+    }
+  ]
 }

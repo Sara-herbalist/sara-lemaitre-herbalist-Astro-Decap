@@ -1,8 +1,13 @@
 {
-  "heroEyebrow": "Herboriste clinique · Naturopathe · Ancienne athlète de haut niveau",
-  "heroDesc": "J'accompagne les femmes qui ont été trop longtemps ignorées par la médecine conventionnelle. Et les sportifs dont le corps a cessé de coopérer. Je connais ces chemins — je les ai moi-même parcourus.",
+  "heroEyebrow": "Herboriste clinique \u00b7 Naturopathe \u00b7 Ancienne athl\u00e8te de haut niveau",
+  "heroDesc": "J'accompagne les femmes qui ont \u00e9t\u00e9 trop longtemps ignor\u00e9es par la m\u00e9decine conventionnelle. Et les sportifs dont le corps a cess\u00e9 de coop\u00e9rer. Je connais ces chemins \u2014 je les ai moi-m\u00eame parcourus.",
   "introTitle": "La pratique",
-  "introSubtitle": "Une médecine des plantes ancrée dans le vécu",
-  "introBody1": "Je ne suis pas arrivée à la phytothérapie par les livres. J'y suis arrivée après sept ans à être mise de côté par la médecine conventionnelle — un corps que je ne reconnaissais plus, une carrière sportive interrompue, et la conviction obstinée qu'une autre voie devait exister. Quand j'ai trouvé la médecine par les plantes, ça a fonctionné. Lentement, laborieusement, avec beaucoup d'essais. Mais ça a fonctionné.",
-  "introBody2": "Cette expérience — traverser l'endométriose, le SOPK et la fatigue chronique sans boussole — est le fondement de tout ce que je fais en consultation. Je sais ce que c'est de chercher des réponses quand le système ne vous en donne pas."
+  "introSubtitle": "Une m\u00e9decine des plantes ancr\u00e9e dans le v\u00e9cu",
+  "introBody1": "Je ne suis pas arriv\u00e9e \u00e0 la phytoth\u00e9rapie par les livres. J'y suis arriv\u00e9e apr\u00e8s sept ans \u00e0 \u00eatre mise de c\u00f4t\u00e9 par la m\u00e9decine conventionnelle \u2014 un corps que je ne reconnaissais plus, une carri\u00e8re sportive interrompue, et la conviction obstin\u00e9e qu'une autre voie devait exister. Quand j'ai trouv\u00e9 la m\u00e9decine par les plantes, \u00e7a a fonctionn\u00e9. Lentement, laborieusement, avec beaucoup d'essais. Mais \u00e7a a fonctionn\u00e9.",
+  "introBody2": "Cette exp\u00e9rience \u2014 traverser l'endom\u00e9triose, le SOPK et la fatigue chronique sans boussole \u2014 est le fondement de tout ce que je fais en consultation. Je sais ce que c'est de chercher des r\u00e9ponses quand le syst\u00e8me ne vous en donne pas.",
+  "heroPortrait": "/images/sara-portrait.jpg",
+  "practicePhoto1": "/images/herbs-drying.jpg",
+  "practicePhoto2": "/images/tincture-bottles.jpg",
+  "practicePhoto3": "/images/workspace.jpg",
+  "storyPullPortrait": "/images/sara-portrait-warm.jpg"
 }
