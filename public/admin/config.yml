@@ -10,9 +10,9 @@ public_folder: /images
 
 collections:
 
-  # ═══════════════════════════════════════
-  #  ENGLISH
-  # ═══════════════════════════════════════
+  # ═══════════════════════════════════════════════════════
+  #  🇬🇧  ENGLISH
+  # ═══════════════════════════════════════════════════════
 
   - name: homepage_en
     label: "🇬🇧 Homepage"
@@ -23,10 +23,59 @@ collections:
         fields:
           - { label: "Hero eyebrow", name: heroEyebrow, widget: string }
           - { label: "Hero description", name: heroDesc, widget: text }
-          - { label: "Intro title", name: introTitle, widget: string }
+          - { label: "Intro section title", name: introTitle, widget: string }
           - { label: "Intro subtitle", name: introSubtitle, widget: string }
           - { label: "Intro body paragraph 1", name: introBody1, widget: text }
           - { label: "Intro body paragraph 2", name: introBody2, widget: text }
+          - { label: "Who I help — section title", name: whoTitle, widget: string }
+          - { label: "Who I help — section description", name: whoDesc, widget: text }
+          - name: whoCards
+            label: "Who I help — 3 cards"
+            widget: list
+            fields:
+              - { label: "Number", name: number, widget: string }
+              - { label: "Title", name: title, widget: string }
+              - { label: "Description", name: desc, widget: text }
+              - { label: "Tags (comma separated)", name: tags, widget: list }
+          - { label: "Differentiators — title", name: differentTitle, widget: string }
+          - { label: "Differentiators — paragraph 1", name: differentDesc1, widget: text }
+          - { label: "Differentiators — paragraph 2", name: differentDesc2, widget: text }
+          - name: differentItems
+            label: "Differentiators — 5 items"
+            widget: list
+            fields:
+              - { label: "Title", name: title, widget: string }
+              - { label: "Description", name: desc, widget: text }
+          - { label: "Process — section title", name: processTitle, widget: string }
+          - name: processSteps
+            label: "Process — 4 steps"
+            widget: list
+            fields:
+              - { label: "Step title", name: title, widget: string }
+              - { label: "Step description", name: desc, widget: text }
+          - name: testimonials
+            label: "Testimonials — 3 slots"
+            widget: list
+            fields:
+              - { label: "Quote text (leave blank = coming soon)", name: text, widget: text, required: false }
+              - { label: "Author", name: author, widget: string }
+              - { label: "Condition / treatment", name: condition, widget: string, required: false }
+          - { label: "International — section title", name: internationalTitle, widget: string }
+          - { label: "International — paragraph 1", name: internationalDesc1, widget: text }
+          - { label: "International — paragraph 2", name: internationalDesc2, widget: text }
+          - name: regions
+            label: "International regions — 6 items"
+            widget: list
+            fields:
+              - { label: "Region name", name: name, widget: string }
+              - { label: "Description", name: desc, widget: text }
+          - { label: "Final CTA — heading", name: ctaTitle, widget: string }
+          - { label: "Final CTA — body text", name: ctaDesc, widget: text }
+          - { label: "Hero portrait photo", name: heroPortrait, widget: image, required: false }
+          - { label: "Practice photo 1", name: practicePhoto1, widget: image, required: false }
+          - { label: "Practice photo 2", name: practicePhoto2, widget: image, required: false }
+          - { label: "Practice photo 3", name: practicePhoto3, widget: image, required: false }
+          - { label: "Story pull portrait", name: storyPullPortrait, widget: image, required: false }
 
   - name: story_en
     label: "🇬🇧 My Story"
@@ -43,40 +92,199 @@ collections:
           - { label: "Section 1 — heading", name: s1h2, widget: string }
           - { label: "Section 1 — paragraph 1", name: s1p1, widget: text }
           - { label: "Section 1 — paragraph 2", name: s1p2, widget: text }
+          - { label: "Section 1 — paragraph 3", name: s1p3, widget: text }
+          - { label: "Section 1 — paragraph 4", name: s1p4, widget: text }
+          - { label: "Section 1 — paragraph 5", name: s1p5, widget: text }
           - { label: "Section 1 — inset quote", name: s1inset, widget: text }
           - { label: "Section 2 — heading", name: s2h2, widget: string }
+          - { label: "Section 2 — paragraph 1", name: s2p1, widget: text }
+          - { label: "Section 2 — paragraph 2", name: s2p2, widget: text }
+          - { label: "Section 2 — paragraph 3", name: s2p3, widget: text }
+          - { label: "Section 2 — paragraph 4", name: s2p4, widget: text }
+          - { label: "Section 2 — paragraph 5", name: s2p5, widget: text }
           - { label: "Section 2 — inset quote", name: s2inset, widget: text }
           - { label: "Section 3 — heading", name: s3h2, widget: string }
+          - { label: "Section 3 — paragraph 1", name: s3p1, widget: text }
+          - { label: "Section 3 — paragraph 2", name: s3p2, widget: text }
+          - { label: "Section 3 — paragraph 3", name: s3p3, widget: text }
+          - { label: "Section 3 — paragraph 4", name: s3p4, widget: text }
+          - { label: "Section 3 — paragraph 5", name: s3p5, widget: text }
           - { label: "Section 3 — inset quote", name: s3inset, widget: text }
-          - { label: "Magnolia section — heading", name: magnoliaTitle, widget: string }
+          - { label: "Section 4 — heading", name: s4h2, widget: string }
+          - { label: "Section 4 — paragraph 1", name: s4p1, widget: text }
+          - { label: "Section 4 — paragraph 2", name: s4p2, widget: text }
+          - { label: "Section 4 — paragraph 3", name: s4p3, widget: text }
+          - { label: "Magnolia — heading", name: magnoliaTitle, widget: string }
+          - { label: "Magnolia — paragraph 1", name: magnoliaP1, widget: text }
+          - { label: "Magnolia — paragraph 2", name: magnoliaP2, widget: text }
+          - { label: "Magnolia — paragraph 3", name: magnoliaP3, widget: text }
+          - { label: "Magnolia — paragraph 4", name: magnoliaP4, widget: text }
+          - { label: "Magnolia — paragraph 5", name: magnoliaP5, widget: text }
+          - { label: "Magnolia — paragraph 6", name: magnoliaP6, widget: text }
+          - { label: "Graduation — heading", name: graduationTitle, widget: string }
+          - { label: "Graduation — paragraph 1", name: graduationP1, widget: text }
+          - { label: "Graduation — paragraph 2", name: graduationP2, widget: text }
+          - { label: "Graduation — paragraph 3", name: graduationP3, widget: text }
+          - { label: "Graduation — paragraph 4", name: graduationP4, widget: text }
+          - { label: "Graduation — paragraph 5", name: graduationP5, widget: text }
           - { label: "Now section — heading", name: nowTitle, widget: string }
           - { label: "Now section — paragraph 1", name: nowP1, widget: text }
           - { label: "Now section — paragraph 2", name: nowP2, widget: text }
           - { label: "Now section — paragraph 3", name: nowP3, widget: text }
+          - name: credentials
+            label: "Credentials panel"
+            widget: list
+            fields:
+              - { label: "Credential name", name: name, widget: string }
+              - { label: "Detail", name: detail, widget: string }
+          - { label: "Hero photo (athlete / personal)", name: heroPhoto, widget: image, required: false }
+          - { label: "Magnolia photo", name: magnoliaPhoto, widget: image, required: false }
+          - { label: "Professional portrait", name: portraitPhoto, widget: image, required: false }
 
   - name: therapies_en
     label: "🇬🇧 Therapies"
     files:
       - name: therapies_en
-        label: "Therapies — English"
+        label: "Therapies — English — add, remove, reorder"
         file: src/data/therapies.json
+        fields:
+          - { label: "Page title", name: pageTitle, widget: string }
+          - { label: "Page description", name: pageDesc, widget: text }
+          - name: therapyBlocks
+            label: "Therapy blocks (add, remove, reorder)"
+            widget: list
+            fields:
+              - { label: "ID (URL anchor, no spaces e.g. herbal)", name: id, widget: string }
+              - { label: "Label (small text above title)", name: label, widget: string }
+              - { label: "Title", name: title, widget: string }
+              - { label: "Duration", name: duration, widget: string, required: false }
+              - { label: "Format", name: format, widget: string, required: false }
+              - { label: "Price (leave blank if included in consultations)", name: price, widget: string, required: false }
+              - { label: "Calendly URL (overrides global setting)", name: calendlyUrl, widget: string, required: false }
+              - { label: "Book button label (leave blank to hide button)", name: bookLabel, widget: string, required: false }
+              - name: paragraphs
+                label: "Content paragraphs"
+                widget: list
+                field: { label: Paragraph, name: paragraph, widget: text }
+              - { label: "Photo", name: photo, widget: image, required: false }
+          - { label: "Plant strip photo 1", name: plantStrip1, widget: image, required: false }
+          - { label: "Plant strip photo 2", name: plantStrip2, widget: image, required: false }
+          - { label: "Plant strip photo 3", name: plantStrip3, widget: image, required: false }
+          - { label: "Plant strip photo 4", name: plantStrip4, widget: image, required: false }
+
+  - name: pricing_shared
+    label: "💷 Pricing (EN + FR)"
+    files:
+      - name: pricing_shared
+        label: "Prices — updates both languages"
+        file: src/data/pricing.json
+        fields:
+          - { label: "Show programme packages on page", name: showPackages, widget: boolean, default: true }
+          - { label: "Pricing philosophy note", name: pricingNote, widget: text }
+          - { label: "Initial consultation (£)", name: initialConsultation, widget: number }
+          - { label: "Initial sliding scale (£)", name: initialConsultationSlidingScale, widget: number }
+          - { label: "Follow-up (£)", name: followUp, widget: number }
+          - { label: "Follow-up sliding scale (£)", name: followUpSlidingScale, widget: number }
+          - { label: "Bundle 3 sessions (£)", name: bundle3Sessions, widget: number }
+          - { label: "Bundle sliding scale (£)", name: bundle3SessionsSlidingScale, widget: number }
+          - { label: "Indian Head Massage (£)", name: ihm, widget: number }
+          - name: initialIncludes
+            label: "Initial consultation — includes list"
+            widget: list
+            field: { label: Item, name: item, widget: string }
+          - name: followupIncludes
+            label: "Follow-up — includes list"
+            widget: list
+            field: { label: Item, name: item, widget: string }
+          - name: bundleIncludes
+            label: "Bundle — includes list"
+            widget: list
+            field: { label: Item, name: item, widget: string }
+          - name: packages
+            label: "Programme packages (shown/hidden by toggle above)"
+            widget: list
+            fields:
+              - { label: "Tag line", name: tag, widget: string }
+              - { label: "Title", name: title, widget: string }
+              - { label: "Price (£)", name: price, widget: number }
+              - { label: "Saving (£)", name: saving, widget: number }
+              - name: includes
+                label: "Includes list"
+                widget: list
+                field: { label: Item, name: item, widget: string }
+          - { label: "Hormonal Reset programme (£)", name: hormonalReset, widget: number }
+          - { label: "Stress & Burnout programme (£)", name: stressBurnout, widget: number }
+          - { label: "Perimenopause programme (£)", name: perimenopause, widget: number }
+          - { label: "Athlete Performance programme (£)", name: athletePerformance, widget: number }
+          - { label: "Retainer Standard /mo (£)", name: retainerStandard, widget: number }
+          - { label: "Retainer Intensive /mo (£)", name: retainerIntensive, widget: number }
+          - name: cancellationTiers
+            label: "Cancellation policy — 3 tiers"
+            widget: list
+            fields:
+              - { label: "Tier title", name: title, widget: string }
+              - { label: "Policy text", name: policy, widget: text }
+          - { label: "Cancellation note", name: cancellationNote, widget: text }
+
+  - name: book_en
+    label: "🇬🇧 Book"
+    files:
+      - name: book_en
+        label: "Booking page — English"
+        file: src/data/book.json
         fields:
           - { label: "Hero title", name: heroTitle, widget: string }
           - { label: "Hero description", name: heroDesc, widget: text }
-          - { label: "Herbal Medicine — title", name: herbalTitle, widget: string }
-          - { label: "Herbal Medicine — paragraph 1", name: herbalP1, widget: text }
-          - { label: "Herbal Medicine — paragraph 2", name: herbalP2, widget: text }
-          - { label: "Herbal Medicine — paragraph 3", name: herbalP3, widget: text }
-          - { label: "Naturopathy — title", name: naturoTitle, widget: string }
-          - { label: "Naturopathy — paragraph 1", name: naturoP1, widget: text }
-          - { label: "Naturopathy — paragraph 2", name: naturoP2, widget: text }
+          - { label: "How it works — title", name: howItWorksTitle, widget: string }
+          - name: steps
+            label: "How it works — 3 steps"
+            widget: list
+            fields:
+              - { label: "Step title", name: title, widget: string }
+              - { label: "Step description", name: desc, widget: text }
+          - { label: "Choose consultation — title", name: chooseTitle, widget: string }
+          - { label: "Choose consultation — description", name: chooseDesc, widget: text }
+          - { label: "Discovery call — title", name: discoveryTitle, widget: string }
+          - { label: "Discovery call — description", name: discoveryDesc, widget: text }
+          - { label: "Initial consultation — title", name: initialTitle, widget: string }
+          - { label: "Initial consultation — description", name: initialDesc, widget: text }
+          - { label: "Follow-up — title", name: followupTitle, widget: string }
+          - { label: "Follow-up — description", name: followupDesc, widget: text }
+          - { label: "Bundle — title", name: bundleTitle, widget: string }
+          - { label: "Bundle — description", name: bundleDesc, widget: text }
           - { label: "Indian Head Massage — title", name: ihmTitle, widget: string }
-          - { label: "Indian Head Massage — quote", name: ihmQuote, widget: string }
-          - { label: "Indian Head Massage — paragraph 1", name: ihmP1, widget: text }
-          - { label: "Indian Head Massage — paragraph 2", name: ihmP2, widget: text }
-          - { label: "Athlete — title", name: athleteTitle, widget: string }
-          - { label: "Athlete — paragraph 1", name: athleteP1, widget: text }
-          - { label: "Athlete — paragraph 2", name: athleteP2, widget: text }
+          - { label: "Indian Head Massage — description", name: ihmDesc, widget: text }
+          - { label: "Other services box — title", name: getInTouchTitle, widget: string }
+          - { label: "Other services box — description", name: getInTouchDesc, widget: text }
+          - { label: "Cancellation — title", name: cancellationTitle, widget: string }
+          - name: cancellationTiers
+            label: "Cancellation — 3 tiers"
+            widget: list
+            fields:
+              - { label: "Tier title", name: title, widget: string }
+              - { label: "Policy text", name: policy, widget: text }
+          - { label: "Cancellation — footnote", name: cancellationNote, widget: text }
+          - { label: "Final CTA — title", name: finalCtaTitle, widget: string }
+          - { label: "Final CTA — description", name: finalCtaDesc, widget: text }
+          - { label: "Bank — account name", name: bankName, widget: string }
+          - { label: "Bank — sort code", name: bankSort, widget: string }
+          - { label: "Bank — account number", name: bankAccount, widget: string }
+          - name: consultationCards
+            label: "Consultation cards (add, remove, reorder)"
+            widget: list
+            fields:
+              - { label: "Tag (duration / format)", name: tag, widget: string }
+              - { label: "Title", name: title, widget: string }
+              - { label: "Price in £ (0 = free)", name: price, widget: number }
+              - { label: "Sliding scale price (0 = no sliding scale)", name: slidingScale, widget: number }
+              - { label: "Duration", name: duration, widget: string }
+              - { label: "Description", name: desc, widget: text }
+              - { label: "Calendly URL", name: calendlyUrl, widget: string, required: false }
+              - { label: "Featured card (highlighted)", name: featured, widget: boolean, default: false }
+              - { label: "Show sliding scale note", name: showSlidingScale, widget: boolean, default: false }
+              - { label: "Book button label", name: bookLabel, widget: string }
+          - { label: "Hero photo (you at desk)", name: heroPhoto, widget: image, required: false }
+          - { label: "Accent photo (herbs)", name: accentPhoto, widget: image, required: false }
 
   - name: workshops_en
     label: "🇬🇧 Workshops"
@@ -87,14 +295,36 @@ collections:
         fields:
           - { label: "Hero title", name: heroTitle, widget: string }
           - { label: "Hero description", name: heroDesc, widget: text }
+          - { label: "Philosophy — title", name: philosophyTitle, widget: string }
+          - { label: "Philosophy — paragraph 1", name: philosophyDesc1, widget: text }
+          - { label: "Philosophy — paragraph 2", name: philosophyDesc2, widget: text }
           - { label: "Workshop 1 — title", name: w1Title, widget: string }
           - { label: "Workshop 1 — description", name: w1Desc, widget: text }
+          - name: w1Learns
+            label: "Workshop 1 — what you'll learn"
+            widget: list
+            field: { label: Item, name: item, widget: string }
           - { label: "Workshop 2 — title", name: w2Title, widget: string }
           - { label: "Workshop 2 — description", name: w2Desc, widget: text }
+          - name: w2Learns
+            label: "Workshop 2 — what you'll learn"
+            widget: list
+            field: { label: Item, name: item, widget: string }
           - { label: "Workshop 3 — title", name: w3Title, widget: string }
           - { label: "Workshop 3 — description", name: w3Desc, widget: text }
+          - name: w3Learns
+            label: "Workshop 3 — what you'll learn"
+            widget: list
+            field: { label: Item, name: item, widget: string }
           - { label: "Workshop 4 — title", name: w4Title, widget: string }
           - { label: "Workshop 4 — description", name: w4Desc, widget: text }
+          - name: w4Learns
+            label: "Workshop 4 — what you'll learn"
+            widget: list
+            field: { label: Item, name: item, widget: string }
+          - { label: "Workshop photo 1", name: photo1, widget: image, required: false }
+          - { label: "Workshop photo 2", name: photo2, widget: image, required: false }
+          - { label: "Workshop photo 3", name: photo3, widget: image, required: false }
 
   - name: walks_en
     label: "🇬🇧 Walks"
@@ -108,6 +338,11 @@ collections:
           - { label: "Opening section — title", name: openingTitle, widget: string }
           - { label: "Opening section — paragraph 1", name: openingP1, widget: text }
           - { label: "Opening section — paragraph 2", name: openingP2, widget: text }
+          - { label: "Forest bathing — title", name: forestBathingTitle, widget: string }
+          - { label: "Forest bathing — paragraph 1", name: forestBathingDesc1, widget: text }
+          - { label: "Forest bathing — paragraph 2", name: forestBathingDesc2, widget: text }
+          - { label: "Mailing section — title", name: mailingTitle, widget: string }
+          - { label: "Mailing section — description", name: mailingDesc, widget: text }
 
   - name: consultancy_en
     label: "🇬🇧 Consultancy"
@@ -118,58 +353,25 @@ collections:
         fields:
           - { label: "Hero title", name: heroTitle, widget: string }
           - { label: "Hero description", name: heroDesc, widget: text }
-          - { label: "Service 1 — title", name: s1Title, widget: string }
-          - { label: "Service 1 — description", name: s1Desc, widget: text }
-          - { label: "Service 2 — title", name: s2Title, widget: string }
-          - { label: "Service 2 — description", name: s2Desc, widget: text }
-          - { label: "Service 3 — title", name: s3Title, widget: string }
-          - { label: "Service 3 — description", name: s3Desc, widget: text }
-          - { label: "Service 4 — title", name: s4Title, widget: string }
-          - { label: "Service 4 — description", name: s4Desc, widget: text }
-
-  - name: book_en
-    label: "🇬🇧 Book"
-    files:
-      - name: book_en
-        label: "Booking page — English"
-        file: src/data/book.json
-        fields:
-          - { label: "Hero title", name: heroTitle, widget: string }
-          - { label: "Hero description", name: heroDesc, widget: text }
-          - { label: "Discovery call — title", name: discoveryTitle, widget: string }
-          - { label: "Discovery call — description", name: discoveryDesc, widget: text }
-          - { label: "Initial consultation — title", name: initialTitle, widget: string }
-          - { label: "Initial consultation — description", name: initialDesc, widget: text }
-          - { label: "Follow-up — title", name: followupTitle, widget: string }
-          - { label: "Follow-up — description", name: followupDesc, widget: text }
-          - { label: "Bundle — title", name: bundleTitle, widget: string }
-          - { label: "Bundle — description", name: bundleDesc, widget: text }
-          - { label: "Indian Head Massage — title", name: ihmTitle, widget: string }
-          - { label: "Indian Head Massage — description", name: ihmDesc, widget: text }
-          - { label: "Bank — account name", name: bankName, widget: string }
-          - { label: "Bank — sort code", name: bankSort, widget: string }
-          - { label: "Bank — account number", name: bankAccount, widget: string }
-
-  - name: pricing_shared
-    label: "💷 Pricing (EN + FR)"
-    files:
-      - name: pricing_shared
-        label: "Prices — updates both languages"
-        file: src/data/pricing.json
-        fields:
-          - { label: "Initial consultation (£)", name: initialConsultation, widget: number }
-          - { label: "Initial sliding scale (£)", name: initialConsultationSlidingScale, widget: number }
-          - { label: "Follow-up (£)", name: followUp, widget: number }
-          - { label: "Follow-up sliding scale (£)", name: followUpSlidingScale, widget: number }
-          - { label: "Bundle 3 sessions (£)", name: bundle3Sessions, widget: number }
-          - { label: "Bundle sliding scale (£)", name: bundle3SessionsSlidingScale, widget: number }
-          - { label: "Indian Head Massage (£)", name: ihm, widget: number }
-          - { label: "Hormonal Reset programme (£)", name: hormonalReset, widget: number }
-          - { label: "Stress & Burnout programme (£)", name: stressBurnout, widget: number }
-          - { label: "Perimenopause programme (£)", name: perimenopause, widget: number }
-          - { label: "Athlete Performance programme (£)", name: athletePerformance, widget: number }
-          - { label: "Retainer Standard /mo (£)", name: retainerStandard, widget: number }
-          - { label: "Retainer Intensive /mo (£)", name: retainerIntensive, widget: number }
+          - { label: "Why section — title", name: whyTitle, widget: string }
+          - { label: "Why section — paragraph 1", name: whyDesc1, widget: text }
+          - { label: "Why section — paragraph 2", name: whyDesc2, widget: text }
+          - name: services
+            label: "Services (add, remove, reorder)"
+            widget: list
+            fields:
+              - { label: "Number (01, 02...)", name: number, widget: string }
+              - { label: "Tag line", name: tag, widget: string }
+              - { label: "Title", name: title, widget: string }
+              - { label: "Description", name: desc, widget: text }
+              - name: bullets
+                label: "Bullet points"
+                widget: list
+                field: { label: Item, name: item, widget: string }
+          - { label: "Contact — title", name: contactTitle, widget: string }
+          - { label: "Contact — description", name: contactDesc, widget: text }
+          - { label: "Hero photo (professional portrait)", name: heroPhoto, widget: image, required: false }
+          - { label: "Atmospheric photo", name: atmosphericPhoto, widget: image, required: false }
 
   - name: settings_en
     label: "🇬🇧 Settings"
@@ -178,14 +380,18 @@ collections:
         label: "Settings — English site"
         file: src/data/settings.json
         fields:
-          - { label: "Calendly URL", name: calendlyUrl, widget: string }
+          - { label: "Discovery call URL (free 15 min)", name: calendlyDiscovery, widget: string }
+          - { label: "Initial consultation URL", name: calendlyInitial, widget: string }
+          - { label: "Follow-up consultation URL", name: calendlyFollowup, widget: string }
+          - { label: "Bundle URL", name: calendlyBundle, widget: string }
+          - { label: "Indian Head Massage URL", name: calendlyIhm, widget: string }
           - { label: "Instagram URL", name: instagramUrl, widget: string }
           - { label: "LinkedIn URL", name: linkedinUrl, widget: string }
           - { label: "Contact email", name: email, widget: string }
 
-  # ═══════════════════════════════════════
-  #  FRENCH
-  # ═══════════════════════════════════════
+  # ═══════════════════════════════════════════════════════
+  #  🇫🇷  FRENCH
+  # ═══════════════════════════════════════════════════════
 
   - name: homepage_fr
     label: "🇫🇷 Page d'accueil"
@@ -200,6 +406,11 @@ collections:
           - { label: "Sous-titre section pratique", name: introSubtitle, widget: string }
           - { label: "Corps texte 1", name: introBody1, widget: text }
           - { label: "Corps texte 2", name: introBody2, widget: text }
+          - { label: "Photo portrait hero", name: heroPortrait, widget: image, required: false }
+          - { label: "Photo pratique 1", name: practicePhoto1, widget: image, required: false }
+          - { label: "Photo pratique 2", name: practicePhoto2, widget: image, required: false }
+          - { label: "Photo pratique 3", name: practicePhoto3, widget: image, required: false }
+          - { label: "Portrait section récit", name: storyPullPortrait, widget: image, required: false }
 
   - name: story_fr
     label: "🇫🇷 Mon parcours"
@@ -210,7 +421,7 @@ collections:
         fields:
           - { label: "Titre hero ligne 1", name: heroTitle1, widget: string }
           - { label: "Titre hero ligne 2", name: heroTitle2, widget: string }
-          - { label: "Titre hero ligne 3 (italique)", name: heroTitle3, widget: string }
+          - { label: "Titre hero ligne 3", name: heroTitle3, widget: string }
           - { label: "Description hero", name: heroDesc, widget: text }
           - { label: "Citation principale", name: pullQuote, widget: text }
           - { label: "Section 1 — titre", name: s1h2, widget: string }
@@ -226,30 +437,40 @@ collections:
           - { label: "Section actuelle — paragraphe 1", name: nowP1, widget: text }
           - { label: "Section actuelle — paragraphe 2", name: nowP2, widget: text }
           - { label: "Section actuelle — paragraphe 3", name: nowP3, widget: text }
+          - { label: "Photo hero", name: heroPhoto, widget: image, required: false }
+          - { label: "Photo magnolia", name: magnoliaPhoto, widget: image, required: false }
+          - { label: "Portrait professionnel", name: portraitPhoto, widget: image, required: false }
 
   - name: therapies_fr
     label: "🇫🇷 Thérapies"
     files:
       - name: therapies_fr
-        label: "Thérapies — Français"
+        label: "Thérapies — Français — ajouter, supprimer, réordonner"
         file: src/data/fr/therapies.json
         fields:
-          - { label: "Titre hero", name: heroTitle, widget: string }
-          - { label: "Description hero", name: heroDesc, widget: text }
-          - { label: "Phytothérapie — titre", name: herbalTitle, widget: string }
-          - { label: "Phytothérapie — paragraphe 1", name: herbalP1, widget: text }
-          - { label: "Phytothérapie — paragraphe 2", name: herbalP2, widget: text }
-          - { label: "Phytothérapie — paragraphe 3", name: herbalP3, widget: text }
-          - { label: "Naturopathie — titre", name: naturoTitle, widget: string }
-          - { label: "Naturopathie — paragraphe 1", name: naturoP1, widget: text }
-          - { label: "Naturopathie — paragraphe 2", name: naturoP2, widget: text }
-          - { label: "Massage crânien — titre", name: ihmTitle, widget: string }
-          - { label: "Massage crânien — citation", name: ihmQuote, widget: string }
-          - { label: "Massage crânien — paragraphe 1", name: ihmP1, widget: text }
-          - { label: "Massage crânien — paragraphe 2", name: ihmP2, widget: text }
-          - { label: "Sportifs — titre", name: athleteTitle, widget: string }
-          - { label: "Sportifs — paragraphe 1", name: athleteP1, widget: text }
-          - { label: "Sportifs — paragraphe 2", name: athleteP2, widget: text }
+          - { label: "Titre de la page", name: pageTitle, widget: string }
+          - { label: "Description de la page", name: pageDesc, widget: text }
+          - name: therapyBlocks
+            label: "Blocs de thérapies (ajouter, supprimer, réordonner)"
+            widget: list
+            fields:
+              - { label: "ID (ancre URL, sans espaces ex: phytotherapie)", name: id, widget: string }
+              - { label: "Étiquette (petit texte au-dessus du titre)", name: label, widget: string }
+              - { label: "Titre", name: title, widget: string }
+              - { label: "Durée", name: duration, widget: string, required: false }
+              - { label: "Format", name: format, widget: string, required: false }
+              - { label: "Tarif (laisser vide si inclus dans les consultations)", name: price, widget: string, required: false }
+              - { label: "URL Calendly spécifique (remplace le réglage global)", name: calendlyUrl, widget: string, required: false }
+              - { label: "Texte du bouton (laisser vide pour masquer)", name: bookLabel, widget: string, required: false }
+              - name: paragraphs
+                label: "Paragraphes de contenu"
+                widget: list
+                field: { label: Paragraphe, name: paragraph, widget: text }
+              - { label: "Photo", name: photo, widget: image, required: false }
+          - { label: "Bande plantes — photo 1", name: plantStrip1, widget: image, required: false }
+          - { label: "Bande plantes — photo 2", name: plantStrip2, widget: image, required: false }
+          - { label: "Bande plantes — photo 3", name: plantStrip3, widget: image, required: false }
+          - { label: "Bande plantes — photo 4", name: plantStrip4, widget: image, required: false }
 
   - name: workshops_fr
     label: "🇫🇷 Ateliers"
@@ -262,12 +483,31 @@ collections:
           - { label: "Description hero", name: heroDesc, widget: text }
           - { label: "Atelier 1 — titre", name: w1Title, widget: string }
           - { label: "Atelier 1 — description", name: w1Desc, widget: text }
+          - name: w1Learns
+            label: "Atelier 1 — ce que vous apprendrez"
+            widget: list
+            field: { label: Élément, name: item, widget: string }
           - { label: "Atelier 2 — titre", name: w2Title, widget: string }
           - { label: "Atelier 2 — description", name: w2Desc, widget: text }
+          - name: w2Learns
+            label: "Atelier 2 — ce que vous apprendrez"
+            widget: list
+            field: { label: Élément, name: item, widget: string }
           - { label: "Atelier 3 — titre", name: w3Title, widget: string }
           - { label: "Atelier 3 — description", name: w3Desc, widget: text }
+          - name: w3Learns
+            label: "Atelier 3 — ce que vous apprendrez"
+            widget: list
+            field: { label: Élément, name: item, widget: string }
           - { label: "Atelier 4 — titre", name: w4Title, widget: string }
           - { label: "Atelier 4 — description", name: w4Desc, widget: text }
+          - name: w4Learns
+            label: "Atelier 4 — ce que vous apprendrez"
+            widget: list
+            field: { label: Élément, name: item, widget: string }
+          - { label: "Photo atelier 1", name: photo1, widget: image, required: false }
+          - { label: "Photo atelier 2", name: photo2, widget: image, required: false }
+          - { label: "Photo atelier 3", name: photo3, widget: image, required: false }
 
   - name: walks_fr
     label: "🇫🇷 Balades"
@@ -291,14 +531,20 @@ collections:
         fields:
           - { label: "Titre hero", name: heroTitle, widget: string }
           - { label: "Description hero", name: heroDesc, widget: text }
-          - { label: "Service 1 — titre", name: s1Title, widget: string }
-          - { label: "Service 1 — description", name: s1Desc, widget: text }
-          - { label: "Service 2 — titre", name: s2Title, widget: string }
-          - { label: "Service 2 — description", name: s2Desc, widget: text }
-          - { label: "Service 3 — titre", name: s3Title, widget: string }
-          - { label: "Service 3 — description", name: s3Desc, widget: text }
-          - { label: "Service 4 — titre", name: s4Title, widget: string }
-          - { label: "Service 4 — description", name: s4Desc, widget: text }
+          - name: services
+            label: "Services (ajouter, supprimer, réordonner)"
+            widget: list
+            fields:
+              - { label: "Numéro (01, 02...)", name: number, widget: string }
+              - { label: "Étiquette", name: tag, widget: string }
+              - { label: "Titre", name: title, widget: string }
+              - { label: "Description", name: desc, widget: text }
+              - name: bullets
+                label: "Points clés"
+                widget: list
+                field: { label: Élément, name: item, widget: string }
+          - { label: "Photo portrait professionnel", name: heroPhoto, widget: image, required: false }
+          - { label: "Photo atmosphérique", name: atmosphericPhoto, widget: image, required: false }
 
   - name: book_fr
     label: "🇫🇷 Réservation"
@@ -322,6 +568,22 @@ collections:
           - { label: "Virement — nom du compte", name: bankName, widget: string }
           - { label: "Virement — code de tri", name: bankSort, widget: string }
           - { label: "Virement — numéro de compte", name: bankAccount, widget: string }
+          - name: consultationCards
+            label: "Cartes de consultation (ajouter, supprimer, réordonner)"
+            widget: list
+            fields:
+              - { label: "Étiquette (durée / format)", name: tag, widget: string }
+              - { label: "Titre", name: title, widget: string }
+              - { label: "Tarif en £ (0 = gratuit)", name: price, widget: number }
+              - { label: "Tarif modulable (0 = pas de tarif modulable)", name: slidingScale, widget: number }
+              - { label: "Durée", name: duration, widget: string }
+              - { label: "Description", name: desc, widget: text }
+              - { label: "URL Calendly", name: calendlyUrl, widget: string, required: false }
+              - { label: "Carte mise en avant", name: featured, widget: boolean, default: false }
+              - { label: "Afficher le tarif modulable", name: showSlidingScale, widget: boolean, default: false }
+              - { label: "Texte du bouton", name: bookLabel, widget: string }
+          - { label: "Photo hero", name: heroPhoto, widget: image, required: false }
+          - { label: "Photo accent", name: accentPhoto, widget: image, required: false }
 
   - name: settings_fr
     label: "🇫🇷 Réglages"
@@ -330,7 +592,11 @@ collections:
         label: "Réglages — Français"
         file: src/data/fr/settings.json
         fields:
-          - { label: "URL Calendly", name: calendlyUrl, widget: string }
+          - { label: "URL Consultation découverte (gratuit)", name: calendlyDiscovery, widget: string }
+          - { label: "URL Consultation initiale", name: calendlyInitial, widget: string }
+          - { label: "URL Consultation de suivi", name: calendlyFollowup, widget: string }
+          - { label: "URL Forfait", name: calendlyBundle, widget: string }
+          - { label: "URL Massage crânien indien", name: calendlyIhm, widget: string }
           - { label: "URL Instagram", name: instagramUrl, widget: string }
           - { label: "URL LinkedIn", name: linkedinUrl, widget: string }
           - { label: "E-mail de contact", name: email, widget: string }
