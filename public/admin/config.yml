@@ -1,3 +1,4 @@
+# Decap CMS config
 backend:
   name: github
   repo: Sara-herbalist/sara-lemaitre-herbalist-Astro-Decap
