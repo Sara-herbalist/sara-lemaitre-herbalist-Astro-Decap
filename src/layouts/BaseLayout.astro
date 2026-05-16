@@ -29,45 +29,35 @@ const {
   schema,
 } = Astro.props;
 
-const prefix = lang === 'fr' ? '/fr' : '';
 const navPages = lang === 'fr' ? [
   { id: 'therapies',   label: 'Thérapies',    href: '/fr/therapies'   },
-  { id: 'workshops',   label: 'Ateliers',     href: '/fr/workshops'   },
-  { id: 'walks',       label: 'Balades',      href: '/fr/walks'       },
   { id: 'consultancy', label: 'Conseil',      href: '/fr/consultancy' },
   { id: 'pricing',     label: 'Tarifs',       href: '/fr/pricing'     },
   { id: 'story',       label: 'Mon parcours', href: '/fr/story'       },
 ] : [
   { id: 'therapies',   label: 'Therapies',    href: '/therapies',    i18n: 'nav.therapies' },
-  { id: 'workshops',   label: 'Workshops',    href: '/workshops',    i18n: 'nav.workshops' },
-  { id: 'walks',       label: 'Walks',        href: '/walks',        i18n: 'nav.walks'     },
   { id: 'consultancy', label: 'Consultancy',  href: '/consultancy',  i18n: 'nav.consultancy' },
   { id: 'pricing',     label: 'Pricing',      href: '/pricing',      i18n: 'nav.pricing'   },
   { id: 'story',       label: 'My story',     href: '/story',        i18n: 'nav.story'     },
+];
 ];
 
 // Book button: context-aware per page
 const bookHref = lang === 'fr'
   ? (currentPage === 'consultancy' ? '#contact'
-     : currentPage === 'walks'     ? '#mailing'
      : currentPage === 'book'      ? CALENDLY
      : '/fr/book')
   : (currentPage === 'consultancy' ? '#contact'
-     : currentPage === 'walks'     ? '#mailing'
      : currentPage === 'book'      ? CALENDLY
      : '/book');
 const bookLabel = lang === 'fr'
   ? (currentPage === 'consultancy' ? 'Me contacter'
-     : currentPage === 'walks'     ? 'Dates des balades'
      : currentPage === 'book'      ? 'Appel gratuit'
      : 'Prendre rendez-vous')
   : (currentPage === 'consultancy' ? 'Get in touch'
-     : currentPage === 'walks'     ? 'Get walk dates'
      : currentPage === 'book'      ? 'Book free call'
      : 'Book a consultation');
-const bookI18n  = currentPage === 'consultancy' ? 'nav.consultancy.cta'
-                : currentPage === 'walks'       ? 'nav.walks.cta'
-                : 'nav.book';
+const bookI18n  = currentPage === 'consultancy' ? 'nav.consultancy.cta' : 'nav.book';
 const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
 
 // Shared Person + Business schema (every page)
