@@ -23,15 +23,15 @@ const {
 } = Astro.props;
 
 const navPages = lang === 'fr' ? [
-  { id: 'therapies',   label: 'Thérapies',    href: '/fr/therapies'   },
-  { id: 'consultancy', label: 'Conseil',      href: '/fr/consultancy' },
-  { id: 'pricing',     label: 'Tarifs',       href: '/fr/pricing'     },
   { id: 'story',       label: 'Mon parcours', href: '/fr/story'       },
+  { id: 'therapies',   label: 'Thérapies',    href: '/fr/therapies'   },
+  { id: 'pricing',     label: 'Tarifs',       href: '/fr/pricing'     },
+  { id: 'consultancy', label: 'Conseil',      href: '/fr/consultancy' },
 ] : [
-  { id: 'therapies',   label: 'Therapies',   href: '/therapies'   },
-  { id: 'consultancy', label: 'Consultancy', href: '/consultancy' },
-  { id: 'pricing',     label: 'Pricing',     href: '/pricing'     },
   { id: 'story',       label: 'My story',    href: '/story'       },
+  { id: 'therapies',   label: 'Therapies',   href: '/therapies'   },
+  { id: 'pricing',     label: 'Pricing',     href: '/pricing'     },
+  { id: 'consultancy', label: 'Consultancy', href: '/consultancy' },
 ];
 
 const bookHref = lang === 'fr'
@@ -140,14 +140,14 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
               <li><a href="/fr/therapies#hormonal">Santé hormonale</a></li>
               <li><a href="/fr/therapies#athlete">Sportifs &amp; performance</a></li>
               <li><a href="/fr/therapies#ihm">Massage crânien indien</a></li>
-              <li><a href="/fr/therapies#naturopathy">Naturopathie</a></li>
+              <li><a href="/fr/therapies#constitutional">Bilan constitutionnel</a></li>
             </>
           ) : (
             <>
               <li><a href="/therapies#hormonal">Hormonal health</a></li>
               <li><a href="/therapies#athlete">Athletes &amp; performance</a></li>
               <li><a href="/therapies#ihm">Indian head massage</a></li>
-              <li><a href="/therapies#naturopathy">Naturopathy</a></li>
+              <li><a href="/therapies#constitutional">Constitutional assessment</a></li>
             </>
           )}
         </ul>
