@@ -1,32 +1,25 @@
 ---
-// BaseLayout.astro
 import '../styles/global.css';
-
 const SITE = 'https://www.saralemaitre.com';
-const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
+const CALENDLY_DISCOVERY = 'https://calendly.com/sara-lemaitre-herbalist/discovery';
 
 interface Props {
   title: string;
   description: string;
   ogImage?: string;
   canonical?: string;
-  navLight?: boolean;
   currentPage?: string;
   ogType?: string;
-  schema?: object | object[];
   lang?: string;
 }
 
 const {
-  title,
-  lang = 'en',
-  description,
+  title, description,
   ogImage = `${SITE}/images/og-default.jpg`,
   canonical = SITE,
-  navLight = false,
   currentPage = '',
   ogType = 'website',
-  schema,
+  lang = 'en',
 } = Astro.props;
 
 const navPages = lang === 'fr' ? [
@@ -35,64 +28,23 @@ const navPages = lang === 'fr' ? [
   { id: 'pricing',     label: 'Tarifs',       href: '/fr/pricing'     },
   { id: 'story',       label: 'Mon parcours', href: '/fr/story'       },
 ] : [
-  { id: 'therapies',   label: 'Therapies',    href: '/therapies',   i18n: 'nav.therapies'   },
-  { id: 'consultancy', label: 'Consultancy',  href: '/consultancy', i18n: 'nav.consultancy' },
-  { id: 'pricing',     label: 'Pricing',      href: '/pricing',     i18n: 'nav.pricing'     },
-  { id: 'story',       label: 'My story',     href: '/story',       i18n: 'nav.story'       },
+  { id: 'therapies',   label: 'Therapies',   href: '/therapies'   },
+  { id: 'consultancy', label: 'Consultancy', href: '/consultancy' },
+  { id: 'pricing',     label: 'Pricing',     href: '/pricing'     },
+  { id: 'story',       label: 'My story',    href: '/story'       },
 ];
 
 const bookHref = lang === 'fr'
-  ? (currentPage === 'consultancy' ? '#contact'
-     : currentPage === 'book'      ? CALENDLY
-     : '/fr/book')
-  : (currentPage === 'consultancy' ? '#contact'
-     : currentPage === 'book'      ? CALENDLY
-     : '/book');
+  ? (currentPage === 'consultancy' ? '#contact' : currentPage === 'book' ? CALENDLY_DISCOVERY : '/fr/book')
+  : (currentPage === 'consultancy' ? '#contact' : currentPage === 'book' ? CALENDLY_DISCOVERY : '/book');
 const bookLabel = lang === 'fr'
-  ? (currentPage === 'consultancy' ? 'Me contacter'
-     : currentPage === 'book'      ? 'Appel gratuit'
-     : 'Prendre rendez-vous')
-  : (currentPage === 'consultancy' ? 'Get in touch'
-     : currentPage === 'book'      ? 'Book free call'
-     : 'Book a consultation');
-const bookI18n  = currentPage === 'consultancy' ? 'nav.consultancy.cta' : 'nav.book';
+  ? (currentPage === 'consultancy' ? 'Me contacter' : 'Prendre rendez-vous')
+  : (currentPage === 'consultancy' ? 'Get in touch' : 'Book a consultation');
 const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
-
-const sharedSchema = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Person",
-      "@id": `${SITE}/#sara`,
-      "name": "Sara Lemaitre",
-      "jobTitle": "Clinical Herbalist and Naturopath",
-      "url": SITE,
-      "knowsLanguage": ["en-GB", "fr-FR"],
-      "hasCredential": [
-        {"@type":"EducationalOccupationalCredential","credentialCategory":"degree","name":"BSc Herbal Medicine (EHTPA accredited)"},
-        {"@type":"EducationalOccupationalCredential","credentialCategory":"diploma","name":"Naturopathy Diploma"},
-        {"@type":"EducationalOccupationalCredential","credentialCategory":"diploma","name":"Indian Head Massage Diploma"},
-        {"@type":"EducationalOccupationalCredential","credentialCategory":"training","name":"TCM Dispensary Externship, 6 months"}
-      ]
-    },
-    {
-      "@type": ["MedicalBusiness","HealthAndBeautyBusiness"],
-      "@id": `${SITE}/#practice`,
-      "name": "Sara Lemaitre Herbal Medicine & Naturopathy",
-      "url": SITE,
-      "priceRange": "££",
-      "currenciesAccepted": "GBP",
-      "areaServed": ["United Kingdom","France","Belgium","Switzerland","Canada","Australia","United States"],
-      "availableLanguage": [{"@type":"Language","name":"English"},{"@type":"Language","name":"French"}]
-    }
-  ]
-};
-
-const schemas = [sharedSchema, ...(schema ? (Array.isArray(schema) ? schema : [schema]) : [])];
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -100,7 +52,6 @@ const schemas = [sharedSchema, ...(schema ? (Array.isArray(schema) ? schema : [s
   <meta name="description" content={description} />
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
   <meta name="author" content="Sara Lemaitre" />
-  <meta name="geo.region" content="GB" />
   <meta property="og:type" content={ogType} />
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
@@ -109,8 +60,7 @@ const schemas = [sharedSchema, ...(schema ? (Array.isArray(schema) ? schema : [s
   <meta property="og:image" content={ogImage} />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="en_GB" />
-  <meta property="og:locale:alternate" content="fr_FR" />
+  <meta property="og:locale" content={lang === 'fr' ? 'fr_FR' : 'en_GB'} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
@@ -122,20 +72,12 @@ const schemas = [sharedSchema, ...(schema ? (Array.isArray(schema) ? schema : [s
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
-  {schemas.map(s => (
-    <script type="application/ld+json" set:html={JSON.stringify(s)} />
-  ))}
 </head>
-
-<body data-nav={navLight ? 'light' : undefined}>
-
+<body>
   <a href="#main-content" class="skip-nav">Skip to main content</a>
 
   <nav id="nav" role="navigation" aria-label="Main navigation">
-    <a href={lang === "fr" ? "/fr/" : "/"} class="nav-logo"
-       aria-current={currentPage === 'index' ? 'page' : undefined}>
-      Sara Lemaitre
-    </a>
+    <a href={lang === 'fr' ? '/fr/' : '/'} class="nav-logo">Sara Lemaitre</a>
     <ul class="nav-links" id="nav-links">
       {navPages.map(p => (
         <li>
@@ -144,42 +86,48 @@ const schemas = [sharedSchema, ...(schema ? (Array.isArray(schema) ? schema : [s
       ))}
     </ul>
     <a href={bookHref} class="nav-book" target={bookTarget} rel={bookTarget ? 'noopener noreferrer' : undefined}>{bookLabel}</a>
-    {lang === 'fr' ? (
-      <a href={currentPage === 'index' ? '/' : `/${currentPage}`} class="lang-toggle" aria-label="Switch to English">EN</a>
-    ) : (
-      <a href={currentPage === 'index' ? '/fr/' : `/fr/${currentPage}`} class="lang-toggle" aria-label="Passer en français">FR</a>
-    )}
+    {lang === 'fr'
+      ? <a href={currentPage === 'index' ? '/' : `/${currentPage}`} class="lang-toggle" aria-label="Switch to English">EN</a>
+      : <a href={currentPage === 'index' ? '/fr/' : `/fr/${currentPage}`} class="lang-toggle" aria-label="Passer en français">FR</a>
+    }
     <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links" onclick="toggleNav(this)">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
-  <slot />
+  <main id="main-content">
+    <slot />
+  </main>
 
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
         <span class="logo">Sara Lemaitre</span>
-        {lang === 'fr' ? (
-          <p>Herboriste clinique, naturopathe et ancienne athlète de haut niveau. Spécialisée en santé hormonale, endométriose, SOPK, fatigue chronique et récupération sportive. En ligne et en présentiel. Français &amp; anglais.</p>
-        ) : (
-          <p>Clinical herbalist, naturopath and former elite athlete. Specialising in hormonal health, endometriosis, PCOS, chronic fatigue, and performance recovery. Online and in person. English &amp; French.</p>
-        )}
+        {lang === 'fr'
+          ? <p>Herboriste clinique, naturopathe et ancienne athlète de haut niveau. Spécialisée en santé hormonale, endométriose, SOPK, fatigue chronique et récupération sportive. En ligne et en présentiel. Français &amp; anglais.</p>
+          : <p>Clinical herbalist and naturopath. Specialising in hormonal health, endometriosis, PCOS, chronic fatigue, and performance recovery. Online and in person. English &amp; French.</p>
+        }
+        <div class="footer-memberships">
+          <img src="/images/anp-logo.png" alt="ANP member" />
+          <img src="/images/gnc-logo.png" alt="GNC member" />
+        </div>
       </div>
       <div>
         <p class="footer-col-title">{lang === 'fr' ? 'La pratique' : 'Practice'}</p>
         <ul class="footer-links">
           {lang === 'fr' ? (
             <>
-              <li><a href="/fr/therapies">Thérapies</a></li>
-              <li><a href="/fr/pricing">Tarifs &amp; formules</a></li>
               <li><a href="/fr/story">Mon parcours</a></li>
+              <li><a href="/fr/therapies">Thérapies</a></li>
+              <li><a href="/fr/pricing">Tarifs</a></li>
+              <li><a href="/fr/book">Prendre rendez-vous</a></li>
             </>
           ) : (
             <>
-              <li><a href="/therapies">Therapies</a></li>
-              <li><a href="/pricing">Pricing &amp; packages</a></li>
               <li><a href="/story">My story</a></li>
+              <li><a href="/therapies">Therapies</a></li>
+              <li><a href="/pricing">Pricing</a></li>
+              <li><a href="/book">Book a consultation</a></li>
             </>
           )}
         </ul>
@@ -189,14 +137,14 @@ const schemas = [sharedSchema, ...(schema ? (Array.isArray(schema) ? schema : [s
         <ul class="footer-links">
           {lang === 'fr' ? (
             <>
-              <li><a href="/fr/therapies#herbal">Santé hormonale</a></li>
+              <li><a href="/fr/therapies#hormonal">Santé hormonale</a></li>
               <li><a href="/fr/therapies#athlete">Sportifs &amp; performance</a></li>
               <li><a href="/fr/therapies#ihm">Massage crânien indien</a></li>
               <li><a href="/fr/therapies#naturopathy">Naturopathie</a></li>
             </>
           ) : (
             <>
-              <li><a href="/therapies#herbal">Hormonal health</a></li>
+              <li><a href="/therapies#hormonal">Hormonal health</a></li>
               <li><a href="/therapies#athlete">Athletes &amp; performance</a></li>
               <li><a href="/therapies#ihm">Indian head massage</a></li>
               <li><a href="/therapies#naturopathy">Naturopathy</a></li>
@@ -209,52 +157,43 @@ const schemas = [sharedSchema, ...(schema ? (Array.isArray(schema) ? schema : [s
         <ul class="footer-links">
           <li><a href="#" aria-label="Instagram">Instagram</a></li>
           <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
-          {lang === 'fr' ? (
-            <li><a href="/fr/consultancy">Consultance</a></li>
-          ) : (
-            <li><a href="/consultancy">Consultancy</a></li>
-          )}
-          <li><a href={CALENDLY} target="_blank" rel="noopener">{lang === 'fr' ? 'Prendre rendez-vous' : 'Book a call'}</a></li>
+          {lang === 'fr'
+            ? <li><a href="/fr/consultancy">Consultance</a></li>
+            : <li><a href="/consultancy">Consultancy</a></li>
+          }
+          <li><a href={CALENDLY_DISCOVERY} target="_blank" rel="noopener">{lang === 'fr' ? 'Prendre rendez-vous' : 'Book a call'}</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Sara Lemaitre · Herbal Medicine &amp; Naturopathy · <a href={lang === 'fr' ? '/fr/legal' : '/legal'} style="color:rgba(247,243,238,.4);text-decoration:none;">{lang === 'fr' ? 'Mentions légales' : 'Legal & privacy'}</a></p>
-      <p>{lang === 'fr' ? 'Consultations en français & anglais · Praticienne enregistrée au Royaume-Uni · En ligne & en présentiel' : 'Consultations in English & French · UK registered practitioner · Online & in person'}</p>
+      <p>© 2025 Sara Lemaitre · Clinical Herbalist &amp; Naturopath · <a href={lang === 'fr' ? '/fr/legal' : '/legal'} style="color:rgba(247,243,238,.35);">{lang === 'fr' ? 'Mentions légales' : 'Privacy & terms'}</a> · UK registered &amp; insured practitioner</p>
+      <p>{lang === 'fr' ? 'Consultations en français & anglais · En ligne & en présentiel' : 'Consultations in English & French · Online & in person'}</p>
     </div>
   </footer>
 
   <script>
     const nav = document.getElementById('nav');
-    if (nav) {
-      window.addEventListener('scroll', () => {
-        nav.classList.toggle('scrolled', window.scrollY > 60);
-      });
-    }
-    function toggleNav(btn) {
-      const navLinks = document.getElementById('nav-links');
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!expanded));
-      btn.setAttribute('aria-label', expanded ? 'Open navigation menu' : 'Close navigation menu');
-      navLinks?.classList.toggle('open', !expanded);
+    if (nav) window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+    function toggleNav(btn: HTMLButtonElement) {
+      const links = document.getElementById('nav-links');
+      const exp = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!exp));
+      btn.setAttribute('aria-label', exp ? 'Open navigation menu' : 'Close navigation menu');
+      links?.classList.toggle('open', !exp);
     }
     document.addEventListener('click', (e) => {
-      const navLinks = document.getElementById('nav-links');
+      const links = document.getElementById('nav-links');
       const btn = document.querySelector('.hamburger');
-      if (navLinks && btn && !navLinks.contains(e.target) && !btn.contains(e.target)) {
-        navLinks.classList.remove('open');
+      if (links && btn && !links.contains(e.target as Node) && !btn.contains(e.target as Node)) {
+        links.classList.remove('open');
         btn.setAttribute('aria-expanded', 'false');
-        btn.setAttribute('aria-label', 'Open navigation menu');
       }
     });
     const reveals = document.querySelectorAll('.reveal');
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
-      });
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
     }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
     reveals.forEach(r => obs.observe(r));
   </script>
-
 </body>
 </html>
