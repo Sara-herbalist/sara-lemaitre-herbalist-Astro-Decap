@@ -35,7 +35,7 @@
     {
       "id": "hormonal",
       "title": "Hormonal Health and Chronic Fatigue",
-      "desc": "This is where my practice began. Seven years of my own illness taught me that hormonal conditions are not one thing, and that treating them as if they were is why so many people stay stuck. Your version of endometriosis, PCOS or chronic fatigue is specific to you. And your protocol should be too.",
+      "desc": "This is where my practice began. Seven years of my own illness taught me that hormonal conditions are not one thing. Your version of endometriosis, PCOS or chronic fatigue is specific to you. And your protocol should be too.",
       "href": "/therapies#hormonal"
     },
     {
@@ -51,9 +51,15 @@
       "href": "/therapies#naturopathy"
     },
     {
+      "id": "constitutional",
+      "title": "Constitutional Assessment",
+      "desc": "Iridology, tongue and pulse reading — used during every initial consultation to understand your constitution before formulating your protocol. The depth that makes personalised medicine genuinely personal.",
+      "href": "/therapies#constitutional"
+    },
+    {
       "id": "ihm",
       "title": "Indian Head Massage",
-      "desc": "Bodywork rooted in the Ayurvedic tradition. For the tension that lives in the neck, shoulders and scalp. For the nervous system that needs a little something more. Clients leave feeling like they are floating. In person only.",
+      "desc": "Bodywork rooted in the Ayurvedic tradition. For the tension that lives in the neck, shoulders and scalp. For the nervous system that needs something more. Clients leave feeling like they are floating. In person only.",
       "href": "/therapies#ihm"
     },
     {
