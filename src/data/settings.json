@@ -1,11 +1,9 @@
 {
-  "calendlyUrl": "https://calendly.com/sara-lemaitre-herbalist",
-  "instagramUrl": "",
-  "linkedinUrl": "",
-  "email": "",
   "calendlyDiscovery": "https://calendly.com/sara-lemaitre-herbalist/discovery",
-  "calendlyInitial": "https://calendly.com/sara-lemaitre-herbalist/initial",
-  "calendlyFollowup": "https://calendly.com/sara-lemaitre-herbalist/followup",
-  "calendlyBundle": "https://calendly.com/sara-lemaitre-herbalist/bundle",
-  "calendlyIhm": "https://calendly.com/sara-lemaitre-herbalist/indian-head-massage"
+  "calendlyIhm": "https://calendly.com/sara-lemaitre-herbalist/indian-head-massage",
+  "instagramUrl": "#",
+  "linkedinUrl": "#",
+  "email": "sara.lemaitre.herbalist@hotmail.com",
+  "anpLogo": "/images/anp-logo.png",
+  "gncLogo": "/images/gnc-logo.png"
 }
