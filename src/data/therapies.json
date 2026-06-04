@@ -50,6 +50,22 @@
       "photo": "/images/naturopathy.jpg"
     },
     {
+      "id": "constitutional",
+      "label": "Integrated into initial consultations",
+      "title": "Constitutional Assessment",
+      "duration": "Part of every initial consultation",
+      "format": "Online or in person",
+      "price": "",
+      "calendlyUrl": "",
+      "bookLabel": "",
+      "paragraphs": [
+        "Before I formulate anything, I need to understand your constitution — not just your symptoms, but the underlying patterns that shape how your body responds, what it tends toward, where it holds tension and weakness.",
+        "Iridology, tongue reading, and pulse reading (in person) are the tools I use to build that picture alongside your full case history. Each one reveals something different — the iris maps constitutional tendencies, the tongue reflects the current state of your digestive and immune systems, the pulse tells me about your energy and organ function in ways that a questionnaire cannot.",
+        "None of these replace your story. They deepen it. Together with everything you tell me, they allow me to formulate something that is genuinely specific to you — your body, your constitution, your particular version of what you are experiencing. This is why my initial consultations take 90 minutes."
+      ],
+      "photo": "/images/constitutional.jpg"
+    },
+    {
       "id": "athlete",
       "label": "Athletes and active people",
       "title": "Athlete, Injury and Performance Support",
