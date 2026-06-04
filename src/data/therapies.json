@@ -1,26 +1,42 @@
 {
-  "pageTitle": "What I offer. What it does.",
-  "pageDesc": "Each therapy I offer draws on distinct but complementary clinical traditions. I combine them according to what your situation requires \u2014 not one framework applied to everyone.",
+  "pageTitle": "What I offer — and how I work",
+  "pageDesc": "Each therapy I offer draws on distinct but complementary traditions. I combine them according to what your situation requires. Not one framework applied to everyone. Not a protocol matched to a diagnosis. A response to you, specifically.\n\nEvery person who comes to me has already tried something. They have seen doctors, changed their diet, pushed through, rested more, worried quietly. They have not been lazy or dramatic or impatient. They have simply been working with tools that were not built for the complexity of what they are carrying.\n\nWhat I offer is a different kind of attention. To the whole of you, not just the presenting symptom.\n\nA consultation with me is a conversation. We go deep into your medical history, your patterns, your daily life. I am not looking for a diagnosis to match a protocol. I am trying to understand you specifically.\n\nThis is slow work. It asks for patience and for giving yourself grace in the process. Coming back into a body that has felt like a battlefield is not heroic resilience — it is small, daily, often unglamorous commitment. But when you start to notice the shift, it is deeply, lastingly yours.",
   "therapyBlocks": [
     {
-      "id": "herbal",
-      "label": "Foundation therapy",
-      "title": "Western Herbal Medicine",
-      "duration": "90 min (initial) \u00b7 30\u201340 min (follow-up)",
+      "id": "hormonal",
+      "label": "Where my practice began",
+      "title": "Hormonal Health and Chronic Fatigue",
+      "duration": "90 min initial · 35–40 min follow-up",
       "format": "Online or in person",
       "price": "",
       "calendlyUrl": "",
-      "bookLabel": "Book a consultation",
+      "bookLabel": "Request an initial consultation",
       "paragraphs": [
-        "Western herbal medicine is the foundation of my practice. It uses medicinal plants \u2014 roots, leaves, flowers, bark \u2014 to support and restore the health of body and mind.",
-        "My approach is rooted in the European phytotherapy tradition, with complementary training in Traditional Chinese Medicine and Ayurveda. I draw on the most appropriate tools for each situation rather than applying a single framework to everyone.",
-        "Each initial consultation results in a personalised written protocol \u2014 a herbal formulation designed for you, naturopathic recommendations, and if necessary, contact with a quality supplier for your preparation."
+        "This is where my practice began — not in a clinic, but in my own body.",
+        "For seven years I navigated endometriosis, PCOS, immune weakness and chronic fatigue through a system that kept sending me home without answers. I was an elite athlete fainting at training, on a daily preventative dose of strong painkillers, told repeatedly that the problem was my resilience — or lack thereof — rather than what was actually happening in my body. When I finally had a diagnosis, the answer was: there is no cure. I had to find another way.",
+        "What I know from that experience, and from 500 hours of student clinic working with women navigating the same conditions, is that hormonal illness is not one thing. Your endometriosis is not the same as someone else's endometriosis. Your chronic fatigue has its own particular shape, its own triggers, its own relationship to your sleep and your stress and your history. A protocol that doesn't account for that specificity will only ever scratch the surface."
+      ],
+      "photo": "/images/hormonal-health.jpg"
+    },
+    {
+      "id": "herbal",
+      "label": "Foundation therapy",
+      "title": "Herbal Medicine",
+      "duration": "90 min initial · 35–40 min follow-up",
+      "format": "Online or in person",
+      "price": "",
+      "calendlyUrl": "",
+      "bookLabel": "Request an initial consultation",
+      "paragraphs": [
+        "Plant medicine is the foundation of everything I do. Each formulation I make is built specifically for you: your body, your history, your particular version of what you are experiencing. Not a standard protocol for your diagnosis. Yours.",
+        "My training spans Western Herbalism, Traditional Chinese Medicine, and Ayurvedic study. I draw on whichever tradition serves you best, sometimes all three. The pandemic gave me my first real laboratory: myself, then my mother's arthritis and chronic pain, my grandmothers' chronic inflammation and breast cancer support, my father's recurring respiratory weaknesses, my sister's stress and insomnia. I watched the same approach fail when applied rigidly and succeed when adapted. That is still how I work.",
+        "Each initial consultation results in a personalised written protocol, a herbal formulation designed for you, naturopathic recommendations, and where necessary, guidance on sourcing quality ingredients. You leave understanding what you are taking and why."
       ],
       "photo": "/images/herbal-medicine.jpg"
     },
     {
       "id": "naturopathy",
-      "label": "Complementary",
+      "label": "Integrated into every consultation",
       "title": "Naturopathy",
       "duration": "Integrated into consultations",
       "format": "Online or in person",
@@ -28,10 +44,25 @@
       "calendlyUrl": "",
       "bookLabel": "",
       "paragraphs": [
-        "Naturopathy seeks to identify and address the root causes of health problems \u2014 not just the symptoms. It draws on nutrition, lifestyle, detox support, stress management and environmental adjustments.",
-        "In my practice, naturopathy is always integrated with herbal medicine. Plants and lifestyle form a whole \u2014 each supports the other for more lasting results."
+        "Symptoms are rarely the whole story. Naturopathy is the part of my practice that asks why — why is the body responding this way, what is it trying to protect, what has been asked of it for too long. We look at nutrition, lifestyle, sleep, stress, the patterns that are so habitual they have become invisible.",
+        "It is always integrated with herbal medicine in my practice. The two inform each other. You will never leave a consultation with a herbal protocol and no understanding of what else your body needs — because the plants and the lifestyle are not separate things. They work together, and so do we."
       ],
       "photo": "/images/naturopathy.jpg"
+    },
+    {
+      "id": "athlete",
+      "label": "Athletes and active people",
+      "title": "Athlete, Injury and Performance Support",
+      "duration": "90 min initial · 35–40 min follow-up",
+      "format": "Online or in person",
+      "price": "",
+      "calendlyUrl": "",
+      "bookLabel": "Request an initial consultation",
+      "paragraphs": [
+        "I was a synchronised swimmer training at national level when my body stopped cooperating. I know what it means to live in a body shaped for performance — its logic, its demands, and the particular distress when it no longer does what you need it to do. I also know how rarely that grief gets taken seriously in conventional sports medicine.",
+        "My approach for athletes covers recovery, inflammation, adaptogens, hormonal disruption linked to training intensity, and the support needed when injury or illness forces a stop. It is clinical and it is personal, because for me it always has been."
+      ],
+      "photo": "/images/athlete-performance.jpg"
     },
     {
       "id": "ihm",
@@ -39,29 +70,15 @@
       "title": "Indian Head Massage",
       "duration": "45 minutes",
       "format": "In person only",
-      "price": "\u00a360",
+      "price": "£60",
       "calendlyUrl": "",
       "bookLabel": "Book a massage",
       "paragraphs": [
-        "Indian head massage \u2014 rooted in the Ayurvedic tradition \u2014 works on the back, neck, shoulders, scalp and face. It releases accumulated muscle tension, calms the nervous system and induces a state of deep wellbeing.",
-        "Ideal for chronic headaches, neck tension, insomnia, mental overload, or simply as a deep recovery pause. Some people describe an effect that lasts for days."
+        "This is bodywork rooted in the Ayurvedic tradition — working on the back, neck, shoulders, scalp and face. It releases tension that has accumulated in the places the body tends to hold it longest, and it resets the nervous system in a way that talk alone cannot.",
+        "Clients describe leaving feeling like they are floating. I mention this not as a selling point but because it is true, and because for many people — particularly those carrying years of chronic pain or stress — being physically held and worked on is part of the healing in a way that nothing else replaces.",
+        "Ideal for chronic headaches, neck tension, insomnia, and mental overload. Can be booked as a standalone session or combined with a herbal consultation."
       ],
       "photo": "/images/head-massage.jpg"
-    },
-    {
-      "id": "athlete",
-      "label": "Athletes & active people",
-      "title": "Athlete & Performance",
-      "duration": "90 min (initial) \u00b7 30\u201340 min (follow-up)",
-      "format": "Online or in person",
-      "price": "",
-      "calendlyUrl": "",
-      "bookLabel": "Book a consultation",
-      "paragraphs": [
-        "I trained at national level in artistic swimming. I understand what it means to live in a performance body \u2014 its demands, its logic, and what it feels like when it stops working the way it should.",
-        "My approach for athletes covers adaptogens and physiological stress management, recovery support and inflammation reduction, hormonal disruption linked to intense training, and support during injury or rehabilitation phases."
-      ],
-      "photo": "/images/athlete-performance.jpg"
     }
   ]
 }
