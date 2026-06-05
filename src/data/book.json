@@ -57,13 +57,21 @@
   "bankSort": "[XX-XX-XX]",
   "bankAccount": "[XXXXXXXX]",
   "cancellationTiers": [
-    { "title": "More than 48 hours", "policy": "Full refund by bank transfer, or rescheduling at no additional cost." },
-    { "title": "24–48 hours", "policy": "50% of the fee is retained. The remaining 50% will be returned to your bank account within 3–5 working days." },
-    { "title": "Less than 24 hours", "policy": "The full fee is retained. This slot was held for you and cannot be offered to someone else at short notice." }
+    {
+      "title": "More than 48 hours",
+      "policy": "Full refund by bank transfer, or rescheduling at no additional cost."
+    },
+    {
+      "title": "24–48 hours",
+      "policy": "50% of the fee is retained. The remaining 50% will be returned to your bank account within 3–5 working days."
+    },
+    {
+      "title": "Less than 24 hours",
+      "policy": "The full fee is retained. This slot was held for you and cannot be offered to someone else at short notice."
+    }
   ],
   "cancellationNote": "Exceptions are made for genuine emergencies — please do get in touch. I understand that life happens.",
   "finalCtaTitle": "The first step costs nothing.",
   "finalCtaDesc": "Start with a free conversation. Fifteen minutes. No pressure, no commitment. Just an honest conversation about where you are and whether I can help.",
   "bundleNote": "Bundle consultations are to be booked within a year."
 }
-
