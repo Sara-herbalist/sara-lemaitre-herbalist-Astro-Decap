@@ -14,20 +14,35 @@
     {
       "number": "01",
       "title": "Women with hormonal conditions",
-      "desc": "Endometriosis, PCOS, chronic fatigue, perimenopause, fertility, menstrual irregularity. I have lived these conditions. I have also spent two years treating them in clinic.",
-      "tags": ["Endometriosis", "PCOS", "Perimenopause", "Chronic fatigue"]
+      "desc": "Endometriosis, PMOS, chronic fatigue, perimenopause, fertility, menstrual irregularity. I have lived these conditions. I have also spent two years treating them in clinic.",
+      "tags": [
+        "Endometriosis",
+        "PMOS",
+        "Perimenopause",
+        "Chronic fatigue"
+      ]
     },
     {
       "number": "02",
       "title": "Athletes & active people",
       "desc": "I trained at national level. I understand performance, recovery, overtraining, and the very specific grief of a body that won't cooperate. I have practice with musculoskeletal trauma and can accompany you in your recovery.",
-      "tags": ["Performance fatigue", "Recovery", "Adaptogens", "Injury support"]
+      "tags": [
+        "Performance fatigue",
+        "Recovery",
+        "Adaptogens",
+        "Injury support"
+      ]
     },
     {
       "number": "03",
       "title": "People exhausted by burnout",
       "desc": "Stress, nervous system dysregulation, adrenal fatigue, insomnia, the quiet erosion of a life run on empty. Herbal medicine and naturopathy have deep tools for this while Indian head massage offers an immediate relaxation.",
-      "tags": ["Burnout", "Stress", "Sleep", "Nervous system"]
+      "tags": [
+        "Burnout",
+        "Stress",
+        "Sleep",
+        "Nervous system"
+      ]
     }
   ],
   "offerIntro": "Every person who comes to me has already tried something. They have seen doctors, changed their diet, pushed through, rested more, worried quietly. They have not been lazy or dramatic or impatient. They have simply been working with tools that were not built for the complexity of what they are carrying.\n\nWhat I offer is a different kind of attention, to the whole of you, not just the presenting symptom.",
@@ -53,7 +68,7 @@
     {
       "id": "hormonal",
       "title": "Hormonal Health and Chronic Fatigue",
-      "desc": "This is where my practice began. Seven years of my own illness taught me that hormonal conditions are not one thing. Your version of endometriosis, PCOS or chronic fatigue is specific to you. And your protocol should be too.",
+      "desc": "This is where my practice began. Seven years of my own illness taught me that hormonal conditions are not one thing. Your version of endometriosis, PMOS or chronic fatigue is specific to you. And your protocol should be too.",
       "href": "/therapies#hormonal"
     },
     {
@@ -94,6 +109,10 @@
     {
       "title": "Ongoing support",
       "desc": "This is where the real work happens. Your part is showing up — taking the blends, following the protocol, making the changes. My part is adjusting as your body responds. Healing takes time, and I stay with you through it."
+    },
+    {
+      "title": "Follow-up consultation",
+      "desc": "35–40 minutes, 4 to 6 weeks after the first consultation. We review your progress, reassess the protocol and take your healing journey to the next step."
     }
   ],
   "testimonials": [
@@ -102,17 +121,28 @@
       "author": "Student clinic client",
       "condition": "Indian head massage"
     },
-    { "text": "", "author": "— Coming soon" },
-    { "text": "", "author": "— Coming soon" }
+    {
+      "text": "",
+      "author": "— Coming soon"
+    },
+    {
+      "text": "",
+      "author": "— Coming soon"
+    }
   ],
   "internationalTitle": "Your language. Your timezone. Your care.",
   "internationalDesc1": "Most of my consultations happen online, which means geography is rarely a barrier. Clients in France and the UK work with a practitioner who understands the Western tradition from the inside. Clients elsewhere access clinical-level herbal medicine without having to compromise on quality or connection.",
   "internationalDesc2": "I practise in English and French. I understand the particular comfort of discussing your health in your mother tongue, the precision it allows, the ease it creates. That matters in a consultation, and I take it seriously.",
   "regions": [
-    { "name": "United Kingdom", "desc": "Online and in person." },
-    { "name": "France & Francophone Europe", "desc": "Online and in person when I am in the country." }
+    {
+      "name": "United Kingdom",
+      "desc": "Online and in person."
+    },
+    {
+      "name": "France & Francophone Europe",
+      "desc": "Online and in person when I am in the country."
+    }
   ],
   "ctaTitle": "If any of this resonates with you — let's talk.",
   "ctaDesc": "A free 15-minute discovery call. No pressure. Just tell me where you are, and we will figure out together whether I am the right person to support and guide you."
 }
-
