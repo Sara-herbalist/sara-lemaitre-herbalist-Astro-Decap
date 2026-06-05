@@ -33,12 +33,6 @@
   "offerIntro": "Every person who comes to me has already tried something. They have seen doctors, changed their diet, pushed through, rested more, worried quietly. They have not been lazy or dramatic or impatient. They have simply been working with tools that were not built for the complexity of what they are carrying.\n\nWhat I offer is a different kind of attention, to the whole of you, not just the presenting symptom.",
   "offerCards": [
     {
-      "id": "hormonal",
-      "title": "Hormonal Health and Chronic Fatigue",
-      "desc": "This is where my practice began. Seven years of my own illness taught me that hormonal conditions are not one thing. Your version of endometriosis, PCOS or chronic fatigue is specific to you. And your protocol should be too.",
-      "href": "/therapies#hormonal"
-    },
-    {
       "id": "herbal",
       "title": "Herbal Medicine",
       "desc": "Plant medicine formulated for your body, not your diagnosis. Drawing on Western phytotherapy, Traditional Chinese Medicine, and Ayurvedic study — whichever tradition serves your situation best, sometimes all three.",
@@ -57,16 +51,22 @@
       "href": "/therapies#constitutional"
     },
     {
-      "id": "ihm",
-      "title": "Indian Head Massage",
-      "desc": "Bodywork rooted in the Ayurvedic tradition. For the tension that lives in the neck, shoulders and scalp. For the nervous system that needs something more. Clients leave feeling like they are floating. In person only.",
-      "href": "/therapies#ihm"
+      "id": "hormonal",
+      "title": "Hormonal Health and Chronic Fatigue",
+      "desc": "This is where my practice began. Seven years of my own illness taught me that hormonal conditions are not one thing. Your version of endometriosis, PCOS or chronic fatigue is specific to you. And your protocol should be too.",
+      "href": "/therapies#hormonal"
     },
     {
       "id": "athlete",
       "title": "Athlete, Injury and Performance Support",
       "desc": "From a practitioner who trained at national level and knows what it costs when a performance body stops cooperating. Recovery, trauma, inflammation, metabolic issues — clinical and personal in equal measure.",
       "href": "/therapies#athlete"
+    },
+    {
+      "id": "ihm",
+      "title": "Indian Head Massage",
+      "desc": "Bodywork rooted in the Ayurvedic tradition. For the tension that lives in the neck, shoulders and scalp. For the nervous system that needs something more. Clients leave feeling like they are floating. In person only.",
+      "href": "/therapies#ihm"
     }
   ],
   "storyPullTitle": "The story behind the practice",
