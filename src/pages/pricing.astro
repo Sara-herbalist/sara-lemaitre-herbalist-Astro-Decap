@@ -1,3 +1,4 @@
+
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const d = (await import('../data/pricing.json')).default;
@@ -190,15 +191,7 @@ const meta = {
   <p class="cancel-note">{d.cancellationNote}</p>
 </section>
 
-<section class="faq-section reveal">
-  <h2>Frequently asked questions</h2>
-  {d.faq.map(item => (
-    <div class="faq-item">
-      <p class="faq-q">{item.q}</p>
-      <p class="faq-a">{item.a}</p>
-    </div>
-  ))}
-</section>
+
 
 <section class="pricing-cta">
   <h2 class="reveal">The first step costs nothing</h2>
@@ -208,4 +201,5 @@ const meta = {
     <a href="/book" class="btn-eg">View consultation options</a>
   </div>
 </section>
+
 
