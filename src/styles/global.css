@@ -267,3 +267,5 @@ footer {
 @media (max-width: 640px) {
   .footer-grid { grid-template-columns: 1fr; }
 }
+
+
