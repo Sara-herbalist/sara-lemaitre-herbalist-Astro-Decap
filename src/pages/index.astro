@@ -9,25 +9,6 @@ const meta = {
   currentPage: 'index',
 };
 
-const botanicalSVG = `<svg viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <circle cx="110" cy="110" r="100" fill="none" stroke="rgba(196,208,186,0.18)" stroke-width="0.6" stroke-dasharray="3 6"/>
-  <circle cx="110" cy="110" r="72" fill="none" stroke="rgba(196,208,186,0.25)" stroke-width="0.6" stroke-dasharray="2.5 4"/>
-  <circle cx="110" cy="110" r="48" fill="none" stroke="rgba(196,208,186,0.45)" stroke-width="0.7"/>
-  <path d="M110 62 Q126 86 110 110 Q94 86 110 62" fill="none" stroke="rgba(196,208,186,0.9)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M110 110 Q126 134 110 158 Q94 134 110 110" fill="none" stroke="rgba(196,208,186,0.9)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M62 110 Q86 94 110 110 Q86 126 62 110" fill="none" stroke="rgba(196,208,186,0.9)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M110 110 Q134 94 158 110 Q134 126 110 110" fill="none" stroke="rgba(196,208,186,0.9)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M110 110 Q126 94 138 78 Q124 100 110 110" fill="none" stroke="rgba(196,208,186,0.5)" stroke-width="0.7" stroke-linecap="round"/>
-  <path d="M110 110 Q94 94 82 78 Q96 100 110 110" fill="none" stroke="rgba(196,208,186,0.5)" stroke-width="0.7" stroke-linecap="round"/>
-  <path d="M110 110 Q126 126 138 142 Q124 120 110 110" fill="none" stroke="rgba(196,208,186,0.5)" stroke-width="0.7" stroke-linecap="round"/>
-  <path d="M110 110 Q94 126 82 142 Q96 120 110 110" fill="none" stroke="rgba(196,208,186,0.5)" stroke-width="0.7" stroke-linecap="round"/>
-  <circle cx="110" cy="110" r="4" fill="none" stroke="rgba(196,208,186,0.9)" stroke-width="0.9"/>
-  <circle cx="110" cy="110" r="1.5" fill="rgba(196,208,186,0.9)"/>
-  <line x1="110" y1="158" x2="110" y2="175" stroke="rgba(196,208,186,0.5)" stroke-width="0.7" stroke-linecap="round"/>
-  <path d="M110 170 Q103 163 99 156" fill="none" stroke="rgba(196,208,186,0.4)" stroke-width="0.6" stroke-linecap="round"/>
-  <path d="M110 170 Q117 163 121 156" fill="none" stroke="rgba(196,208,186,0.4)" stroke-width="0.6" stroke-linecap="round"/>
-</svg>`;
-
 const dividerSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   <circle cx="16" cy="16" r="14" fill="none" stroke="var(--sage-light)" stroke-width="0.5" stroke-dasharray="2.5 3.5" opacity="0.6"/>
   <circle cx="16" cy="16" r="9" fill="none" stroke="var(--sage-dark)" stroke-width="0.7"/>
@@ -37,6 +18,101 @@ const dividerSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
   <path d="M16 16 Q20.5 13 25 16 Q20.5 19 16 16" fill="none" stroke="var(--sage-dark)" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round"/>
   <circle cx="16" cy="16" r="1.5" fill="none" stroke="var(--sage-dark)" stroke-width="0.7"/>
 </svg>`;
+
+const offerIcons: Record<string, string> = {
+  herbal: `<svg viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="34" cy="34" r="32" stroke="rgba(196,208,186,0.28)" stroke-width="0.65" stroke-dasharray="2.5 3.5" stroke-linecap="round"/>
+    <circle cx="34" cy="34" r="22" stroke="rgba(196,208,186,0.82)" stroke-width="0.9"/>
+    <path d="M34 12 Q42 23 34 34 Q26 23 34 12" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M34 34 Q42 45 34 56 Q26 45 34 34" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M12 34 Q23 26 34 34 Q23 42 12 34" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M34 34 Q45 26 56 34 Q45 42 34 34" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <circle cx="34" cy="34" r="2" fill="rgba(196,208,186,0.82)"/>
+    <line x1="34" y1="56" x2="34" y2="62" stroke="rgba(196,208,186,0.4)" stroke-width="0.7" stroke-linecap="round"/>
+    <path d="M34 60 Q28 56 24 52" stroke="rgba(196,208,186,0.3)" stroke-width="0.6" stroke-linecap="round" fill="none"/>
+    <path d="M34 60 Q40 56 44 52" stroke="rgba(196,208,186,0.3)" stroke-width="0.6" stroke-linecap="round" fill="none"/>
+  </svg>`,
+  naturopathy: `<svg viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="34" cy="34" r="32" stroke="rgba(196,208,186,0.28)" stroke-width="0.65" stroke-dasharray="2.5 3.5" stroke-linecap="round"/>
+    <circle cx="34" cy="24" r="10" stroke="rgba(196,208,186,0.82)" stroke-width="0.85"/>
+    <circle cx="25" cy="39" r="10" stroke="rgba(196,208,186,0.82)" stroke-width="0.85"/>
+    <circle cx="43" cy="39" r="10" stroke="rgba(196,208,186,0.82)" stroke-width="0.85"/>
+    <circle cx="34" cy="34" r="10" stroke="rgba(196,208,186,0.82)" stroke-width="0.85"/>
+    <circle cx="34" cy="44" r="10" stroke="rgba(196,208,186,0.82)" stroke-width="0.85"/>
+    <circle cx="25" cy="29" r="10" stroke="rgba(196,208,186,0.82)" stroke-width="0.85"/>
+    <circle cx="43" cy="29" r="10" stroke="rgba(196,208,186,0.82)" stroke-width="0.85"/>
+    <circle cx="34" cy="24" r="1.5" fill="rgba(196,208,186,0.6)"/>
+    <circle cx="25" cy="39" r="1.5" fill="rgba(196,208,186,0.6)"/>
+    <circle cx="43" cy="39" r="1.5" fill="rgba(196,208,186,0.6)"/>
+    <circle cx="34" cy="44" r="1.5" fill="rgba(196,208,186,0.6)"/>
+    <circle cx="25" cy="29" r="1.5" fill="rgba(196,208,186,0.6)"/>
+    <circle cx="43" cy="29" r="1.5" fill="rgba(196,208,186,0.6)"/>
+    <circle cx="34" cy="34" r="1.5" fill="rgba(196,208,186,0.6)"/>
+  </svg>`,
+  constitutional: `<svg viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="34" cy="34" r="32" stroke="rgba(196,208,186,0.28)" stroke-width="0.65" stroke-dasharray="2.5 3.5" stroke-linecap="round"/>
+    <circle cx="34" cy="34" r="22" stroke="rgba(196,208,186,0.82)" stroke-width="0.9"/>
+    <circle cx="34" cy="34" r="11" stroke="rgba(196,208,186,0.4)" stroke-width="0.7"/>
+    <circle cx="34" cy="34" r="4" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" fill="none"/>
+    <circle cx="34" cy="34" r="1.5" fill="rgba(196,208,186,0.82)"/>
+    <line x1="34" y1="12" x2="34" y2="23" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
+    <line x1="34" y1="45" x2="34" y2="56" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
+    <line x1="12" y1="34" x2="23" y2="34" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
+    <line x1="45" y1="34" x2="56" y2="34" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
+    <line x1="18" y1="18" x2="26" y2="26" stroke="rgba(196,208,186,0.4)" stroke-width="0.7" stroke-linecap="round"/>
+    <line x1="50" y1="18" x2="42" y2="26" stroke="rgba(196,208,186,0.4)" stroke-width="0.7" stroke-linecap="round"/>
+    <line x1="18" y1="50" x2="26" y2="42" stroke="rgba(196,208,186,0.4)" stroke-width="0.7" stroke-linecap="round"/>
+    <line x1="50" y1="50" x2="42" y2="42" stroke="rgba(196,208,186,0.4)" stroke-width="0.7" stroke-linecap="round"/>
+    <line x1="20" y1="22" x2="26" y2="26" stroke="rgba(196,208,186,0.18)" stroke-width="0.5" stroke-linecap="round"/>
+    <line x1="22" y1="18" x2="26" y2="23" stroke="rgba(196,208,186,0.18)" stroke-width="0.5" stroke-linecap="round"/>
+    <line x1="48" y1="22" x2="42" y2="26" stroke="rgba(196,208,186,0.18)" stroke-width="0.5" stroke-linecap="round"/>
+    <line x1="46" y1="18" x2="42" y2="23" stroke="rgba(196,208,186,0.18)" stroke-width="0.5" stroke-linecap="round"/>
+    <line x1="20" y1="46" x2="26" y2="42" stroke="rgba(196,208,186,0.18)" stroke-width="0.5" stroke-linecap="round"/>
+    <line x1="22" y1="50" x2="26" y2="45" stroke="rgba(196,208,186,0.18)" stroke-width="0.5" stroke-linecap="round"/>
+    <line x1="48" y1="46" x2="42" y2="42" stroke="rgba(196,208,186,0.18)" stroke-width="0.5" stroke-linecap="round"/>
+    <line x1="46" y1="50" x2="42" y2="45" stroke="rgba(196,208,186,0.18)" stroke-width="0.5" stroke-linecap="round"/>
+  </svg>`,
+  hormonal: `<svg viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="34" cy="34" r="32" stroke="rgba(196,208,186,0.28)" stroke-width="0.65" stroke-dasharray="2.5 3.5" stroke-linecap="round"/>
+    <circle cx="34" cy="11" r="2.8" stroke="rgba(196,208,186,0.82)" stroke-width="0.8" fill="none"/>
+    <circle cx="34" cy="19" r="3.4" stroke="rgba(196,208,186,0.82)" stroke-width="0.8" fill="none"/>
+    <circle cx="34" cy="28" r="4" stroke="rgba(196,208,186,0.82)" stroke-width="0.8" fill="none"/>
+    <circle cx="34" cy="38" r="4.8" stroke="rgba(196,208,186,0.85)" stroke-width="0.85" fill="none"/>
+    <circle cx="34" cy="48" r="4.2" stroke="rgba(196,208,186,0.82)" stroke-width="0.8" fill="none"/>
+    <circle cx="34" cy="56" r="3.6" stroke="rgba(196,208,186,0.82)" stroke-width="0.8" fill="none"/>
+    <circle cx="34" cy="62" r="3" stroke="rgba(196,208,186,0.82)" stroke-width="0.8" fill="none"/>
+    <line x1="26" y1="15" x2="43" y2="14" stroke="rgba(196,208,186,0.6)" stroke-width="0.8" stroke-linecap="round"/>
+    <line x1="24" y1="24" x2="45" y2="23" stroke="rgba(196,208,186,0.6)" stroke-width="0.8" stroke-linecap="round"/>
+    <line x1="27" y1="33" x2="42" y2="34" stroke="rgba(196,208,186,0.6)" stroke-width="0.8" stroke-linecap="round"/>
+    <line x1="25" y1="43" x2="44" y2="44" stroke="rgba(196,208,186,0.6)" stroke-width="0.8" stroke-linecap="round"/>
+    <line x1="26" y1="52" x2="43" y2="51" stroke="rgba(196,208,186,0.6)" stroke-width="0.8" stroke-linecap="round"/>
+    <line x1="27" y1="59" x2="42" y2="60" stroke="rgba(196,208,186,0.6)" stroke-width="0.8" stroke-linecap="round"/>
+    <line x1="22" y1="66" x2="46" y2="66" stroke="rgba(196,208,186,0.45)" stroke-width="0.7" stroke-linecap="round"/>
+  </svg>`,
+  athlete: `<svg viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="34" cy="34" r="32" stroke="rgba(196,208,186,0.28)" stroke-width="0.65" stroke-dasharray="2.5 3.5" stroke-linecap="round"/>
+    <circle cx="34" cy="34" r="20" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
+    <circle cx="34" cy="34" r="10" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
+    <circle cx="34" cy="34" r="2.5" fill="rgba(196,208,186,0.82)"/>
+    <line x1="34" y1="12" x2="34" y2="6" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
+    <line x1="34" y1="56" x2="34" y2="62" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
+    <line x1="12" y1="34" x2="6" y2="34" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
+    <line x1="56" y1="34" x2="62" y2="34" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
+    <path d="M54 20 Q64 34 54 48" fill="none" stroke="rgba(196,208,186,0.38)" stroke-width="0.7" stroke-linecap="round" stroke-dasharray="3 2.5"/>
+  </svg>`,
+  ihm: `<svg viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="34" cy="34" r="32" stroke="rgba(196,208,186,0.28)" stroke-width="0.65" stroke-dasharray="2.5 3.5" stroke-linecap="round"/>
+    <circle cx="34" cy="28" r="11" stroke="rgba(196,208,186,0.82)" stroke-width="0.9"/>
+    <path d="M23 39 Q21 48 18 52 L50 52 Q47 48 45 39" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M34 17 Q38 22 34 28 Q30 22 34 17" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M23 28 Q28 23 34 28 Q28 33 23 28" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M34 28 Q40 23 45 28 Q40 33 34 28" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path d="M34 28 Q38 23 42 18 Q37 24 34 28" stroke="rgba(196,208,186,0.4)" stroke-width="0.7" stroke-linecap="round" fill="none"/>
+    <path d="M34 28 Q30 23 26 18 Q31 24 34 28" stroke="rgba(196,208,186,0.4)" stroke-width="0.7" stroke-linecap="round" fill="none"/>
+    <circle cx="34" cy="28" r="2" fill="rgba(196,208,186,0.82)"/>
+    <circle cx="34" cy="28" r="8" stroke="rgba(196,208,186,0.22)" stroke-width="0.6" stroke-dasharray="2.5 3.5" fill="none"/>
+  </svg>`
+};
 ---
 
 <BaseLayout {...meta}>
@@ -46,13 +122,14 @@ const dividerSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background: var(--charcoal);
+  background: #3D3229;
 }
 .hero-left {
   padding: 10rem 5rem 6rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: #3D3229;
 }
 .hero-eyebrow {
   font-size: .75rem;
@@ -67,7 +144,11 @@ const dividerSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
   line-height: 1.0;
   margin-bottom: .3rem;
 }
-.hero h1 em { color: var(--sage-light); }
+.hero h1 em {
+  color: var(--sage-light);
+  font-style: italic;
+  display: block;
+}
 .hero-credentials {
   font-size: .8125rem;
   color: rgba(247,243,238,.4);
@@ -81,21 +162,23 @@ const dividerSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
   line-height: 1.9;
   max-width: 520px;
   margin-bottom: 2.5rem;
-  white-space: pre-line;
 }
-.hero-body strong { color: rgba(247,243,238,.9); font-weight: 400; }
-.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
-.btn-primary {
+.hero-body p { margin-bottom: 1rem; }
+.hero-body p:last-child { margin-bottom: 0; }
+.hero-body strong { color: rgba(247,243,238,.92); font-weight: 400; }
+.hero-ctas { display: flex; flex-direction: column; gap: 1rem; width: fit-content; }
+.btn-sage {
   display: inline-block;
   padding: 1rem 2.5rem;
-  background: var(--bark);
-  color: var(--warm-white);
+  background: var(--sage-pale);
+  color: #3D3229;
   font-size: .875rem;
   letter-spacing: .16em;
   text-transform: uppercase;
   transition: background .22s;
+  font-weight: 500;
 }
-.btn-primary:hover { background: var(--bark-light); }
+.btn-sage:hover { background: var(--sage-light); }
 .btn-ghost {
   display: inline-block;
   padding: 1rem 2.5rem;
@@ -110,68 +193,50 @@ const dividerSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
 .hero-right {
   position: relative;
   overflow: hidden;
-}
-.hero-right .hero-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  filter: brightness(.75) saturate(.8);
-}
-.hero-botanical {
-  position: absolute;
-  inset: 0;
+  background: var(--sage-pale);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .hero-botanical svg { width: min(380px, 80%); height: auto; }
+.hero-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: brightness(.82) saturate(.85);
+}
 .scroll-hint {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 5rem;
+  margin-top: 3rem;
   display: flex;
   align-items: center;
   gap: .75rem;
   font-size: .7rem;
   letter-spacing: .2em;
   text-transform: uppercase;
-  color: rgba(247,243,238,.3);
+  color: rgba(247,243,238,.25);
 }
 .scroll-hint::before {
   content: '';
   display: block;
   width: 1px;
-  height: 40px;
-  background: rgba(247,243,238,.2);
+  height: 36px;
+  background: rgba(247,243,238,.15);
 }
 
 /* ── Info bar ─────────────────────────────────────────── */
 .info-bar {
-  background: var(--bark);
+  background: #3D3229;
+  border-top: 1px solid rgba(247,243,238,.06);
   padding: 1.2rem 5rem;
   display: flex;
   gap: 3rem;
   align-items: center;
   overflow-x: auto;
 }
-.info-item {
-  display: flex;
-  flex-direction: column;
-  gap: .2rem;
-  flex-shrink: 0;
-}
-.info-label {
-  font-size: .65rem;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: rgba(247,243,238,.45);
-}
-.info-value {
-  font-size: .875rem;
-  color: rgba(247,243,238,.8);
-  letter-spacing: .04em;
-}
+.info-item { display: flex; flex-direction: column; gap: .2rem; flex-shrink: 0; }
+.info-label { font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(247,243,238,.32); }
+.info-value { font-size: .875rem; color: rgba(247,243,238,.62); letter-spacing: .04em; }
 
 /* ── Practice ─────────────────────────────────────────── */
 .practice {
@@ -183,42 +248,17 @@ const dividerSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
   background: var(--cream);
 }
 .practice-text .eyebrow { margin-bottom: 1.5rem; }
-.practice-text h2 {
-  font-size: clamp(2rem, 3.5vw, 3rem);
-  color: var(--charcoal);
-  margin-bottom: 2rem;
-}
-.practice-text p {
-  color: var(--muted);
-  line-height: 1.9;
-  margin-bottom: 1.5rem;
-}
+.practice-text h2 { font-size: clamp(2rem, 3.5vw, 3rem); color: var(--charcoal); margin-bottom: 2rem; }
+.practice-text p { color: var(--muted); line-height: 1.9; margin-bottom: 1.5rem; }
 .practice-text .read-more {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  font-size: .8125rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--bark);
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: .8125rem; letter-spacing: .16em; text-transform: uppercase; color: var(--bark);
   margin-top: .5rem;
 }
 .practice-text .read-more::after { content: '→'; }
-.practice-visual {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.practice-photo {
-  aspect-ratio: 4/5;
-  overflow: hidden;
-}
-.practice-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(.88) saturate(.85);
-}
+.practice-visual { display: flex; flex-direction: column; gap: 2rem; }
+.practice-photo { aspect-ratio: 4/5; overflow: hidden; }
+.practice-photo img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.88) saturate(.85); }
 .practice-quote {
   padding: 2rem;
   border-left: 2px solid var(--sage-light);
@@ -232,367 +272,200 @@ const dividerSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
   line-height: 1.7;
 }
 .practice-quote cite {
-  display: block;
-  margin-top: .75rem;
-  font-size: .75rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--sage-mid);
-  font-style: normal;
+  display: block; margin-top: .75rem;
+  font-size: .75rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--sage-mid); font-style: normal;
 }
 
 /* ── Who I work with ──────────────────────────────────── */
-.who {
-  padding: 8rem 5rem;
-  background: var(--warm-white);
-}
-.who-header {
-  max-width: 640px;
-  margin: 0 auto 5rem;
-  text-align: center;
-}
-.who-header h2 {
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  margin-bottom: 1.5rem;
-}
+.who { padding: 8rem 5rem; background: var(--warm-white); }
+.who-header { max-width: 640px; margin: 0 auto 5rem; text-align: center; }
+.who-header h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 1.5rem; }
 .who-header p { color: var(--muted); }
-.who-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-}
-.who-card {
-  padding: 3rem 2.5rem;
-  background: var(--cream);
-  position: relative;
-  transition: background .3s;
-}
+.who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+.who-card { padding: 3rem 2.5rem; background: var(--cream); transition: background .3s; }
 .who-card:hover { background: var(--sage-pale); }
 .who-card-number {
-  font-family: var(--font-serif);
-  font-size: 3rem;
-  color: var(--sage-light);
-  font-style: italic;
-  line-height: 1;
-  margin-bottom: 1.5rem;
+  font-family: var(--font-serif); font-size: 3rem;
+  color: var(--sage-light); font-style: italic; line-height: 1; margin-bottom: 1.5rem;
 }
-.who-card-title {
-  font-family: var(--font-serif);
-  font-size: 1.4rem;
-  color: var(--charcoal);
-  margin-bottom: 1rem;
-}
+.who-card-title { font-family: var(--font-serif); font-size: 1.4rem; color: var(--charcoal); margin-bottom: 1rem; }
 .who-card-desc { font-size: .9375rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.5rem; }
 .who-card-tags { display: flex; flex-wrap: wrap; gap: .4rem; }
 .who-tag {
-  font-size: .7rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  padding: .3rem .75rem;
-  border: 1px solid var(--sage-light);
-  color: var(--sage-text);
+  font-size: .7rem; letter-spacing: .12em; text-transform: uppercase;
+  padding: .3rem .75rem; border: 1px solid var(--sage-light); color: var(--sage-text);
 }
 
 /* ── What I offer ─────────────────────────────────────── */
-.offer {
-  padding: 8rem 5rem;
-  background: var(--charcoal);
-}
+.offer { padding: 8rem 5rem; background: #3D3229; }
 .offer-header { text-align: center; margin-bottom: 4rem; }
-.offer-header h2 {
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  color: var(--warm-white);
-  margin-bottom: 1.5rem;
-}
-.offer-header p { color: rgba(247,243,238,.5); max-width: 640px; margin: 0 auto 1.5rem; }
+.offer-header h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); color: var(--warm-white); margin-bottom: 1.5rem; }
+.offer-header p { color: rgba(247,243,238,.45); max-width: 620px; margin: 0 auto; line-height: 1.85; }
 .offer-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: rgba(247,243,238,.06);
+  background: rgba(247,243,238,.05);
   margin-bottom: 3rem;
 }
 .offer-card {
-  background: var(--charcoal);
+  background: #3D3229;
   padding: 2.5rem 2rem;
   border: 1px solid rgba(247,243,238,.07);
   transition: background .3s, border-color .3s;
-  display: flex;
-  flex-direction: column;
+  display: flex; flex-direction: column;
 }
-.offer-card:hover {
-  background: rgba(247,243,238,.03);
-  border-color: rgba(196,208,186,.2);
-}
-.offer-icon {
-  width: 40px;
-  height: 40px;
-  margin-bottom: 1.5rem;
-}
+.offer-card:hover { background: rgba(247,243,238,.03); border-color: rgba(196,208,186,.18); }
+.offer-icon { width: 44px; height: 44px; margin-bottom: 1.5rem; }
 .offer-card h3 {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  color: var(--warm-white);
-  margin-bottom: 1rem;
-  line-height: 1.25;
+  font-family: var(--font-serif); font-size: 1.2rem;
+  color: var(--warm-white); margin-bottom: 1rem; line-height: 1.25;
 }
-.offer-card p {
-  font-size: .875rem;
-  color: rgba(247,243,238,.45);
-  line-height: 1.8;
-  flex: 1;
-  margin-bottom: 1.5rem;
-}
+.offer-card p { font-size: .875rem; color: rgba(247,243,238,.4); line-height: 1.8; flex: 1; margin-bottom: 1.5rem; }
 .offer-card .read-more {
-  font-size: .7rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--sage-mid);
-  display: flex;
-  align-items: center;
-  gap: .4rem;
-  transition: color .2s;
+  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+  color: var(--sage-mid); display: flex; align-items: center; gap: .4rem; transition: color .2s;
 }
 .offer-card .read-more::after { content: '→'; }
 .offer-card:hover .read-more { color: var(--sage-light); }
 .offer-footer { text-align: center; }
 .offer-footer a {
-  font-size: .8125rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--sage-light);
-  opacity: .7;
-  transition: opacity .2s;
+  font-size: .8125rem; letter-spacing: .16em; text-transform: uppercase;
+  color: rgba(196,208,186,.5); transition: opacity .2s;
 }
-.offer-footer a:hover { opacity: 1; }
+.offer-footer a:hover { opacity: 1; color: var(--sage-light); }
 
 /* ── Story pull ───────────────────────────────────────── */
 .story-pull {
   padding: 8rem 5rem;
   background: var(--bark);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: center;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center;
 }
 .story-pull-text .eyebrow { color: rgba(247,243,238,.4); }
 .story-pull-text h2 {
   font-size: clamp(2.2rem, 4vw, 3.5rem);
-  color: var(--warm-white);
-  line-height: 1.1;
-  margin-bottom: 1.5rem;
+  color: var(--warm-white); line-height: 1.1; margin-bottom: 1.5rem;
 }
 .story-pull-text h2 em { color: var(--sage-light); }
-.story-pull-text p {
-  color: rgba(247,243,238,.6);
-  margin-bottom: 2rem;
-  line-height: 1.85;
-}
+.story-pull-text p { color: rgba(247,243,238,.6); margin-bottom: 2rem; line-height: 1.85; }
 .story-pull-text a {
-  display: inline-flex;
-  align-items: center;
-  gap: .5rem;
-  font-size: .8125rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--sage-light);
+  display: inline-flex; align-items: center; gap: .5rem;
+  font-size: .8125rem; letter-spacing: .16em; text-transform: uppercase; color: var(--sage-light);
 }
 .story-pull-text a::after { content: '→'; }
-.story-pull-visual { position: relative; }
-.story-pull-photo {
-  aspect-ratio: 3/4;
-  overflow: hidden;
-}
-.story-pull-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(.75) saturate(.8);
-}
 .story-pull-quote {
-  position: absolute;
-  bottom: -2rem;
-  left: -2rem;
-  right: 2rem;
-  background: var(--charcoal);
-  padding: 2rem 2.5rem;
+  background: var(--charcoal); padding: 2.5rem;
 }
 .story-pull-quote p {
-  font-family: var(--font-serif);
-  font-size: 1.0625rem;
-  font-style: italic;
-  color: var(--sage-light);
-  line-height: 1.7;
-  margin-bottom: .75rem;
+  font-family: var(--font-serif); font-size: 1.125rem;
+  font-style: italic; color: var(--sage-light); line-height: 1.7; margin-bottom: .75rem;
 }
 .story-pull-quote cite {
-  font-size: .7rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--muted);
-  font-style: normal;
+  font-size: .7rem; letter-spacing: .16em; text-transform: uppercase;
+  color: var(--muted); font-style: normal;
 }
+.story-pull-photo-wrap { position: relative; }
+.story-pull-photo { aspect-ratio: 3/4; overflow: hidden; }
+.story-pull-photo img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.75) saturate(.8); }
 
 /* ── Process ──────────────────────────────────────────── */
-.process {
-  padding: 8rem 5rem;
-  background: var(--sage-pale);
-}
+.process { padding: 8rem 5rem; background: var(--sage-pale); }
 .process-header { text-align: center; margin-bottom: 5rem; }
 .process-header h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); }
 .process-steps {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 3rem;
-  position: relative;
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 3rem; position: relative;
 }
 .process-steps::before {
-  content: '';
-  position: absolute;
-  top: 48px;
-  left: calc(12.5% + 1.5rem);
-  right: calc(12.5% + 1.5rem);
-  height: 1px;
-  background: var(--sage-light);
-  opacity: .5;
+  content: ''; position: absolute;
+  top: 28px; left: calc(12.5% + 1.5rem); right: calc(12.5% + 1.5rem);
+  height: 1px; background: var(--sage-light); opacity: .5;
 }
 .process-step { text-align: center; }
-.process-icon {
-  width: 56px;
-  height: 56px;
-  margin: 0 auto 1.5rem;
-}
 .process-dot {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
+  width: 56px; height: 56px; border-radius: 50%;
   border: 1px solid var(--sage-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex; align-items: center; justify-content: center;
   margin: 0 auto 1.5rem;
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-style: italic;
-  color: var(--sage-text);
-  background: var(--sage-pale);
-  position: relative;
-  z-index: 1;
+  font-family: var(--font-serif); font-size: 1.25rem; font-style: italic;
+  color: var(--sage-text); background: var(--sage-pale); position: relative; z-index: 1;
 }
-.process-step h3 {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  margin-bottom: .75rem;
-}
+.process-step h3 { font-family: var(--font-serif); font-size: 1.25rem; margin-bottom: .75rem; }
 .process-step p { font-size: .9rem; color: var(--muted); line-height: 1.8; }
 
 /* ── Testimonials ─────────────────────────────────────── */
-.testimonials {
-  padding: 8rem 5rem;
-  background: var(--warm-white);
-}
+.testimonials { padding: 8rem 5rem; background: var(--warm-white); }
 .testimonials-header { text-align: center; margin-bottom: 4rem; }
 .testimonials-header h2 { font-size: clamp(2rem, 3vw, 2.5rem); }
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-.testimonial-card {
-  padding: 2.5rem;
-  background: var(--cream);
-  border-top: 2px solid var(--sage-light);
-}
+.testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.testimonial-card { padding: 2.5rem; background: var(--cream); border-top: 2px solid var(--sage-light); }
 .testimonial-card.placeholder { border-top-color: rgba(196,208,186,.3); }
 .testimonial-text {
-  font-family: var(--font-serif);
-  font-size: 1.0625rem;
-  font-style: italic;
-  color: var(--charcoal);
-  line-height: 1.75;
-  margin-bottom: 1.5rem;
+  font-family: var(--font-serif); font-size: 1.0625rem; font-style: italic;
+  color: var(--charcoal); line-height: 1.75; margin-bottom: 1.5rem;
 }
 .placeholder .testimonial-text { color: var(--sage-light); font-size: .9rem; }
-.testimonial-author {
-  font-size: .75rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-.testimonial-condition {
-  font-size: .75rem;
-  color: var(--sage-mid);
-  margin-top: .25rem;
-}
+.testimonial-author { font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.testimonial-condition { font-size: .75rem; color: var(--sage-mid); margin-top: .25rem; }
 
 /* ── International ────────────────────────────────────── */
 .international {
-  padding: 8rem 5rem;
-  background: var(--charcoal);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: start;
+  padding: 8rem 5rem; background: #3D3229;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start;
 }
 .international-text .eyebrow { color: var(--sage-mid); }
-.international-text h2 {
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  color: var(--warm-white);
-  margin-bottom: 1.5rem;
-}
+.international-text h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); color: var(--warm-white); margin-bottom: 1.5rem; }
 .international-text h2 em { color: var(--sage-light); }
 .international-text p { color: rgba(247,243,238,.55); margin-bottom: 1rem; line-height: 1.85; }
-.lang-flags {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 2rem;
-  font-size: .875rem;
-  color: rgba(247,243,238,.6);
-}
+.lang-flags { display: flex; gap: 1.5rem; margin-top: 2rem; font-size: .875rem; color: rgba(247,243,238,.6); }
 .regions-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: rgba(247,243,238,.06);
-  align-self: center;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1px; background: rgba(247,243,238,.05); align-self: center;
 }
-.region-item {
-  padding: 1.5rem 2rem;
-  background: var(--charcoal);
-  border: 1px solid rgba(247,243,238,.06);
-}
-.region-name {
-  font-size: .8125rem;
-  letter-spacing: .1em;
-  color: rgba(247,243,238,.7);
-  margin-bottom: .3rem;
-}
+.region-item { padding: 1.5rem 2rem; background: #3D3229; border: 1px solid rgba(247,243,238,.06); }
+.region-name { font-size: .8125rem; letter-spacing: .1em; color: rgba(247,243,238,.7); margin-bottom: .3rem; }
 .region-desc { font-size: .8rem; color: rgba(247,243,238,.35); }
 
 /* ── Final CTA ────────────────────────────────────────── */
-.final-cta {
-  padding: 10rem 5rem;
-  background: var(--sage-dark);
-  text-align: center;
-}
+.final-cta { padding: 10rem 5rem; background: var(--sage-dark); text-align: center; }
 .final-cta h2 {
   font-size: clamp(2.2rem, 4vw, 3.5rem);
-  color: var(--cream);
-  margin-bottom: 1.5rem;
-  line-height: 1.2;
+  color: var(--cream); margin-bottom: 1.5rem; line-height: 1.2;
 }
 .final-cta p { color: rgba(247,243,238,.6); max-width: 520px; margin: 0 auto 3rem; }
 .final-cta .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-primary-light {
+  display: inline-block; padding: 1rem 2.5rem;
+  background: var(--sage-pale); color: var(--sage-text);
+  font-size: .875rem; letter-spacing: .16em; text-transform: uppercase;
+  transition: background .22s; font-weight: 500;
+}
+.btn-primary-light:hover { background: var(--sage-light); }
+.btn-ghost-light {
+  display: inline-block; padding: 1rem 2.5rem;
+  border: 1px solid rgba(247,243,238,.3); color: rgba(247,243,238,.75);
+  font-size: .875rem; letter-spacing: .16em; text-transform: uppercase;
+  transition: all .22s;
+}
+.btn-ghost-light:hover { border-color: rgba(247,243,238,.7); color: white; }
+
+/* ── Section divider ──────────────────────────────────── */
+.section-divider {
+  display: flex; align-items: center; justify-content: center;
+  gap: 1.5rem; padding: 1rem 0; background: var(--warm-white);
+}
+.section-divider::before, .section-divider::after {
+  content: ''; flex: 1; height: 1px;
+  background: var(--sage-light); opacity: .5; max-width: 200px;
+}
+.section-divider svg { flex-shrink: 0; width: 32px; height: 32px; }
 
 /* ── Responsive ───────────────────────────────────────── */
-@media (max-width: 1200px) {
-  .offer-grid { grid-template-columns: repeat(3, 1fr); }
-}
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-left { padding: 8rem 2.5rem 4rem; }
   .hero-right { height: 60vw; }
-  .scroll-hint { left: 2.5rem; }
   .info-bar { padding: 1rem 2.5rem; gap: 2rem; }
   .practice, .story-pull, .international { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2.5rem; }
   .who, .offer, .process, .testimonials, .final-cta { padding: 5rem 2.5rem; }
@@ -602,12 +475,12 @@ const dividerSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
   .process-steps::before { display: none; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .regions-grid { grid-template-columns: 1fr; }
-  .story-pull-quote { position: static; margin-top: 2rem; }
 }
 @media (max-width: 640px) {
   .offer-grid { grid-template-columns: 1fr; }
   .process-steps { grid-template-columns: 1fr; }
-  .hero-ctas { flex-direction: column; }
+  .hero-ctas { width: 100%; }
+  .btn-sage, .btn-ghost { width: 100%; text-align: center; }
 }
 </style>
 
@@ -616,19 +489,41 @@ const dividerSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
   <div class="hero-left">
     <p class="hero-eyebrow">{d.heroEyebrow}</p>
     <h1>Sara<br><em>Lemaitre</em></h1>
-    <p class="hero-credentials" set:html={d.heroCredentials.replace(/·/g, '<br>')}></p>
-    <p class="hero-body" set:html={d.heroBody.replace(/\n\n/g, '</p><p class="hero-body" style="margin-top:1.5rem">').replace(/You are not the problem\./g, '<strong>You are not the problem.</strong>')}></p>
+    <p class="hero-credentials">{d.heroCredentials.replace(/·/g, ' · ')}</p>
+    <div class="hero-body">
+      {d.heroBody.split('\n\n').map(para => (
+        <p set:html={para.replace('You are not the problem.', '<strong>You are not the problem.</strong>')}></p>
+      ))}
+    </div>
     <div class="hero-ctas">
-      <a href={s.calendlyDiscovery} target="_blank" rel="noopener" class="btn-primary">Book a free discovery call</a>
+      <a href={s.calendlyDiscovery} target="_blank" rel="noopener" class="btn-sage">Book a free discovery call</a>
       <a href="/story" class="btn-ghost">Read my story</a>
     </div>
     <div class="scroll-hint" aria-hidden="true">Scroll</div>
   </div>
   <div class="hero-right">
-    {d.heroPortrait && d.heroPortrait !== '/images/sara-portrait.jpg'
-      ? <img src={d.heroPortrait} alt="Sara Lemaitre — Clinical Herbalist & Naturopath" class="hero-photo" />
-      : <div class="hero-botanical" set:html={botanicalSVG} />
-    }
+    {d.heroPortrait && d.heroPortrait !== '/images/sara-portrait.jpg' ? (
+      <img src={d.heroPortrait} alt="Sara Lemaitre — Clinical Herbalist & Naturopath" class="hero-photo" />
+    ) : (
+      <div class="hero-botanical">
+        <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-label="Sara Lemaitre botanical logo mark" role="img">
+          <title>Sara Lemaitre botanical compass rose logo</title>
+          <circle cx="210" cy="210" r="200" fill="none" stroke="#9BAE8E" stroke-width="1.1" stroke-dasharray="5 9" opacity="0.45"/>
+          <circle cx="210" cy="210" r="164" fill="none" stroke="#9BAE8E" stroke-width="0.9" stroke-dasharray="4 7" opacity="0.35"/>
+          <circle cx="210" cy="210" r="126" fill="none" stroke="#7A8C6E" stroke-width="1.2"/>
+          <path d="M210 84 C238 132 238 172 210 210 C182 172 182 132 210 84" fill="rgba(196,208,186,0.28)" stroke="#5C7A52" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M210 336 C182 288 182 248 210 210 C238 248 238 288 210 336" fill="rgba(196,208,186,0.28)" stroke="#5C7A52" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M84 210 C132 182 172 182 210 210 C172 238 132 238 84 210" fill="rgba(196,208,186,0.28)" stroke="#5C7A52" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M336 210 C288 238 248 238 210 210 C248 182 288 182 336 210" fill="rgba(196,208,186,0.28)" stroke="#5C7A52" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M121 121 C158 148 172 172 210 210 C172 172 148 158 121 121" fill="rgba(196,208,186,0.22)" stroke="#5C7A52" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M210 210 C248 248 262 272 299 299 C272 262 248 248 210 210" fill="rgba(196,208,186,0.22)" stroke="#5C7A52" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M299 121 C272 158 248 172 210 210 C248 172 272 148 299 121" fill="rgba(196,208,186,0.22)" stroke="#5C7A52" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M210 210 C172 248 148 262 121 299 C158 272 172 248 210 210" fill="rgba(196,208,186,0.22)" stroke="#5C7A52" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="210" cy="210" r="16" fill="none" stroke="#5C7A52" stroke-width="1.4"/>
+          <circle cx="210" cy="210" r="5.5" fill="#5C7A52"/>
+        </svg>
+      </div>
+    )}
   </div>
 </section>
 
@@ -648,7 +543,7 @@ const dividerSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
   </div>
   <div class="info-item">
     <span class="info-label">Available to</span>
-    <span class="info-value">UK &amp; international clients</span>
+    <span class="info-value">UK, France &amp; international clients</span>
   </div>
 </div>
 
@@ -656,9 +551,10 @@ const dividerSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
 <section class="practice reveal">
   <div class="practice-text">
     <p class="eyebrow">The practice</p>
-    <h2 set:html={d.practiceTitle.replace('lived', '<em>lived</em>')}></h2>
-    <p>{d.practiceBody1}</p>
-    <p>{d.practiceBody2}</p>
+    <h2>Plant medicine rooted in <em>lived experience</em></h2>
+    <p>{d.practiceBody1.split('\n\n')[0]}</p>
+    <p>{d.practiceBody1.split('\n\n')[1]}</p>
+    <p>{d.practiceBody2.split('\n\n')[0]}</p>
     <a href="/story" class="read-more">Read the full story</a>
   </div>
   <div class="practice-visual">
@@ -675,15 +571,15 @@ const dividerSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
 </section>
 
 <!-- SECTION DIVIDER -->
-<div class="section-divider" aria-hidden="true" set:html={`<div class="section-divider">${dividerSVG}</div>`}></div>
+<div class="section-divider" aria-hidden="true" set:html={dividerSVG}></div>
 
 <!-- WHO I WORK WITH -->
 <section class="who">
   <div class="who-header reveal">
     <h2>{d.whoTitle}</h2>
-    <p>{d.whoDesc.split('\n\n')[0]}</p>
-    <p>{d.whoDesc.split('\n\n')[1]}</p>
-    <p><em>{d.whoDesc.split('\n\n')[2]}</em></p>
+    {d.whoDesc.split('\n\n').map((p, i) => (
+      <p style={i === 2 ? 'font-style:italic;' : ''}>{p}</p>
+    ))}
   </div>
   <div class="who-grid">
     {d.whoCards.map((card, i) => (
@@ -708,6 +604,7 @@ const dividerSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
   <div class="offer-grid">
     {d.offerCards.map((card, i) => (
       <a href={card.href} class={`offer-card reveal${i > 0 ? ` reveal-delay-${i > 3 ? 3 : i}` : ''}`}>
+        <div class="offer-icon" set:html={offerIcons[card.id] || offerIcons.herbal}></div>
         <h3>{card.title}</h3>
         <p>{card.desc}</p>
         <span class="read-more">Read more</span>
@@ -727,19 +624,15 @@ const dividerSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
     <p>{d.storyPullBody}</p>
     <a href="/story">Read my full story</a>
   </div>
-  <div class="story-pull-visual reveal reveal-delay-1">
+  <div class="reveal reveal-delay-1">
     {d.storyPullPhoto && d.storyPullPhoto !== '/images/sara-story.jpg' ? (
-      <>
+      <div class="story-pull-photo-wrap">
         <div class="story-pull-photo">
           <img src={d.storyPullPhoto} alt="Sara Lemaitre" loading="lazy" />
         </div>
-        <blockquote class="story-pull-quote">
-          <p>"{d.storyPullQuote}"</p>
-          <cite>— Sara Lemaitre</cite>
-        </blockquote>
-      </>
+      </div>
     ) : (
-      <blockquote class="story-pull-quote" style="position:static;">
+      <blockquote class="story-pull-quote">
         <p>"{d.storyPullQuote}"</p>
         <cite>— Sara Lemaitre</cite>
       </blockquote>
@@ -751,7 +644,7 @@ const dividerSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
 <section class="process">
   <div class="process-header reveal">
     <p class="eyebrow">How it works</p>
-    <h2>{d.processTitle.split(' to ')[0]} to <em>{d.processTitle.split(' to ')[1]}</em></h2>
+    <h2>From first conversation to <em>lasting change</em></h2>
   </div>
   <div class="process-steps">
     {d.processSteps.map((step, i) => (
@@ -808,8 +701,7 @@ const dividerSVG = `<svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" 
   <h2 class="reveal">{d.ctaTitle}</h2>
   <p class="reveal">{d.ctaDesc}</p>
   <div class="cta-group reveal">
-    <a href={s.calendlyDiscovery} target="_blank" rel="noopener" class="btn-primary">Book a free discovery call</a>
-    <a href="/pricing" class="btn-ghost">View pricing & packages</a>
+    <a href={s.calendlyDiscovery} target="_blank" rel="noopener" class="btn-primary-light">Book a free discovery call</a>
+    <a href="/pricing" class="btn-ghost-light">View pricing & packages</a>
   </div>
 </section>
-
