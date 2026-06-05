@@ -13,9 +13,18 @@
   "ihmPrice": 60,
   "showPackages": false,
   "cancellationTiers": [
-    { "title": "More than 48 hours", "policy": "Full refund by bank transfer, or rescheduling at no additional cost. Please notify me as soon as possible." },
-    { "title": "24–48 hours", "policy": "50% of the fee is retained. The remaining 50% will be returned to your bank account within 3–5 working days." },
-    { "title": "Less than 24 hours", "policy": "The full fee is retained. This slot was held for you and cannot be offered to someone else at short notice." }
+    {
+      "title": "More than 48 hours",
+      "policy": "Full refund by bank transfer, or rescheduling at no additional cost. Please notify me as soon as possible."
+    },
+    {
+      "title": "24–48 hours",
+      "policy": "50% of the fee is retained. The remaining 50% will be returned to your bank account within 3–5 working days."
+    },
+    {
+      "title": "Less than 24 hours",
+      "policy": "The full fee is retained. This slot was held for you and cannot be offered to someone else at short notice."
+    }
   ],
   "cancellationNote": "Exceptions are made for genuine emergencies — please do get in touch. I understand that life happens.",
   "faq": [
@@ -29,7 +38,7 @@
     },
     {
       "q": "How quickly will I see results?",
-      "a": "It depends on the condition and the person. Some clients notice significant shifts within two to four weeks — particularly with sleep, stress, and acute presentations. Chronic hormonal conditions like endometriosis and PCOS typically take three to six months to show meaningful improvement through herbal medicine. This is not a limitation, it is how the body actually heals. I will always be honest with you about realistic timescales."
+      "a": "It depends on the condition and the person. Some clients notice significant shifts within two to four weeks — particularly with sleep, stress, and acute presentations. Chronic hormonal conditions like endometriosis and PMOS typically take three to six months to show meaningful improvement through herbal medicine. This is not a limitation, it is how the body actually heals. I will always be honest with you about realistic timescales."
     },
     {
       "q": "Do you work with clients who are on medication?",
@@ -45,4 +54,3 @@
     }
   ]
 }
-
