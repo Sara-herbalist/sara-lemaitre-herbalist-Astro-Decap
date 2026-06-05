@@ -8,44 +8,23 @@ const meta = {
   canonical: 'https://www.saralemaitre.com/pricing',
   currentPage: 'pricing',
 };
-
-const petalMark = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="petal-mark">
-  <circle cx="14" cy="14" r="13" stroke="rgba(196,208,186,0.3)" stroke-width="0.6" stroke-dasharray="2.5 3.5"/>
-  <circle cx="14" cy="14" r="9" stroke="rgba(196,208,186,0.72)" stroke-width="0.85"/>
-  <path d="M14 5 Q17 9.5 14 14 Q11 9.5 14 5" stroke="rgba(196,208,186,0.72)" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <path d="M14 14 Q17 18.5 14 23 Q11 18.5 14 14" stroke="rgba(196,208,186,0.72)" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <path d="M5 14 Q9.5 11 14 14 Q9.5 17 5 14" stroke="rgba(196,208,186,0.72)" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <path d="M14 14 Q18.5 11 23 14 Q18.5 17 14 14" stroke="rgba(196,208,186,0.72)" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <circle cx="14" cy="14" r="2" stroke="rgba(196,208,186,0.72)" stroke-width="0.85" fill="none"/>
-</svg>`;
-
-const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="petal-mark">
-  <circle cx="14" cy="14" r="13" stroke="rgba(92,122,82,0.4)" stroke-width="0.6" stroke-dasharray="2.5 3.5"/>
-  <circle cx="14" cy="14" r="9" stroke="#5C7A52" stroke-width="0.85"/>
-  <path d="M14 5 Q17 9.5 14 14 Q11 9.5 14 5" stroke="#5C7A52" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <path d="M14 14 Q17 18.5 14 23 Q11 18.5 14 14" stroke="#5C7A52" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <path d="M5 14 Q9.5 11 14 14 Q9.5 17 5 14" stroke="#5C7A52" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <path d="M14 14 Q18.5 11 23 14 Q18.5 17 14 14" stroke="#5C7A52" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-  <circle cx="14" cy="14" r="2" stroke="#5C7A52" stroke-width="0.85" fill="none"/>
-</svg>`;
 ---
 <BaseLayout {...meta}>
 <style>
 .pricing-hero {
   padding: 10rem 5rem 7rem;
-  background: var(--charcoal);
+  background: #3D3229;
   max-width: 700px;
 }
 .pricing-hero .eyebrow { color: var(--sage-mid); margin-bottom: 1rem; }
 .pricing-hero h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
-  color: var(--warm-white);
-  line-height: 1.1;
-  margin-bottom: 2rem;
+  color: var(--warm-white); line-height: 1.1; margin-bottom: 2rem;
 }
 .pricing-hero h1 em { color: var(--sage-light); }
+
 .pricing-note {
-  padding: 5rem;
+  padding: 6rem 5rem;
   background: var(--cream);
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -53,270 +32,115 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
   align-items: start;
 }
 .pricing-note-text h2 {
-  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
-  margin-bottom: 1.5rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem); margin-bottom: 1.5rem;
 }
 .pricing-note-text p { color: var(--muted); line-height: 1.9; margin-bottom: 1rem; }
 .commitment-box {
-  background: var(--warm-white);
-  padding: 2.5rem;
+  background: var(--warm-white); padding: 2.5rem;
   border-top: 2px solid var(--sage-light);
 }
 .commitment-box h3 {
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  margin-bottom: 1.5rem;
-  color: var(--charcoal);
+  font-family: var(--font-serif); font-size: 1.25rem;
+  margin-bottom: 1.5rem; color: var(--charcoal);
 }
 .commitment-box p { font-size: .9375rem; color: var(--muted); line-height: 1.85; margin-bottom: 1rem; }
 
-/* Cards grid */
-.cards-section {
-  padding: 6rem 5rem;
-  background: var(--charcoal);
-}
-.cards-section-title {
-  font-size: .7rem;
-  letter-spacing: .22em;
-  text-transform: uppercase;
-  color: var(--sage-mid);
-  margin-bottom: 2.5rem;
-}
-.cards-row {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: rgba(247,243,238,.05);
-  margin-bottom: 3rem;
-}
-.cards-row-bundles {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1px;
-  background: rgba(247,243,238,.05);
-  margin-bottom: 1rem;
-}
-.pcard {
-  background: var(--charcoal);
-  padding: 2rem 1.75rem 1.75rem;
-  border: 1px solid rgba(247,243,238,.07);
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  transition: border-color .25s;
-}
-.pcard:hover { border-color: rgba(196,208,186,.2); }
-.pcard.featured {
-  background: rgba(92,122,82,.08);
-  border-color: rgba(92,122,82,.35);
-}
-.pcard.featured:hover { border-color: var(--sage-dark); }
-.pcard-bundle {
-  border-left: 2px solid rgba(196,208,186,.35) !important;
-}
-.pcard.featured .pcard-bundle-border {
-  border-left: 2px solid var(--sage-dark) !important;
-}
-.petal-mark { width: 28px; height: 28px; display: block; margin: 0 auto 1.5rem; }
-.pcard-tag {
-  font-size: .65rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: rgba(247,243,238,.3);
-  text-align: center;
-  margin-bottom: .75rem;
-}
-.pcard.featured .pcard-tag { color: var(--sage-mid); }
-.pcard-name {
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  color: rgba(247,243,238,.8);
-  text-align: center;
-  margin-bottom: 1.25rem;
-  line-height: 1.3;
-}
-.pcard-price {
-  font-family: var(--font-serif);
-  font-size: 2.2rem;
-  color: rgba(247,243,238,.85);
-  text-align: center;
-  line-height: 1;
-  margin-bottom: .4rem;
-}
-.pcard.featured .pcard-price { color: white; }
-.pcard-sub {
-  font-size: .7rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  color: rgba(247,243,238,.25);
-  text-align: center;
-  margin-bottom: 1.25rem;
-}
-.pcard.featured .pcard-sub { color: var(--sage-mid); }
-.pcard-divider { height: 1px; background: rgba(247,243,238,.07); margin: 0 0 1.25rem; }
-.pcard-includes {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: .4rem;
-  margin-bottom: 1.5rem;
-  flex: 1;
-}
-.pcard-includes li {
-  font-size: .8rem;
-  color: rgba(247,243,238,.3);
-  padding-left: 1rem;
-  position: relative;
-  line-height: 1.5;
-}
-.pcard.featured .pcard-includes li { color: rgba(247,243,238,.45); }
-.pcard-includes li::before {
-  content: '—';
-  position: absolute;
-  left: 0;
-  color: rgba(196,208,186,.3);
-}
-.pcard-sliding {
-  font-family: var(--font-serif);
-  font-size: .875rem;
-  font-style: italic;
-  color: rgba(247,243,238,.2);
-  text-align: center;
-  margin-bottom: 1.25rem;
-}
-.pcard.featured .pcard-sliding { color: rgba(92,122,82,.7); }
-.pcard-cta {
-  display: block;
-  text-align: center;
-  padding: .65rem 1rem;
-  border: 1px solid rgba(247,243,238,.15);
-  font-size: .75rem;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  color: rgba(247,243,238,.4);
-  transition: all .22s;
-}
-.pcard:hover .pcard-cta { border-color: rgba(247,243,238,.3); color: rgba(247,243,238,.65); }
-.pcard.featured .pcard-cta {
-  border-color: rgba(92,122,82,.5);
-  color: var(--sage-mid);
-}
-.pcard.featured:hover .pcard-cta { border-color: var(--sage-dark); color: var(--sage-light); }
-.recommended-badge {
-  font-size: .65rem;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: var(--sage-text);
-  text-align: center;
-  margin-bottom: .5rem;
-}
-
-/* Cancellation */
-.cancel-section {
+.payment-section {
   padding: 5rem;
   background: var(--warm-white);
-}
-.cancel-section h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 3rem; }
-.cancel-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-bottom: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
 }
-.cancel-card {
-  padding: 2rem;
-  background: var(--cream);
-  border-top: 2px solid var(--sage-light);
+.payment-section h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 2rem; }
+.payment-section > div > p { color: var(--muted); line-height: 1.9; margin-bottom: 1rem; }
+.payment-steps {
+  list-style: none; counter-reset: steps;
+  margin: 1.5rem 0; display: flex; flex-direction: column; gap: 1rem;
 }
-.cancel-card h3 {
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  margin-bottom: .75rem;
+.payment-steps li {
+  counter-increment: steps;
+  display: flex; gap: 1.5rem; align-items: baseline;
+  font-size: .9375rem; color: var(--muted);
 }
-.cancel-card p { font-size: .9rem; color: var(--muted); line-height: 1.75; }
-.cancel-note {
-  font-family: var(--font-serif);
-  font-style: italic;
-  color: var(--muted);
-  font-size: .9375rem;
+.payment-steps li::before {
+  content: counter(steps);
+  font-family: var(--font-serif); font-size: 1.25rem;
+  font-style: italic; color: var(--sage-light);
+  flex-shrink: 0; width: 1.5rem;
 }
+.bank-box {
+  background: var(--cream); padding: 2rem;
+  border: 1px solid var(--sage-light);
+  margin-top: 1.5rem;
+}
+.bank-box h3 {
+  font-family: var(--font-serif); font-size: 1.1rem;
+  margin-bottom: 1rem; color: var(--charcoal);
+}
+.bank-row {
+  display: grid; grid-template-columns: auto 1fr;
+  gap: .4rem 2rem; margin-bottom: .5rem;
+}
+.bank-lbl { font-size: .75rem; letter-spacing: .12em; text-transform: uppercase; color: var(--sage-text); }
+.bank-val { font-size: .9375rem; color: var(--charcoal); }
+.good-to-know {
+  margin-top: 1.5rem; list-style: none;
+  display: flex; flex-direction: column; gap: .75rem;
+}
+.good-to-know li {
+  font-size: .875rem; color: var(--muted);
+  padding-left: 1.5rem; position: relative; line-height: 1.7;
+}
+.good-to-know li::before { content: '—'; position: absolute; left: 0; color: var(--sage-light); }
 
-/* FAQ */
-.faq-section {
-  padding: 5rem;
-  background: var(--cream);
-}
+.cancel-section { padding: 5rem; background: var(--cream); }
+.cancel-section h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 3rem; }
+.cancel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 1.5rem; }
+.cancel-card { padding: 2rem; background: var(--warm-white); border-top: 2px solid var(--sage-light); }
+.cancel-card h3 { font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: .75rem; }
+.cancel-card p { font-size: .9rem; color: var(--muted); line-height: 1.75; }
+.cancel-note { font-family: var(--font-serif); font-style: italic; color: var(--muted); }
+
+.faq-section { padding: 5rem; background: var(--warm-white); }
 .faq-section h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 3rem; }
-.faq-item {
-  border-top: 1px solid var(--sage-light);
-  padding: 1.5rem 0;
-}
+.faq-item { border-top: 1px solid var(--sage-light); padding: 1.5rem 0; }
 .faq-item:last-child { border-bottom: 1px solid var(--sage-light); }
-.faq-q {
-  font-family: var(--font-serif);
-  font-size: 1.1rem;
-  color: var(--charcoal);
-  margin-bottom: .75rem;
-  cursor: pointer;
-}
+.faq-q { font-family: var(--font-serif); font-size: 1.1rem; color: var(--charcoal); margin-bottom: .75rem; }
 .faq-a { font-size: .9375rem; color: var(--muted); line-height: 1.85; }
 
-/* Final CTA */
-.pricing-cta {
-  padding: 8rem 5rem;
-  background: var(--bark);
-  text-align: center;
-}
-.pricing-cta h2 {
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
-  color: var(--warm-white);
-  margin-bottom: 1rem;
-}
+.pricing-cta { padding: 8rem 5rem; background: var(--bark); text-align: center; }
+.pricing-cta h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--warm-white); margin-bottom: 1rem; }
 .pricing-cta p { color: rgba(247,243,238,.6); margin-bottom: 2.5rem; }
 .pricing-cta .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-.btn-w {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  border: 1px solid rgba(247,243,238,.4);
-  color: rgba(247,243,238,.8);
-  font-size: .875rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
+.btn-ep {
+  display: inline-block; padding: 1rem 2.5rem;
+  background: var(--sage-pale); color: #3D3229;
+  font-size: .875rem; letter-spacing: .16em; text-transform: uppercase;
+  transition: background .22s; font-weight: 500;
+}
+.btn-ep:hover { background: var(--sage-light); }
+.btn-eg {
+  display: inline-block; padding: 1rem 2.5rem;
+  border: 1px solid rgba(247,243,238,.3); color: rgba(247,243,238,.8);
+  font-size: .875rem; letter-spacing: .16em; text-transform: uppercase;
   transition: all .22s;
 }
-.btn-w:hover { border-color: rgba(247,243,238,.9); color: white; }
-.btn-wp {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  background: var(--charcoal);
-  color: var(--warm-white);
-  font-size: .875rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  transition: background .22s;
-}
-.btn-wp:hover { background: rgba(42,36,32,.8); }
+.btn-eg:hover { border-color: rgba(247,243,238,.7); color: white; }
 
 @media (max-width: 1024px) {
-  .pricing-hero, .pricing-note, .cancel-section, .faq-section, .pricing-cta { padding: 5rem 2.5rem; }
-  .cards-section { padding: 4rem 2.5rem; }
-  .pricing-note { grid-template-columns: 1fr; gap: 2rem; }
-  .cards-row { grid-template-columns: 1fr 1fr; }
-  .cards-row-bundles { grid-template-columns: 1fr; }
+  .pricing-hero, .cancel-section, .faq-section, .pricing-cta { padding: 5rem 2.5rem; }
+  .pricing-note, .payment-section { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 2.5rem; }
   .cancel-grid { grid-template-columns: 1fr; }
-}
-@media (max-width: 640px) {
-  .cards-row { grid-template-columns: 1fr; }
 }
 </style>
 
-<!-- HERO -->
 <section class="pricing-hero">
   <p class="eyebrow">Transparent pricing · No surprises</p>
   <h1>Investment in your <em>health</em></h1>
 </section>
 
-<!-- PRICING NOTE -->
 <section class="pricing-note reveal">
   <div class="pricing-note-text">
     <h2>A note on pricing and what it represents</h2>
@@ -329,116 +153,30 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
   </div>
 </section>
 
-<!-- CARDS -->
-<section class="cards-section">
-  <p class="cards-section-title">Individual sessions</p>
-  <div class="cards-row">
-    <!-- Discovery -->
-    <div class="pcard reveal">
-      <div set:html={petalMark}></div>
-      <p class="pcard-tag">Free · 15 minutes</p>
-      <p class="pcard-name">Discovery Call</p>
-      <p class="pcard-price">Free</p>
-      <p class="pcard-sub">No commitment</p>
-      <div class="pcard-divider"></div>
-      <ul class="pcard-includes">
-        <li>15 minute conversation</li>
-        <li>No pressure, no obligation</li>
-        <li>I will tell you honestly if I can help</li>
+<section class="payment-section reveal">
+  <div>
+    <h2>Payment by bank transfer</h2>
+    <p>I accept payment by UK bank transfer — straightforward, secure, and fee-free for both of us.</p>
+    <ol class="payment-steps">
+      <li>Book your appointment using the booking options on the consultation page.</li>
+      <li>You will receive a confirmation email with bank transfer details.</li>
+      <li>Transfer the consultation fee within 24 hours of booking.</li>
+      <li>Your appointment is confirmed once payment is received — you will get a final confirmation email.</li>
+    </ol>
+  </div>
+  <div>
+    <div class="bank-box">
+      <h3>Good to know</h3>
+      <ul class="good-to-know">
+        <li>Bank transfer is completely free — no processing fees for you or for me.</li>
+        <li>Transfers typically clear within a few hours for the same bank, or by the next working day.</li>
+        <li>Please use your name and appointment date as the payment reference so I can match it easily.</li>
+        <li>If you have any difficulty with bank transfer, get in touch and we can find an alternative arrangement.</li>
       </ul>
-      <a href={s.calendlyDiscovery} target="_blank" rel="noopener" class="pcard-cta">Book free call</a>
-    </div>
-    <!-- Initial -->
-    <div class="pcard reveal reveal-delay-1">
-      <div set:html={petalMark}></div>
-      <p class="pcard-tag">90 min · online or in person</p>
-      <p class="pcard-name">Initial Consultation</p>
-      <p class="pcard-price">£{d.initialPrice}</p>
-      <p class="pcard-sub">~2.5–3 hrs total work</p>
-      <div class="pcard-divider"></div>
-      <ul class="pcard-includes">
-        <li>Full case history</li>
-        <li>Written herbal protocol within 48hrs</li>
-        <li>Naturopathic guidance</li>
-        <li>Formula design & supplier sourcing</li>
-        <li>Follow-up email support one month</li>
-      </ul>
-      <p class="pcard-sliding">Sliding scale: £{d.initialSlidingScale}</p>
-      <a href="/book" class="pcard-cta">Request consultation</a>
-    </div>
-    <!-- Follow-up -->
-    <div class="pcard reveal reveal-delay-2">
-      <div set:html={petalMark}></div>
-      <p class="pcard-tag">35–40 min · online or in person</p>
-      <p class="pcard-name">Follow-up Consultation</p>
-      <p class="pcard-price">£{d.followupPrice}</p>
-      <p class="pcard-sub">~1 hr total work</p>
-      <div class="pcard-divider"></div>
-      <ul class="pcard-includes">
-        <li>Progress review</li>
-        <li>Protocol adjustment</li>
-        <li>Questions & troubleshooting</li>
-        <li>Updated notes sent after</li>
-      </ul>
-      <a href="/book" class="pcard-cta">Book follow-up</a>
-    </div>
-    <!-- IHM -->
-    <div class="pcard reveal reveal-delay-3">
-      <div set:html={petalMark}></div>
-      <p class="pcard-tag">45 min · in person only</p>
-      <p class="pcard-name">Indian Head Massage</p>
-      <p class="pcard-price">£{d.ihmPrice}</p>
-      <p class="pcard-sub">Ayurvedic bodywork</p>
-      <div class="pcard-divider"></div>
-      <ul class="pcard-includes">
-        <li>Nervous system reset</li>
-        <li>Back · neck · scalp · face</li>
-        <li>Standalone or combined</li>
-      </ul>
-      <a href={s.calendlyIhm} target="_blank" rel="noopener" class="pcard-cta">Book massage</a>
     </div>
   </div>
-
-  <p class="cards-section-title" style="margin-top:3rem;">Bundles</p>
-  <div class="cards-row-bundles">
-    <!-- Standard bundle -->
-    <div class="pcard pcard-bundle reveal">
-      <div set:html={petalMark}></div>
-      <p class="pcard-tag">3 sessions · initial + 2 follow-ups</p>
-      <p class="pcard-name">Initial + 2 Follow-ups</p>
-      <p class="pcard-price">£{d.bundlePrice}</p>
-      <p class="pcard-sub">Therapeutic journey 3–4 months</p>
-      <div class="pcard-divider"></div>
-      <ul class="pcard-includes">
-        <li>Everything in the initial consultation</li>
-        <li>Two follow-ups to track & refine</li>
-        <li>Most effective way to begin</li>
-      </ul>
-      <p class="pcard-sliding">Sliding scale: £{d.bundleSlidingScale}</p>
-      <a href="/book" class="pcard-cta">Request bundle</a>
-    </div>
-    <!-- Featured bundle -->
-    <div class="pcard pcard-bundle featured reveal reveal-delay-1">
-      <p class="recommended-badge">Most recommended</p>
-      <div set:html={petalMarkSage}></div>
-      <p class="pcard-tag">4 follow-up sessions</p>
-      <p class="pcard-name">4 Follow-up Consultations</p>
-      <p class="pcard-price">£{d.followupBundlePrice}</p>
-      <p class="pcard-sub">Therapeutic journey 4–6 months</p>
-      <div class="pcard-divider"></div>
-      <ul class="pcard-includes">
-        <li>Only after an initial consultation</li>
-        <li>Four sessions to track & refine protocol</li>
-        <li>Ideal for complex or chronic conditions</li>
-      </ul>
-      <p class="pcard-sliding">Available to existing clients</p>
-      <a href="/book" class="pcard-cta">Request bundle</a>
-    </div>
-  </div>
-  <p style="font-size:.8rem;color:rgba(247,243,238,.25);margin-top:1rem;font-style:italic;">Bundle consultations to be booked within a year.</p>
 </section>
 
-<!-- CANCELLATION -->
 <section class="cancel-section reveal">
   <h2>Cancellation policy</h2>
   <div class="cancel-grid">
@@ -452,7 +190,6 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
   <p class="cancel-note">{d.cancellationNote}</p>
 </section>
 
-<!-- FAQ -->
 <section class="faq-section reveal">
   <h2>Frequently asked questions</h2>
   {d.faq.map(item => (
@@ -463,12 +200,11 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
   ))}
 </section>
 
-<!-- CTA -->
 <section class="pricing-cta">
   <h2 class="reveal">The first step costs nothing</h2>
   <p class="reveal">Fifteen minutes. No pressure, no commitment. Just an honest conversation about where you are and whether I can help.</p>
   <div class="cta-group reveal">
-    <a href={s.calendlyDiscovery} target="_blank" rel="noopener" class="btn-wp">Book your free discovery call</a>
-    <a href="/therapies" class="btn-w">Explore the therapies first</a>
+    <a href={s.calendlyDiscovery} target="_blank" rel="noopener" class="btn-ep">Book your free discovery call</a>
+    <a href="/book" class="btn-eg">View consultation options</a>
   </div>
 </section>
