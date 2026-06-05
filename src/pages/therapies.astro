@@ -1,3 +1,4 @@
+
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const d = (await import('../data/therapies.json')).default;
@@ -9,7 +10,7 @@ const meta = {
   currentPage: 'therapies',
 };
 
-const icons: Record<string, string> = {
+const icons = {
   hormonal: `<svg viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     <circle cx="34" cy="34" r="32" stroke="rgba(196,208,186,0.28)" stroke-width="0.65" stroke-dasharray="2.5 3.5" stroke-linecap="round"/>
     <circle cx="34" cy="34" r="22" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round" stroke-linejoin="round"/>
@@ -245,5 +246,3 @@ const icons: Record<string, string> = {
   <p class="reveal">The free discovery call exists precisely for this. Fifteen minutes to tell me where you are, what you have already tried, and what you need. I will be honest about whether I think I can help — and if I am not the right fit, I will tell you that too.</p>
   <a href={s.calendlyDiscovery} target="_blank" rel="noopener" class="reveal">Book a free discovery call</a>
 </section>
-
-
