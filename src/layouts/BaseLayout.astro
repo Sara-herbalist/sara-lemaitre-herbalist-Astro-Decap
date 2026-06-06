@@ -3,16 +3,6 @@ import '../styles/global.css';
 const SITE = 'https://www.saralemaitre.com';
 const CALENDLY_DISCOVERY = 'https://calendly.com/sara-lemaitre-herbalist/discovery';
 
-interface Props {
-  title: string;
-  description: string;
-  ogImage?: string;
-  canonical?: string;
-  currentPage?: string;
-  ogType?: string;
-  lang?: string;
-}
-
 const {
   title, description,
   ogImage = `${SITE}/images/og-default.jpg`,
@@ -105,7 +95,7 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
         <span class="logo">Sara Lemaitre</span>
         {lang === 'fr'
           ? <p>Herboriste clinique, naturopathe et ancienne athlète de haut niveau. Spécialisée en santé hormonale, endométriose, SOPK, fatigue chronique et récupération sportive. En ligne et en présentiel. Français &amp; anglais.</p>
-          : <p>Clinical herbalist and naturopath. Specialising in hormonal health, endometriosis, PCOS, chronic fatigue, and performance recovery. Online and in person. English &amp; French.</p>
+          : <p>Clinical herbalist and naturopath. Specialising in hormonal health, endometriosis, PMOS, chronic fatigue, and performance recovery. Online and in person. English &amp; French.</p>
         }
         <div class="footer-memberships">
           <img src="/images/anp-logo.png" alt="ANP member" />
@@ -121,6 +111,7 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
               <li><a href="/fr/therapies">Thérapies</a></li>
               <li><a href="/fr/pricing">Tarifs</a></li>
               <li><a href="/fr/book">Prendre rendez-vous</a></li>
+              <li><a href="/fr/faq">FAQ</a></li>
             </>
           ) : (
             <>
@@ -128,6 +119,7 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
               <li><a href="/therapies">Therapies</a></li>
               <li><a href="/pricing">Pricing</a></li>
               <li><a href="/book">Book a consultation</a></li>
+              <li><a href="/faq">FAQ</a></li>
             </>
           )}
         </ul>
@@ -174,7 +166,7 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
   <script>
     const nav = document.getElementById('nav');
     if (nav) window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
-    function toggleNav(btn: HTMLButtonElement) {
+    function toggleNav(btn) {
       const links = document.getElementById('nav-links');
       const exp = btn.getAttribute('aria-expanded') === 'true';
       btn.setAttribute('aria-expanded', String(!exp));
@@ -184,7 +176,7 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
     document.addEventListener('click', (e) => {
       const links = document.getElementById('nav-links');
       const btn = document.querySelector('.hamburger');
-      if (links && btn && !links.contains(e.target as Node) && !btn.contains(e.target as Node)) {
+      if (links && btn && !links.contains(e.target) && !btn.contains(e.target)) {
         links.classList.remove('open');
         btn.setAttribute('aria-expanded', 'false');
       }
@@ -197,4 +189,3 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
   </script>
 </body>
 </html>
-
