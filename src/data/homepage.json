@@ -1,50 +1,14 @@
 {
-  "heroEyebrow": "Clinical herbalist · Naturopath · Former elite athlete",
+  "heroEyebrow": "Clinical Herbalist · Naturopath · Former elite athlete",
   "heroCredentials": "Dip. Herbal Medicine · Dip. Naturopathy · Indian Head Massage Certificate · TCM Dispensary Training",
   "heroBody": "You have probably already explained your symptoms to someone who wasn't really listening. You may have left appointments feeling smaller than when you arrived. You may have started to wonder if you are the problem.\n\nYou are not the problem.\n\nI am Sara. I am a clinical herbalist and naturopath. I have also been that patient — the one who was told to push through, to stress less, to be more realistic. I know what it costs to keep searching when the system keeps sending you home empty-handed.\n\nThis practice exists because I found another way for myself, for my family and friends. And I want to help you find yours.",
   "heroPortrait": "/images/sara-portrait.jpg",
   "practiceTitle": "Plant medicine rooted in lived experience",
   "practiceBody1": "Plant medicine found me when I had run out of other options. Seven years of specialists, hormonal suppressants, surgeries, and eventually a build up of increased doses of strong painkillers just to numb the pain — and still I was barely able to function on most days. When I finally started working with plants, it was my last cry for help. My journey to a better health was slow and full of mistakes. But for the first time in years, something was actually working.\n\nThat experience lives in every consultation I offer. I know what it is to search for answers your body already has but you can't understand. I know what it means when someone finally takes the time to hear you and let you make decisions for yourself.",
-  "practiceBody2": "I started on myself. Then quickly after, my family became my first clients — my mother's arthritis and chronic pain, my father's recurring respiratory weaknesses, my sister's insomnia and anxiety, my grandmothers navigating cancer support and chronic inflammation. I made formulations for each of them, adapted each one to the person rather than just the condition, adjusted when something wasn't landing. I watched people I loved get better. Not dramatically. Not overnight. Gradually, in the way that real healing moves, almost imperceptibly at first, and then undeniably. That was when I knew I needed to train properly.",
+  "practiceBody2": "I started on myself. Then quickly after, my family became my first clients. I watched people I loved get better. That was when I knew I needed to train properly.",
   "practiceQuote": "Coming back into a body that has felt like a battlefield is not heroic resilience. It is small, daily work. It asks for patience, and for the willingness to give yourself grace in the process.",
-  "practicePhoto": "/images/sara-practice.jpg",
-  "whoTitle": "Who I work with, and why",
-  "whoDesc": "My practice is built around the people I understand most deeply, because I have been them.\n\nWomen navigating hormonal conditions that conventional medicine keeps minimising. Athletes whose bodies have stopped performing the way they used to. People who have been running on empty for so long they have forgotten what it felt like to have reserves.\n\nIf you recognise yourself in any of that, you are in the right place.",
-  "whoCards": [
-    {
-      "number": "01",
-      "title": "Women with hormonal conditions",
-      "desc": "Endometriosis, PMOS, chronic fatigue, perimenopause, fertility, menstrual irregularity. I have lived these conditions. I have also spent two years treating them in clinic.",
-      "tags": [
-        "Endometriosis",
-        "PMOS",
-        "Perimenopause",
-        "Chronic fatigue"
-      ]
-    },
-    {
-      "number": "02",
-      "title": "Athletes & active people",
-      "desc": "I trained at national level. I understand performance, recovery, overtraining, and the very specific grief of a body that won't cooperate. I have practice with musculoskeletal trauma and can accompany you in your recovery.",
-      "tags": [
-        "Performance fatigue",
-        "Recovery",
-        "Adaptogens",
-        "Injury support"
-      ]
-    },
-    {
-      "number": "03",
-      "title": "People exhausted by burnout",
-      "desc": "Stress, nervous system dysregulation, adrenal fatigue, insomnia, the quiet erosion of a life run on empty. Herbal medicine and naturopathy have deep tools for this while Indian head massage offers an immediate relaxation.",
-      "tags": [
-        "Burnout",
-        "Stress",
-        "Sleep",
-        "Nervous system"
-      ]
-    }
-  ],
+  "practicePhoto": "/images/sara-headshot.jpg",
+ 
   "offerIntro": "Every person who comes to me has already tried something. They have seen doctors, changed their diet, pushed through, rested more, worried quietly. They have not been lazy or dramatic or impatient. They have simply been working with tools that were not built for the complexity of what they are carrying.\n\nWhat I offer is a different kind of attention, to the whole of you, not just the presenting symptom.",
   "offerCards": [
     {
@@ -84,14 +48,50 @@
       "href": "/therapies#ihm"
     }
   ],
+   "whoTitle": "Who I work with, and why",
+  "whoDesc": "My practice is built around the people I understand most deeply, because I have been them.\n\nWomen navigating hormonal conditions that conventional medicine keeps minimising. Athletes whose bodies have stopped performing the way they used to. People who have been running on empty for so long they have forgotten what it felt like to have reserves.\n\nIf you recognise yourself in any of that, you are in the right place.",
+  "whoCards": [
+    {
+      "number": "01",
+      "title": "Women with hormonal conditions",
+      "desc": "Endometriosis, PMOS, chronic fatigue, perimenopause, fertility, menstrual irregularity. I have lived these conditions. I have also spent two years treating them in clinic.",
+      "tags": [
+        "Endometriosis",
+        "PMOS",
+        "Perimenopause",
+        "Chronic fatigue"
+      ]
+    },
+    {
+      "number": "02",
+      "title": "Athletes & active people",
+      "desc": "I trained at national level. I understand performance, recovery, overtraining, and the very specific grief of a body that won't cooperate. I have practice with musculoskeletal trauma and can accompany you in your recovery.",
+      "tags": [
+        "Performance fatigue",
+        "Recovery",
+        "Adaptogens",
+        "Injury support"
+      ]
+    },
+    {
+      "number": "03",
+      "title": "People exhausted by burnout",
+      "desc": "Stress, nervous system dysregulation, adrenal fatigue, insomnia, the quiet erosion of a life run on empty. Herbal medicine and naturopathy have deep tools for this while Indian head massage offers an immediate relaxation.",
+      "tags": [
+        "Burnout",
+        "Stress",
+        "Sleep",
+        "Nervous system"
+      ]
+    }
+  ],
   "storyPullTitle": "The story behind the practice",
   "storyPullH2line1": "From elite athlete",
   "storyPullH2line2": "to herbalist —",
   "storyPullH2line3": "and everything",
   "storyPullH2line4": "in between",
-  "storyPullBody": "An athletic career cut short. Years of being dismissed by specialists. A pandemic that became, unexpectedly, the beginning of something. A family who became my first patients. And a slow, imperfect, deeply personal discovery that plant medicine could do what nothing else had managed.",
+  "storyPullBody": "An athletic career cut short. Years of being dismissed by specialists. A pandemic that became, unexpectedly, the beginning of something new. A family who became my first patients. And a slow, imperfect, deeply personal discovery that plant medicine could do what nothing else had managed.",
   "storyPullQuote": "I was not living. I was surviving. Until I stopped waiting for someone else to give me permission to heal.",
-  "storyPullPhoto": "/images/sara-story.jpg",
   "processTitle": "From first conversation to lasting change",
   "processSteps": [
     {
