@@ -1,6 +1,7 @@
+
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-const d = (await import('../data/pricing.json')).default;
+const d = (await import('../data/faq.json')).default;
 const s = (await import('../data/settings.json')).default;
 const meta = {
   title: 'FAQ | Sara Lemaitre — Clinical Herbalist & Naturopath',
@@ -85,7 +86,7 @@ const meta = {
 </section>
 
 <section class="faq-body">
-  {d.faq.map((item, i) => (
+  {d.items.map((item, i) => (
     <div class={`faq-item reveal${i > 0 ? ' reveal-delay-1' : ''}`}>
       <p class="faq-q">{item.q}</p>
       <p class="faq-a">{item.a}</p>
@@ -101,4 +102,3 @@ const meta = {
     <a href="/book" class="btn-g">View consultation options</a>
   </div>
 </section>
-
