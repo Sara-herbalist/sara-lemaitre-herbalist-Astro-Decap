@@ -280,7 +280,8 @@ const offerIcons = {
 
 /* ── Who I work with ──────────────────────────────────── */
 .who { padding: 8rem 5rem; background: var(--warm-white); }
-.who-header { max-width: 640px; margin: 0 auto 5rem; text-align: center; }
+.who-header { max-width: 640px; margin-bottom: 5rem; text-align: left;
+}
 .who-header h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 1.5rem; }
 .who-header p { color: var(--muted); }
 .who-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
@@ -574,6 +575,27 @@ const offerIcons = {
 <!-- SECTION DIVIDER -->
 <div class="section-divider" aria-hidden="true" set:html={dividerSVG}></div>
 
+<!-- WHAT I OFFER -->
+<section class="offer">
+  <div class="offer-header reveal">
+    <h2>What I offer</h2>
+    {d.offerIntro.split('\n\n').map(p => <p>{p}</p>)}
+  </div>
+  <div class="offer-grid">
+    {d.offerCards.map((card, i) => (
+      <a href={card.href} class={`offer-card reveal${i > 0 ? ` reveal-delay-${i > 3 ? 3 : i}` : ''}`}>
+        <div class="offer-icon" set:html={offerIcons[card.id] || offerIcons.herbal}></div>
+        <h3>{card.title}</h3>
+        <p>{card.desc}</p>
+        <span class="read-more">Read more</span>
+      </a>
+    ))}
+  </div>
+  <div class="offer-footer">
+    <a href="/therapies">View all therapies in full →</a>
+  </div>
+</section>
+
 <!-- WHO I WORK WITH -->
 <section class="who">
   <div class="who-header reveal">
@@ -593,27 +615,6 @@ const offerIcons = {
         </div>
       </div>
     ))}
-  </div>
-</section>
-
-<!-- WHAT I OFFER -->
-<section class="offer">
-  <div class="offer-header reveal">
-    <h2>What I offer</h2>
-    {d.offerIntro.split('\n\n').map(p => <p>{p}</p>)}
-  </div>
-  <div class="offer-grid">
-    {d.offerCards.map((card, i) => (
-      <a href={card.href} class={`offer-card reveal${i > 0 ? ` reveal-delay-${i > 3 ? 3 : i}` : ''}`}>
-        <div class="offer-icon" set:html={offerIcons[card.id] || offerIcons.herbal}></div>
-        <h3>{card.title}</h3>
-        <p>{card.desc}</p>
-        <span class="read-more">Read more</span>
-      </a>
-    ))}
-  </div>
-  <div class="offer-footer">
-    <a href="/therapies">View all therapies in full →</a>
   </div>
 </section>
 
