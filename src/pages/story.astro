@@ -346,6 +346,13 @@ const meta = {
     <h2>{d.s2h2}</h2>
     {d.s2body.split('\n\n').map(p => <p>{p}</p>)}
   </div>
+  <div class="story-photo">
+    {d.s2photo ? (
+      <div class="story-photo-frame">
+        <img src={d.s2photo} alt="Sara Lemaitre" loading="lazy" />
+      </div>
+    ) : null}
+  </div>
 </section>
 
 <!-- SECTION 3: The discovery -->
