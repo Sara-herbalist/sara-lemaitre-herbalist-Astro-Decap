@@ -278,3 +278,16 @@ footer {
 @media (max-width: 640px) {
   .footer-grid { grid-template-columns: 1fr; }
 }
+.footer-memberships {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1.5rem;
+  opacity: 0.5;
+  filter: grayscale(1) brightness(3);
+}
+
+.footer-memberships img {
+  height: 32px;
+  width: auto;
+}
