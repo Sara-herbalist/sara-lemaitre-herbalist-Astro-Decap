@@ -284,7 +284,7 @@ footer {
   align-items: center;
   margin-top: 1.5rem;
 }
-footer-memberships img {
+.footer-memberships img {
   height: 32px;
   width: auto;
   background: white;
