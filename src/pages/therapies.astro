@@ -76,9 +76,9 @@ const icons = {
     <circle cx="34" cy="34" r="20" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
     <circle cx="34" cy="34" r="10" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
     <circle cx="34" cy="34" r="2.5" fill="rgba(196,208,186,0.82)"/>
-    <line x1="34" y1="12" x2="34" y2="6"  stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
+    <line x1="34" y1="12" x2="34" y2="6" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
     <line x1="34" y1="56" x2="34" y2="62" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
-    <line x1="12" y1="34" x2="6"  y2="34" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
+    <line x1="12" y1="34" x2="6" y2="34" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
     <line x1="56" y1="34" x2="62" y2="34" stroke="rgba(196,208,186,0.82)" stroke-width="0.9" stroke-linecap="round"/>
     <line x1="18" y1="18" x2="22" y2="22" stroke="rgba(196,208,186,0.4)" stroke-width="0.7" stroke-linecap="round"/>
     <line x1="50" y1="18" x2="46" y2="22" stroke="rgba(196,208,186,0.4)" stroke-width="0.7" stroke-linecap="round"/>
@@ -110,7 +110,6 @@ const icons = {
   align-items: center;
   gap: 4rem;
 }
-.th-hero-text { }
 .th-hero-logo {
   background: var(--sage-pale);
   display: flex;
@@ -120,7 +119,6 @@ const icons = {
   min-height: 400px;
 }
 .th-hero-logo svg { width: min(320px, 80%); height: auto; }
-}
 .th-hero .eyebrow { color: var(--sage-mid); margin-bottom: 1.5rem; }
 .th-hero h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
@@ -135,7 +133,6 @@ const icons = {
   font-size: 1.0625rem;
   max-width: 640px;
 }
-
 .therapy-block {
   padding: 7rem 5rem;
   display: grid;
@@ -151,7 +148,6 @@ const icons = {
 .therapy-block:nth-child(even) .therapy-meta { order: 2; }
 .therapy-block:nth-child(even) .therapy-content { order: 1; }
 .therapy-block:nth-child(odd) { background: var(--warm-white); }
-
 .therapy-icon { width: 68px; height: 68px; margin-bottom: 1.5rem; }
 .therapy-label {
   font-size: .75rem; letter-spacing: .22em;
@@ -174,25 +170,27 @@ const icons = {
 .btn-enquire {
   display: inline-block; padding: .85rem 2rem;
   border: 1px solid var(--bark); color: var(--bark);
-  font-size: .8125rem; letter-spacing: .14em; text-transform: uppercase;
+  font-size: .9375rem; letter-spacing: .14em; text-transform: uppercase;
   transition: all .22s;
 }
 .btn-enquire:hover { background: var(--bark); color: var(--warm-white); }
 .therapy-content p { color: var(--muted); line-height: 1.95; margin-bottom: 1.4rem; font-size: 1.0375rem; }
-
 .th-cta { padding: 8rem 5rem; background: var(--sage-dark); text-align: center; }
 .th-cta h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--cream); margin-bottom: 1rem; }
-.th-cta p { color: rgba(247,243,238,.6); margin-bottom: 2.5rem; max-width: 500px; margin-left: auto; margin-right: auto; }
+.th-cta p { color: rgba(247,243,238,.6); margin-bottom: 2.5rem; max-width: 500px; margin-left: auto; margin-right: auto; font-size: 1rem; }
 .th-cta a {
   display: inline-block; padding: 1.1rem 3rem;
   background: var(--bark); color: var(--cream);
-  font-size: .875rem; letter-spacing: .18em; text-transform: uppercase;
+  font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase;
   transition: background .22s;
 }
 .th-cta a:hover { background: var(--bark-light); }
-
 @media (max-width: 1024px) {
-  .th-hero { padding: 8rem 2.5rem 5rem; }
+  .th-hero {
+    grid-template-columns: 1fr;
+    padding: 8rem 2.5rem 0;
+  }
+  .th-hero-logo { min-height: 260px; }
   .therapy-block, .therapy-block:nth-child(even) {
     grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2.5rem;
   }
@@ -203,9 +201,28 @@ const icons = {
 </style>
 
 <section class="th-hero">
-  <p class="eyebrow">The therapies</p>
-  <h1>{d.pageTitle}</h1>
-  {d.pageDesc.split('\n\n').map(p => <p class="th-hero-intro">{p}</p>)}
+  <div class="th-hero-text">
+    <p class="eyebrow">The therapies</p>
+    <h1>{d.pageTitle}</h1>
+    {d.pageDesc.split('\n\n').map(p => <p class="th-hero-intro">{p}</p>)}
+  </div>
+  <div class="th-hero-logo">
+    <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="210" cy="210" r="200" fill="none" stroke="#9BAE8E" stroke-width="1.1" stroke-dasharray="5 9" opacity="0.45"/>
+      <circle cx="210" cy="210" r="164" fill="none" stroke="#9BAE8E" stroke-width="0.9" stroke-dasharray="4 7" opacity="0.35"/>
+      <circle cx="210" cy="210" r="126" fill="none" stroke="#7A8C6E" stroke-width="1.2"/>
+      <path d="M210 84 C238 132 238 172 210 210 C182 172 182 132 210 84" fill="rgba(196,208,186,0.28)" stroke="#5C7A52" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M210 336 C182 288 182 248 210 210 C238 248 238 288 210 336" fill="rgba(196,208,186,0.28)" stroke="#5C7A52" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M84 210 C132 182 172 182 210 210 C172 238 132 238 84 210" fill="rgba(196,208,186,0.28)" stroke="#5C7A52" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M336 210 C288 238 248 238 210 210 C248 182 288 182 336 210" fill="rgba(196,208,186,0.28)" stroke="#5C7A52" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M121 121 C158 148 172 172 210 210 C172 172 148 158 121 121" fill="rgba(196,208,186,0.22)" stroke="#5C7A52" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M210 210 C248 248 262 272 299 299 C272 262 248 248 210 210" fill="rgba(196,208,186,0.22)" stroke="#5C7A52" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M299 121 C272 158 248 172 210 210 C248 172 272 148 299 121" fill="rgba(196,208,186,0.22)" stroke="#5C7A52" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M210 210 C172 248 148 262 121 299 C158 272 172 248 210 210" fill="rgba(196,208,186,0.22)" stroke="#5C7A52" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="210" cy="210" r="16" fill="none" stroke="#5C7A52" stroke-width="1.4"/>
+      <circle cx="210" cy="210" r="5.5" fill="#5C7A52"/>
+    </svg>
+  </div>
 </section>
 
 {d.therapyBlocks.map((therapy, i) => (
