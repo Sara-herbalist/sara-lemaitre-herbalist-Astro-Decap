@@ -284,8 +284,10 @@ footer {
   align-items: center;
   margin-top: 1.5rem;
 }
-
-.footer-memberships img {
+footer-memberships img {
   height: 32px;
   width: auto;
+  background: white;
+  padding: 4px 8px;
+  border-radius: 4px;
 }
