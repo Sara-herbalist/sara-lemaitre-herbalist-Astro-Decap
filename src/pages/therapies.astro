@@ -103,21 +103,27 @@ const icons = {
 <BaseLayout {...meta}>
 <style>
 .th-hero {
-  padding: 10rem 5rem 7rem;
   background: #3D3229;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 4rem;
+  align-items: stretch;
+  gap: 0;
+  min-height: 100vh;
+}
+.th-hero-text {
+  padding: 10rem 5rem 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .th-hero-logo {
   background: var(--sage-pale);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%;
-  min-height: 400px;
 }
+.th-hero-logo svg { width: min(380px, 80%); height: auto; }
+
 .th-hero-logo svg { width: min(320px, 80%); height: auto; }
 .th-hero .eyebrow { color: var(--sage-mid); margin-bottom: 1.5rem; }
 .th-hero h1 {
@@ -188,9 +194,11 @@ const icons = {
 @media (max-width: 1024px) {
   .th-hero {
     grid-template-columns: 1fr;
-    padding: 8rem 2.5rem 0;
+    min-height: auto;
   }
-  .th-hero-logo { min-height: 260px; }
+  .th-hero-text { padding: 8rem 2.5rem 4rem; }
+  .th-hero-logo { min-height: 60vw; }
+}
   .therapy-block, .therapy-block:nth-child(even) {
     grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2.5rem;
   }
