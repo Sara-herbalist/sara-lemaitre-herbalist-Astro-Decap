@@ -123,8 +123,6 @@ const icons = {
   justify-content: center;
 }
 .th-hero-logo svg { width: min(380px, 80%); height: auto; }
-
-.th-hero-logo svg { width: min(320px, 80%); height: auto; }
 .th-hero .eyebrow { color: var(--sage-mid); margin-bottom: 1.5rem; }
 .th-hero h1 {
   font-size: clamp(2.5rem, 5vw, 4rem);
@@ -187,18 +185,12 @@ const icons = {
 }
 .th-cta a:hover { background: var(--bark-light); }
 @media (max-width: 1024px) {
-  .th-hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
+  .th-hero { grid-template-columns: 1fr; min-height: auto; }
   .th-hero-text { padding: 8rem 2.5rem 4rem; }
   .th-hero-logo { min-height: 60vw; }
-}
-  .therapy-block, .therapy-block:nth-child(even) {
+  .therapy-block {
     grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2.5rem;
   }
-  .therapy-block:nth-child(even) .therapy-meta,
-  .therapy-block:nth-child(even) .therapy-content { order: unset; }
   .th-cta { padding: 5rem 2.5rem; }
 }
 </style>
