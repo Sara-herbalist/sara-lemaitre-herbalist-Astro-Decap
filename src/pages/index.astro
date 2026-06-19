@@ -503,7 +503,7 @@ const offerIcons = {
     <div class="scroll-hint" aria-hidden="true">Scroll</div>
   </div>
   <div class="hero-right">
-    {d.heroPortrait && d.heroPortrait !== '/images/who-practitioner-en.png' ? (
+    {d.heroPortrait ? (
       <img src={d.heroPortrait} alt="Sara Lemaitre — Clinical Herbalist & Naturopath" class="hero-photo" />
     ) : (
       <div class="hero-botanical">
@@ -559,7 +559,7 @@ const offerIcons = {
     <a href="/story" class="read-more">Read the full story</a>
   </div>
   <div class="practice-visual">
-    {d.practicePhoto && d.practicePhoto !== '/images/sara-practice.jpg' && (
+    {d.practicePhoto && (
       <div class="practice-photo">
         <img src={d.practicePhoto} alt="Sara Lemaitre in practice" loading="lazy" />
       </div>
