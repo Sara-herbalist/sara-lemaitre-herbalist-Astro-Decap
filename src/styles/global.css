@@ -26,7 +26,7 @@ body {
   font-family: var(--font-sans);
   font-size: 1.0625rem;
   font-weight: 300;
-  line-height: 1.85;
+  line-height: 1.9;
   overflow-x: hidden;
 }
 
@@ -43,8 +43,8 @@ img { display: block; max-width: 100%; }
 
 /* ── Utilities ──────────────────────────────────────────── */
 .eyebrow {
-  font-size: .75rem;
-  letter-spacing: .22em;
+  font-size: .8125rem;
+  letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--sage-text);
   margin-bottom: 1rem;
@@ -120,8 +120,8 @@ img { display: block; max-width: 100%; }
   margin-left: auto;
 }
 .nav-links a {
-  font-size: .8125rem;
-  letter-spacing: .14em;
+  font-size: .9375rem;
+  letter-spacing: .12em;
   text-transform: uppercase;
   color: var(--muted);
   transition: color .2s;
@@ -130,23 +130,23 @@ img { display: block; max-width: 100%; }
 .nav-links a[aria-current="page"] { color: var(--charcoal); }
 .nav-book {
   display: inline-block;
-  padding: .65rem 1.5rem;
+  padding: .75rem 1.5rem;
   border: 1px solid var(--bark);
   color: var(--bark);
-  font-size: .8125rem;
-  letter-spacing: .14em;
+  font-size: .9375rem;
+  letter-spacing: .12em;
   text-transform: uppercase;
   transition: all .22s;
   flex-shrink: 0;
 }
 .nav-book:hover { background: var(--bark); color: var(--warm-white); }
 .lang-toggle {
-  font-size: .75rem;
-  letter-spacing: .18em;
+  font-size: .8125rem;
+  letter-spacing: .16em;
   text-transform: uppercase;
   color: var(--muted);
   border: 1px solid var(--sage-light);
-  padding: .4rem .75rem;
+  padding: .45rem .85rem;
   transition: all .2s;
 }
 .lang-toggle:hover { border-color: var(--bark); color: var(--bark); }
@@ -171,7 +171,7 @@ img { display: block; max-width: 100%; }
 /* ── Footer ─────────────────────────────────────────────── */
 footer {
   background: var(--charcoal);
-  color: rgba(247,243,238,.55);
+  color: rgba(247,243,238,.6);
   padding: 5rem 5rem 3rem;
 }
 .footer-grid {
@@ -188,24 +188,35 @@ footer {
   margin-bottom: 1rem;
   letter-spacing: .06em;
 }
-.footer-brand p { font-size: .875rem; line-height: 1.7; }
+.footer-brand p {
+  font-size: 1rem;
+  line-height: 1.75;
+}
 .footer-col-title {
-  font-size: .7rem;
-  letter-spacing: .2em;
+  font-size: .75rem;
+  letter-spacing: .18em;
   text-transform: uppercase;
   color: rgba(247,243,238,.35);
   margin-bottom: 1rem;
 }
-.footer-links { list-style: none; display: flex; flex-direction: column; gap: .6rem; }
-.footer-links a { font-size: .875rem; transition: color .2s; }
-.footer-links a:hover { color: rgba(247,243,238,.85); }
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+.footer-links a {
+  font-size: .9375rem;
+  transition: color .2s;
+}
+.footer-links a:hover { color: rgba(247,243,238,.9); }
 .footer-bottom {
   padding-top: 2rem;
   border-top: 1px solid rgba(247,243,238,.08);
   display: flex;
   flex-direction: column;
   gap: .4rem;
-  font-size: .8125rem;
+  font-size: .875rem;
 }
 .footer-memberships {
   display: flex;
@@ -267,5 +278,3 @@ footer {
 @media (max-width: 640px) {
   .footer-grid { grid-template-columns: 1fr; }
 }
-
-
