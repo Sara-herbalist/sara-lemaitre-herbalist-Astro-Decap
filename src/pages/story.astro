@@ -64,7 +64,6 @@ const meta = {
   gap: 6rem;
   align-items: start;
 }
-}
 .story-section.full-width {
   grid-template-columns: 1fr;
   max-width: 820px;
@@ -310,7 +309,7 @@ const meta = {
     </blockquote>
   </div>
   <div class="reveal reveal-delay-1">
-    {d.heroPhoto && d.heroPhoto !== '/images/sara-athlete.jpg' ? (
+    {d.heroPhoto ? (
       <div class="hero-photo-frame">
         <img src={d.heroPhoto} alt="Sara Lemaitre — athlete" loading="eager" />
       </div>
@@ -328,7 +327,7 @@ const meta = {
     <blockquote><p>{d.s1quote}</p></blockquote>
   </div>
   <div class="story-photo">
-    {d.s1photo && d.s1photo !== '/images/sara-swimming.jpg' ? (
+    {d.s1photo ? (
       <>
         <div class="story-photo-frame">
           <img src={d.s1photo} alt="Sara Lemaitre training" loading="lazy" />
@@ -360,7 +359,7 @@ const meta = {
     {d.s3family.split('\n\n').map(p => <p>{p}</p>)}
   </div>
   <div class="story-photo">
-    {d.s3photo && d.s3photo !== '/images/sara-family.jpg' ? (
+    {d.s3photo ? (
       <div class="story-photo-frame">
         <img src={d.s3photo} alt="Sara Lemaitre" loading="lazy" />
       </div>
@@ -376,7 +375,13 @@ const meta = {
     <h2>{d.s4h2}</h2>
     {d.s4body.split('\n\n').map(p => <p>{p}</p>)}
   </div>
-  <div class="story-photo"></div>
+  <div class="story-photo">
+    {d.s4photo ? (
+      <div class="story-photo-frame">
+        <img src={d.s4photo} alt="Sara Lemaitre in clinic" loading="lazy" />
+      </div>
+    ) : null}
+  </div>
 </section>
 
 <!-- SECTION 5: The magnolia -->
@@ -388,7 +393,7 @@ const meta = {
     {d.magnoliaBody.split('\n\n').map(p => <p>{p}</p>)}
   </div>
   <div>
-    {d.magnoliaPhoto && d.magnoliaPhoto !== '/images/magnolia.jpg' ? (
+    {d.magnoliaPhoto ? (
       <div class="magnolia-photo-frame">
         <img src={d.magnoliaPhoto} alt="The magnolia tree" loading="lazy" />
       </div>
@@ -422,3 +427,4 @@ const meta = {
     </div>
   </div>
 </section>
+</BaseLayout>
