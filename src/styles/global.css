@@ -283,8 +283,6 @@ footer {
   gap: 1rem;
   align-items: center;
   margin-top: 1.5rem;
-  opacity: 0.5;
-  filter: grayscale(1) brightness(3);
 }
 
 .footer-memberships img {
