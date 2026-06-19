@@ -223,11 +223,6 @@ const icons = {
 {d.therapyBlocks.map((therapy, i) => (
   <section class="therapy-block reveal" id={therapy.id}>
     <div class="therapy-meta">
-      {therapy.photo && !therapy.photo.includes('/images/') === false && therapy.photo !== `/images/${therapy.id}.jpg` && therapy.photo !== `/images/${therapy.id}-health.jpg` && (
-        <div class="therapy-photo">
-          <img src={therapy.photo} alt={therapy.title} loading="lazy" />
-        </div>
-      )}
       <div class="therapy-icon" set:html={icons[therapy.id] || icons.herbal}></div>
       <p class="therapy-label">{therapy.label}</p>
       <h2>{therapy.title}</h2>
