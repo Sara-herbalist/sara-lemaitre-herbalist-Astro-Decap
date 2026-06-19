@@ -218,15 +218,6 @@ footer {
   gap: .4rem;
   font-size: .875rem;
 }
-.footer-memberships {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  margin-top: 1rem;
-  opacity: .5;
-  filter: grayscale(1) brightness(2);
-}
-.footer-memberships img { height: 28px; width: auto; }
 
 /* ── Reveal animation ───────────────────────────────────── */
 .reveal {
