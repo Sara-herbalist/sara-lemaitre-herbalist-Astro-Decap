@@ -3,22 +3,6 @@
   "pageDesc": "Each therapy I offer draws on distinct but complementary traditions. I combine them according to what your situation requires. Not one framework applied to everyone. Not a protocol matched to a diagnosis. A response to you, specifically.\n\nEvery person who comes to me has already tried something. They have seen doctors, changed their diet, pushed through, rested more, worried quietly. They have not been lazy or dramatic or impatient. They have simply been working with tools that were not built for the complexity of what they are carrying.\n\nWhat I offer is a different kind of attention. To the whole of you, not just the presenting symptom.\n\nA consultation with me is a conversation. We go deep into your medical history, your patterns, your daily life. I am not looking for a diagnosis to match a protocol. I am trying to understand you specifically.\n\nThis is slow work. It asks for patience and for giving yourself grace in the process. Coming back into a body that has felt like a battlefield is not heroic resilience — it is small, daily, often unglamorous commitment. But when you start to notice the shift, it is deeply, lastingly yours.",
   "therapyBlocks": [
     {
-      "id": "hormonal",
-      "label": "Where my practice began",
-      "title": "Hormonal Health and Chronic Fatigue",
-      "duration": "90 min initial · 35–40 min follow-up",
-      "format": "Online or in person",
-      "price": "",
-      "calendlyUrl": "",
-      "bookLabel": "Request an initial consultation",
-      "paragraphs": [
-        "This is where my practice began — not in a clinic, but in my own body.",
-        "For seven years I navigated endometriosis, PMOS, immune weakness and chronic fatigue through a system that kept sending me home without answers. I was an elite athlete fainting at training, on a daily preventative dose of strong painkillers, told repeatedly that the problem was my resilience — or lack thereof — rather than what was actually happening in my body. When I finally had a diagnosis, the answer was: there is no cure. I had to find another way.",
-        "What I know from that experience, and from 500 hours of student clinic working with women navigating the same conditions, is that hormonal illness is not one thing. Your endometriosis is not the same as someone else's endometriosis. Your chronic fatigue has its own particular shape, its own triggers, its own relationship to your sleep and your stress and your history. A protocol that doesn't account for that specificity will only ever scratch the surface."
-      ],
-      "photo": ""
-    },
-    {
       "id": "herbal",
       "label": "Foundation therapy",
       "title": "Herbal Medicine",
@@ -28,9 +12,11 @@
       "calendlyUrl": "",
       "bookLabel": "Request an initial consultation",
       "paragraphs": [
+        "Herbal medicine is one of the oldest forms of medicine on earth — and one of the most widely used. Around 80% of the world's population still relies on plant-based medicine as a primary form of healthcare. It is not alternative. It is ancestral.",
+        "As a clinical herbalist, I use plants in a range of forms — tinctures, teas, powders, capsules, and topical preparations — to support the body in doing what it already knows how to do: heal, regulate, restore. My training spans Western Herbalism, Traditional Chinese Medicine, and Ayurvedic study. I draw on whichever tradition serves you best, sometimes all three. I also bring the French phytotherapy tradition into everything I do — a relationship with plant medicine woven into my culture long before it became my profession.",
         "Plant medicine is the foundation of everything I do. Each formulation I make is built specifically for you: your body, your history, your particular version of what you are experiencing. Not a standard protocol for your diagnosis. Yours.",
-        "My training spans Western Herbalism, Traditional Chinese Medicine, and Ayurvedic study. I draw on whichever tradition serves you best, sometimes all three. The pandemic gave me my first real laboratory: myself, then my mother's arthritis and chronic pain, my grandmothers' chronic inflammation and breast cancer support, my father's recurring respiratory weaknesses, my sister's stress and insomnia. I watched the same approach fail when applied rigidly and succeed when adapted. That is still how I work.",
-        "Each initial consultation results in a personalised written protocol, a herbal formulation designed for you, naturopathic recommendations, and where necessary, guidance on sourcing quality ingredients. You leave understanding what you are taking and why."
+        "Each initial consultation results in a personalised written protocol, a herbal formulation designed for you, naturopathic recommendations, and where necessary, guidance on sourcing quality ingredients. You leave understanding what you are taking and why.",
+        "Herbal medicine can help with a wide range of conditions, including hormonal imbalances, endometriosis, PCOS and PMOS, perimenopause, chronic fatigue and burnout, digestive issues, skin conditions such as acne, eczema and psoriasis, anxiety and stress, sleep difficulties, immune weakness, autoimmune conditions, blood sugar imbalances, allergies and hayfever, fertility and pre-conception support, and recovery from injury or overtraining. If your condition is not on this list, it does not mean I cannot help — it means we should talk first."
       ],
       "photo": ""
     },
@@ -62,6 +48,22 @@
         "Before I formulate anything, I need to understand your constitution — not just your symptoms, but the underlying patterns that shape how your body responds, what it tends toward, where it holds tension and weakness.",
         "Iridology, tongue reading, and pulse reading (in person) are the tools I use to build that picture alongside your full case history. Each one reveals something different — the iris maps constitutional tendencies, the tongue reflects the current state of your digestive and immune systems, the pulse tells me about your energy and organ function in ways that a questionnaire cannot.",
         "None of these replace your story. They deepen it. Together with everything you tell me, they allow me to formulate something that is genuinely specific to you — your body, your constitution, your particular version of what you are experiencing. This is why my initial consultations take 90 minutes."
+      ],
+      "photo": ""
+    },
+    {
+      "id": "hormonal",
+      "label": "Where my practice began",
+      "title": "Hormonal Health and Chronic Fatigue",
+      "duration": "90 min initial · 35–40 min follow-up",
+      "format": "Online or in person",
+      "price": "",
+      "calendlyUrl": "",
+      "bookLabel": "Request an initial consultation",
+      "paragraphs": [
+        "This is where my practice began — not in a clinic, but in my own body.",
+        "For seven years I navigated endometriosis, PMOS, immune weakness and chronic fatigue through a system that kept sending me home without answers. I was an elite athlete fainting at training, on a daily preventative dose of strong painkillers, told repeatedly that the problem was my resilience — or lack thereof — rather than what was actually happening in my body. When I finally had a diagnosis, the answer was: there is no cure. I had to find another way.",
+        "What I know from that experience, and from 500 hours of student clinic working with women navigating the same conditions, is that hormonal illness is not one thing. Your endometriosis is not the same as someone else's endometriosis. Your chronic fatigue has its own particular shape, its own triggers, its own relationship to your sleep and your stress and your history. A protocol that doesn't account for that specificity will only ever scratch the surface."
       ],
       "photo": ""
     },
@@ -98,4 +100,3 @@
     }
   ]
 }
-
