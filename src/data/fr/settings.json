@@ -1,11 +1,9 @@
 {
-  "calendlyUrl": "https://calendly.com/sara-lemaitre-herbalist",
+  "calendlyDiscovery": "https://calendly.com/sara-lemaitre-herbalist",
+  "calendlyIhm": "",
   "instagramUrl": "https://www.instagram.com/sara_lemaitre_herbalist/",
   "linkedinUrl": "https://www.linkedin.com/in/saralemaitre01/",
   "email": "sara.lemaitre.herbalist@hotmail.com",
-  "calendlyDiscovery": "https://calendly.com/sara-lemaitre-herbalist/30min",
-  "calendlyInitial": "",
-  "calendlyFollowup": "",
-  "calendlyBundle": "",
-  "calendlyIhm": ""
+  "anpLogo": "/images/anp-logo.png",
+  "gncLogo": "/images/gnc-logo.png"
 }
