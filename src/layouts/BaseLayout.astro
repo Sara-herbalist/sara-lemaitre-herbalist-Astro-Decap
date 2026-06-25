@@ -1,7 +1,8 @@
 ---
 import '../styles/global.css';
+const s = (await import('../data/settings.json')).default;
 const SITE = 'https://www.saralemaitre.com';
-const CALENDLY_DISCOVERY = 'https://calendly.com/sara-lemaitre-herbalist/discovery';
+const CALENDLY_DISCOVERY = s.calendlyDiscovery || 'https://calendly.com/sara-lemaitre-herbalist';
 
 const {
   title, description,
@@ -147,13 +148,10 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
       <div>
         <p class="footer-col-title">{lang === 'fr' ? 'Nous rejoindre' : 'Connect'}</p>
         <ul class="footer-links">
-          <li><a href="#" aria-label="Instagram">Instagram</a></li>
-          <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
-          {lang === 'fr'
-            ? <li><a href="/fr/consultancy">Consultance</a></li>
-            : <li><a href="/consultancy">Consultancy</a></li>
+          {s.instagramUrl && <li><a href={s.instagramUrl} target="_blank" rel="noopener" aria-label="Instagram">Instagram</a></li>}
+{s.linkedinUrl && <li><a href={s.linkedinUrl} target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a></li>}
           }
-          <li><a href={CALENDLY_DISCOVERY} target="_blank" rel="noopener">{lang === 'fr' ? 'Prendre rendez-vous' : 'Book a call'}</a></li>
+          <li><a href={s.calendlyDiscovery} target="_blank" rel="noopener">{lang === 'fr' ? 'Prendre rendez-vous' : 'Book a call'}</a></li>
         </ul>
       </div>
     </div>
