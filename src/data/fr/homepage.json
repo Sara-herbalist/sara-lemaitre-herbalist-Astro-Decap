@@ -1,13 +1,155 @@
 {
-  "heroEyebrow": "Herboriste clinique \u00b7 Naturopathe \u00b7 Ancienne athl\u00e8te de haut niveau",
-  "heroDesc": "J'accompagne les femmes qui ont \u00e9t\u00e9 trop longtemps ignor\u00e9es par la m\u00e9decine conventionnelle. Et les sportifs dont le corps a cess\u00e9 de coop\u00e9rer. Je connais ces chemins \u2014 je les ai moi-m\u00eame parcourus.",
-  "introTitle": "La pratique",
-  "introSubtitle": "Une m\u00e9decine des plantes ancr\u00e9e dans le v\u00e9cu",
-  "introBody1": "Je ne suis pas arriv\u00e9e \u00e0 la phytoth\u00e9rapie par les livres. J'y suis arriv\u00e9e apr\u00e8s sept ans \u00e0 \u00eatre mise de c\u00f4t\u00e9 par la m\u00e9decine conventionnelle \u2014 un corps que je ne reconnaissais plus, une carri\u00e8re sportive interrompue, et la conviction obstin\u00e9e qu'une autre voie devait exister. Quand j'ai trouv\u00e9 la m\u00e9decine par les plantes, \u00e7a a fonctionn\u00e9. Lentement, laborieusement, avec beaucoup d'essais. Mais \u00e7a a fonctionn\u00e9.",
-  "introBody2": "Cette exp\u00e9rience \u2014 traverser l'endom\u00e9triose, le SOPK et la fatigue chronique sans boussole \u2014 est le fondement de tout ce que je fais en consultation. Je sais ce que c'est de chercher des r\u00e9ponses quand le syst\u00e8me ne vous en donne pas.",
-  "heroPortrait": "/images/sara-portrait.jpg",
-  "practicePhoto1": "/images/herbs-drying.jpg",
-  "practicePhoto2": "/images/tincture-bottles.jpg",
-  "practicePhoto3": "/images/workspace.jpg",
-  "storyPullPortrait": "/images/sara-portrait-warm.jpg"
+  "heroEyebrow": "Herboriste clinicienne · Phytothérapeute · Naturopathe",
+  "heroCredentials": "Diplôme de phytothérapie · Diplôme de naturopathie · Certificat de massage crânien indien · Formation en dispensaire de médecine traditionnelle chinoise",
+  "heroBody": "Vous avez probablement déjà expliqué vos symptômes à quelqu'un qui ne prenait pas vraiment le temps de vous écouter. Vous êtes peut-être sorti de certaines consultations avec plus de doutes qu'en y entrant. Peut-être avez-vous fini par vous demander si le problème venait de vous.\n\nCe n'est pas le cas.\n\nJe m'appelle Sara. Je suis herboriste clinicienne, phytothérapeute et naturopathe. J'ai aussi été cette personne à qui l'on disait de « faire avec », de moins stresser, ou d'être plus réaliste. Je sais ce que coûte le fait de continuer à chercher des réponses lorsque l'on a le sentiment d'être renvoyé chez soi sans solution.\n\nCette pratique existe parce que j'ai trouvé une autre voie, pour moi-même, puis pour mes proches. Aujourd'hui, j'aimerais vous aider à trouver la vôtre.",
+  "heroPortrait": "",
+  "practiceTitle": "Une approche de la phytothérapie née de l'expérience",
+  "practiceBody1": "La phytothérapie est entrée dans ma vie lorsque je pensais avoir épuisé toutes les autres possibilités. Pendant sept ans, j'ai enchaîné les consultations spécialisées, les traitements hormonaux, les interventions chirurgicales, puis des doses toujours plus importantes d'antalgiques pour tenter de soulager la douleur. Malgré cela, mon quotidien restait profondément limité.\n\nLorsque je me suis tournée vers les plantes, c'était en dernier recours. Le chemin a été long, parfois semé d'erreurs, mais pour la première fois depuis des années, je sentais que quelque chose évoluait réellement.",
+  "practiceBody2": "Cette expérience nourrit aujourd'hui chacune de mes consultations. Je sais ce que représente la recherche de réponses lorsque son propre corps semble incompréhensible. Je sais aussi combien il est précieux de rencontrer quelqu'un qui prend enfin le temps d'écouter, d'expliquer et de vous redonner une place dans les décisions concernant votre santé.\n\nTout a commencé par moi. Puis mes proches ont été les premiers à me faire confiance. Les voir retrouver peu à peu leur équilibre m'a convaincue d'aller plus loin et de me former sérieusement.",
+  "practiceQuote": "Retrouver un corps qui a longtemps été un champ de bataille ne relève pas de l'héroïsme. C'est un travail discret, quotidien, qui demande du temps, de la patience et beaucoup de bienveillance envers soi-même.",
+  "practicePhoto": "/images/who-practitioner-fr.png",
+  "offerIntro": "Les personnes qui viennent me consulter ont rarement attendu avant de demander de l'aide. Elles ont vu plusieurs professionnels, changé leur alimentation, essayé de tenir malgré la fatigue, de se reposer davantage, de comprendre seules ce qui leur arrivait.\n\nElles n'ont pas manqué de volonté. Elles ont simplement utilisé des approches qui ne répondaient pas à toute la complexité de leur situation. Ce que je vous propose, c'est une autre manière d'accompagner votre santé : une approche qui considère votre histoire dans son ensemble, et pas uniquement le symptôme qui vous amène aujourd'hui.",
+  "offerCards": [
+    {
+      "id": "herbal",
+      "title": "Phytothérapie",
+      "desc": "Des préparations à base de plantes conçues pour votre organisme, et non pour une simple étiquette diagnostique. Mon approche s'appuie sur la phytothérapie occidentale, la médecine traditionnelle chinoise et l'Ayurveda, selon ce qui est le plus adapté à votre situation.",
+      "href": "/fr/therapies#herbal"
+    },
+    {
+      "id": "naturopathy",
+      "title": "Naturopathie",
+      "desc": "Comprendre le « pourquoi ». L'alimentation, le sommeil, le mode de vie, le stress ou certaines habitudes profondément ancrées sont autant d'éléments qui influencent votre santé. Cette approche complète toujours la phytothérapie ; elle ne se résume jamais à une simple liste de conseils.",
+      "href": "/fr/therapies#naturopathy"
+    },
+    {
+      "id": "constitutional",
+      "title": "Bilan constitutionnel",
+      "desc": "Iridologie, observation de la langue et prise du pouls sont intégrées à chaque première consultation afin de mieux comprendre votre terrain avant d'élaborer votre programme personnalisé. C'est cette approche globale qui permet une véritable personnalisation.",
+      "href": "/fr/therapies#constitutional"
+    },
+    {
+      "id": "hormonal",
+      "title": "Santé hormonale et fatigue chronique",
+      "desc": "C'est dans ce domaine que s'est construite ma pratique. Sept années de maladie m'ont appris que deux personnes atteintes d'endométriose, de SOPK ou de fatigue chronique ne vivent jamais exactement la même histoire. Votre accompagnement doit donc être aussi unique que vous.",
+      "href": "/fr/therapies#hormonal"
+    },
+    {
+      "id": "athlete",
+      "title": "Sport, blessures et performance",
+      "desc": "Ancienne sportive de niveau national, je connais les exigences du corps en mouvement, mais aussi la difficulté de voir ce corps ne plus répondre comme auparavant. Récupération, suites de blessures, états inflammatoires — un regard à la fois clinique et profondément humain.",
+      "href": "/fr/therapies#athlete"
+    },
+    {
+      "id": "ihm",
+      "title": "Massage crânien Ayurvédique",
+      "desc": "Un soin issu de la tradition ayurvédique qui aide à relâcher les tensions accumulées dans le cuir chevelu, la nuque et les épaules, tout en apaisant profondément le système nerveux. Exclusivement proposé en cabinet.",
+      "href": "/fr/therapies#ihm"
+    }
+  ],
+  "whoTitle": "Avec qui je travaille, et pourquoi",
+  "whoDesc": "J'accompagne principalement les personnes dont le parcours fait écho au mien.\n\nDes femmes confrontées à des troubles hormonaux parfois minimisés par la médecine conventionnelle. Des sportifs dont le corps ne répond plus comme auparavant. Des personnes qui avancent depuis longtemps en puisant dans leurs réserves, au point d'avoir oublié ce que signifie réellement se sentir en forme.\n\nSi vous vous reconnaissez dans ces situations, vous êtes au bon endroit.",
+  "whoCards": [
+    {
+      "number": "01",
+      "title": "Femmes avec des troubles hormonaux",
+      "desc": "Endométriose, SOPK, fatigue chronique, périménopause, fertilité, irrégularités menstruelles. J'ai vécu ces conditions. J'ai également passé deux ans à les traiter en clinique.",
+      "tags": [
+        "Endométriose",
+        "SOPK",
+        "Périménopause",
+        "Fatigue chronique"
+      ]
+    },
+    {
+      "number": "02",
+      "title": "Sportifs et personnes actives",
+      "desc": "J'ai pratiqué la natation synchronisée au niveau national. Je comprends les exigences de la performance, la récupération, le surentraînement, et la douleur très particulière d'un corps qui ne coopère plus. Je vous accompagne dans votre récupération.",
+      "tags": [
+        "Fatigue de performance",
+        "Récupération",
+        "Adaptogènes",
+        "Soutien aux blessures"
+      ]
+    },
+    {
+      "number": "03",
+      "title": "Personnes épuisées par le burn-out",
+      "desc": "Stress, dérégulation du système nerveux, fatigue surrénale, insomnie, l'érosion silencieuse d'une vie menée à bout de souffle. La phytothérapie et la naturopathie disposent d'outils profonds pour cela, tandis que le massage crânien offre un apaisement immédiat.",
+      "tags": [
+        "Burn-out",
+        "Stress",
+        "Sommeil",
+        "Système nerveux"
+      ]
+    }
+  ],
+  "storyPullTitle": "L'histoire derrière la pratique",
+  "storyPullH2line1": "Ancienne athlète,",
+  "storyPullH2line2": "puis patiente,",
+  "storyPullH2line3": "aujourd'hui",
+  "storyPullH2line4": "herboriste",
+  "storyPullBody": "Une carrière sportive interrompue. Des années de consultations sans réponses. Une pandémie qui est devenue, contre toute attente, le début de quelque chose de nouveau. Des proches devenus mes premiers patients. Et une découverte lente, imparfaite, profondément personnelle : les plantes pouvaient faire ce que rien d'autre n'avait réussi.",
+  "storyPullQuote": "Je ne vivais pas. Je survivais. Jusqu'au jour où j'ai cessé d'attendre que quelqu'un m'autorise à guérir.",
+  "processTitle": "Du premier échange à un mieux-être durable",
+  "processSteps": [
+    {
+      "title": "Appel découverte",
+      "desc": "Gratuit, 15 minutes. Dites-moi où vous en êtes et ce que vous avez déjà essayé. Je serai honnête quant à ma capacité à vous aider et à ce que cela pourrait représenter concrètement."
+    },
+    {
+      "title": "Première consultation",
+      "desc": "90 minutes. Nous explorons ensemble votre historique de santé, vos habitudes, votre quotidien — y compris ce qui peut sembler sans lien, mais qui l'est souvent. C'est une conversation, pas un formulaire."
+    },
+    {
+      "title": "Votre programme",
+      "desc": "Une formule personnalisée à base de plantes, des conseils naturopathiques et des ajustements de mode de vie. Conçu spécifiquement pour vous, rédigé et envoyé sous 48 heures."
+    },
+    {
+      "title": "Un accompagnement continu",
+      "desc": "C'est là que le vrai travail commence. Votre rôle : suivre le programme, prendre les préparations, mettre en place les changements. Le mien : ajuster au fil de l'évolution de votre corps. Le temps de guérir prend du temps, et je reste à vos côtés."
+    },
+    {
+      "title": "Consultation de suivi",
+      "desc": "35 à 40 minutes, 4 à 6 semaines après la première consultation. Nous faisons le point sur vos progrès, réévaluons le programme et poursuivons votre parcours de santé."
+    },
+    {
+      "title": "Entre les séances",
+      "desc": "Le travail se poursuit entre les consultations. Vous vivez le programme. Je reste disponible. Lorsque quelque chose évolue — positivement ou non — nous nous adaptons. Ce n'est pas un plan figé, c'est un processus vivant, dans lequel je suis pleinement engagée avec vous."
+    },
+    {
+      "title": "Bilan",
+      "desc": "Au moment opportun, nous faisons un point complet : le chemin parcouru, ce qui mérite encore attention, et si de nouvelles consultations seraient utiles pour la prochaine étape de votre parcours."
+    }
+  ],
+  "testimonials": [
+    {
+      "text": "Je suis repartie du massage crânien en ayant l'impression de flotter. J'ai même oublié où j'avais garé ma voiture. Une tension dans ma nuque, présente depuis deux ans, avait tout simplement disparu.",
+      "author": "Patiente en clinique étudiante",
+      "condition": "Massage crânien Ayurvédique"
+    },
+    {
+      "text": "",
+      "author": "— Bientôt disponible"
+    },
+    {
+      "text": "",
+      "author": "— Bientôt disponible"
+    }
+  ],
+  "internationalTitle": "Votre langue. Votre fuseau horaire. Vos soins.",
+  "internationalDesc1": "La majorité de mes consultations se déroulent en ligne, ce qui signifie que la distance est rarement un obstacle. Mes patients en France et au Royaume-Uni bénéficient d'un suivi par une praticienne qui connaît la tradition occidentale de l'intérieur. Mes patients à l'international accèdent à une phytothérapie de niveau clinique, sans compromis sur la qualité ni sur le lien humain.",
+  "internationalDesc2": "Je pratique en français et en anglais. Je sais combien il est précieux de pouvoir parler de sa santé dans sa langue maternelle — la précision que cela permet, l'aisance que cela procure. C'est quelque chose que je prends très au sérieux.",
+  "regions": [
+    {
+      "name": "Royaume-Uni",
+      "desc": "En ligne et en présentiel."
+    },
+    {
+      "name": "France & Europe francophone",
+      "desc": "En ligne et en présentiel lors de mes séjours en France."
+    }
+  ],
+  "ctaTitle": "Si quelque chose dans tout cela vous parle — parlons-en.",
+  "ctaDesc": "Un premier échange gratuit de 15 minutes, sans engagement. Dites-moi où vous en êtes, et nous verrons ensemble si je suis la bonne personne pour vous accompagner."
 }
