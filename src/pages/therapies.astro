@@ -248,7 +248,7 @@ const icons = {
       </div>
       {therapy.bookLabel && (
         <a
-          href={therapy.calendlyUrl || (therapy.id === 'ihm' ? s.calendlyIhm : '/book')}
+          href={therapy.calendlyUrl || (therapy.id === 'ihm' ? '/book#ihm' : '/book')}
           class="btn-enquire"
           target={therapy.calendlyUrl ? '_blank' : undefined}
           rel={therapy.calendlyUrl ? 'noopener' : undefined}
