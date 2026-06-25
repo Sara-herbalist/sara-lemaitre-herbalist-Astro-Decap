@@ -1,68 +1,108 @@
 {
-  "heroTitle": "Des plantes m\u00e9dicinales au service de votre organisation",
-  "heroDesc": "Interventions en entreprise, conseil de marque pour acteurs du bien-\u00eatre, programmes pour clubs sportifs et \u00e9quipes \u2014 une expertise clinique en phytoth\u00e9rapie et naturopathie au service de vos \u00e9quipes et de vos clients.",
-  "s1Title": "Interventions en entreprise",
-  "s1Desc": "Ateliers de sensibilisation au bien-\u00eatre par les plantes, conf\u00e9rences sur le stress et la r\u00e9cup\u00e9ration, programmes de gestion de l'\u00e9nergie pour \u00e9quipes. Format adaptable selon vos besoins et votre secteur.",
-  "s2Title": "Conseil de marque",
-  "s2Desc": "Expertise en formulation herbale, validation des all\u00e9gations produits, d\u00e9veloppement de gammes bien-\u00eatre, formation des \u00e9quipes commerciales et conseil en communication autour des ingr\u00e9dients botaniques.",
-  "s3Title": "Performance & R\u00e9cup\u00e9ration sportive",
-  "s3Desc": "Programmes de soutien phytoth\u00e9rapeutique pour clubs et athl\u00e8tes de haut niveau. Adaptogens, gestion de l'inflammation, soutien hormonal, r\u00e9cup\u00e9ration entre les comp\u00e9titions \u2014 par une ancienne athl\u00e8te de haut niveau.",
-  "s4Title": "Int\u00e9gration dans les offres bien-\u00eatre",
-  "s4Desc": "D\u00e9veloppement de protocoles de soins \u00e0 base de plantes, formation des th\u00e9rapeutes, cr\u00e9ation de rituels saisonniers et conseil sur la communication autour des ingr\u00e9dients botaniques pour des \u00e9tablissements premium.",
+  "heroTitle": "Conseil en bien-être avec une expertise clinique",
+  "heroDesc": "Pour les organisations qui souhaitent faire du bien-être un véritable levier de santé. Pour les marques du secteur du bien-être à la recherche d'une expertise reconnue en phytothérapie. Pour les clubs sportifs, spas et espaces santé qui souhaitent enrichir leur offre grâce à une approche fiable, fondée sur les données scientifiques.\n\nJ'accompagne les organisations qui recherchent une expertise crédible, une pédagogie concrète et une approche réfléchie de la santé naturelle.",
   "heroPhoto": "/images/sara-professional.jpg",
-  "atmosphericPhoto": "/images/herbs-atmospheric.jpg",
+  "whyTitle": "Une expertise concrète. Un impact réel.",
+  "whyDesc1": "Les contenus consacrés au bien-être sont aujourd'hui omniprésents. Ce dont les organisations ont souvent besoin, c'est d'une expertise en laquelle elles peuvent avoir confiance.\n\nJe propose des services de conseil, de formation et de création de contenu ancrés dans une pratique clinique et une solide formation en phytothérapie et en naturopathie. Que j'anime un atelier, que j'accompagne une marque ou que je conçoive des ressources pédagogiques, mon objectif reste le même : proposer une information fiable, concrète et utile.",
+  "clientTypes": [
+    {
+      "id": "corporate",
+      "title": "Entreprises & milieu professionnel",
+      "desc": "Organisations souhaitant investir sérieusement dans le bien-être de leurs collaborateurs. Ateliers bien-être, programmes de prévention du burn-out, santé au travail.",
+      "subtitle": "RH, responsables bien-être, départements L&D"
+    },
+    {
+      "id": "brands",
+      "title": "Marques de bien-être",
+      "desc": "Fabricants de compléments alimentaires à base de plantes, marques de cosmétiques naturels, entreprises de nutrition fonctionnelle souhaitant s'appuyer sur une expertise clinique pour leurs contenus, leurs formulations ou leur communication.",
+      "subtitle": "Marques de compléments, soins botaniques, nutrition fonctionnelle"
+    },
+    {
+      "id": "sports",
+      "title": "Clubs sportifs & fédérations",
+      "desc": "Équipes et organisations souhaitant intégrer la phytothérapie, la nutrition et les approches naturopathiques dans l'accompagnement de leurs athlètes.",
+      "subtitle": "Natation, athlétisme, gymnastique, arts martiaux, football"
+    },
+    {
+      "id": "spas",
+      "title": "Spas & espaces bien-être",
+      "desc": "Hôtels, centres de retraite et spas souhaitant intégrer la phytothérapie et la naturopathie à leur offre de soins.",
+      "subtitle": "Spas de destination, lieux de retraite, cliniques de santé intégrative"
+    },
+    {
+      "id": "education",
+      "title": "Éducation & médias",
+      "desc": "Podcasts, publications, plateformes e-learning et médias santé recherchant des commentaires d'experts, de la création de contenu ou du développement de formations.",
+      "subtitle": "Podcasts santé, médias bien-être, plateformes de formation en ligne"
+    }
+  ],
   "services": [
     {
       "number": "01",
-      "tag": "Entreprises \u00b7 RH \u00b7 Bien-\u00eatre au travail",
-      "title": "Interventions en entreprise",
-      "desc": "Ateliers de sensibilisation au bien-\u00eatre par les plantes, conf\u00e9rences sur le stress et la r\u00e9cup\u00e9ration, programmes de gestion de l'\u00e9nergie pour \u00e9quipes.",
+      "tag": "Entreprises · RH · Bien-être au travail",
+      "title": "Interventions bien-être en entreprise",
+      "desc": "Ateliers de médecine par les plantes, conférences sur le stress, la récupération et la vitalité, programmes pour les équipes. Format adaptable selon vos besoins et votre secteur.",
       "bullets": [
-        "Lunch & learn (60\u201390 min) \u2014 point d'entr\u00e9e accessible pour toute \u00e9quipe",
-        "Atelier demi-journ\u00e9e (3\u20134 h) \u2014 engagement plus profond, \u00e9l\u00e9ments pratiques",
-        "Programme bien-\u00eatre (4\u20138 semaines) \u2014 changement durable avec suivi",
-        "Sant\u00e9 des femmes au travail \u2014 s\u00e9rie sp\u00e9cialis\u00e9e pour RH et managers",
-        "Animation bilingue \u2014 fran\u00e7ais et anglais, en ligne ou en pr\u00e9sentiel"
+        "Conférence déjeuner (60–90 min) — point d'entrée accessible pour toute équipe",
+        "Atelier demi-journée (3–4 h) — engagement approfondi, éléments pratiques",
+        "Programme bien-être (4–8 semaines) — changement durable avec suivi",
+        "Santé au travail — série spécialisée pour les RH et les managers",
+        "Intervention bilingue — français et anglais, en ligne ou en présentiel"
       ]
     },
     {
       "number": "02",
-      "tag": "Marques \u00b7 Formulation \u00b7 Contenu \u00b7 Conseil",
-      "title": "Conseil de marque",
-      "desc": "Expertise en formulation herbale, validation des all\u00e9gations produits, d\u00e9veloppement de gammes bien-\u00eatre, formation des \u00e9quipes commerciales.",
+      "tag": "Marques · Formulation · Contenu · Conseil",
+      "title": "Conseil aux marques",
+      "desc": "Expertise en formulation phytothérapeutique, accompagnement sur les allégations réglementaires, développement de gammes bien-être, formation des équipes commerciales et conseil en communication autour des ingrédients botaniques.",
       "bullets": [
-        "Audit et conseils de formulation pour le d\u00e9veloppement de produits herboristes",
-        "Revue des all\u00e9gations \u2014 ce que vous pouvez dire ou non, et pourquoi",
-        "Cr\u00e9ation de contenus \u00e9ducatifs (articles, r\u00e9seaux sociaux, emballages)",
-        "Porte-parole expert pour presse, podcasts et \u00e9v\u00e9nements",
-        "Formation du personnel sur les ingr\u00e9dients botaniques utilis\u00e9s",
-        "Adaptation et localisation de marque en fran\u00e7ais"
+        "Révision et conseil en formulation pour le développement de produits à base de plantes",
+        "Conseil sur les allégations : ce que vous pouvez dire, ce que vous ne pouvez pas dire, et pourquoi",
+        "Création de contenus pédagogiques (articles, réseaux sociaux, email, textes packaging)",
+        "Porte-parole expert pour la presse, les podcasts et les événements",
+        "Formation du personnel sur les ingrédients végétaux que vous utilisez",
+        "Adaptation et localisation de marque en français"
       ]
     },
     {
       "number": "03",
-      "tag": "Clubs sportifs \u00b7 Athl\u00e8tes \u00b7 Performance",
-      "title": "Performance & R\u00e9cup\u00e9ration sportive",
-      "desc": "Programmes de soutien phytoth\u00e9rapeutique pour clubs et athl\u00e8tes de haut niveau. Adaptogens, gestion de l'inflammation, soutien hormonal, r\u00e9cup\u00e9ration.",
+      "tag": "Clubs sportifs · Athlètes · Performance",
+      "title": "Performance sportive & récupération",
+      "desc": "Programmes d'accompagnement phytothérapeutique pour clubs et athlètes de haut niveau. Adaptogènes, gestion de l'inflammation, soutien hormonal, récupération entre les compétitions — par une ancienne athlète de haut niveau.",
       "bullets": [
-        "Ateliers bien-\u00eatre athl\u00e8te (performance, r\u00e9cup\u00e9ration, sant\u00e9 hormonale)",
-        "Conseils en protocoles adaptogens pour le staff d'entra\u00eenement",
-        "Soutien individuel aux athl\u00e8tes en compl\u00e9ment de la m\u00e9decine d'\u00e9quipe",
-        "Bilingue \u2014 fran\u00e7ais et anglais pour clubs et f\u00e9d\u00e9rations internationaux"
+        "Ateliers d'éducation bien-être pour athlètes (performance, récupération, santé hormonale)",
+        "Conseil sur l'utilisation des adaptogènes pour le staff technique",
+        "Accompagnement individuel des athlètes en complément du suivi médical",
+        "Bilingue — français et anglais pour les clubs et fédérations internationaux"
       ]
     },
     {
       "number": "04",
-      "tag": "Spas \u00b7 Centres bien-\u00eatre \u00b7 H\u00f4tels",
-      "title": "Int\u00e9gration dans les offres bien-\u00eatre",
-      "desc": "D\u00e9veloppement de protocoles de soins \u00e0 base de plantes, formation des th\u00e9rapeutes, cr\u00e9ation de rituels saisonniers pour des \u00e9tablissements premium.",
+      "tag": "Spas · Centres de bien-être · Hôtels",
+      "title": "Conception d'offres bien-être",
+      "desc": "Développement de protocoles de soins à base de plantes, formation des thérapeutes, création de rituels saisonniers et conseil en communication autour des ingrédients botaniques pour les établissements haut de gamme.",
       "bullets": [
-        "D\u00e9veloppement de protocoles de soins \u00e0 base de plantes",
-        "Conception et mise en place de rituels saisonniers",
-        "Formation du personnel et \u00e9ducation aux ingr\u00e9dients botaniques",
-        "Langage des menus et des offres \u2014 quoi dire et comment le dire",
-        "Adaptation en fran\u00e7ais pour les march\u00e9s francophones"
+        "Développement de protocoles de soins à base de plantes",
+        "Conception et mise en œuvre de rituels saisonniers",
+        "Formation du personnel et éducation aux ingrédients botaniques",
+        "Conception des supports de communication autour de votre offre",
+        "Adaptation en français pour les marchés francophones"
+      ]
+    },
+    {
+      "number": "05",
+      "tag": "Éducation · Médias · Contenu",
+      "title": "Éducation & médias",
+      "desc": "Commentaires d'expert, création de contenu et développement de formations en phytothérapie et naturopathie pour les podcasts, publications, plateformes e-learning et médias santé.",
+      "bullets": [
+        "Intervenante experte pour les podcasts santé et les médias bien-être",
+        "Développement de formations et contenus e-learning",
+        "Conseil éditorial et fact-checking pour les publications",
+        "Articles de fond et contenus éditoriaux"
       ]
     }
-  ]
+  ],
+  "contactTitle": "Parlez-moi de votre projet",
+  "contactDesc": "Chaque projet étant différent, je prendrai le temps de les évaluer avec soin et vous répondrai sous 48 heures.",
+  "atmosphericPhoto": "/images/herbs-atmospheric.jpg"
 }
