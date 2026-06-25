@@ -1,15 +1,60 @@
 {
-  "initialConsultation": 110,
-  "initialConsultationSlidingScale": 85,
-  "followUp": 75,
-  "followUpSlidingScale": 65,
-  "bundle3Sessions": 220,
-  "bundle3SessionsSlidingScale": 195,
-  "ihm": 60,
-  "hormonalReset": 360,
-  "stressBurnout": 340,
-  "perimenopause": 380,
-  "athletePerformance": 370,
-  "retainerStandard": 240,
-  "retainerIntensive": 320
+  "heroTitle": "Tarifs et informations pratiques",
+  "pricingNote": "Faire le choix d'un accompagnement personnalisé représente un véritable investissement, surtout si vous êtes habitué au système de santé public. Il est tout à fait naturel de s'interroger sur le coût d'un tel accompagnement. C'est pourquoi je tiens à être transparente sur ce que comprend chaque consultation et sur ce que vous pouvez en attendre.\n\nLa phytothérapie et la naturopathie demandent du temps : le temps de comprendre votre parcours, d'analyser votre santé dans son ensemble, d'élaborer un programme réellement adapté à vos besoins, puis de l'ajuster au fil de vos progrès. C'est cette approche approfondie qui fait toute la différence.\n\nLes tarifs que je propose aujourd'hui reflètent le début de mon activité. Je vous informerai toujours en toute transparence si mes tarifs évoluent. C'est également pour cette raison que je propose systématiquement un premier échange gratuit : il vous permet de découvrir ma façon de travailler, de poser toutes vos questions et de décider sereinement si cet accompagnement vous convient.",
+  "commitmentTitle": "Mon engagement envers vous",
+  "commitment1": "Si, malgré un accompagnement mené avec sérieux et sur une durée suffisante, vous ne constatez pas d'amélioration, je ne me contenterai pas de passer à autre chose. Nous prendrons le temps de comprendre ensemble ce qui peut être ajusté, ce qui mérite d'être exploré davantage et ce que votre corps cherche peut-être encore à nous dire. Vous saurez toujours où nous en sommes et quelles sont les prochaines étapes.",
+  "commitment2": "Et si, à un moment donné, il apparaît que je ne suis pas la personne la plus à même de vous accompagner — que ce soit en raison de votre situation, de mes domaines d'expertise ou simplement parce qu'un autre professionnel serait plus adapté — je vous le dirai en toute transparence et vous orienterai vers la personne la plus compétente pour vous accompagner. Votre santé restera toujours ma priorité.",
+  "initialPrice": 95,
+  "initialSlidingScale": 75,
+  "followupPrice": 55,
+  "bundlePrice": 195,
+  "bundleSlidingScale": 155,
+  "followupBundlePrice": 195,
+  "ihmPrice": 60,
+  "showPackages": false,
+  "cancellationTiers": [
+    {
+      "title": "Plus de 48 heures à l'avance",
+      "policy": "Remboursement intégral par virement bancaire ou report du rendez-vous sans frais. Je vous remercie simplement de me prévenir dès que possible."
+    },
+    {
+      "title": "Entre 24 et 48 heures",
+      "policy": "50 % du montant de la consultation sera retenu. Les 50 % restants seront remboursés par virement bancaire sous 3 à 5 jours ouvrés."
+    },
+    {
+      "title": "Moins de 24 heures",
+      "policy": "La totalité du montant sera retenue. Ce créneau vous était réservé et ne peut généralement pas être proposé à une autre personne dans un délai aussi court."
+    }
+  ],
+  "cancellationNote": "Des exceptions sont bien entendu possibles en cas d'urgence. N'hésitez pas à me contacter : je comprends que les imprévus font partie de la vie.",
+  "faq": [
+    {
+      "q": "Pour quels troubles la phytothérapie peut-elle être utile ?",
+      "a": "La phytothérapie et la naturopathie peuvent accompagner un grand nombre de troubles, bien au-delà de ce que l'on imagine souvent. J'accompagne notamment des personnes souffrant de déséquilibres hormonaux, d'endométriose, de SOPK, de périménopause, de fatigue chronique ou d'épuisement, de troubles digestifs, de problèmes de peau (acné, eczéma, psoriasis), d'anxiété, de stress, de troubles du sommeil, d'une immunité fragilisée, de maladies auto-immunes, de déséquilibres de la glycémie, d'allergies ou de rhume des foins, ainsi que dans le cadre d'un projet de grossesse ou de la récupération après une blessure ou une période de surentraînement. Si votre situation ne figure pas dans cette liste, cela ne signifie pas que je ne peux pas vous accompagner. Le premier échange gratuit est justement là pour en discuter."
+    },
+    {
+      "q": "Ai-je besoin d'une prescription médicale pour prendre rendez-vous ?",
+      "a": "Non. La phytothérapie et la naturopathie sont des approches complémentaires qui ne nécessitent ni prescription ni accord préalable de votre médecin. Je vous demanderai simplement de me communiquer les traitements que vous prenez actuellement afin de vérifier d'éventuelles interactions entre les plantes et vos médicaments. Il s'agit d'une mesure de sécurité essentielle. Si vous êtes suivi par un spécialiste pour une pathologie importante, mon accompagnement vient toujours en complément de votre prise en charge médicale, jamais en remplacement."
+    },
+    {
+      "q": "Comment se déroule une première consultation ?",
+      "a": "La première consultation dure environ 90 minutes, en ligne ou au cabinet. Nous prenons le temps d'explorer votre histoire de santé dans son ensemble : vos symptômes, bien sûr, mais aussi votre énergie, votre sommeil, votre alimentation, votre digestion, votre niveau de stress et vos antécédents. Cette approche globale me permet d'élaborer un programme personnalisé. Sous 48 heures, vous recevez un document détaillé comprenant des recommandations en phytothérapie, des conseils de naturopathie et des ajustements adaptés à votre mode de vie."
+    },
+    {
+      "q": "Au bout de combien de temps puis-je espérer constater des résultats ?",
+      "a": "Tout dépend de votre situation et de vos objectifs. Certaines personnes observent des améliorations en deux à quatre semaines, notamment pour le sommeil, le stress ou certains troubles aigus. Les déséquilibres hormonaux chroniques, comme l'endométriose ou le SOPK, demandent généralement plusieurs mois d'accompagnement avant de produire des changements durables. Je m'attache toujours à vous donner une vision réaliste des délais et des résultats que l'on peut raisonnablement attendre."
+    },
+    {
+      "q": "Puis-je consulter si je prends déjà un traitement médical ?",
+      "a": "Oui. De nombreuses personnes que j'accompagne suivent déjà un traitement médicamenteux. Dans la plupart des cas, la phytothérapie peut être intégrée en toute sécurité, à condition de vérifier les éventuelles interactions entre les plantes et les médicaments. Cette vérification fait systématiquement partie de la première consultation. Si certaines plantes ne sont pas adaptées à votre situation, je vous expliquerai clairement pourquoi. Je ne recommande jamais d'interrompre un traitement médical sans l'avis du professionnel de santé qui vous le prescrit."
+    },
+    {
+      "q": "Puis-je consulter si je vis en dehors du Royaume-Uni ?",
+      "a": "Oui. La majorité de mes consultations se déroulent en ligne. J'accompagne des personnes au Royaume-Uni, en France, en Espagne, en Suisse et dans de nombreux autres pays. Les consultations sont proposées en français et en anglais. Pour les préparations de phytothérapie, je peux vous orienter vers des fournisseurs de confiance dans votre pays ou étudier avec vous les solutions les plus adaptées."
+    },
+    {
+      "q": "Quelle est votre politique d'annulation ?",
+      "a": "Je vous remercie de me prévenir au moins 48 heures à l'avance si vous souhaitez annuler ou reporter un rendez-vous. En cas d'annulation entre 24 et 48 heures avant la consultation, 50 % du montant de la séance sera retenu. En dessous de 24 heures, la totalité de la séance est due, ce créneau ne pouvant généralement pas être proposé à une autre personne dans un délai aussi court. Je reste bien entendu attentive aux situations exceptionnelles et fais toujours preuve de compréhension lorsqu'une urgence survient."
+    }
+  ]
 }
