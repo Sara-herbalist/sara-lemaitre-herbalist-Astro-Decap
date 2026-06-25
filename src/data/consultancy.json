@@ -1,9 +1,11 @@
 {
   "heroTitle": "Wellness consultancy with clinical depth",
-  "heroDesc": "For organisations that want more than a motivational poster. For wellness brands that want real botanical credibility. For sports clubs, spas, and health spaces that want to offer their clients something that actually works.",
+  "heroDesc": "For organisations looking to deliver meaningful wellbeing initiatives. For wellness brands seeking expert botanical insight. For sports clubs, spas and health spaces that want to offer trusted, evidence-informed support to their clients.
+I work with organisations that value credible expertise, practical education and a thoughtful approach to natural health.",
   "heroPhoto": "/images/sara-professional.jpg",
-  "whyTitle": "Organisations that want substance, not wellness theatre",
-  "whyDesc1": "Wellness consultancy in the corporate and brand space is full of vague offerings and generic content. I am not interested in that. What I offer is specific, clinical, and grounded in the same rigour I apply to individual client work. If you want someone who can speak with genuine authority about herbal medicine and naturopathy — to your team, your clients, or your product — that is what I offer.",
+  "whyTitle": "Practical expertise. Meaningful impact.",
+  "whyDesc1": "There is no shortage of wellness content. What organisations often need is expertise they can trust.
+I provide consultancy, education and content grounded in clinical practice and professional training in herbal medicine and naturopathy. Whether I'm speaking to a team, supporting a brand or creating educational resources, my aim is always the same: to deliver information that is accurate, practical and genuinely useful.",
   "clientTypes": [
     {
       "id": "corporate",
