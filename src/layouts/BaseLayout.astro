@@ -148,9 +148,9 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
       <div>
         <p class="footer-col-title">{lang === 'fr' ? 'Nous rejoindre' : 'Connect'}</p>
         <ul class="footer-links">
-          {{s.instagramUrl && <li><a href={s.instagramUrl} target="_blank" rel="noopener" aria-label="Instagram">Instagram</a></li>}
+          {s.instagramUrl && <li><a href={s.instagramUrl} target="_blank" rel="noopener" aria-label="Instagram">Instagram</a></li>}
           {s.linkedinUrl && <li><a href={s.linkedinUrl} target="_blank" rel="noopener" aria-label="LinkedIn">LinkedIn</a></li>}
-          <li><a href={`mailto:${s.email}`}>{lang === 'fr' ? 'Me contacter' : 'Get in touch'}</a></li>
+          <li><a href={'mailto:' + s.email}>{lang === 'fr' ? 'Me contacter' : 'Get in touch'}</a></li>
           <li><a href={s.calendlyDiscovery} target="_blank" rel="noopener">{lang === 'fr' ? 'Prendre rendez-vous' : 'Book a call'}</a></li>
         </ul>
       </div>
