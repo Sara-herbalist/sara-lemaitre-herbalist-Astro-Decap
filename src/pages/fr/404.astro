@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const meta = {
+  title: '404 — Sara Lemaitre',
+  description: 'Page introuvable.',
+  currentPage: '404',
+  lang: 'fr',
+};
+---
+<BaseLayout {...meta}>
+<style>
+.not-found {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--sage-pale);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+.botanical-anim { width: 180px; height: 180px; margin-bottom: 3rem; }
+.not-found h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+}
+.not-found p { color: var(--muted); margin-bottom: 2.5rem; }
+.not-found a {
+  display: inline-block;
+  padding: .9rem 2.5rem;
+  border: 1px solid var(--bark);
+  color: var(--bark);
+  font-size: .8125rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  transition: all .22s;
+}
+.not-found a:hover { background: var(--bark); color: var(--warm-white); }
+
+@keyframes petal-bloom {
+  0%   { opacity:0; transform-box:fill-box; transform-origin:center; transform:scale(.05) rotate(-30deg); }
+  25%  { opacity:1; transform-box:fill-box; transform-origin:center; transform:scale(1.04) rotate(3deg); }
+  60%  { opacity:1; transform-box:fill-box; transform-origin:center; transform:scale(1) rotate(0deg); }
+  85%  { opacity:1; }
+  100% { opacity:0; transform-box:fill-box; transform-origin:center; transform:scale(.5) rotate(15deg); }
+}
+@keyframes ring-1 {
+  0%,12%  { opacity:0; transform-box:fill-box; transform-origin:center; transform:scale(.3); }
+  35%     { opacity:1; transform-box:fill-box; transform-origin:center; transform:scale(1); }
+  80%     { opacity:1; }
+  100%    { opacity:0; }
+}
+@keyframes ring-2 {
+  0%,22%  { opacity:0; transform-box:fill-box; transform-origin:center; transform:scale(.3); }
+  45%     { opacity:.7; transform-box:fill-box; transform-origin:center; transform:scale(1); }
+  80%     { opacity:.7; }
+  100%    { opacity:0; }
+}
+@keyframes ring-3 {
+  0%,32%  { opacity:0; }
+  55%     { opacity:.4; }
+  80%     { opacity:.4; }
+  100%    { opacity:0; }
+}
+.p0 { animation: petal-bloom 5s ease-in-out infinite; }
+.r1 { animation: ring-1 5s ease-in-out infinite; }
+.r2 { animation: ring-2 5s ease-in-out infinite; }
+.r3 { animation: ring-3 5s ease-in-out infinite; }
+</style>
+
+<div class="not-found">
+  <svg class="botanical-anim" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <g class="r3"><circle cx="90" cy="90" r="85" fill="none" stroke="#9BAE8E" stroke-width=".55" stroke-dasharray="3 6" stroke-linecap="round"/></g>
+    <g class="r2">
+      <circle cx="90" cy="90" r="60" fill="none" stroke="#7A8C6E" stroke-width=".7" stroke-dasharray="2.5 4" stroke-linecap="round"/>
+      <path d="M90 30 Q87 23 83 17 Q89 22 90 29" fill="none" stroke="#7A8C6E" stroke-width=".65" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M90 30 Q93 23 97 17 Q91 22 90 29" fill="none" stroke="#7A8C6E" stroke-width=".65" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+    <g class="r1"><circle cx="90" cy="90" r="38" fill="none" stroke="#5C7A52" stroke-width=".85" stroke-linecap="round"/></g>
+    <g class="p0">
+      <path d="M90 52 Q102 71 90 90 Q78 71 90 52" fill="none" stroke="#5C7A52" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M90 90 Q102 109 90 128 Q78 109 90 90" fill="none" stroke="#5C7A52" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M52 90 Q71 78 90 90 Q71 102 52 90" fill="none" stroke="#5C7A52" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M90 90 Q109 78 128 90 Q109 102 90 90" fill="none" stroke="#5C7A52" stroke-width=".9" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M90 90 Q102 78 112 66 Q100 82 90 90" fill="none" stroke="#7A8C6E" stroke-width=".7" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M90 90 Q78 78 68 66 Q80 82 90 90" fill="none" stroke="#7A8C6E" stroke-width=".7" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M90 90 Q102 102 112 114 Q100 98 90 90" fill="none" stroke="#7A8C6E" stroke-width=".7" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M90 90 Q78 102 68 114 Q80 98 90 90" fill="none" stroke="#7A8C6E" stroke-width=".7" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="90" cy="90" r="4" fill="none" stroke="#5C7A52" stroke-width=".9"/>
+      <circle cx="90" cy="90" r="1.5" fill="#5C7A52"/>
+    </g>
+  </svg>
+  <h1>Cette page n'existe plus.</h1>
+  <p>Elle a peut-être été déplacée, ou le lien est incorrect.</p>
+  <a href="/fr/">Retour à l'accueil</a>
+</div>
+</BaseLayout>
