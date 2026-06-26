@@ -1,218 +1,386 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+const d = (await import('../../data/fr/book.json')).default;
+const s = (await import('../../data/settings.json')).default;
 const meta = {
-  title: "Prendre rendez-vous | Sara Lemaitre — Herboriste Clinique & Naturopathe",
-  description: "Réservez votre consultation en phytothérapie ou naturopathie avec Sara Lemaitre. Consultation découverte gratuite disponible. Paiement par virement bancaire.",
-  ogImage: "https://www.saralemaitre.com/images/og-book.jpg",
-  canonical: "https://www.saralemaitre.com/fr/book",
-  navLight: false,
+  title: 'Prendre rendez-vous | Sara Lemaitre — Herboriste clinicienne & Naturopathe',
+  description: 'Demandez une première consultation ou réservez un appel découverte avec Sara Lemaitre, herboriste clinicienne et naturopathe.',
+  canonical: 'https://www.saralemaitre.com/fr/book',
   currentPage: 'book',
-  ogType: 'website',
   lang: 'fr',
 };
-const s = (await import('../../data/fr/settings.json')).default;
-const CALENDLY = s.calendlyDiscovery || 'https://calendly.com/sara-lemaitre-herbalist';
-const d = (await import('../../data/fr/book.json')).default;
+
+const petalMark = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:28px;height:28px;display:block;margin:0 auto 1rem;">
+  <circle cx="14" cy="14" r="13" stroke="rgba(196,208,186,0.3)" stroke-width="0.6" stroke-dasharray="2.5 3.5"/>
+  <circle cx="14" cy="14" r="9" stroke="rgba(196,208,186,0.72)" stroke-width="0.85"/>
+  <path d="M14 5 Q17 9.5 14 14 Q11 9.5 14 5" stroke="rgba(196,208,186,0.72)" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M14 14 Q17 18.5 14 23 Q11 18.5 14 14" stroke="rgba(196,208,186,0.72)" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M5 14 Q9.5 11 14 14 Q9.5 17 5 14" stroke="rgba(196,208,186,0.72)" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M14 14 Q18.5 11 23 14 Q18.5 17 14 14" stroke="rgba(196,208,186,0.72)" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="14" cy="14" r="2" stroke="rgba(196,208,186,0.72)" stroke-width="0.85" fill="none"/>
+</svg>`;
+
+const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="width:28px;height:28px;display:block;margin:0 auto 1rem;">
+  <circle cx="14" cy="14" r="13" stroke="rgba(255,255,255,0.4)" stroke-width="0.6" stroke-dasharray="2.5 3.5"/>
+  <circle cx="14" cy="14" r="9" stroke="rgba(255,255,255,0.9)" stroke-width="0.85"/>
+  <path d="M14 5 Q17 9.5 14 14 Q11 9.5 14 5" stroke="rgba(255,255,255,0.9)" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M14 14 Q17 18.5 14 23 Q11 18.5 14 14" stroke="rgba(255,255,255,0.9)" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M5 14 Q9.5 11 14 14 Q9.5 17 5 14" stroke="rgba(255,255,255,0.9)" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M14 14 Q18.5 11 23 14 Q18.5 17 14 14" stroke="rgba(255,255,255,0.9)" stroke-width="0.85" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="14" cy="14" r="2" stroke="rgba(255,255,255,0.9)" stroke-width="0.85" fill="none"/>
+</svg>`;
 ---
 <BaseLayout {...meta}>
-<style is:global>
-.book-hero { padding: 10rem 8rem 6rem; background: var(--cream); border-bottom: 1px solid rgba(92,74,58,0.08); }
-.book-hero .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: 1.5rem; }
-.book-hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 400; line-height: 1.1; color: var(--charcoal); margin-bottom: 1.5rem; }
-.book-hero p { font-size: 1.125rem; color: var(--muted); max-width: 560px; line-height: 1.8; }
-.how-section { padding: 6rem 8rem; background: var(--warm-white); }
-.how-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: var(--charcoal); margin-bottom: 3.5rem; }
-.steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; }
-.step { display: flex; flex-direction: column; gap: 1rem; }
-.step-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--sage-light); line-height: 1; }
-.step h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--bark); }
-.step p { font-size: 1rem; color: var(--muted); line-height: 1.75; }
-.options-section { padding: 6rem 8rem; background: var(--cream); }
-.options-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: var(--charcoal); margin-bottom: .75rem; }
-.options-section > p { color: var(--muted); margin-bottom: 3.5rem; max-width: 560px; }
-.options-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-bottom: 2.5rem; }
-.option-card { background: var(--warm-white); border: 1px solid rgba(92,74,58,0.1); padding: 2.5rem; display: flex; flex-direction: column; gap: 1rem; transition: border-color .2s; }
-.option-card:hover { border-color: var(--sage-light); }
-.option-card.featured { border-color: var(--sage); background: var(--sage-pale); }
-.option-tag { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: var(--sage-text); }
-.option-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 400; color: var(--charcoal); }
-.option-price { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: var(--bark); }
-.option-price span { font-family: 'Jost', sans-serif; font-size: .9rem; font-weight: 300; color: var(--muted); }
-.option-card p { font-size: .9375rem; color: var(--muted); line-height: 1.75; flex: 1; }
-.option-card a { display: inline-block; padding: .85rem 2rem; border: 1px solid var(--bark); color: var(--bark); text-decoration: none; font-size: .875rem; letter-spacing: .14em; text-transform: uppercase; transition: all .22s; text-align: center; margin-top: .5rem; }
-.option-card a:hover { background: var(--bark); color: var(--warm-white); }
-.option-card.featured a { background: var(--bark); color: var(--warm-white); }
-.option-card.featured a:hover { background: var(--charcoal); }
-.sliding-scale-note { font-size: .8125rem; color: var(--sage-text); background: var(--sage-pale); border-left: 2px solid var(--sage-light); padding: .5rem .75rem; line-height: 1.6; font-style: italic; }
-.get-in-touch-box { margin-top: 3rem; padding: 2.5rem 3rem; background: var(--warm-white); border: 1px solid rgba(92,74,58,0.1); display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
-.git-text .eyebrow { font-size: .75rem; letter-spacing: .22em; text-transform: uppercase; color: var(--sage-text); margin-bottom: .5rem; }
-.git-text h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--charcoal); margin-bottom: .5rem; }
-.git-text p { font-size: .9375rem; color: var(--muted); max-width: 500px; line-height: 1.7; }
-.btn-bark { display: inline-block; padding: .9rem 2.4rem; border: 1px solid var(--bark); color: var(--bark); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
-.btn-bark:hover { background: var(--bark); color: var(--warm-white); }
-.payment-section { padding: 6rem 8rem; background: var(--warm-white); }
-.payment-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 400; color: var(--charcoal); margin-bottom: .75rem; }
-.payment-section > p { color: var(--muted); margin-bottom: 3.5rem; max-width: 600px; }
-.payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
-.payment-box { background: var(--cream); border: 1px solid rgba(92,74,58,0.08); padding: 2.5rem; }
-.payment-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 400; color: var(--bark); margin-bottom: 1.25rem; }
-.payment-steps { list-style: none; display: flex; flex-direction: column; gap: .85rem; counter-reset: step; }
-.payment-steps li { display: flex; gap: 1rem; font-size: .9375rem; color: var(--muted); line-height: 1.6; }
-.payment-steps li::before { content: counter(step); counter-increment: step; min-width: 1.5rem; height: 1.5rem; background: var(--sage-light); color: var(--bark); font-size: .75rem; font-weight: 500; display: flex; align-items: center; justify-content: center; border-radius: 50%; margin-top: .15rem; flex-shrink: 0; }
-.bank-details { margin-top: 1.5rem; padding: 1.25rem 1.5rem; background: var(--warm-white); border-left: 2px solid var(--sage-light); font-size: .9375rem; line-height: 1.8; color: var(--muted); }
-.bank-details strong { color: var(--charcoal); }
-.cancel-section { padding: 5rem 8rem; background: var(--bark-pale); }
-.cancel-section h2 { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 400; color: var(--charcoal); margin-bottom: 2.5rem; }
-.cancel-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
-.cancel-card { padding: 2rem; background: var(--warm-white); border: 1px solid rgba(92,74,58,0.08); }
-.cancel-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--bark); margin-bottom: .75rem; }
-.cancel-card p { font-size: .9375rem; color: var(--muted); line-height: 1.7; }
-.cancel-note { margin-top: 2rem; font-size: .9rem; color: var(--muted); font-style: italic; }
-.book-cta { padding: 7rem 8rem; background: var(--charcoal); text-align: center; }
-.book-cta h2 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 400; color: var(--cream); margin-bottom: 1rem; }
-.book-cta p { color: rgba(247,243,238,.5); margin-bottom: 2.5rem; font-size: 1.0625rem; }
-.book-cta a { display: inline-block; padding: 1.1rem 3rem; background: var(--sage-light); color: var(--bark); text-decoration: none; font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase; transition: all .22s; }
-.book-cta a:hover { background: var(--cream); }
+<style>
+/* Hero */
+.book-hero {
+  padding: 10rem 5rem 7rem;
+  background: #3D3229;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+.book-hero-text .eyebrow { color: var(--sage-mid); margin-bottom: 1.5rem; }
+.book-hero-text h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--warm-white); line-height: 1.1; margin-bottom: 1.5rem;
+}
+.book-hero-text h1 em { color: var(--sage-light); }
+.book-hero-text p { color: rgba(247,243,238,.55); line-height: 1.9; font-size: 1rem; }
+.book-hero-photo { aspect-ratio: 3/4; overflow: hidden; }
+.book-hero-photo img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.75) saturate(.8); }
 
-  .book-hero-inner { display: grid; grid-template-columns: 1.5fr 1fr; gap: 4rem; align-items: center; }
-  .book-hero-photo img { width: 100%; aspect-ratio: 3/4; object-fit: cover; object-position: top; filter: brightness(0.88); }
-  .book-accent-photo { height: 200px; overflow: hidden; }
-  .book-accent-photo img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8) saturate(0.8); }
+/* Cards section */
+.book-options { padding: 6rem 5rem; background: var(--charcoal); }
+.book-options-intro { margin-bottom: 3rem; }
+.book-options-intro h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--warm-white); margin-bottom: 1rem; }
+.book-options-intro p { color: rgba(247,243,238,.5); max-width: 600px; font-size: 1rem; }
+.section-label {
+  font-size: .75rem; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--sage-mid); margin-bottom: 1.5rem; margin-top: 3rem;
+}
+.section-label:first-of-type { margin-top: 0; }
+
+.discovery-card {
+  background: rgba(247,243,238,.04);
+  border: 1px solid rgba(247,243,238,.1);
+  padding: 2.5rem 3rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 1px;
+}
+.discovery-price {
+  font-family: var(--font-serif); font-size: 3rem;
+  color: var(--warm-white); font-style: italic; line-height: 1;
+}
+.discovery-title { font-family: var(--font-serif); font-size: 1.4rem; color: var(--warm-white); margin-bottom: .4rem; }
+.discovery-tag { font-size: .8125rem; color: rgba(247,243,238,.4); margin-bottom: .75rem; }
+.discovery-desc { font-size: 1rem; color: rgba(247,243,238,.5); line-height: 1.75; }
+.discovery-cta {
+  display: inline-block; padding: 1rem 2.5rem; white-space: nowrap;
+  background: var(--sage-pale); color: #3D3229;
+  font-size: .875rem; letter-spacing: .16em; text-transform: uppercase;
+  font-weight: 500; transition: background .22s;
+}
+.discovery-cta:hover { background: var(--sage-light); }
+
+.cards-two { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(247,243,238,.05); margin-bottom: 1px; }
+.cards-two-bundles { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(247,243,238,.05); margin-bottom: 1px; }
+
+.ihm-card {
+  background: rgba(247,243,238,.04);
+  border: 1px solid rgba(247,243,238,.1);
+  padding: 2.5rem 3rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 3rem;
+  align-items: center;
+}
+.ihm-price {
+  font-family: var(--font-serif); font-size: 3rem;
+  color: var(--warm-white); font-style: italic; line-height: 1;
+}
+.ihm-title { font-family: var(--font-serif); font-size: 1.4rem; color: var(--warm-white); margin-bottom: .4rem; }
+.ihm-tag { font-size: .8125rem; color: rgba(247,243,238,.4); margin-bottom: .75rem; }
+.ihm-desc { font-size: 1rem; color: rgba(247,243,238,.5); line-height: 1.75; }
+.ihm-cta {
+  display: inline-block; padding: 1rem 2.5rem; white-space: nowrap;
+  border: 1px solid rgba(247,243,238,.25); color: rgba(247,243,238,.75);
+  font-size: .875rem; letter-spacing: .16em; text-transform: uppercase;
+  transition: all .22s;
+}
+.ihm-cta:hover { border-color: rgba(247,243,238,.6); color: white; }
+
+.pcard {
+  background: var(--charcoal); padding: 2rem 1.75rem 1.75rem;
+  border: 1px solid rgba(247,243,238,.07);
+  display: flex; flex-direction: column;
+  transition: border-color .25s;
+}
+.pcard:hover { border-color: rgba(196,208,186,.2); }
+.pcard.featured { background: var(--sage-dark); border-color: var(--sage-dark); }
+.pcard.featured:hover { border-color: var(--sage-text); }
+.pcard-bundle { border-left: 2px solid rgba(196,208,186,.35) !important; }
+.pcard.featured.pcard-bundle { border-left: 2px solid rgba(255,255,255,.3) !important; }
+.recommended-badge {
+  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(255,255,255,.8); text-align: center; margin-bottom: .5rem;
+}
+.pcard-tag {
+  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(247,243,238,.3); text-align: center; margin-bottom: .75rem;
+}
+.pcard.featured .pcard-tag { color: rgba(255,255,255,.65); }
+.pcard-name {
+  font-family: var(--font-serif); font-size: 1.2rem;
+  color: rgba(247,243,238,.85); text-align: center;
+  margin-bottom: 1.25rem; line-height: 1.3;
+}
+.pcard.featured .pcard-name { color: white; }
+.pcard-price {
+  font-family: var(--font-serif); font-size: 2.5rem;
+  color: rgba(247,243,238,.85); text-align: center;
+  line-height: 1; margin-bottom: .4rem;
+}
+.pcard.featured .pcard-price { color: white; }
+.pcard-sub {
+  font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(247,243,238,.25); text-align: center; margin-bottom: 1.25rem;
+}
+.pcard.featured .pcard-sub { color: rgba(255,255,255,.55); }
+.pcard-divider { height: 1px; background: rgba(247,243,238,.07); margin: 0 0 1.25rem; }
+.pcard.featured .pcard-divider { background: rgba(255,255,255,.15); }
+.pcard-includes {
+  list-style: none; display: flex; flex-direction: column;
+  gap: .5rem; margin-bottom: 1.5rem; flex: 1;
+}
+.pcard-includes li {
+  font-size: .9rem; color: rgba(247,243,238,.4);
+  padding-left: 1rem; position: relative; line-height: 1.6;
+}
+.pcard.featured .pcard-includes li { color: rgba(255,255,255,.75); }
+.pcard-includes li::before { content: '—'; position: absolute; left: 0; color: rgba(196,208,186,.3); }
+.pcard.featured .pcard-includes li::before { color: rgba(255,255,255,.4); }
+.pcard-sliding {
+  font-family: var(--font-serif); font-size: .9rem;
+  font-style: italic; color: rgba(247,243,238,.25);
+  text-align: center; margin-bottom: 1.25rem;
+}
+.pcard.featured .pcard-sliding { color: rgba(255,255,255,.6); }
+.pcard-cta {
+  display: block; text-align: center; padding: .75rem 1rem;
+  border: 1px solid rgba(247,243,238,.15);
+  font-size: .8125rem; letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(247,243,238,.45); transition: all .22s;
+}
+.pcard:hover .pcard-cta { border-color: rgba(247,243,238,.35); color: rgba(247,243,238,.75); }
+.pcard.featured .pcard-cta { border-color: rgba(255,255,255,.4); color: white; background: rgba(255,255,255,.1); }
+.pcard.featured:hover .pcard-cta { background: rgba(255,255,255,.2); }
+.bundle-note {
+  font-size: .875rem; color: rgba(247,243,238,.25);
+  margin-top: 1rem; font-style: italic; text-align: center;
+}
+
+.payment-section {
+  padding: 5rem; background: var(--cream);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
+}
+.payment-section h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 2rem; }
+.payment-section > div > p { color: var(--muted); line-height: 1.9; margin-bottom: 1rem; font-size: 1rem; }
+.payment-steps { list-style: none; counter-reset: steps; margin: 1.5rem 0; display: flex; flex-direction: column; gap: 1rem; }
+.payment-steps li { counter-increment: steps; display: flex; gap: 1.5rem; align-items: baseline; font-size: 1rem; color: var(--muted); }
+.payment-steps li::before { content: counter(steps); font-family: var(--font-serif); font-size: 1.25rem; font-style: italic; color: var(--sage-light); flex-shrink: 0; width: 1.5rem; }
+.bank-box { background: var(--warm-white); padding: 2rem; border: 1px solid var(--sage-light); margin-top: 1.5rem; }
+.bank-box h3 { font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 1rem; }
+.good-to-know { list-style: none; margin-top: 1rem; display: flex; flex-direction: column; gap: .75rem; }
+.good-to-know li { font-size: 1rem; color: var(--muted); padding-left: 1.5rem; position: relative; line-height: 1.7; }
+.good-to-know li::before { content: '—'; position: absolute; left: 0; color: var(--sage-light); }
+
+.book-cancel { padding: 5rem; background: var(--warm-white); }
+.book-cancel h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 2rem; }
+.cancel-tiers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 1.5rem; }
+.cancel-tier { padding: 2rem; background: var(--cream); border-top: 2px solid var(--sage-light); }
+.cancel-tier h3 { font-family: var(--font-serif); font-size: 1rem; margin-bottom: .75rem; }
+.cancel-tier p { font-size: 1rem; color: var(--muted); line-height: 1.75; }
+.cancel-note-text { font-family: var(--font-serif); font-style: italic; color: var(--muted); font-size: 1rem; }
+
+.book-cta { padding: 8rem 5rem; background: var(--sage-dark); text-align: center; }
+.book-cta h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--cream); margin-bottom: 1rem; }
+.book-cta p { color: rgba(247,243,238,.6); margin-bottom: 2.5rem; font-size: 1rem; }
+.book-cta-btn {
+  display: inline-block; padding: 1.1rem 3rem;
+  background: var(--sage-pale); color: #3D3229;
+  font-size: .9375rem; letter-spacing: .18em; text-transform: uppercase;
+  transition: background .22s; font-weight: 500;
+}
+.book-cta-btn:hover { background: var(--sage-light); }
+
 @media (max-width: 1024px) {
-  .book-hero, .how-section, .options-section, .payment-section, .cancel-section, .book-cta { padding-left: 2.5rem; padding-right: 2.5rem; }
-  .steps-grid, .cancel-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .options-grid, .payment-grid { grid-template-columns: 1fr; }
-  .get-in-touch-box { flex-direction: column; align-items: flex-start; }
+  .book-hero { grid-template-columns: 1fr; gap: 3rem; padding: 8rem 2.5rem 4rem; }
+  .book-hero-photo { aspect-ratio: 16/9; }
+  .book-options, .payment-section, .book-cancel, .book-cta { padding: 4rem 2.5rem; }
+  .discovery-card, .ihm-card { grid-template-columns: 1fr; gap: 1.5rem; }
+  .cards-two, .cards-two-bundles { grid-template-columns: 1fr; }
+  .cancel-tiers { grid-template-columns: 1fr; }
+  .payment-section { grid-template-columns: 1fr; gap: 2rem; }
 }
 </style>
 
+<!-- HERO -->
 <section class="book-hero">
-  <div class="book-hero-inner">
-    <div class="book-hero-text">
-      <p class="eyebrow">Prendre rendez-vous</p>
-      <h1>{d.heroTitle}</h1>
-      <p>{d.heroDesc}</p>
-    </div>
-    {d.heroPhoto && d.heroPhoto !== '/images/sara-desk.jpg' && (
+  <div class="book-hero-text reveal">
+    <p class="eyebrow">Prendre rendez-vous</p>
+    <h1>Commencer votre <em>parcours de santé</em></h1>
+    <p>{d.heroDesc}</p>
+  </div>
+  <div class="reveal reveal-delay-1">
+    {d.heroPhoto && d.heroPhoto !== '/images/sara-consultation.jpg' && (
       <div class="book-hero-photo">
-        <img src={d.heroPhoto} alt="Sara Lemaitre" />
+        <img src={d.heroPhoto} alt="Sara Lemaitre" loading="eager" />
       </div>
     )}
   </div>
 </section>
 
-<section class="how-section">
-  <h2>Comment ça fonctionne</h2>
-  <div class="steps-grid">
-    <div class="step">
-      <div class="step-num">01</div>
-      <h3>Réservez votre rendez-vous</h3>
-      <p>Choisissez votre type de consultation et sélectionnez un créneau via le calendrier en ligne. Vous recevez une confirmation immédiate par e-mail.</p>
+<!-- CARDS -->
+<section class="book-options">
+  <div class="book-options-intro reveal">
+    <h2>Choisissez votre consultation</h2>
+    <p>Chaque consultation est confirmée après une brève étude de votre questionnaire afin de m'assurer de pouvoir vous offrir le meilleur accompagnement possible. Je vous répondrai sous 48 heures.</p>
+  </div>
+
+  <!-- 1. Discovery -->
+  <p class="section-label">Consultation gratuite</p>
+  <div class="discovery-card reveal">
+    <div class="discovery-price">Gratuit</div>
+    <div>
+      <p class="discovery-title">{d.discoveryTitle}</p>
+      <p class="discovery-tag">{d.discoveryTag}</p>
+      <p class="discovery-desc">{d.discoveryDesc}</p>
     </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <h3>Confirmez par paiement</h3>
-      <p>Effectuez un virement bancaire avec les coordonnées indiquées dans votre e-mail de confirmation. Votre rendez-vous est sécurisé dès réception du paiement.</p>
+    <a href={s.calendlyDiscovery} target="_blank" rel="noopener" class="discovery-cta">Réserver l'appel gratuit</a>
+  </div>
+
+  <!-- 2. Initial + Follow-up -->
+  <p class="section-label">Consultations individuelles</p>
+  <div class="cards-two">
+    <div class="pcard reveal">
+      <div set:html={petalMark}></div>
+      <p class="pcard-tag">{d.initialTag}</p>
+      <p class="pcard-name">{d.initialTitle}</p>
+      <p class="pcard-price">{d.initialPrice} €</p>
+      <p class="pcard-sub">~2h30–3h de travail au total</p>
+      <div class="pcard-divider"></div>
+      <ul class="pcard-includes">
+        {d.initialIncludes.map(i => <li>{i}</li>)}
+      </ul>
+      <p class="pcard-sliding">Tarif modulable : {d.initialSlidingScale} €</p>
+      <a href={'mailto:' + s.email + '?subject=Demande de première consultation'} class="pcard-cta">Demander une consultation</a>
     </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <h3>Préparez-vous & connectez-vous</h3>
-      <p>Vous recevrez un formulaire d'anamnèse et des notes de préparation avant votre rendez-vous. Nous nous retrouvons en visioconférence — il vous faut juste un endroit calme.</p>
+    <div class="pcard reveal reveal-delay-1">
+      <div set:html={petalMark}></div>
+      <p class="pcard-tag">{d.followupTag}</p>
+      <p class="pcard-name">{d.followupTitle}</p>
+      <p class="pcard-price">{d.followupPrice} €</p>
+      <p class="pcard-sub">~1h de travail au total</p>
+      <div class="pcard-divider"></div>
+      <ul class="pcard-includes">
+        {d.followupIncludes.map(i => <li>{i}</li>)}
+      </ul>
+      <a href={'mailto:' + s.email + '?subject=Demande de consultation de suivi'} class="pcard-cta">Réserver un suivi</a>
+    </div>
+  </div>
+
+  <!-- 3. Bundles -->
+  <p class="section-label">Forfaits</p>
+  <div class="cards-two-bundles">
+    <div class="pcard pcard-bundle featured reveal">
+      <p class="recommended-badge">Le plus recommandé</p>
+      <div set:html={petalMarkSage}></div>
+      <p class="pcard-tag">{d.bundleTag}</p>
+      <p class="pcard-name">{d.bundleTitle}</p>
+      <p class="pcard-price">{d.bundlePrice} €</p>
+      <p class="pcard-sub">Accompagnement thérapeutique 3–4 mois</p>
+      <div class="pcard-divider"></div>
+      <ul class="pcard-includes">
+        {d.bundleIncludes.map(i => <li>{i}</li>)}
+      </ul>
+      <p class="pcard-sliding">Tarif modulable : {d.bundleSlidingScale} €</p>
+      <a href={'mailto:' + s.email + '?subject=Demande de forfait consultation'} class="pcard-cta">Demander ce forfait</a>
+    </div>
+    <div class="pcard pcard-bundle reveal reveal-delay-1">
+      <div set:html={petalMark}></div>
+      <p class="pcard-tag">{d.followupBundleTag}</p>
+      <p class="pcard-name">{d.followupBundleTitle}</p>
+      <p class="pcard-price">{d.followupBundlePrice} €</p>
+      <p class="pcard-sub">Accompagnement thérapeutique 4–6 mois</p>
+      <div class="pcard-divider"></div>
+      <ul class="pcard-includes">
+        {d.followupBundleIncludes.map(i => <li>{i}</li>)}
+      </ul>
+      <a href={'mailto:' + s.email + '?subject=Demande de forfait suivi'} class="pcard-cta">Demander ce forfait</a>
+    </div>
+  </div>
+  <p class="bundle-note">{d.bundleNote}</p>
+
+  <!-- 4. IHM -->
+  <p class="section-label" style="margin-top:3rem;">Soin corporel</p>
+  <div class="ihm-card reveal" id="ihm">
+    <div class="ihm-price">{d.ihmPrice} €</div>
+    <div>
+      <p class="ihm-title">{d.ihmTitle}</p>
+      <p class="ihm-tag">{d.ihmTag}</p>
+      <p class="ihm-desc">Un soin issu de la tradition ayurvédique qui agit sur le dos, les épaules, la nuque, le cuir chevelu et le visage. Libère les tensions et apaise profondément le système nerveux. En séance seule ou en complément d'une consultation.</p>
+    </div>
+    <a href={s.calendlyIhm || ('mailto:' + s.email + '?subject=Réservation massage crânien Ayurvédique')} class="ihm-cta">Réserver un massage</a>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<section class="payment-section reveal">
+  <div>
+    <h2>Paiement par virement bancaire</h2>
+    <p>J'accepte le paiement par virement bancaire — simple, sécurisé et sans frais pour vous comme pour moi.</p>
+    <ol class="payment-steps">
+      <li>Réservez votre rendez-vous en utilisant les options ci-dessus.</li>
+      <li>Vous recevrez un e-mail de confirmation avec les coordonnées bancaires.</li>
+      <li>Effectuez le virement dans les 24 heures suivant la réservation.</li>
+      <li>Votre rendez-vous est confirmé dès réception du paiement.</li>
+    </ol>
+  </div>
+  <div>
+    <div class="bank-box">
+      <h3>Bon à savoir</h3>
+      <ul class="good-to-know">
+        <li>Le virement bancaire est entièrement gratuit — aucun frais de traitement pour vous ni pour moi.</li>
+        <li>Les virements sont généralement reçus en quelques heures pour la même banque, ou le jour ouvré suivant.</li>
+        <li>Merci d'indiquer votre nom et la date du rendez-vous en référence du virement.</li>
+        <li>Si vous rencontrez des difficultés, n'hésitez pas à me contacter et nous trouverons ensemble une solution.</li>
+      </ul>
     </div>
   </div>
 </section>
 
-<section class="options-section">
-  <h2>Choisissez votre consultation</h2>
-  <p>Vous ne savez pas par où commencer ? La consultation découverte gratuite est le premier pas idéal — sans engagement, sans pression.</p>
-  <div class="options-grid">
-    {d.consultationCards && d.consultationCards.map((card) => (
-      <div class={`option-card${card.featured ? ' featured' : ''}`}>
-        <span class="option-tag">{card.tag}</span>
-        <h3>{card.title}</h3>
-        <div class="option-price">
-          {card.price === 0 ? 'Gratuit' : `${card.price} £`}
-          {card.price > 0 && <span>/ séance</span>}
-        </div>
-        <p>{card.desc}</p>
-        {card.showSlidingScale && card.slidingScale > 0 && (
-          <div class="sliding-scale-note">Tarif modulable : {card.slidingScale} £ pour étudiants & revenus modestes</div>
-        )}
-        <a href={card.calendlyUrl || (card.price === 0 ? s.calendlyDiscovery : card.title.includes('suivi') ? s.calendlyFollowup : card.title.includes('Forfait') || card.title.includes('+') ? s.calendlyBundle : card.title.includes('Massage') ? s.calendlyIhm : s.calendlyInitial) || 'https://calendly.com/sara-lemaitre-herbalist'} target="_blank" rel="noopener">{card.bookLabel || 'Réserver'}</a>
+<!-- CANCELLATION -->
+<section class="book-cancel reveal">
+  <h2>Politique d'annulation</h2>
+  <div class="cancel-tiers">
+    {d.cancellationTiers.map(tier => (
+      <div class="cancel-tier">
+        <h3>{tier.title}</h3>
+        <p>{tier.policy}</p>
       </div>
     ))}
   </div>
-
-  <div class="get-in-touch-box">
-    <div class="git-text">
-      <p class="eyebrow">Autres services</p>
-      <h3>Consultance, ateliers & balades</h3>
-      <p>Pour la consultance en bien-être d'entreprise, les ateliers de phytothérapie et les balades botaniques des quatre saisons — chaque expérience est personnalisée et tarifée individuellement. Contactez-moi pour en discuter.</p>
-    </div>
-    <a href="/fr/consultancy#contact" class="btn-bark">Me contacter</a>
-  </div>
+  <p class="cancel-note-text">{d.cancellationNote}</p>
 </section>
 
-{d.accentPhoto && d.accentPhoto !== '/images/herbs-accent.jpg' && (
-  <div class="book-accent-photo">
-    <img src={d.accentPhoto} alt="Préparations herboristes" />
-  </div>
-)}
-<section class="payment-section">
-  <h2>Paiement par virement bancaire</h2>
-  <p>J'accepte le paiement par virement bancaire — simple, sécurisé, et sans frais pour vous comme pour moi.</p>
-  <div class="payment-grid">
-    <div class="payment-box">
-      <h3>Comment payer</h3>
-      <ol class="payment-steps">
-        <li>Réservez votre rendez-vous via le calendrier de réservation ci-dessus.</li>
-        <li>Vous recevrez un e-mail de confirmation avec les coordonnées bancaires.</li>
-        <li>Effectuez le virement dans les 24 heures suivant la réservation.</li>
-        <li>Votre rendez-vous est confirmé dès réception du paiement — vous recevrez un e-mail de confirmation final.</li>
-      </ol>
-      <div class="bank-details">
-        <strong>Coordonnées bancaires</strong><br/>
-        Nom du compte : <strong>{d.bankName}</strong><br/>
-        Code de tri : <strong>{d.bankSort}</strong><br/>
-        Numéro de compte : <strong>{d.bankAccount}</strong><br/>
-        Référence : <strong>Votre nom + date du rendez-vous</strong>
-      </div>
-    </div>
-    <div class="payment-box">
-      <h3>Bon à savoir</h3>
-      <ol class="payment-steps">
-        <li>Le virement bancaire est entièrement gratuit — aucun frais de traitement pour vous ni pour moi.</li>
-        <li>Les virements sont généralement traités en quelques heures pour la même banque, ou le jour ouvré suivant.</li>
-        <li>Veuillez indiquer votre nom et la date du rendez-vous en référence afin que je puisse facilement l'associer.</li>
-        <li>Si vous rencontrez des difficultés avec le virement bancaire, contactez-moi et nous trouverons une solution.</li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<section class="cancel-section">
-  <h2>Politique d'annulation</h2>
-  <div class="cancel-grid">
-    <div class="cancel-card">
-      <h3>Plus de 48 heures à l'avance</h3>
-      <p>Remboursement intégral par virement bancaire, ou report du rendez-vous sans frais supplémentaires. Veuillez me prévenir dès que possible.</p>
-    </div>
-    <div class="cancel-card">
-      <h3>Entre 24 et 48 heures</h3>
-      <p>50 % des honoraires sont retenus. Les 50 % restants vous seront remboursés sur votre compte bancaire dans un délai de 3 à 5 jours ouvrés.</p>
-    </div>
-    <div class="cancel-card">
-      <h3>Moins de 24 heures</h3>
-      <p>La totalité des honoraires est retenue. Ce créneau vous a été réservé et ne peut être proposé à quelqu'un d'autre à si court préavis.</p>
-    </div>
-  </div>
-  <p class="cancel-note">Des exceptions sont faites en cas de véritable urgence — n'hésitez pas à me contacter. Je comprends que la vie réserve des imprévus.</p>
-</section>
-
+<!-- CTA -->
 <section class="book-cta">
-  <h2>Prêt·e à commencer ?</h2>
-  <p>Commencez par une consultation découverte gratuite de 15 minutes — sans engagement, juste une conversation.</p>
-  <a href={CALENDLY} target="_blank" rel="noopener">Réserver votre consultation découverte gratuite</a>
+  <h2 class="reveal">{d.finalCtaTitle}</h2>
+  <p class="reveal">{d.finalCtaDesc}</p>
+  <a href={s.calendlyDiscovery} target="_blank" rel="noopener" class="book-cta-btn reveal">Réserver votre appel découverte gratuit</a>
 </section>
-
-</BaseLayout>
