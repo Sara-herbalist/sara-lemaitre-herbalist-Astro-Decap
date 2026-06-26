@@ -1,67 +1,102 @@
 {
-  "pageTitle": "Des plantes. Une approche. Votre corps.",
-  "pageDesc": "Chaque th\u00e9rapie que je propose s'appuie sur des traditions cliniques distinctes mais compl\u00e9mentaires. Je les combine selon ce que votre situation exige \u2014 pas selon un cadre unique appliqu\u00e9 \u00e0 tous.",
+  "pageTitle": "Mon approche thérapeutique",
+  "pageDesc": "La phytothérapie, la naturopathie et les différentes traditions sur lesquelles je m'appuie sont complémentaires. Chacune apporte un regard différent sur la santé, et je les associe en fonction de votre situation, de vos besoins et de votre histoire.\n\nIl n'existe pas, à mes yeux, de programme universel ni de réponse toute faite. Deux personnes peuvent recevoir le même diagnostic et avoir besoin d'un accompagnement totalement différent. Mon rôle n'est pas d'appliquer une méthode, mais de comprendre ce qui est juste pour vous.\n\nLes personnes que j'accompagne ont souvent déjà traversé un long parcours de santé. Elles ont consulté, essayé, cherché, parfois pendant des années. Ce n'est ni un manque de volonté ni un manque d'efforts qui les amène jusqu'à moi. Leur situation demande simplement parfois une approche différente.\n\nC'est là que commence mon travail. Je prends le temps de considérer votre santé dans son ensemble. Une consultation est avant tout un échange. Je ne cherche pas à faire entrer vos symptômes dans une case ni à appliquer un programme standardisé. Je cherche à comprendre votre fonctionnement, votre terrain et les déséquilibres qui vous sont propres.\n\nCette approche demande du temps, de la patience et de la bienveillance envers soi-même. Retrouver un équilibre durable ne se fait généralement pas en quelques jours. Mais lorsque les changements s'installent progressivement, ils s'ancrent souvent beaucoup plus profondément.",
   "therapyBlocks": [
     {
       "id": "herbal",
-      "label": "Th\u00e9rapie principale",
-      "title": "Phytoth\u00e9rapie occidentale",
-      "duration": "90 min (initiale) \u00b7 30\u201340 min (suivi)",
-      "format": "En ligne ou en pr\u00e9sentiel",
+      "label": "Au cœur de mon accompagnement",
+      "title": "Phytothérapie",
+      "duration": "90 min initiale · 35–40 min suivi",
+      "format": "En ligne ou en présentiel",
       "price": "",
       "calendlyUrl": "",
-      "bookLabel": "Prendre rendez-vous",
+      "bookLabel": "Demander une première consultation",
       "paragraphs": [
-        "La phytoth\u00e9rapie occidentale est le fondement de ma pratique. Elle utilise les plantes m\u00e9dicinales \u2014 racines, feuilles, fleurs, \u00e9corces \u2014 pour soutenir et restaurer la sant\u00e9 du corps et de l'esprit.",
-        "Mon approche est enracin\u00e9e dans la tradition phytoth\u00e9rapeutique europ\u00e9enne, avec une formation compl\u00e9mentaire en m\u00e9decine traditionnelle chinoise et en Ayurveda.",
-        "Chaque consultation initiale d\u00e9bouche sur un protocole \u00e9crit personnalis\u00e9 \u2014 une formulation herbale con\u00e7ue pour vous, des recommandations naturopathiques, et si n\u00e9cessaire, le contact avec un fournisseur de qualit\u00e9."
+        "La phytothérapie est l'une des plus anciennes formes de médecine au monde et demeure, aujourd'hui encore, l'un des principaux moyens de se soigner pour une grande partie de la population mondiale. Selon l'Organisation mondiale de la Santé, près de 80 % de la population mondiale a recours aux plantes médicinales dans le cadre des soins de santé primaires. Bien avant de devenir ma profession, la phytothérapie faisait déjà partie de mon histoire et de ma culture.",
+        "En tant qu'herboriste clinicienne, j'utilise les plantes sous différentes formes — teintures mères, tisanes, gélules, poudres ou préparations externes — afin de soutenir les mécanismes naturels d'autorégulation et d'équilibre de l'organisme. Ma pratique s'appuie sur la phytothérapie occidentale, la médecine traditionnelle chinoise et l'Ayurveda. Selon votre situation, je peux faire appel à l'une de ces traditions ou les associer lorsqu'elles se complètent.",
+        "La phytothérapie est au cœur de mon accompagnement. Chaque programme est élaboré spécifiquement pour vous, en tenant compte de votre histoire, de votre terrain et de votre mode de vie. Je ne construis pas un accompagnement à partir d'un diagnostic, mais à partir de vous.",
+        "À l'issue de la première consultation, vous recevez un programme personnalisé comprenant des recommandations en phytothérapie, des conseils de naturopathie ainsi que, si nécessaire, des indications pour vous procurer des plantes et des produits de qualité. Je prends également le temps de vous expliquer les raisons de chaque recommandation afin que vous compreniez pleinement votre accompagnement.",
+        "La phytothérapie peut accompagner un grand nombre de situations : déséquilibres hormonaux, endométriose, syndrome des ovaires polykystiques (SOPK), périménopause, fatigue chronique, troubles digestifs, problèmes de peau (acné, eczéma, psoriasis), anxiété, stress, troubles du sommeil, immunité fragilisée, maladies auto-immunes, déséquilibres de la glycémie, allergies, rhume des foins, accompagnement de la fertilité, projet de grossesse ou encore récupération après une blessure ou une période de surentraînement. Si votre situation ne figure pas dans cette liste, cela ne signifie pas que je ne peux pas vous accompagner. Le meilleur moyen de le savoir est d'en discuter ensemble lors d'un premier échange."
       ],
-      "photo": "/images/herbal-medicine.jpg"
+      "photo": ""
     },
     {
       "id": "naturopathy",
-      "label": "Compl\u00e9mentaire",
+      "label": "Intégrée à chaque consultation",
       "title": "Naturopathie",
-      "duration": "Int\u00e9gr\u00e9e aux consultations",
-      "format": "En ligne ou en pr\u00e9sentiel",
+      "duration": "Intégrée aux consultations",
+      "format": "En ligne ou en présentiel",
       "price": "",
       "calendlyUrl": "",
       "bookLabel": "",
       "paragraphs": [
-        "La naturopathie cherche \u00e0 identifier et traiter les causes profondes des probl\u00e8mes de sant\u00e9 \u2014 et non uniquement les sympt\u00f4mes. Elle s'appuie sur la nutrition, l'hygi\u00e8ne de vie, le soutien du syst\u00e8me d\u00e9tox et la gestion du stress.",
-        "Dans ma pratique, la naturopathie est toujours int\u00e9gr\u00e9e \u00e0 la phytoth\u00e9rapie. Les plantes et le mode de vie forment un ensemble \u2014 l'un soutient l'autre pour des r\u00e9sultats plus durables."
+        "Les symptômes ne sont qu'une partie de l'histoire. La naturopathie me permet d'aller au-delà de ce qui est visible pour comprendre pourquoi votre organisme réagit de cette façon. Nous nous intéressons à votre alimentation, votre sommeil, votre niveau de stress, votre mode de vie et à tous les facteurs qui influencent votre équilibre au quotidien.",
+        "Dans ma pratique, la naturopathie est indissociable de la phytothérapie. Les plantes peuvent accompagner l'organisme, mais elles donnent leur pleine mesure lorsqu'elles s'inscrivent dans une approche plus globale de votre santé. Mon objectif n'est donc pas seulement de vous proposer des plantes adaptées, mais de vous aider à mieux comprendre votre fonctionnement et les changements susceptibles de soutenir durablement votre santé."
       ],
-      "photo": "/images/naturopathy.jpg"
+      "photo": ""
     },
     {
-      "id": "ihm",
-      "label": "En pr\u00e9sentiel uniquement",
-      "title": "Massage Cr\u00e2nien Indien",
-      "duration": "45 minutes",
-      "format": "En pr\u00e9sentiel uniquement",
-      "price": "60 \u00a3",
+      "id": "constitutional",
+      "label": "Inclus dans le bilan initial",
+      "title": "Bilan constitutionnel",
+      "duration": "Inclus dans chaque première consultation",
+      "format": "En ligne ou en présentiel",
+      "price": "",
       "calendlyUrl": "",
-      "bookLabel": "R\u00e9server un massage",
+      "bookLabel": "",
       "paragraphs": [
-        "Le massage cr\u00e2nien indien \u2014 issu de la tradition ayurv\u00e9dique \u2014 travaille sur le dos, la nuque, les \u00e9paules, le cuir chevelu et le visage. Il lib\u00e8re les tensions musculaires accumul\u00e9es et calme le syst\u00e8me nerveux.",
-        "Id\u00e9al en cas de maux de t\u00eate chroniques, tensions cervicales, insomnies ou surcharge mentale."
+        "Avant de vous proposer un accompagnement personnalisé, je cherche à comprendre votre terrain. Au-delà des symptômes, il s'agit d'observer les grandes tendances de votre organisme, ses points forts, ses fragilités et sa manière de réagir face aux différents déséquilibres.",
+        "Pour cela, j'associe plusieurs outils d'observation à un entretien approfondi. Selon les situations, j'utilise notamment l'iridologie, l'observation de la langue et, lors des consultations en présentiel, la prise du pouls issue de la médecine traditionnelle chinoise. Chacun de ces outils apporte un éclairage différent. L'iridologie permet d'observer certaines prédispositions constitutionnelles. La langue renseigne sur différents équilibres fonctionnels de l'organisme. La prise du pouls apporte des informations complémentaires sur la vitalité et le fonctionnement global.",
+        "Ces observations ne remplacent jamais votre histoire ni les échanges que nous avons ensemble. Elles viennent les compléter afin de construire un accompagnement réellement personnalisé. C'est aussi pour cette raison que la première consultation dure environ 90 minutes : prendre le temps de vous connaître est essentiel pour élaborer un accompagnement qui vous corresponde réellement."
       ],
-      "photo": "/images/head-massage.jpg"
+      "photo": ""
+    },
+    {
+      "id": "hormonal",
+      "label": "Au cœur de mon expertise",
+      "title": "Santé hormonale et fatigue chronique",
+      "duration": "90 min initiale · 35–40 min suivi",
+      "format": "En ligne ou en présentiel",
+      "price": "",
+      "calendlyUrl": "",
+      "bookLabel": "Demander une première consultation",
+      "paragraphs": [
+        "C'est dans ce domaine que ma pratique a commencé. Non pas en cabinet, mais à travers ma propre expérience.",
+        "Pendant sept ans, j'ai vécu avec l'endométriose, le syndrome des ovaires polykystiques (SOPK), une fatigue chronique et une immunité fragilisée. J'ai traversé des années d'errance médicale avant de découvrir la phytothérapie, puis d'en faire mon métier. À cette expérience s'ajoutent plus de 500 heures de consultations réalisées en clinique pédagogique auprès de personnes confrontées aux mêmes problématiques.",
+        "J'ai appris qu'aucun déséquilibre hormonal ne ressemble à un autre. Votre endométriose n'est pas celle d'une autre personne. Votre fatigue chronique a ses propres causes, ses propres manifestations et son histoire. C'est pourquoi je construis chaque accompagnement en fonction de votre terrain, de vos besoins et de votre parcours, plutôt qu'à partir d'un diagnostic seul."
+      ],
+      "photo": ""
     },
     {
       "id": "athlete",
-      "label": "Sportifs & actifs",
-      "title": "Performance & R\u00e9cup\u00e9ration",
-      "duration": "90 min (initiale) \u00b7 30\u201340 min (suivi)",
-      "format": "En ligne ou en pr\u00e9sentiel",
+      "label": "Sportifs et personnes actives",
+      "title": "Sport, blessures et performance",
+      "duration": "90 min initiale · 35–40 min suivi",
+      "format": "En ligne ou en présentiel",
       "price": "",
       "calendlyUrl": "",
-      "bookLabel": "Prendre rendez-vous",
+      "bookLabel": "Demander une première consultation",
       "paragraphs": [
-        "J'ai pratiqu\u00e9 la nage artistique \u00e0 un niveau d'\u00e9lite. Je sais ce que signifie vivre dans un corps de performance \u2014 ses exigences, sa logique, et ce que l'on ressent quand il cesse de fonctionner comme il le devrait.",
-        "Mon approche pour les sportifs couvre les adaptogens, le soutien \u00e0 la r\u00e9cup\u00e9ration, le d\u00e9r\u00e8glement hormonal li\u00e9 \u00e0 l'entra\u00eenement intensif, et le soutien en cas de blessure."
+        "Ancienne nageuse en natation artistique de haut niveau, je connais les exigences du sport, les contraintes de la performance et l'impact qu'une blessure ou une maladie peuvent avoir sur un athlète.",
+        "J'accompagne les sportifs dans les périodes de récupération, de retour à l'entraînement, de fatigue persistante, d'inflammation, de déséquilibres hormonaux liés à la pratique sportive ou de surentraînement. Mon approche associe phytothérapie, naturopathie et accompagnement personnalisé afin de soutenir l'organisme tout au long du processus de récupération et de retour à l'équilibre. Chaque sportif a une histoire, des contraintes et des besoins qui lui sont propres. C'est cette singularité qui guide ma façon d'accompagner."
       ],
-      "photo": "/images/athlete-performance.jpg"
+      "photo": ""
+    },
+    {
+      "id": "ihm",
+      "label": "En cabinet uniquement",
+      "title": "Massage crânien Ayurvédique",
+      "duration": "45 minutes",
+      "format": "En présentiel uniquement",
+      "price": "60 €",
+      "calendlyUrl": "",
+      "bookLabel": "Réserver un massage",
+      "paragraphs": [
+        "Le massage crânien Ayurvédique est une pratique issue de la tradition ayurvédique. Il agit sur le dos, les épaules, la nuque, le cuir chevelu et le visage afin de relâcher les tensions accumulées et d'apaiser le système nerveux.",
+        "Il est particulièrement indiqué en cas de stress, de surcharge mentale, de tensions cervicales, de maux de tête récurrents ou de troubles du sommeil. Pour de nombreuses personnes, il constitue également un véritable moment de pause, permettant de relâcher les tensions physiques et mentales qui s'installent au fil du temps.",
+        "Cette séance peut être réservée seule ou venir compléter un accompagnement en phytothérapie et en naturopathie, selon vos besoins."
+      ],
+      "photo": ""
     }
   ]
 }
