@@ -1,27 +1,5 @@
 {
-  "heroTitle": "Start your healing journey",
-  "heroDesc": "Every consultation begins with listening. No rushed appointments, no dismissed symptoms — just a thorough, personalised approach to your health.",
-  "heroPhoto": "/images/sara-consultation.jpg",
-  "pricingNote": "Investing in your health through private practice is a real financial decision, and if you are used to the NHS or a public healthcare system, the cost can feel like a significant shift. That hesitation is completely understandable. I want to be honest with you about what you are paying for and what you can expect in return.\n\nClinical herbal medicine and naturopathy take time — to understand your history properly, to formulate something specific to you, to adjust as your body responds. That depth is what makes it work. It is also what makes it different from a ten-minute appointment where you leave with a prescription and no real answers.\n\nMy prices currently reflect the early stage of my practice. I am transparent about that, and I will always be transparent when they change. I will also always offer a free discovery call before anything else, so you can understand what working together would actually look like before committing to anything.",
-  "commitmentTitle": "What I commit to you",
-  "commitment1": "If you do not feel improvement after a genuine committed period of work together, I will not simply move on. We will look honestly at why — at what needs adjusting, what we might be missing, what your body is telling us that we have not yet heard properly. You will never be left wondering where you stand.",
-  "commitment2": "And if at any point it becomes clear that I am not the right fit for you — whether that is about approach, specialism, or simply the dynamic between us — I will tell you honestly, and I will help you find someone who is better placed to support you. Your health matters more than my client list.",
-  "discoveryTitle": "Discovery Call",
-  "discoveryTag": "Free · 15 minutes · No commitment",
-  "discoveryDesc": "We talk about where you are and what you need. If I am not the right person for you, I will say so and point you somewhere that is.",
-  "discoveryCalendly": "https://calendly.com/sara-lemaitre-herbalist/30min",
-  "initialTitle": "Initial Consultation",
-  "initialTag": "Online or in person · £95 · 90 minutes",
-  "initialPrice": 95,
-  "initialSlidingScale": 75,
-  "initialIncludes": [
-    "Full case history — the whole you, not just the symptom",
-    "Personalised herbal protocol written & sent within 48hrs",
-    "Naturopathic lifestyle & nutritional guidance",
-    "Herbal formula design & supplier sourcing",
-    "Cross-tradition assessment (Western, TCM, Ayurvedic)",
-    "Follow-up email and support for one month"
-  ],
+  
   "initialNote": "To ensure I can offer you the support you need, initial consultations are confirmed after a brief review of your answers. You will hear back from me within 48 hours.",
   "followupTitle": "Follow-up Consultation",
   "followupTag": "Online or in person · £55 · 35–40 minutes",
