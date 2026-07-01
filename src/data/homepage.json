@@ -1,159 +1,158 @@
 {
-  "heroEyebrow": "Clinical Herbalist · Naturopath · Former elite athlete",
-  "heroCredentials": "Dip. Herbal Medicine · Dip. Naturopathy · Indian Head Massage Certificate · TCM Dispensary Training",
-  "heroBody": "You have probably already explained your symptoms to someone who wasn't really listening. You may have left appointments feeling smaller than when you arrived. You may have started to wonder if you are the problem.\n\nYou are not the problem.\n\nI am Sara. I am a clinical herbalist and naturopath. I have also been that patient — the one who was told to push through, to stress less, to be more realistic. I know what it costs to keep searching when the system keeps sending you home empty-handed.\n\nThis practice exists because I found another way for myself, for my family and friends. And I want to help you find yours.",
+  "heroEyebrow": "Herboriste clinicienne · Phytothérapeute · Naturopathe",
+  "heroCredentials": "Diplôme de phytothérapie · Diplôme de naturopathie · Certificat de massage crânien indien · Formation en dispensaire de médecine traditionnelle chinoise",
+  "heroBody": "Vous avez probablement déjà expliqué vos symptômes à quelqu'un qui ne prenait pas vraiment le temps de vous écouter. Vous êtes peut-être sorti de certaines consultations avec plus de doutes qu'en y entrant. Peut-être avez-vous fini par vous demander si le problème venait de vous.\n\nCe n'est pas le cas.\n\nJe m'appelle Sara. Je suis herboriste clinicienne, phytothérapeute et naturopathe. J'ai aussi été cette personne à qui l'on disait de « faire avec », de moins stresser, ou d'être plus réaliste. Je sais ce que coûte le fait de continuer à chercher des réponses lorsque l'on a le sentiment d'être renvoyé chez soi sans solution.\n\nCette pratique existe parce que j'ai trouvé une autre voie, pour moi-même, puis pour mes proches. Aujourd'hui, j'aimerais vous aider à trouver la vôtre.",
   "heroPortrait": "",
-  "practiceTitle": "Plant medicine rooted in lived experience",
-  "practiceBody1": "Plant medicine found me when I had run out of other options. Seven years of specialists, hormonal suppressants, surgeries, and eventually a build up of increased doses of strong painkillers just to numb the pain — and still I was barely able to function on most days. When I finally started working with plants, it was my last cry for help. My journey to a better health was slow and full of mistakes. But for the first time in years, something was actually working.\n\nThat experience lives in every consultation I offer. I know what it is to search for answers your body already has but you can't understand. I know what it means when someone finally takes the time to hear you and let you make decisions for yourself.",
-  "practiceBody2": "I started on myself. Then quickly after, my family became my first clients. I watched people I loved get better. That was when I knew I needed to train properly.",
-  "practiceQuote": "I know how hard it can be to learn to trust your body again after years of pain or uncertainty. It takes time, patience, and a great deal of self-compassion.",
-  "practicePhoto": "/images/who-practitioner-en.jpg",
- 
-  "offerIntro": "Every person who comes to me has their own story. Some have been living with unresolved symptoms for years. Some have already seen multiple practitioners. Others are looking for a more holistic approach to their health.\n\nWhat they have in common is a desire to understand why their body is responding the way it is—not simply how to manage the symptoms.\n\nRather than focusing on a diagnosis alone, I take the time to understand your health in its entirety—your history, your lifestyle, your patterns, and the factors that make your experience unique.",
+  "practiceTitle": "Une approche de la phytothérapie née de l'expérience",
+  "practiceBody1": "La phytothérapie est entrée dans ma vie lorsque je pensais avoir épuisé toutes les autres possibilités. Pendant sept ans, j'ai enchaîné les consultations spécialisées, les traitements hormonaux, les interventions chirurgicales, puis des doses toujours plus importantes d'antalgiques pour tenter de soulager la douleur. Malgré cela, mon quotidien restait profondément limité.\n\nLorsque je me suis tournée vers les plantes, c'était en dernier recours. Le chemin a été long, parfois semé d'erreurs, mais pour la première fois depuis des années, je sentais que quelque chose évoluait réellement.",
+  "practiceBody2": "Cette expérience nourrit aujourd'hui chacune de mes consultations. Je sais ce que représente la recherche de réponses lorsque son propre corps semble incompréhensible. Je sais aussi combien il est précieux de rencontrer quelqu'un qui prend enfin le temps d'écouter, d'expliquer et de vous redonner une place dans les décisions concernant votre santé.\n\nTout a commencé par moi. Puis mes proches ont été les premiers à me faire confiance. Les voir retrouver peu à peu leur équilibre m'a convaincue d'aller plus loin et de me former sérieusement.",
+  "practiceQuote": "Je sais combien il peut être difficile de renouer avec un corps qui a longtemps été source de douleur ou d'incompréhension. Ce chemin demande du temps, de la patience et beaucoup de bienveillance envers soi-même.",
+  "practicePhoto": "/images/qui-therapeute.jpg",
+  "offerIntro": "Chaque personne qui me consulte a son propre parcours. Certaines sont confrontées à des troubles de santé depuis plusieurs années. D'autres ont déjà consulté plusieurs professionnels. D'autres encore souhaitent mieux comprendre leur santé grâce à une approche plus globale.\n\nCe qu'elles ont en commun, c'est le désir de comprendre pourquoi leur corps réagit ainsi, et pas seulement de soulager leurs symptômes.\n\nJe vous propose un accompagnement personnalisé, centré sur vous dans votre ensemble, et non uniquement sur vos symptômes.",
   "offerCards": [
     {
       "id": "herbal",
-      "title": "Herbal Medicine",
-      "desc": "Plant medicine formulated for your body, not your diagnosis. Drawing on Western phytotherapy, Traditional Chinese Medicine, and Ayurvedic study — whichever tradition serves your situation best, sometimes all three.",
-      "href": "/therapies#herbal"
+      "title": "Phytothérapie",
+      "desc": "Des préparations à base de plantes conçues pour votre organisme, et non pour une simple étiquette diagnostique. Mon approche s'appuie sur la phytothérapie occidentale, la médecine traditionnelle chinoise et l'Ayurveda, selon ce qui est le plus adapté à votre situation.",
+      "href": "/fr/therapies#herbal"
     },
     {
       "id": "naturopathy",
-      "title": "Naturopathy",
-      "desc": "The part of my practice that asks why. Nutrition, lifestyle, sleep, stress — the patterns that have become so habitual they feel like personality. Always integrated with herbal medicine, never a checklist.",
-      "href": "/therapies#naturopathy"
+      "title": "Naturopathie",
+      "desc": "Comprendre le « pourquoi ». L'alimentation, le sommeil, le mode de vie, le stress ou certaines habitudes profondément ancrées sont autant d'éléments qui influencent votre santé. Cette approche complète toujours la phytothérapie ; elle ne se résume jamais à une simple liste de conseils.",
+      "href": "/fr/therapies#naturopathy"
     },
     {
       "id": "constitutional",
-      "title": "Constitutional Assessment",
-      "desc": "Iridology, tongue and pulse reading — used during every initial consultation to understand your constitution before formulating your protocol. The depth that makes personalised medicine genuinely personal.",
-      "href": "/therapies#constitutional"
+      "title": "Bilan constitutionnel",
+      "desc": "Iridologie, observation de la langue et prise du pouls sont intégrées à chaque première consultation afin de mieux comprendre votre terrain avant d'élaborer votre programme personnalisé. C'est cette approche globale qui permet une véritable personnalisation.",
+      "href": "/fr/therapies#constitutional"
     },
     {
       "id": "hormonal",
-      "title": "Hormonal Health and Chronic Fatigue",
-      "desc": "This is where my practice began. Seven years of my own illness taught me that hormonal conditions are not one thing. Your version of endometriosis, PMOS or chronic fatigue is specific to you. And your protocol should be too.",
-      "href": "/therapies#hormonal"
+      "title": "Santé hormonale et fatigue chronique",
+      "desc": "C'est dans ce domaine que s'est construite ma pratique. Sept années de maladie m'ont appris que deux personnes atteintes d'endométriose, de SOPK ou de fatigue chronique ne vivent jamais exactement la même histoire. Votre accompagnement doit donc être aussi unique que vous.",
+      "href": "/fr/therapies#hormonal"
     },
     {
       "id": "athlete",
-      "title": "Athlete, Injury and Performance Support",
-      "desc": "From a practitioner who trained at national level and knows what it costs when a performance body stops cooperating. Recovery, trauma, inflammation, metabolic issues — clinical and personal in equal measure.",
-      "href": "/therapies#athlete"
+      "title": "Sport, blessures et performance",
+      "desc": "Ancienne sportive de niveau national, je connais les exigences d'un corps toujours en mouvement, mais aussi la difficulté de voir ce corps ne plus répondre comme auparavant. Récupération, blessures, inflammation : un accompagnement adapté aux besoins des sportifs pour favoriser un retour progressif à l'entraînement.",
+      "href": "/fr/therapies#athlete"
     },
     {
       "id": "ihm",
-      "title": "Indian Head Massage",
-      "desc": "Bodywork rooted in the Ayurvedic tradition. For the tension that lives in the neck, shoulders and scalp. For the nervous system that needs something more. Clients leave feeling like they are floating. In person only.",
-      "href": "/therapies#ihm"
+      "title": "Massage crânien Ayurvédique",
+      "desc": "Un soin issu de la tradition ayurvédique qui aide à relâcher les tensions accumulées dans le cuir chevelu, la nuque et les épaules, tout en apaisant profondément le système nerveux. Exclusivement proposé en cabinet.",
+      "href": "/fr/therapies#ihm"
     }
   ],
-   "whoTitle": "Who I work with, and why",
-  "whoDesc": "My practice is built around the people I understand most deeply, because I have been them.\n\nWomen navigating hormonal conditions that conventional medicine keeps minimising. Athletes whose bodies have stopped performing the way they used to. People who have been running on empty for so long they have forgotten what it felt like to have reserves.\n\nIf you recognise yourself in any of that, you are in the right place.",
+  "whoTitle": "Avec qui je travaille, et pourquoi",
+  "whoDesc": "J'accompagne principalement les personnes dont le parcours fait écho au mien.\n\nDes femmes confrontées à des troubles hormonaux parfois minimisés par la médecine conventionnelle. Des sportifs dont le corps ne répond plus comme auparavant. Des personnes qui avancent depuis longtemps en puisant dans leurs réserves, au point d'avoir oublié ce que signifie réellement se sentir en forme.\n\nSi vous vous reconnaissez dans ces situations, vous êtes au bon endroit.",
   "whoCards": [
     {
       "number": "01",
-      "title": "Women with hormonal conditions",
-      "desc": "Endometriosis, PMOS, chronic fatigue, perimenopause, fertility, menstrual irregularity. I have lived these conditions myself and have spent over two years supporting women with them in clinical practice.",
+      "title": "Femmes présentant des troubles hormonaux",
+      "desc": "Endométriose, syndrome métabolique ovarien polyendocrinien (SMOP), fatigue chronique, périménopause, fertilité et santé menstruelle. J'ai moi-même traversé ces problématiques et j'accompagne depuis plusieurs années des femmes confrontées à ces mêmes déséquilibres.",
       "tags": [
-        "Endometriosis",
-        "PMOS/PCOS",
-        "Fertility",
-        "Perimenopause",
-        "Chronic fatigue"
+        "Endométriose",
+        "SMOP",
+        "Fertilité",
+        "Périménopause",
+        "Fatigue chronique"
       ]
     },
     {
       "number": "02",
-      "title": "Athletes, dancers & active people",
-      "desc": "I trained at national level, so I understand the demands of performance, recovery and the frustration of a body that no longer cooperates. I support athletes, dancers and performers through injury, musculoskeletal conditions, overtraining and their return to performance.",
+      "title": "Sportifs, danseurs & personnes actives",
+      "desc": "Ancienne sportive de haut niveau, je connais les exigences de la performance, de la récupération et la frustration d'un corps qui ne répond plus comme on le souhaiterait. J'accompagne les sportifs, les danseurs et les personnes actives dans la récupération après une blessure, les troubles musculo-squelettiques, le surentraînement et le retour à la pratique.",
       "tags": [
         "Performance",
-        "Recovery",
-        "Overtraining",
-        "Injury support",
-        "Musculoskeletal"
+        "Récupération",
+        "Surentraînement",
+        "Blessures",
+        "Mobilité"
       ]
     },
     {
-     "number": "03",
-  "title": "People with chronic & metabolic conditions",
-  "desc": "Digestive disorders, blood sugar imbalance, allergies, skin conditions, autoimmune disease and chronic inflammation. An individualised approach that looks beyond isolated symptoms to understand the wider picture of your health.",
-  "tags": [
-    "Digestion",
-    "Blood sugar",
-    "Autoimmune",
-    "Allergies",
-    "Skin"
+      "number": "03",
+      "title": "Personnes vivant avec des troubles chroniques et métaboliques",
+      "desc": "Troubles digestifs, déséquilibres de la glycémie, maladies auto-immunes, allergies, problèmes de peau et inflammation chronique. Une approche personnalisée qui va au-delà des symptômes pour comprendre votre santé dans sa globalité.",
+      "tags": [
+        "Digestion",
+        "Glycémie",
+        "Auto-immunité",
+        "Allergies",
+        "Peau"
       ]
     }
   ],
-  "storyPullTitle": "The story behind the practice",
-  "storyPullH2line1": "From elite athlete",
-  "storyPullH2line2": "to herbalist —",
-  "storyPullH2line3": "and everything",
-  "storyPullH2line4": "in between",
-  "storyPullBody": "An athletic career cut short. Years of being dismissed by specialists. A pandemic that became, unexpectedly, the beginning of something new. A family who became my first patients. And a slow, imperfect, deeply personal discovery that plant medicine could do what nothing else had managed.",
-  "storyPullQuote": "I was not living. I was surviving. Until I stopped waiting for someone else to give me permission to heal.",
-  "processTitle": "From first conversation to lasting change",
+  "storyPullTitle": "L'histoire derrière la pratique",
+  "storyPullH2line1": "Athlète.",
+  "storyPullH2line2": "Patiente.",
+  "storyPullH2line3": "Praticienne.",
+  "storyPullH2line4": "herboriste",
+  "storyPullBody": "Une carrière sportive interrompue. Des années de consultations sans réponses. Une pandémie qui est devenue, contre toute attente, le début de quelque chose de nouveau. Des proches devenus mes premiers patients. Et une découverte lente, imparfaite, profondément personnelle : les plantes pouvaient faire ce que rien d'autre n'avait réussi.",
+  "storyPullQuote": "Je ne vivais pas. Je survivais. Jusqu'au jour où j'ai cessé d'attendre que quelqu'un m'autorise à guérir.",
+  "processTitle": "Les étapes de votre accompagnement",
   "processSteps": [
     {
-      "title": "Discovery call",
-      "desc": "Free, 15 minutes. Tell me where you are and what you have already tried. I will be honest about whether I think I can help, and what that would look like."
+      "title": "Appel découverte",
+      "desc": "Gratuit, 15 minutes. Dites-moi où vous en êtes et ce que vous avez déjà essayé. Je serai honnête quant à ma capacité à vous aider et à ce que cela pourrait représenter concrètement."
     },
     {
-      "title": "Initial consultation",
-      "desc": "90 minutes. We go deep into your history, your patterns, your daily life — the things that feel unrelated but probably are not. This is a conversation, not an intake form."
+      "title": "Première consultation",
+      "desc": "90 minutes. Nous explorons ensemble votre historique de santé, vos habitudes, votre quotidien — y compris ce qui peut sembler sans lien, mais qui l'est souvent. C'est une conversation, pas un formulaire."
     },
     {
-      "title": "Your protocol",
-      "desc": "A personalised herbal formulation, naturopathic guidance, lifestyle adjustments. Built for your specific body and situation, written up and sent within 48 hours."
+      "title": "Votre programme",
+      "desc": "Une formule personnalisée à base de plantes, des conseils naturopathiques et des ajustements de mode de vie. Conçu spécifiquement pour vous, rédigé et envoyé sous 48 heures."
     },
     {
-      "title": "Ongoing support",
-      "desc": "This is where the real work happens. Your part is showing up — taking the blends, following the protocol, making the changes. My part is adjusting as your body responds. Healing takes time, and I stay with you through it."
-    },
-{
-      "title": "Follow-up consultation",
-      "desc": "35–40 minutes, 4 to 6 weeks after the first consultation. We review your progress, reassess the protocol and take your healing journey to the next step."
+      "title": "Un accompagnement continu",
+      "desc": "C'est là que le vrai travail commence. Votre rôle : suivre le programme, prendre les préparations, mettre en place les changements. Le mien : ajuster au fil de l'évolution de votre corps. Le temps de guérir prend du temps, et je reste à vos côtés."
     },
     {
-      "title": "Ongoing support",
-      "desc": "Between sessions, the work continues. You live the protocol. I remain available. When something shifts — positively or not — we adapt. This is not a fixed plan handed to you once. It is a living process, and I am in it with you."
+      "title": "Consultation de suivi",
+      "desc": "35 à 40 minutes, 4 à 6 semaines après la première consultation. Nous faisons le point sur vos progrès, réévaluons le programme et poursuivons votre parcours de santé."
     },
     {
-      "title": "Reassessment",
-      "desc": "When the time is right, we take stock. A full bilan to look at how far you have come, what still needs attention, and whether further consultations would serve the next stage of your healing journey."
+      "title": "Entre les séances",
+      "desc": "Le travail se poursuit entre les consultations. Vous vivez le programme. Je reste disponible. Lorsque quelque chose évolue — positivement ou non — nous nous adaptons. Ce n'est pas un plan figé, c'est un processus vivant, dans lequel je suis pleinement engagée avec vous."
+    },
+    {
+      "title": "Bilan",
+      "desc": "Au moment opportun, nous faisons un point complet : le chemin parcouru, ce qui mérite encore attention, et si de nouvelles consultations seraient utiles pour la prochaine étape de votre parcours."
     }
   ],
   "testimonials": [
     {
-      "text": "I left the Indian head massage feeling like I was floating. I genuinely forgot where I had parked my car. Something in my neck that has been tight for two years just... wasn't anymore.",
-      "author": "Student clinic client",
-      "condition": "Indian head massage"
+      "text": "Je suis repartie du massage crânien en ayant l'impression de flotter. J'ai même oublié où j'avais garé ma voiture. Une tension dans ma nuque, présente depuis deux ans, avait tout simplement disparu.",
+      "author": "Patiente en clinique étudiante",
+      "condition": "Massage crânien Ayurvédique"
     },
     {
       "text": "",
-      "author": "— Coming soon"
+      "author": "— Bientôt disponible"
     },
     {
       "text": "",
-      "author": "— Coming soon"
+      "author": "— Bientôt disponible"
     }
   ],
-  "internationalTitle": "Your language. Your timezone. Your care.",
-  "internationalDesc1": "Most of my consultations happen online, which means geography is rarely a barrier. Clients in France and the UK work with a practitioner who understands the Western tradition from the inside. Clients elsewhere access clinical-level herbal medicine without having to compromise on quality or connection.",
-  "internationalDesc2": "I practise in English and French. I understand the particular comfort of discussing your health in your mother tongue, the precision it allows, the ease it creates. That matters in a consultation, and I take it seriously.",
+  "internationalTitle": "Votre langue. Votre fuseau horaire. Vos soins.",
+  "internationalDesc1": "La majorité de mes consultations se déroulent en ligne, ce qui signifie que la distance est rarement un obstacle. Mes patients en France et au Royaume-Uni bénéficient d'un suivi par une praticienne qui connaît la tradition occidentale de l'intérieur. Mes patients à l'international accèdent à une phytothérapie de niveau clinique, sans compromis sur la qualité ni sur le lien humain.",
+  "internationalDesc2": "Je pratique en français et en anglais. Je sais combien il est précieux de pouvoir parler de sa santé dans sa langue maternelle — la précision que cela permet, l'aisance que cela procure. C'est quelque chose que je prends très au sérieux.",
   "regions": [
     {
-      "name": "United Kingdom",
-      "desc": "Online and in person."
+      "name": "Royaume-Uni",
+      "desc": "En ligne et en présentiel."
     },
     {
-      "name": "France & Francophone Europe",
-      "desc": "Online and in person when I am in the country."
+      "name": "France & Europe francophone",
+      "desc": "En ligne et en présentiel lors de mes séjours en France."
     }
   ],
-  "ctaTitle": "If any of this resonates with you — let's talk.",
-  "ctaDesc": "A free 15-minute discovery call. No pressure. Just tell me where you are, and we will figure out together whether I am the right person to support and guide you."
+  "ctaTitle": "Je serai heureuse d'échanger avec vous et de voir si cet accompagnement peut répondre à vos besoins.",
+  "ctaDesc": "Un premier échange gratuit de 15 minutes, sans engagement. Dites-moi où vous en êtes, et nous verrons ensemble si je suis la bonne personne pour vous accompagner."
 }
