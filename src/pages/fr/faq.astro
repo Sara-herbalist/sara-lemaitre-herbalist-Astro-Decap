@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+const d = (await import('../../data/fr/faq.json')).default;
+const s = (await import('../../data/settings.json')).default;
+const meta = {
+  title: 'FAQ | Sara Lemaitre — Herboriste clinicienne & Naturopathe',
+  description: 'Questions fréquentes sur les consultations en phytothérapie et naturopathie, ce à quoi s\'attendre et comment travailler avec Sara Lemaitre.',
+  canonical: 'https://www.saralemaitre.com/fr/faq',
+  currentPage: 'faq',
+  lang: 'fr',
+};
+---
+<BaseLayout {...meta}>
+<style>
+.faq-hero {
+  padding: 10rem 5rem 6rem;
+  background: #3D3229;
+}
+.faq-hero .eyebrow { color: var(--sage-mid); margin-bottom: 1rem; }
+.faq-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--warm-white); line-height: 1.1; margin-bottom: 1.5rem;
+}
+.faq-hero h1 em { color: var(--sage-light); }
+.faq-hero p { color: rgba(247,243,238,.55); line-height: 1.9; max-width: 520px; }
+.faq-body {
+  padding: 6rem 5rem;
+  background: var(--warm-white);
+}
+.faq-item {
+  border-top: 1px solid var(--sage-light);
+  padding: 2rem 0;
+}
+.faq-item:last-child { border-bottom: 1px solid var(--sage-light); }
+.faq-q {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--charcoal);
+  margin-bottom: 1rem;
+  line-height: 1.35;
+}
+.faq-a {
+  font-size: .9375rem;
+  color: var(--muted);
+  line-height: 1.9;
+}
+.faq-cta {
+  padding: 8rem 5rem;
+  background: var(--sage-dark);
+  text-align: center;
+}
+.faq-cta h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--cream); margin-bottom: 1rem;
+}
+.faq-cta p { color: rgba(247,243,238,.6); margin-bottom: 2.5rem; }
+.faq-cta .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.btn-p {
+  display: inline-block; padding: 1rem 2.5rem;
+  background: var(--sage-pale); color: #3D3229;
+  font-size: .875rem; letter-spacing: .16em; text-transform: uppercase;
+  transition: background .22s; font-weight: 500;
+}
+.btn-p:hover { background: var(--sage-light); }
+.btn-g {
+  display: inline-block; padding: 1rem 2.5rem;
+  border: 1px solid rgba(247,243,238,.3); color: rgba(247,243,238,.8);
+  font-size: .875rem; letter-spacing: .16em; text-transform: uppercase;
+  transition: all .22s;
+}
+.btn-g:hover { border-color: rgba(247,243,238,.7); color: white; }
+@media (max-width: 1024px) {
+  .faq-hero, .faq-body, .faq-cta { padding: 5rem 2.5rem; }
+}
+</style>
+
+<section class="faq-hero">
+  <p class="eyebrow">Questions fréquentes</p>
+  <h1>Vos questions, <em>nos réponses</em></h1>
+  <p>Tout ce que vous souhaitez savoir avant de prendre rendez-vous. Si votre question ne figure pas ici, l'appel découverte gratuit est justement là pour y répondre.</p>
+</section>
+
+<section class="faq-body">
+  {d.items.map((item, i) => (
+    <div class={`faq-item reveal${i > 0 ? ' reveal-delay-1' : ''}`}>
+      <p class="faq-q">{item.q}</p>
+      <p class="faq-a">{item.a}</p>
+    </div>
+  ))}
+</section>
+
+<section class="faq-cta">
+  <h2 class="reveal">Vous avez d'autres questions ?</h2>
+  <p class="reveal">L'appel découverte gratuit est le moyen le plus simple d'obtenir une réponse directe. Quinze minutes, sans engagement.</p>
+  <div class="cta-group reveal">
+    <a href={s.calendlyDiscovery} target="_blank" rel="noopener" class="btn-p">Réserver un appel découverte gratuit</a>
+    <a href="/fr/book" class="btn-g">Voir les options de consultation</a>
+  </div>
+</section>
