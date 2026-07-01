@@ -2,6 +2,10 @@
   "heroTitle": "Une approche personnalisée, à l'écoute de votre santé.",
   "heroDesc": "Chaque consultation est avant tout un temps d'écoute. Ensemble, nous prenons le temps de comprendre votre santé dans sa globalité, sans se limiter aux symptômes, afin d'élaborer un accompagnement personnalisé adapté à vos besoins et à votre mode de vie.",
   "heroPhoto": "/images/sara-consultation.jpg",
+  "pricingNote": "Recourir à une pratique privée pour prendre soin de sa santé représente un investissement financier réel. Si vous êtes habitué au système de santé public, ce coût peut sembler significatif. Cette hésitation est tout à fait compréhensible. Je souhaite être transparente avec vous sur ce que vous financez et ce que vous pouvez en attendre.\n\nLa phytothérapie clinique et la naturopathie demandent du temps — pour comprendre votre histoire en profondeur, pour élaborer quelque chose de spécifique à votre situation, pour ajuster au fil de l'évolution de votre corps. C'est précisément cette profondeur qui fait la différence. C'est aussi ce qui distingue cet accompagnement d'un rendez-vous de dix minutes où l'on repart avec une ordonnance sans vraiment d'explication.\n\nMes tarifs reflètent actuellement le stade précoce de ma pratique. J'en suis transparente, et je le serai toujours lorsqu'ils évolueront. Je proposerai également toujours un appel découverte gratuit en premier lieu, afin que vous puissiez comprendre concrètement ce que représente un travail ensemble avant de vous engager.",
+  "commitmentTitle": "Mes engagements envers vous",
+  "commitment1": "Si vous ne ressentez pas d'amélioration après une période de travail sérieuse et engagée, je ne passerai pas simplement à autre chose. Nous regarderons honnêtement pourquoi — ce qui nécessite d'être ajusté, ce que nous aurions pu manquer, ce que votre corps nous dit et que nous n'avons pas encore entendu correctement. Vous ne serez jamais laissé sans réponse.",
+  "commitment2": "Et si à un moment il devient évident que je ne suis pas la bonne personne pour vous — que ce soit une question d'approche, de spécialité ou simplement de la dynamique entre nous — je vous le dirai honnêtement, et je vous aiderai à trouver quelqu'un mieux placé pour vous accompagner. Votre santé compte plus que ma liste de patients.",
   "discoveryTitle": "Appel découverte",
   "discoveryTag": "Gratuit · 15 minutes · Sans engagement",
   "discoveryDesc": "Nous faisons le point sur votre situation et vos besoins. Si je ne suis pas la personne la plus à même de vous accompagner, je vous le dirai en toute transparence et vous orienterai vers un professionnel plus adapté.",
@@ -53,9 +57,6 @@
   "ihmCalendly": "",
   "getInTouchTitle": "Conseil aux organisations",
   "getInTouchDesc": "Pour une prestation de conseil en bien-être ou un atelier en phytothérapie, contactez-moi pour échanger sur votre projet.",
-  "bankName": "[Votre nom]",
-  "bankSort": "[XX-XX-XX]",
-  "bankAccount": "[XXXXXXXX]",
   "cancellationTiers": [
     {
       "title": "Plus de 48 heures à l'avance",
