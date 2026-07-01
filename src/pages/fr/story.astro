@@ -1,179 +1,436 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-const meta = {
-  title: "Mon parcours | Sara Lemaitre — D'athlète de haut niveau à herboriste clinique",
-  description: "Comment sept ans d'endométriose, six spécialistes et une pandémie m'ont conduite à la phytothérapie.",
-  canonical: "https://www.saralemaitre.com/fr/story",
-  navLight: true, currentPage: 'story', ogType: 'article', lang: 'fr',
-};
 const d = (await import('../../data/fr/story.json')).default;
-const CALENDLY = 'https://calendly.com/sara-lemaitre-herbalist';
+const s = (await import('../../data/settings.json')).default;
+const meta = {
+  title: 'Mon parcours | Sara Lemaitre — Herboriste clinicienne & Naturopathe',
+  description: 'L\'histoire derrière la pratique. De l\'athlète de haut niveau à l\'herboriste clinicienne et naturopathe — et tout ce qui s\'est passé entre les deux.',
+  canonical: 'https://www.saralemaitre.com/fr/story',
+  currentPage: 'story',
+  lang: 'fr',
+};
 ---
 <BaseLayout {...meta}>
-<style is:global>
-.story-hero{min-height:80vh;background:var(--charcoal);display:flex;flex-direction:column;justify-content:flex-end;padding:0 8rem 7rem;position:relative;overflow:hidden}
-.story-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(160deg,#1a1410 0%,#2A2420 50%,#3d2e22 100%)}
-.hero-eyebrow{position:relative;font-size:.75rem;letter-spacing:.26em;text-transform:uppercase;color:rgba(196,208,186,.6);margin-bottom:2rem}
-.story-hero h1{position:relative;font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6vw,5.5rem);font-weight:300;line-height:1.05;color:var(--cream);margin-bottom:2rem}
-.story-hero h1 em{font-style:italic;color:var(--sage-light)}
-.story-hero p{position:relative;font-size:1.125rem;color:rgba(247,243,238,.5);max-width:560px;line-height:1.85;margin-bottom:2.5rem}
-.hero-cta{position:relative;display:flex;gap:1rem;flex-wrap:wrap}
-.btn-sage{display:inline-block;padding:.9rem 2.4rem;background:var(--sage-light);color:var(--bark);text-decoration:none;font-size:.9375rem;letter-spacing:.18em;text-transform:uppercase;transition:all .22s}
-.btn-sage:hover{background:var(--cream)}
-.btn-ghost-sm{display:inline-block;padding:.9rem 2.4rem;border:1px solid rgba(247,243,238,.25);color:rgba(247,243,238,.6);text-decoration:none;font-size:.9375rem;letter-spacing:.18em;text-transform:uppercase;transition:all .22s}
-.btn-ghost-sm:hover{border-color:var(--sage-light);color:var(--sage-light)}
-.pull-quote-section{background:var(--sage);padding:6rem 8rem;text-align:center}
-.pull-quote{max-width:760px;margin:0 auto}
-.pull-quote p{font-family:'Cormorant Garamond',serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:300;font-style:italic;color:var(--cream);line-height:1.5;margin-bottom:2rem}
-.pull-quote cite{font-size:.8125rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(247,243,238,.5)}
-.story-section{padding:7rem 8rem;display:grid;grid-template-columns:1fr 2fr;gap:6rem;align-items:start;border-bottom:1px solid rgba(122,108,100,0.1)}
-.story-section.reverse{grid-template-columns:2fr 1fr}
-.story-label{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sage-text);margin-bottom:2rem;line-height:1}
-.story-label span{display:block;font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--sage-light);letter-spacing:0;text-transform:none;line-height:1;margin-bottom:.5rem}
-.story-content h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;color:var(--charcoal);line-height:1.2;margin-bottom:2rem}
-.story-content h2 em{font-style:italic;color:var(--sage-text)}
-.story-content p{font-size:1.0625rem;color:var(--muted);line-height:1.95;margin-bottom:1.3rem}
-.story-content strong{color:var(--charcoal);font-weight:400}
-.story-content em{color:var(--sage-text)}
-.story-inset{background:var(--sage-pale);border-left:3px solid var(--sage-light);padding:1.5rem 2rem;margin:2rem 0;font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-style:italic;color:var(--charcoal);line-height:1.6}
-.magnolia-section{background:var(--bark-pale);padding:7rem 8rem;border-bottom:1px solid rgba(122,108,100,0.1)}
-.magnolia-inner{max-width:720px}
-.magnolia-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;color:var(--charcoal);line-height:1.2;margin-bottom:2.5rem}
-.magnolia-inner p{font-size:1.0625rem;color:var(--muted);line-height:1.95;margin-bottom:1.3rem}
-.graduation-section{background:var(--charcoal);padding:7rem 8rem}
-.graduation-inner{max-width:720px}
-.graduation-inner h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;color:var(--cream);line-height:1.2;margin-bottom:2.5rem}
-.graduation-inner p{font-size:1.0625rem;color:rgba(247,243,238,.55);line-height:1.95;margin-bottom:1.3rem}
-.graduation-inner strong{color:rgba(247,243,238,.8);font-weight:400}
-.graduation-inner em{color:var(--sage-light);font-style:italic}
-.now-section{padding:7rem 8rem;display:grid;grid-template-columns:1.2fr 1fr;gap:6rem;align-items:start;background:var(--cream)}
-.now-text .eyebrow{font-size:.75rem;letter-spacing:.22em;text-transform:uppercase;color:var(--sage-text);margin-bottom:1.5rem}
-.now-text h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:400;color:var(--charcoal);line-height:1.2;margin-bottom:2rem}
-.now-text h2 em{font-style:italic;color:var(--sage-text)}
-.now-text p{font-size:1.0625rem;color:var(--muted);line-height:1.95;margin-bottom:1.3rem}
-.now-cta{display:inline-block;padding:1rem 2.5rem;background:var(--bark);color:var(--cream);text-decoration:none;font-size:.9375rem;letter-spacing:.18em;text-transform:uppercase;transition:all .22s;margin-top:1rem}
-.now-cta:hover{background:var(--charcoal)}
-.credentials-panel{display:flex;flex-direction:column;gap:1.5rem;padding:2.5rem;background:var(--warm-white);border:1px solid rgba(122,108,100,0.1)}
-.credential-item{display:flex;gap:1rem;align-items:flex-start}
-.cred-dot{width:6px;height:6px;border-radius:50%;background:var(--sage-light);margin-top:.55rem;flex-shrink:0}
-.cred-name{font-size:.9375rem;font-weight:400;color:var(--charcoal);margin-bottom:.2rem}
-.cred-detail{font-size:.8125rem;color:var(--muted)}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-@media(max-width:1024px){.story-hero{padding:0 2.5rem 5rem}.pull-quote-section,.magnolia-section,.graduation-section{padding-left:2.5rem;padding-right:2.5rem}.story-section,.story-section.reverse,.now-section{grid-template-columns:1fr;gap:3rem;padding-left:2.5rem;padding-right:2.5rem}}
+<style>
+.story-hero {
+  padding: 10rem 5rem 7rem;
+  background: #3D3229;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+.story-hero-text .eyebrow { color: var(--sage-mid); margin-bottom: 1.5rem; }
+.story-hero-text h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--warm-white);
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+.story-hero-text h1 em { color: var(--sage-light); }
+.story-hero-text p {
+  color: rgba(247,243,238,.55);
+  line-height: 1.9;
+  margin-bottom: 1rem;
+  font-size: 1.0625rem;
+}
+.story-hero-text strong { color: rgba(247,243,238,.85); font-weight: 400; }
+.hero-photo-frame {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+.hero-photo-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top;
+  filter: brightness(.75) saturate(.8);
+}
+.hero-pull-quote {
+  margin-top: 2.5rem;
+  padding: 1.5rem 2rem;
+  border-left: 2px solid var(--sage-mid);
+  background: var(--sage-pale);
+}
+.hero-pull-quote p {
+  font-family: var(--font-serif);
+  font-size: 1.125rem;
+  font-style: italic;
+  color: rgba(247,243,238,.85);
+  line-height: 1.7;
+}
+.story-section {
+  padding: 7rem 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+.story-section.full-width {
+  grid-template-columns: 1fr;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.story-section:nth-child(even) { background: var(--cream); }
+.story-section:nth-child(odd) { background: var(--warm-white); }
+.story-section-text .section-tag {
+  font-size: .7rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--sage-text);
+  margin-bottom: .5rem;
+}
+.story-section-text .section-num {
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  color: var(--sage-light);
+  font-style: italic;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  opacity: .5;
+}
+.story-section-text h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--charcoal);
+  margin-bottom: 2rem;
+  line-height: 1.25;
+}
+.story-section-text p {
+  color: var(--muted);
+  line-height: 1.95;
+  margin-bottom: 1.4rem;
+  font-size: 1.0375rem;
+}
+.story-section-text blockquote {
+  margin: 2rem 0;
+  padding: 1.5rem 2rem;
+  border-left: 2px solid var(--sage-light);
+  background: var(--sage-pale);
+}
+.story-section-text blockquote p {
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  font-style: italic;
+  color: var(--sage-text);
+  margin: 0;
+}
+.story-photo {
+  position: sticky;
+  top: 6rem;
+}
+.story-photo-frame {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+.story-photo-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top;
+  filter: brightness(.85) saturate(.85);
+}
+.photo-caption {
+  font-size: .75rem;
+  letter-spacing: .1em;
+  color: var(--sage-mid);
+  text-align: center;
+  font-style: italic;
+}
+.story-section-full {
+  padding: 7rem 5rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.story-section-full .section-tag {
+  font-size: .7rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--sage-text);
+  margin-bottom: .5rem;
+}
+.story-section-full .section-num {
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  color: var(--sage-light);
+  font-style: italic;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  opacity: .5;
+}
+.story-section-full h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--charcoal);
+  margin-bottom: 2rem;
+}
+.story-section-full p {
+  color: var(--muted);
+  line-height: 1.95;
+  margin-bottom: 1.4rem;
+  font-size: 1.0375rem;
+}
+.magnolia-section {
+  padding: 7rem 5rem;
+  background: var(--charcoal);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+.magnolia-text .section-tag { color: var(--sage-mid); }
+.magnolia-text .section-num {
+  color: rgba(196,208,186,.3);
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  font-style: italic;
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  opacity: .5;
+}
+.magnolia-text h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--warm-white);
+  margin-bottom: 2rem;
+}
+.magnolia-text p {
+  color: rgba(247,243,238,.55);
+  line-height: 1.95;
+  margin-bottom: 1.4rem;
+}
+.magnolia-text em { color: var(--sage-light); font-style: italic; }
+.magnolia-photo-frame {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+  position: sticky;
+  top: 6rem;
+}
+.magnolia-photo-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: brightness(.8) saturate(.75);
+}
+.now-section {
+  padding: 7rem 5rem;
+  background: var(--sage-dark);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+.now-text .section-tag { color: rgba(247,243,238,.4); }
+.now-text .section-num { color: rgba(196,208,186,.25); }
+.now-text h2 {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--warm-white);
+  margin-bottom: 2rem;
+}
+.now-text p {
+  color: rgba(247,243,238,.65);
+  line-height: 1.95;
+  margin-bottom: 1.4rem;
+}
+.now-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  margin-top: 1rem;
+  padding: 1rem 2.5rem;
+  background: var(--bark);
+  color: var(--warm-white);
+  font-size: .875rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  transition: background .22s;
+}
+.now-cta:hover { background: var(--bark-light); }
+.credentials-panel {
+  background: rgba(0,0,0,.15);
+  padding: 2.5rem;
+}
+.credentials-title {
+  font-size: .7rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: rgba(247,243,238,.35);
+  margin-bottom: 1.5rem;
+}
+.credential-item {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding: .75rem 0;
+  border-bottom: 1px solid rgba(247,243,238,.06);
+}
+.credential-item:last-child { border-bottom: none; }
+.cred-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--sage-mid);
+  flex-shrink: 0;
+  margin-top: .4rem;
+}
+.cred-name {
+  font-size: .875rem;
+  color: rgba(247,243,238,.75);
+  line-height: 1.4;
+}
+.cred-detail {
+  font-size: .75rem;
+  color: rgba(247,243,238,.35);
+  margin-top: .1rem;
+}
+.membership-logos {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(247,243,238,.06);
+}
+.membership-logos img { height: 32px; width: auto; background: white; padding: 4px 8px; border-radius: 4px; }
+
+@media (max-width: 1024px) {
+  .story-hero, .story-section, .magnolia-section, .now-section {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 5rem 2.5rem;
+  }
+  .story-section-full { padding: 5rem 2.5rem; }
+  .story-photo { position: static; }
+  .magnolia-photo-frame { position: static; }
+  .hero-photo-frame { aspect-ratio: 16/9; }
+}
 </style>
 
+<!-- HERO -->
 <section class="story-hero">
-  <div class="story-hero-inner">
-    <div class="story-hero-text">
-      <p class="hero-eyebrow">Mon parcours</p>
-  <h1>{d.heroTitle1}<br>{d.heroTitle2}<br><em>{d.heroTitle3}</em></h1>
-  <p>{d.heroDesc}</p>
-      <div class="hero-cta">
-        <a href={CALENDLY} target="_blank" rel="noopener" class="btn-sage">Consultation découverte gratuite</a>
-        <a href="/fr/therapies" class="btn-ghost-sm">Ce que je propose</a>
+  <div class="story-hero-text reveal">
+    <p class="eyebrow">Mon parcours</p>
+    <h1>L'athlète.<br>La patiente.<br><em>La praticienne.</em></h1>
+    {d.heroDesc.split('\n\n').map(p => <p>{p}</p>)}
+    <blockquote class="hero-pull-quote">
+      <p>« {d.heroPullQuote} »</p>
+    </blockquote>
+  </div>
+  <div class="reveal reveal-delay-1">
+    {d.heroPhoto ? (
+      <div class="hero-photo-frame">
+        <img src={d.heroPhoto} alt="Sara Lemaitre — athlète" loading="eager" />
       </div>
-    </div>
-    {d.heroPhoto && d.heroPhoto !== '/images/sara-athlete.jpg' && (
-      <div class="story-hero-photo">
-        <img src={d.heroPhoto} alt="Sara Lemaitre — athlète et herboriste" />
-      </div>
-    )}
+    ) : null}
   </div>
 </section>
 
-<section class="pull-quote-section">
-  <div class="pull-quote">
-    <p>{d.pullQuote}</p>
-    <cite>— Le moment où tout a basculé</cite>
-  </div>
-</section>
-
+<!-- SECTION 1 -->
 <section class="story-section reveal">
-  <div class="story-label"><span>01</span>L'athlète</div>
-  <div class="story-content">
+  <div class="story-section-text">
+    <p class="section-tag">01 · Le début · Et la fin</p>
+    <div class="section-num">01</div>
     <h2>{d.s1h2}</h2>
-    <p>{d.s1p1}</p>
-    <p>{d.s1p2}</p>
-    <div class="story-inset">{d.s1inset}</div>
-    <p>J'ai commencé à me dissocier de mon corps. Pas par choix, mais pour survivre. Je me suis coupée de ce qui me trahissait juste pour traverser chaque journée. Je ne vivais pas. Je survivais.</p>
-    <p>Jusqu'à ce que les médecins m'interdisent de m'entraîner. C'était trop dangereux pour ma santé. Ma carrière était terminée.</p>
+    {d.s1body.split('\n\n').map(p => <p>{p}</p>)}
+    <blockquote><p>{d.s1quote}</p></blockquote>
+  </div>
+  <div class="story-photo">
+    {d.s1photo ? (
+      <>
+        <div class="story-photo-frame">
+          <img src={d.s1photo} alt="Sara Lemaitre à l'entraînement" loading="lazy" />
+        </div>
+        <p class="photo-caption">Natation artistique — niveau national</p>
+      </>
+    ) : null}
   </div>
 </section>
 
-<section class="story-section reverse reveal">
-  <div class="story-content">
-    <h2>{d.s2h2}</h2>
-    <p>J'avais épuisé tous les examens disponibles. J'avais vu six gynécologues différents, dont aucun ne parvenait à diagnostiquer ce qui n'allait pas.</p>
-    <div class="story-inset">{d.s2inset}</div>
-    <p>Voilà à quoi ressemble le gaslighting médical quand il vient de six spécialistes portant une blouse blanche. Quand le même message est répété par des personnes ayant les diplômes pour comprendre le corps humain — <strong>on finit par les croire.</strong></p>
-    <p>Au bout de sept ans, j'ai enfin eu un mot pour ma souffrance : <strong>endométriose</strong>, accompagnée d'un SOPK, d'une fatigue chronique et d'un épuisement total. La réponse qui suivit était dévastatrice : <em>il n'y a pas de remède.</em></p>
-    <p>J'en avais assez.</p>
-  </div>
-  <div class="story-label"><span>02</span>La patiente</div>
-</section>
-
+<!-- SECTION 2 -->
 <section class="story-section reveal">
-  <div class="story-label"><span>03</span>La découverte</div>
-  <div class="story-content">
-    <h2>{d.s3h2}</h2>
-    <p>J'étais certaine qu'une alternative existait. J'ai donc pris la décision qui a tout changé : <strong>j'ai repris ma santé en main.</strong></p>
-    <p>La pandémie m'a donné la seule ressource qui m'avait toujours manqué : le temps. J'ai commencé à me documenter, trouvé un cours en ligne de découverte, et commencé à expérimenter sur moi-même.</p>
-    <div class="story-inset">{d.s3inset}</div>
-    <p>Et puis ma famille est devenue ma première clientèle — ma mère, ma sœur, mon père. Ces mois expérimentaux, ancrés dans l'amour et la nécessité, ont été le début de tout.</p>
+  <div class="story-section-text">
+    <p class="section-tag">02 · Incomprise · Diagnostiquée</p>
+    <div class="section-num">02</div>
+    <h2>{d.s2h2}</h2>
+    {d.s2body.split('\n\n').map(p => <p>{p}</p>)}
+  </div>
+  <div class="story-photo">
+    {d.s2photo ? (
+      <div class="story-photo-frame">
+        <img src={d.s2photo} alt="Sara Lemaitre" loading="lazy" />
+      </div>
+    ) : null}
   </div>
 </section>
 
+<!-- SECTION 3 -->
+<section class="story-section reveal">
+  <div class="story-section-text">
+    <p class="section-tag">03 · Phytothérapie · Santé holistique</p>
+    <div class="section-num">03</div>
+    <h2>{d.s3h2}</h2>
+    {d.s3body.split('\n\n').map(p => <p>{p}</p>)}
+    <blockquote><p>{d.s3quote}</p></blockquote>
+    {d.s3family.split('\n\n').map(p => <p>{p}</p>)}
+  </div>
+  <div class="story-photo">
+    {d.s3photo ? (
+      <div class="story-photo-frame">
+        <img src={d.s3photo} alt="Sara Lemaitre" loading="lazy" />
+      </div>
+    ) : null}
+  </div>
+</section>
+
+<!-- SECTION 4 -->
+<section class="story-section reveal" style="background: var(--sage-pale);">
+  <div class="story-section-text">
+    <p class="section-tag">04 · Formation · Pratique clinique</p>
+    <div class="section-num">04</div>
+    <h2>{d.s4h2}</h2>
+    {d.s4body.split('\n\n').map(p => <p>{p}</p>)}
+  </div>
+  <div class="story-photo">
+    {d.s4photo ? (
+      <div class="story-photo-frame">
+        <img src={d.s4photo} alt="Sara Lemaitre en clinique" loading="lazy" />
+      </div>
+    ) : null}
+  </div>
+</section>
+
+<!-- SECTION 5: Le magnolia -->
 <section class="magnolia-section reveal">
-  <div class="magnolia-layout">
-    {d.magnoliaPhoto && d.magnoliaPhoto !== '/images/magnolia.jpg' && (
-      <div class="magnolia-photo"><img src={d.magnoliaPhoto} alt="Magnolia" /></div>
-    )}
-    <div class="magnolia-inner">
-    <h2>{d.magnoliaTitle}</h2>
-    <p>J'ai grandi sous les branches d'un magnolia dans le jardin de ma famille. Il était mon refuge, mon abri. Un jour, une tempête l'a renversé. Mais j'ai continué d'arroser la terre où il se tenait. Un jour, une minuscule pousse a émergé.</p>
-    <p>Des années plus tard, <em>Magnolia</em> est devenu le sujet de ma dissertation clinique. Il m'a rappelé que la résilience est silencieuse — elle pousse en profondeur bien avant que quiconque puisse la voir.</p>
-    <p><em>C'est à cela que ressemble la guérison par les plantes.</em> Pas spectaculaire. Pas immédiate. Mais réelle, et la vôtre.</p>
+  <div class="magnolia-text">
+    <p class="section-tag">05 · Résilience · Retour aux sources</p>
+    <div class="section-num">05</div>
+    <h2>{d.magnoliaH2}</h2>
+    {d.magnoliaBody.split('\n\n').map(p => <p>{p}</p>)}
+  </div>
+  <div>
+    {d.magnoliaPhoto ? (
+      <div class="magnolia-photo-frame">
+        <img src={d.magnoliaPhoto} alt="Le magnolia" loading="lazy" />
+      </div>
+    ) : null}
+  </div>
+</section>
+
+<!-- SECTION 6: Aujourd'hui -->
+<section class="now-section reveal">
+  <div class="now-text">
+    <p class="section-tag">06 · Ma pratique · Mon engagement</p>
+    <div class="section-num">06</div>
+    <h2>{d.nowH2}</h2>
+    {d.nowBody.split('\n\n').map(p => <p>{p}</p>)}
+    <a href={s.calendlyDiscovery} target="_blank" rel="noopener" class="now-cta">Réserver un appel découverte gratuit</a>
+  </div>
+  <div class="credentials-panel reveal reveal-delay-1">
+    <p class="credentials-title">Formations &amp; parcours</p>
+    {d.credentials.map(cred => (
+      <div class="credential-item">
+        <div class="cred-dot"></div>
+        <div>
+          <div class="cred-name">{cred.name}</div>
+          <div class="cred-detail">{cred.detail}</div>
+        </div>
+      </div>
+    ))}
+    <div class="membership-logos">
+      <img src="/images/anp-logo.jpg" alt="ANP" />
+      <img src="/images/gnc-logo.jpg" alt="GNC" />
     </div>
   </div>
 </section>
-
-<section class="graduation-section reveal">
-  <div class="graduation-inner">
-    <h2>Le jour où je suis devenue praticienne qualifiée</h2>
-    <p>Debout dans cette salle le jour de la remise des diplômes, j'ai regardé les personnes à mes côtés — des praticiens d'horizons différents, d'histoires différentes. Chacun d'entre nous avait surmonté quelque chose pour être là.</p>
-    <p>J'ai pensé à ce que ce voyage m'avait donné au-delà des connaissances. <strong>La présence. L'écoute. Le courage de s'asseoir avec la complexité.</strong></p>
-    <p><em>Je l'ai choisi quand même. Je le choisirais à nouveau, à chaque fois.</em></p>
-  </div>
-</section>
-
-<section class="now-section">
-  <div class="now-text reveal">
-    <p class="eyebrow">Où j'en suis aujourd'hui</p>
-    <h2>{d.nowTitle}</h2>
-    <p>{d.nowP1}</p>
-    <p>{d.nowP2}</p>
-    <p>{d.nowP3}</p>
-    <a href={CALENDLY} target="_blank" rel="noopener" class="now-cta">Réserver une consultation découverte gratuite</a>
-  </div>
-  <div class="credentials-panel">
-    {d.portraitPhoto && d.portraitPhoto !== '/images/sara-portrait-professional.jpg' && (
-      <div class="cred-portrait"><img src={d.portraitPhoto} alt="Sara Lemaitre" /></div>
-    )}
-    <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Phytothérapie clinique</div><div class="cred-detail">Niveau licence · accrédité EHTPA</div></div></div>
-    <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Diplôme de Naturopathie</div><div class="cred-detail">Mode de vie, nutrition & protocoles intégratifs</div></div></div>
-    <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Stage MTC & Acupuncture</div><div class="cred-detail">6 mois · Pratique en dispensaire MTC</div></div></div>
-    <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Études Ayurvédiques</div><div class="cred-detail">Formation multi-tradition · Approche intégrée</div></div></div>
-    <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Diplôme de Massage Crânien Indien</div><div class="cred-detail">Stress, tensions & récupération du système nerveux</div></div></div>
-    <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Rémission personnelle</div><div class="cred-detail">Endométriose · SOPK · Fatigue chronique</div></div></div>
-    <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Ancienne athlète de haut niveau</div><div class="cred-detail">Nage artistique · Niveau équipe nationale</div></div></div>
-    <div class="credential-item"><div class="cred-dot"></div><div><div class="cred-name">Pratique bilingue</div><div class="cred-detail">Français & anglais · UK, Europe & international</div></div></div>
-  </div>
-</section>
-
-</BaseLayout>
-<script>
-  const reveals = document.querySelectorAll('.reveal');
-  const obs = new IntersectionObserver(e=>e.forEach(r=>{if(r.isIntersecting){r.target.classList.add('visible');obs.unobserve(r.target)}}),{threshold:0.08});
-  reveals.forEach(r=>obs.observe(r));
-</script>
