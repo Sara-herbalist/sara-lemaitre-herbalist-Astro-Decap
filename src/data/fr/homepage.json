@@ -51,44 +51,46 @@
   "whoDesc": "J'accompagne principalement les personnes dont le parcours fait écho au mien.\n\nDes femmes confrontées à des troubles hormonaux parfois minimisés par la médecine conventionnelle. Des sportifs dont le corps ne répond plus comme auparavant. Des personnes qui avancent depuis longtemps en puisant dans leurs réserves, au point d'avoir oublié ce que signifie réellement se sentir en forme.\n\nSi vous vous reconnaissez dans ces situations, vous êtes au bon endroit.",
   "whoCards": [
     {
-      "number": "01",
-      "title": "Femmes avec des troubles hormonaux",
-      "desc": "Endométriose, SOPK, fatigue chronique, périménopause, fertilité, irrégularités menstruelles. J'ai vécu ces conditions. J'ai également passé deux ans à les traiter en clinique.",
-      "tags": [
-        "Endométriose",
-        "SOPK",
-        "Périménopause",
-        "Fatigue chronique"
-      ]
-    },
-    {
-      "number": "02",
-      "title": "Sportifs et personnes actives",
-      "desc": "J'ai pratiqué la natation synchronisée au niveau national. Je comprends les exigences de la performance, la récupération, le surentraînement, et la douleur très particulière d'un corps qui ne coopère plus. Je vous accompagne dans votre récupération.",
-      "tags": [
-        "Fatigue de performance",
-        "Récupération",
-        "Adaptogènes",
-        "Soutien aux blessures"
-      ]
-    },
-    {
-      "number": "03",
-      "title": "Personnes épuisées par le burn-out",
-      "desc": "Stress, dérégulation du système nerveux, fatigue surrénale, insomnie, l'érosion silencieuse d'une vie menée à bout de souffle. La phytothérapie et la naturopathie disposent d'outils profonds pour cela, tandis que le massage crânien offre un apaisement immédiat.",
-      "tags": [
-        "Burn-out",
-        "Stress",
-        "Sommeil",
-        "Système nerveux"
-      ]
+      {
+  "number": "01",
+  "title": "Femmes présentant des troubles hormonaux",
+  "desc": "Endométriose, syndrome métabolique ovarien polyendocrinien (SMOP), fatigue chronique, périménopause, fertilité et santé menstruelle. J'ai moi-même traversé ces problématiques et j'accompagne depuis plusieurs années des femmes confrontées à ces mêmes déséquilibres.",
+  "tags": [
+    "Endométriose",
+    "SMOP",
+    "Fertilité",
+    "Périménopause",
+    "Fatigue chronique"
+  ]
+},
+{
+  "number": "02",
+  "title": "Sportifs, danseurs & personnes actives",
+  "desc": "Ancienne sportive de haut niveau, je connais les exigences de la performance, de la récupération et la frustration d'un corps qui ne répond plus comme on le souhaiterait. J'accompagne les sportifs, les danseurs et les personnes actives dans la récupération après une blessure, les troubles musculo-squelettiques, le surentraînement et le retour à la pratique.",
+  "tags": [
+    "Performance",
+    "Récupération",
+    "Surentraînement",
+    "Blessures",
+    "Mobilité"
+  ]
+},
+{
+  "number": "03",
+  "title": "Personnes vivant avec des troubles chroniques et métaboliques",
+  "desc": "Troubles digestifs, déséquilibres de la glycémie, maladies auto-immunes, allergies, problèmes de peau et inflammation chronique. Une approche personnalisée qui va au-delà des symptômes pour comprendre votre santé dans sa globalité.",
+  "tags": [
+    "Digestion",
+    "Glycémie",
+    "Auto-immunité",
+    "Allergies",
+    "Peau"
     }
   ],
   "storyPullTitle": "L'histoire derrière la pratique",
-  "storyPullH2line1": "Ancienne athlète,",
-  "storyPullH2line2": "puis patiente,",
-  "storyPullH2line3": "aujourd'hui",
-  "storyPullH2line4": "herboriste",
+  "storyPullH2line1": "Athlète.",
+  "storyPullH2line2": "Patiente.",
+  "storyPullH2line3": "Praticienne.",
   "storyPullBody": "Une carrière sportive interrompue. Des années de consultations sans réponses. Une pandémie qui est devenue, contre toute attente, le début de quelque chose de nouveau. Des proches devenus mes premiers patients. Et une découverte lente, imparfaite, profondément personnelle : les plantes pouvaient faire ce que rien d'autre n'avait réussi.",
   "storyPullQuote": "Je ne vivais pas. Je survivais. Jusqu'au jour où j'ai cessé d'attendre que quelqu'un m'autorise à guérir.",
   "processTitle": "Les étapes de votre accompagnement",
