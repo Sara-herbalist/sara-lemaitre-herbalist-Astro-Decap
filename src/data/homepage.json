@@ -54,34 +54,37 @@
     {
       "number": "01",
       "title": "Women with hormonal conditions",
-      "desc": "Endometriosis, PMOS, chronic fatigue, perimenopause, fertility, menstrual irregularity. I have lived these conditions. I have also spent two years treating them in clinic.",
+      "desc": "Endometriosis, PMOS, chronic fatigue, perimenopause, fertility, menstrual irregularity. I have lived these conditions myself and have spent over two years supporting women with them in clinical practice.",
       "tags": [
         "Endometriosis",
-        "PMOS",
+        "PMOS/PCOS",
+        "Fertility",
         "Perimenopause",
         "Chronic fatigue"
       ]
     },
     {
       "number": "02",
-      "title": "Athletes & active people",
-      "desc": "I trained at national level. I understand performance, recovery, overtraining, and the very specific grief of a body that won't cooperate. I have practice with musculoskeletal trauma and can accompany you in your recovery.",
+      "title": "Athletes, dancers & active people",
+      "desc": "I trained at national level, so I understand the demands of performance, recovery and the frustration of a body that no longer cooperates. I support athletes, dancers and performers through injury, musculoskeletal conditions, overtraining and their return to performance.",
       "tags": [
-        "Performance fatigue",
+        "Performance",
         "Recovery",
-        "Adaptogens",
-        "Injury support"
+        "Overtraining",
+        "Injury support",
+        "Musculoskeletal"
       ]
     },
     {
-      "number": "03",
-      "title": "People exhausted by burnout",
-      "desc": "Stress, nervous system dysregulation, adrenal fatigue, insomnia, the quiet erosion of a life run on empty. Herbal medicine and naturopathy have deep tools for this while Indian head massage offers an immediate relaxation.",
-      "tags": [
-        "Burnout",
-        "Stress",
-        "Sleep",
-        "Nervous system"
+     "number": "03",
+  "title": "People with chronic & metabolic conditions",
+  "desc": "Digestive disorders, blood sugar imbalance, allergies, skin conditions, autoimmune disease and chronic inflammation. An individualised approach that looks beyond isolated symptoms to understand the wider picture of your health.",
+  "tags": [
+    "Digestion",
+    "Blood sugar",
+    "Autoimmune",
+    "Allergies",
+    "Skin"
       ]
     }
   ],
