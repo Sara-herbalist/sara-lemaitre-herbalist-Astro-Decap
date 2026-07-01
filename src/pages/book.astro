@@ -1,4 +1,3 @@
-
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 const d = (await import('../data/book.json')).default;
@@ -32,7 +31,6 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
 ---
 <BaseLayout {...meta}>
 <style>
-/* Hero */
 .book-hero {
   padding: 10rem 5rem 7rem;
   background: #3D3229;
@@ -51,7 +49,6 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
 .book-hero-photo { aspect-ratio: 3/4; overflow: hidden; }
 .book-hero-photo img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.75) saturate(.8); }
 
-/* Cards section */
 .book-options { padding: 6rem 5rem; background: var(--charcoal); }
 .book-options-intro { margin-bottom: 3rem; }
 .book-options-intro h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--warm-white); margin-bottom: 1rem; }
@@ -62,7 +59,6 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
 }
 .section-label:first-of-type { margin-top: 0; }
 
-/* Discovery — full width */
 .discovery-card {
   background: rgba(247,243,238,.04);
   border: 1px solid rgba(247,243,238,.1);
@@ -73,10 +69,7 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
   align-items: center;
   margin-bottom: 1px;
 }
-.discovery-price {
-  font-family: var(--font-serif); font-size: 3rem;
-  color: var(--warm-white); font-style: italic; line-height: 1;
-}
+.discovery-price { font-family: var(--font-serif); font-size: 3rem; color: var(--warm-white); font-style: italic; line-height: 1; }
 .discovery-title { font-family: var(--font-serif); font-size: 1.4rem; color: var(--warm-white); margin-bottom: .4rem; }
 .discovery-tag { font-size: .8125rem; color: rgba(247,243,238,.4); margin-bottom: .75rem; }
 .discovery-desc { font-size: 1rem; color: rgba(247,243,238,.5); line-height: 1.75; }
@@ -88,13 +81,9 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
 }
 .discovery-cta:hover { background: var(--sage-light); }
 
-/* Two-column row for initial + followup */
 .cards-two { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(247,243,238,.05); margin-bottom: 1px; }
-
-/* Bundle row */
 .cards-two-bundles { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(247,243,238,.05); margin-bottom: 1px; }
 
-/* IHM — full width standalone */
 .ihm-card {
   background: rgba(247,243,238,.04);
   border: 1px solid rgba(247,243,238,.1);
@@ -104,10 +93,7 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
   gap: 3rem;
   align-items: center;
 }
-.ihm-price {
-  font-family: var(--font-serif); font-size: 3rem;
-  color: var(--warm-white); font-style: italic; line-height: 1;
-}
+.ihm-price { font-family: var(--font-serif); font-size: 3rem; color: var(--warm-white); font-style: italic; line-height: 1; }
 .ihm-title { font-family: var(--font-serif); font-size: 1.4rem; color: var(--warm-white); margin-bottom: .4rem; }
 .ihm-tag { font-size: .8125rem; color: rgba(247,243,238,.4); margin-bottom: .75rem; }
 .ihm-desc { font-size: 1rem; color: rgba(247,243,238,.5); line-height: 1.75; }
@@ -119,7 +105,6 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
 }
 .ihm-cta:hover { border-color: rgba(247,243,238,.6); color: white; }
 
-/* Standard pcard */
 .pcard {
   background: var(--charcoal); padding: 2rem 1.75rem 1.75rem;
   border: 1px solid rgba(247,243,238,.07);
@@ -127,81 +112,49 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
   transition: border-color .25s;
 }
 .pcard:hover { border-color: rgba(196,208,186,.2); }
-
-/* Featured bundle — sage dark green */
-.pcard.featured {
-  background: var(--sage-dark);
-  border-color: var(--sage-dark);
-}
+.pcard.featured { background: var(--sage-dark); border-color: var(--sage-dark); }
 .pcard.featured:hover { border-color: var(--sage-text); }
-
 .pcard-bundle { border-left: 2px solid rgba(196,208,186,.35) !important; }
 .pcard.featured.pcard-bundle { border-left: 2px solid rgba(255,255,255,.3) !important; }
-
-.recommended-badge {
-  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
-  color: rgba(255,255,255,.8); text-align: center; margin-bottom: .5rem;
-}
-.pcard-tag {
-  font-size: .7rem; letter-spacing: .18em; text-transform: uppercase;
-  color: rgba(247,243,238,.3); text-align: center; margin-bottom: .75rem;
-}
+.recommended-badge { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.8); text-align: center; margin-bottom: .5rem; }
+.pcard-tag { font-size: .7rem; letter-spacing: .18em; text-transform: uppercase; color: rgba(247,243,238,.3); text-align: center; margin-bottom: .75rem; }
 .pcard.featured .pcard-tag { color: rgba(255,255,255,.65); }
-.pcard-name {
-  font-family: var(--font-serif); font-size: 1.2rem;
-  color: rgba(247,243,238,.85); text-align: center;
-  margin-bottom: 1.25rem; line-height: 1.3;
-}
+.pcard-name { font-family: var(--font-serif); font-size: 1.2rem; color: rgba(247,243,238,.85); text-align: center; margin-bottom: 1.25rem; line-height: 1.3; }
 .pcard.featured .pcard-name { color: white; }
-.pcard-price {
-  font-family: var(--font-serif); font-size: 2.5rem;
-  color: rgba(247,243,238,.85); text-align: center;
-  line-height: 1; margin-bottom: .4rem;
-}
+.pcard-price { font-family: var(--font-serif); font-size: 2.5rem; color: rgba(247,243,238,.85); text-align: center; line-height: 1; margin-bottom: .4rem; }
 .pcard.featured .pcard-price { color: white; }
-.pcard-sub {
-  font-size: .75rem; letter-spacing: .1em; text-transform: uppercase;
-  color: rgba(247,243,238,.25); text-align: center; margin-bottom: 1.25rem;
-}
+.pcard-sub { font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; color: rgba(247,243,238,.25); text-align: center; margin-bottom: 1.25rem; }
 .pcard.featured .pcard-sub { color: rgba(255,255,255,.55); }
 .pcard-divider { height: 1px; background: rgba(247,243,238,.07); margin: 0 0 1.25rem; }
 .pcard.featured .pcard-divider { background: rgba(255,255,255,.15); }
-.pcard-includes {
-  list-style: none; display: flex; flex-direction: column;
-  gap: .5rem; margin-bottom: 1.5rem; flex: 1;
-}
-.pcard-includes li {
-  font-size: .9rem; color: rgba(247,243,238,.4);
-  padding-left: 1rem; position: relative; line-height: 1.6;
-}
+.pcard-includes { list-style: none; display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1.5rem; flex: 1; }
+.pcard-includes li { font-size: .9rem; color: rgba(247,243,238,.4); padding-left: 1rem; position: relative; line-height: 1.6; }
 .pcard.featured .pcard-includes li { color: rgba(255,255,255,.75); }
 .pcard-includes li::before { content: '—'; position: absolute; left: 0; color: rgba(196,208,186,.3); }
 .pcard.featured .pcard-includes li::before { color: rgba(255,255,255,.4); }
-.pcard-sliding {
-  font-family: var(--font-serif); font-size: .9rem;
-  font-style: italic; color: rgba(247,243,238,.25);
-  text-align: center; margin-bottom: 1.25rem;
-}
+.pcard-sliding { font-family: var(--font-serif); font-size: .9rem; font-style: italic; color: rgba(247,243,238,.25); text-align: center; margin-bottom: 1.25rem; }
 .pcard.featured .pcard-sliding { color: rgba(255,255,255,.6); }
-.pcard-cta {
-  display: block; text-align: center; padding: .75rem 1rem;
-  border: 1px solid rgba(247,243,238,.15);
-  font-size: .8125rem; letter-spacing: .14em; text-transform: uppercase;
-  color: rgba(247,243,238,.45); transition: all .22s;
-}
+.pcard-cta { display: block; text-align: center; padding: .75rem 1rem; border: 1px solid rgba(247,243,238,.15); font-size: .8125rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(247,243,238,.45); transition: all .22s; }
 .pcard:hover .pcard-cta { border-color: rgba(247,243,238,.35); color: rgba(247,243,238,.75); }
-.pcard.featured .pcard-cta {
-  border-color: rgba(255,255,255,.4); color: white;
-  background: rgba(255,255,255,.1);
-}
+.pcard.featured .pcard-cta { border-color: rgba(255,255,255,.4); color: white; background: rgba(255,255,255,.1); }
 .pcard.featured:hover .pcard-cta { background: rgba(255,255,255,.2); }
+.bundle-note { font-size: .875rem; color: rgba(247,243,238,.25); margin-top: 1rem; font-style: italic; text-align: center; }
 
-.bundle-note {
-  font-size: .875rem; color: rgba(247,243,238,.25);
-  margin-top: 1rem; font-style: italic; text-align: center;
+.investment-section {
+  padding: 5rem; background: var(--warm-white);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
 }
+.investment-section h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 2rem; color: var(--charcoal); }
+.investment-section p { color: var(--muted); line-height: 1.9; margin-bottom: 1rem; font-size: 1rem; }
+.commitment-box {
+  background: var(--sage-pale);
+  padding: 2rem;
+  border-left: 3px solid var(--sage-light);
+}
+.commitment-box h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 1.5rem; color: var(--charcoal); }
+.commitment-box p { color: var(--muted); line-height: 1.9; margin-bottom: 1rem; font-size: 1rem; }
+.commitment-box p:last-child { margin-bottom: 0; }
 
-/* Payment & cancellation */
 .payment-section {
   padding: 5rem; background: var(--cream);
   display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
@@ -239,11 +192,11 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
 @media (max-width: 1024px) {
   .book-hero { grid-template-columns: 1fr; gap: 3rem; padding: 8rem 2.5rem 4rem; }
   .book-hero-photo { aspect-ratio: 16/9; }
-  .book-options, .payment-section, .book-cancel, .book-cta { padding: 4rem 2.5rem; }
+  .book-options, .investment-section, .payment-section, .book-cancel, .book-cta { padding: 4rem 2.5rem; }
   .discovery-card, .ihm-card { grid-template-columns: 1fr; gap: 1.5rem; }
   .cards-two, .cards-two-bundles { grid-template-columns: 1fr; }
   .cancel-tiers { grid-template-columns: 1fr; }
-  .payment-section { grid-template-columns: 1fr; gap: 2rem; }
+  .investment-section, .payment-section { grid-template-columns: 1fr; gap: 2rem; }
 }
 </style>
 
@@ -270,7 +223,6 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
     <p>Every consultation is confirmed after a brief review to ensure I can offer the right support. You will hear back within 48 hours.</p>
   </div>
 
-  <!-- 1. Discovery — full width -->
   <p class="section-label">Free consultation</p>
   <div class="discovery-card reveal">
     <div class="discovery-price">Free</div>
@@ -282,7 +234,6 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
     <a href={s.calendlyDiscovery} target="_blank" rel="noopener" class="discovery-cta">Book free call</a>
   </div>
 
-  <!-- 2. Initial + Follow-up side by side -->
   <p class="section-label">Individual sessions</p>
   <div class="cards-two">
     <div class="pcard reveal">
@@ -296,7 +247,7 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
         {d.initialIncludes.map(i => <li>{i}</li>)}
       </ul>
       <p class="pcard-sliding">Sliding scale: £{d.initialSlidingScale}</p>
-      <a href={`mailto:${s.email}?subject=Initial consultation request`} class="pcard-cta">Request consultation</a>
+      <a href={'mailto:' + s.email + '?subject=Initial consultation request'} class="pcard-cta">Request consultation</a>
     </div>
     <div class="pcard reveal reveal-delay-1">
       <div set:html={petalMark}></div>
@@ -308,14 +259,12 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
       <ul class="pcard-includes">
         {d.followupIncludes.map(i => <li>{i}</li>)}
       </ul>
-      <a href={`mailto:${s.email}?subject=Follow-up consultation request`} class="pcard-cta">Book follow-up</a>
+      <a href={'mailto:' + s.email + '?subject=Follow-up consultation request'} class="pcard-cta">Book follow-up</a>
     </div>
   </div>
 
-  <!-- 3. Bundles -->
   <p class="section-label">Bundles</p>
   <div class="cards-two-bundles">
-    <!-- Featured — Initial + 2 Follow-ups -->
     <div class="pcard pcard-bundle featured reveal">
       <p class="recommended-badge">Most recommended</p>
       <div set:html={petalMarkSage}></div>
@@ -328,9 +277,8 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
         {d.bundleIncludes.map(i => <li>{i}</li>)}
       </ul>
       <p class="pcard-sliding">Sliding scale: £{d.bundleSlidingScale}</p>
-      <a href={`mailto:${s.email}?subject=Bundle consultation request`} class="pcard-cta">Request bundle</a>
+      <a href={'mailto:' + s.email + '?subject=Bundle consultation request'} class="pcard-cta">Request bundle</a>
     </div>
-    <!-- Standard — 4 Follow-ups -->
     <div class="pcard pcard-bundle reveal reveal-delay-1">
       <div set:html={petalMark}></div>
       <p class="pcard-tag">{d.followupBundleTag}</p>
@@ -341,21 +289,33 @@ const petalMarkSage = `<svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3
       <ul class="pcard-includes">
         {d.followupBundleIncludes.map(i => <li>{i}</li>)}
       </ul>
-      <a href={`mailto:${s.email}?subject=Follow-up bundle request`} class="pcard-cta">Request bundle</a>
+      <a href={'mailto:' + s.email + '?subject=Follow-up bundle request'} class="pcard-cta">Request bundle</a>
     </div>
   </div>
   <p class="bundle-note">{d.bundleNote}</p>
 
-  <!-- 4. IHM — standalone full width -->
   <p class="section-label" style="margin-top:3rem;">Bodywork</p>
-<div class="ihm-card reveal" id="ihm">
+  <div class="ihm-card reveal" id="ihm">
     <div class="ihm-price">£{d.ihmPrice}</div>
     <div>
       <p class="ihm-title">{d.ihmTitle}</p>
       <p class="ihm-tag">{d.ihmTag}</p>
       <p class="ihm-desc">A deeply relaxing Ayurvedic treatment working on the back, neck, shoulders, scalp and face. Resets the nervous system in a way that talk alone cannot. Standalone or combined with a herbal consultation.</p>
     </div>
-    <a href={s.calendlyIhm || `mailto:${s.email}?subject=Indian Head Massage booking`} class="ihm-cta">Book a massage</a>
+    <a href={s.calendlyIhm || ('mailto:' + s.email + '?subject=Indian Head Massage booking')} class="ihm-cta">Book a massage</a>
+  </div>
+</section>
+
+<!-- INVESTMENT & COMMITMENT -->
+<section class="investment-section reveal">
+  <div>
+    <h2>Investment in your health</h2>
+    {d.pricingNote.split('\n\n').map(p => <p>{p}</p>)}
+  </div>
+  <div class="commitment-box">
+    <h2>{d.commitmentTitle}</h2>
+    <p>{d.commitment1}</p>
+    <p>{d.commitment2}</p>
   </div>
 </section>
 
