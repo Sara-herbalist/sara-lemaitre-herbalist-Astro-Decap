@@ -38,10 +38,17 @@ const meta = {
   aspect-ratio: 3/4;
   overflow: hidden;
 }
-.hero-photo-frame img {
-  width: 100%; height: 100%;
-  object-fit: cover; object-position: top;
-  filter: brightness(.75) saturate(.8);
+.hero-photo-frame {
+  aspect-ratio: 3/4;
+  overflow: hidden;
+}
+@media (max-width: 1024px) {
+  .hero-photo-frame {
+    aspect-ratio: 16/9;
+  }
+  .hero-photo-frame img {
+    object-position: center 15%;
+  }
 }
 .hero-pull-quote {
   margin-top: 2.5rem;
