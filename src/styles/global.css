@@ -112,6 +112,8 @@ img { display: block; max-width: 100%; }
   letter-spacing: .06em;
   color: var(--charcoal);
   flex-shrink: 0;
+  position: relative;
+  z-index: 101;
 }
 .nav-links {
   display: flex;
@@ -148,6 +150,8 @@ img { display: block; max-width: 100%; }
   border: 1px solid var(--sage-light);
   padding: .45rem .85rem;
   transition: all .2s;
+  position: relative;
+  z-index: 101;
 }
 .lang-toggle:hover { border-color: var(--bark); color: var(--bark); }
 .hamburger {
@@ -158,7 +162,8 @@ img { display: block; max-width: 100%; }
   border: none;
   cursor: pointer;
   padding: .5rem;
-  margin-left: auto;
+  position: relative;
+  z-index: 101;
 }
 .hamburger span {
   display: block;
@@ -245,30 +250,7 @@ footer {
 }
 .photo-frame:hover img { filter: brightness(.92) saturate(.9); }
 
-/* ── Responsive ─────────────────────────────────────────── */
-@media (max-width: 1024px) {
-  #nav { padding: 1.2rem 2rem; }
-  #nav.scrolled { padding: .9rem 2rem; }
-  .nav-links { display: none; }
-  .nav-links.open {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: var(--warm-white);
-    align-items: center;
-    justify-content: center;
-    gap: 2rem;
-    z-index: 99;
-  }
-  .nav-links.open a { font-size: 1.125rem; }
-  .hamburger { display: flex; }
-  footer { padding: 3rem 1.5rem 2rem; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-}
-@media (max-width: 640px) {
-  .footer-grid { grid-template-columns: 1fr; }
-}
+/* ── Footer memberships ─────────────────────────────────── */
 .footer-memberships {
   display: flex;
   gap: 1rem;
@@ -281,4 +263,65 @@ footer {
   background: white;
   padding: 4px 8px;
   border-radius: 4px;
+}
+
+/* ── Responsive: tablet ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  #nav {
+    padding: 1.2rem 1.5rem;
+    gap: 1rem;
+  }
+  #nav.scrolled { padding: .9rem 1.5rem; }
+
+  /* Hide desktop nav items and book button */
+  .nav-links { display: none; }
+  .nav-book { display: none; }
+
+  /* Show hamburger */
+  .hamburger { display: flex; margin-left: auto; }
+
+  /* Mobile nav overlay */
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--warm-white);
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 99;
+  }
+  .nav-links.open a {
+    font-size: 1.25rem;
+    letter-spacing: .14em;
+    color: var(--charcoal);
+  }
+  /* Show book button inside open nav */
+  .nav-links.open .nav-book-mobile {
+    display: inline-block;
+    padding: .85rem 2.5rem;
+    border: 1px solid var(--bark);
+    color: var(--bark);
+    font-size: .9375rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    margin-top: 1rem;
+  }
+
+  footer { padding: 3rem 1.5rem 2rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+
+/* ── Responsive: mobile ─────────────────────────────────── */
+@media (max-width: 640px) {
+  #nav { padding: 1rem 1.25rem; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { font-size: .8rem; }
+
+  /* Tighten global section padding */
+  section { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+
+  /* Prevent horizontal overflow everywhere */
+  .info-bar { padding: 1rem 1.25rem; gap: 1.5rem; }
 }
