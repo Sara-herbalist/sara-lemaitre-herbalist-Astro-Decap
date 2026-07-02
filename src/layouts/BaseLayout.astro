@@ -82,7 +82,7 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
       ? <a href={currentPage === 'index' ? '/' : `/${currentPage}`} class="lang-toggle" aria-label="Switch to English">EN</a>
       : <a href={currentPage === 'index' ? '/fr/' : `/fr/${currentPage}`} class="lang-toggle" aria-label="Passer en français">FR</a>
     }
-    <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links" onclick="toggleNav(this)">
+    <button class="hamburger" id="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-links">
       <span></span><span></span><span></span>
     </button>
   </nav>
@@ -177,31 +177,62 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
     }
   </style>
 
-  <script>
-    const nav = document.getElementById('nav');
-    if (nav) window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
-    function toggleNav(btn) {
-      const links = document.getElementById('nav-links');
-      const exp = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', String(!exp));
-      btn.setAttribute('aria-label', exp ? 'Open navigation menu' : 'Close navigation menu');
-      links?.classList.toggle('open', !exp);
-      document.body.style.overflow = exp ? '' : 'hidden';
+  <script is:inline>
+    // Scroll handler
+    var nav = document.getElementById('nav');
+    if (nav) {
+      window.addEventListener('scroll', function() {
+        nav.classList.toggle('scrolled', window.scrollY > 60);
+      });
     }
-    document.addEventListener('click', (e) => {
-      const links = document.getElementById('nav-links');
-      const btn = document.querySelector('.hamburger');
-      if (links && btn && !links.contains(e.target) && !btn.contains(e.target)) {
-        links.classList.remove('open');
-        btn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
-    });
-    const reveals = document.querySelectorAll('.reveal');
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-    }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach(r => obs.observe(r));
+
+    // Hamburger toggle
+    var hamburgerBtn = document.getElementById('hamburger-btn');
+    var navLinks = document.getElementById('nav-links');
+
+    if (hamburgerBtn && navLinks) {
+      hamburgerBtn.addEventListener('click', function() {
+        var isOpen = navLinks.classList.contains('open');
+        if (isOpen) {
+          navLinks.classList.remove('open');
+          hamburgerBtn.setAttribute('aria-expanded', 'false');
+          hamburgerBtn.setAttribute('aria-label', 'Open navigation menu');
+          document.body.style.overflow = '';
+        } else {
+          navLinks.classList.add('open');
+          hamburgerBtn.setAttribute('aria-expanded', 'true');
+          hamburgerBtn.setAttribute('aria-label', 'Close navigation menu');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+
+      // Close on outside click
+      document.addEventListener('click', function(e) {
+        if (navLinks.classList.contains('open') &&
+            !navLinks.contains(e.target) &&
+            !hamburgerBtn.contains(e.target)) {
+          navLinks.classList.remove('open');
+          hamburgerBtn.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    // Reveal animation
+    var reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      var obs = new IntersectionObserver(function(entries) {
+        entries.forEach(function(e) {
+          if (e.isIntersecting) {
+            e.target.classList.add('visible');
+            obs.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.07, rootMargin: '0px 0px -40px 0px' });
+      reveals.forEach(function(r) { obs.observe(r); });
+    } else {
+      reveals.forEach(function(r) { r.classList.add('visible'); });
+    }
   </script>
 </body>
 </html>
