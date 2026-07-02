@@ -1,3 +1,4 @@
+
 ---
 import '../styles/global.css';
 const s = (await import('../data/settings.json')).default;
@@ -61,6 +62,158 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style is:global>
+    /* ── NAV — guaranteed fixed positioning ── */
+    #nav {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      right: 0 !important;
+      z-index: 1000 !important;
+      display: flex !important;
+      align-items: center;
+      gap: 2rem;
+      padding: 1.5rem 3rem;
+      background: transparent;
+      transition: background .3s, padding .3s, box-shadow .3s;
+    }
+    #nav.scrolled {
+      background: rgba(253,250,247,.97) !important;
+      backdrop-filter: blur(8px);
+      padding: 1rem 3rem;
+      box-shadow: 0 1px 0 rgba(92,74,58,.08);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.125rem;
+      letter-spacing: .06em;
+      color: var(--charcoal);
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1001;
+    }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+      margin-left: auto;
+    }
+    .nav-links a {
+      font-size: .9375rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color .2s;
+    }
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] { color: var(--charcoal); }
+    .nav-book {
+      display: inline-block;
+      padding: .75rem 1.5rem;
+      border: 1px solid var(--bark);
+      color: var(--bark);
+      font-size: .9375rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      transition: all .22s;
+      flex-shrink: 0;
+    }
+    .nav-book:hover { background: var(--bark); color: var(--warm-white); }
+    .lang-toggle {
+      font-size: .8125rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--sage-light);
+      padding: .45rem .85rem;
+      transition: all .2s;
+      position: relative;
+      z-index: 1001;
+    }
+    .lang-toggle:hover { border-color: var(--bark); color: var(--bark); }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: .5rem;
+      position: relative;
+      z-index: 1001;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--charcoal);
+      transition: all .25s;
+    }
+    .nav-book-mobile-wrap { display: none; }
+    .nav-book-mobile {
+      display: inline-block;
+      padding: .85rem 2.5rem;
+      border: 1px solid var(--bark);
+      color: var(--bark);
+      font-size: .9375rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    /* ── MOBILE NAV ── */
+    @media (max-width: 1024px) {
+      #nav {
+        padding: 1rem 1.25rem !important;
+        gap: 0.75rem;
+        background: rgba(253,250,247,.97) !important;
+        box-shadow: 0 1px 0 rgba(92,74,58,.08) !important;
+      }
+      #nav.scrolled {
+        padding: 1rem 1.25rem !important;
+      }
+      .nav-links { display: none !important; }
+      .nav-book { display: none !important; }
+      .hamburger {
+        display: flex !important;
+        margin-left: auto;
+      }
+      .hamburger span { background: var(--charcoal) !important; }
+      .lang-toggle {
+        color: var(--charcoal) !important;
+        border-color: var(--sage-light) !important;
+      }
+      .nav-logo { color: var(--charcoal) !important; }
+
+      /* Mobile overlay */
+      .nav-links.open {
+        display: flex !important;
+        flex-direction: column !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background: #FDFAF7 !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 2rem !important;
+        z-index: 999 !important;
+        margin: 0 !important;
+        padding: 2rem !important;
+      }
+      .nav-links.open li { list-style: none; }
+      .nav-links.open a {
+        font-size: 1.25rem !important;
+        letter-spacing: .14em !important;
+        color: var(--charcoal) !important;
+        text-transform: uppercase;
+      }
+      .nav-book-mobile-wrap { display: block !important; }
+    }
+  </style>
 </head>
 <body>
   <a href="#main-content" class="skip-nav">Skip to main content</a>
@@ -160,25 +313,7 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
     </div>
   </footer>
 
-  <style>
-    .nav-book-mobile-wrap { display: none; }
-    .nav-book-mobile {
-      display: inline-block;
-      padding: .85rem 2.5rem;
-      border: 1px solid var(--bark);
-      color: var(--bark);
-      font-size: .9375rem;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-      margin-top: 0.5rem;
-    }
-    @media (max-width: 1024px) {
-      .nav-book-mobile-wrap { display: block; }
-    }
-  </style>
-
   <script is:inline>
-    // Scroll handler
     var nav = document.getElementById('nav');
     if (nav) {
       window.addEventListener('scroll', function() {
@@ -186,7 +321,6 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
       });
     }
 
-    // Hamburger toggle
     var hamburgerBtn = document.getElementById('hamburger-btn');
     var navLinks = document.getElementById('nav-links');
 
@@ -206,7 +340,6 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
         }
       });
 
-      // Close on outside click
       document.addEventListener('click', function(e) {
         if (navLinks.classList.contains('open') &&
             !navLinks.contains(e.target) &&
@@ -218,7 +351,6 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
       });
     }
 
-    // Reveal animation
     var reveals = document.querySelectorAll('.reveal');
     if ('IntersectionObserver' in window) {
       var obs = new IntersectionObserver(function(entries) {
