@@ -118,7 +118,6 @@ const offerIcons = {
 
 <BaseLayout {...meta}>
 <style>
-/* ── Hero ─────────────────────────────────────────────── */
 .hero {
   min-height: 100vh;
   display: grid;
@@ -145,11 +144,7 @@ const offerIcons = {
   line-height: 1.0;
   margin-bottom: .3rem;
 }
-.hero h1 em {
-  color: var(--sage-light);
-  font-style: italic;
-  display: block;
-}
+.hero h1 em { color: var(--sage-light); font-style: italic; display: block; }
 .hero-credentials {
   font-size: .8125rem;
   color: rgba(247,243,238,.4);
@@ -169,110 +164,54 @@ const offerIcons = {
 .hero-body strong { color: rgba(247,243,238,.92); font-weight: 400; }
 .hero-ctas { display: flex; flex-direction: column; gap: 1rem; width: fit-content; }
 .btn-sage {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  background: var(--sage-pale);
-  color: #3D3229;
-  font-size: .875rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  transition: background .22s;
-  font-weight: 500;
+  display: inline-block; padding: 1rem 2.5rem;
+  background: var(--sage-pale); color: #3D3229;
+  font-size: .875rem; letter-spacing: .16em; text-transform: uppercase;
+  transition: background .22s; font-weight: 500;
 }
 .btn-sage:hover { background: var(--sage-light); }
 .btn-ghost {
-  display: inline-block;
-  padding: 1rem 2.5rem;
-  border: 1px solid rgba(247,243,238,.25);
-  color: rgba(247,243,238,.7);
-  font-size: .875rem;
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  transition: all .22s;
+  display: inline-block; padding: 1rem 2.5rem;
+  border: 1px solid rgba(247,243,238,.25); color: rgba(247,243,238,.7);
+  font-size: .875rem; letter-spacing: .16em; text-transform: uppercase; transition: all .22s;
 }
 .btn-ghost:hover { border-color: rgba(247,243,238,.6); color: rgba(247,243,238,.9); }
 .hero-right {
-  position: relative;
-  overflow: hidden;
-  background: var(--sage-pale);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative; overflow: hidden; background: var(--sage-pale);
+  display: flex; align-items: center; justify-content: center;
 }
 .hero-botanical svg { width: min(380px, 80%); height: auto; }
-.hero-photo {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  filter: brightness(.82) saturate(.85);
-}
+.hero-photo { width: 100%; height: 100%; object-fit: cover; object-position: top center; filter: brightness(.82) saturate(.85); }
 .scroll-hint {
-  margin-top: 3rem;
-  display: flex;
-  align-items: center;
-  gap: .75rem;
-  font-size: .7rem;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-  color: rgba(247,243,238,.25);
+  margin-top: 3rem; display: flex; align-items: center; gap: .75rem;
+  font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(247,243,238,.25);
 }
-.scroll-hint::before {
-  content: '';
-  display: block;
-  width: 1px;
-  height: 36px;
-  background: rgba(247,243,238,.15);
-}
+.scroll-hint::before { content: ''; display: block; width: 1px; height: 36px; background: rgba(247,243,238,.15); }
 .info-bar {
-  background: #3D3229;
-  border-top: 1px solid rgba(247,243,238,.06);
-  padding: 1.2rem 5rem;
-  display: flex;
-  gap: 3rem;
-  align-items: center;
-  overflow-x: auto;
+  background: #3D3229; border-top: 1px solid rgba(247,243,238,.06);
+  padding: 1.2rem 5rem; display: flex; gap: 3rem; align-items: center; overflow-x: auto;
 }
 .info-item { display: flex; flex-direction: column; gap: .2rem; flex-shrink: 0; }
 .info-label { font-size: .65rem; letter-spacing: .2em; text-transform: uppercase; color: rgba(247,243,238,.32); }
 .info-value { font-size: .875rem; color: rgba(247,243,238,.62); letter-spacing: .04em; }
 .practice {
-  padding: 8rem 5rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: start;
-  background: var(--cream);
+  padding: 8rem 5rem; display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: start; background: var(--cream);
 }
 .practice-text .eyebrow { margin-bottom: 1.5rem; }
 .practice-text h2 { font-size: clamp(2rem, 3.5vw, 3rem); color: var(--charcoal); margin-bottom: 2rem; }
 .practice-text p { color: var(--muted); line-height: 1.9; margin-bottom: 1.5rem; }
 .practice-text .read-more {
   display: inline-flex; align-items: center; gap: .5rem;
-  font-size: .8125rem; letter-spacing: .16em; text-transform: uppercase; color: var(--bark);
-  margin-top: .5rem;
+  font-size: .8125rem; letter-spacing: .16em; text-transform: uppercase; color: var(--bark); margin-top: .5rem;
 }
 .practice-text .read-more::after { content: '→'; }
 .practice-visual { display: flex; flex-direction: column; gap: 2rem; }
 .practice-photo { aspect-ratio: 4/5; overflow: hidden; }
 .practice-photo img { width: 100%; height: 100%; object-fit: cover; filter: brightness(.88) saturate(.85); }
-.practice-quote {
-  padding: 2rem;
-  border-left: 2px solid var(--sage-light);
-  background: var(--sage-pale);
-}
-.practice-quote p {
-  font-family: var(--font-serif);
-  font-size: 1.125rem;
-  font-style: italic;
-  color: var(--sage-text);
-  line-height: 1.7;
-}
-.practice-quote cite {
-  display: block; margin-top: .75rem;
-  font-size: .75rem; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--sage-mid); font-style: normal;
-}
+.practice-quote { padding: 2rem; border-left: 2px solid var(--sage-light); background: var(--sage-pale); }
+.practice-quote p { font-family: var(--font-serif); font-size: 1.125rem; font-style: italic; color: var(--sage-text); line-height: 1.7; }
+.practice-quote cite { display: block; margin-top: .75rem; font-size: .75rem; letter-spacing: .14em; text-transform: uppercase; color: var(--sage-mid); font-style: normal; }
 .who { padding: 8rem 5rem; background: var(--warm-white); }
 .who-header { max-width: 640px; margin-bottom: 5rem; text-align: left; }
 .who-header h2 { font-size: clamp(2rem, 3.5vw, 2.8rem); margin-bottom: 1.5rem; }
@@ -354,37 +293,26 @@ const offerIcons = {
 .section-divider { display: flex; align-items: center; justify-content: center; gap: 1.5rem; padding: 1rem 0; background: var(--warm-white); }
 .section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: var(--sage-light); opacity: .5; max-width: 200px; }
 .section-divider svg { flex-shrink: 0; width: 32px; height: 32px; }
-}
+
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-left { padding: 8rem 1.5rem 4rem; }
-  .hero-right {
-    height: auto !important;
-    min-height: 0 !important;
-  }
-  .hero-botanical {
-    padding: 2rem 1.5rem;
-    display: flex;
-    justify-content: center;
-  }
-  .hero-botanical svg {
-    width: min(240px, 60vw) !important;
-    height: auto !important;
-  }
-  .info-bar {
-    padding: 1.25rem 1.5rem !important;
-    gap: 1rem 2rem !important;
-    flex-wrap: wrap !important;
-    overflow-x: hidden !important;
-  }
-  .practice, .story-pull, .international { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
-  .who, .offer, .process, .testimonials, .final-cta { padding: 5rem 1.5rem; }
+  .hero-left { padding: 8rem 2.5rem 4rem; }
+  .hero-right { height: 60vw; }
+  .info-bar { padding: 1rem 2.5rem; gap: 2rem; }
+  .practice, .story-pull, .international { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2.5rem; }
+  .who, .offer, .process, .testimonials, .final-cta { padding: 5rem 2.5rem; }
   .who-grid { grid-template-columns: 1fr; gap: 2px; }
   .offer-grid { grid-template-columns: 1fr 1fr; }
   .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
   .process-steps::before { display: none; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .regions-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .offer-grid { grid-template-columns: 1fr; }
+  .process-steps { grid-template-columns: 1fr; }
+  .hero-ctas { width: 100%; }
+  .btn-sage, .btn-ghost { width: 100%; text-align: center; }
 }
 </style>
 
@@ -464,7 +392,7 @@ const offerIcons = {
   <div class="practice-visual">
     {d.practicePhoto && (
       <div class="practice-photo">
-        <img src={d.practicePhoto} alt="qui-therapeute.jpg" loading="lazy" />
+        <img src={d.practicePhoto} alt="Sara Lemaitre en consultation" loading="lazy" />
       </div>
     )}
     <blockquote class="practice-quote">
