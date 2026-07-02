@@ -73,6 +73,9 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
           <a href={p.href} aria-current={currentPage === p.id ? 'page' : undefined}>{p.label}</a>
         </li>
       ))}
+      <li class="nav-book-mobile-wrap">
+        <a href={bookHref} class="nav-book-mobile" target={bookTarget} rel={bookTarget ? 'noopener noreferrer' : undefined}>{bookLabel}</a>
+      </li>
     </ul>
     <a href={bookHref} class="nav-book" target={bookTarget} rel={bookTarget ? 'noopener noreferrer' : undefined}>{bookLabel}</a>
     {lang === 'fr'
@@ -157,6 +160,23 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
     </div>
   </footer>
 
+  <style>
+    .nav-book-mobile-wrap { display: none; }
+    .nav-book-mobile {
+      display: inline-block;
+      padding: .85rem 2.5rem;
+      border: 1px solid var(--bark);
+      color: var(--bark);
+      font-size: .9375rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      margin-top: 0.5rem;
+    }
+    @media (max-width: 1024px) {
+      .nav-book-mobile-wrap { display: block; }
+    }
+  </style>
+
   <script>
     const nav = document.getElementById('nav');
     if (nav) window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
@@ -166,6 +186,7 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
       btn.setAttribute('aria-expanded', String(!exp));
       btn.setAttribute('aria-label', exp ? 'Open navigation menu' : 'Close navigation menu');
       links?.classList.toggle('open', !exp);
+      document.body.style.overflow = exp ? '' : 'hidden';
     }
     document.addEventListener('click', (e) => {
       const links = document.getElementById('nav-links');
@@ -173,6 +194,7 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
       if (links && btn && !links.contains(e.target) && !btn.contains(e.target)) {
         links.classList.remove('open');
         btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
       }
     });
     const reveals = document.querySelectorAll('.reveal');
@@ -183,4 +205,3 @@ const bookTarget = bookHref.startsWith('http') ? '_blank' : undefined;
   </script>
 </body>
 </html>
-
