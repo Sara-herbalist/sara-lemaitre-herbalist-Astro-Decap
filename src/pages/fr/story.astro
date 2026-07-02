@@ -44,12 +44,20 @@ const meta = {
   overflow: hidden;
 }
 @media (max-width: 1024px) {
+  .story-hero {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 8rem 1.5rem 4rem;
+  }
+  .story-hero > div:last-child {
+    width: 100%;
+  }
   .hero-photo-frame {
-    aspect-ratio: 3/4;
-    max-height: 65vh;
+    aspect-ratio: unset !important;
+    height: 420px;
   }
   .hero-photo-frame img {
-    object-position: center 25%;
+    object-position: center 20%;
   }
   .hero-pull-quote {
     padding: 1.5rem !important;
