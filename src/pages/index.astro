@@ -477,11 +477,36 @@ const offerIcons = {
   .testimonials-grid { grid-template-columns: 1fr; }
   .regions-grid { grid-template-columns: 1fr; }
 }
-@media (max-width: 640px) {
-  .offer-grid { grid-template-columns: 1fr; }
-  .process-steps { grid-template-columns: 1fr; }
-  .hero-ctas { width: 100%; }
-  .btn-sage, .btn-ghost { width: 100%; text-align: center; }
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 8rem 1.5rem 4rem; }
+  .hero-right {
+    height: auto !important;
+    min-height: 0 !important;
+  }
+  .hero-botanical {
+    padding: 2rem 1.5rem;
+    display: flex;
+    justify-content: center;
+  }
+  .hero-botanical svg {
+    width: min(240px, 60vw) !important;
+    height: auto !important;
+  }
+  .info-bar {
+    padding: 1.25rem 1.5rem !important;
+    gap: 1rem 2rem !important;
+    flex-wrap: wrap !important;
+    overflow-x: hidden !important;
+  }
+  .practice, .story-pull, .international { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 1.5rem; }
+  .who, .offer, .process, .testimonials, .final-cta { padding: 5rem 1.5rem; }
+  .who-grid { grid-template-columns: 1fr; gap: 2px; }
+  .offer-grid { grid-template-columns: 1fr 1fr; }
+  .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .process-steps::before { display: none; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .regions-grid { grid-template-columns: 1fr; }
 }
 </style>
 
