@@ -354,19 +354,6 @@ const offerIcons = {
 .section-divider { display: flex; align-items: center; justify-content: center; gap: 1.5rem; padding: 1rem 0; background: var(--warm-white); }
 .section-divider::before, .section-divider::after { content: ''; flex: 1; height: 1px; background: var(--sage-light); opacity: .5; max-width: 200px; }
 .section-divider svg { flex-shrink: 0; width: 32px; height: 32px; }
-@media (max-width: 1024px) {
-  .hero { grid-template-columns: 1fr; min-height: auto; }
-  .hero-left { padding: 8rem 2.5rem 4rem; }
-  .hero-right { height: 60vw; }
-  .info-bar { padding: 1rem 2.5rem; gap: 2rem; }
-  .practice, .story-pull, .international { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2.5rem; }
-  .who, .offer, .process, .testimonials, .final-cta { padding: 5rem 2.5rem; }
-  .who-grid { grid-template-columns: 1fr; gap: 2px; }
-  .offer-grid { grid-template-columns: 1fr 1fr; }
-  .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
-  .process-steps::before { display: none; }
-  .testimonials-grid { grid-template-columns: 1fr; }
-  .regions-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; min-height: auto; }
