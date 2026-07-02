@@ -224,7 +224,6 @@ footer { background: var(--charcoal); color: rgba(247,243,238,.6); padding: 5rem
 @media (max-width: 640px) {
   /* Prevent any horizontal overflow */
   body { overflow-x: hidden; }
-  section { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
 
   /* Footer */
   .footer-grid { grid-template-columns: 1fr; }
