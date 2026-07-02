@@ -325,3 +325,53 @@ footer {
   /* Prevent horizontal overflow everywhere */
   .info-bar { padding: 1rem 1.25rem; gap: 1.5rem; }
 }
+
+/* ── Mobile: hide empty hero-right / botanical when no photo ── */
+@media (max-width: 1024px) {
+  .hero-right:not(:has(img)) {
+    min-height: 0 !important;
+    height: auto !important;
+  }
+  .hero-botanical {
+    padding: 3rem 2rem;
+  }
+  .hero-botanical svg {
+    width: min(280px, 70vw);
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* Story hero photo — show full face */
+  .hero-photo-frame {
+    aspect-ratio: 4/3 !important;
+  }
+  .hero-photo-frame img {
+    object-position: center top !important;
+  }
+
+  /* Therapies hero logo panel — compact */
+  .th-hero-logo {
+    min-height: 50vw !important;
+  }
+}
+
+@media (max-width: 640px) {
+  /* Buttons — prevent text wrapping */
+  .btn-sage, .btn-ghost, .btn-primary-light, .btn-ghost-light {
+    font-size: .8rem;
+    letter-spacing: .12em;
+    padding: .9rem 1.5rem;
+    white-space: nowrap;
+  }
+
+  /* Hero botanical smaller on tiny screens */
+  .hero-botanical svg {
+    width: min(220px, 65vw);
+  }
+
+  /* Info bar — stack vertically */
+  .info-bar {
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+  }
+}
