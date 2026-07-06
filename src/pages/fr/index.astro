@@ -297,8 +297,10 @@ const offerIcons = {
 @media (max-width: 1024px) {
   .hero { grid-template-columns: 1fr; min-height: auto !important; }
   .hero-left { padding: 8rem 2.5rem 4rem; }
-  .hero-right { height: 60vw; }
-  .info-bar { padding: 1rem 2.5rem; gap: 2rem; }
+  .hero-right { height: 50vw; max-height: 300px; }
+  .hero-botanical svg { width: min(200px, 50vw) !important; height: auto !important; }
+  .info-bar { padding: 1rem 1.5rem; gap: 1.5rem; overflow-x: auto; flex-wrap: nowrap; }
+  .info-value { font-size: .75rem; }
   .practice, .story-pull, .international { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2.5rem; }
   .who, .offer, .process, .testimonials, .final-cta { padding: 5rem 2.5rem; }
   .who-grid { grid-template-columns: 1fr; gap: 2px; }
