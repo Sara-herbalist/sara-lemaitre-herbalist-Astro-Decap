@@ -295,13 +295,10 @@ const offerIcons = {
 .section-divider svg { flex-shrink: 0; width: 32px; height: 32px; }
 
 @media (max-width: 1024px) {
-  .hero { grid-template-columns: 1fr; min-height: auto !important; }
+  .hero { grid-template-columns: 1fr; min-height: auto; }
   .hero-left { padding: 8rem 2.5rem 4rem; }
-  .hero-right { height: 50vw; max-height: 300px; }
-  .hero-botanical svg { width: min(200px, 50vw) !important; height: auto !important; }
-  .info-bar { padding: 1rem 1.5rem; gap: 0.75rem 1.5rem; flex-wrap: wrap; }
-.info-item { flex-shrink: 1; min-width: 45%; }
-.info-value { font-size: .75rem; letter-spacing: 0; }
+  .hero-right { height: 60vw; }
+  .info-bar { padding: 1rem 2.5rem; gap: 2rem; }
   .practice, .story-pull, .international { grid-template-columns: 1fr; gap: 3rem; padding: 5rem 2.5rem; }
   .who, .offer, .process, .testimonials, .final-cta { padding: 5rem 2.5rem; }
   .who-grid { grid-template-columns: 1fr; gap: 2px; }
