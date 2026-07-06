@@ -199,11 +199,6 @@ footer { background: var(--charcoal); color: rgba(247,243,238,.6); padding: 5rem
   footer { padding: 3rem 1.5rem 2rem; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
 
-  /* Hero botanical — compact */
-  .hero-right { min-height: 0 !important; }
-  .hero-botanical { padding: 2rem 1.5rem; display: flex; justify-content: center; }
-  .hero-botanical svg { width: min(260px, 65vw) !important; height: auto; }
-
   /* Story & book hero photo — show face not just top of head */
   .hero-photo-frame,
   .story-hero .hero-photo-frame {
